@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "onshape-rest-api-client"
-version = "1.209.71224-578ebce68109"
+version = "1.0+v13"
 description = "A client library for accessing Onshape REST API"
 authors = []
 readme = "README.md"
