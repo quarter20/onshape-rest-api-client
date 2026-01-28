@@ -1,0 +1,17 @@
+from enum import Enum
+
+
+class GBTAnnotationType(str, Enum):
+    CHAMFER_CALLOUT = "CHAMFER_CALLOUT"
+    CHAMFER_CALLOUT_POSITION = "CHAMFER_CALLOUT_POSITION"
+    DATUM = "DATUM"
+    DIMENSION = "DIMENSION"
+    DIMENSION_POSITION = "DIMENSION_POSITION"
+    GTOL = "GTOL"
+    HOLE_CALLOUT = "HOLE_CALLOUT"
+    HOLE_CALLOUT_POSITION = "HOLE_CALLOUT_POSITION"
+    UNKNOWN = "UNKNOWN"
+    WELD = "WELD"
+
+    def __str__(self) -> str:
+        return str(self.value)

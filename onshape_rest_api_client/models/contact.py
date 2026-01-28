@@ -1,0 +1,101 @@
+from __future__ import annotations
+
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
+
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
+
+from ..types import UNSET, Unset
+
+if TYPE_CHECKING:
+    from ..models.contact_extensions import ContactExtensions
+
+
+T = TypeVar("T", bound="Contact")
+
+
+@_attrs_define
+class Contact:
+    """
+    Attributes:
+        email (str | Unset):
+        extensions (ContactExtensions | Unset):
+        name (str | Unset):
+        url (str | Unset):
+    """
+
+    email: str | Unset = UNSET
+    extensions: ContactExtensions | Unset = UNSET
+    name: str | Unset = UNSET
+    url: str | Unset = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+
+    def to_dict(self) -> dict[str, Any]:
+        email = self.email
+
+        extensions: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.extensions, Unset):
+            extensions = self.extensions.to_dict()
+
+        name = self.name
+
+        url = self.url
+
+        field_dict: dict[str, Any] = {}
+        field_dict.update(self.additional_properties)
+        field_dict.update({})
+        if email is not UNSET:
+            field_dict["email"] = email
+        if extensions is not UNSET:
+            field_dict["extensions"] = extensions
+        if name is not UNSET:
+            field_dict["name"] = name
+        if url is not UNSET:
+            field_dict["url"] = url
+
+        return field_dict
+
+    @classmethod
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        from ..models.contact_extensions import ContactExtensions
+
+        d = dict(src_dict)
+        email = d.pop("email", UNSET)
+
+        _extensions = d.pop("extensions", UNSET)
+        extensions: ContactExtensions | Unset
+        if isinstance(_extensions, Unset):
+            extensions = UNSET
+        else:
+            extensions = ContactExtensions.from_dict(_extensions)
+
+        name = d.pop("name", UNSET)
+
+        url = d.pop("url", UNSET)
+
+        contact = cls(
+            email=email,
+            extensions=extensions,
+            name=name,
+            url=url,
+        )
+
+        contact.additional_properties = d
+        return contact
+
+    @property
+    def additional_keys(self) -> list[str]:
+        return list(self.additional_properties.keys())
+
+    def __getitem__(self, key: str) -> Any:
+        return self.additional_properties[key]
+
+    def __setitem__(self, key: str, value: Any) -> None:
+        self.additional_properties[key] = value
+
+    def __delitem__(self, key: str) -> None:
+        del self.additional_properties[key]
+
+    def __contains__(self, key: str) -> bool:
+        return key in self.additional_properties

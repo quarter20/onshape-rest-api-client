@@ -1,0 +1,18 @@
+from enum import Enum
+
+
+class GBTElementType(str, Enum):
+    APPLICATION = "APPLICATION"
+    ASSEMBLY = "ASSEMBLY"
+    BILLOFMATERIALS = "BILLOFMATERIALS"
+    BLOB = "BLOB"
+    DRAWING = "DRAWING"
+    FEATURESTUDIO = "FEATURESTUDIO"
+    PARTSTUDIO = "PARTSTUDIO"
+    PUBLICATIONITEM = "PUBLICATIONITEM"
+    TABLE = "TABLE"
+    UNKNOWN = "UNKNOWN"
+    VARIABLESTUDIO = "VARIABLESTUDIO"
+
+    def __str__(self) -> str:
+        return str(self.value)

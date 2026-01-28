@@ -1,0 +1,163 @@
+from __future__ import annotations
+
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
+
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
+
+from ..models.gbt_parameter_library_relation_type import GBTParameterLibraryRelationType
+from ..types import UNSET, Unset
+
+if TYPE_CHECKING:
+    from ..models.bt_foreign_data_response_1070 import BTForeignDataResponse1070
+
+
+T = TypeVar("T", bound="BTMParameterForeignId146")
+
+
+@_attrs_define
+class BTMParameterForeignId146:
+    """
+    Attributes:
+        bt_type (str | Unset): Type of JSON object.
+        import_microversion (str | Unset): Microversion that resulted from the import.
+        library_relation_type (GBTParameterLibraryRelationType | Unset):
+        node_id (str | Unset): ID of the parameter's node.
+        parameter_id (str | Unset): Unique ID of the parameter.
+        parameter_name (str | Unset):
+        value_string (str | Unset):
+        foreign_id (str | Unset):
+        foreign_name (str | Unset):
+        location_info (BTForeignDataResponse1070 | Unset):
+    """
+
+    bt_type: str | Unset = UNSET
+    import_microversion: str | Unset = UNSET
+    library_relation_type: GBTParameterLibraryRelationType | Unset = UNSET
+    node_id: str | Unset = UNSET
+    parameter_id: str | Unset = UNSET
+    parameter_name: str | Unset = UNSET
+    value_string: str | Unset = UNSET
+    foreign_id: str | Unset = UNSET
+    foreign_name: str | Unset = UNSET
+    location_info: BTForeignDataResponse1070 | Unset = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+
+    def to_dict(self) -> dict[str, Any]:
+        bt_type = self.bt_type
+
+        import_microversion = self.import_microversion
+
+        library_relation_type: str | Unset = UNSET
+        if not isinstance(self.library_relation_type, Unset):
+            library_relation_type = self.library_relation_type.value
+
+        node_id = self.node_id
+
+        parameter_id = self.parameter_id
+
+        parameter_name = self.parameter_name
+
+        value_string = self.value_string
+
+        foreign_id = self.foreign_id
+
+        foreign_name = self.foreign_name
+
+        location_info: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.location_info, Unset):
+            location_info = self.location_info.to_dict()
+
+        field_dict: dict[str, Any] = {}
+        field_dict.update(self.additional_properties)
+        field_dict.update({})
+        if bt_type is not UNSET:
+            field_dict["btType"] = bt_type
+        if import_microversion is not UNSET:
+            field_dict["importMicroversion"] = import_microversion
+        if library_relation_type is not UNSET:
+            field_dict["libraryRelationType"] = library_relation_type
+        if node_id is not UNSET:
+            field_dict["nodeId"] = node_id
+        if parameter_id is not UNSET:
+            field_dict["parameterId"] = parameter_id
+        if parameter_name is not UNSET:
+            field_dict["parameterName"] = parameter_name
+        if value_string is not UNSET:
+            field_dict["valueString"] = value_string
+        if foreign_id is not UNSET:
+            field_dict["foreignId"] = foreign_id
+        if foreign_name is not UNSET:
+            field_dict["foreignName"] = foreign_name
+        if location_info is not UNSET:
+            field_dict["locationInfo"] = location_info
+
+        return field_dict
+
+    @classmethod
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        from ..models.bt_foreign_data_response_1070 import BTForeignDataResponse1070
+
+        d = dict(src_dict)
+        bt_type = d.pop("btType", UNSET)
+
+        import_microversion = d.pop("importMicroversion", UNSET)
+
+        _library_relation_type = d.pop("libraryRelationType", UNSET)
+        library_relation_type: GBTParameterLibraryRelationType | Unset
+        if isinstance(_library_relation_type, Unset):
+            library_relation_type = UNSET
+        else:
+            library_relation_type = GBTParameterLibraryRelationType(_library_relation_type)
+
+        node_id = d.pop("nodeId", UNSET)
+
+        parameter_id = d.pop("parameterId", UNSET)
+
+        parameter_name = d.pop("parameterName", UNSET)
+
+        value_string = d.pop("valueString", UNSET)
+
+        foreign_id = d.pop("foreignId", UNSET)
+
+        foreign_name = d.pop("foreignName", UNSET)
+
+        _location_info = d.pop("locationInfo", UNSET)
+        location_info: BTForeignDataResponse1070 | Unset
+        if isinstance(_location_info, Unset):
+            location_info = UNSET
+        else:
+            location_info = BTForeignDataResponse1070.from_dict(_location_info)
+
+        btm_parameter_foreign_id_146 = cls(
+            bt_type=bt_type,
+            import_microversion=import_microversion,
+            library_relation_type=library_relation_type,
+            node_id=node_id,
+            parameter_id=parameter_id,
+            parameter_name=parameter_name,
+            value_string=value_string,
+            foreign_id=foreign_id,
+            foreign_name=foreign_name,
+            location_info=location_info,
+        )
+
+        btm_parameter_foreign_id_146.additional_properties = d
+        return btm_parameter_foreign_id_146
+
+    @property
+    def additional_keys(self) -> list[str]:
+        return list(self.additional_properties.keys())
+
+    def __getitem__(self, key: str) -> Any:
+        return self.additional_properties[key]
+
+    def __setitem__(self, key: str, value: Any) -> None:
+        self.additional_properties[key] = value
+
+    def __delitem__(self, key: str) -> None:
+        del self.additional_properties[key]
+
+    def __contains__(self, key: str) -> bool:
+        return key in self.additional_properties

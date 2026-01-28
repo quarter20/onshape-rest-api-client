@@ -1,0 +1,22 @@
+from enum import Enum
+
+
+class GBTWeldType(str, Enum):
+    BEAD_JOINT = "BEAD_JOINT"
+    BEVEL_FLARE_GROOVE = "BEVEL_FLARE_GROOVE"
+    BEVEL_GROOVE = "BEVEL_GROOVE"
+    FILLET_JOINT = "FILLET_JOINT"
+    J_GROOVE = "J_GROOVE"
+    NONE = "NONE"
+    PLUG_OR_SLOT_JOINT = "PLUG_OR_SLOT_JOINT"
+    SEAM_JOINT = "SEAM_JOINT"
+    SINGLE_BEVEL_BUTT_BROAD_ROOT = "SINGLE_BEVEL_BUTT_BROAD_ROOT"
+    SPOT_JOINT = "SPOT_JOINT"
+    SQUARE_GROOVE = "SQUARE_GROOVE"
+    UNKNOWN = "UNKNOWN"
+    U_GROOVE = "U_GROOVE"
+    V_FLARE_GROOVE = "V_FLARE_GROOVE"
+    V_GROOVE = "V_GROOVE"
+
+    def __str__(self) -> str:
+        return str(self.value)

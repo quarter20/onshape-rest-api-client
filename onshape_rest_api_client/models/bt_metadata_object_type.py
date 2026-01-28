@@ -1,0 +1,27 @@
+from enum import Enum
+
+
+class BTMetadataObjectType(str, Enum):
+    APP_ELEMENT = "APP_ELEMENT"
+    ASSEMBLY = "ASSEMBLY"
+    BLOB_ELEMENT = "BLOB_ELEMENT"
+    CHANGE_ORDER = "CHANGE_ORDER"
+    CHANGE_REQUEST = "CHANGE_REQUEST"
+    CHANGE_TASK = "CHANGE_TASK"
+    DOCUMENT = "DOCUMENT"
+    DRAWING = "DRAWING"
+    DRAWING_ANNOTATIONS = "DRAWING_ANNOTATIONS"
+    FEATURE_STUDIO = "FEATURE_STUDIO"
+    FOLDER = "FOLDER"
+    GLOBAL = "GLOBAL"
+    ITEM = "ITEM"
+    PART = "PART"
+    PART_STUDIO = "PART_STUDIO"
+    PROJECT = "PROJECT"
+    TASK = "TASK"
+    VARIABLE_STUDIO = "VARIABLE_STUDIO"
+    VERSION = "VERSION"
+    WORKSPACE = "WORKSPACE"
+
+    def __str__(self) -> str:
+        return str(self.value)

@@ -1,0 +1,19 @@
+from enum import Enum
+
+
+class GBTMetadataSourceType(str, Enum):
+    AUTOMATIC = "AUTOMATIC"
+    COMPUTED = "COMPUTED"
+    COMPUTED_CONFIGURED = "COMPUTED_CONFIGURED"
+    CONFIGURED = "CONFIGURED"
+    DEFAULT = "DEFAULT"
+    FEATURE = "FEATURE"
+    IMPORT = "IMPORT"
+    MERGED = "MERGED"
+    OVERRIDDEN_PUBLIC = "OVERRIDDEN_PUBLIC"
+    STANDARD_CONTENT = "STANDARD_CONTENT"
+    UNCONFIGURED = "UNCONFIGURED"
+    UNKNOWN = "UNKNOWN"
+
+    def __str__(self) -> str:
+        return str(self.value)
