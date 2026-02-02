@@ -1,9 +1,18 @@
-[tool.poetry]
+[project]
 name = "onshape-rest-api-client"
 version = "1.210"
-description = "A client library for accessing Onshape REST API"
-authors = []
+description = "A python client library for accessing Onshape REST API"
+license = "MIT"
 readme = "README.md"
+authors = [ 
+    {name="Mark Chackerian"},
+]
+keywords = ["onshape"]
+
+[project.urls]
+repository = "https://github.com/quarter20/onshape-rest-api-client"
+
+[tool.poetry]
 packages = [
     { include = "onshape_rest_api_client" },
 ]
