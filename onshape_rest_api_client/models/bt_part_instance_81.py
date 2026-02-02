@@ -49,6 +49,7 @@ class BTPartInstance81:
         parametric_output_instance (bool | Unset):
         parametric_part_studio_child_instance (bool | Unset):
         parametric_part_studio_instance (bool | Unset):
+        parent_suppressed (bool | Unset):
         part_instance (bool | Unset):
         releasable (bool | Unset):
         revision_custom_data (BTRevisionCustomData2090 | Unset):
@@ -102,6 +103,7 @@ class BTPartInstance81:
     parametric_output_instance: bool | Unset = UNSET
     parametric_part_studio_child_instance: bool | Unset = UNSET
     parametric_part_studio_instance: bool | Unset = UNSET
+    parent_suppressed: bool | Unset = UNSET
     part_instance: bool | Unset = UNSET
     releasable: bool | Unset = UNSET
     revision_custom_data: BTRevisionCustomData2090 | Unset = UNSET
@@ -174,6 +176,8 @@ class BTPartInstance81:
         parametric_part_studio_child_instance = self.parametric_part_studio_child_instance
 
         parametric_part_studio_instance = self.parametric_part_studio_instance
+
+        parent_suppressed = self.parent_suppressed
 
         part_instance = self.part_instance
 
@@ -320,6 +324,8 @@ class BTPartInstance81:
             field_dict["parametricPartStudioChildInstance"] = parametric_part_studio_child_instance
         if parametric_part_studio_instance is not UNSET:
             field_dict["parametricPartStudioInstance"] = parametric_part_studio_instance
+        if parent_suppressed is not UNSET:
+            field_dict["parentSuppressed"] = parent_suppressed
         if part_instance is not UNSET:
             field_dict["partInstance"] = part_instance
         if releasable is not UNSET:
@@ -443,6 +449,8 @@ class BTPartInstance81:
         parametric_part_studio_child_instance = d.pop("parametricPartStudioChildInstance", UNSET)
 
         parametric_part_studio_instance = d.pop("parametricPartStudioInstance", UNSET)
+
+        parent_suppressed = d.pop("parentSuppressed", UNSET)
 
         part_instance = d.pop("partInstance", UNSET)
 
@@ -612,6 +620,7 @@ class BTPartInstance81:
             parametric_output_instance=parametric_output_instance,
             parametric_part_studio_child_instance=parametric_part_studio_child_instance,
             parametric_part_studio_instance=parametric_part_studio_instance,
+            parent_suppressed=parent_suppressed,
             part_instance=part_instance,
             releasable=releasable,
             revision_custom_data=revision_custom_data,

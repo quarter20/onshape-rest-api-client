@@ -8,11 +8,11 @@ from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
 
-T = TypeVar("T", bound="BTMSuppressionState1924")
+T = TypeVar("T", bound="BTMSuppressionStateParentSuppressed5404")
 
 
 @_attrs_define
-class BTMSuppressionState1924:
+class BTMSuppressionStateParentSuppressed5404:
     """
     Attributes:
         bt_type (str | Unset): Type of JSON object.
@@ -61,15 +61,15 @@ class BTMSuppressionState1924:
 
         suppression_configured = d.pop("suppressionConfigured", UNSET)
 
-        btm_suppression_state_1924 = cls(
+        btm_suppression_state_parent_suppressed_5404 = cls(
             bt_type=bt_type,
             import_microversion=import_microversion,
             node_id=node_id,
             suppression_configured=suppression_configured,
         )
 
-        btm_suppression_state_1924.additional_properties = d
-        return btm_suppression_state_1924
+        btm_suppression_state_parent_suppressed_5404.additional_properties = d
+        return btm_suppression_state_parent_suppressed_5404
 
     @property
     def additional_keys(self) -> list[str]:

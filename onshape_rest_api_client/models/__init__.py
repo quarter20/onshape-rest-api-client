@@ -291,6 +291,15 @@ from .bt_count_dimension_display_data_1778 import BTCountDimensionDisplayData177
 from .bt_create_task_params import BTCreateTaskParams
 from .bt_curve_description_1583 import BTCurveDescription1583
 from .bt_curve_display_data_4722 import BTCurveDisplayData4722
+from .bt_curve_geometry_114 import BTCurveGeometry114
+from .bt_curve_geometry_circle_115 import BTCurveGeometryCircle115
+from .bt_curve_geometry_conic_2284 import BTCurveGeometryConic2284
+from .bt_curve_geometry_control_point_spline_2197 import BTCurveGeometryControlPointSpline2197
+from .bt_curve_geometry_ellipse_1189 import BTCurveGeometryEllipse1189
+from .bt_curve_geometry_interpolated_spline_116 import BTCurveGeometryInterpolatedSpline116
+from .bt_curve_geometry_interpolated_spline_116_derivatives import BTCurveGeometryInterpolatedSpline116Derivatives
+from .bt_curve_geometry_line_117 import BTCurveGeometryLine117
+from .bt_curve_geometry_spline_118 import BTCurveGeometrySpline118
 from .bt_curve_length_dimension_display_data_322 import BTCurveLengthDimensionDisplayData322
 from .bt_curved_text_object_filter_5114 import BTCurvedTextObjectFilter5114
 from .bt_cylinder_description_686 import BTCylinderDescription686
@@ -1175,6 +1184,7 @@ from .btm_sketch_text_entity_1761 import BTMSketchTextEntity1761
 from .btm_suppression_state_1924 import BTMSuppressionState1924
 from .btm_suppression_state_configured_2598 import BTMSuppressionStateConfigured2598
 from .btm_suppression_state_expression_1811 import BTMSuppressionStateExpression1811
+from .btm_suppression_state_parent_suppressed_5404 import BTMSuppressionStateParentSuppressed5404
 from .btm_units_default_160 import BTMUnitsDefault160
 from .btm_units_default_160_units import BTMUnitsDefault160Units
 from .btm_user_code_161 import BTMUserCode161
@@ -2004,6 +2014,15 @@ __all__ = (
     "BTCurveDescription1583",
     "BTCurveDisplayData4722",
     "BTCurvedTextObjectFilter5114",
+    "BTCurveGeometry114",
+    "BTCurveGeometryCircle115",
+    "BTCurveGeometryConic2284",
+    "BTCurveGeometryControlPointSpline2197",
+    "BTCurveGeometryEllipse1189",
+    "BTCurveGeometryInterpolatedSpline116",
+    "BTCurveGeometryInterpolatedSpline116Derivatives",
+    "BTCurveGeometryLine117",
+    "BTCurveGeometrySpline118",
     "BTCurveLengthDimensionDisplayData322",
     "BTCylinderDescription686",
     "BTCylindricalImageMapping1640",
@@ -2428,6 +2447,7 @@ __all__ = (
     "BTMSuppressionState1924",
     "BTMSuppressionStateConfigured2598",
     "BTMSuppressionStateExpression1811",
+    "BTMSuppressionStateParentSuppressed5404",
     "BTMUnitsDefault160",
     "BTMUnitsDefault160Units",
     "BTMUserCode161",

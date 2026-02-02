@@ -30,7 +30,9 @@ class BTInspectionTableRowMetadata2485:
         constraint_id (str | Unset):
         cross_highlight_data (BTTableCrossHighlightData1753 | Unset):
         feature_id (str | Unset):
+        has_default_tolerances (bool | Unset):
         hole_callout_id (str | Unset):
+        is_derived (bool | Unset):
         parameter_id (str | Unset):
         part_id (str | Unset):
         precision (GBTTolerancePrecision | Unset):
@@ -44,7 +46,9 @@ class BTInspectionTableRowMetadata2485:
     constraint_id: str | Unset = UNSET
     cross_highlight_data: BTTableCrossHighlightData1753 | Unset = UNSET
     feature_id: str | Unset = UNSET
+    has_default_tolerances: bool | Unset = UNSET
     hole_callout_id: str | Unset = UNSET
+    is_derived: bool | Unset = UNSET
     parameter_id: str | Unset = UNSET
     part_id: str | Unset = UNSET
     precision: GBTTolerancePrecision | Unset = UNSET
@@ -73,7 +77,11 @@ class BTInspectionTableRowMetadata2485:
 
         feature_id = self.feature_id
 
+        has_default_tolerances = self.has_default_tolerances
+
         hole_callout_id = self.hole_callout_id
+
+        is_derived = self.is_derived
 
         parameter_id = self.parameter_id
 
@@ -102,8 +110,12 @@ class BTInspectionTableRowMetadata2485:
             field_dict["crossHighlightData"] = cross_highlight_data
         if feature_id is not UNSET:
             field_dict["featureId"] = feature_id
+        if has_default_tolerances is not UNSET:
+            field_dict["hasDefaultTolerances"] = has_default_tolerances
         if hole_callout_id is not UNSET:
             field_dict["holeCalloutId"] = hole_callout_id
+        if is_derived is not UNSET:
+            field_dict["isDerived"] = is_derived
         if parameter_id is not UNSET:
             field_dict["parameterId"] = parameter_id
         if part_id is not UNSET:
@@ -150,7 +162,11 @@ class BTInspectionTableRowMetadata2485:
 
         feature_id = d.pop("featureId", UNSET)
 
+        has_default_tolerances = d.pop("hasDefaultTolerances", UNSET)
+
         hole_callout_id = d.pop("holeCalloutId", UNSET)
+
+        is_derived = d.pop("isDerived", UNSET)
 
         parameter_id = d.pop("parameterId", UNSET)
 
@@ -172,7 +188,9 @@ class BTInspectionTableRowMetadata2485:
             constraint_id=constraint_id,
             cross_highlight_data=cross_highlight_data,
             feature_id=feature_id,
+            has_default_tolerances=has_default_tolerances,
             hole_callout_id=hole_callout_id,
+            is_derived=is_derived,
             parameter_id=parameter_id,
             part_id=part_id,
             precision=precision,

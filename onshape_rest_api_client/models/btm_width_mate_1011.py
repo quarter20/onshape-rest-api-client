@@ -37,6 +37,7 @@ class BTMWidthMate1011:
         parameter_libraries (list[BTMParameter1] | Unset):
         parameters (list[BTMParameter1] | Unset): A list of parameter values for instantiation of the feature spec.
             Parameters are present for all defined parameters, even if not used in a specific instantiation.
+        parent_suppressed (bool | Unset):
         return_after_subfeatures (bool | Unset): For internal use only. Should always be `false`.
         sub_features (list[BTMFeature134] | Unset): List of subfeatures belonging to the feature.
         suppressed (bool | Unset): If `true`, the feature is suppressed. It will skip regeneration, denoted by a line
@@ -68,6 +69,7 @@ class BTMWidthMate1011:
     node_id: str | Unset = UNSET
     parameter_libraries: list[BTMParameter1] | Unset = UNSET
     parameters: list[BTMParameter1] | Unset = UNSET
+    parent_suppressed: bool | Unset = UNSET
     return_after_subfeatures: bool | Unset = UNSET
     sub_features: list[BTMFeature134] | Unset = UNSET
     suppressed: bool | Unset = UNSET
@@ -118,6 +120,8 @@ class BTMWidthMate1011:
             for parameters_item_data in self.parameters:
                 parameters_item = parameters_item_data.to_dict()
                 parameters.append(parameters_item)
+
+        parent_suppressed = self.parent_suppressed
 
         return_after_subfeatures = self.return_after_subfeatures
 
@@ -211,6 +215,8 @@ class BTMWidthMate1011:
             field_dict["parameterLibraries"] = parameter_libraries
         if parameters is not UNSET:
             field_dict["parameters"] = parameters
+        if parent_suppressed is not UNSET:
+            field_dict["parentSuppressed"] = parent_suppressed
         if return_after_subfeatures is not UNSET:
             field_dict["returnAfterSubfeatures"] = return_after_subfeatures
         if sub_features is not UNSET:
@@ -293,6 +299,8 @@ class BTMWidthMate1011:
                 parameters_item = BTMParameter1.from_dict(parameters_item_data)
 
                 parameters.append(parameters_item)
+
+        parent_suppressed = d.pop("parentSuppressed", UNSET)
 
         return_after_subfeatures = d.pop("returnAfterSubfeatures", UNSET)
 
@@ -399,6 +407,7 @@ class BTMWidthMate1011:
             node_id=node_id,
             parameter_libraries=parameter_libraries,
             parameters=parameters,
+            parent_suppressed=parent_suppressed,
             return_after_subfeatures=return_after_subfeatures,
             sub_features=sub_features,
             suppressed=suppressed,

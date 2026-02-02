@@ -10,6 +10,7 @@ from ..models.gbt_sketch_entity_type import GBTSketchEntityType
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.bt_curve_geometry_114 import BTCurveGeometry114
     from ..models.btm_parameter_1 import BTMParameter1
     from ..models.combined_sketch_entity_type import CombinedSketchEntityType
 
@@ -40,6 +41,7 @@ class BTMSketchCurveSegment155:
         is_from_spline_handle (bool | Unset):
         center_id (str | Unset):
         curved_text_ids (list[str] | Unset):
+        geometry (BTCurveGeometry114 | Unset):
         internal_ids (list[str] | Unset):
         end_param (float | Unset):
         end_point_id (str | Unset):
@@ -67,6 +69,7 @@ class BTMSketchCurveSegment155:
     is_from_spline_handle: bool | Unset = UNSET
     center_id: str | Unset = UNSET
     curved_text_ids: list[str] | Unset = UNSET
+    geometry: BTCurveGeometry114 | Unset = UNSET
     internal_ids: list[str] | Unset = UNSET
     end_param: float | Unset = UNSET
     end_point_id: str | Unset = UNSET
@@ -127,6 +130,10 @@ class BTMSketchCurveSegment155:
         if not isinstance(self.curved_text_ids, Unset):
             curved_text_ids = self.curved_text_ids
 
+        geometry: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.geometry, Unset):
+            geometry = self.geometry.to_dict()
+
         internal_ids: list[str] | Unset = UNSET
         if not isinstance(self.internal_ids, Unset):
             internal_ids = self.internal_ids
@@ -184,6 +191,8 @@ class BTMSketchCurveSegment155:
             field_dict["centerId"] = center_id
         if curved_text_ids is not UNSET:
             field_dict["curvedTextIds"] = curved_text_ids
+        if geometry is not UNSET:
+            field_dict["geometry"] = geometry
         if internal_ids is not UNSET:
             field_dict["internalIds"] = internal_ids
         if end_param is not UNSET:
@@ -201,6 +210,7 @@ class BTMSketchCurveSegment155:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        from ..models.bt_curve_geometry_114 import BTCurveGeometry114
         from ..models.btm_parameter_1 import BTMParameter1
         from ..models.combined_sketch_entity_type import CombinedSketchEntityType
 
@@ -260,6 +270,13 @@ class BTMSketchCurveSegment155:
 
         curved_text_ids = cast(list[str], d.pop("curvedTextIds", UNSET))
 
+        _geometry = d.pop("geometry", UNSET)
+        geometry: BTCurveGeometry114 | Unset
+        if isinstance(_geometry, Unset):
+            geometry = UNSET
+        else:
+            geometry = BTCurveGeometry114.from_dict(_geometry)
+
         internal_ids = cast(list[str], d.pop("internalIds", UNSET))
 
         end_param = d.pop("endParam", UNSET)
@@ -292,6 +309,7 @@ class BTMSketchCurveSegment155:
             is_from_spline_handle=is_from_spline_handle,
             center_id=center_id,
             curved_text_ids=curved_text_ids,
+            geometry=geometry,
             internal_ids=internal_ids,
             end_param=end_param,
             end_point_id=end_point_id,

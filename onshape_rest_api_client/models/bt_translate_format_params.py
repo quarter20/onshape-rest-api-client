@@ -31,6 +31,8 @@ class BTTranslateFormatParams:
         angular_tolerance (float | Unset): Determines the maximum angular deviation, between the analytical surface and
             its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
             Example: 0.001.
+        annotations_font_height_in_millimeters (float | Unset): Determines the font size in workspace units used for the
+            MBD annotations text export Example: 4.
         blob_element_id (str | Unset):
         blob_microversion_id (str | Unset):
         cloud_object_id (str | Unset): Folder id where to store the exported model.
@@ -147,6 +149,7 @@ class BTTranslateFormatParams:
     format_name: str
     allow_faulty_parts: bool | Unset = False
     angular_tolerance: float | Unset = UNSET
+    annotations_font_height_in_millimeters: float | Unset = UNSET
     blob_element_id: str | Unset = UNSET
     blob_microversion_id: str | Unset = UNSET
     cloud_object_id: str | Unset = UNSET
@@ -250,6 +253,8 @@ class BTTranslateFormatParams:
         allow_faulty_parts = self.allow_faulty_parts
 
         angular_tolerance = self.angular_tolerance
+
+        annotations_font_height_in_millimeters = self.annotations_font_height_in_millimeters
 
         blob_element_id = self.blob_element_id
 
@@ -472,6 +477,8 @@ class BTTranslateFormatParams:
             field_dict["allowFaultyParts"] = allow_faulty_parts
         if angular_tolerance is not UNSET:
             field_dict["angularTolerance"] = angular_tolerance
+        if annotations_font_height_in_millimeters is not UNSET:
+            field_dict["annotationsFontHeightInMillimeters"] = annotations_font_height_in_millimeters
         if blob_element_id is not UNSET:
             field_dict["blobElementId"] = blob_element_id
         if blob_microversion_id is not UNSET:
@@ -675,6 +682,8 @@ class BTTranslateFormatParams:
         allow_faulty_parts = d.pop("allowFaultyParts", UNSET)
 
         angular_tolerance = d.pop("angularTolerance", UNSET)
+
+        annotations_font_height_in_millimeters = d.pop("annotationsFontHeightInMillimeters", UNSET)
 
         blob_element_id = d.pop("blobElementId", UNSET)
 
@@ -905,6 +914,7 @@ class BTTranslateFormatParams:
             format_name=format_name,
             allow_faulty_parts=allow_faulty_parts,
             angular_tolerance=angular_tolerance,
+            annotations_font_height_in_millimeters=annotations_font_height_in_millimeters,
             blob_element_id=blob_element_id,
             blob_microversion_id=blob_microversion_id,
             cloud_object_id=cloud_object_id,

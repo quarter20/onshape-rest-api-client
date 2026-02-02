@@ -22,7 +22,7 @@ class BTWebhookParams:
         client_id (str | Unset):
         company_id (str | Unset): Company admins can register webhooks to listen to all company events.
         data (str | Unset):
-        description (str | Unset):
+        description (str | Unset): Webhook description.
         document_id (str | Unset):
         element_id (str | Unset):
         events (list[str] | Unset): List of events for which webhook callback is invoked.
@@ -34,6 +34,7 @@ class BTWebhookParams:
         is_transient (bool | Unset): Transient webhooks are automatically cleaned up after a period of inactivity.
             Default: True.
         link_document_id (str | Unset):
+        name (str | Unset): Webhook name.
         options (BTWebhookOptions | Unset):
         part_id (str | Unset):
         project_id (str | Unset):
@@ -56,6 +57,7 @@ class BTWebhookParams:
     id: str | Unset = UNSET
     is_transient: bool | Unset = True
     link_document_id: str | Unset = UNSET
+    name: str | Unset = UNSET
     options: BTWebhookOptions | Unset = UNSET
     part_id: str | Unset = UNSET
     project_id: str | Unset = UNSET
@@ -93,6 +95,8 @@ class BTWebhookParams:
         is_transient = self.is_transient
 
         link_document_id = self.link_document_id
+
+        name = self.name
 
         options: dict[str, Any] | Unset = UNSET
         if not isinstance(self.options, Unset):
@@ -139,6 +143,8 @@ class BTWebhookParams:
             field_dict["isTransient"] = is_transient
         if link_document_id is not UNSET:
             field_dict["linkDocumentId"] = link_document_id
+        if name is not UNSET:
+            field_dict["name"] = name
         if options is not UNSET:
             field_dict["options"] = options
         if part_id is not UNSET:
@@ -187,6 +193,8 @@ class BTWebhookParams:
 
         link_document_id = d.pop("linkDocumentId", UNSET)
 
+        name = d.pop("name", UNSET)
+
         _options = d.pop("options", UNSET)
         options: BTWebhookOptions | Unset
         if isinstance(_options, Unset):
@@ -220,6 +228,7 @@ class BTWebhookParams:
             id=id,
             is_transient=is_transient,
             link_document_id=link_document_id,
+            name=name,
             options=options,
             part_id=part_id,
             project_id=project_id,

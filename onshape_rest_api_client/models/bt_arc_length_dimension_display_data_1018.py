@@ -32,6 +32,7 @@ class BTArcLengthDimensionDisplayData1018:
         id (str | Unset):
         is_annotation_dimension (bool | Unset):
         is_associated_with_flat (bool | Unset):
+        is_derived (bool | Unset):
         is_driven (bool | Unset):
         is_over_defined (bool | Unset):
         lower_tolerance (float | Unset):
@@ -67,6 +68,7 @@ class BTArcLengthDimensionDisplayData1018:
     id: str | Unset = UNSET
     is_annotation_dimension: bool | Unset = UNSET
     is_associated_with_flat: bool | Unset = UNSET
+    is_derived: bool | Unset = UNSET
     is_driven: bool | Unset = UNSET
     is_over_defined: bool | Unset = UNSET
     lower_tolerance: float | Unset = UNSET
@@ -114,6 +116,8 @@ class BTArcLengthDimensionDisplayData1018:
         is_annotation_dimension = self.is_annotation_dimension
 
         is_associated_with_flat = self.is_associated_with_flat
+
+        is_derived = self.is_derived
 
         is_driven = self.is_driven
 
@@ -190,6 +194,8 @@ class BTArcLengthDimensionDisplayData1018:
             field_dict["isAnnotationDimension"] = is_annotation_dimension
         if is_associated_with_flat is not UNSET:
             field_dict["isAssociatedWithFlat"] = is_associated_with_flat
+        if is_derived is not UNSET:
+            field_dict["isDerived"] = is_derived
         if is_driven is not UNSET:
             field_dict["isDriven"] = is_driven
         if is_over_defined is not UNSET:
@@ -270,6 +276,8 @@ class BTArcLengthDimensionDisplayData1018:
 
         is_associated_with_flat = d.pop("isAssociatedWithFlat", UNSET)
 
+        is_derived = d.pop("isDerived", UNSET)
+
         is_driven = d.pop("isDriven", UNSET)
 
         is_over_defined = d.pop("isOverDefined", UNSET)
@@ -342,6 +350,7 @@ class BTArcLengthDimensionDisplayData1018:
             id=id,
             is_annotation_dimension=is_annotation_dimension,
             is_associated_with_flat=is_associated_with_flat,
+            is_derived=is_derived,
             is_driven=is_driven,
             is_over_defined=is_over_defined,
             lower_tolerance=lower_tolerance,

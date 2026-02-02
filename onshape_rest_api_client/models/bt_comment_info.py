@@ -24,6 +24,8 @@ T = TypeVar("T", bound="BTCommentInfo")
 class BTCommentInfo:
     """
     Attributes:
+        annotation_id (str | Unset):
+        annotation_type (int | Unset):
         assembly_features (list[str] | Unset):
         assigned_at (datetime.datetime | Unset):
         assignee (BTUserSummaryInfo | Unset):
@@ -32,6 +34,10 @@ class BTCommentInfo:
         can_resolve_or_reopen (bool | Unset):
         coordinates (CoordinatesInfo | Unset):
         created_at (datetime.datetime | Unset):
+        dimension_constraint_id (str | Unset):
+        dimension_feature_id (str | Unset):
+        dimension_parameter_id (str | Unset):
+        dimension_part_query (str | Unset):
         document_id (str | Unset):
         element_feature (str | Unset):
         element_id (str | Unset):
@@ -61,6 +67,8 @@ class BTCommentInfo:
         workspace_id (str | Unset):
     """
 
+    annotation_id: str | Unset = UNSET
+    annotation_type: int | Unset = UNSET
     assembly_features: list[str] | Unset = UNSET
     assigned_at: datetime.datetime | Unset = UNSET
     assignee: BTUserSummaryInfo | Unset = UNSET
@@ -69,6 +77,10 @@ class BTCommentInfo:
     can_resolve_or_reopen: bool | Unset = UNSET
     coordinates: CoordinatesInfo | Unset = UNSET
     created_at: datetime.datetime | Unset = UNSET
+    dimension_constraint_id: str | Unset = UNSET
+    dimension_feature_id: str | Unset = UNSET
+    dimension_parameter_id: str | Unset = UNSET
+    dimension_part_query: str | Unset = UNSET
     document_id: str | Unset = UNSET
     element_feature: str | Unset = UNSET
     element_id: str | Unset = UNSET
@@ -99,6 +111,10 @@ class BTCommentInfo:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        annotation_id = self.annotation_id
+
+        annotation_type = self.annotation_type
+
         assembly_features: list[str] | Unset = UNSET
         if not isinstance(self.assembly_features, Unset):
             assembly_features = self.assembly_features
@@ -126,6 +142,14 @@ class BTCommentInfo:
         created_at: str | Unset = UNSET
         if not isinstance(self.created_at, Unset):
             created_at = self.created_at.isoformat()
+
+        dimension_constraint_id = self.dimension_constraint_id
+
+        dimension_feature_id = self.dimension_feature_id
+
+        dimension_parameter_id = self.dimension_parameter_id
+
+        dimension_part_query = self.dimension_part_query
 
         document_id = self.document_id
 
@@ -200,6 +224,10 @@ class BTCommentInfo:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if annotation_id is not UNSET:
+            field_dict["annotationId"] = annotation_id
+        if annotation_type is not UNSET:
+            field_dict["annotationType"] = annotation_type
         if assembly_features is not UNSET:
             field_dict["assemblyFeatures"] = assembly_features
         if assigned_at is not UNSET:
@@ -216,6 +244,14 @@ class BTCommentInfo:
             field_dict["coordinates"] = coordinates
         if created_at is not UNSET:
             field_dict["createdAt"] = created_at
+        if dimension_constraint_id is not UNSET:
+            field_dict["dimensionConstraintId"] = dimension_constraint_id
+        if dimension_feature_id is not UNSET:
+            field_dict["dimensionFeatureId"] = dimension_feature_id
+        if dimension_parameter_id is not UNSET:
+            field_dict["dimensionParameterId"] = dimension_parameter_id
+        if dimension_part_query is not UNSET:
+            field_dict["dimensionPartQuery"] = dimension_part_query
         if document_id is not UNSET:
             field_dict["documentId"] = document_id
         if element_feature is not UNSET:
@@ -281,6 +317,10 @@ class BTCommentInfo:
         from ..models.coordinates_info import CoordinatesInfo
 
         d = dict(src_dict)
+        annotation_id = d.pop("annotationId", UNSET)
+
+        annotation_type = d.pop("annotationType", UNSET)
+
         assembly_features = cast(list[str], d.pop("assemblyFeatures", UNSET))
 
         _assigned_at = d.pop("assignedAt", UNSET)
@@ -321,6 +361,14 @@ class BTCommentInfo:
             created_at = UNSET
         else:
             created_at = isoparse(_created_at)
+
+        dimension_constraint_id = d.pop("dimensionConstraintId", UNSET)
+
+        dimension_feature_id = d.pop("dimensionFeatureId", UNSET)
+
+        dimension_parameter_id = d.pop("dimensionParameterId", UNSET)
+
+        dimension_part_query = d.pop("dimensionPartQuery", UNSET)
 
         document_id = d.pop("documentId", UNSET)
 
@@ -412,6 +460,8 @@ class BTCommentInfo:
         workspace_id = d.pop("workspaceId", UNSET)
 
         bt_comment_info = cls(
+            annotation_id=annotation_id,
+            annotation_type=annotation_type,
             assembly_features=assembly_features,
             assigned_at=assigned_at,
             assignee=assignee,
@@ -420,6 +470,10 @@ class BTCommentInfo:
             can_resolve_or_reopen=can_resolve_or_reopen,
             coordinates=coordinates,
             created_at=created_at,
+            dimension_constraint_id=dimension_constraint_id,
+            dimension_feature_id=dimension_feature_id,
+            dimension_parameter_id=dimension_parameter_id,
+            dimension_part_query=dimension_part_query,
             document_id=document_id,
             element_feature=element_feature,
             element_id=element_id,

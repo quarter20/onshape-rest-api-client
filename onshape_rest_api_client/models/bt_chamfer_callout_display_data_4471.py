@@ -29,6 +29,7 @@ class BTChamferCalloutDisplayData4471:
         dxdy_segments (list[BTVector2D1812] | Unset):
         is_constrained_to_plane (bool | Unset):
         is_deletion (bool | Unset):
+        is_derived (bool | Unset):
         main_constraint_id (str | Unset):
         main_feature_id (str | Unset):
         main_parameter_id (str | Unset):
@@ -50,6 +51,7 @@ class BTChamferCalloutDisplayData4471:
     dxdy_segments: list[BTVector2D1812] | Unset = UNSET
     is_constrained_to_plane: bool | Unset = UNSET
     is_deletion: bool | Unset = UNSET
+    is_derived: bool | Unset = UNSET
     main_constraint_id: str | Unset = UNSET
     main_feature_id: str | Unset = UNSET
     main_parameter_id: str | Unset = UNSET
@@ -88,6 +90,8 @@ class BTChamferCalloutDisplayData4471:
         is_constrained_to_plane = self.is_constrained_to_plane
 
         is_deletion = self.is_deletion
+
+        is_derived = self.is_derived
 
         main_constraint_id = self.main_constraint_id
 
@@ -138,6 +142,8 @@ class BTChamferCalloutDisplayData4471:
             field_dict["isConstrainedToPlane"] = is_constrained_to_plane
         if is_deletion is not UNSET:
             field_dict["isDeletion"] = is_deletion
+        if is_derived is not UNSET:
+            field_dict["isDerived"] = is_derived
         if main_constraint_id is not UNSET:
             field_dict["mainConstraintId"] = main_constraint_id
         if main_feature_id is not UNSET:
@@ -203,6 +209,8 @@ class BTChamferCalloutDisplayData4471:
 
         is_deletion = d.pop("isDeletion", UNSET)
 
+        is_derived = d.pop("isDerived", UNSET)
+
         main_constraint_id = d.pop("mainConstraintId", UNSET)
 
         main_feature_id = d.pop("mainFeatureId", UNSET)
@@ -249,6 +257,7 @@ class BTChamferCalloutDisplayData4471:
             dxdy_segments=dxdy_segments,
             is_constrained_to_plane=is_constrained_to_plane,
             is_deletion=is_deletion,
+            is_derived=is_derived,
             main_constraint_id=main_constraint_id,
             main_feature_id=main_feature_id,
             main_parameter_id=main_parameter_id,

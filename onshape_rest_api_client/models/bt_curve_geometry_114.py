@@ -6,47 +6,38 @@ from typing import Any, TypeVar
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..models.gbt_sketch_entity_type import GBTSketchEntityType
 from ..types import UNSET, Unset
 
-T = TypeVar("T", bound="BTMSuppressionState1924")
+T = TypeVar("T", bound="BTCurveGeometry114")
 
 
 @_attrs_define
-class BTMSuppressionState1924:
+class BTCurveGeometry114:
     """
     Attributes:
         bt_type (str | Unset): Type of JSON object.
-        import_microversion (str | Unset): Microversion that resulted from the import.
-        node_id (str | Unset):
-        suppression_configured (bool | Unset):
+        entity_type (GBTSketchEntityType | Unset):
     """
 
     bt_type: str | Unset = UNSET
-    import_microversion: str | Unset = UNSET
-    node_id: str | Unset = UNSET
-    suppression_configured: bool | Unset = UNSET
+    entity_type: GBTSketchEntityType | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         bt_type = self.bt_type
 
-        import_microversion = self.import_microversion
-
-        node_id = self.node_id
-
-        suppression_configured = self.suppression_configured
+        entity_type: str | Unset = UNSET
+        if not isinstance(self.entity_type, Unset):
+            entity_type = self.entity_type.value
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if bt_type is not UNSET:
             field_dict["btType"] = bt_type
-        if import_microversion is not UNSET:
-            field_dict["importMicroversion"] = import_microversion
-        if node_id is not UNSET:
-            field_dict["nodeId"] = node_id
-        if suppression_configured is not UNSET:
-            field_dict["suppressionConfigured"] = suppression_configured
+        if entity_type is not UNSET:
+            field_dict["entityType"] = entity_type
 
         return field_dict
 
@@ -55,21 +46,20 @@ class BTMSuppressionState1924:
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)
 
-        import_microversion = d.pop("importMicroversion", UNSET)
+        _entity_type = d.pop("entityType", UNSET)
+        entity_type: GBTSketchEntityType | Unset
+        if isinstance(_entity_type, Unset):
+            entity_type = UNSET
+        else:
+            entity_type = GBTSketchEntityType(_entity_type)
 
-        node_id = d.pop("nodeId", UNSET)
-
-        suppression_configured = d.pop("suppressionConfigured", UNSET)
-
-        btm_suppression_state_1924 = cls(
+        bt_curve_geometry_114 = cls(
             bt_type=bt_type,
-            import_microversion=import_microversion,
-            node_id=node_id,
-            suppression_configured=suppression_configured,
+            entity_type=entity_type,
         )
 
-        btm_suppression_state_1924.additional_properties = d
-        return btm_suppression_state_1924
+        bt_curve_geometry_114.additional_properties = d
+        return bt_curve_geometry_114
 
     @property
     def additional_keys(self) -> list[str]:

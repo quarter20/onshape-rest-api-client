@@ -45,6 +45,7 @@ class BTAssemblySimulation2246:
         occurrence_queries_from_all_configurations (list[BTMIndividualQueryWithOccurrenceBase904] | Unset):
         parameter_libraries (list[BTMParameter1] | Unset):
         parametric_instance_feature (bool | Unset):
+        parent_suppressed (bool | Unset):
         return_after_subfeatures (bool | Unset): For internal use only. Should always be `false`.
         sub_features (list[BTMFeature134] | Unset): List of subfeatures belonging to the feature.
         sub_features_not_used_in_query (list[BTMFeature134] | Unset):
@@ -76,6 +77,7 @@ class BTAssemblySimulation2246:
     occurrence_queries_from_all_configurations: list[BTMIndividualQueryWithOccurrenceBase904] | Unset = UNSET
     parameter_libraries: list[BTMParameter1] | Unset = UNSET
     parametric_instance_feature: bool | Unset = UNSET
+    parent_suppressed: bool | Unset = UNSET
     return_after_subfeatures: bool | Unset = UNSET
     sub_features: list[BTMFeature134] | Unset = UNSET
     sub_features_not_used_in_query: list[BTMFeature134] | Unset = UNSET
@@ -142,6 +144,8 @@ class BTAssemblySimulation2246:
                 parameter_libraries.append(parameter_libraries_item)
 
         parametric_instance_feature = self.parametric_instance_feature
+
+        parent_suppressed = self.parent_suppressed
 
         return_after_subfeatures = self.return_after_subfeatures
 
@@ -216,6 +220,8 @@ class BTAssemblySimulation2246:
             field_dict["parameterLibraries"] = parameter_libraries
         if parametric_instance_feature is not UNSET:
             field_dict["parametricInstanceFeature"] = parametric_instance_feature
+        if parent_suppressed is not UNSET:
+            field_dict["parentSuppressed"] = parent_suppressed
         if return_after_subfeatures is not UNSET:
             field_dict["returnAfterSubfeatures"] = return_after_subfeatures
         if sub_features is not UNSET:
@@ -307,6 +313,8 @@ class BTAssemblySimulation2246:
 
         parametric_instance_feature = d.pop("parametricInstanceFeature", UNSET)
 
+        parent_suppressed = d.pop("parentSuppressed", UNSET)
+
         return_after_subfeatures = d.pop("returnAfterSubfeatures", UNSET)
 
         _sub_features = d.pop("subFeatures", UNSET)
@@ -369,6 +377,7 @@ class BTAssemblySimulation2246:
             occurrence_queries_from_all_configurations=occurrence_queries_from_all_configurations,
             parameter_libraries=parameter_libraries,
             parametric_instance_feature=parametric_instance_feature,
+            parent_suppressed=parent_suppressed,
             return_after_subfeatures=return_after_subfeatures,
             sub_features=sub_features,
             sub_features_not_used_in_query=sub_features_not_used_in_query,

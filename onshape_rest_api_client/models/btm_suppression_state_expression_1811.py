@@ -22,12 +22,14 @@ class BTMSuppressionStateExpression1811:
         bt_type (str | Unset): Type of JSON object.
         import_microversion (str | Unset): Microversion that resulted from the import.
         node_id (str | Unset):
+        suppression_configured (bool | Unset):
         value (BTMParameterQuantity147 | Unset):
     """
 
     bt_type: str | Unset = UNSET
     import_microversion: str | Unset = UNSET
     node_id: str | Unset = UNSET
+    suppression_configured: bool | Unset = UNSET
     value: BTMParameterQuantity147 | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -37,6 +39,8 @@ class BTMSuppressionStateExpression1811:
         import_microversion = self.import_microversion
 
         node_id = self.node_id
+
+        suppression_configured = self.suppression_configured
 
         value: dict[str, Any] | Unset = UNSET
         if not isinstance(self.value, Unset):
@@ -51,6 +55,8 @@ class BTMSuppressionStateExpression1811:
             field_dict["importMicroversion"] = import_microversion
         if node_id is not UNSET:
             field_dict["nodeId"] = node_id
+        if suppression_configured is not UNSET:
+            field_dict["suppressionConfigured"] = suppression_configured
         if value is not UNSET:
             field_dict["value"] = value
 
@@ -67,6 +73,8 @@ class BTMSuppressionStateExpression1811:
 
         node_id = d.pop("nodeId", UNSET)
 
+        suppression_configured = d.pop("suppressionConfigured", UNSET)
+
         _value = d.pop("value", UNSET)
         value: BTMParameterQuantity147 | Unset
         if isinstance(_value, Unset):
@@ -78,6 +86,7 @@ class BTMSuppressionStateExpression1811:
             bt_type=bt_type,
             import_microversion=import_microversion,
             node_id=node_id,
+            suppression_configured=suppression_configured,
             value=value,
         )
 

@@ -20,10 +20,16 @@ T = TypeVar("T", bound="BTCommentParams")
 class BTCommentParams:
     """
     Attributes:
+        annotation_id (str | Unset):
+        annotation_type (int | Unset):
         assembly_feature (str | Unset):
         assignee (str | Unset): Assign the comment during creation. Comments cannot be reassigned during an update at
             this time.
         coordinates (CoordinatesParams | Unset):
+        dimension_constraint_id (str | Unset):
+        dimension_feature_id (str | Unset):
+        dimension_parameter_id (str | Unset):
+        dimension_part_query (str | Unset):
         document_id (str | Unset):
         element_feature (str | Unset):
         element_id (str | Unset):
@@ -39,9 +45,15 @@ class BTCommentParams:
         workspace_id (str | Unset):
     """
 
+    annotation_id: str | Unset = UNSET
+    annotation_type: int | Unset = UNSET
     assembly_feature: str | Unset = UNSET
     assignee: str | Unset = UNSET
     coordinates: CoordinatesParams | Unset = UNSET
+    dimension_constraint_id: str | Unset = UNSET
+    dimension_feature_id: str | Unset = UNSET
+    dimension_parameter_id: str | Unset = UNSET
+    dimension_part_query: str | Unset = UNSET
     document_id: str | Unset = UNSET
     element_feature: str | Unset = UNSET
     element_id: str | Unset = UNSET
@@ -58,6 +70,10 @@ class BTCommentParams:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        annotation_id = self.annotation_id
+
+        annotation_type = self.annotation_type
+
         assembly_feature = self.assembly_feature
 
         assignee = self.assignee
@@ -65,6 +81,14 @@ class BTCommentParams:
         coordinates: dict[str, Any] | Unset = UNSET
         if not isinstance(self.coordinates, Unset):
             coordinates = self.coordinates.to_dict()
+
+        dimension_constraint_id = self.dimension_constraint_id
+
+        dimension_feature_id = self.dimension_feature_id
+
+        dimension_parameter_id = self.dimension_parameter_id
+
+        dimension_part_query = self.dimension_part_query
 
         document_id = self.document_id
 
@@ -97,12 +121,24 @@ class BTCommentParams:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if annotation_id is not UNSET:
+            field_dict["annotationId"] = annotation_id
+        if annotation_type is not UNSET:
+            field_dict["annotationType"] = annotation_type
         if assembly_feature is not UNSET:
             field_dict["assemblyFeature"] = assembly_feature
         if assignee is not UNSET:
             field_dict["assignee"] = assignee
         if coordinates is not UNSET:
             field_dict["coordinates"] = coordinates
+        if dimension_constraint_id is not UNSET:
+            field_dict["dimensionConstraintId"] = dimension_constraint_id
+        if dimension_feature_id is not UNSET:
+            field_dict["dimensionFeatureId"] = dimension_feature_id
+        if dimension_parameter_id is not UNSET:
+            field_dict["dimensionParameterId"] = dimension_parameter_id
+        if dimension_part_query is not UNSET:
+            field_dict["dimensionPartQuery"] = dimension_part_query
         if document_id is not UNSET:
             field_dict["documentId"] = document_id
         if element_feature is not UNSET:
@@ -138,6 +174,10 @@ class BTCommentParams:
         from ..models.coordinates_params import CoordinatesParams
 
         d = dict(src_dict)
+        annotation_id = d.pop("annotationId", UNSET)
+
+        annotation_type = d.pop("annotationType", UNSET)
+
         assembly_feature = d.pop("assemblyFeature", UNSET)
 
         assignee = d.pop("assignee", UNSET)
@@ -148,6 +188,14 @@ class BTCommentParams:
             coordinates = UNSET
         else:
             coordinates = CoordinatesParams.from_dict(_coordinates)
+
+        dimension_constraint_id = d.pop("dimensionConstraintId", UNSET)
+
+        dimension_feature_id = d.pop("dimensionFeatureId", UNSET)
+
+        dimension_parameter_id = d.pop("dimensionParameterId", UNSET)
+
+        dimension_part_query = d.pop("dimensionPartQuery", UNSET)
 
         document_id = d.pop("documentId", UNSET)
 
@@ -181,9 +229,15 @@ class BTCommentParams:
         workspace_id = d.pop("workspaceId", UNSET)
 
         bt_comment_params = cls(
+            annotation_id=annotation_id,
+            annotation_type=annotation_type,
             assembly_feature=assembly_feature,
             assignee=assignee,
             coordinates=coordinates,
+            dimension_constraint_id=dimension_constraint_id,
+            dimension_feature_id=dimension_feature_id,
+            dimension_parameter_id=dimension_parameter_id,
+            dimension_part_query=dimension_part_query,
             document_id=document_id,
             element_feature=element_feature,
             element_id=element_id,

@@ -22,6 +22,7 @@ class BTMSuppressionStateConfigured2598:
         bt_type (str | Unset): Type of JSON object.
         import_microversion (str | Unset): Microversion that resulted from the import.
         node_id (str | Unset):
+        suppression_configured (bool | Unset):
         configuration_parameter_id (str | Unset):
         configuration_parameter_id_field_index (int | Unset):
         values (list[BTMConfiguredValue1341] | Unset):
@@ -31,6 +32,7 @@ class BTMSuppressionStateConfigured2598:
     bt_type: str | Unset = UNSET
     import_microversion: str | Unset = UNSET
     node_id: str | Unset = UNSET
+    suppression_configured: bool | Unset = UNSET
     configuration_parameter_id: str | Unset = UNSET
     configuration_parameter_id_field_index: int | Unset = UNSET
     values: list[BTMConfiguredValue1341] | Unset = UNSET
@@ -43,6 +45,8 @@ class BTMSuppressionStateConfigured2598:
         import_microversion = self.import_microversion
 
         node_id = self.node_id
+
+        suppression_configured = self.suppression_configured
 
         configuration_parameter_id = self.configuration_parameter_id
 
@@ -66,6 +70,8 @@ class BTMSuppressionStateConfigured2598:
             field_dict["importMicroversion"] = import_microversion
         if node_id is not UNSET:
             field_dict["nodeId"] = node_id
+        if suppression_configured is not UNSET:
+            field_dict["suppressionConfigured"] = suppression_configured
         if configuration_parameter_id is not UNSET:
             field_dict["configurationParameterId"] = configuration_parameter_id
         if configuration_parameter_id_field_index is not UNSET:
@@ -88,6 +94,8 @@ class BTMSuppressionStateConfigured2598:
 
         node_id = d.pop("nodeId", UNSET)
 
+        suppression_configured = d.pop("suppressionConfigured", UNSET)
+
         configuration_parameter_id = d.pop("configurationParameterId", UNSET)
 
         configuration_parameter_id_field_index = d.pop("configurationParameterIdFieldIndex", UNSET)
@@ -107,6 +115,7 @@ class BTMSuppressionStateConfigured2598:
             bt_type=bt_type,
             import_microversion=import_microversion,
             node_id=node_id,
+            suppression_configured=suppression_configured,
             configuration_parameter_id=configuration_parameter_id,
             configuration_parameter_id_field_index=configuration_parameter_id_field_index,
             values=values,

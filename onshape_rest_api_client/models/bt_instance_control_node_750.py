@@ -22,6 +22,7 @@ class BTInstanceControlNode750:
         bt_type (str | Unset): Type of JSON object.
         import_microversion (str | Unset): Microversion that resulted from the import.
         node_id (str | Unset):
+        parent_suppressed (bool | Unset):
         suppressed (bool | Unset):
         suppressed_field_index (int | Unset):
         suppression_configured (bool | Unset): `true` if the suppression is configured in the Part Studio.
@@ -32,6 +33,7 @@ class BTInstanceControlNode750:
     bt_type: str | Unset = UNSET
     import_microversion: str | Unset = UNSET
     node_id: str | Unset = UNSET
+    parent_suppressed: bool | Unset = UNSET
     suppressed: bool | Unset = UNSET
     suppressed_field_index: int | Unset = UNSET
     suppression_configured: bool | Unset = UNSET
@@ -45,6 +47,8 @@ class BTInstanceControlNode750:
         import_microversion = self.import_microversion
 
         node_id = self.node_id
+
+        parent_suppressed = self.parent_suppressed
 
         suppressed = self.suppressed
 
@@ -67,6 +71,8 @@ class BTInstanceControlNode750:
             field_dict["importMicroversion"] = import_microversion
         if node_id is not UNSET:
             field_dict["nodeId"] = node_id
+        if parent_suppressed is not UNSET:
+            field_dict["parentSuppressed"] = parent_suppressed
         if suppressed is not UNSET:
             field_dict["suppressed"] = suppressed
         if suppressed_field_index is not UNSET:
@@ -91,6 +97,8 @@ class BTInstanceControlNode750:
 
         node_id = d.pop("nodeId", UNSET)
 
+        parent_suppressed = d.pop("parentSuppressed", UNSET)
+
         suppressed = d.pop("suppressed", UNSET)
 
         suppressed_field_index = d.pop("suppressedFieldIndex", UNSET)
@@ -110,6 +118,7 @@ class BTInstanceControlNode750:
             bt_type=bt_type,
             import_microversion=import_microversion,
             node_id=node_id,
+            parent_suppressed=parent_suppressed,
             suppressed=suppressed,
             suppressed_field_index=suppressed_field_index,
             suppression_configured=suppression_configured,
