@@ -105,7 +105,7 @@ import httpx
 from onshape_rest_api_client import Client
 
 client = Client(
-    base_url="https://api.example.com",
+    base_url="https://cad.onshape.com/api/v13",
 )
 # Note that base_url needs to be re-set, as would any shared cookies, headers, etc.
 client.set_httpx_client(httpx.Client(base_url="https://cad.onshape.com/api/v13", proxies="http://localhost:8030"))
