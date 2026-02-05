@@ -20,6 +20,8 @@ dependencies = [
 
 [project.urls]
 repository = "https://github.com/quarter20/onshape-rest-api-client"
+changelog = "https://github.com/quarter20/onshape-rest-api-client/blob/main/CHANGELOG.md"
+issues = "https://github.com/quarter20/onshape-rest-api-client/issues"
 
 [tool.poetry]
 packages = [

@@ -1,4 +1,8 @@
 # onshape-rest-api-client
+<p>
+<a href="https://pypi.org/project/onshape-rest-api-client/"><img alt="pypi version" src="https://img.shields.io/pypi/v/onshape-rest-api-client"></a>
+</p>
+
 A python client library for accessing the [Onshape REST API](https://onshape-public.github.io/docs/api-intro/explorer/).
 
 
