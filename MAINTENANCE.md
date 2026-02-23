@@ -31,7 +31,7 @@ openapi-python-client generate --url https://cad.onshape.com/api/openapi
 8. update the `base_url` in [README.md](README.md) if changed
 
 
-## Building / publishing this package
+## Building and Publishing
 This project uses [Poetry](https://python-poetry.org/) to manage dependencies and packaging.  Here are the basics to release to pypi:
 1. When regenerating code, examine the dependencies of the auto-generated `pyproject.toml` and compare with [pyproject.toml](pyproject.toml)
 1. Build distribution files with `poetry build`
