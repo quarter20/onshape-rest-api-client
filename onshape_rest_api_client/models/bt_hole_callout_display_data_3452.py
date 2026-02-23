@@ -22,6 +22,7 @@ T = TypeVar("T", bound="BTHoleCalloutDisplayData3452")
 class BTHoleCalloutDisplayData3452:
     """
     Attributes:
+        annotation_id (str | Unset):
         annotation_plane (BTCoordinateSystem387 | Unset):
         base_plane (BTCoordinateSystem387 | Unset):
         bt_type (str | Unset): Type of JSON object.
@@ -44,6 +45,7 @@ class BTHoleCalloutDisplayData3452:
         diameter (BTTolerantValueDisplayData3483 | Unset):
         feature_id (str | Unset):
         hole_type (GBTHoleType | Unset):
+        instance_id (str | Unset):
         is_pipe_tap (bool | Unset):
         is_tapered_pipe_tap (bool | Unset):
         is_tapped (bool | Unset):
@@ -54,6 +56,7 @@ class BTHoleCalloutDisplayData3452:
         tapped_depth (BTTolerantValueDisplayData3483 | Unset):
     """
 
+    annotation_id: str | Unset = UNSET
     annotation_plane: BTCoordinateSystem387 | Unset = UNSET
     base_plane: BTCoordinateSystem387 | Unset = UNSET
     bt_type: str | Unset = UNSET
@@ -76,6 +79,7 @@ class BTHoleCalloutDisplayData3452:
     diameter: BTTolerantValueDisplayData3483 | Unset = UNSET
     feature_id: str | Unset = UNSET
     hole_type: GBTHoleType | Unset = UNSET
+    instance_id: str | Unset = UNSET
     is_pipe_tap: bool | Unset = UNSET
     is_tapered_pipe_tap: bool | Unset = UNSET
     is_tapped: bool | Unset = UNSET
@@ -87,6 +91,8 @@ class BTHoleCalloutDisplayData3452:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        annotation_id = self.annotation_id
+
         annotation_plane: dict[str, Any] | Unset = UNSET
         if not isinstance(self.annotation_plane, Unset):
             annotation_plane = self.annotation_plane.to_dict()
@@ -156,6 +162,8 @@ class BTHoleCalloutDisplayData3452:
         if not isinstance(self.hole_type, Unset):
             hole_type = self.hole_type.value
 
+        instance_id = self.instance_id
+
         is_pipe_tap = self.is_pipe_tap
 
         is_tapered_pipe_tap = self.is_tapered_pipe_tap
@@ -179,6 +187,8 @@ class BTHoleCalloutDisplayData3452:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if annotation_id is not UNSET:
+            field_dict["annotationId"] = annotation_id
         if annotation_plane is not UNSET:
             field_dict["annotationPlane"] = annotation_plane
         if base_plane is not UNSET:
@@ -223,6 +233,8 @@ class BTHoleCalloutDisplayData3452:
             field_dict["featureId"] = feature_id
         if hole_type is not UNSET:
             field_dict["holeType"] = hole_type
+        if instance_id is not UNSET:
+            field_dict["instanceId"] = instance_id
         if is_pipe_tap is not UNSET:
             field_dict["isPipeTap"] = is_pipe_tap
         if is_tapered_pipe_tap is not UNSET:
@@ -249,6 +261,8 @@ class BTHoleCalloutDisplayData3452:
         from ..models.bt_vector_2d1812 import BTVector2D1812
 
         d = dict(src_dict)
+        annotation_id = d.pop("annotationId", UNSET)
+
         _annotation_plane = d.pop("annotationPlane", UNSET)
         annotation_plane: BTCoordinateSystem387 | Unset
         if isinstance(_annotation_plane, Unset):
@@ -345,6 +359,8 @@ class BTHoleCalloutDisplayData3452:
         else:
             hole_type = GBTHoleType(_hole_type)
 
+        instance_id = d.pop("instanceId", UNSET)
+
         is_pipe_tap = d.pop("isPipeTap", UNSET)
 
         is_tapered_pipe_tap = d.pop("isTaperedPipeTap", UNSET)
@@ -372,6 +388,7 @@ class BTHoleCalloutDisplayData3452:
             tapped_depth = BTTolerantValueDisplayData3483.from_dict(_tapped_depth)
 
         bt_hole_callout_display_data_3452 = cls(
+            annotation_id=annotation_id,
             annotation_plane=annotation_plane,
             base_plane=base_plane,
             bt_type=bt_type,
@@ -394,6 +411,7 @@ class BTHoleCalloutDisplayData3452:
             diameter=diameter,
             feature_id=feature_id,
             hole_type=hole_type,
+            instance_id=instance_id,
             is_pipe_tap=is_pipe_tap,
             is_tapered_pipe_tap=is_tapered_pipe_tap,
             is_tapped=is_tapped,

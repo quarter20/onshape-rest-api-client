@@ -5,15 +5,15 @@ from urllib.parse import quote
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.add_attachment_body import AddAttachmentBody
 from ...models.bt_comment_info import BTCommentInfo
+from ...models.btb_file_upload import BTBFileUpload
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     cid: str,
     *,
-    body: AddAttachmentBody | Unset = UNSET,
+    body: BTBFileUpload | Unset = UNSET,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -50,13 +50,13 @@ def sync_detailed(
     cid: str,
     *,
     client: AuthenticatedClient,
-    body: AddAttachmentBody | Unset = UNSET,
+    body: BTBFileUpload | Unset = UNSET,
 ) -> Response[BTCommentInfo]:
     """Add an attachment to a comment.
 
     Args:
         cid (str):
-        body (AddAttachmentBody | Unset):
+        body (BTBFileUpload | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -82,13 +82,13 @@ def sync(
     cid: str,
     *,
     client: AuthenticatedClient,
-    body: AddAttachmentBody | Unset = UNSET,
+    body: BTBFileUpload | Unset = UNSET,
 ) -> BTCommentInfo | None:
     """Add an attachment to a comment.
 
     Args:
         cid (str):
-        body (AddAttachmentBody | Unset):
+        body (BTBFileUpload | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -109,13 +109,13 @@ async def asyncio_detailed(
     cid: str,
     *,
     client: AuthenticatedClient,
-    body: AddAttachmentBody | Unset = UNSET,
+    body: BTBFileUpload | Unset = UNSET,
 ) -> Response[BTCommentInfo]:
     """Add an attachment to a comment.
 
     Args:
         cid (str):
-        body (AddAttachmentBody | Unset):
+        body (BTBFileUpload | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -139,13 +139,13 @@ async def asyncio(
     cid: str,
     *,
     client: AuthenticatedClient,
-    body: AddAttachmentBody | Unset = UNSET,
+    body: BTBFileUpload | Unset = UNSET,
 ) -> BTCommentInfo | None:
     """Add an attachment to a comment.
 
     Args:
         cid (str):
-        body (AddAttachmentBody | Unset):
+        body (BTBFileUpload | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

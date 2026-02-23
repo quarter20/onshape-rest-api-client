@@ -28,6 +28,8 @@ class BTMInContextQuery2254:
         generated_section_query_id (str | Unset):
         query (BTMIndividualQueryBase139 | Unset):
         query_string (str | Unset):
+        feature_id (str | Unset):
+        feature_query (bool | Unset):
         path (list[str] | Unset):
     """
 
@@ -40,6 +42,8 @@ class BTMInContextQuery2254:
     generated_section_query_id: str | Unset = UNSET
     query: BTMIndividualQueryBase139 | Unset = UNSET
     query_string: str | Unset = UNSET
+    feature_id: str | Unset = UNSET
+    feature_query: bool | Unset = UNSET
     path: list[str] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -68,6 +72,10 @@ class BTMInContextQuery2254:
 
         query_string = self.query_string
 
+        feature_id = self.feature_id
+
+        feature_query = self.feature_query
+
         path: list[str] | Unset = UNSET
         if not isinstance(self.path, Unset):
             path = self.path
@@ -93,6 +101,10 @@ class BTMInContextQuery2254:
             field_dict["query"] = query
         if query_string is not UNSET:
             field_dict["queryString"] = query_string
+        if feature_id is not UNSET:
+            field_dict["featureId"] = feature_id
+        if feature_query is not UNSET:
+            field_dict["featureQuery"] = feature_query
         if path is not UNSET:
             field_dict["path"] = path
 
@@ -131,6 +143,10 @@ class BTMInContextQuery2254:
 
         query_string = d.pop("queryString", UNSET)
 
+        feature_id = d.pop("featureId", UNSET)
+
+        feature_query = d.pop("featureQuery", UNSET)
+
         path = cast(list[str], d.pop("path", UNSET))
 
         btm_in_context_query_2254 = cls(
@@ -143,6 +159,8 @@ class BTMInContextQuery2254:
             generated_section_query_id=generated_section_query_id,
             query=query,
             query_string=query_string,
+            feature_id=feature_id,
+            feature_query=feature_query,
             path=path,
         )
 

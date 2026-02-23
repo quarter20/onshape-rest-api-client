@@ -6,7 +6,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.bt_app_element_modify_info import BTAppElementModifyInfo
-from ...models.upload_blob_subelement_body import UploadBlobSubelementBody
+from ...models.btb_app_element_blob_upload_params import BTBAppElementBlobUploadParams
 from ...types import UNSET, Response, Unset
 
 
@@ -16,7 +16,7 @@ def _get_kwargs(
     eid: str,
     bid: str,
     *,
-    body: UploadBlobSubelementBody | Unset = UNSET,
+    body: BTBAppElementBlobUploadParams | Unset = UNSET,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -61,7 +61,7 @@ def sync_detailed(
     bid: str,
     *,
     client: AuthenticatedClient,
-    body: UploadBlobSubelementBody | Unset = UNSET,
+    body: BTBAppElementBlobUploadParams | Unset = UNSET,
 ) -> Response[BTAppElementModifyInfo]:
     r"""Create a new blob subelement from an uploaded file.
 
@@ -73,7 +73,7 @@ def sync_detailed(
         wid (str):
         eid (str):
         bid (str):
-        body (UploadBlobSubelementBody | Unset):
+        body (BTBAppElementBlobUploadParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -105,7 +105,7 @@ def sync(
     bid: str,
     *,
     client: AuthenticatedClient,
-    body: UploadBlobSubelementBody | Unset = UNSET,
+    body: BTBAppElementBlobUploadParams | Unset = UNSET,
 ) -> BTAppElementModifyInfo | None:
     r"""Create a new blob subelement from an uploaded file.
 
@@ -117,7 +117,7 @@ def sync(
         wid (str):
         eid (str):
         bid (str):
-        body (UploadBlobSubelementBody | Unset):
+        body (BTBAppElementBlobUploadParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -144,7 +144,7 @@ async def asyncio_detailed(
     bid: str,
     *,
     client: AuthenticatedClient,
-    body: UploadBlobSubelementBody | Unset = UNSET,
+    body: BTBAppElementBlobUploadParams | Unset = UNSET,
 ) -> Response[BTAppElementModifyInfo]:
     r"""Create a new blob subelement from an uploaded file.
 
@@ -156,7 +156,7 @@ async def asyncio_detailed(
         wid (str):
         eid (str):
         bid (str):
-        body (UploadBlobSubelementBody | Unset):
+        body (BTBAppElementBlobUploadParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -186,7 +186,7 @@ async def asyncio(
     bid: str,
     *,
     client: AuthenticatedClient,
-    body: UploadBlobSubelementBody | Unset = UNSET,
+    body: BTBAppElementBlobUploadParams | Unset = UNSET,
 ) -> BTAppElementModifyInfo | None:
     r"""Create a new blob subelement from an uploaded file.
 
@@ -198,7 +198,7 @@ async def asyncio(
         wid (str):
         eid (str):
         bid (str):
-        body (UploadBlobSubelementBody | Unset):
+        body (BTBAppElementBlobUploadParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

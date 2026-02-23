@@ -19,8 +19,6 @@ from .accessor_sparse_values import AccessorSparseValues
 from .accessor_sparse_values_extensions import AccessorSparseValuesExtensions
 from .accessor_sparse_values_extensions_additional_property import AccessorSparseValuesExtensionsAdditionalProperty
 from .accessor_sparse_values_extras import AccessorSparseValuesExtras
-from .add_attachment_body import AddAttachmentBody
-from .add_attachment_body_file import AddAttachmentBodyFile
 from .animation import Animation
 from .animation_channel import AnimationChannel
 from .animation_channel_extensions import AnimationChannelExtensions
@@ -761,6 +759,7 @@ from .bt_plan_subscriber_info import BTPlanSubscriberInfo
 from .bt_planar_image_mapping_4398 import BTPlanarImageMapping4398
 from .bt_plane_description_692 import BTPlaneDescription692
 from .bt_plane_orientation_filter_1700 import BTPlaneOrientationFilter1700
+from .bt_plm_context_info import BTPlmContextInfo
 from .bt_point_entity_1439 import BTPointEntity1439
 from .bt_polyline_display_data_3522 import BTPolylineDisplayData3522
 from .bt_privacy_consent_info import BTPrivacyConsentInfo
@@ -1023,6 +1022,7 @@ from .bt_zip_file_info import BTZipFileInfo
 from .btapi_application_extension_info import BTAPIApplicationExtensionInfo
 from .btapi_application_summary_info import BTAPIApplicationSummaryInfo
 from .btapi_workflowable_type import BTAPIWorkflowableType
+from .btb_app_element_blob_upload_params import BTBAppElementBlobUploadParams
 from .btb_assembly_export_params import BTBAssemblyExportParams
 from .btb_cloud_storage_options import BTBCloudStorageOptions
 from .btb_drawing_operation_params import BTBDrawingOperationParams
@@ -1034,10 +1034,12 @@ from .btb_email_export_options import BTBEmailExportOptions
 from .btb_export_advanced_params import BTBExportAdvancedParams
 from .btb_export_mesh_params import BTBExportMeshParams
 from .btb_export_model_params import BTBExportModelParams
+from .btb_file_upload import BTBFileUpload
 from .btb_gltf_export_params import BTBGltfExportParams
 from .btb_obj_export_params import BTBObjExportParams
 from .btb_solidworks_export_params import BTBSolidworksExportParams
 from .btb_step_export_params import BTBStepExportParams
+from .btb_translation_request_params import BTBTranslationRequestParams
 from .btbs_matrix_386 import BTBSMatrix386
 from .btes_results_filter import BTESResultsFilter
 from .btes_version_workspace_choice import BTESVersionWorkspaceChoice
@@ -1321,8 +1323,6 @@ from .create_blob_translation_wv import CreateBlobTranslationWv
 from .create_instance_response_default import CreateInstanceResponseDefault
 from .create_obsoletion_package_response_default import CreateObsoletionPackageResponseDefault
 from .create_release_package_response_default import CreateReleasePackageResponseDefault
-from .create_translation_body import CreateTranslationBody
-from .create_translation_body_file import CreateTranslationBodyFile
 from .delete_alias_response_default import DeleteAliasResponseDefault
 from .delete_application_thumbnails_response_default import DeleteApplicationThumbnailsResponseDefault
 from .delete_application_thumbnails_wv import DeleteApplicationThumbnailsWv
@@ -1719,12 +1719,6 @@ from .update_wve_metadata_response_default import UpdateWVEMetadataResponseDefau
 from .update_wvep_metadata_iden import UpdateWVEPMetadataIden
 from .update_wvep_metadata_response_default import UpdateWVEPMetadataResponseDefault
 from .update_wvep_metadata_wvm import UpdateWVEPMetadataWvm
-from .upload_blob_subelement_body import UploadBlobSubelementBody
-from .upload_blob_subelement_body_file import UploadBlobSubelementBodyFile
-from .upload_file_create_element_body import UploadFileCreateElementBody
-from .upload_file_create_element_body_file import UploadFileCreateElementBodyFile
-from .upload_file_update_element_body import UploadFileUpdateElementBody
-from .upload_file_update_element_body_file import UploadFileUpdateElementBodyFile
 from .user_role_priority import UserRolePriority
 from .version_alias import VersionAlias
 from .versions import Versions
@@ -1752,8 +1746,6 @@ __all__ = (
     "AccessorSparseValuesExtensions",
     "AccessorSparseValuesExtensionsAdditionalProperty",
     "AccessorSparseValuesExtras",
-    "AddAttachmentBody",
-    "AddAttachmentBodyFile",
     "Animation",
     "AnimationChannel",
     "AnimationChannelExtensions",
@@ -1904,6 +1896,7 @@ __all__ = (
     "BTAssemblyTransformDefinitionParams",
     "BTAssemblyTransformedInstancesDefinitionParams",
     "BTAssociativeDataInfo",
+    "BTBAppElementBlobUploadParams",
     "BTBaseEntityAppearanceEntry3607",
     "BTBaseEntityAppearanceSettings1391",
     "BTBaseEntityAppearanceSettings1391ColorIdToBaseEntityAppearanceEntry",
@@ -1921,6 +1914,7 @@ __all__ = (
     "BTBExportMeshParams",
     "BTBExportModelParams",
     "BTBezierDegreeDimensionDisplayData2597",
+    "BTBFileUpload",
     "BTBGltfExportParams",
     "BTBillingPlanInfo",
     "BTBillOfMaterialsElementInfo",
@@ -1949,6 +1943,7 @@ __all__ = (
     "BTBSMatrix386",
     "BTBSolidworksExportParams",
     "BTBStepExportParams",
+    "BTBTranslationRequestParams",
     "BTCacheDataPath191",
     "BTCardInfo",
     "BTCategoryParam",
@@ -2612,6 +2607,7 @@ __all__ = (
     "BTPLiteralNumber258",
     "BTPLiteralString259",
     "BTPLiteralUndefined260",
+    "BTPlmContextInfo",
     "BTPLMMessageBody",
     "BTPLValue249",
     "BTPLValueAccess250",
@@ -2966,8 +2962,6 @@ __all__ = (
     "CreateInstanceResponseDefault",
     "CreateObsoletionPackageResponseDefault",
     "CreateReleasePackageResponseDefault",
-    "CreateTranslationBody",
-    "CreateTranslationBodyFile",
     "DeleteAliasResponseDefault",
     "DeleteApplicationThumbnailsResponseDefault",
     "DeleteApplicationThumbnailsWv",
@@ -3354,12 +3348,6 @@ __all__ = (
     "UpdateWVEPMetadataResponseDefault",
     "UpdateWVEPMetadataWvm",
     "UpdateWVMetadataResponseDefault",
-    "UploadBlobSubelementBody",
-    "UploadBlobSubelementBodyFile",
-    "UploadFileCreateElementBody",
-    "UploadFileCreateElementBodyFile",
-    "UploadFileUpdateElementBody",
-    "UploadFileUpdateElementBodyFile",
     "UserRolePriority",
     "VersionAlias",
     "Versions",

@@ -1,55 +1,46 @@
 from __future__ import annotations
 
-import json
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar
+from io import BytesIO
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 from .. import types
+from ..types import UNSET, File, FileTypes, Unset
 
-if TYPE_CHECKING:
-    from ..models.add_attachment_body_file import AddAttachmentBodyFile
-
-
-T = TypeVar("T", bound="AddAttachmentBody")
+T = TypeVar("T", bound="BTBFileUpload")
 
 
 @_attrs_define
-class AddAttachmentBody:
+class BTBFileUpload:
     """
     Attributes:
-        file (AddAttachmentBodyFile): The file to upload.
-        is_markup (bool):
+        file (File | Unset): The file to upload.
     """
 
-    file: AddAttachmentBodyFile
-    is_markup: bool
+    file: File | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        file = self.file.to_dict()
-
-        is_markup = self.is_markup
+        file: FileTypes | Unset = UNSET
+        if not isinstance(self.file, Unset):
+            file = self.file.to_tuple()
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update(
-            {
-                "file": file,
-                "isMarkup": is_markup,
-            }
-        )
+        field_dict.update({})
+        if file is not UNSET:
+            field_dict["file"] = file
 
         return field_dict
 
     def to_multipart(self) -> types.RequestFiles:
         files: types.RequestFiles = []
 
-        files.append(("file", (None, json.dumps(self.file.to_dict()).encode(), "application/json")))
-
-        files.append(("isMarkup", (None, str(self.is_markup).encode(), "text/plain")))
+        if not isinstance(self.file, Unset):
+            files.append(("file", self.file.to_tuple()))
 
         for prop_name, prop in self.additional_properties.items():
             files.append((prop_name, (None, str(prop).encode(), "text/plain")))
@@ -58,20 +49,20 @@ class AddAttachmentBody:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.add_attachment_body_file import AddAttachmentBodyFile
-
         d = dict(src_dict)
-        file = AddAttachmentBodyFile.from_dict(d.pop("file"))
+        _file = d.pop("file", UNSET)
+        file: File | Unset
+        if isinstance(_file, Unset):
+            file = UNSET
+        else:
+            file = File(payload=BytesIO(_file))
 
-        is_markup = d.pop("isMarkup")
-
-        add_attachment_body = cls(
+        btb_file_upload = cls(
             file=file,
-            is_markup=is_markup,
         )
 
-        add_attachment_body.additional_properties = d
-        return add_attachment_body
+        btb_file_upload.additional_properties = d
+        return btb_file_upload
 
     @property
     def additional_keys(self) -> list[str]:

@@ -20,6 +20,7 @@ T = TypeVar("T", bound="BTDatumDisplayData3408")
 class BTDatumDisplayData3408:
     """
     Attributes:
+        annotation_id (str | Unset):
         annotation_plane (BTCoordinateSystem387 | Unset):
         base_plane (BTCoordinateSystem387 | Unset):
         bt_type (str | Unset): Type of JSON object.
@@ -36,6 +37,7 @@ class BTDatumDisplayData3408:
         name (str | Unset):
     """
 
+    annotation_id: str | Unset = UNSET
     annotation_plane: BTCoordinateSystem387 | Unset = UNSET
     base_plane: BTCoordinateSystem387 | Unset = UNSET
     bt_type: str | Unset = UNSET
@@ -53,6 +55,8 @@ class BTDatumDisplayData3408:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        annotation_id = self.annotation_id
+
         annotation_plane: dict[str, Any] | Unset = UNSET
         if not isinstance(self.annotation_plane, Unset):
             annotation_plane = self.annotation_plane.to_dict()
@@ -93,6 +97,8 @@ class BTDatumDisplayData3408:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if annotation_id is not UNSET:
+            field_dict["annotationId"] = annotation_id
         if annotation_plane is not UNSET:
             field_dict["annotationPlane"] = annotation_plane
         if base_plane is not UNSET:
@@ -130,6 +136,8 @@ class BTDatumDisplayData3408:
         from ..models.bt_vector_2d1812 import BTVector2D1812
 
         d = dict(src_dict)
+        annotation_id = d.pop("annotationId", UNSET)
+
         _annotation_plane = d.pop("annotationPlane", UNSET)
         annotation_plane: BTCoordinateSystem387 | Unset
         if isinstance(_annotation_plane, Unset):
@@ -176,6 +184,7 @@ class BTDatumDisplayData3408:
         name = d.pop("name", UNSET)
 
         bt_datum_display_data_3408 = cls(
+            annotation_id=annotation_id,
             annotation_plane=annotation_plane,
             base_plane=base_plane,
             bt_type=bt_type,

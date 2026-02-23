@@ -8,12 +8,19 @@ A heavyweight python client library for accessing the [Onshape REST API](https:/
 
 ## Usage
 
-First, create a client:
+First, set the url provided as Onshape as a constant, as this will change over time:
+
+```python
+ONSHAPE_BASE_URL = "https://cad.onshape.com/api/v14"
+```
+
+
+Then, create a client:
 
 ```python
 from onshape_rest_api_client import Client
 
-client = Client(base_url="https://cad.onshape.com/api/v13")
+client = Client(base_url=ONSHAPE_BASE_URL)
 ```
 
 If the endpoints you're going to hit require authentication, use `AuthenticatedClient` instead:
@@ -21,8 +28,10 @@ If the endpoints you're going to hit require authentication, use `AuthenticatedC
 ```python
 from onshape_rest_api_client import AuthenticatedClient
 
-client = AuthenticatedClient(base_url="https://cad.onshape.com/api/v13", token="SuperSecretToken")
+client = AuthenticatedClient(base_url=ONSHAPE_BASE_URL, token="SuperSecretToken")
 ```
+
+*See [Onshape Authentication Documentation](https://onshape-public.github.io/docs/auth/) for details on how to obtain a token.*
 
 Now call your endpoint and use your models:
 
@@ -95,7 +104,7 @@ def log_response(response):
     print(f"Response event hook: {request.method} {request.url} - Status {response.status_code}")
 
 client = Client(
-    base_url="https://cad.onshape.com/api/v13",
+    base_url=ONSHAPE_BASE_URL,
     httpx_args={"event_hooks": {"request": [log_request], "response": [log_response]}},
 )
 
@@ -109,10 +118,10 @@ import httpx
 from onshape_rest_api_client import Client
 
 client = Client(
-    base_url="https://cad.onshape.com/api/v13",
+    base_url=ONSHAPE_BASE_URL,
 )
 # Note that base_url needs to be re-set, as would any shared cookies, headers, etc.
-client.set_httpx_client(httpx.Client(base_url="https://cad.onshape.com/api/v13", proxies="http://localhost:8030"))
+client.set_httpx_client(httpx.Client(base_url=ONSHAPE_BASE_URL, proxies="http://localhost:8030"))
 ```
 
 ## Onshape API Reference

@@ -3,6 +3,7 @@ from enum import Enum
 
 class GBTAppElementReferenceType(str, Enum):
     ASSEMBLY = "ASSEMBLY"
+    BILLOFMATERIALS = "BILLOFMATERIALS"
     COMPOSITE_PART = "COMPOSITE_PART"
     CURVE = "CURVE"
     FLATTENED_PART = "FLATTENED_PART"

@@ -33,6 +33,7 @@ class BTLazilyParsedFeatureScript:
         notice_module_ids (BTPModuleId235 | Unset):
         parent_language_version (int | Unset):
         references (BTLazilyParsedFeatureScriptReferences | Unset):
+        size_in_kb_estimate (int | Unset):
         source (str | Unset):
     """
 
@@ -45,6 +46,7 @@ class BTLazilyParsedFeatureScript:
     notice_module_ids: BTPModuleId235 | Unset = UNSET
     parent_language_version: int | Unset = UNSET
     references: BTLazilyParsedFeatureScriptReferences | Unset = UNSET
+    size_in_kb_estimate: int | Unset = UNSET
     source: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -81,6 +83,8 @@ class BTLazilyParsedFeatureScript:
         if not isinstance(self.references, Unset):
             references = self.references.to_dict()
 
+        size_in_kb_estimate = self.size_in_kb_estimate
+
         source = self.source
 
         field_dict: dict[str, Any] = {}
@@ -104,6 +108,8 @@ class BTLazilyParsedFeatureScript:
             field_dict["parentLanguageVersion"] = parent_language_version
         if references is not UNSET:
             field_dict["references"] = references
+        if size_in_kb_estimate is not UNSET:
+            field_dict["sizeInKBEstimate"] = size_in_kb_estimate
         if source is not UNSET:
             field_dict["source"] = source
 
@@ -172,6 +178,8 @@ class BTLazilyParsedFeatureScript:
         else:
             references = BTLazilyParsedFeatureScriptReferences.from_dict(_references)
 
+        size_in_kb_estimate = d.pop("sizeInKBEstimate", UNSET)
+
         source = d.pop("source", UNSET)
 
         bt_lazily_parsed_feature_script = cls(
@@ -184,6 +192,7 @@ class BTLazilyParsedFeatureScript:
             notice_module_ids=notice_module_ids,
             parent_language_version=parent_language_version,
             references=references,
+            size_in_kb_estimate=size_in_kb_estimate,
             source=source,
         )
 

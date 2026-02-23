@@ -6,7 +6,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.bt_translation_request_import_info import BTTranslationRequestImportInfo
-from ...models.create_translation_body import CreateTranslationBody
+from ...models.btb_translation_request_params import BTBTranslationRequestParams
 from ...types import UNSET, Response, Unset
 
 
@@ -14,7 +14,7 @@ def _get_kwargs(
     did: str,
     wid: str,
     *,
-    body: CreateTranslationBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -57,7 +57,7 @@ def sync_detailed(
     wid: str,
     *,
     client: AuthenticatedClient,
-    body: CreateTranslationBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
 ) -> Response[BTTranslationRequestImportInfo]:
     """Import or upload a CAD file into Onshape, and translate the data into parts or assemblies.
 
@@ -72,7 +72,7 @@ def sync_detailed(
     Args:
         did (str):
         wid (str):
-        body (CreateTranslationBody | Unset):
+        body (BTBTranslationRequestParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -100,7 +100,7 @@ def sync(
     wid: str,
     *,
     client: AuthenticatedClient,
-    body: CreateTranslationBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
 ) -> BTTranslationRequestImportInfo | None:
     """Import or upload a CAD file into Onshape, and translate the data into parts or assemblies.
 
@@ -115,7 +115,7 @@ def sync(
     Args:
         did (str):
         wid (str):
-        body (CreateTranslationBody | Unset):
+        body (BTBTranslationRequestParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -138,7 +138,7 @@ async def asyncio_detailed(
     wid: str,
     *,
     client: AuthenticatedClient,
-    body: CreateTranslationBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
 ) -> Response[BTTranslationRequestImportInfo]:
     """Import or upload a CAD file into Onshape, and translate the data into parts or assemblies.
 
@@ -153,7 +153,7 @@ async def asyncio_detailed(
     Args:
         did (str):
         wid (str):
-        body (CreateTranslationBody | Unset):
+        body (BTBTranslationRequestParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -179,7 +179,7 @@ async def asyncio(
     wid: str,
     *,
     client: AuthenticatedClient,
-    body: CreateTranslationBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
 ) -> BTTranslationRequestImportInfo | None:
     """Import or upload a CAD file into Onshape, and translate the data into parts or assemblies.
 
@@ -194,7 +194,7 @@ async def asyncio(
     Args:
         did (str):
         wid (str):
-        body (CreateTranslationBody | Unset):
+        body (BTBTranslationRequestParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

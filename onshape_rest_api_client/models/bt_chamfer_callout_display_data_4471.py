@@ -21,6 +21,7 @@ T = TypeVar("T", bound="BTChamferCalloutDisplayData4471")
 class BTChamferCalloutDisplayData4471:
     """
     Attributes:
+        annotation_id (str | Unset):
         annotation_plane (BTCoordinateSystem387 | Unset):
         base_plane (BTCoordinateSystem387 | Unset):
         bt_type (str | Unset): Type of JSON object.
@@ -38,11 +39,13 @@ class BTChamferCalloutDisplayData4471:
         angle (BTTolerantValueDisplayData3483 | Unset):
         distance (BTTolerantValueDisplayData3483 | Unset):
         feature_id (str | Unset):
+        feature_parameter_ids (list[str] | Unset):
         is_invalid (bool | Unset):
         label_location (BTVector2D1812 | Unset):
         part_id (str | Unset):
     """
 
+    annotation_id: str | Unset = UNSET
     annotation_plane: BTCoordinateSystem387 | Unset = UNSET
     base_plane: BTCoordinateSystem387 | Unset = UNSET
     bt_type: str | Unset = UNSET
@@ -60,12 +63,15 @@ class BTChamferCalloutDisplayData4471:
     angle: BTTolerantValueDisplayData3483 | Unset = UNSET
     distance: BTTolerantValueDisplayData3483 | Unset = UNSET
     feature_id: str | Unset = UNSET
+    feature_parameter_ids: list[str] | Unset = UNSET
     is_invalid: bool | Unset = UNSET
     label_location: BTVector2D1812 | Unset = UNSET
     part_id: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        annotation_id = self.annotation_id
+
         annotation_plane: dict[str, Any] | Unset = UNSET
         if not isinstance(self.annotation_plane, Unset):
             annotation_plane = self.annotation_plane.to_dict()
@@ -115,6 +121,10 @@ class BTChamferCalloutDisplayData4471:
 
         feature_id = self.feature_id
 
+        feature_parameter_ids: list[str] | Unset = UNSET
+        if not isinstance(self.feature_parameter_ids, Unset):
+            feature_parameter_ids = self.feature_parameter_ids
+
         is_invalid = self.is_invalid
 
         label_location: dict[str, Any] | Unset = UNSET
@@ -126,6 +136,8 @@ class BTChamferCalloutDisplayData4471:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if annotation_id is not UNSET:
+            field_dict["annotationId"] = annotation_id
         if annotation_plane is not UNSET:
             field_dict["annotationPlane"] = annotation_plane
         if base_plane is not UNSET:
@@ -160,6 +172,8 @@ class BTChamferCalloutDisplayData4471:
             field_dict["distance"] = distance
         if feature_id is not UNSET:
             field_dict["featureId"] = feature_id
+        if feature_parameter_ids is not UNSET:
+            field_dict["featureParameterIds"] = feature_parameter_ids
         if is_invalid is not UNSET:
             field_dict["isInvalid"] = is_invalid
         if label_location is not UNSET:
@@ -176,6 +190,8 @@ class BTChamferCalloutDisplayData4471:
         from ..models.bt_vector_2d1812 import BTVector2D1812
 
         d = dict(src_dict)
+        annotation_id = d.pop("annotationId", UNSET)
+
         _annotation_plane = d.pop("annotationPlane", UNSET)
         annotation_plane: BTCoordinateSystem387 | Unset
         if isinstance(_annotation_plane, Unset):
@@ -237,6 +253,8 @@ class BTChamferCalloutDisplayData4471:
 
         feature_id = d.pop("featureId", UNSET)
 
+        feature_parameter_ids = cast(list[str], d.pop("featureParameterIds", UNSET))
+
         is_invalid = d.pop("isInvalid", UNSET)
 
         _label_location = d.pop("labelLocation", UNSET)
@@ -249,6 +267,7 @@ class BTChamferCalloutDisplayData4471:
         part_id = d.pop("partId", UNSET)
 
         bt_chamfer_callout_display_data_4471 = cls(
+            annotation_id=annotation_id,
             annotation_plane=annotation_plane,
             base_plane=base_plane,
             bt_type=bt_type,
@@ -266,6 +285,7 @@ class BTChamferCalloutDisplayData4471:
             angle=angle,
             distance=distance,
             feature_id=feature_id,
+            feature_parameter_ids=feature_parameter_ids,
             is_invalid=is_invalid,
             label_location=label_location,
             part_id=part_id,

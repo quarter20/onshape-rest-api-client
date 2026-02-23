@@ -10,6 +10,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.bt_full_element_id_756 import BTFullElementId756
+    from ..models.bt_immutable_byte_array import BTImmutableByteArray
     from ..models.bt_insertable_display_data_2405_graphics_buffers import BTInsertableDisplayData2405GraphicsBuffers
 
 
@@ -24,6 +25,7 @@ class BTInsertableDisplayData2405:
         full_element_id (BTFullElementId756 | Unset):
         graphics_buffers (BTInsertableDisplayData2405GraphicsBuffers | Unset):
         id (str | Unset):
+        insertable_entity_data (BTImmutableByteArray | Unset):
         part (bool | Unset):
         sketch_feature (bool | Unset):
         tessellation_setting_index (int | Unset):
@@ -33,6 +35,7 @@ class BTInsertableDisplayData2405:
     full_element_id: BTFullElementId756 | Unset = UNSET
     graphics_buffers: BTInsertableDisplayData2405GraphicsBuffers | Unset = UNSET
     id: str | Unset = UNSET
+    insertable_entity_data: BTImmutableByteArray | Unset = UNSET
     part: bool | Unset = UNSET
     sketch_feature: bool | Unset = UNSET
     tessellation_setting_index: int | Unset = UNSET
@@ -51,6 +54,10 @@ class BTInsertableDisplayData2405:
 
         id = self.id
 
+        insertable_entity_data: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.insertable_entity_data, Unset):
+            insertable_entity_data = self.insertable_entity_data.to_dict()
+
         part = self.part
 
         sketch_feature = self.sketch_feature
@@ -68,6 +75,8 @@ class BTInsertableDisplayData2405:
             field_dict["graphicsBuffers"] = graphics_buffers
         if id is not UNSET:
             field_dict["id"] = id
+        if insertable_entity_data is not UNSET:
+            field_dict["insertableEntityData"] = insertable_entity_data
         if part is not UNSET:
             field_dict["part"] = part
         if sketch_feature is not UNSET:
@@ -80,6 +89,7 @@ class BTInsertableDisplayData2405:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_full_element_id_756 import BTFullElementId756
+        from ..models.bt_immutable_byte_array import BTImmutableByteArray
         from ..models.bt_insertable_display_data_2405_graphics_buffers import BTInsertableDisplayData2405GraphicsBuffers
 
         d = dict(src_dict)
@@ -101,6 +111,13 @@ class BTInsertableDisplayData2405:
 
         id = d.pop("id", UNSET)
 
+        _insertable_entity_data = d.pop("insertableEntityData", UNSET)
+        insertable_entity_data: BTImmutableByteArray | Unset
+        if isinstance(_insertable_entity_data, Unset):
+            insertable_entity_data = UNSET
+        else:
+            insertable_entity_data = BTImmutableByteArray.from_dict(_insertable_entity_data)
+
         part = d.pop("part", UNSET)
 
         sketch_feature = d.pop("sketchFeature", UNSET)
@@ -112,6 +129,7 @@ class BTInsertableDisplayData2405:
             full_element_id=full_element_id,
             graphics_buffers=graphics_buffers,
             id=id,
+            insertable_entity_data=insertable_entity_data,
             part=part,
             sketch_feature=sketch_feature,
             tessellation_setting_index=tessellation_setting_index,

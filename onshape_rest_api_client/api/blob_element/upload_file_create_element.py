@@ -6,7 +6,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.bt_document_element_processing_info import BTDocumentElementProcessingInfo
-from ...models.upload_file_create_element_body import UploadFileCreateElementBody
+from ...models.btb_translation_request_params import BTBTranslationRequestParams
 from ...types import UNSET, Response, Unset
 
 
@@ -14,7 +14,7 @@ def _get_kwargs(
     did: str,
     wid: str,
     *,
-    body: UploadFileCreateElementBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
@@ -65,7 +65,7 @@ def sync_detailed(
     wid: str,
     *,
     client: AuthenticatedClient,
-    body: UploadFileCreateElementBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
 ) -> Response[BTDocumentElementProcessingInfo]:
     r"""Upload a file and create a blob element from it.
@@ -77,7 +77,7 @@ def sync_detailed(
         did (str):
         wid (str):
         link_document_id (str | Unset):  Default: ''.
-        body (UploadFileCreateElementBody | Unset):
+        body (BTBTranslationRequestParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -106,7 +106,7 @@ def sync(
     wid: str,
     *,
     client: AuthenticatedClient,
-    body: UploadFileCreateElementBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
 ) -> BTDocumentElementProcessingInfo | None:
     r"""Upload a file and create a blob element from it.
@@ -118,7 +118,7 @@ def sync(
         did (str):
         wid (str):
         link_document_id (str | Unset):  Default: ''.
-        body (UploadFileCreateElementBody | Unset):
+        body (BTBTranslationRequestParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -142,7 +142,7 @@ async def asyncio_detailed(
     wid: str,
     *,
     client: AuthenticatedClient,
-    body: UploadFileCreateElementBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
 ) -> Response[BTDocumentElementProcessingInfo]:
     r"""Upload a file and create a blob element from it.
@@ -154,7 +154,7 @@ async def asyncio_detailed(
         did (str):
         wid (str):
         link_document_id (str | Unset):  Default: ''.
-        body (UploadFileCreateElementBody | Unset):
+        body (BTBTranslationRequestParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -181,7 +181,7 @@ async def asyncio(
     wid: str,
     *,
     client: AuthenticatedClient,
-    body: UploadFileCreateElementBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
 ) -> BTDocumentElementProcessingInfo | None:
     r"""Upload a file and create a blob element from it.
@@ -193,7 +193,7 @@ async def asyncio(
         did (str):
         wid (str):
         link_document_id (str | Unset):  Default: ''.
-        body (UploadFileCreateElementBody | Unset):
+        body (BTBTranslationRequestParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

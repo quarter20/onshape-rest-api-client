@@ -6,7 +6,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.bt_document_element_processing_info import BTDocumentElementProcessingInfo
-from ...models.upload_file_update_element_body import UploadFileUpdateElementBody
+from ...models.btb_translation_request_params import BTBTranslationRequestParams
 from ...types import UNSET, Response, Unset
 
 
@@ -15,7 +15,7 @@ def _get_kwargs(
     wid: str,
     eid: str,
     *,
-    body: UploadFileUpdateElementBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
     parent_change_id: str | Unset = UNSET,
 ) -> dict[str, Any]:
@@ -71,7 +71,7 @@ def sync_detailed(
     eid: str,
     *,
     client: AuthenticatedClient,
-    body: UploadFileUpdateElementBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
     parent_change_id: str | Unset = UNSET,
 ) -> Response[BTDocumentElementProcessingInfo]:
@@ -86,7 +86,7 @@ def sync_detailed(
         eid (str):
         link_document_id (str | Unset):  Default: ''.
         parent_change_id (str | Unset):
-        body (UploadFileUpdateElementBody | Unset):
+        body (BTBTranslationRequestParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -118,7 +118,7 @@ def sync(
     eid: str,
     *,
     client: AuthenticatedClient,
-    body: UploadFileUpdateElementBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
     parent_change_id: str | Unset = UNSET,
 ) -> BTDocumentElementProcessingInfo | None:
@@ -133,7 +133,7 @@ def sync(
         eid (str):
         link_document_id (str | Unset):  Default: ''.
         parent_change_id (str | Unset):
-        body (UploadFileUpdateElementBody | Unset):
+        body (BTBTranslationRequestParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -160,7 +160,7 @@ async def asyncio_detailed(
     eid: str,
     *,
     client: AuthenticatedClient,
-    body: UploadFileUpdateElementBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
     parent_change_id: str | Unset = UNSET,
 ) -> Response[BTDocumentElementProcessingInfo]:
@@ -175,7 +175,7 @@ async def asyncio_detailed(
         eid (str):
         link_document_id (str | Unset):  Default: ''.
         parent_change_id (str | Unset):
-        body (UploadFileUpdateElementBody | Unset):
+        body (BTBTranslationRequestParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -205,7 +205,7 @@ async def asyncio(
     eid: str,
     *,
     client: AuthenticatedClient,
-    body: UploadFileUpdateElementBody | Unset = UNSET,
+    body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
     parent_change_id: str | Unset = UNSET,
 ) -> BTDocumentElementProcessingInfo | None:
@@ -220,7 +220,7 @@ async def asyncio(
         eid (str):
         link_document_id (str | Unset):  Default: ''.
         parent_change_id (str | Unset):
-        body (UploadFileUpdateElementBody | Unset):
+        body (BTBTranslationRequestParams | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
