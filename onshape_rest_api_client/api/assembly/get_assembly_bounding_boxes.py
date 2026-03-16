@@ -24,6 +24,7 @@ def _get_kwargs(
     named_position_id: str | Unset = UNSET,
     include_sketches: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

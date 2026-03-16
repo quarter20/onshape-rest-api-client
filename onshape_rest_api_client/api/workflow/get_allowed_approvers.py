@@ -17,6 +17,7 @@ def _get_kwargs(
     include_self: bool | Unset = True,
     exclude_connections: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["q"] = q

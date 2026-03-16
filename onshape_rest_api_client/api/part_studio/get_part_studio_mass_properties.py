@@ -24,6 +24,7 @@ def _get_kwargs(
     mass_as_group: bool | Unset = True,
     use_mass_property_overrides: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

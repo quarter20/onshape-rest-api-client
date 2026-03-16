@@ -17,6 +17,7 @@ def _get_kwargs(
     *,
     return_error: bool | Unset = True,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["returnError"] = return_error

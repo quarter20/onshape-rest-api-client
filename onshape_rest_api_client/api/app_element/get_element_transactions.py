@@ -14,6 +14,7 @@ def _get_kwargs(
     wid: str,
     eid: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/appelements/d/{did}/w/{wid}/e/{eid}/transactions".format(

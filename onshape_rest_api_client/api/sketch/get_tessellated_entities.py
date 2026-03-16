@@ -22,6 +22,7 @@ def _get_kwargs(
     chord_tolerance: float | Unset = UNSET,
     link_document_id: str | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["configuration"] = configuration

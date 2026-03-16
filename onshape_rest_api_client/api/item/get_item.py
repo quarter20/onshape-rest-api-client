@@ -15,6 +15,7 @@ def _get_kwargs(
     document_id: str | Unset = UNSET,
     company_id: str | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["documentId"] = document_id

@@ -15,6 +15,7 @@ def _get_kwargs(
     wvid: str,
     eid: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/assemblies/d/{did}/{wv}/{wvid}/e/{eid}/matevalues".format(

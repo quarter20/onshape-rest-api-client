@@ -14,6 +14,7 @@ def _get_kwargs(
     wid: str,
     eid: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "delete",
         "url": "/elements/d/{did}/w/{wid}/e/{eid}".format(

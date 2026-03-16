@@ -30,6 +30,7 @@ def _get_kwargs(
     output_face_appearances: bool | Unset = False,
     max_facet_width: float | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

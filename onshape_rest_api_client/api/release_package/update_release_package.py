@@ -68,15 +68,28 @@ def sync_detailed(
     action: str | Unset = "UPDATE",
     wfaction: str | Unset = UNSET,
 ) -> Response[BTReleasePackageInfo]:
-    """Update the release/obsoletion package/item properties.
+    """Update the release/obsoletion candidate/item properties.
 
-     Use the `wfaction` query param to also perform a workflow transition.
+     Use this endpoint to submit the release. Release candidates must first be created with the
+    [createReleasePackage](#/ReleasePackage/createObsoletionPackage) endpoint.
+
+    This endpoint can perform the following actions on release or obsoletion candidates:
+    * Update candidate properties
+    * Update properties of items in the candidate
+    * Add items to the candidate
+    * Remove items from the candidate
+    * Transition the package to a new state with the `wfaction` query param
+
+    See [Onshape Help: Release Management](https://cad.onshape.com/help/Content/release_management.htm)
+    for more information on Onshape releases, and see [API Guide: Release Management](https://onshape-
+    public.github.io/docs/api-adv/relmgmt/) for API examples.
 
     Args:
         rpid (str):
         action (str | Unset):  Default: 'UPDATE'.
         wfaction (str | Unset):
-        body (BTUpdateReleasePackageParams):
+        body (BTUpdateReleasePackageParams): Parameters for updating a release or obsoletion
+            candidate.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -108,15 +121,28 @@ def sync(
     action: str | Unset = "UPDATE",
     wfaction: str | Unset = UNSET,
 ) -> BTReleasePackageInfo | None:
-    """Update the release/obsoletion package/item properties.
+    """Update the release/obsoletion candidate/item properties.
 
-     Use the `wfaction` query param to also perform a workflow transition.
+     Use this endpoint to submit the release. Release candidates must first be created with the
+    [createReleasePackage](#/ReleasePackage/createObsoletionPackage) endpoint.
+
+    This endpoint can perform the following actions on release or obsoletion candidates:
+    * Update candidate properties
+    * Update properties of items in the candidate
+    * Add items to the candidate
+    * Remove items from the candidate
+    * Transition the package to a new state with the `wfaction` query param
+
+    See [Onshape Help: Release Management](https://cad.onshape.com/help/Content/release_management.htm)
+    for more information on Onshape releases, and see [API Guide: Release Management](https://onshape-
+    public.github.io/docs/api-adv/relmgmt/) for API examples.
 
     Args:
         rpid (str):
         action (str | Unset):  Default: 'UPDATE'.
         wfaction (str | Unset):
-        body (BTUpdateReleasePackageParams):
+        body (BTUpdateReleasePackageParams): Parameters for updating a release or obsoletion
+            candidate.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -143,15 +169,28 @@ async def asyncio_detailed(
     action: str | Unset = "UPDATE",
     wfaction: str | Unset = UNSET,
 ) -> Response[BTReleasePackageInfo]:
-    """Update the release/obsoletion package/item properties.
+    """Update the release/obsoletion candidate/item properties.
 
-     Use the `wfaction` query param to also perform a workflow transition.
+     Use this endpoint to submit the release. Release candidates must first be created with the
+    [createReleasePackage](#/ReleasePackage/createObsoletionPackage) endpoint.
+
+    This endpoint can perform the following actions on release or obsoletion candidates:
+    * Update candidate properties
+    * Update properties of items in the candidate
+    * Add items to the candidate
+    * Remove items from the candidate
+    * Transition the package to a new state with the `wfaction` query param
+
+    See [Onshape Help: Release Management](https://cad.onshape.com/help/Content/release_management.htm)
+    for more information on Onshape releases, and see [API Guide: Release Management](https://onshape-
+    public.github.io/docs/api-adv/relmgmt/) for API examples.
 
     Args:
         rpid (str):
         action (str | Unset):  Default: 'UPDATE'.
         wfaction (str | Unset):
-        body (BTUpdateReleasePackageParams):
+        body (BTUpdateReleasePackageParams): Parameters for updating a release or obsoletion
+            candidate.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -181,15 +220,28 @@ async def asyncio(
     action: str | Unset = "UPDATE",
     wfaction: str | Unset = UNSET,
 ) -> BTReleasePackageInfo | None:
-    """Update the release/obsoletion package/item properties.
+    """Update the release/obsoletion candidate/item properties.
 
-     Use the `wfaction` query param to also perform a workflow transition.
+     Use this endpoint to submit the release. Release candidates must first be created with the
+    [createReleasePackage](#/ReleasePackage/createObsoletionPackage) endpoint.
+
+    This endpoint can perform the following actions on release or obsoletion candidates:
+    * Update candidate properties
+    * Update properties of items in the candidate
+    * Add items to the candidate
+    * Remove items from the candidate
+    * Transition the package to a new state with the `wfaction` query param
+
+    See [Onshape Help: Release Management](https://cad.onshape.com/help/Content/release_management.htm)
+    for more information on Onshape releases, and see [API Guide: Release Management](https://onshape-
+    public.github.io/docs/api-adv/relmgmt/) for API examples.
 
     Args:
         rpid (str):
         action (str | Unset):  Default: 'UPDATE'.
         wfaction (str | Unset):
-        body (BTUpdateReleasePackageParams):
+        body (BTUpdateReleasePackageParams): Parameters for updating a release or obsoletion
+            candidate.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

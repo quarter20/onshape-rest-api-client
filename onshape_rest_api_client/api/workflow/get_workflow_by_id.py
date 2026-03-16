@@ -12,6 +12,7 @@ from ...types import Response
 def _get_kwargs(
     object_id: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/workflow/obj/{object_id}".format(

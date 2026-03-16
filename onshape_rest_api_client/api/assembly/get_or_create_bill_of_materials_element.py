@@ -14,6 +14,7 @@ def _get_kwargs(
     wid: str,
     eid: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "post",
         "url": "/assemblies/d/{did}/w/{wid}/e/{eid}/bomelement".format(

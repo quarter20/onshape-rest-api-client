@@ -29,6 +29,7 @@ def _get_kwargs(
     occurrence_id: str | Unset = "",
     reference_id: str | Unset = "",
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["transactionId"] = transaction_id

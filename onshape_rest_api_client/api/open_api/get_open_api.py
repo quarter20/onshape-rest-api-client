@@ -26,6 +26,7 @@ def _get_kwargs(
     operation_ids: list[str] | Unset = UNSET,
     excluded_operation_ids: list[str] | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["forceReload"] = force_reload

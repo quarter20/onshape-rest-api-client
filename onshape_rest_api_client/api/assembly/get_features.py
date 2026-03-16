@@ -22,6 +22,7 @@ def _get_kwargs(
     exploded_view_id: str | Unset = UNSET,
     feature_id: list[str] | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

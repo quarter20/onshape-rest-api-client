@@ -13,6 +13,7 @@ def _get_kwargs(
     all_: bool | Unset = False,
     own_purchase_only: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["all"] = all_

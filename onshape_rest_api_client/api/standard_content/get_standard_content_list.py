@@ -12,6 +12,7 @@ def _get_kwargs(
     *,
     standard: str | Unset = "",
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["standard"] = standard

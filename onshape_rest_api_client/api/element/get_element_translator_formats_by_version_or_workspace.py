@@ -22,6 +22,7 @@ def _get_kwargs(
     check_content: bool | Unset = True,
     configuration: str | Unset = "",
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

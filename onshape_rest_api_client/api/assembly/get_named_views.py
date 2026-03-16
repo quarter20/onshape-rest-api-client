@@ -17,6 +17,7 @@ def _get_kwargs(
     skip_perspective: bool | Unset = True,
     include_section_cut_views: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

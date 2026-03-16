@@ -22,6 +22,7 @@ def _get_kwargs(
     with_thumbnails: bool | Unset = False,
     with_zip_contents: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

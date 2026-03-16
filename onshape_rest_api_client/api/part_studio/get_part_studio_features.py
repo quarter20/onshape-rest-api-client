@@ -24,6 +24,7 @@ def _get_kwargs(
     feature_id: list[str] | Unset = UNSET,
     no_sketch_geometry: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

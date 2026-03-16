@@ -14,6 +14,7 @@ def _get_kwargs(
     active_only: bool | Unset = True,
     include_all: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["uid"] = uid

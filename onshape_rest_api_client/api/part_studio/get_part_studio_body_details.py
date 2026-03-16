@@ -25,6 +25,7 @@ def _get_kwargs(
     include_composite_parts: bool | Unset = False,
     include_geometric_data: bool | Unset = True,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

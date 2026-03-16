@@ -17,6 +17,7 @@ def _get_kwargs(
     only_active: bool | Unset = True,
     include_defaults: bool | Unset = True,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     json_template_type: str | Unset = UNSET

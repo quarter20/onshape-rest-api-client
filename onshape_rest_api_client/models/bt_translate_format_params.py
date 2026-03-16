@@ -78,6 +78,7 @@ class BTTranslateFormatParams:
         include_bend_centerlines (bool | Unset):
         include_bend_lines (bool | Unset):
         include_cbore_csink (bool | Unset):
+        include_derived_tolerances (bool | Unset):
         include_export_ids (bool | Unset): Whether topology ids should be exported as parasolid attributes.
         include_formed_centermarks (bool | Unset):
         include_formed_outlines (bool | Unset):
@@ -190,6 +191,7 @@ class BTTranslateFormatParams:
     include_bend_centerlines: bool | Unset = UNSET
     include_bend_lines: bool | Unset = UNSET
     include_cbore_csink: bool | Unset = UNSET
+    include_derived_tolerances: bool | Unset = UNSET
     include_export_ids: bool | Unset = UNSET
     include_formed_centermarks: bool | Unset = UNSET
     include_formed_outlines: bool | Unset = UNSET
@@ -339,6 +341,8 @@ class BTTranslateFormatParams:
         include_bend_lines = self.include_bend_lines
 
         include_cbore_csink = self.include_cbore_csink
+
+        include_derived_tolerances = self.include_derived_tolerances
 
         include_export_ids = self.include_export_ids
 
@@ -559,6 +563,8 @@ class BTTranslateFormatParams:
             field_dict["includeBendLines"] = include_bend_lines
         if include_cbore_csink is not UNSET:
             field_dict["includeCboreCsink"] = include_cbore_csink
+        if include_derived_tolerances is not UNSET:
+            field_dict["includeDerivedTolerances"] = include_derived_tolerances
         if include_export_ids is not UNSET:
             field_dict["includeExportIds"] = include_export_ids
         if include_formed_centermarks is not UNSET:
@@ -765,6 +771,8 @@ class BTTranslateFormatParams:
 
         include_cbore_csink = d.pop("includeCboreCsink", UNSET)
 
+        include_derived_tolerances = d.pop("includeDerivedTolerances", UNSET)
+
         include_export_ids = d.pop("includeExportIds", UNSET)
 
         include_formed_centermarks = d.pop("includeFormedCentermarks", UNSET)
@@ -955,6 +963,7 @@ class BTTranslateFormatParams:
             include_bend_centerlines=include_bend_centerlines,
             include_bend_lines=include_bend_lines,
             include_cbore_csink=include_cbore_csink,
+            include_derived_tolerances=include_derived_tolerances,
             include_export_ids=include_export_ids,
             include_formed_centermarks=include_formed_centermarks,
             include_formed_outlines=include_formed_outlines,

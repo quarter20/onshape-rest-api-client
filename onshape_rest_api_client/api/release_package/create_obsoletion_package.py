@@ -15,6 +15,7 @@ def _get_kwargs(
     revision_id: str,
     debug_mode: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["revisionId"] = revision_id
@@ -60,7 +61,7 @@ def sync_detailed(
     revision_id: str,
     debug_mode: bool | Unset = False,
 ) -> Response[CreateObsoletionPackageResponseDefault]:
-    """Create an obsoletion package to make an existing revision obsolete.
+    """Create an obsoletion candidate to make an existing revision obsolete.
 
     Args:
         wfid (str):
@@ -95,7 +96,7 @@ def sync(
     revision_id: str,
     debug_mode: bool | Unset = False,
 ) -> CreateObsoletionPackageResponseDefault | None:
-    """Create an obsoletion package to make an existing revision obsolete.
+    """Create an obsoletion candidate to make an existing revision obsolete.
 
     Args:
         wfid (str):
@@ -125,7 +126,7 @@ async def asyncio_detailed(
     revision_id: str,
     debug_mode: bool | Unset = False,
 ) -> Response[CreateObsoletionPackageResponseDefault]:
-    """Create an obsoletion package to make an existing revision obsolete.
+    """Create an obsoletion candidate to make an existing revision obsolete.
 
     Args:
         wfid (str):
@@ -158,7 +159,7 @@ async def asyncio(
     revision_id: str,
     debug_mode: bool | Unset = False,
 ) -> CreateObsoletionPackageResponseDefault | None:
-    """Create an obsoletion package to make an existing revision obsolete.
+    """Create an obsoletion candidate to make an existing revision obsolete.
 
     Args:
         wfid (str):

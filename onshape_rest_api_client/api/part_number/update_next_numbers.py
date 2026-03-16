@@ -65,10 +65,7 @@ def sync_detailed(
     cid: str | Unset = UNSET,
     did: str | Unset = UNSET,
 ) -> Response[UpdateNextNumbersResponseDefault]:
-    """Send the items to generate numbers for, and return the next valid available part numbers.
-
-     Get the next available part number. See [API Guide: Release Management](https://onshape-
-    public.github.io/docs/api-adv/relmgmt/#get-the-next-available-part-number) for more details.
+    """See [NumberingScheme.nextNumbers](#/NumberingScheme/nextNumbers)
 
     Args:
         cid (str | Unset):
@@ -103,10 +100,7 @@ def sync(
     cid: str | Unset = UNSET,
     did: str | Unset = UNSET,
 ) -> UpdateNextNumbersResponseDefault | None:
-    """Send the items to generate numbers for, and return the next valid available part numbers.
-
-     Get the next available part number. See [API Guide: Release Management](https://onshape-
-    public.github.io/docs/api-adv/relmgmt/#get-the-next-available-part-number) for more details.
+    """See [NumberingScheme.nextNumbers](#/NumberingScheme/nextNumbers)
 
     Args:
         cid (str | Unset):
@@ -136,10 +130,7 @@ async def asyncio_detailed(
     cid: str | Unset = UNSET,
     did: str | Unset = UNSET,
 ) -> Response[UpdateNextNumbersResponseDefault]:
-    """Send the items to generate numbers for, and return the next valid available part numbers.
-
-     Get the next available part number. See [API Guide: Release Management](https://onshape-
-    public.github.io/docs/api-adv/relmgmt/#get-the-next-available-part-number) for more details.
+    """See [NumberingScheme.nextNumbers](#/NumberingScheme/nextNumbers)
 
     Args:
         cid (str | Unset):
@@ -172,10 +163,7 @@ async def asyncio(
     cid: str | Unset = UNSET,
     did: str | Unset = UNSET,
 ) -> UpdateNextNumbersResponseDefault | None:
-    """Send the items to generate numbers for, and return the next valid available part numbers.
-
-     Get the next available part number. See [API Guide: Release Management](https://onshape-
-    public.github.io/docs/api-adv/relmgmt/#get-the-next-available-part-number) for more details.
+    """See [NumberingScheme.nextNumbers](#/NumberingScheme/nextNumbers)
 
     Args:
         cid (str | Unset):

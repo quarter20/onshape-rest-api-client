@@ -13,6 +13,7 @@ def _get_kwargs(
     did: str,
     wid: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/thumbnails/d/{did}/w/{wid}".format(

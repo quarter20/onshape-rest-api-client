@@ -18,23 +18,20 @@ T = TypeVar("T", bound="BTUpdateReleasePackageParams")
 
 @_attrs_define
 class BTUpdateReleasePackageParams:
-    """
+    """Parameters for updating a release or obsoletion candidate.
+
     Attributes:
-        empty (bool | Unset):
-        item_ids (list[str] | Unset):
-        items (list[BTReleasePackageItemParams] | Unset):
-        properties (list[BTPropertyValueParam] | Unset):
+        item_ids (list[str] | Unset): Items to remove from the release candidate when `action=REMOVE_ITEMS`.
+        items (list[BTReleasePackageItemParams] | Unset): Items in the release candidate.
+        properties (list[BTPropertyValueParam] | Unset): Release candidate properties.
     """
 
-    empty: bool | Unset = UNSET
     item_ids: list[str] | Unset = UNSET
     items: list[BTReleasePackageItemParams] | Unset = UNSET
     properties: list[BTPropertyValueParam] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        empty = self.empty
-
         item_ids: list[str] | Unset = UNSET
         if not isinstance(self.item_ids, Unset):
             item_ids = self.item_ids
@@ -56,8 +53,6 @@ class BTUpdateReleasePackageParams:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
-        if empty is not UNSET:
-            field_dict["empty"] = empty
         if item_ids is not UNSET:
             field_dict["itemIds"] = item_ids
         if items is not UNSET:
@@ -73,8 +68,6 @@ class BTUpdateReleasePackageParams:
         from ..models.bt_release_package_item_params import BTReleasePackageItemParams
 
         d = dict(src_dict)
-        empty = d.pop("empty", UNSET)
-
         item_ids = cast(list[str], d.pop("itemIds", UNSET))
 
         _items = d.pop("items", UNSET)
@@ -96,7 +89,6 @@ class BTUpdateReleasePackageParams:
                 properties.append(properties_item)
 
         bt_update_release_package_params = cls(
-            empty=empty,
             item_ids=item_ids,
             items=items,
             properties=properties,

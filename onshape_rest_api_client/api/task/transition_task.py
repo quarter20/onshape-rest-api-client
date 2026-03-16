@@ -13,6 +13,7 @@ def _get_kwargs(
     tid: str,
     transition: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "post",
         "url": "/tasks/{tid}/{transition}".format(

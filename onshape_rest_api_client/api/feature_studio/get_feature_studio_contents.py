@@ -15,6 +15,7 @@ def _get_kwargs(
     wvmid: str,
     eid: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/featurestudios/d/{did}/{wvm}/{wvmid}/e/{eid}".format(

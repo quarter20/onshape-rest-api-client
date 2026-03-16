@@ -14,6 +14,7 @@ def _get_kwargs(
     *,
     forever: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["forever"] = forever

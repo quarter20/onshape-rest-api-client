@@ -24,6 +24,7 @@ def _get_kwargs(
     reject_empty: bool | Unset = False,
     require_config_match: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

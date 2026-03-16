@@ -23,6 +23,7 @@ def _get_kwargs(
     element_ids: str | Unset = "",
     drawings_only: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

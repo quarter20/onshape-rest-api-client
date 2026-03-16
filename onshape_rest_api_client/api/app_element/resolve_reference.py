@@ -21,6 +21,7 @@ def _get_kwargs(
     include_internal: bool | Unset = False,
     link_document_id: str | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["transactionId"] = transaction_id

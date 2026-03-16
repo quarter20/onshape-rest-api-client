@@ -20,6 +20,7 @@ def _get_kwargs(
     transaction_id: str | Unset = UNSET,
     change_id: str | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

@@ -16,6 +16,7 @@ def _get_kwargs(
     *,
     ignore_linked_documents: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["ignoreLinkedDocuments"] = ignore_linked_documents

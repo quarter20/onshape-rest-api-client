@@ -19,6 +19,7 @@ def _get_kwargs(
     latest_only: bool | Unset = False,
     after: datetime.datetime | Unset = isoparse("2000-01-01T00:00:00Z"),
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["elementType"] = element_type

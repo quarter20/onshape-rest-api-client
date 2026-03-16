@@ -14,6 +14,7 @@ def _get_kwargs(
     fdid: str,
     ext: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/comments/{cid}/attachment/{fdid}.{ext}".format(

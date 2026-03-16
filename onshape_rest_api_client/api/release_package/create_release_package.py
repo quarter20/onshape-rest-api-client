@@ -66,10 +66,13 @@ def sync_detailed(
     body: BTReleasePackageParams,
     debug_mode: bool | Unset = False,
 ) -> Response[CreateReleasePackageResponseDefault]:
-    """Create a new release package for one or more items.
+    """Create a new release candidate for one or more items.
 
-     Once a release package is successfully created, use `updateReleasePackage` to update all desired
-    item/package properties, and transition it to the desired state.
+     This endpoint creates a release candidate with items added to it. It does **not** <b>not</b> release
+    the candidate. Once the release candidate is successfully created, use
+    [updateReleasePackage](#/Release/updateReleasePackage) to update all desired item/candidate
+    properties, and transition it to the desired release state. See [API Guide: Release
+    Management](https://onshape-public.github.io/docs/api-adv/relmgmt/) for examples.
 
     To add items from other documents, you must select `Allow adding items from other documents` in your
     [Release management
@@ -78,7 +81,7 @@ def sync_detailed(
     Args:
         wfid (str):
         debug_mode (bool | Unset):  Default: False.
-        body (BTReleasePackageParams):
+        body (BTReleasePackageParams): Parameters for creating a release candidate.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -108,10 +111,13 @@ def sync(
     body: BTReleasePackageParams,
     debug_mode: bool | Unset = False,
 ) -> CreateReleasePackageResponseDefault | None:
-    """Create a new release package for one or more items.
+    """Create a new release candidate for one or more items.
 
-     Once a release package is successfully created, use `updateReleasePackage` to update all desired
-    item/package properties, and transition it to the desired state.
+     This endpoint creates a release candidate with items added to it. It does **not** <b>not</b> release
+    the candidate. Once the release candidate is successfully created, use
+    [updateReleasePackage](#/Release/updateReleasePackage) to update all desired item/candidate
+    properties, and transition it to the desired release state. See [API Guide: Release
+    Management](https://onshape-public.github.io/docs/api-adv/relmgmt/) for examples.
 
     To add items from other documents, you must select `Allow adding items from other documents` in your
     [Release management
@@ -120,7 +126,7 @@ def sync(
     Args:
         wfid (str):
         debug_mode (bool | Unset):  Default: False.
-        body (BTReleasePackageParams):
+        body (BTReleasePackageParams): Parameters for creating a release candidate.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -145,10 +151,13 @@ async def asyncio_detailed(
     body: BTReleasePackageParams,
     debug_mode: bool | Unset = False,
 ) -> Response[CreateReleasePackageResponseDefault]:
-    """Create a new release package for one or more items.
+    """Create a new release candidate for one or more items.
 
-     Once a release package is successfully created, use `updateReleasePackage` to update all desired
-    item/package properties, and transition it to the desired state.
+     This endpoint creates a release candidate with items added to it. It does **not** <b>not</b> release
+    the candidate. Once the release candidate is successfully created, use
+    [updateReleasePackage](#/Release/updateReleasePackage) to update all desired item/candidate
+    properties, and transition it to the desired release state. See [API Guide: Release
+    Management](https://onshape-public.github.io/docs/api-adv/relmgmt/) for examples.
 
     To add items from other documents, you must select `Allow adding items from other documents` in your
     [Release management
@@ -157,7 +166,7 @@ async def asyncio_detailed(
     Args:
         wfid (str):
         debug_mode (bool | Unset):  Default: False.
-        body (BTReleasePackageParams):
+        body (BTReleasePackageParams): Parameters for creating a release candidate.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -185,10 +194,13 @@ async def asyncio(
     body: BTReleasePackageParams,
     debug_mode: bool | Unset = False,
 ) -> CreateReleasePackageResponseDefault | None:
-    """Create a new release package for one or more items.
+    """Create a new release candidate for one or more items.
 
-     Once a release package is successfully created, use `updateReleasePackage` to update all desired
-    item/package properties, and transition it to the desired state.
+     This endpoint creates a release candidate with items added to it. It does **not** <b>not</b> release
+    the candidate. Once the release candidate is successfully created, use
+    [updateReleasePackage](#/Release/updateReleasePackage) to update all desired item/candidate
+    properties, and transition it to the desired release state. See [API Guide: Release
+    Management](https://onshape-public.github.io/docs/api-adv/relmgmt/) for examples.
 
     To add items from other documents, you must select `Allow adding items from other documents` in your
     [Release management
@@ -197,7 +209,7 @@ async def asyncio(
     Args:
         wfid (str):
         debug_mode (bool | Unset):  Default: False.
-        body (BTReleasePackageParams):
+        body (BTReleasePackageParams): Parameters for creating a release candidate.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

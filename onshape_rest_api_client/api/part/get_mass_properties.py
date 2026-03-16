@@ -24,6 +24,7 @@ def _get_kwargs(
     infer_metadata_owner: bool | Unset = True,
     use_mass_property_overrides: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

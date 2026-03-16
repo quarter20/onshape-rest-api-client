@@ -14,6 +14,7 @@ def _get_kwargs(
     cu: GetValidRuleOptionsCu,
     cuid: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/exportrules/options/{cu}/{cuid}".format(

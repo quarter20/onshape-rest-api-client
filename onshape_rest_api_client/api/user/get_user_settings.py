@@ -14,6 +14,7 @@ def _get_kwargs(
     *,
     includematerials: bool | Unset = True,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["includematerials"] = includematerials

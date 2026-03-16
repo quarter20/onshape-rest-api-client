@@ -47,6 +47,7 @@ class BTWorkflowPropertyInfo:
         property_override_status (int | Unset): 0: Unknown | 1: Not computed | 2: Computed without override | 3:
             Computed with override | 4: Computed with subassembly overrides | 5: Overridden
         property_source (int | Unset):
+        public_part_overridable (bool | Unset):
         required (bool | Unset):
         schema_id (str | Unset):
         teams_only (bool | Unset):
@@ -78,6 +79,7 @@ class BTWorkflowPropertyInfo:
     property_id: str | Unset = UNSET
     property_override_status: int | Unset = UNSET
     property_source: int | Unset = UNSET
+    public_part_overridable: bool | Unset = UNSET
     required: bool | Unset = UNSET
     schema_id: str | Unset = UNSET
     teams_only: bool | Unset = UNSET
@@ -144,6 +146,8 @@ class BTWorkflowPropertyInfo:
         property_override_status = self.property_override_status
 
         property_source = self.property_source
+
+        public_part_overridable = self.public_part_overridable
 
         required = self.required
 
@@ -212,6 +216,8 @@ class BTWorkflowPropertyInfo:
             field_dict["propertyOverrideStatus"] = property_override_status
         if property_source is not UNSET:
             field_dict["propertySource"] = property_source
+        if public_part_overridable is not UNSET:
+            field_dict["publicPartOverridable"] = public_part_overridable
         if required is not UNSET:
             field_dict["required"] = required
         if schema_id is not UNSET:
@@ -308,6 +314,8 @@ class BTWorkflowPropertyInfo:
 
         property_source = d.pop("propertySource", UNSET)
 
+        public_part_overridable = d.pop("publicPartOverridable", UNSET)
+
         required = d.pop("required", UNSET)
 
         schema_id = d.pop("schemaId", UNSET)
@@ -361,6 +369,7 @@ class BTWorkflowPropertyInfo:
             property_id=property_id,
             property_override_status=property_override_status,
             property_source=property_source,
+            public_part_overridable=public_part_overridable,
             required=required,
             schema_id=schema_id,
             teams_only=teams_only,

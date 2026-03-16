@@ -24,6 +24,7 @@ def _get_kwargs(
     include_mate_connectors: bool | Unset = False,
     exclude_suppressed: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

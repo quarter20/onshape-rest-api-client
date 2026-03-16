@@ -14,6 +14,7 @@ def _get_kwargs(
     *,
     detailed: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["detailed"] = detailed
@@ -54,7 +55,7 @@ def sync_detailed(
     client: AuthenticatedClient,
     detailed: bool | Unset = False,
 ) -> Response[BTReleasePackageInfo]:
-    """Get details about the specified release package.
+    """Get details about the specified release candidate.
 
     Args:
         rpid (str):
@@ -86,7 +87,7 @@ def sync(
     client: AuthenticatedClient,
     detailed: bool | Unset = False,
 ) -> BTReleasePackageInfo | None:
-    """Get details about the specified release package.
+    """Get details about the specified release candidate.
 
     Args:
         rpid (str):
@@ -113,7 +114,7 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     detailed: bool | Unset = False,
 ) -> Response[BTReleasePackageInfo]:
-    """Get details about the specified release package.
+    """Get details about the specified release candidate.
 
     Args:
         rpid (str):
@@ -143,7 +144,7 @@ async def asyncio(
     client: AuthenticatedClient,
     detailed: bool | Unset = False,
 ) -> BTReleasePackageInfo | None:
-    """Get details about the specified release package.
+    """Get details about the specified release candidate.
 
     Args:
         rpid (str):

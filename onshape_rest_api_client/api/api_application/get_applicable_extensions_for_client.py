@@ -15,6 +15,7 @@ def _get_kwargs(
     *,
     valid_purchases: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["validPurchases"] = valid_purchases

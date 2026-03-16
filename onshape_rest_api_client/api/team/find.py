@@ -20,6 +20,7 @@ def _get_kwargs(
     offset: int | Unset = 0,
     limit: int | Unset = 100,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["query"] = query

@@ -16,6 +16,7 @@ def _get_kwargs(
     *,
     permission: list[int] | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     json_permission: list[int] | Unset = UNSET

@@ -16,6 +16,7 @@ def _get_kwargs(
     remove_from_teams: bool | Unset = True,
     remove_direct_shares: bool | Unset = True,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["removeFromTeams"] = remove_from_teams

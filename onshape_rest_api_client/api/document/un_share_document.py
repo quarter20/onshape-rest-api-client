@@ -15,6 +15,7 @@ def _get_kwargs(
     *,
     entry_type: int | Unset = 0,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["entryType"] = entry_type

@@ -20,6 +20,7 @@ def _get_kwargs(
     include_display: bool | Unset = False,
     configuration_is_id: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

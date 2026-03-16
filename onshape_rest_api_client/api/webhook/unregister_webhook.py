@@ -14,6 +14,7 @@ def _get_kwargs(
     *,
     block_notification: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["blockNotification"] = block_notification

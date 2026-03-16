@@ -175,6 +175,7 @@ from .bt_assembly_replicate_2774 import BTAssemblyReplicate2774
 from .bt_assembly_simulation_2246 import BTAssemblySimulation2246
 from .bt_assembly_simulation_data_978 import BTAssemblySimulationData978
 from .bt_assembly_simulation_data_978_loads_by_node_id import BTAssemblySimulationData978LoadsByNodeId
+from .bt_assembly_simulation_history_table_5453 import BTAssemblySimulationHistoryTable5453
 from .bt_assembly_simulation_structural_loads_table_3867 import BTAssemblySimulationStructuralLoadsTable3867
 from .bt_assembly_simulation_table_3236 import BTAssemblySimulationTable3236
 from .bt_assembly_transform_definition_params import BTAssemblyTransformDefinitionParams
@@ -312,7 +313,7 @@ from .bt_default_units_info import BTDefaultUnitsInfo
 from .bt_derived_assembly_mirror_4204 import BTDerivedAssemblyMirror4204
 from .bt_device_login_secret_info import BTDeviceLoginSecretInfo
 from .bt_diff_info import BTDiffInfo
-from .bt_diff_info_collection_changes import BTDiffInfoCollectionChanges
+from .bt_diff_info_changes import BTDiffInfoChanges
 from .bt_diff_info_collection_type import BTDiffInfoCollectionType
 from .bt_diff_json_response_2725 import BTDiffJsonResponse2725
 from .bt_diff_json_response_2725_patch import BTDiffJsonResponse2725Patch
@@ -1080,6 +1081,7 @@ from .btm_assembly_feature_folder_2543 import BTMAssemblyFeatureFolder2543
 from .btm_assembly_mirror_feature_3037 import BTMAssemblyMirrorFeature3037
 from .btm_assembly_pattern_feature_2241 import BTMAssemblyPatternFeature2241
 from .btm_assembly_replicate_feature_1351 import BTMAssemblyReplicateFeature1351
+from .btm_boundary_condition_5556 import BTMBoundaryCondition5556
 from .btm_configuration_data_1560 import BTMConfigurationData1560
 from .btm_configuration_data_1560_current_fs_values import BTMConfigurationData1560CurrentFSValues
 from .btm_configuration_data_1560_default_configuration_values import BTMConfigurationData1560DefaultConfigurationValues
@@ -1171,6 +1173,7 @@ from .btm_part_studio_mate_connector_query_1324 import BTMPartStudioMateConnecto
 from .btm_read_only_parameter_3800 import BTMReadOnlyParameter3800
 from .btm_record_metrics_1169 import BTMRecordMetrics1169
 from .btm_rollback_150 import BTMRollback150
+from .btm_simulation_feature_5034 import BTMSimulationFeature5034
 from .btm_sketch_151 import BTMSketch151
 from .btm_sketch_composite_entity_893 import BTMSketchCompositeEntity893
 from .btm_sketch_constraint_2 import BTMSketchConstraint2
@@ -1891,6 +1894,7 @@ __all__ = (
     "BTAssemblySimulation2246",
     "BTAssemblySimulationData978",
     "BTAssemblySimulationData978LoadsByNodeId",
+    "BTAssemblySimulationHistoryTable5453",
     "BTAssemblySimulationStructuralLoadsTable3867",
     "BTAssemblySimulationTable3236",
     "BTAssemblyTransformDefinitionParams",
@@ -2031,7 +2035,7 @@ __all__ = (
     "BTDerivedAssemblyMirror4204",
     "BTDeviceLoginSecretInfo",
     "BTDiffInfo",
-    "BTDiffInfoCollectionChanges",
+    "BTDiffInfoChanges",
     "BTDiffInfoCollectionType",
     "BTDiffJsonResponse2725",
     "BTDiffJsonResponse2725Patch",
@@ -2296,6 +2300,7 @@ __all__ = (
     "BTMaterialLibraryMetadataInfo",
     "BTMaterialLibrarySettingsInfo",
     "BTMatrix3X3340",
+    "BTMBoundaryCondition5556",
     "BTMConfigurationData1560",
     "BTMConfigurationData1560CurrentFSValues",
     "BTMConfigurationData1560DefaultConfigurationValues",
@@ -2427,6 +2432,7 @@ __all__ = (
     "BTMReadOnlyParameter3800",
     "BTMRecordMetrics1169",
     "BTMRollback150",
+    "BTMSimulationFeature5034",
     "BTMSketch151",
     "BTMSketchCompositeEntity893",
     "BTMSketchConstraint2",

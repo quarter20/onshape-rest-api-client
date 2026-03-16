@@ -15,6 +15,7 @@ def _get_kwargs(
     *,
     cancel_immediately: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["cancelImmediately"] = cancel_immediately

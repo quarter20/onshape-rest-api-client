@@ -44,6 +44,7 @@ class BTHoleCalloutDisplayData3452:
         depth (BTTolerantValueDisplayData3483 | Unset):
         diameter (BTTolerantValueDisplayData3483 | Unset):
         feature_id (str | Unset):
+        has_default_tolerances (bool | Unset):
         hole_type (GBTHoleType | Unset):
         instance_id (str | Unset):
         is_pipe_tap (bool | Unset):
@@ -78,6 +79,7 @@ class BTHoleCalloutDisplayData3452:
     depth: BTTolerantValueDisplayData3483 | Unset = UNSET
     diameter: BTTolerantValueDisplayData3483 | Unset = UNSET
     feature_id: str | Unset = UNSET
+    has_default_tolerances: bool | Unset = UNSET
     hole_type: GBTHoleType | Unset = UNSET
     instance_id: str | Unset = UNSET
     is_pipe_tap: bool | Unset = UNSET
@@ -158,6 +160,8 @@ class BTHoleCalloutDisplayData3452:
 
         feature_id = self.feature_id
 
+        has_default_tolerances = self.has_default_tolerances
+
         hole_type: str | Unset = UNSET
         if not isinstance(self.hole_type, Unset):
             hole_type = self.hole_type.value
@@ -231,6 +235,8 @@ class BTHoleCalloutDisplayData3452:
             field_dict["diameter"] = diameter
         if feature_id is not UNSET:
             field_dict["featureId"] = feature_id
+        if has_default_tolerances is not UNSET:
+            field_dict["hasDefaultTolerances"] = has_default_tolerances
         if hole_type is not UNSET:
             field_dict["holeType"] = hole_type
         if instance_id is not UNSET:
@@ -352,6 +358,8 @@ class BTHoleCalloutDisplayData3452:
 
         feature_id = d.pop("featureId", UNSET)
 
+        has_default_tolerances = d.pop("hasDefaultTolerances", UNSET)
+
         _hole_type = d.pop("holeType", UNSET)
         hole_type: GBTHoleType | Unset
         if isinstance(_hole_type, Unset):
@@ -410,6 +418,7 @@ class BTHoleCalloutDisplayData3452:
             depth=depth,
             diameter=diameter,
             feature_id=feature_id,
+            has_default_tolerances=has_default_tolerances,
             hole_type=hole_type,
             instance_id=instance_id,
             is_pipe_tap=is_pipe_tap,

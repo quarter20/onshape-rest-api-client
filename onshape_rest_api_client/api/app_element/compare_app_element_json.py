@@ -21,6 +21,7 @@ def _get_kwargs(
     link_document_id: str | Unset = UNSET,
     json_difference_format: str | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["workspaceId"] = workspace_id

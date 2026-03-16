@@ -14,6 +14,7 @@ def _get_kwargs(
     wv: str,
     wvid: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/documents/d/{did}/{wv}/{wvid}/currentmicroversion".format(

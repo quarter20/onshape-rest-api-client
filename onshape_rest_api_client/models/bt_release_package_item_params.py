@@ -17,24 +17,26 @@ T = TypeVar("T", bound="BTReleasePackageItemParams")
 
 @_attrs_define
 class BTReleasePackageItemParams:
-    """
+    """Parameters for an item in a release or obsoletion candidate.
+
     Attributes:
-        configuration (str | Unset):
-        document_id (str | Unset):
-        element_id (str | Unset):
-        element_type (int | Unset):
-        flat_part_id (str | Unset):
-        href (str | Unset):
-        id (str | Unset):
-        is_included (bool | Unset):
-        parent_id (str | Unset):
-        part_id (str | Unset):
-        part_identity (str | Unset):
-        part_number (str | Unset):
-        properties (list[BTPropertyValueParam] | Unset):
-        revision_id (str | Unset):
-        version_id (str | Unset):
-        workspace_id (str | Unset):
+        configuration (str | Unset): Encoded configuration string for the item. See
+            [encodeConfigurationMap](#/Element/encodeConfigurationMap).
+        document_id (str | Unset): Document containing the item.
+        element_id (str | Unset): Element containing the item.
+        element_type (int | Unset): Type of element, which can be: `0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob`
+        flat_part_id (str | Unset): Flat part ID.
+        href (str | Unset): Href link to the item.
+        id (str | Unset): ID of the item. Use this to reference the item when updating it. See
+            [getReleasePackage](#/ReleasePackage/getReleasePackage).
+        parent_id (str | Unset): ID of the parent item, if any.
+        part_id (str | Unset): ID of the part to add to the release candidate.
+        part_identity (str | Unset): Part identity string for the part to add to the release candidate.
+        part_number (str | Unset): Part number. See [nextNumbers](#/NumberingScheme/nextNumbers).
+        properties (list[BTPropertyValueParam] | Unset): List of property values associated with the item.
+        revision_id (str | Unset): Revision ID of the item. Use when adding items to an obsoletion candidate.
+        version_id (str | Unset): Version containing the item.
+        workspace_id (str | Unset): Workspace containing the item.
     """
 
     configuration: str | Unset = UNSET
@@ -44,7 +46,6 @@ class BTReleasePackageItemParams:
     flat_part_id: str | Unset = UNSET
     href: str | Unset = UNSET
     id: str | Unset = UNSET
-    is_included: bool | Unset = UNSET
     parent_id: str | Unset = UNSET
     part_id: str | Unset = UNSET
     part_identity: str | Unset = UNSET
@@ -69,8 +70,6 @@ class BTReleasePackageItemParams:
         href = self.href
 
         id = self.id
-
-        is_included = self.is_included
 
         parent_id = self.parent_id
 
@@ -110,8 +109,6 @@ class BTReleasePackageItemParams:
             field_dict["href"] = href
         if id is not UNSET:
             field_dict["id"] = id
-        if is_included is not UNSET:
-            field_dict["isIncluded"] = is_included
         if parent_id is not UNSET:
             field_dict["parentId"] = parent_id
         if part_id is not UNSET:
@@ -150,8 +147,6 @@ class BTReleasePackageItemParams:
 
         id = d.pop("id", UNSET)
 
-        is_included = d.pop("isIncluded", UNSET)
-
         parent_id = d.pop("parentId", UNSET)
 
         part_id = d.pop("partId", UNSET)
@@ -183,7 +178,6 @@ class BTReleasePackageItemParams:
             flat_part_id=flat_part_id,
             href=href,
             id=id,
-            is_included=is_included,
             parent_id=parent_id,
             part_id=part_id,
             part_identity=part_identity,

@@ -22,6 +22,7 @@ def _get_kwargs(
     target_configuration: str | Unset = UNSET,
     link_document_id: str | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["workspaceId"] = workspace_id

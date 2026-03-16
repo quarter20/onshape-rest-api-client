@@ -31,6 +31,7 @@ def _get_kwargs(
     thumbnail: bool | Unset = False,
     respect_subassembly_bom_behavior: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

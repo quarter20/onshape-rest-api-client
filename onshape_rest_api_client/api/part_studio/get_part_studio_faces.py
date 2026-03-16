@@ -34,6 +34,7 @@ def _get_kwargs(
     output_error_faces: bool | Unset = False,
     combine_composite_part_constituents: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

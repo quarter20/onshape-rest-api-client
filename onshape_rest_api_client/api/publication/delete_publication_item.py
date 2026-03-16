@@ -13,6 +13,7 @@ def _get_kwargs(
     pid: str,
     iid: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "delete",
         "url": "/publications/{pid}/item/{iid}".format(

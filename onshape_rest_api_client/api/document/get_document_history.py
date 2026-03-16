@@ -14,6 +14,7 @@ def _get_kwargs(
     wm: str,
     wmid: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/documents/d/{did}/{wm}/{wmid}/documenthistory".format(

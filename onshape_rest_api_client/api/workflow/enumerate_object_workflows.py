@@ -20,6 +20,7 @@ def _get_kwargs(
     limit: int | Unset = 20,
     modified_after: datetime.datetime | Unset = isoparse("2000-01-01T00:00:00Z"),
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     json_object_types: list[str] | Unset = UNSET

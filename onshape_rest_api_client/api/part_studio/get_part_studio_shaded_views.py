@@ -27,6 +27,7 @@ def _get_kwargs(
     configuration: str | Unset = UNSET,
     link_document_id: str | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["viewMatrix"] = view_matrix

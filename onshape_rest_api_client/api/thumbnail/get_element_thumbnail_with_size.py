@@ -22,6 +22,7 @@ def _get_kwargs(
     skip_default_image: str | Unset = "",
     reject_empty: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

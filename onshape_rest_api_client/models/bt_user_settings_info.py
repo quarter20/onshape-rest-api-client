@@ -63,6 +63,7 @@ class BTUserSettingsInfo:
         units_maximum_display_precision (BTUnitsMaximumDisplayPrecisionInfo | Unset):
         use_24_hour_time (bool | Unset):
         use_decimal_comma (bool | Unset):
+        use_pen_as_mouse (bool | Unset):
         view_manipulation_mouse_key_mapping (BTViewManipulationMouseKeyMappingInfo | Unset):
         view_mapping_id (int | Unset):
     """
@@ -104,6 +105,7 @@ class BTUserSettingsInfo:
     units_maximum_display_precision: BTUnitsMaximumDisplayPrecisionInfo | Unset = UNSET
     use_24_hour_time: bool | Unset = UNSET
     use_decimal_comma: bool | Unset = UNSET
+    use_pen_as_mouse: bool | Unset = UNSET
     view_manipulation_mouse_key_mapping: BTViewManipulationMouseKeyMappingInfo | Unset = UNSET
     view_mapping_id: int | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -205,6 +207,8 @@ class BTUserSettingsInfo:
 
         use_decimal_comma = self.use_decimal_comma
 
+        use_pen_as_mouse = self.use_pen_as_mouse
+
         view_manipulation_mouse_key_mapping: dict[str, Any] | Unset = UNSET
         if not isinstance(self.view_manipulation_mouse_key_mapping, Unset):
             view_manipulation_mouse_key_mapping = self.view_manipulation_mouse_key_mapping.to_dict()
@@ -288,6 +292,8 @@ class BTUserSettingsInfo:
             field_dict["use24HourTime"] = use_24_hour_time
         if use_decimal_comma is not UNSET:
             field_dict["useDecimalComma"] = use_decimal_comma
+        if use_pen_as_mouse is not UNSET:
+            field_dict["usePenAsMouse"] = use_pen_as_mouse
         if view_manipulation_mouse_key_mapping is not UNSET:
             field_dict["viewManipulationMouseKeyMapping"] = view_manipulation_mouse_key_mapping
         if view_mapping_id is not UNSET:
@@ -424,6 +430,8 @@ class BTUserSettingsInfo:
 
         use_decimal_comma = d.pop("useDecimalComma", UNSET)
 
+        use_pen_as_mouse = d.pop("usePenAsMouse", UNSET)
+
         _view_manipulation_mouse_key_mapping = d.pop("viewManipulationMouseKeyMapping", UNSET)
         view_manipulation_mouse_key_mapping: BTViewManipulationMouseKeyMappingInfo | Unset
         if isinstance(_view_manipulation_mouse_key_mapping, Unset):
@@ -473,6 +481,7 @@ class BTUserSettingsInfo:
             units_maximum_display_precision=units_maximum_display_precision,
             use_24_hour_time=use_24_hour_time,
             use_decimal_comma=use_decimal_comma,
+            use_pen_as_mouse=use_pen_as_mouse,
             view_manipulation_mouse_key_mapping=view_manipulation_mouse_key_mapping,
             view_mapping_id=view_mapping_id,
         )

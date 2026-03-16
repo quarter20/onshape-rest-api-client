@@ -12,6 +12,7 @@ def _get_kwargs(
     *,
     document_id: str | Unset = "",
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["documentId"] = document_id

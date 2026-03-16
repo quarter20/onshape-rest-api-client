@@ -22,6 +22,7 @@ def _get_kwargs(
     only_active: bool | Unset = False,
     only_object_type_defaults: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["ownerId"] = owner_id

@@ -26,6 +26,7 @@ def _get_kwargs(
     precomputed_level_of_detail: str | Unset = UNSET,
     edge_id: list[str] | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

@@ -12,6 +12,7 @@ from ...types import Response
 def _get_kwargs(
     webhookid: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/webhooks/{webhookid}".format(

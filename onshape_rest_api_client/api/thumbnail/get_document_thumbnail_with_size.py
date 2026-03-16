@@ -17,6 +17,7 @@ def _get_kwargs(
     t: str | Unset = UNSET,
     skip_default_image: str | Unset = "",
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["t"] = t

@@ -23,6 +23,7 @@ def _get_kwargs(
     include_computed_assembly_properties: bool | Unset = False,
     thumbnail: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

@@ -21,6 +21,7 @@ def _get_kwargs(
     rollback_bar_index: int | Unset = -1,
     element_microversion_id: str | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id

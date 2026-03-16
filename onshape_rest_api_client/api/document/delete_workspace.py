@@ -13,6 +13,7 @@ def _get_kwargs(
     did: str,
     wid: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "delete",
         "url": "/documents/d/{did}/workspaces/{wid}".format(

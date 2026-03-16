@@ -13,6 +13,7 @@ if TYPE_CHECKING:
     from ..models.bt_assembly_simulation_2246 import BTAssemblySimulation2246
     from ..models.bt_assembly_simulation_data_978_loads_by_node_id import BTAssemblySimulationData978LoadsByNodeId
     from ..models.btm_load_3538 import BTMLoad3538
+    from ..models.btm_simulation_feature_5034 import BTMSimulationFeature5034
 
 
 T = TypeVar("T", bound="BTAssemblySimulationData978")
@@ -28,6 +29,7 @@ class BTAssemblySimulationData978:
         contact_behavior (GBTSimulationContactBehavior | Unset):
         loads (list[BTMLoad3538] | Unset):
         loads_by_node_id (BTAssemblySimulationData978LoadsByNodeId | Unset):
+        simulation_features (list[BTMSimulationFeature5034] | Unset):
         simulations (list[BTAssemblySimulation2246] | Unset):
         structural_loads (list[BTMLoad3538] | Unset):
     """
@@ -38,6 +40,7 @@ class BTAssemblySimulationData978:
     contact_behavior: GBTSimulationContactBehavior | Unset = UNSET
     loads: list[BTMLoad3538] | Unset = UNSET
     loads_by_node_id: BTAssemblySimulationData978LoadsByNodeId | Unset = UNSET
+    simulation_features: list[BTMSimulationFeature5034] | Unset = UNSET
     simulations: list[BTAssemblySimulation2246] | Unset = UNSET
     structural_loads: list[BTMLoad3538] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -63,6 +66,13 @@ class BTAssemblySimulationData978:
         loads_by_node_id: dict[str, Any] | Unset = UNSET
         if not isinstance(self.loads_by_node_id, Unset):
             loads_by_node_id = self.loads_by_node_id.to_dict()
+
+        simulation_features: list[dict[str, Any]] | Unset = UNSET
+        if not isinstance(self.simulation_features, Unset):
+            simulation_features = []
+            for simulation_features_item_data in self.simulation_features:
+                simulation_features_item = simulation_features_item_data.to_dict()
+                simulation_features.append(simulation_features_item)
 
         simulations: list[dict[str, Any]] | Unset = UNSET
         if not isinstance(self.simulations, Unset):
@@ -93,6 +103,8 @@ class BTAssemblySimulationData978:
             field_dict["loads"] = loads
         if loads_by_node_id is not UNSET:
             field_dict["loadsByNodeId"] = loads_by_node_id
+        if simulation_features is not UNSET:
+            field_dict["simulationFeatures"] = simulation_features
         if simulations is not UNSET:
             field_dict["simulations"] = simulations
         if structural_loads is not UNSET:
@@ -105,6 +117,7 @@ class BTAssemblySimulationData978:
         from ..models.bt_assembly_simulation_2246 import BTAssemblySimulation2246
         from ..models.bt_assembly_simulation_data_978_loads_by_node_id import BTAssemblySimulationData978LoadsByNodeId
         from ..models.btm_load_3538 import BTMLoad3538
+        from ..models.btm_simulation_feature_5034 import BTMSimulationFeature5034
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)
@@ -136,6 +149,15 @@ class BTAssemblySimulationData978:
         else:
             loads_by_node_id = BTAssemblySimulationData978LoadsByNodeId.from_dict(_loads_by_node_id)
 
+        _simulation_features = d.pop("simulationFeatures", UNSET)
+        simulation_features: list[BTMSimulationFeature5034] | Unset = UNSET
+        if _simulation_features is not UNSET:
+            simulation_features = []
+            for simulation_features_item_data in _simulation_features:
+                simulation_features_item = BTMSimulationFeature5034.from_dict(simulation_features_item_data)
+
+                simulation_features.append(simulation_features_item)
+
         _simulations = d.pop("simulations", UNSET)
         simulations: list[BTAssemblySimulation2246] | Unset = UNSET
         if _simulations is not UNSET:
@@ -161,6 +183,7 @@ class BTAssemblySimulationData978:
             contact_behavior=contact_behavior,
             loads=loads,
             loads_by_node_id=loads_by_node_id,
+            simulation_features=simulation_features,
             simulations=simulations,
             structural_loads=structural_loads,
         )

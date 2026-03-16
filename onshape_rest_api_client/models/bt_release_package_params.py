@@ -17,19 +17,16 @@ T = TypeVar("T", bound="BTReleasePackageParams")
 
 @_attrs_define
 class BTReleasePackageParams:
-    """
+    """Parameters for creating a release candidate.
+
     Attributes:
-        change_order_id (str | Unset):
-        items (list[BTReleasePackageItemParams] | Unset):
+        items (list[BTReleasePackageItemParams] | Unset): List of items to include in the release candidate.
     """
 
-    change_order_id: str | Unset = UNSET
     items: list[BTReleasePackageItemParams] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        change_order_id = self.change_order_id
-
         items: list[dict[str, Any]] | Unset = UNSET
         if not isinstance(self.items, Unset):
             items = []
@@ -40,8 +37,6 @@ class BTReleasePackageParams:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
-        if change_order_id is not UNSET:
-            field_dict["changeOrderId"] = change_order_id
         if items is not UNSET:
             field_dict["items"] = items
 
@@ -52,8 +47,6 @@ class BTReleasePackageParams:
         from ..models.bt_release_package_item_params import BTReleasePackageItemParams
 
         d = dict(src_dict)
-        change_order_id = d.pop("changeOrderId", UNSET)
-
         _items = d.pop("items", UNSET)
         items: list[BTReleasePackageItemParams] | Unset = UNSET
         if _items is not UNSET:
@@ -64,7 +57,6 @@ class BTReleasePackageParams:
                 items.append(items_item)
 
         bt_release_package_params = cls(
-            change_order_id=change_order_id,
             items=items,
         )
 

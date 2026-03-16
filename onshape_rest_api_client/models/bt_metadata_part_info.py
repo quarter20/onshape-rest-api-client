@@ -30,6 +30,7 @@ class BTMetadataPartInfo:
         part_id (str | Unset):
         part_identity (str | Unset):
         part_type (str | Unset):
+        unflattened_part_id (str | Unset):
     """
 
     json_type: str
@@ -42,6 +43,7 @@ class BTMetadataPartInfo:
     part_id: str | Unset = UNSET
     part_identity: str | Unset = UNSET
     part_type: str | Unset = UNSET
+    unflattened_part_id: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -72,6 +74,8 @@ class BTMetadataPartInfo:
 
         part_type = self.part_type
 
+        unflattened_part_id = self.unflattened_part_id
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -97,6 +101,8 @@ class BTMetadataPartInfo:
             field_dict["partIdentity"] = part_identity
         if part_type is not UNSET:
             field_dict["partType"] = part_type
+        if unflattened_part_id is not UNSET:
+            field_dict["unflattenedPartId"] = unflattened_part_id
 
         return field_dict
 
@@ -138,6 +144,8 @@ class BTMetadataPartInfo:
 
         part_type = d.pop("partType", UNSET)
 
+        unflattened_part_id = d.pop("unflattenedPartId", UNSET)
+
         bt_metadata_part_info = cls(
             json_type=json_type,
             href=href,
@@ -149,6 +157,7 @@ class BTMetadataPartInfo:
             part_id=part_id,
             part_identity=part_identity,
             part_type=part_type,
+            unflattened_part_id=unflattened_part_id,
         )
 
         bt_metadata_part_info.additional_properties = d

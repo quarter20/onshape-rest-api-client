@@ -12,6 +12,7 @@ from ...types import Response
 def _get_kwargs(
     fid: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/folders/{fid}/acl".format(

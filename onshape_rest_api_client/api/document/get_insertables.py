@@ -42,6 +42,7 @@ def _get_kwargs(
     allowed_blob_extensions: str | Unset = "",
     is_obsoletion: bool | Unset = False,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["elementId"] = element_id
