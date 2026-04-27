@@ -22,18 +22,16 @@ class BTVariableTableRowMetadata3912:
         bt_type (str | Unset): Type of JSON object.
         cross_highlight_data_if_any (BTTableBaseCrossHighlightData2609 | Unset):
         cross_highlight_data (BTTableBaseCrossHighlightData2609 | Unset):
-        info (str | Unset):
-        is_fully_editable (bool | Unset):
         is_recursive_import (bool | Unset):
+        is_row_editable (bool | Unset):
         last_writing_feature_node_id (str | Unset):
     """
 
     bt_type: str | Unset = UNSET
     cross_highlight_data_if_any: BTTableBaseCrossHighlightData2609 | Unset = UNSET
     cross_highlight_data: BTTableBaseCrossHighlightData2609 | Unset = UNSET
-    info: str | Unset = UNSET
-    is_fully_editable: bool | Unset = UNSET
     is_recursive_import: bool | Unset = UNSET
+    is_row_editable: bool | Unset = UNSET
     last_writing_feature_node_id: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -48,11 +46,9 @@ class BTVariableTableRowMetadata3912:
         if not isinstance(self.cross_highlight_data, Unset):
             cross_highlight_data = self.cross_highlight_data.to_dict()
 
-        info = self.info
-
-        is_fully_editable = self.is_fully_editable
-
         is_recursive_import = self.is_recursive_import
+
+        is_row_editable = self.is_row_editable
 
         last_writing_feature_node_id = self.last_writing_feature_node_id
 
@@ -65,12 +61,10 @@ class BTVariableTableRowMetadata3912:
             field_dict["crossHighlightDataIfAny"] = cross_highlight_data_if_any
         if cross_highlight_data is not UNSET:
             field_dict["crossHighlightData"] = cross_highlight_data
-        if info is not UNSET:
-            field_dict["info"] = info
-        if is_fully_editable is not UNSET:
-            field_dict["isFullyEditable"] = is_fully_editable
         if is_recursive_import is not UNSET:
             field_dict["isRecursiveImport"] = is_recursive_import
+        if is_row_editable is not UNSET:
+            field_dict["isRowEditable"] = is_row_editable
         if last_writing_feature_node_id is not UNSET:
             field_dict["lastWritingFeatureNodeId"] = last_writing_feature_node_id
 
@@ -97,11 +91,9 @@ class BTVariableTableRowMetadata3912:
         else:
             cross_highlight_data = BTTableBaseCrossHighlightData2609.from_dict(_cross_highlight_data)
 
-        info = d.pop("info", UNSET)
-
-        is_fully_editable = d.pop("isFullyEditable", UNSET)
-
         is_recursive_import = d.pop("isRecursiveImport", UNSET)
+
+        is_row_editable = d.pop("isRowEditable", UNSET)
 
         last_writing_feature_node_id = d.pop("lastWritingFeatureNodeId", UNSET)
 
@@ -109,9 +101,8 @@ class BTVariableTableRowMetadata3912:
             bt_type=bt_type,
             cross_highlight_data_if_any=cross_highlight_data_if_any,
             cross_highlight_data=cross_highlight_data,
-            info=info,
-            is_fully_editable=is_fully_editable,
             is_recursive_import=is_recursive_import,
+            is_row_editable=is_row_editable,
             last_writing_feature_node_id=last_writing_feature_node_id,
         )
 

@@ -38,6 +38,7 @@ class BTReleasePackageInfo:
         description (str | Unset):
         detailed (bool | Unset):
         document_id (str | Unset):
+        has_reverted_to_revision_items (bool | Unset):
         href (str | Unset): URI to fetch complete information of the resource.
         id (str | Unset): Id of the resource.
         is_obsoletion (bool | Unset):
@@ -73,6 +74,7 @@ class BTReleasePackageInfo:
     description: str | Unset = UNSET
     detailed: bool | Unset = UNSET
     document_id: str | Unset = UNSET
+    has_reverted_to_revision_items: bool | Unset = UNSET
     href: str | Unset = UNSET
     id: str | Unset = UNSET
     is_obsoletion: bool | Unset = UNSET
@@ -129,6 +131,8 @@ class BTReleasePackageInfo:
         detailed = self.detailed
 
         document_id = self.document_id
+
+        has_reverted_to_revision_items = self.has_reverted_to_revision_items
 
         href = self.href
 
@@ -230,6 +234,8 @@ class BTReleasePackageInfo:
             field_dict["detailed"] = detailed
         if document_id is not UNSET:
             field_dict["documentId"] = document_id
+        if has_reverted_to_revision_items is not UNSET:
+            field_dict["hasRevertedToRevisionItems"] = has_reverted_to_revision_items
         if href is not UNSET:
             field_dict["href"] = href
         if id is not UNSET:
@@ -333,6 +339,8 @@ class BTReleasePackageInfo:
 
         document_id = d.pop("documentId", UNSET)
 
+        has_reverted_to_revision_items = d.pop("hasRevertedToRevisionItems", UNSET)
+
         href = d.pop("href", UNSET)
 
         id = d.pop("id", UNSET)
@@ -431,6 +439,7 @@ class BTReleasePackageInfo:
             description=description,
             detailed=detailed,
             document_id=document_id,
+            has_reverted_to_revision_items=has_reverted_to_revision_items,
             href=href,
             id=id,
             is_obsoletion=is_obsoletion,

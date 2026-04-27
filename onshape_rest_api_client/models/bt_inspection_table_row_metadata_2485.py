@@ -7,6 +7,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 from ..models.gbt_annotation_type import GBTAnnotationType
+from ..models.gbt_feature_dimension_type import GBTFeatureDimensionType
 from ..models.gbt_tolerance_precision import GBTTolerancePrecision
 from ..types import UNSET, Unset
 
@@ -29,6 +30,7 @@ class BTInspectionTableRowMetadata2485:
         chamfer_callout_id (str | Unset):
         constraint_id (str | Unset):
         cross_highlight_data (BTTableCrossHighlightData1753 | Unset):
+        dimension_type (GBTFeatureDimensionType | Unset):
         feature_id (str | Unset):
         has_default_tolerances (bool | Unset):
         hole_callout_id (str | Unset):
@@ -45,6 +47,7 @@ class BTInspectionTableRowMetadata2485:
     chamfer_callout_id: str | Unset = UNSET
     constraint_id: str | Unset = UNSET
     cross_highlight_data: BTTableCrossHighlightData1753 | Unset = UNSET
+    dimension_type: GBTFeatureDimensionType | Unset = UNSET
     feature_id: str | Unset = UNSET
     has_default_tolerances: bool | Unset = UNSET
     hole_callout_id: str | Unset = UNSET
@@ -74,6 +77,10 @@ class BTInspectionTableRowMetadata2485:
         cross_highlight_data: dict[str, Any] | Unset = UNSET
         if not isinstance(self.cross_highlight_data, Unset):
             cross_highlight_data = self.cross_highlight_data.to_dict()
+
+        dimension_type: str | Unset = UNSET
+        if not isinstance(self.dimension_type, Unset):
+            dimension_type = self.dimension_type.value
 
         feature_id = self.feature_id
 
@@ -108,6 +115,8 @@ class BTInspectionTableRowMetadata2485:
             field_dict["constraintId"] = constraint_id
         if cross_highlight_data is not UNSET:
             field_dict["crossHighlightData"] = cross_highlight_data
+        if dimension_type is not UNSET:
+            field_dict["dimensionType"] = dimension_type
         if feature_id is not UNSET:
             field_dict["featureId"] = feature_id
         if has_default_tolerances is not UNSET:
@@ -160,6 +169,13 @@ class BTInspectionTableRowMetadata2485:
         else:
             cross_highlight_data = BTTableCrossHighlightData1753.from_dict(_cross_highlight_data)
 
+        _dimension_type = d.pop("dimensionType", UNSET)
+        dimension_type: GBTFeatureDimensionType | Unset
+        if isinstance(_dimension_type, Unset):
+            dimension_type = UNSET
+        else:
+            dimension_type = GBTFeatureDimensionType(_dimension_type)
+
         feature_id = d.pop("featureId", UNSET)
 
         has_default_tolerances = d.pop("hasDefaultTolerances", UNSET)
@@ -187,6 +203,7 @@ class BTInspectionTableRowMetadata2485:
             chamfer_callout_id=chamfer_callout_id,
             constraint_id=constraint_id,
             cross_highlight_data=cross_highlight_data,
+            dimension_type=dimension_type,
             feature_id=feature_id,
             has_default_tolerances=has_default_tolerances,
             hole_callout_id=hole_callout_id,

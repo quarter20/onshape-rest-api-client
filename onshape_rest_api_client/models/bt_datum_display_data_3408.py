@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,6 +20,8 @@ T = TypeVar("T", bound="BTDatumDisplayData3408")
 class BTDatumDisplayData3408:
     """
     Attributes:
+        all_references (list[str] | Unset):
+        all_references_populated (bool | Unset):
         annotation_id (str | Unset):
         annotation_plane (BTCoordinateSystem387 | Unset):
         base_plane (BTCoordinateSystem387 | Unset):
@@ -34,9 +36,12 @@ class BTDatumDisplayData3408:
         main_feature_id (str | Unset):
         main_parameter_id (str | Unset):
         main_part_id (str | Unset):
+        parent_characteristic_id (str | Unset):
         name (str | Unset):
     """
 
+    all_references: list[str] | Unset = UNSET
+    all_references_populated: bool | Unset = UNSET
     annotation_id: str | Unset = UNSET
     annotation_plane: BTCoordinateSystem387 | Unset = UNSET
     base_plane: BTCoordinateSystem387 | Unset = UNSET
@@ -51,10 +56,17 @@ class BTDatumDisplayData3408:
     main_feature_id: str | Unset = UNSET
     main_parameter_id: str | Unset = UNSET
     main_part_id: str | Unset = UNSET
+    parent_characteristic_id: str | Unset = UNSET
     name: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        all_references: list[str] | Unset = UNSET
+        if not isinstance(self.all_references, Unset):
+            all_references = self.all_references
+
+        all_references_populated = self.all_references_populated
+
         annotation_id = self.annotation_id
 
         annotation_plane: dict[str, Any] | Unset = UNSET
@@ -92,11 +104,17 @@ class BTDatumDisplayData3408:
 
         main_part_id = self.main_part_id
 
+        parent_characteristic_id = self.parent_characteristic_id
+
         name = self.name
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if all_references is not UNSET:
+            field_dict["allReferences"] = all_references
+        if all_references_populated is not UNSET:
+            field_dict["allReferencesPopulated"] = all_references_populated
         if annotation_id is not UNSET:
             field_dict["annotationId"] = annotation_id
         if annotation_plane is not UNSET:
@@ -125,6 +143,8 @@ class BTDatumDisplayData3408:
             field_dict["mainParameterId"] = main_parameter_id
         if main_part_id is not UNSET:
             field_dict["mainPartId"] = main_part_id
+        if parent_characteristic_id is not UNSET:
+            field_dict["parentCharacteristicId"] = parent_characteristic_id
         if name is not UNSET:
             field_dict["name"] = name
 
@@ -136,6 +156,10 @@ class BTDatumDisplayData3408:
         from ..models.bt_vector_2d1812 import BTVector2D1812
 
         d = dict(src_dict)
+        all_references = cast(list[str], d.pop("allReferences", UNSET))
+
+        all_references_populated = d.pop("allReferencesPopulated", UNSET)
+
         annotation_id = d.pop("annotationId", UNSET)
 
         _annotation_plane = d.pop("annotationPlane", UNSET)
@@ -181,9 +205,13 @@ class BTDatumDisplayData3408:
 
         main_part_id = d.pop("mainPartId", UNSET)
 
+        parent_characteristic_id = d.pop("parentCharacteristicId", UNSET)
+
         name = d.pop("name", UNSET)
 
         bt_datum_display_data_3408 = cls(
+            all_references=all_references,
+            all_references_populated=all_references_populated,
             annotation_id=annotation_id,
             annotation_plane=annotation_plane,
             base_plane=base_plane,
@@ -198,6 +226,7 @@ class BTDatumDisplayData3408:
             main_feature_id=main_feature_id,
             main_parameter_id=main_parameter_id,
             main_part_id=main_part_id,
+            parent_characteristic_id=parent_characteristic_id,
             name=name,
         )
 

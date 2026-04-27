@@ -139,6 +139,7 @@ class BTTranslateFormatParams:
         unit (str | Unset):
         upload_id (str | Unset):
         urdf_mesh_format (GBTUrdfMeshFormat | Unset):
+        urdf_stl_encoding (GBTStlEncodingType | Unset): STL encoding type, `TEXT | BINARY`
         use_file_name_to_set_single_part_name (bool | Unset):
         use_gltf_compression (bool | Unset):
         use_iges_import_post_processing (bool | Unset):
@@ -241,6 +242,7 @@ class BTTranslateFormatParams:
     unit: str | Unset = UNSET
     upload_id: str | Unset = UNSET
     urdf_mesh_format: GBTUrdfMeshFormat | Unset = UNSET
+    urdf_stl_encoding: GBTStlEncodingType | Unset = UNSET
     use_file_name_to_set_single_part_name: bool | Unset = UNSET
     use_gltf_compression: bool | Unset = UNSET
     use_iges_import_post_processing: bool | Unset = UNSET
@@ -458,6 +460,10 @@ class BTTranslateFormatParams:
         if not isinstance(self.urdf_mesh_format, Unset):
             urdf_mesh_format = self.urdf_mesh_format.value
 
+        urdf_stl_encoding: str | Unset = UNSET
+        if not isinstance(self.urdf_stl_encoding, Unset):
+            urdf_stl_encoding = self.urdf_stl_encoding.value
+
         use_file_name_to_set_single_part_name = self.use_file_name_to_set_single_part_name
 
         use_gltf_compression = self.use_gltf_compression
@@ -663,6 +669,8 @@ class BTTranslateFormatParams:
             field_dict["uploadId"] = upload_id
         if urdf_mesh_format is not UNSET:
             field_dict["urdfMeshFormat"] = urdf_mesh_format
+        if urdf_stl_encoding is not UNSET:
+            field_dict["urdfStlEncoding"] = urdf_stl_encoding
         if use_file_name_to_set_single_part_name is not UNSET:
             field_dict["useFileNameToSetSinglePartName"] = use_file_name_to_set_single_part_name
         if use_gltf_compression is not UNSET:
@@ -906,6 +914,13 @@ class BTTranslateFormatParams:
         else:
             urdf_mesh_format = GBTUrdfMeshFormat(_urdf_mesh_format)
 
+        _urdf_stl_encoding = d.pop("urdfStlEncoding", UNSET)
+        urdf_stl_encoding: GBTStlEncodingType | Unset
+        if isinstance(_urdf_stl_encoding, Unset):
+            urdf_stl_encoding = UNSET
+        else:
+            urdf_stl_encoding = GBTStlEncodingType(_urdf_stl_encoding)
+
         use_file_name_to_set_single_part_name = d.pop("useFileNameToSetSinglePartName", UNSET)
 
         use_gltf_compression = d.pop("useGltfCompression", UNSET)
@@ -1013,6 +1028,7 @@ class BTTranslateFormatParams:
             unit=unit,
             upload_id=upload_id,
             urdf_mesh_format=urdf_mesh_format,
+            urdf_stl_encoding=urdf_stl_encoding,
             use_file_name_to_set_single_part_name=use_file_name_to_set_single_part_name,
             use_gltf_compression=use_gltf_compression,
             use_iges_import_post_processing=use_iges_import_post_processing,

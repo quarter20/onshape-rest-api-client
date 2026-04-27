@@ -10,6 +10,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.bt_full_element_id_756 import BTFullElementId756
+    from ..models.bt_graphics_buffer_2668 import BTGraphicsBuffer2668
     from ..models.bt_immutable_byte_array import BTImmutableByteArray
     from ..models.bt_insertable_display_data_2405_graphics_buffers import BTInsertableDisplayData2405GraphicsBuffers
     from ..models.bt_insertable_sketch_display_data_3775_body_id_to_part_data import (
@@ -26,6 +27,7 @@ class BTInsertableSketchDisplayData3775:
     """
     Attributes:
         bt_type (str | Unset): Type of JSON object.
+        buffers (list[BTGraphicsBuffer2668] | Unset):
         full_element_id (BTFullElementId756 | Unset):
         graphics_buffers (BTInsertableDisplayData2405GraphicsBuffers | Unset):
         id (str | Unset):
@@ -40,6 +42,7 @@ class BTInsertableSketchDisplayData3775:
     """
 
     bt_type: str | Unset = UNSET
+    buffers: list[BTGraphicsBuffer2668] | Unset = UNSET
     full_element_id: BTFullElementId756 | Unset = UNSET
     graphics_buffers: BTInsertableDisplayData2405GraphicsBuffers | Unset = UNSET
     id: str | Unset = UNSET
@@ -55,6 +58,13 @@ class BTInsertableSketchDisplayData3775:
 
     def to_dict(self) -> dict[str, Any]:
         bt_type = self.bt_type
+
+        buffers: list[dict[str, Any]] | Unset = UNSET
+        if not isinstance(self.buffers, Unset):
+            buffers = []
+            for buffers_item_data in self.buffers:
+                buffers_item = buffers_item_data.to_dict()
+                buffers.append(buffers_item)
 
         full_element_id: dict[str, Any] | Unset = UNSET
         if not isinstance(self.full_element_id, Unset):
@@ -98,6 +108,8 @@ class BTInsertableSketchDisplayData3775:
         field_dict.update({})
         if bt_type is not UNSET:
             field_dict["btType"] = bt_type
+        if buffers is not UNSET:
+            field_dict["buffers"] = buffers
         if full_element_id is not UNSET:
             field_dict["fullElementId"] = full_element_id
         if graphics_buffers is not UNSET:
@@ -126,6 +138,7 @@ class BTInsertableSketchDisplayData3775:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_full_element_id_756 import BTFullElementId756
+        from ..models.bt_graphics_buffer_2668 import BTGraphicsBuffer2668
         from ..models.bt_immutable_byte_array import BTImmutableByteArray
         from ..models.bt_insertable_display_data_2405_graphics_buffers import BTInsertableDisplayData2405GraphicsBuffers
         from ..models.bt_insertable_sketch_display_data_3775_body_id_to_part_data import (
@@ -135,6 +148,15 @@ class BTInsertableSketchDisplayData3775:
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)
+
+        _buffers = d.pop("buffers", UNSET)
+        buffers: list[BTGraphicsBuffer2668] | Unset = UNSET
+        if _buffers is not UNSET:
+            buffers = []
+            for buffers_item_data in _buffers:
+                buffers_item = BTGraphicsBuffer2668.from_dict(buffers_item_data)
+
+                buffers.append(buffers_item)
 
         _full_element_id = d.pop("fullElementId", UNSET)
         full_element_id: BTFullElementId756 | Unset
@@ -187,6 +209,7 @@ class BTInsertableSketchDisplayData3775:
 
         bt_insertable_sketch_display_data_3775 = cls(
             bt_type=bt_type,
+            buffers=buffers,
             full_element_id=full_element_id,
             graphics_buffers=graphics_buffers,
             id=id,

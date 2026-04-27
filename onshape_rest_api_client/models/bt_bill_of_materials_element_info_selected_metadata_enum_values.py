@@ -7,17 +7,17 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.bt_diff_info import BTDiffInfo
+    from ..models.bt_selected_metadata_enum_value import BTSelectedMetadataEnumValue
 
 
-T = TypeVar("T", bound="BTDiffInfoChanges")
+T = TypeVar("T", bound="BTBillOfMaterialsElementInfoSelectedMetadataEnumValues")
 
 
 @_attrs_define
-class BTDiffInfoChanges:
+class BTBillOfMaterialsElementInfoSelectedMetadataEnumValues:
     """ """
 
-    additional_properties: dict[str, BTDiffInfo] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, BTSelectedMetadataEnumValue] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
 
@@ -29,28 +29,28 @@ class BTDiffInfoChanges:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_diff_info import BTDiffInfo
+        from ..models.bt_selected_metadata_enum_value import BTSelectedMetadataEnumValue
 
         d = dict(src_dict)
-        bt_diff_info_changes = cls()
+        bt_bill_of_materials_element_info_selected_metadata_enum_values = cls()
 
         additional_properties = {}
         for prop_name, prop_dict in d.items():
-            additional_property = BTDiffInfo.from_dict(prop_dict)
+            additional_property = BTSelectedMetadataEnumValue.from_dict(prop_dict)
 
             additional_properties[prop_name] = additional_property
 
-        bt_diff_info_changes.additional_properties = additional_properties
-        return bt_diff_info_changes
+        bt_bill_of_materials_element_info_selected_metadata_enum_values.additional_properties = additional_properties
+        return bt_bill_of_materials_element_info_selected_metadata_enum_values
 
     @property
     def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
-    def __getitem__(self, key: str) -> BTDiffInfo:
+    def __getitem__(self, key: str) -> BTSelectedMetadataEnumValue:
         return self.additional_properties[key]
 
-    def __setitem__(self, key: str, value: BTDiffInfo) -> None:
+    def __setitem__(self, key: str, value: BTSelectedMetadataEnumValue) -> None:
         self.additional_properties[key] = value
 
     def __delitem__(self, key: str) -> None:

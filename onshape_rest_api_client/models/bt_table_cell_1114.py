@@ -1,12 +1,16 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import Any, TypeVar
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
+
+if TYPE_CHECKING:
+    from ..models.bt_table_cell_modifier_4883 import BTTableCellModifier4883
+
 
 T = TypeVar("T", bound="BTTableCell1114")
 
@@ -18,11 +22,13 @@ class BTTableCell1114:
         bt_type (str | Unset): Type of JSON object.
         is_ever_visible (bool | Unset):
         is_read_only (bool | Unset):
+        modifiers (list[BTTableCellModifier4883] | Unset):
     """
 
     bt_type: str | Unset = UNSET
     is_ever_visible: bool | Unset = UNSET
     is_read_only: bool | Unset = UNSET
+    modifiers: list[BTTableCellModifier4883] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -31,6 +37,13 @@ class BTTableCell1114:
         is_ever_visible = self.is_ever_visible
 
         is_read_only = self.is_read_only
+
+        modifiers: list[dict[str, Any]] | Unset = UNSET
+        if not isinstance(self.modifiers, Unset):
+            modifiers = []
+            for modifiers_item_data in self.modifiers:
+                modifiers_item = modifiers_item_data.to_dict()
+                modifiers.append(modifiers_item)
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -41,11 +54,15 @@ class BTTableCell1114:
             field_dict["isEverVisible"] = is_ever_visible
         if is_read_only is not UNSET:
             field_dict["isReadOnly"] = is_read_only
+        if modifiers is not UNSET:
+            field_dict["modifiers"] = modifiers
 
         return field_dict
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        from ..models.bt_table_cell_modifier_4883 import BTTableCellModifier4883
+
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)
 
@@ -53,10 +70,20 @@ class BTTableCell1114:
 
         is_read_only = d.pop("isReadOnly", UNSET)
 
+        _modifiers = d.pop("modifiers", UNSET)
+        modifiers: list[BTTableCellModifier4883] | Unset = UNSET
+        if _modifiers is not UNSET:
+            modifiers = []
+            for modifiers_item_data in _modifiers:
+                modifiers_item = BTTableCellModifier4883.from_dict(modifiers_item_data)
+
+                modifiers.append(modifiers_item)
+
         bt_table_cell_1114 = cls(
             bt_type=bt_type,
             is_ever_visible=is_ever_visible,
             is_read_only=is_read_only,
+            modifiers=modifiers,
         )
 
         bt_table_cell_1114.additional_properties = d

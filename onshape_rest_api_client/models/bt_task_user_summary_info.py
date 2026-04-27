@@ -24,6 +24,7 @@ class BTTaskUserSummaryInfo:
     Attributes:
         acted (bool | Unset):
         company (BTCompanySummaryInfo | Unset):
+        confirmation_requested (bool | Unset):
         documentation_name (str | Unset):
         documentation_name_override (str | Unset):
         email (str | Unset):
@@ -48,6 +49,7 @@ class BTTaskUserSummaryInfo:
 
     acted: bool | Unset = UNSET
     company: BTCompanySummaryInfo | Unset = UNSET
+    confirmation_requested: bool | Unset = UNSET
     documentation_name: str | Unset = UNSET
     documentation_name_override: str | Unset = UNSET
     email: str | Unset = UNSET
@@ -76,6 +78,8 @@ class BTTaskUserSummaryInfo:
         company: dict[str, Any] | Unset = UNSET
         if not isinstance(self.company, Unset):
             company = self.company.to_dict()
+
+        confirmation_requested = self.confirmation_requested
 
         documentation_name = self.documentation_name
 
@@ -128,6 +132,8 @@ class BTTaskUserSummaryInfo:
             field_dict["acted"] = acted
         if company is not UNSET:
             field_dict["company"] = company
+        if confirmation_requested is not UNSET:
+            field_dict["confirmationRequested"] = confirmation_requested
         if documentation_name is not UNSET:
             field_dict["documentationName"] = documentation_name
         if documentation_name_override is not UNSET:
@@ -186,6 +192,8 @@ class BTTaskUserSummaryInfo:
         else:
             company = BTCompanySummaryInfo.from_dict(_company)
 
+        confirmation_requested = d.pop("confirmationRequested", UNSET)
+
         documentation_name = d.pop("documentationName", UNSET)
 
         documentation_name_override = d.pop("documentationNameOverride", UNSET)
@@ -239,6 +247,7 @@ class BTTaskUserSummaryInfo:
         bt_task_user_summary_info = cls(
             acted=acted,
             company=company,
+            confirmation_requested=confirmation_requested,
             documentation_name=documentation_name,
             documentation_name_override=documentation_name_override,
             email=email,

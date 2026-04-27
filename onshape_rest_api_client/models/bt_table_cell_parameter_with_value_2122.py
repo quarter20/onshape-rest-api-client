@@ -10,6 +10,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.bt_parameter_spec_6 import BTParameterSpec6
+    from ..models.bt_table_cell_modifier_4883 import BTTableCellModifier4883
     from ..models.btfs_value_1888 import BTFSValue1888
     from ..models.btm_parameter_1 import BTMParameter1
 
@@ -24,6 +25,7 @@ class BTTableCellParameterWithValue2122:
         bt_type (str | Unset): Type of JSON object.
         is_ever_visible (bool | Unset):
         is_read_only (bool | Unset):
+        modifiers (list[BTTableCellModifier4883] | Unset):
         error (str | Unset):
         info (str | Unset):
         override_spec (BTParameterSpec6 | Unset):
@@ -35,6 +37,7 @@ class BTTableCellParameterWithValue2122:
     bt_type: str | Unset = UNSET
     is_ever_visible: bool | Unset = UNSET
     is_read_only: bool | Unset = UNSET
+    modifiers: list[BTTableCellModifier4883] | Unset = UNSET
     error: str | Unset = UNSET
     info: str | Unset = UNSET
     override_spec: BTParameterSpec6 | Unset = UNSET
@@ -48,6 +51,13 @@ class BTTableCellParameterWithValue2122:
         is_ever_visible = self.is_ever_visible
 
         is_read_only = self.is_read_only
+
+        modifiers: list[dict[str, Any]] | Unset = UNSET
+        if not isinstance(self.modifiers, Unset):
+            modifiers = []
+            for modifiers_item_data in self.modifiers:
+                modifiers_item = modifiers_item_data.to_dict()
+                modifiers.append(modifiers_item)
 
         error = self.error
 
@@ -74,6 +84,8 @@ class BTTableCellParameterWithValue2122:
             field_dict["isEverVisible"] = is_ever_visible
         if is_read_only is not UNSET:
             field_dict["isReadOnly"] = is_read_only
+        if modifiers is not UNSET:
+            field_dict["modifiers"] = modifiers
         if error is not UNSET:
             field_dict["error"] = error
         if info is not UNSET:
@@ -90,6 +102,7 @@ class BTTableCellParameterWithValue2122:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_parameter_spec_6 import BTParameterSpec6
+        from ..models.bt_table_cell_modifier_4883 import BTTableCellModifier4883
         from ..models.btfs_value_1888 import BTFSValue1888
         from ..models.btm_parameter_1 import BTMParameter1
 
@@ -99,6 +112,15 @@ class BTTableCellParameterWithValue2122:
         is_ever_visible = d.pop("isEverVisible", UNSET)
 
         is_read_only = d.pop("isReadOnly", UNSET)
+
+        _modifiers = d.pop("modifiers", UNSET)
+        modifiers: list[BTTableCellModifier4883] | Unset = UNSET
+        if _modifiers is not UNSET:
+            modifiers = []
+            for modifiers_item_data in _modifiers:
+                modifiers_item = BTTableCellModifier4883.from_dict(modifiers_item_data)
+
+                modifiers.append(modifiers_item)
 
         error = d.pop("error", UNSET)
 
@@ -129,6 +151,7 @@ class BTTableCellParameterWithValue2122:
             bt_type=bt_type,
             is_ever_visible=is_ever_visible,
             is_read_only=is_read_only,
+            modifiers=modifiers,
             error=error,
             info=info,
             override_spec=override_spec,

@@ -27,6 +27,8 @@ class BTAclEntryInfo:
         entry_id (str | Unset):
         entry_state (BTUserState | Unset):
         entry_type (int | Unset):
+        folder_inaccessible (bool | Unset):
+        folder_name (str | Unset):
         image (str | Unset):
         name (str | Unset):
         object_id (str | Unset):
@@ -48,6 +50,8 @@ class BTAclEntryInfo:
     entry_id: str | Unset = UNSET
     entry_state: BTUserState | Unset = UNSET
     entry_type: int | Unset = UNSET
+    folder_inaccessible: bool | Unset = UNSET
+    folder_name: str | Unset = UNSET
     image: str | Unset = UNSET
     name: str | Unset = UNSET
     object_id: str | Unset = UNSET
@@ -82,6 +86,10 @@ class BTAclEntryInfo:
             entry_state = self.entry_state.value
 
         entry_type = self.entry_type
+
+        folder_inaccessible = self.folder_inaccessible
+
+        folder_name = self.folder_name
 
         image = self.image
 
@@ -126,6 +134,10 @@ class BTAclEntryInfo:
             field_dict["entryState"] = entry_state
         if entry_type is not UNSET:
             field_dict["entryType"] = entry_type
+        if folder_inaccessible is not UNSET:
+            field_dict["folderInaccessible"] = folder_inaccessible
+        if folder_name is not UNSET:
+            field_dict["folderName"] = folder_name
         if image is not UNSET:
             field_dict["image"] = image
         if name is not UNSET:
@@ -175,6 +187,10 @@ class BTAclEntryInfo:
 
         entry_type = d.pop("entryType", UNSET)
 
+        folder_inaccessible = d.pop("folderInaccessible", UNSET)
+
+        folder_name = d.pop("folderName", UNSET)
+
         image = d.pop("image", UNSET)
 
         name = d.pop("name", UNSET)
@@ -203,6 +219,8 @@ class BTAclEntryInfo:
             entry_id=entry_id,
             entry_state=entry_state,
             entry_type=entry_type,
+            folder_inaccessible=folder_inaccessible,
+            folder_name=folder_name,
             image=image,
             name=name,
             object_id=object_id,

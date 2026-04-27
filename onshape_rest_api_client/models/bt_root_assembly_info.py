@@ -12,6 +12,7 @@ if TYPE_CHECKING:
     from ..models.bt_assembly_feature_info import BTAssemblyFeatureInfo
     from ..models.bt_assembly_instance_info import BTAssemblyInstanceInfo
     from ..models.bt_assembly_occurrence_info import BTAssemblyOccurrenceInfo
+    from ..models.bt_assembly_parametric_instance_info import BTAssemblyParametricInstanceInfo
     from ..models.bt_assembly_pattern_info import BTAssemblyPatternInfo
 
 
@@ -33,6 +34,7 @@ class BTRootAssemblyInfo:
         instances (list[BTAssemblyInstanceInfo] | Unset): List of instances including those created by patterns and
             replicates.
         occurrences (list[BTAssemblyOccurrenceInfo] | Unset):
+        parametric_instances (list[BTAssemblyParametricInstanceInfo] | Unset): List of parametric instances.
         part_number (str | Unset):
         patterns (list[BTAssemblyPatternInfo] | Unset): List of patterns.
         revision (str | Unset):
@@ -47,6 +49,7 @@ class BTRootAssemblyInfo:
     full_configuration: str | Unset = UNSET
     instances: list[BTAssemblyInstanceInfo] | Unset = UNSET
     occurrences: list[BTAssemblyOccurrenceInfo] | Unset = UNSET
+    parametric_instances: list[BTAssemblyParametricInstanceInfo] | Unset = UNSET
     part_number: str | Unset = UNSET
     patterns: list[BTAssemblyPatternInfo] | Unset = UNSET
     revision: str | Unset = UNSET
@@ -86,6 +89,13 @@ class BTRootAssemblyInfo:
                 occurrences_item = occurrences_item_data.to_dict()
                 occurrences.append(occurrences_item)
 
+        parametric_instances: list[dict[str, Any]] | Unset = UNSET
+        if not isinstance(self.parametric_instances, Unset):
+            parametric_instances = []
+            for parametric_instances_item_data in self.parametric_instances:
+                parametric_instances_item = parametric_instances_item_data.to_dict()
+                parametric_instances.append(parametric_instances_item)
+
         part_number = self.part_number
 
         patterns: list[dict[str, Any]] | Unset = UNSET
@@ -118,6 +128,8 @@ class BTRootAssemblyInfo:
             field_dict["instances"] = instances
         if occurrences is not UNSET:
             field_dict["occurrences"] = occurrences
+        if parametric_instances is not UNSET:
+            field_dict["parametricInstances"] = parametric_instances
         if part_number is not UNSET:
             field_dict["partNumber"] = part_number
         if patterns is not UNSET:
@@ -132,6 +144,7 @@ class BTRootAssemblyInfo:
         from ..models.bt_assembly_feature_info import BTAssemblyFeatureInfo
         from ..models.bt_assembly_instance_info import BTAssemblyInstanceInfo
         from ..models.bt_assembly_occurrence_info import BTAssemblyOccurrenceInfo
+        from ..models.bt_assembly_parametric_instance_info import BTAssemblyParametricInstanceInfo
         from ..models.bt_assembly_pattern_info import BTAssemblyPatternInfo
 
         d = dict(src_dict)
@@ -174,6 +187,15 @@ class BTRootAssemblyInfo:
 
                 occurrences.append(occurrences_item)
 
+        _parametric_instances = d.pop("parametricInstances", UNSET)
+        parametric_instances: list[BTAssemblyParametricInstanceInfo] | Unset = UNSET
+        if _parametric_instances is not UNSET:
+            parametric_instances = []
+            for parametric_instances_item_data in _parametric_instances:
+                parametric_instances_item = BTAssemblyParametricInstanceInfo.from_dict(parametric_instances_item_data)
+
+                parametric_instances.append(parametric_instances_item)
+
         part_number = d.pop("partNumber", UNSET)
 
         _patterns = d.pop("patterns", UNSET)
@@ -197,6 +219,7 @@ class BTRootAssemblyInfo:
             full_configuration=full_configuration,
             instances=instances,
             occurrences=occurrences,
+            parametric_instances=parametric_instances,
             part_number=part_number,
             patterns=patterns,
             revision=revision,

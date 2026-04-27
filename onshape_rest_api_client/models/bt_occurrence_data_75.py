@@ -31,6 +31,7 @@ class BTOccurrenceData75:
         lock_info (BTLockedSubAssembly4590 | Unset):
         node_id (str | Unset):
         occurrence (BTOccurrence74 | Unset):
+        occurrence_and_deterministic_node_id (BTOccurrenceData75 | Unset):
         transform (BTBSMatrix386 | Unset):
     """
 
@@ -43,6 +44,7 @@ class BTOccurrenceData75:
     lock_info: BTLockedSubAssembly4590 | Unset = UNSET
     node_id: str | Unset = UNSET
     occurrence: BTOccurrence74 | Unset = UNSET
+    occurrence_and_deterministic_node_id: BTOccurrenceData75 | Unset = UNSET
     transform: BTBSMatrix386 | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -71,6 +73,10 @@ class BTOccurrenceData75:
         if not isinstance(self.occurrence, Unset):
             occurrence = self.occurrence.to_dict()
 
+        occurrence_and_deterministic_node_id: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.occurrence_and_deterministic_node_id, Unset):
+            occurrence_and_deterministic_node_id = self.occurrence_and_deterministic_node_id.to_dict()
+
         transform: dict[str, Any] | Unset = UNSET
         if not isinstance(self.transform, Unset):
             transform = self.transform.to_dict()
@@ -96,6 +102,8 @@ class BTOccurrenceData75:
             field_dict["nodeId"] = node_id
         if occurrence is not UNSET:
             field_dict["occurrence"] = occurrence
+        if occurrence_and_deterministic_node_id is not UNSET:
+            field_dict["occurrenceAndDeterministicNodeId"] = occurrence_and_deterministic_node_id
         if transform is not UNSET:
             field_dict["transform"] = transform
 
@@ -142,6 +150,13 @@ class BTOccurrenceData75:
         else:
             occurrence = BTOccurrence74.from_dict(_occurrence)
 
+        _occurrence_and_deterministic_node_id = d.pop("occurrenceAndDeterministicNodeId", UNSET)
+        occurrence_and_deterministic_node_id: BTOccurrenceData75 | Unset
+        if isinstance(_occurrence_and_deterministic_node_id, Unset):
+            occurrence_and_deterministic_node_id = UNSET
+        else:
+            occurrence_and_deterministic_node_id = BTOccurrenceData75.from_dict(_occurrence_and_deterministic_node_id)
+
         _transform = d.pop("transform", UNSET)
         transform: BTBSMatrix386 | Unset
         if isinstance(_transform, Unset):
@@ -159,6 +174,7 @@ class BTOccurrenceData75:
             lock_info=lock_info,
             node_id=node_id,
             occurrence=occurrence,
+            occurrence_and_deterministic_node_id=occurrence_and_deterministic_node_id,
             transform=transform,
         )
 

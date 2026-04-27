@@ -38,7 +38,7 @@ class BTCompanyUserParams:
              * `17`: Manage non-geometric items
              * `18`: Manage workflows
              * `19`: Transfer documents out of Enterprise
-             * `20`: Sync to Arena
+             * `20`: Sync to configured PLM Integration in Enterprise settings
              * `21`: Create tasks
              * `22`: Manage standard content metadata
              * `23`: Workspace protection permissions

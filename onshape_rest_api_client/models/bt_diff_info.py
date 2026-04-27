@@ -11,7 +11,7 @@ from ..models.gbt_node_change import GBTNodeChange
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.bt_diff_info_changes import BTDiffInfoChanges
+    from ..models.bt_diff_info_collection_changes import BTDiffInfoCollectionChanges
 
 
 T = TypeVar("T", bound="BTDiffInfo")
@@ -21,7 +21,7 @@ T = TypeVar("T", bound="BTDiffInfo")
 class BTDiffInfo:
     """
     Attributes:
-        changes (BTDiffInfoChanges | Unset):
+        collection_changes (BTDiffInfoCollectionChanges | Unset):
         entity_type (BTDiffInfoCollectionType | Unset):
         geometry_change_messages (list[str] | Unset):
         source_id (str | Unset):
@@ -31,7 +31,7 @@ class BTDiffInfo:
         type_ (GBTNodeChange | Unset):
     """
 
-    changes: BTDiffInfoChanges | Unset = UNSET
+    collection_changes: BTDiffInfoCollectionChanges | Unset = UNSET
     entity_type: BTDiffInfoCollectionType | Unset = UNSET
     geometry_change_messages: list[str] | Unset = UNSET
     source_id: str | Unset = UNSET
@@ -42,9 +42,9 @@ class BTDiffInfo:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        changes: dict[str, Any] | Unset = UNSET
-        if not isinstance(self.changes, Unset):
-            changes = self.changes.to_dict()
+        collection_changes: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.collection_changes, Unset):
+            collection_changes = self.collection_changes.to_dict()
 
         entity_type: str | Unset = UNSET
         if not isinstance(self.entity_type, Unset):
@@ -69,8 +69,8 @@ class BTDiffInfo:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
-        if changes is not UNSET:
-            field_dict["changes"] = changes
+        if collection_changes is not UNSET:
+            field_dict["collectionChanges"] = collection_changes
         if entity_type is not UNSET:
             field_dict["entityType"] = entity_type
         if geometry_change_messages is not UNSET:
@@ -90,15 +90,15 @@ class BTDiffInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_diff_info_changes import BTDiffInfoChanges
+        from ..models.bt_diff_info_collection_changes import BTDiffInfoCollectionChanges
 
         d = dict(src_dict)
-        _changes = d.pop("changes", UNSET)
-        changes: BTDiffInfoChanges | Unset
-        if isinstance(_changes, Unset):
-            changes = UNSET
+        _collection_changes = d.pop("collectionChanges", UNSET)
+        collection_changes: BTDiffInfoCollectionChanges | Unset
+        if isinstance(_collection_changes, Unset):
+            collection_changes = UNSET
         else:
-            changes = BTDiffInfoChanges.from_dict(_changes)
+            collection_changes = BTDiffInfoCollectionChanges.from_dict(_collection_changes)
 
         _entity_type = d.pop("entityType", UNSET)
         entity_type: BTDiffInfoCollectionType | Unset
@@ -125,7 +125,7 @@ class BTDiffInfo:
             type_ = GBTNodeChange(_type_)
 
         bt_diff_info = cls(
-            changes=changes,
+            collection_changes=collection_changes,
             entity_type=entity_type,
             geometry_change_messages=geometry_change_messages,
             source_id=source_id,

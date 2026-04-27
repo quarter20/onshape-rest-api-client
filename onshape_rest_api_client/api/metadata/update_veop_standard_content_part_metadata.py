@@ -8,20 +8,23 @@ from ...client import AuthenticatedClient, Client
 from ...models.update_veop_standard_content_part_metadata_response_default import (
     UpdateVEOPStandardContentPartMetadataResponseDefault,
 )
-from ...types import UNSET, Response
+from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     did: str,
     *,
     body: str,
-    link_document_id: str,
+    link_document_id: str | Unset = UNSET,
+    company_id: str | Unset = UNSET,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
     params: dict[str, Any] = {}
 
     params["linkDocumentId"] = link_document_id
+
+    params["companyId"] = company_id
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -65,7 +68,8 @@ def sync_detailed(
     *,
     client: AuthenticatedClient,
     body: str,
-    link_document_id: str,
+    link_document_id: str | Unset = UNSET,
+    company_id: str | Unset = UNSET,
 ) -> Response[UpdateVEOPStandardContentPartMetadataResponseDefault]:
     """Update the metadata for a standard content part.
 
@@ -75,7 +79,8 @@ def sync_detailed(
 
     Args:
         did (str):
-        link_document_id (str):
+        link_document_id (str | Unset):
+        company_id (str | Unset):
         body (str):
 
     Raises:
@@ -90,6 +95,7 @@ def sync_detailed(
         did=did,
         body=body,
         link_document_id=link_document_id,
+        company_id=company_id,
     )
 
     response = client.get_httpx_client().request(
@@ -104,7 +110,8 @@ def sync(
     *,
     client: AuthenticatedClient,
     body: str,
-    link_document_id: str,
+    link_document_id: str | Unset = UNSET,
+    company_id: str | Unset = UNSET,
 ) -> UpdateVEOPStandardContentPartMetadataResponseDefault | None:
     """Update the metadata for a standard content part.
 
@@ -114,7 +121,8 @@ def sync(
 
     Args:
         did (str):
-        link_document_id (str):
+        link_document_id (str | Unset):
+        company_id (str | Unset):
         body (str):
 
     Raises:
@@ -130,6 +138,7 @@ def sync(
         client=client,
         body=body,
         link_document_id=link_document_id,
+        company_id=company_id,
     ).parsed
 
 
@@ -138,7 +147,8 @@ async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
     body: str,
-    link_document_id: str,
+    link_document_id: str | Unset = UNSET,
+    company_id: str | Unset = UNSET,
 ) -> Response[UpdateVEOPStandardContentPartMetadataResponseDefault]:
     """Update the metadata for a standard content part.
 
@@ -148,7 +158,8 @@ async def asyncio_detailed(
 
     Args:
         did (str):
-        link_document_id (str):
+        link_document_id (str | Unset):
+        company_id (str | Unset):
         body (str):
 
     Raises:
@@ -163,6 +174,7 @@ async def asyncio_detailed(
         did=did,
         body=body,
         link_document_id=link_document_id,
+        company_id=company_id,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -175,7 +187,8 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     body: str,
-    link_document_id: str,
+    link_document_id: str | Unset = UNSET,
+    company_id: str | Unset = UNSET,
 ) -> UpdateVEOPStandardContentPartMetadataResponseDefault | None:
     """Update the metadata for a standard content part.
 
@@ -185,7 +198,8 @@ async def asyncio(
 
     Args:
         did (str):
-        link_document_id (str):
+        link_document_id (str | Unset):
+        company_id (str | Unset):
         body (str):
 
     Raises:
@@ -202,5 +216,6 @@ async def asyncio(
             client=client,
             body=body,
             link_document_id=link_document_id,
+            company_id=company_id,
         )
     ).parsed

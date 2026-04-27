@@ -30,6 +30,7 @@ class BTCommentInfo:
         assigned_at (datetime.datetime | Unset):
         assignee (BTUserSummaryInfo | Unset):
         attachment (BTCommentAttachmentInfo | Unset):
+        callout_instance_id (str | Unset):
         can_delete (bool | Unset):
         can_resolve_or_reopen (bool | Unset):
         coordinates (CoordinatesInfo | Unset):
@@ -73,6 +74,7 @@ class BTCommentInfo:
     assigned_at: datetime.datetime | Unset = UNSET
     assignee: BTUserSummaryInfo | Unset = UNSET
     attachment: BTCommentAttachmentInfo | Unset = UNSET
+    callout_instance_id: str | Unset = UNSET
     can_delete: bool | Unset = UNSET
     can_resolve_or_reopen: bool | Unset = UNSET
     coordinates: CoordinatesInfo | Unset = UNSET
@@ -130,6 +132,8 @@ class BTCommentInfo:
         attachment: dict[str, Any] | Unset = UNSET
         if not isinstance(self.attachment, Unset):
             attachment = self.attachment.to_dict()
+
+        callout_instance_id = self.callout_instance_id
 
         can_delete = self.can_delete
 
@@ -236,6 +240,8 @@ class BTCommentInfo:
             field_dict["assignee"] = assignee
         if attachment is not UNSET:
             field_dict["attachment"] = attachment
+        if callout_instance_id is not UNSET:
+            field_dict["calloutInstanceId"] = callout_instance_id
         if can_delete is not UNSET:
             field_dict["canDelete"] = can_delete
         if can_resolve_or_reopen is not UNSET:
@@ -343,6 +349,8 @@ class BTCommentInfo:
             attachment = UNSET
         else:
             attachment = BTCommentAttachmentInfo.from_dict(_attachment)
+
+        callout_instance_id = d.pop("calloutInstanceId", UNSET)
 
         can_delete = d.pop("canDelete", UNSET)
 
@@ -466,6 +474,7 @@ class BTCommentInfo:
             assigned_at=assigned_at,
             assignee=assignee,
             attachment=attachment,
+            callout_instance_id=callout_instance_id,
             can_delete=can_delete,
             can_resolve_or_reopen=can_resolve_or_reopen,
             coordinates=coordinates,

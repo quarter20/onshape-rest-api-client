@@ -25,6 +25,7 @@ class BTCommentParams:
         assembly_feature (str | Unset):
         assignee (str | Unset): Assign the comment during creation. Comments cannot be reassigned during an update at
             this time.
+        callout_instance_id (str | Unset):
         coordinates (CoordinatesParams | Unset):
         dimension_constraint_id (str | Unset):
         dimension_feature_id (str | Unset):
@@ -49,6 +50,7 @@ class BTCommentParams:
     annotation_type: int | Unset = UNSET
     assembly_feature: str | Unset = UNSET
     assignee: str | Unset = UNSET
+    callout_instance_id: str | Unset = UNSET
     coordinates: CoordinatesParams | Unset = UNSET
     dimension_constraint_id: str | Unset = UNSET
     dimension_feature_id: str | Unset = UNSET
@@ -77,6 +79,8 @@ class BTCommentParams:
         assembly_feature = self.assembly_feature
 
         assignee = self.assignee
+
+        callout_instance_id = self.callout_instance_id
 
         coordinates: dict[str, Any] | Unset = UNSET
         if not isinstance(self.coordinates, Unset):
@@ -129,6 +133,8 @@ class BTCommentParams:
             field_dict["assemblyFeature"] = assembly_feature
         if assignee is not UNSET:
             field_dict["assignee"] = assignee
+        if callout_instance_id is not UNSET:
+            field_dict["calloutInstanceId"] = callout_instance_id
         if coordinates is not UNSET:
             field_dict["coordinates"] = coordinates
         if dimension_constraint_id is not UNSET:
@@ -182,6 +188,8 @@ class BTCommentParams:
 
         assignee = d.pop("assignee", UNSET)
 
+        callout_instance_id = d.pop("calloutInstanceId", UNSET)
+
         _coordinates = d.pop("coordinates", UNSET)
         coordinates: CoordinatesParams | Unset
         if isinstance(_coordinates, Unset):
@@ -233,6 +241,7 @@ class BTCommentParams:
             annotation_type=annotation_type,
             assembly_feature=assembly_feature,
             assignee=assignee,
+            callout_instance_id=callout_instance_id,
             coordinates=coordinates,
             dimension_constraint_id=dimension_constraint_id,
             dimension_feature_id=dimension_feature_id,

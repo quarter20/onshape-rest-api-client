@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import Any, TypeVar
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,11 +19,13 @@ class BTAssemblyMateValueInfo:
         json_type (str):
         feature_id (str | Unset): The ID of the assembly mate feature.
         mate_name (str | Unset): The name of the assembly mate feature.
+        owner_occurrence_path (list[str] | Unset): The path to the assembly owning this mate.
     """
 
     json_type: str
     feature_id: str | Unset = UNSET
     mate_name: str | Unset = UNSET
+    owner_occurrence_path: list[str] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -32,6 +34,10 @@ class BTAssemblyMateValueInfo:
         feature_id = self.feature_id
 
         mate_name = self.mate_name
+
+        owner_occurrence_path: list[str] | Unset = UNSET
+        if not isinstance(self.owner_occurrence_path, Unset):
+            owner_occurrence_path = self.owner_occurrence_path
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -44,6 +50,8 @@ class BTAssemblyMateValueInfo:
             field_dict["featureId"] = feature_id
         if mate_name is not UNSET:
             field_dict["mateName"] = mate_name
+        if owner_occurrence_path is not UNSET:
+            field_dict["ownerOccurrencePath"] = owner_occurrence_path
 
         return field_dict
 
@@ -56,10 +64,13 @@ class BTAssemblyMateValueInfo:
 
         mate_name = d.pop("mateName", UNSET)
 
+        owner_occurrence_path = cast(list[str], d.pop("ownerOccurrencePath", UNSET))
+
         bt_assembly_mate_value_info = cls(
             json_type=json_type,
             feature_id=feature_id,
             mate_name=mate_name,
+            owner_occurrence_path=owner_occurrence_path,
         )
 
         bt_assembly_mate_value_info.additional_properties = d

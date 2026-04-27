@@ -22,12 +22,14 @@ class BTMicroversionIdAndConfigurationInterval2364:
     Attributes:
         bt_type (str | Unset): Type of JSON object.
         from_ (BTMicroversionIdAndConfiguration2338 | Unset):
+        from_to_equal (bool | Unset):
         microversion_id_interval (BTMicroversionIdInterval367 | Unset):
         to (BTMicroversionIdAndConfiguration2338 | Unset):
     """
 
     bt_type: str | Unset = UNSET
     from_: BTMicroversionIdAndConfiguration2338 | Unset = UNSET
+    from_to_equal: bool | Unset = UNSET
     microversion_id_interval: BTMicroversionIdInterval367 | Unset = UNSET
     to: BTMicroversionIdAndConfiguration2338 | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -38,6 +40,8 @@ class BTMicroversionIdAndConfigurationInterval2364:
         from_: dict[str, Any] | Unset = UNSET
         if not isinstance(self.from_, Unset):
             from_ = self.from_.to_dict()
+
+        from_to_equal = self.from_to_equal
 
         microversion_id_interval: dict[str, Any] | Unset = UNSET
         if not isinstance(self.microversion_id_interval, Unset):
@@ -54,6 +58,8 @@ class BTMicroversionIdAndConfigurationInterval2364:
             field_dict["btType"] = bt_type
         if from_ is not UNSET:
             field_dict["from"] = from_
+        if from_to_equal is not UNSET:
+            field_dict["fromToEqual"] = from_to_equal
         if microversion_id_interval is not UNSET:
             field_dict["microversionIdInterval"] = microversion_id_interval
         if to is not UNSET:
@@ -76,6 +82,8 @@ class BTMicroversionIdAndConfigurationInterval2364:
         else:
             from_ = BTMicroversionIdAndConfiguration2338.from_dict(_from_)
 
+        from_to_equal = d.pop("fromToEqual", UNSET)
+
         _microversion_id_interval = d.pop("microversionIdInterval", UNSET)
         microversion_id_interval: BTMicroversionIdInterval367 | Unset
         if isinstance(_microversion_id_interval, Unset):
@@ -93,6 +101,7 @@ class BTMicroversionIdAndConfigurationInterval2364:
         bt_microversion_id_and_configuration_interval_2364 = cls(
             bt_type=bt_type,
             from_=from_,
+            from_to_equal=from_to_equal,
             microversion_id_interval=microversion_id_interval,
             to=to,
         )

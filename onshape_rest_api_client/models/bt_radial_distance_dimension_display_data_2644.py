@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -22,6 +22,8 @@ T = TypeVar("T", bound="BTRadialDistanceDimensionDisplayData2644")
 class BTRadialDistanceDimensionDisplayData2644:
     """
     Attributes:
+        all_references (list[str] | Unset):
+        all_references_populated (bool | Unset):
         bt_type (str | Unset): Type of JSON object.
         characteristic_id (str | Unset):
         coordinate_system (BTMatrix3X3340 | Unset):
@@ -55,6 +57,8 @@ class BTRadialDistanceDimensionDisplayData2644:
         position_radius (float | Unset):
     """
 
+    all_references: list[str] | Unset = UNSET
+    all_references_populated: bool | Unset = UNSET
     bt_type: str | Unset = UNSET
     characteristic_id: str | Unset = UNSET
     coordinate_system: BTMatrix3X3340 | Unset = UNSET
@@ -89,6 +93,12 @@ class BTRadialDistanceDimensionDisplayData2644:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        all_references: list[str] | Unset = UNSET
+        if not isinstance(self.all_references, Unset):
+            all_references = self.all_references
+
+        all_references_populated = self.all_references_populated
+
         bt_type = self.bt_type
 
         characteristic_id = self.characteristic_id
@@ -162,6 +172,10 @@ class BTRadialDistanceDimensionDisplayData2644:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if all_references is not UNSET:
+            field_dict["allReferences"] = all_references
+        if all_references_populated is not UNSET:
+            field_dict["allReferencesPopulated"] = all_references_populated
         if bt_type is not UNSET:
             field_dict["btType"] = bt_type
         if characteristic_id is not UNSET:
@@ -233,6 +247,10 @@ class BTRadialDistanceDimensionDisplayData2644:
         from ..models.btbs_matrix_386 import BTBSMatrix386
 
         d = dict(src_dict)
+        all_references = cast(list[str], d.pop("allReferences", UNSET))
+
+        all_references_populated = d.pop("allReferencesPopulated", UNSET)
+
         bt_type = d.pop("btType", UNSET)
 
         characteristic_id = d.pop("characteristicId", UNSET)
@@ -316,6 +334,8 @@ class BTRadialDistanceDimensionDisplayData2644:
         position_radius = d.pop("positionRadius", UNSET)
 
         bt_radial_distance_dimension_display_data_2644 = cls(
+            all_references=all_references,
+            all_references_populated=all_references_populated,
             bt_type=bt_type,
             characteristic_id=characteristic_id,
             coordinate_system=coordinate_system,

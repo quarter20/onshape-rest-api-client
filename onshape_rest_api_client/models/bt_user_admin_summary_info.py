@@ -36,6 +36,7 @@ class BTUserAdminSummaryInfo:
         first_name (str | Unset):
         last_name (str | Unset):
         company (BTCompanySummaryInfo | Unset):
+        confirmation_requested (bool | Unset):
         documentation_name_override (str | Unset):
         global_permissions (GlobalPermissionInfo | Unset):
         invitation_state (int | Unset):
@@ -67,6 +68,7 @@ class BTUserAdminSummaryInfo:
     first_name: str | Unset = UNSET
     last_name: str | Unset = UNSET
     company: BTCompanySummaryInfo | Unset = UNSET
+    confirmation_requested: bool | Unset = UNSET
     documentation_name_override: str | Unset = UNSET
     global_permissions: GlobalPermissionInfo | Unset = UNSET
     invitation_state: int | Unset = UNSET
@@ -113,6 +115,8 @@ class BTUserAdminSummaryInfo:
         company: dict[str, Any] | Unset = UNSET
         if not isinstance(self.company, Unset):
             company = self.company.to_dict()
+
+        confirmation_requested = self.confirmation_requested
 
         documentation_name_override = self.documentation_name_override
 
@@ -188,6 +192,8 @@ class BTUserAdminSummaryInfo:
             field_dict["lastName"] = last_name
         if company is not UNSET:
             field_dict["company"] = company
+        if confirmation_requested is not UNSET:
+            field_dict["confirmationRequested"] = confirmation_requested
         if documentation_name_override is not UNSET:
             field_dict["documentationNameOverride"] = documentation_name_override
         if global_permissions is not UNSET:
@@ -261,6 +267,8 @@ class BTUserAdminSummaryInfo:
         else:
             company = BTCompanySummaryInfo.from_dict(_company)
 
+        confirmation_requested = d.pop("confirmationRequested", UNSET)
+
         documentation_name_override = d.pop("documentationNameOverride", UNSET)
 
         _global_permissions = d.pop("globalPermissions", UNSET)
@@ -329,6 +337,7 @@ class BTUserAdminSummaryInfo:
             first_name=first_name,
             last_name=last_name,
             company=company,
+            confirmation_requested=confirmation_requested,
             documentation_name_override=documentation_name_override,
             global_permissions=global_permissions,
             invitation_state=invitation_state,

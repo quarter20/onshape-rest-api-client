@@ -37,6 +37,7 @@ class BTWorkflowAuditLogEntryInfo:
         object_id (str | Unset):
         property_updates (list[BTPropertyUpdateInfo] | Unset):
         support_code (str | Unset):
+        transitions_skipped (list[str] | Unset):
         user_id (str | Unset):
         workflow_action (str | Unset):
         workflow_state (str | Unset):
@@ -56,6 +57,7 @@ class BTWorkflowAuditLogEntryInfo:
     object_id: str | Unset = UNSET
     property_updates: list[BTPropertyUpdateInfo] | Unset = UNSET
     support_code: str | Unset = UNSET
+    transitions_skipped: list[str] | Unset = UNSET
     user_id: str | Unset = UNSET
     workflow_action: str | Unset = UNSET
     workflow_state: str | Unset = UNSET
@@ -102,6 +104,10 @@ class BTWorkflowAuditLogEntryInfo:
 
         support_code = self.support_code
 
+        transitions_skipped: list[str] | Unset = UNSET
+        if not isinstance(self.transitions_skipped, Unset):
+            transitions_skipped = self.transitions_skipped
+
         user_id = self.user_id
 
         workflow_action = self.workflow_action
@@ -139,6 +145,8 @@ class BTWorkflowAuditLogEntryInfo:
             field_dict["propertyUpdates"] = property_updates
         if support_code is not UNSET:
             field_dict["supportCode"] = support_code
+        if transitions_skipped is not UNSET:
+            field_dict["transitionsSkipped"] = transitions_skipped
         if user_id is not UNSET:
             field_dict["userId"] = user_id
         if workflow_action is not UNSET:
@@ -203,6 +211,8 @@ class BTWorkflowAuditLogEntryInfo:
 
         support_code = d.pop("supportCode", UNSET)
 
+        transitions_skipped = cast(list[str], d.pop("transitionsSkipped", UNSET))
+
         user_id = d.pop("userId", UNSET)
 
         workflow_action = d.pop("workflowAction", UNSET)
@@ -225,6 +235,7 @@ class BTWorkflowAuditLogEntryInfo:
             object_id=object_id,
             property_updates=property_updates,
             support_code=support_code,
+            transitions_skipped=transitions_skipped,
             user_id=user_id,
             workflow_action=workflow_action,
             workflow_state=workflow_state,

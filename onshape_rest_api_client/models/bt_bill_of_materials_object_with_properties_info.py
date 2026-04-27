@@ -12,6 +12,9 @@ if TYPE_CHECKING:
     from ..models.bt_bill_of_materials_object_with_properties_info_header_id_to_value import (
         BTBillOfMaterialsObjectWithPropertiesInfoHeaderIdToValue,
     )
+    from ..models.bt_bill_of_materials_object_with_properties_info_selected_metadata_enum_values import (
+        BTBillOfMaterialsObjectWithPropertiesInfoSelectedMetadataEnumValues,
+    )
 
 
 T = TypeVar("T", bound="BTBillOfMaterialsObjectWithPropertiesInfo")
@@ -25,6 +28,7 @@ class BTBillOfMaterialsObjectWithPropertiesInfo:
         href (str | Unset): URI to fetch complete information of the resource.
         id (str | Unset): Id of the resource.
         name (str | Unset): Name of the resource.
+        selected_metadata_enum_values (BTBillOfMaterialsObjectWithPropertiesInfoSelectedMetadataEnumValues | Unset):
         view_ref (str | Unset): URI to visualize the resource in a webclient if applicable.
     """
 
@@ -32,6 +36,7 @@ class BTBillOfMaterialsObjectWithPropertiesInfo:
     href: str | Unset = UNSET
     id: str | Unset = UNSET
     name: str | Unset = UNSET
+    selected_metadata_enum_values: BTBillOfMaterialsObjectWithPropertiesInfoSelectedMetadataEnumValues | Unset = UNSET
     view_ref: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -46,6 +51,10 @@ class BTBillOfMaterialsObjectWithPropertiesInfo:
 
         name = self.name
 
+        selected_metadata_enum_values: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.selected_metadata_enum_values, Unset):
+            selected_metadata_enum_values = self.selected_metadata_enum_values.to_dict()
+
         view_ref = self.view_ref
 
         field_dict: dict[str, Any] = {}
@@ -59,6 +68,8 @@ class BTBillOfMaterialsObjectWithPropertiesInfo:
             field_dict["id"] = id
         if name is not UNSET:
             field_dict["name"] = name
+        if selected_metadata_enum_values is not UNSET:
+            field_dict["selectedMetadataEnumValues"] = selected_metadata_enum_values
         if view_ref is not UNSET:
             field_dict["viewRef"] = view_ref
 
@@ -68,6 +79,9 @@ class BTBillOfMaterialsObjectWithPropertiesInfo:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_bill_of_materials_object_with_properties_info_header_id_to_value import (
             BTBillOfMaterialsObjectWithPropertiesInfoHeaderIdToValue,
+        )
+        from ..models.bt_bill_of_materials_object_with_properties_info_selected_metadata_enum_values import (
+            BTBillOfMaterialsObjectWithPropertiesInfoSelectedMetadataEnumValues,
         )
 
         d = dict(src_dict)
@@ -84,6 +98,17 @@ class BTBillOfMaterialsObjectWithPropertiesInfo:
 
         name = d.pop("name", UNSET)
 
+        _selected_metadata_enum_values = d.pop("selectedMetadataEnumValues", UNSET)
+        selected_metadata_enum_values: BTBillOfMaterialsObjectWithPropertiesInfoSelectedMetadataEnumValues | Unset
+        if isinstance(_selected_metadata_enum_values, Unset):
+            selected_metadata_enum_values = UNSET
+        else:
+            selected_metadata_enum_values = (
+                BTBillOfMaterialsObjectWithPropertiesInfoSelectedMetadataEnumValues.from_dict(
+                    _selected_metadata_enum_values
+                )
+            )
+
         view_ref = d.pop("viewRef", UNSET)
 
         bt_bill_of_materials_object_with_properties_info = cls(
@@ -91,6 +116,7 @@ class BTBillOfMaterialsObjectWithPropertiesInfo:
             href=href,
             id=id,
             name=name,
+            selected_metadata_enum_values=selected_metadata_enum_values,
             view_ref=view_ref,
         )
 

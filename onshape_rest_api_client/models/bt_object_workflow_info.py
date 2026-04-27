@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import datetime
 from collections.abc import Mapping
 from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
+from dateutil.parser import isoparse
 
 from ..models.bt_metadata_state_type import BTMetadataStateType
 from ..models.btapi_workflowable_type import BTAPIWorkflowableType
@@ -23,6 +25,8 @@ class BTObjectWorkflowInfo:
         id (str | Unset): Id of the resource.
         is_discarded (bool | Unset): Whether workflowable object has been discarded.
         is_frozen (bool | Unset): Whether workflowable object has reached terminal state and is frozen.
+        last_attempt_timestamp (datetime.datetime | Unset): The timestamp of the last workflow action.
+        last_encountered_error_message (str | Unset): The error message from the last failed workflow action, if any.
         metadata_state (BTMetadataStateType | Unset): The current state metadata values if applicable.
         name (str | Unset): Name of the resource.
         object_type (BTAPIWorkflowableType | Unset): All workflowable types that can be enumerated.
@@ -37,6 +41,8 @@ class BTObjectWorkflowInfo:
     id: str | Unset = UNSET
     is_discarded: bool | Unset = UNSET
     is_frozen: bool | Unset = UNSET
+    last_attempt_timestamp: datetime.datetime | Unset = UNSET
+    last_encountered_error_message: str | Unset = UNSET
     metadata_state: BTMetadataStateType | Unset = UNSET
     name: str | Unset = UNSET
     object_type: BTAPIWorkflowableType | Unset = UNSET
@@ -55,6 +61,12 @@ class BTObjectWorkflowInfo:
         is_discarded = self.is_discarded
 
         is_frozen = self.is_frozen
+
+        last_attempt_timestamp: str | Unset = UNSET
+        if not isinstance(self.last_attempt_timestamp, Unset):
+            last_attempt_timestamp = self.last_attempt_timestamp.isoformat()
+
+        last_encountered_error_message = self.last_encountered_error_message
 
         metadata_state: str | Unset = UNSET
         if not isinstance(self.metadata_state, Unset):
@@ -85,6 +97,10 @@ class BTObjectWorkflowInfo:
             field_dict["isDiscarded"] = is_discarded
         if is_frozen is not UNSET:
             field_dict["isFrozen"] = is_frozen
+        if last_attempt_timestamp is not UNSET:
+            field_dict["lastAttemptTimestamp"] = last_attempt_timestamp
+        if last_encountered_error_message is not UNSET:
+            field_dict["lastEncounteredErrorMessage"] = last_encountered_error_message
         if metadata_state is not UNSET:
             field_dict["metadataState"] = metadata_state
         if name is not UNSET:
@@ -112,6 +128,15 @@ class BTObjectWorkflowInfo:
         is_discarded = d.pop("isDiscarded", UNSET)
 
         is_frozen = d.pop("isFrozen", UNSET)
+
+        _last_attempt_timestamp = d.pop("lastAttemptTimestamp", UNSET)
+        last_attempt_timestamp: datetime.datetime | Unset
+        if isinstance(_last_attempt_timestamp, Unset):
+            last_attempt_timestamp = UNSET
+        else:
+            last_attempt_timestamp = isoparse(_last_attempt_timestamp)
+
+        last_encountered_error_message = d.pop("lastEncounteredErrorMessage", UNSET)
 
         _metadata_state = d.pop("metadataState", UNSET)
         metadata_state: BTMetadataStateType | Unset
@@ -141,6 +166,8 @@ class BTObjectWorkflowInfo:
             id=id,
             is_discarded=is_discarded,
             is_frozen=is_frozen,
+            last_attempt_timestamp=last_attempt_timestamp,
+            last_encountered_error_message=last_encountered_error_message,
             metadata_state=metadata_state,
             name=name,
             object_type=object_type,

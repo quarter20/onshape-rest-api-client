@@ -164,6 +164,8 @@ from .bt_assembly_mirror_2996 import BTAssemblyMirror2996
 from .bt_assembly_mirror_feature_interface import BTAssemblyMirrorFeatureInterface
 from .bt_assembly_modification_params import BTAssemblyModificationParams
 from .bt_assembly_occurrence_info import BTAssemblyOccurrenceInfo
+from .bt_assembly_parametric_instance_child_info import BTAssemblyParametricInstanceChildInfo
+from .bt_assembly_parametric_instance_info import BTAssemblyParametricInstanceInfo
 from .bt_assembly_part_body_type import BTAssemblyPartBodyType
 from .bt_assembly_part_info import BTAssemblyPartInfo
 from .bt_assembly_pattern_1974 import BTAssemblyPattern1974
@@ -196,6 +198,9 @@ from .bt_bill_of_materials_element_info_header_id_to_value import BTBillOfMateri
 from .bt_bill_of_materials_element_info_header_id_to_value_additional_property import (
     BTBillOfMaterialsElementInfoHeaderIdToValueAdditionalProperty,
 )
+from .bt_bill_of_materials_element_info_selected_metadata_enum_values import (
+    BTBillOfMaterialsElementInfoSelectedMetadataEnumValues,
+)
 from .bt_bill_of_materials_header_info import BTBillOfMaterialsHeaderInfo
 from .bt_bill_of_materials_info import BTBillOfMaterialsInfo
 from .bt_bill_of_materials_item_source_info import BTBillOfMaterialsItemSourceInfo
@@ -206,10 +211,16 @@ from .bt_bill_of_materials_object_with_properties_info_header_id_to_value import
 from .bt_bill_of_materials_object_with_properties_info_header_id_to_value_additional_property import (
     BTBillOfMaterialsObjectWithPropertiesInfoHeaderIdToValueAdditionalProperty,
 )
+from .bt_bill_of_materials_object_with_properties_info_selected_metadata_enum_values import (
+    BTBillOfMaterialsObjectWithPropertiesInfoSelectedMetadataEnumValues,
+)
 from .bt_bill_of_materials_row_info import BTBillOfMaterialsRowInfo
 from .bt_bill_of_materials_row_info_header_id_to_value import BTBillOfMaterialsRowInfoHeaderIdToValue
 from .bt_bill_of_materials_row_info_header_id_to_value_additional_property import (
     BTBillOfMaterialsRowInfoHeaderIdToValueAdditionalProperty,
+)
+from .bt_bill_of_materials_row_info_selected_metadata_enum_values import (
+    BTBillOfMaterialsRowInfoSelectedMetadataEnumValues,
 )
 from .bt_bill_of_materials_source_info import BTBillOfMaterialsSourceInfo
 from .bt_bill_of_materials_table_1073 import BTBillOfMaterialsTable1073
@@ -313,7 +324,7 @@ from .bt_default_units_info import BTDefaultUnitsInfo
 from .bt_derived_assembly_mirror_4204 import BTDerivedAssemblyMirror4204
 from .bt_device_login_secret_info import BTDeviceLoginSecretInfo
 from .bt_diff_info import BTDiffInfo
-from .bt_diff_info_changes import BTDiffInfoChanges
+from .bt_diff_info_collection_changes import BTDiffInfoCollectionChanges
 from .bt_diff_info_collection_type import BTDiffInfoCollectionType
 from .bt_diff_json_response_2725 import BTDiffJsonResponse2725
 from .bt_diff_json_response_2725_patch import BTDiffJsonResponse2725Patch
@@ -489,6 +500,7 @@ from .bt_insertable_sketch_display_data_3775_body_id_to_part_data import (
 )
 from .bt_insertables_list_response import BTInsertablesListResponse
 from .bt_insertables_list_response_configuration import BTInsertablesListResponseConfiguration
+from .bt_inspection_table_cross_highlight_data_4177 import BTInspectionTableCrossHighlightData4177
 from .bt_inspection_table_row_metadata_2485 import BTInspectionTableRowMetadata2485
 from .bt_instance_642 import BTInstance642
 from .bt_instance_base_2263 import BTInstanceBase2263
@@ -519,6 +531,7 @@ from .bt_list_response_bt_alias_info import BTListResponseBTAliasInfo
 from .bt_list_response_bt_category_property_info import BTListResponseBTCategoryPropertyInfo
 from .bt_list_response_bt_comment_info import BTListResponseBTCommentInfo
 from .bt_list_response_bt_company_info import BTListResponseBTCompanyInfo
+from .bt_list_response_bt_company_user_info import BTListResponseBTCompanyUserInfo
 from .bt_list_response_bt_insertable_info import BTListResponseBTInsertableInfo
 from .bt_list_response_bt_item_info import BTListResponseBTItemInfo
 from .bt_list_response_bt_object_workflow_info import BTListResponseBTObjectWorkflowInfo
@@ -827,6 +840,7 @@ from .bt_search_entity_type import BTSearchEntityType
 from .bt_section_geometry_filter_4161 import BTSectionGeometryFilter4161
 from .bt_section_plane_info import BTSectionPlaneInfo
 from .bt_select_item_view_state_info import BTSelectItemViewStateInfo
+from .bt_selected_metadata_enum_value import BTSelectedMetadataEnumValue
 from .bt_session_credential_info import BTSessionCredentialInfo
 from .bt_set_feature_rollback_call_1899 import BTSetFeatureRollbackCall1899
 from .bt_set_feature_rollback_response_1042 import BTSetFeatureRollbackResponse1042
@@ -859,6 +873,10 @@ from .bt_sketch_point_display_data_358 import BTSketchPointDisplayData358
 from .bt_sketch_solve_status_filter_3657 import BTSketchSolveStatusFilter3657
 from .bt_sketch_spline_display_data_359 import BTSketchSplineDisplayData359
 from .bt_sketch_text_display_data_1707 import BTSketchTextDisplayData1707
+from .bt_smart_folder_info import BTSmartFolderInfo
+from .bt_smart_folder_predicate_info import BTSmartFolderPredicateInfo
+from .bt_smart_folder_predicate_info_value import BTSmartFolderPredicateInfoValue
+from .bt_smart_folder_sort_info import BTSmartFolderSortInfo
 from .bt_sphere_description_1263 import BTSphereDescription1263
 from .bt_spline_control_polygon_filter_1130 import BTSplineControlPolygonFilter1130
 from .bt_spline_description_2118 import BTSplineDescription2118
@@ -892,6 +910,10 @@ from .bt_table_assembly_cross_highlight_data_item_2659 import BTTableAssemblyCro
 from .bt_table_base_cross_highlight_data_2609 import BTTableBaseCrossHighlightData2609
 from .bt_table_base_row_metadata_3181 import BTTableBaseRowMetadata3181
 from .bt_table_cell_1114 import BTTableCell1114
+from .bt_table_cell_modifier_4883 import BTTableCellModifier4883
+from .bt_table_cell_modifier_force_show_configured_5170 import BTTableCellModifierForceShowConfigured5170
+from .bt_table_cell_modifier_info_4585 import BTTableCellModifierInfo4585
+from .bt_table_cell_modifier_open_feature_1614 import BTTableCellModifierOpenFeature1614
 from .bt_table_cell_parameter_2399 import BTTableCellParameter2399
 from .bt_table_cell_parameter_with_value_2122 import BTTableCellParameterWithValue2122
 from .bt_table_cell_property_parameter_2983 import BTTableCellPropertyParameter2983
@@ -1395,11 +1417,13 @@ from .gbt_entity_type import GBTEntityType
 from .gbt_error_string_enum import GBTErrorStringEnum
 from .gbt_export_resolution import GBTExportResolution
 from .gbt_export_unit import GBTExportUnit
+from .gbt_feature_dimension_type import GBTFeatureDimensionType
 from .gbt_feature_filter_exclusion import GBTFeatureFilterExclusion
 from .gbt_field_weld_flag import GBTFieldWeldFlag
 from .gbt_filter_flattened_geometry_options import GBTFilterFlattenedGeometryOptions
 from .gbt_geometry_type import GBTGeometryType
 from .gbt_graphics_buffer_target import GBTGraphicsBufferTarget
+from .gbt_graphics_primitive_type import GBTGraphicsPrimitiveType
 from .gbt_hole_type import GBTHoleType
 from .gbt_insertable_type import GBTInsertableType
 from .gbt_load_type import GBTLoadType
@@ -1883,6 +1907,8 @@ __all__ = (
     "BTAssemblyMirrorFeatureInterface",
     "BTAssemblyModificationParams",
     "BTAssemblyOccurrenceInfo",
+    "BTAssemblyParametricInstanceChildInfo",
+    "BTAssemblyParametricInstanceInfo",
     "BTAssemblyPartBodyType",
     "BTAssemblyPartInfo",
     "BTAssemblyPattern1974",
@@ -1924,15 +1950,18 @@ __all__ = (
     "BTBillOfMaterialsElementInfo",
     "BTBillOfMaterialsElementInfoHeaderIdToValue",
     "BTBillOfMaterialsElementInfoHeaderIdToValueAdditionalProperty",
+    "BTBillOfMaterialsElementInfoSelectedMetadataEnumValues",
     "BTBillOfMaterialsHeaderInfo",
     "BTBillOfMaterialsInfo",
     "BTBillOfMaterialsItemSourceInfo",
     "BTBillOfMaterialsObjectWithPropertiesInfo",
     "BTBillOfMaterialsObjectWithPropertiesInfoHeaderIdToValue",
     "BTBillOfMaterialsObjectWithPropertiesInfoHeaderIdToValueAdditionalProperty",
+    "BTBillOfMaterialsObjectWithPropertiesInfoSelectedMetadataEnumValues",
     "BTBillOfMaterialsRowInfo",
     "BTBillOfMaterialsRowInfoHeaderIdToValue",
     "BTBillOfMaterialsRowInfoHeaderIdToValueAdditionalProperty",
+    "BTBillOfMaterialsRowInfoSelectedMetadataEnumValues",
     "BTBillOfMaterialsSourceInfo",
     "BTBillOfMaterialsTable1073",
     "BTBillOfMaterialsTableRow1425",
@@ -2035,7 +2064,7 @@ __all__ = (
     "BTDerivedAssemblyMirror4204",
     "BTDeviceLoginSecretInfo",
     "BTDiffInfo",
-    "BTDiffInfoChanges",
+    "BTDiffInfoCollectionChanges",
     "BTDiffInfoCollectionType",
     "BTDiffJsonResponse2725",
     "BTDiffJsonResponse2725Patch",
@@ -2217,6 +2246,7 @@ __all__ = (
     "BTInsertableSketchDisplayData3775BodyIdToPartData",
     "BTInsertablesListResponse",
     "BTInsertablesListResponseConfiguration",
+    "BTInspectionTableCrossHighlightData4177",
     "BTInspectionTableRowMetadata2485",
     "BTInstance642",
     "BTInstanceBase2263",
@@ -2259,6 +2289,7 @@ __all__ = (
     "BTListResponseBTCategoryPropertyInfo",
     "BTListResponseBTCommentInfo",
     "BTListResponseBTCompanyInfo",
+    "BTListResponseBTCompanyUserInfo",
     "BTListResponseBTInsertableInfo",
     "BTListResponseBTItemInfo",
     "BTListResponseBTObjectWorkflowInfo",
@@ -2720,6 +2751,7 @@ __all__ = (
     "BTSearchEntityType",
     "BTSectionGeometryFilter4161",
     "BTSectionPlaneInfo",
+    "BTSelectedMetadataEnumValue",
     "BTSelectItemViewStateInfo",
     "BTSessionCredentialInfo",
     "BTSetFeatureRollbackCall1899",
@@ -2753,6 +2785,10 @@ __all__ = (
     "BTSketchSolveStatusFilter3657",
     "BTSketchSplineDisplayData359",
     "BTSketchTextDisplayData1707",
+    "BTSmartFolderInfo",
+    "BTSmartFolderPredicateInfo",
+    "BTSmartFolderPredicateInfoValue",
+    "BTSmartFolderSortInfo",
     "BTSMBendTableRowMetadata1705",
     "BTSMDefinitionEntityTypeFilter1651",
     "BTSMOtherJointTableRowMetadata2640",
@@ -2790,6 +2826,10 @@ __all__ = (
     "BTTableBaseCrossHighlightData2609",
     "BTTableBaseRowMetadata3181",
     "BTTableCell1114",
+    "BTTableCellModifier4883",
+    "BTTableCellModifierForceShowConfigured5170",
+    "BTTableCellModifierInfo4585",
+    "BTTableCellModifierOpenFeature1614",
     "BTTableCellParameter2399",
     "BTTableCellParameterWithValue2122",
     "BTTableCellPropertyParameter2983",
@@ -3038,11 +3078,13 @@ __all__ = (
     "GBTErrorStringEnum",
     "GBTExportResolution",
     "GBTExportUnit",
+    "GBTFeatureDimensionType",
     "GBTFeatureFilterExclusion",
     "GBTFieldWeldFlag",
     "GBTFilterFlattenedGeometryOptions",
     "GBTGeometryType",
     "GBTGraphicsBufferTarget",
+    "GBTGraphicsPrimitiveType",
     "GBTGTolConstraintType",
     "GBTGTolExtendedConstraintType",
     "GBTHoleType",

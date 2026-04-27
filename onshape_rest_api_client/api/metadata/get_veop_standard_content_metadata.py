@@ -17,6 +17,7 @@ def _get_kwargs(
     *,
     configuration: str | Unset = UNSET,
     link_document_id: str | Unset = UNSET,
+    company_id: str | Unset = UNSET,
     include_computed_properties: bool | Unset = True,
     include_computed_assembly_properties: bool | Unset = False,
     thumbnail: bool | Unset = False,
@@ -27,6 +28,8 @@ def _get_kwargs(
     params["configuration"] = configuration
 
     params["linkDocumentId"] = link_document_id
+
+    params["companyId"] = company_id
 
     params["includeComputedProperties"] = include_computed_properties
 
@@ -76,6 +79,7 @@ def sync_detailed(
     client: AuthenticatedClient,
     configuration: str | Unset = UNSET,
     link_document_id: str | Unset = UNSET,
+    company_id: str | Unset = UNSET,
     include_computed_properties: bool | Unset = True,
     include_computed_assembly_properties: bool | Unset = False,
     thumbnail: bool | Unset = False,
@@ -98,6 +102,7 @@ def sync_detailed(
         pid (str):
         configuration (str | Unset):
         link_document_id (str | Unset):
+        company_id (str | Unset):
         include_computed_properties (bool | Unset):  Default: True.
         include_computed_assembly_properties (bool | Unset):  Default: False.
         thumbnail (bool | Unset):  Default: False.
@@ -117,6 +122,7 @@ def sync_detailed(
         pid=pid,
         configuration=configuration,
         link_document_id=link_document_id,
+        company_id=company_id,
         include_computed_properties=include_computed_properties,
         include_computed_assembly_properties=include_computed_assembly_properties,
         thumbnail=thumbnail,
@@ -138,6 +144,7 @@ def sync(
     client: AuthenticatedClient,
     configuration: str | Unset = UNSET,
     link_document_id: str | Unset = UNSET,
+    company_id: str | Unset = UNSET,
     include_computed_properties: bool | Unset = True,
     include_computed_assembly_properties: bool | Unset = False,
     thumbnail: bool | Unset = False,
@@ -160,6 +167,7 @@ def sync(
         pid (str):
         configuration (str | Unset):
         link_document_id (str | Unset):
+        company_id (str | Unset):
         include_computed_properties (bool | Unset):  Default: True.
         include_computed_assembly_properties (bool | Unset):  Default: False.
         thumbnail (bool | Unset):  Default: False.
@@ -180,6 +188,7 @@ def sync(
         client=client,
         configuration=configuration,
         link_document_id=link_document_id,
+        company_id=company_id,
         include_computed_properties=include_computed_properties,
         include_computed_assembly_properties=include_computed_assembly_properties,
         thumbnail=thumbnail,
@@ -195,6 +204,7 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     configuration: str | Unset = UNSET,
     link_document_id: str | Unset = UNSET,
+    company_id: str | Unset = UNSET,
     include_computed_properties: bool | Unset = True,
     include_computed_assembly_properties: bool | Unset = False,
     thumbnail: bool | Unset = False,
@@ -217,6 +227,7 @@ async def asyncio_detailed(
         pid (str):
         configuration (str | Unset):
         link_document_id (str | Unset):
+        company_id (str | Unset):
         include_computed_properties (bool | Unset):  Default: True.
         include_computed_assembly_properties (bool | Unset):  Default: False.
         thumbnail (bool | Unset):  Default: False.
@@ -236,6 +247,7 @@ async def asyncio_detailed(
         pid=pid,
         configuration=configuration,
         link_document_id=link_document_id,
+        company_id=company_id,
         include_computed_properties=include_computed_properties,
         include_computed_assembly_properties=include_computed_assembly_properties,
         thumbnail=thumbnail,
@@ -255,6 +267,7 @@ async def asyncio(
     client: AuthenticatedClient,
     configuration: str | Unset = UNSET,
     link_document_id: str | Unset = UNSET,
+    company_id: str | Unset = UNSET,
     include_computed_properties: bool | Unset = True,
     include_computed_assembly_properties: bool | Unset = False,
     thumbnail: bool | Unset = False,
@@ -277,6 +290,7 @@ async def asyncio(
         pid (str):
         configuration (str | Unset):
         link_document_id (str | Unset):
+        company_id (str | Unset):
         include_computed_properties (bool | Unset):  Default: True.
         include_computed_assembly_properties (bool | Unset):  Default: False.
         thumbnail (bool | Unset):  Default: False.
@@ -298,6 +312,7 @@ async def asyncio(
             client=client,
             configuration=configuration,
             link_document_id=link_document_id,
+            company_id=company_id,
             include_computed_properties=include_computed_properties,
             include_computed_assembly_properties=include_computed_assembly_properties,
             thumbnail=thumbnail,

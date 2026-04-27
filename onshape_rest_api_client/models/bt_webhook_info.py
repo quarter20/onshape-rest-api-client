@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import datetime
 from collections.abc import Mapping
 from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
+from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -21,6 +23,7 @@ class BTWebhookInfo:
     """
     Attributes:
         company_id (str | Unset): Company admins can register webhooks to listen to all company events.
+        created_at (datetime.datetime | Unset):
         created_by (BTUserSummaryInfo | Unset):
         data (str | Unset):
         description (str | Unset):
@@ -34,6 +37,7 @@ class BTWebhookInfo:
         id (str | Unset): Id of the resource.
         is_transient (bool | Unset): Transient webhooks are automatically cleaned up after a period of inactivity.
             Default: True.
+        modified_at (datetime.datetime | Unset):
         name (str | Unset): Name of the resource.
         options (BTWebhookOptions | Unset):
         project_id (str | Unset):
@@ -42,6 +46,7 @@ class BTWebhookInfo:
     """
 
     company_id: str | Unset = UNSET
+    created_at: datetime.datetime | Unset = UNSET
     created_by: BTUserSummaryInfo | Unset = UNSET
     data: str | Unset = UNSET
     description: str | Unset = UNSET
@@ -53,6 +58,7 @@ class BTWebhookInfo:
     href: str | Unset = UNSET
     id: str | Unset = UNSET
     is_transient: bool | Unset = True
+    modified_at: datetime.datetime | Unset = UNSET
     name: str | Unset = UNSET
     options: BTWebhookOptions | Unset = UNSET
     project_id: str | Unset = UNSET
@@ -62,6 +68,10 @@ class BTWebhookInfo:
 
     def to_dict(self) -> dict[str, Any]:
         company_id = self.company_id
+
+        created_at: str | Unset = UNSET
+        if not isinstance(self.created_at, Unset):
+            created_at = self.created_at.isoformat()
 
         created_by: dict[str, Any] | Unset = UNSET
         if not isinstance(self.created_by, Unset):
@@ -89,6 +99,10 @@ class BTWebhookInfo:
 
         is_transient = self.is_transient
 
+        modified_at: str | Unset = UNSET
+        if not isinstance(self.modified_at, Unset):
+            modified_at = self.modified_at.isoformat()
+
         name = self.name
 
         options: dict[str, Any] | Unset = UNSET
@@ -106,6 +120,8 @@ class BTWebhookInfo:
         field_dict.update({})
         if company_id is not UNSET:
             field_dict["companyId"] = company_id
+        if created_at is not UNSET:
+            field_dict["createdAt"] = created_at
         if created_by is not UNSET:
             field_dict["createdBy"] = created_by
         if data is not UNSET:
@@ -128,6 +144,8 @@ class BTWebhookInfo:
             field_dict["id"] = id
         if is_transient is not UNSET:
             field_dict["isTransient"] = is_transient
+        if modified_at is not UNSET:
+            field_dict["modifiedAt"] = modified_at
         if name is not UNSET:
             field_dict["name"] = name
         if options is not UNSET:
@@ -148,6 +166,13 @@ class BTWebhookInfo:
 
         d = dict(src_dict)
         company_id = d.pop("companyId", UNSET)
+
+        _created_at = d.pop("createdAt", UNSET)
+        created_at: datetime.datetime | Unset
+        if isinstance(_created_at, Unset):
+            created_at = UNSET
+        else:
+            created_at = isoparse(_created_at)
 
         _created_by = d.pop("createdBy", UNSET)
         created_by: BTUserSummaryInfo | Unset
@@ -176,6 +201,13 @@ class BTWebhookInfo:
 
         is_transient = d.pop("isTransient", UNSET)
 
+        _modified_at = d.pop("modifiedAt", UNSET)
+        modified_at: datetime.datetime | Unset
+        if isinstance(_modified_at, Unset):
+            modified_at = UNSET
+        else:
+            modified_at = isoparse(_modified_at)
+
         name = d.pop("name", UNSET)
 
         _options = d.pop("options", UNSET)
@@ -193,6 +225,7 @@ class BTWebhookInfo:
 
         bt_webhook_info = cls(
             company_id=company_id,
+            created_at=created_at,
             created_by=created_by,
             data=data,
             description=description,
@@ -204,6 +237,7 @@ class BTWebhookInfo:
             href=href,
             id=id,
             is_transient=is_transient,
+            modified_at=modified_at,
             name=name,
             options=options,
             project_id=project_id,
