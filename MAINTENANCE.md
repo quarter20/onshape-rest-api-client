@@ -6,6 +6,8 @@ This repo contains 100% auto-generated code!
 
 Instead follow these instructions to regenerate the code using [openapi-python-client](https://github.com/openapi-generators/openapi-python-client):
 
+If you're using a Mac, the [build.sh](build.sh) script automates some of the steps.
+
 
 ## Regenerate Code
 1. go to a temporary directory, e.g.
