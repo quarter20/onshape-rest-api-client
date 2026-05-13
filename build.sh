@@ -1,8 +1,11 @@
 echo "-------------------------------------------"
 echo "Updating onshape_rest_api_client (Mac only)"
 pushd /tmp
-pipx install openapi-python-client --include-deps
+pipx install --force openapi-python-client --include-deps
 curl -H "Accept: application/json" https://cad.onshape.com/api/openapi -o onshape_openapi.json
+popd
+# python3 update_json.py /tmp/onshape_openapi.json
+pushd /tmp
 openapi-python-client generate --path onshape_openapi.json --overwrite
 echo "Changelog info:"
 jq ".servers[0].url, .info.version" onshape_openapi.json
