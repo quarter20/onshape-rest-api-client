@@ -150,7 +150,9 @@ from .bt_assembly_instance_status import BTAssemblyInstanceStatus
 from .bt_assembly_instance_type import BTAssemblyInstanceType
 from .bt_assembly_item_metadata_info import BTAssemblyItemMetadataInfo
 from .bt_assembly_item_metadata_info_property_id_to_error import BTAssemblyItemMetadataInfoPropertyIdToError
-from .bt_assembly_item_metadata_info_property_id_to_eval_info import BTAssemblyItemMetadataInfoPropertyIdToEvalInfo
+from .bt_assembly_item_metadata_info_property_id_to_eval_info_type_0 import (
+    BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0,
+)
 from .bt_assembly_item_metadata_info_property_id_to_override_status import (
     BTAssemblyItemMetadataInfoPropertyIdToOverrideStatus,
 )
@@ -1895,7 +1897,7 @@ __all__ = (
     "BTAssemblyInstanceType",
     "BTAssemblyItemMetadataInfo",
     "BTAssemblyItemMetadataInfoPropertyIdToError",
-    "BTAssemblyItemMetadataInfoPropertyIdToEvalInfo",
+    "BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0",
     "BTAssemblyItemMetadataInfoPropertyIdToOverrideStatus",
     "BTAssemblyItemMetadataInfoPropertyIdToSourceType",
     "BTAssemblyItemMetadataInfoPropertyIdToValue",

@@ -8,7 +8,8 @@ path = sys.argv[1]
 with open(path) as f:
     data = json.load(f)
 
-# Change "propertyIdToEvalInfo" type to allow null
+print("Applying schema modifications.....")
+print('* Change "propertyIdToEvalInfo" type to allow null')
 propertyIdToEvalInfo = {
     "anyOf": [
         {
