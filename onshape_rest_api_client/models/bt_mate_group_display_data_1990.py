@@ -24,18 +24,18 @@ class BTMateGroupDisplayData1990:
         hidden (bool | Unset):
         is_derived_feature (bool | Unset):
         node_id (str | Unset):
+        occurrence_ids (list[str] | Unset):
         owner_occurrence (BTOccurrence74 | Unset):
         status (GBTAssemblyFeatureDisplayStatus | Unset):
-        occurrence_ids (list[str] | Unset):
     """
 
     bt_type: str | Unset = UNSET
     hidden: bool | Unset = UNSET
     is_derived_feature: bool | Unset = UNSET
     node_id: str | Unset = UNSET
+    occurrence_ids: list[str] | Unset = UNSET
     owner_occurrence: BTOccurrence74 | Unset = UNSET
     status: GBTAssemblyFeatureDisplayStatus | Unset = UNSET
-    occurrence_ids: list[str] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -47,6 +47,10 @@ class BTMateGroupDisplayData1990:
 
         node_id = self.node_id
 
+        occurrence_ids: list[str] | Unset = UNSET
+        if not isinstance(self.occurrence_ids, Unset):
+            occurrence_ids = self.occurrence_ids
+
         owner_occurrence: dict[str, Any] | Unset = UNSET
         if not isinstance(self.owner_occurrence, Unset):
             owner_occurrence = self.owner_occurrence.to_dict()
@@ -54,10 +58,6 @@ class BTMateGroupDisplayData1990:
         status: str | Unset = UNSET
         if not isinstance(self.status, Unset):
             status = self.status.value
-
-        occurrence_ids: list[str] | Unset = UNSET
-        if not isinstance(self.occurrence_ids, Unset):
-            occurrence_ids = self.occurrence_ids
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -70,12 +70,12 @@ class BTMateGroupDisplayData1990:
             field_dict["isDerivedFeature"] = is_derived_feature
         if node_id is not UNSET:
             field_dict["nodeId"] = node_id
+        if occurrence_ids is not UNSET:
+            field_dict["occurrenceIds"] = occurrence_ids
         if owner_occurrence is not UNSET:
             field_dict["ownerOccurrence"] = owner_occurrence
         if status is not UNSET:
             field_dict["status"] = status
-        if occurrence_ids is not UNSET:
-            field_dict["occurrenceIds"] = occurrence_ids
 
         return field_dict
 
@@ -92,6 +92,8 @@ class BTMateGroupDisplayData1990:
 
         node_id = d.pop("nodeId", UNSET)
 
+        occurrence_ids = cast(list[str], d.pop("occurrenceIds", UNSET))
+
         _owner_occurrence = d.pop("ownerOccurrence", UNSET)
         owner_occurrence: BTOccurrence74 | Unset
         if isinstance(_owner_occurrence, Unset):
@@ -106,16 +108,14 @@ class BTMateGroupDisplayData1990:
         else:
             status = GBTAssemblyFeatureDisplayStatus(_status)
 
-        occurrence_ids = cast(list[str], d.pop("occurrenceIds", UNSET))
-
         bt_mate_group_display_data_1990 = cls(
             bt_type=bt_type,
             hidden=hidden,
             is_derived_feature=is_derived_feature,
             node_id=node_id,
+            occurrence_ids=occurrence_ids,
             owner_occurrence=owner_occurrence,
             status=status,
-            occurrence_ids=occurrence_ids,
         )
 
         bt_mate_group_display_data_1990.additional_properties = d

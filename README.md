@@ -11,7 +11,7 @@ A heavyweight python client library for accessing the [Onshape REST API](https:/
 First, set the url provided as Onshape as a constant, as this will change over time:
 
 ```python
-ONSHAPE_BASE_URL = "https://cad.onshape.com/api/v14"
+ONSHAPE_BASE_URL = "https://cad.onshape.com/api/v15"
 ```
 
 

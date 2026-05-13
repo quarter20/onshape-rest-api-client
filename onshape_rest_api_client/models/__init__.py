@@ -324,7 +324,7 @@ from .bt_default_units_info import BTDefaultUnitsInfo
 from .bt_derived_assembly_mirror_4204 import BTDerivedAssemblyMirror4204
 from .bt_device_login_secret_info import BTDeviceLoginSecretInfo
 from .bt_diff_info import BTDiffInfo
-from .bt_diff_info_collection_changes import BTDiffInfoCollectionChanges
+from .bt_diff_info_changes import BTDiffInfoChanges
 from .bt_diff_info_collection_type import BTDiffInfoCollectionType
 from .bt_diff_json_response_2725 import BTDiffJsonResponse2725
 from .bt_diff_json_response_2725_patch import BTDiffJsonResponse2725Patch
@@ -2064,7 +2064,7 @@ __all__ = (
     "BTDerivedAssemblyMirror4204",
     "BTDeviceLoginSecretInfo",
     "BTDiffInfo",
-    "BTDiffInfoCollectionChanges",
+    "BTDiffInfoChanges",
     "BTDiffInfoCollectionType",
     "BTDiffJsonResponse2725",
     "BTDiffJsonResponse2725Patch",
