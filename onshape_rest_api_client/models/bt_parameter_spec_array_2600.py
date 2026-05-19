@@ -11,7 +11,6 @@ from ..models.gbtui_hint import GBTUIHint
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.bt_parameter_spec_6 import BTParameterSpec6
     from ..models.bt_parameter_visibility_condition_177 import BTParameterVisibilityCondition177
     from ..models.btm_parameter_1 import BTMParameter1
 
@@ -46,7 +45,6 @@ class BTParameterSpecArray2600:
         item_label_template (str | Unset):
         item_name (str | Unset):
         max_number_of_picks (int | Unset):
-        parameters (list[BTParameterSpec6] | Unset):
         show_labels_only (bool | Unset):
     """
 
@@ -72,7 +70,6 @@ class BTParameterSpecArray2600:
     item_label_template: str | Unset = UNSET
     item_name: str | Unset = UNSET
     max_number_of_picks: int | Unset = UNSET
-    parameters: list[BTParameterSpec6] | Unset = UNSET
     show_labels_only: bool | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -136,13 +133,6 @@ class BTParameterSpecArray2600:
 
         max_number_of_picks = self.max_number_of_picks
 
-        parameters: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.parameters, Unset):
-            parameters = []
-            for parameters_item_data in self.parameters:
-                parameters_item = parameters_item_data.to_dict()
-                parameters.append(parameters_item)
-
         show_labels_only = self.show_labels_only
 
         field_dict: dict[str, Any] = {}
@@ -192,8 +182,6 @@ class BTParameterSpecArray2600:
             field_dict["itemName"] = item_name
         if max_number_of_picks is not UNSET:
             field_dict["maxNumberOfPicks"] = max_number_of_picks
-        if parameters is not UNSET:
-            field_dict["parameters"] = parameters
         if show_labels_only is not UNSET:
             field_dict["showLabelsOnly"] = show_labels_only
 
@@ -201,7 +189,6 @@ class BTParameterSpecArray2600:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_parameter_spec_6 import BTParameterSpec6
         from ..models.bt_parameter_visibility_condition_177 import BTParameterVisibilityCondition177
         from ..models.btm_parameter_1 import BTMParameter1
 
@@ -272,15 +259,6 @@ class BTParameterSpecArray2600:
 
         max_number_of_picks = d.pop("maxNumberOfPicks", UNSET)
 
-        _parameters = d.pop("parameters", UNSET)
-        parameters: list[BTParameterSpec6] | Unset = UNSET
-        if _parameters is not UNSET:
-            parameters = []
-            for parameters_item_data in _parameters:
-                parameters_item = BTParameterSpec6.from_dict(parameters_item_data)
-
-                parameters.append(parameters_item)
-
         show_labels_only = d.pop("showLabelsOnly", UNSET)
 
         bt_parameter_spec_array_2600 = cls(
@@ -306,7 +284,6 @@ class BTParameterSpecArray2600:
             item_label_template=item_label_template,
             item_name=item_name,
             max_number_of_picks=max_number_of_picks,
-            parameters=parameters,
             show_labels_only=show_labels_only,
         )
 

@@ -13,6 +13,7 @@ if TYPE_CHECKING:
     from ..models.btm_individual_query_with_occurrence_base_904 import BTMIndividualQueryWithOccurrenceBase904
     from ..models.btm_mate_connector_66 import BTMMateConnector66
     from ..models.btm_parameter_1 import BTMParameter1
+    from ..models.btm_parameter_boolean_144 import BTMParameterBoolean144
     from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
 
 
@@ -51,6 +52,7 @@ class BTMBoundaryCondition5556:
         suppression_state (BTMSuppressionState1924 | Unset):
         variable_studio_reference (bool | Unset): If `true`, the feature references a Variable Studio.
         version (int | Unset):
+        constraints_parameters (list[BTMParameterBoolean144] | Unset):
     """
 
     auxiliary_tree_feature: bool | Unset = UNSET
@@ -78,6 +80,7 @@ class BTMBoundaryCondition5556:
     suppression_state: BTMSuppressionState1924 | Unset = UNSET
     variable_studio_reference: bool | Unset = UNSET
     version: int | Unset = UNSET
+    constraints_parameters: list[BTMParameterBoolean144] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -160,6 +163,13 @@ class BTMBoundaryCondition5556:
 
         version = self.version
 
+        constraints_parameters: list[dict[str, Any]] | Unset = UNSET
+        if not isinstance(self.constraints_parameters, Unset):
+            constraints_parameters = []
+            for constraints_parameters_item_data in self.constraints_parameters:
+                constraints_parameters_item = constraints_parameters_item_data.to_dict()
+                constraints_parameters.append(constraints_parameters_item)
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
@@ -213,6 +223,8 @@ class BTMBoundaryCondition5556:
             field_dict["variableStudioReference"] = variable_studio_reference
         if version is not UNSET:
             field_dict["version"] = version
+        if constraints_parameters is not UNSET:
+            field_dict["constraintsParameters"] = constraints_parameters
 
         return field_dict
 
@@ -222,6 +234,7 @@ class BTMBoundaryCondition5556:
         from ..models.btm_individual_query_with_occurrence_base_904 import BTMIndividualQueryWithOccurrenceBase904
         from ..models.btm_mate_connector_66 import BTMMateConnector66
         from ..models.btm_parameter_1 import BTMParameter1
+        from ..models.btm_parameter_boolean_144 import BTMParameterBoolean144
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
 
         d = dict(src_dict)
@@ -317,6 +330,15 @@ class BTMBoundaryCondition5556:
 
         version = d.pop("version", UNSET)
 
+        _constraints_parameters = d.pop("constraintsParameters", UNSET)
+        constraints_parameters: list[BTMParameterBoolean144] | Unset = UNSET
+        if _constraints_parameters is not UNSET:
+            constraints_parameters = []
+            for constraints_parameters_item_data in _constraints_parameters:
+                constraints_parameters_item = BTMParameterBoolean144.from_dict(constraints_parameters_item_data)
+
+                constraints_parameters.append(constraints_parameters_item)
+
         btm_boundary_condition_5556 = cls(
             auxiliary_tree_feature=auxiliary_tree_feature,
             bt_type=bt_type,
@@ -343,6 +365,7 @@ class BTMBoundaryCondition5556:
             suppression_state=suppression_state,
             variable_studio_reference=variable_studio_reference,
             version=version,
+            constraints_parameters=constraints_parameters,
         )
 
         btm_boundary_condition_5556.additional_properties = d

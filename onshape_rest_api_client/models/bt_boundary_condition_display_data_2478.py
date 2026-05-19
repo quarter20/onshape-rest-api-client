@@ -10,15 +10,15 @@ from ..models.gbt_assembly_feature_display_status import GBTAssemblyFeatureDispl
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.bt_coordinate_system_387 import BTCoordinateSystem387
     from ..models.bt_occurrence_74 import BTOccurrence74
+    from ..models.bt_occurrence_entity_5720 import BTOccurrenceEntity5720
 
 
-T = TypeVar("T", bound="BTGeometryMateDisplayData1050")
+T = TypeVar("T", bound="BTBoundaryConditionDisplayData2478")
 
 
 @_attrs_define
-class BTGeometryMateDisplayData1050:
+class BTBoundaryConditionDisplayData2478:
     """
     Attributes:
         bt_type (str | Unset): Type of JSON object.
@@ -27,11 +27,9 @@ class BTGeometryMateDisplayData1050:
         node_id (str | Unset):
         owner_occurrence (BTOccurrence74 | Unset):
         status (GBTAssemblyFeatureDisplayStatus | Unset):
-        first_deterministic_id (str | Unset):
-        first_occurrence (BTOccurrence74 | Unset):
-        location (BTCoordinateSystem387 | Unset):
-        second_deterministic_id (str | Unset):
-        second_occurrence (BTOccurrence74 | Unset):
+        direction_mate_connector_id (str | Unset):
+        faces (list[BTOccurrenceEntity5720] | Unset):
+        occurrences (list[BTOccurrence74] | Unset):
     """
 
     bt_type: str | Unset = UNSET
@@ -40,11 +38,9 @@ class BTGeometryMateDisplayData1050:
     node_id: str | Unset = UNSET
     owner_occurrence: BTOccurrence74 | Unset = UNSET
     status: GBTAssemblyFeatureDisplayStatus | Unset = UNSET
-    first_deterministic_id: str | Unset = UNSET
-    first_occurrence: BTOccurrence74 | Unset = UNSET
-    location: BTCoordinateSystem387 | Unset = UNSET
-    second_deterministic_id: str | Unset = UNSET
-    second_occurrence: BTOccurrence74 | Unset = UNSET
+    direction_mate_connector_id: str | Unset = UNSET
+    faces: list[BTOccurrenceEntity5720] | Unset = UNSET
+    occurrences: list[BTOccurrence74] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -64,21 +60,21 @@ class BTGeometryMateDisplayData1050:
         if not isinstance(self.status, Unset):
             status = self.status.value
 
-        first_deterministic_id = self.first_deterministic_id
+        direction_mate_connector_id = self.direction_mate_connector_id
 
-        first_occurrence: dict[str, Any] | Unset = UNSET
-        if not isinstance(self.first_occurrence, Unset):
-            first_occurrence = self.first_occurrence.to_dict()
+        faces: list[dict[str, Any]] | Unset = UNSET
+        if not isinstance(self.faces, Unset):
+            faces = []
+            for faces_item_data in self.faces:
+                faces_item = faces_item_data.to_dict()
+                faces.append(faces_item)
 
-        location: dict[str, Any] | Unset = UNSET
-        if not isinstance(self.location, Unset):
-            location = self.location.to_dict()
-
-        second_deterministic_id = self.second_deterministic_id
-
-        second_occurrence: dict[str, Any] | Unset = UNSET
-        if not isinstance(self.second_occurrence, Unset):
-            second_occurrence = self.second_occurrence.to_dict()
+        occurrences: list[dict[str, Any]] | Unset = UNSET
+        if not isinstance(self.occurrences, Unset):
+            occurrences = []
+            for occurrences_item_data in self.occurrences:
+                occurrences_item = occurrences_item_data.to_dict()
+                occurrences.append(occurrences_item)
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -95,23 +91,19 @@ class BTGeometryMateDisplayData1050:
             field_dict["ownerOccurrence"] = owner_occurrence
         if status is not UNSET:
             field_dict["status"] = status
-        if first_deterministic_id is not UNSET:
-            field_dict["firstDeterministicId"] = first_deterministic_id
-        if first_occurrence is not UNSET:
-            field_dict["firstOccurrence"] = first_occurrence
-        if location is not UNSET:
-            field_dict["location"] = location
-        if second_deterministic_id is not UNSET:
-            field_dict["secondDeterministicId"] = second_deterministic_id
-        if second_occurrence is not UNSET:
-            field_dict["secondOccurrence"] = second_occurrence
+        if direction_mate_connector_id is not UNSET:
+            field_dict["directionMateConnectorId"] = direction_mate_connector_id
+        if faces is not UNSET:
+            field_dict["faces"] = faces
+        if occurrences is not UNSET:
+            field_dict["occurrences"] = occurrences
 
         return field_dict
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_coordinate_system_387 import BTCoordinateSystem387
         from ..models.bt_occurrence_74 import BTOccurrence74
+        from ..models.bt_occurrence_entity_5720 import BTOccurrenceEntity5720
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)
@@ -136,47 +128,40 @@ class BTGeometryMateDisplayData1050:
         else:
             status = GBTAssemblyFeatureDisplayStatus(_status)
 
-        first_deterministic_id = d.pop("firstDeterministicId", UNSET)
+        direction_mate_connector_id = d.pop("directionMateConnectorId", UNSET)
 
-        _first_occurrence = d.pop("firstOccurrence", UNSET)
-        first_occurrence: BTOccurrence74 | Unset
-        if isinstance(_first_occurrence, Unset):
-            first_occurrence = UNSET
-        else:
-            first_occurrence = BTOccurrence74.from_dict(_first_occurrence)
+        _faces = d.pop("faces", UNSET)
+        faces: list[BTOccurrenceEntity5720] | Unset = UNSET
+        if _faces is not UNSET:
+            faces = []
+            for faces_item_data in _faces:
+                faces_item = BTOccurrenceEntity5720.from_dict(faces_item_data)
 
-        _location = d.pop("location", UNSET)
-        location: BTCoordinateSystem387 | Unset
-        if isinstance(_location, Unset):
-            location = UNSET
-        else:
-            location = BTCoordinateSystem387.from_dict(_location)
+                faces.append(faces_item)
 
-        second_deterministic_id = d.pop("secondDeterministicId", UNSET)
+        _occurrences = d.pop("occurrences", UNSET)
+        occurrences: list[BTOccurrence74] | Unset = UNSET
+        if _occurrences is not UNSET:
+            occurrences = []
+            for occurrences_item_data in _occurrences:
+                occurrences_item = BTOccurrence74.from_dict(occurrences_item_data)
 
-        _second_occurrence = d.pop("secondOccurrence", UNSET)
-        second_occurrence: BTOccurrence74 | Unset
-        if isinstance(_second_occurrence, Unset):
-            second_occurrence = UNSET
-        else:
-            second_occurrence = BTOccurrence74.from_dict(_second_occurrence)
+                occurrences.append(occurrences_item)
 
-        bt_geometry_mate_display_data_1050 = cls(
+        bt_boundary_condition_display_data_2478 = cls(
             bt_type=bt_type,
             hidden=hidden,
             is_derived_feature=is_derived_feature,
             node_id=node_id,
             owner_occurrence=owner_occurrence,
             status=status,
-            first_deterministic_id=first_deterministic_id,
-            first_occurrence=first_occurrence,
-            location=location,
-            second_deterministic_id=second_deterministic_id,
-            second_occurrence=second_occurrence,
+            direction_mate_connector_id=direction_mate_connector_id,
+            faces=faces,
+            occurrences=occurrences,
         )
 
-        bt_geometry_mate_display_data_1050.additional_properties = d
-        return bt_geometry_mate_display_data_1050
+        bt_boundary_condition_display_data_2478.additional_properties = d
+        return bt_boundary_condition_display_data_2478
 
     @property
     def additional_keys(self) -> list[str]:

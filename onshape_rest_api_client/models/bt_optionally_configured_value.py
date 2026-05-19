@@ -20,7 +20,7 @@ class BTOptionallyConfiguredValue:
     """Optional map of configuration parameter id to value
 
     Attributes:
-        configured_value (BTConfiguredValue | Unset): Configured variable description, if configured
+        configured_value (BTConfiguredValue | Unset): A value that varies per option of a configuration input.
         value (str | Unset): The string value, if not configured
     """
 

@@ -165,6 +165,7 @@ from .bt_assembly_mate_values_info import BTAssemblyMateValuesInfo
 from .bt_assembly_mirror_2996 import BTAssemblyMirror2996
 from .bt_assembly_mirror_feature_interface import BTAssemblyMirrorFeatureInterface
 from .bt_assembly_modification_params import BTAssemblyModificationParams
+from .bt_assembly_modification_params_suppression_states import BTAssemblyModificationParamsSuppressionStates
 from .bt_assembly_occurrence_info import BTAssemblyOccurrenceInfo
 from .bt_assembly_parametric_instance_child_info import BTAssemblyParametricInstanceChildInfo
 from .bt_assembly_parametric_instance_info import BTAssemblyParametricInstanceInfo
@@ -232,6 +233,7 @@ from .bt_bill_of_materials_unique_item_id_2029 import BTBillOfMaterialsUniqueIte
 from .bt_billing_plan_info import BTBillingPlanInfo
 from .bt_body_entity_26 import BTBodyEntity26
 from .bt_body_type_filter_112 import BTBodyTypeFilter112
+from .bt_boundary_condition_display_data_2478 import BTBoundaryConditionDisplayData2478
 from .bt_bounding_box_1052 import BTBoundingBox1052
 from .bt_bounding_box_info import BTBoundingBoxInfo
 from .bt_broken_out_end_condition_1107 import BTBrokenOutEndCondition1107
@@ -629,6 +631,7 @@ from .bt_occurrence_74 import BTOccurrence74
 from .bt_occurrence_data_75 import BTOccurrenceData75
 from .bt_occurrence_data_75_feature_data import BTOccurrenceData75FeatureData
 from .bt_occurrence_display_data_95 import BTOccurrenceDisplayData95
+from .bt_occurrence_entity_5720 import BTOccurrenceEntity5720
 from .bt_occurrence_filter_166 import BTOccurrenceFilter166
 from .bt_occurrence_with_full_part_ids_1464 import BTOccurrenceWithFullPartIds1464
 from .bt_old_permission import BTOldPermission
@@ -1062,7 +1065,6 @@ from .btb_export_model_params import BTBExportModelParams
 from .btb_file_upload import BTBFileUpload
 from .btb_gltf_export_params import BTBGltfExportParams
 from .btb_obj_export_params import BTBObjExportParams
-from .btb_solidworks_export_params import BTBSolidworksExportParams
 from .btb_step_export_params import BTBStepExportParams
 from .btb_translation_request_params import BTBTranslationRequestParams
 from .btbs_matrix_386 import BTBSMatrix386
@@ -1462,6 +1464,7 @@ from .gbt_table_column_width_units import GBTTableColumnWidthUnits
 from .gbt_table_text_alignment import GBTTableTextAlignment
 from .gbt_tessellation_setting_enum import GBTTessellationSettingEnum
 from .gbt_tolerance_precision import GBTTolerancePrecision
+from .gbt_tolerance_schema_class import GBTToleranceSchemaClass
 from .gbt_tolerance_type import GBTToleranceType
 from .gbt_ui_selection_type import GBTUiSelectionType
 from .gbt_urdf_mesh_format import GBTUrdfMeshFormat
@@ -1908,6 +1911,7 @@ __all__ = (
     "BTAssemblyMirror2996",
     "BTAssemblyMirrorFeatureInterface",
     "BTAssemblyModificationParams",
+    "BTAssemblyModificationParamsSuppressionStates",
     "BTAssemblyOccurrenceInfo",
     "BTAssemblyParametricInstanceChildInfo",
     "BTAssemblyParametricInstanceInfo",
@@ -1972,11 +1976,11 @@ __all__ = (
     "BTBObjExportParams",
     "BTBodyEntity26",
     "BTBodyTypeFilter112",
+    "BTBoundaryConditionDisplayData2478",
     "BTBoundingBox1052",
     "BTBoundingBoxInfo",
     "BTBrokenOutEndCondition1107",
     "BTBSMatrix386",
-    "BTBSolidworksExportParams",
     "BTBStepExportParams",
     "BTBTranslationRequestParams",
     "BTCacheDataPath191",
@@ -2508,6 +2512,7 @@ __all__ = (
     "BTOccurrenceData75",
     "BTOccurrenceData75FeatureData",
     "BTOccurrenceDisplayData95",
+    "BTOccurrenceEntity5720",
     "BTOccurrenceFilter166",
     "BTOccurrenceWithFullPartIds1464",
     "BTOldPermission",
@@ -3129,6 +3134,7 @@ __all__ = (
     "GBTTableTextAlignment",
     "GBTTessellationSettingEnum",
     "GBTTolerancePrecision",
+    "GBTToleranceSchemaClass",
     "GBTToleranceType",
     "GBTUIHint",
     "GBTUiSelectionType",

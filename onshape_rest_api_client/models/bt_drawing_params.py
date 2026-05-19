@@ -64,6 +64,7 @@ class BTDrawingParams:
         reference_type_enum (GBTAppElementReferenceType | Unset):
         revision (str | Unset): Create the drawing from this specific revision.
         show_cut_geom_only (bool | Unset): Set to `true` to show only cut geometry in the drawing. Default: False.
+        show_mbd_annotations (bool | Unset): Set to `true` to include MBD data in the drawing. Default: False.
         simplification_option (str | Unset): `NONE` | `ABSOLUTE` | `RATIO_TO_MODEL` | `RATIO_TO_BODY` | `AUTOMATIC`
         simplification_threshold (float | Unset): `NONE` | `UNKNOWN` | `SMOOTH` | `DRAFTING`
         size (str | Unset): Provide a size for the drawing.
@@ -118,6 +119,7 @@ class BTDrawingParams:
     reference_type_enum: GBTAppElementReferenceType | Unset = UNSET
     revision: str | Unset = UNSET
     show_cut_geom_only: bool | Unset = False
+    show_mbd_annotations: bool | Unset = False
     simplification_option: str | Unset = UNSET
     simplification_threshold: float | Unset = UNSET
     size: str | Unset = UNSET
@@ -212,6 +214,8 @@ class BTDrawingParams:
         revision = self.revision
 
         show_cut_geom_only = self.show_cut_geom_only
+
+        show_mbd_annotations = self.show_mbd_annotations
 
         simplification_option = self.simplification_option
 
@@ -322,6 +326,8 @@ class BTDrawingParams:
             field_dict["revision"] = revision
         if show_cut_geom_only is not UNSET:
             field_dict["showCutGeomOnly"] = show_cut_geom_only
+        if show_mbd_annotations is not UNSET:
+            field_dict["showMbdAnnotations"] = show_mbd_annotations
         if simplification_option is not UNSET:
             field_dict["simplificationOption"] = simplification_option
         if simplification_threshold is not UNSET:
@@ -447,6 +453,8 @@ class BTDrawingParams:
 
         show_cut_geom_only = d.pop("showCutGeomOnly", UNSET)
 
+        show_mbd_annotations = d.pop("showMbdAnnotations", UNSET)
+
         simplification_option = d.pop("simplificationOption", UNSET)
 
         simplification_threshold = d.pop("simplificationThreshold", UNSET)
@@ -515,6 +523,7 @@ class BTDrawingParams:
             reference_type_enum=reference_type_enum,
             revision=revision,
             show_cut_geom_only=show_cut_geom_only,
+            show_mbd_annotations=show_mbd_annotations,
             simplification_option=simplification_option,
             simplification_threshold=simplification_threshold,
             size=size,

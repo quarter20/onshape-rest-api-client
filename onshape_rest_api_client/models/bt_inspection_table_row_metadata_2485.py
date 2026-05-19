@@ -9,6 +9,7 @@ from attrs import field as _attrs_field
 from ..models.gbt_annotation_type import GBTAnnotationType
 from ..models.gbt_feature_dimension_type import GBTFeatureDimensionType
 from ..models.gbt_tolerance_precision import GBTTolerancePrecision
+from ..models.gbt_tolerance_schema_class import GBTToleranceSchemaClass
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -35,6 +36,7 @@ class BTInspectionTableRowMetadata2485:
         has_default_tolerances (bool | Unset):
         hole_callout_id (str | Unset):
         is_derived (bool | Unset):
+        onshape_schema_class (GBTToleranceSchemaClass | Unset):
         parameter_id (str | Unset):
         part_id (str | Unset):
         precision (GBTTolerancePrecision | Unset):
@@ -52,6 +54,7 @@ class BTInspectionTableRowMetadata2485:
     has_default_tolerances: bool | Unset = UNSET
     hole_callout_id: str | Unset = UNSET
     is_derived: bool | Unset = UNSET
+    onshape_schema_class: GBTToleranceSchemaClass | Unset = UNSET
     parameter_id: str | Unset = UNSET
     part_id: str | Unset = UNSET
     precision: GBTTolerancePrecision | Unset = UNSET
@@ -90,6 +93,10 @@ class BTInspectionTableRowMetadata2485:
 
         is_derived = self.is_derived
 
+        onshape_schema_class: str | Unset = UNSET
+        if not isinstance(self.onshape_schema_class, Unset):
+            onshape_schema_class = self.onshape_schema_class.value
+
         parameter_id = self.parameter_id
 
         part_id = self.part_id
@@ -125,6 +132,8 @@ class BTInspectionTableRowMetadata2485:
             field_dict["holeCalloutId"] = hole_callout_id
         if is_derived is not UNSET:
             field_dict["isDerived"] = is_derived
+        if onshape_schema_class is not UNSET:
+            field_dict["onshapeSchemaClass"] = onshape_schema_class
         if parameter_id is not UNSET:
             field_dict["parameterId"] = parameter_id
         if part_id is not UNSET:
@@ -184,6 +193,13 @@ class BTInspectionTableRowMetadata2485:
 
         is_derived = d.pop("isDerived", UNSET)
 
+        _onshape_schema_class = d.pop("onshapeSchemaClass", UNSET)
+        onshape_schema_class: GBTToleranceSchemaClass | Unset
+        if isinstance(_onshape_schema_class, Unset):
+            onshape_schema_class = UNSET
+        else:
+            onshape_schema_class = GBTToleranceSchemaClass(_onshape_schema_class)
+
         parameter_id = d.pop("parameterId", UNSET)
 
         part_id = d.pop("partId", UNSET)
@@ -208,6 +224,7 @@ class BTInspectionTableRowMetadata2485:
             has_default_tolerances=has_default_tolerances,
             hole_callout_id=hole_callout_id,
             is_derived=is_derived,
+            onshape_schema_class=onshape_schema_class,
             parameter_id=parameter_id,
             part_id=part_id,
             precision=precision,

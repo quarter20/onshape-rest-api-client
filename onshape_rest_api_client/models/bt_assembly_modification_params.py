@@ -9,6 +9,9 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.bt_assembly_modification_params_suppression_states import (
+        BTAssemblyModificationParamsSuppressionStates,
+    )
     from ..models.bt_assembly_transform_definition_params import BTAssemblyTransformDefinitionParams
 
 
@@ -19,16 +22,23 @@ T = TypeVar("T", bound="BTAssemblyModificationParams")
 class BTAssemblyModificationParams:
     """
     Attributes:
-        delete_instances (list[str] | Unset):
-        edit_description (str | Unset):
-        suppress_instances (list[str] | Unset):
-        transform_definitions (list[BTAssemblyTransformDefinitionParams] | Unset):
-        unsuppress_instances (list[str] | Unset):
+        delete_instances (list[str] | Unset): Node ids of the instances to delete.
+        edit_description (str | Unset): Short description of the modification.
+        suppress_instances (list[str] | Unset): Deprecated in API v16. Use `suppressionStates` instead.Node ids of the
+            instances to suppress.
+        suppression_states (BTAssemblyModificationParamsSuppressionStates | Unset): Suppression states keyed by node id.
+            Each value is either a plain suppression state (`value`: `"true"` or `"false"`) or a configuration-controlled
+            suppression state (`configuredValue`: a configuration parameter id and a map from configuration option id to
+            `"true"` or `"false"`).
+        transform_definitions (list[BTAssemblyTransformDefinitionParams] | Unset): Occurrence transform definitions.
+        unsuppress_instances (list[str] | Unset): Deprecated in API v16. Use `suppressionStates` instead.Node ids of the
+            instances to unsuppress.
     """
 
     delete_instances: list[str] | Unset = UNSET
     edit_description: str | Unset = UNSET
     suppress_instances: list[str] | Unset = UNSET
+    suppression_states: BTAssemblyModificationParamsSuppressionStates | Unset = UNSET
     transform_definitions: list[BTAssemblyTransformDefinitionParams] | Unset = UNSET
     unsuppress_instances: list[str] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -43,6 +53,10 @@ class BTAssemblyModificationParams:
         suppress_instances: list[str] | Unset = UNSET
         if not isinstance(self.suppress_instances, Unset):
             suppress_instances = self.suppress_instances
+
+        suppression_states: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.suppression_states, Unset):
+            suppression_states = self.suppression_states.to_dict()
 
         transform_definitions: list[dict[str, Any]] | Unset = UNSET
         if not isinstance(self.transform_definitions, Unset):
@@ -64,6 +78,8 @@ class BTAssemblyModificationParams:
             field_dict["editDescription"] = edit_description
         if suppress_instances is not UNSET:
             field_dict["suppressInstances"] = suppress_instances
+        if suppression_states is not UNSET:
+            field_dict["suppressionStates"] = suppression_states
         if transform_definitions is not UNSET:
             field_dict["transformDefinitions"] = transform_definitions
         if unsuppress_instances is not UNSET:
@@ -73,6 +89,9 @@ class BTAssemblyModificationParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        from ..models.bt_assembly_modification_params_suppression_states import (
+            BTAssemblyModificationParamsSuppressionStates,
+        )
         from ..models.bt_assembly_transform_definition_params import BTAssemblyTransformDefinitionParams
 
         d = dict(src_dict)
@@ -81,6 +100,13 @@ class BTAssemblyModificationParams:
         edit_description = d.pop("editDescription", UNSET)
 
         suppress_instances = cast(list[str], d.pop("suppressInstances", UNSET))
+
+        _suppression_states = d.pop("suppressionStates", UNSET)
+        suppression_states: BTAssemblyModificationParamsSuppressionStates | Unset
+        if isinstance(_suppression_states, Unset):
+            suppression_states = UNSET
+        else:
+            suppression_states = BTAssemblyModificationParamsSuppressionStates.from_dict(_suppression_states)
 
         _transform_definitions = d.pop("transformDefinitions", UNSET)
         transform_definitions: list[BTAssemblyTransformDefinitionParams] | Unset = UNSET
@@ -99,6 +125,7 @@ class BTAssemblyModificationParams:
             delete_instances=delete_instances,
             edit_description=edit_description,
             suppress_instances=suppress_instances,
+            suppression_states=suppression_states,
             transform_definitions=transform_definitions,
             unsuppress_instances=unsuppress_instances,
         )

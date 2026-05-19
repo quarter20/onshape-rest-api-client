@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class BTSearchEntityType(str, Enum):
+    APPLICATION = "application"
     APP_STORE_ENTRY = "app_store_entry"
     ASSIGNMENT = "assignment"
     CAPABILITY = "capability"

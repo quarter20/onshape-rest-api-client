@@ -17,12 +17,12 @@ T = TypeVar("T", bound="BTConfiguredValue")
 
 @_attrs_define
 class BTConfiguredValue:
-    """Configured variable description, if configured
+    """A value that varies per option of a configuration input.
 
     Attributes:
-        configuration_parameter_id (str | Unset): The configuration parameter configuring this value, if configured
-        configuration_to_value (BTConfiguredValueConfigurationToValue | Unset): Configuration to value, required if
-            configuration parameter id is specified
+        configuration_parameter_id (str | Unset): The id of the configuration input that drives this value.
+        configuration_to_value (BTConfiguredValueConfigurationToValue | Unset): Map from configuration option id to
+            string value.
     """
 
     configuration_parameter_id: str | Unset = UNSET

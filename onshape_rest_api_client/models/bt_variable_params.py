@@ -21,8 +21,8 @@ class BTVariableParams:
     Attributes:
         name (str): Variable name
         type_ (str): VariableType name, from FeatureScript VariableType
-        configured_description (BTConfiguredValue | Unset): Configured variable description, if configured
-        configured_expression (BTConfiguredValue | Unset): Configured variable description, if configured
+        configured_description (BTConfiguredValue | Unset): A value that varies per option of a configuration input.
+        configured_expression (BTConfiguredValue | Unset): A value that varies per option of a configuration input.
         description (str | Unset): Variable description, if not configured
         expression (str | Unset): Variable definition expression, if not configured
     """

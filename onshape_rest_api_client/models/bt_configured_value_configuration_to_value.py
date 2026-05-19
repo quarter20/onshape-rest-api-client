@@ -11,7 +11,7 @@ T = TypeVar("T", bound="BTConfiguredValueConfigurationToValue")
 
 @_attrs_define
 class BTConfiguredValueConfigurationToValue:
-    """Configuration to value, required if configuration parameter id is specified"""
+    """Map from configuration option id to string value."""
 
     additional_properties: dict[str, str] = _attrs_field(init=False, factory=dict)
 
