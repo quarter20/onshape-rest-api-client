@@ -34,7 +34,7 @@ class BTMetadataPropertyInfo:
         dirty (bool | Unset):
         editable (bool | Unset):
         editable_in_ui (bool | Unset):
-        enum_values (list[BTMetadataEnumValueInfo] | Unset):
+        enum_values (list[BTMetadataEnumValueInfo] | None | Unset):
         initial_value (BTMetadataPropertyInfoInitialValue | Unset):
         multivalued (bool | Unset):
         name (str | Unset):
@@ -61,7 +61,7 @@ class BTMetadataPropertyInfo:
     dirty: bool | Unset = UNSET
     editable: bool | Unset = UNSET
     editable_in_ui: bool | Unset = UNSET
-    enum_values: list[BTMetadataEnumValueInfo] | Unset = UNSET
+    enum_values: list[BTMetadataEnumValueInfo] | None | Unset = UNSET
     initial_value: BTMetadataPropertyInfoInitialValue | Unset = UNSET
     multivalued: bool | Unset = UNSET
     name: str | Unset = UNSET
@@ -106,12 +106,17 @@ class BTMetadataPropertyInfo:
 
         editable_in_ui = self.editable_in_ui
 
-        enum_values: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.enum_values, Unset):
+        enum_values: list[dict[str, Any]] | None | Unset
+        if isinstance(self.enum_values, Unset):
+            enum_values = UNSET
+        elif isinstance(self.enum_values, list):
             enum_values = []
-            for enum_values_item_data in self.enum_values:
-                enum_values_item = enum_values_item_data.to_dict()
-                enum_values.append(enum_values_item)
+            for enum_values_type_0_item_data in self.enum_values:
+                enum_values_type_0_item = enum_values_type_0_item_data.to_dict()
+                enum_values.append(enum_values_type_0_item)
+
+        else:
+            enum_values = self.enum_values
 
         initial_value: dict[str, Any] | Unset = UNSET
         if not isinstance(self.initial_value, Unset):
@@ -246,14 +251,27 @@ class BTMetadataPropertyInfo:
 
         editable_in_ui = d.pop("editableInUi", UNSET)
 
-        _enum_values = d.pop("enumValues", UNSET)
-        enum_values: list[BTMetadataEnumValueInfo] | Unset = UNSET
-        if _enum_values is not UNSET:
-            enum_values = []
-            for enum_values_item_data in _enum_values:
-                enum_values_item = BTMetadataEnumValueInfo.from_dict(enum_values_item_data)
+        def _parse_enum_values(data: object) -> list[BTMetadataEnumValueInfo] | None | Unset:
+            if data is None:
+                return data
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, list):
+                    raise TypeError()
+                enum_values_type_0 = []
+                _enum_values_type_0 = data
+                for enum_values_type_0_item_data in _enum_values_type_0:
+                    enum_values_type_0_item = BTMetadataEnumValueInfo.from_dict(enum_values_type_0_item_data)
 
-                enum_values.append(enum_values_item)
+                    enum_values_type_0.append(enum_values_type_0_item)
+
+                return enum_values_type_0
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(list[BTMetadataEnumValueInfo] | None | Unset, data)
+
+        enum_values = _parse_enum_values(d.pop("enumValues", UNSET))
 
         _initial_value = d.pop("initialValue", UNSET)
         initial_value: BTMetadataPropertyInfoInitialValue | Unset

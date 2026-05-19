@@ -24,7 +24,10 @@ def update_json(path: str) -> None:
 
     print('* Change "BTMetadataPropertyInfo.defaultValue" type to allow null')
     data["components"]["schemas"]["BTMetadataPropertyInfo"]["properties"]["defaultValue"] = nullable_object_type
-    
+
+    print('* Change "BTMetadataPropertyInfo.enumValues" type to allow null')
+    data["components"]["schemas"]["BTMetadataPropertyInfo"]["properties"]["enumValues"]["nullable"] = True
+
     with open(path, "w") as f:
         json.dump(data, f, indent=2)
 
