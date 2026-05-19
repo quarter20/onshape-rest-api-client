@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -10,9 +10,8 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.bt_metadata_enum_value_info import BTMetadataEnumValueInfo
-    from ..models.bt_metadata_property_info_default_value import BTMetadataPropertyInfoDefaultValue
     from ..models.bt_metadata_property_info_initial_value import BTMetadataPropertyInfoInitialValue
-    from ..models.bt_metadata_property_info_value import BTMetadataPropertyInfoValue
+    from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
     from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
     from ..models.bt_metadata_property_validator_info import BTMetadataPropertyValidatorInfo
 
@@ -30,11 +29,11 @@ class BTMetadataPropertyInfo:
         computed_property_error (str | Unset):
         computed_property_eval_info (str | Unset):
         date_format (str | Unset):
-        default_value (BTMetadataPropertyInfoDefaultValue | Unset):
+        default_value (Any | Unset):
         dirty (bool | Unset):
         editable (bool | Unset):
         editable_in_ui (bool | Unset):
-        enum_values (list[BTMetadataEnumValueInfo] | Unset):
+        enum_values (list[BTMetadataEnumValueInfo] | None | Unset):
         initial_value (BTMetadataPropertyInfoInitialValue | Unset):
         multivalued (bool | Unset):
         name (str | Unset):
@@ -45,9 +44,9 @@ class BTMetadataPropertyInfo:
         public_part_overridable (bool | Unset):
         required (bool | Unset):
         schema_id (str | Unset):
-        ui_hints (BTMetadataPropertyUiHintsInfo | Unset):
-        validator (BTMetadataPropertyValidatorInfo | Unset):
-        value (BTMetadataPropertyInfoValue | Unset):
+        ui_hints (BTMetadataPropertyUiHintsInfo | None | Unset):
+        validator (BTMetadataPropertyValidatorInfo | None | Unset):
+        value (BTMetadataPropertyInfoValueType0 | str | Unset):
         value_type (str | Unset):
     """
 
@@ -57,11 +56,11 @@ class BTMetadataPropertyInfo:
     computed_property_error: str | Unset = UNSET
     computed_property_eval_info: str | Unset = UNSET
     date_format: str | Unset = UNSET
-    default_value: BTMetadataPropertyInfoDefaultValue | Unset = UNSET
+    default_value: Any | Unset = UNSET
     dirty: bool | Unset = UNSET
     editable: bool | Unset = UNSET
     editable_in_ui: bool | Unset = UNSET
-    enum_values: list[BTMetadataEnumValueInfo] | Unset = UNSET
+    enum_values: list[BTMetadataEnumValueInfo] | None | Unset = UNSET
     initial_value: BTMetadataPropertyInfoInitialValue | Unset = UNSET
     multivalued: bool | Unset = UNSET
     name: str | Unset = UNSET
@@ -71,13 +70,17 @@ class BTMetadataPropertyInfo:
     public_part_overridable: bool | Unset = UNSET
     required: bool | Unset = UNSET
     schema_id: str | Unset = UNSET
-    ui_hints: BTMetadataPropertyUiHintsInfo | Unset = UNSET
-    validator: BTMetadataPropertyValidatorInfo | Unset = UNSET
-    value: BTMetadataPropertyInfoValue | Unset = UNSET
+    ui_hints: BTMetadataPropertyUiHintsInfo | None | Unset = UNSET
+    validator: BTMetadataPropertyValidatorInfo | None | Unset = UNSET
+    value: BTMetadataPropertyInfoValueType0 | str | Unset = UNSET
     value_type: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
+        from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
+        from ..models.bt_metadata_property_validator_info import BTMetadataPropertyValidatorInfo
+
         aggregation_skipped_filtered_out_values = self.aggregation_skipped_filtered_out_values
 
         computed_assembly_property = self.computed_assembly_property
@@ -90,9 +93,7 @@ class BTMetadataPropertyInfo:
 
         date_format = self.date_format
 
-        default_value: dict[str, Any] | Unset = UNSET
-        if not isinstance(self.default_value, Unset):
-            default_value = self.default_value.to_dict()
+        default_value = self.default_value
 
         dirty = self.dirty
 
@@ -100,12 +101,17 @@ class BTMetadataPropertyInfo:
 
         editable_in_ui = self.editable_in_ui
 
-        enum_values: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.enum_values, Unset):
+        enum_values: list[dict[str, Any]] | None | Unset
+        if isinstance(self.enum_values, Unset):
+            enum_values = UNSET
+        elif isinstance(self.enum_values, list):
             enum_values = []
-            for enum_values_item_data in self.enum_values:
-                enum_values_item = enum_values_item_data.to_dict()
-                enum_values.append(enum_values_item)
+            for enum_values_type_0_item_data in self.enum_values:
+                enum_values_type_0_item = enum_values_type_0_item_data.to_dict()
+                enum_values.append(enum_values_type_0_item)
+
+        else:
+            enum_values = self.enum_values
 
         initial_value: dict[str, Any] | Unset = UNSET
         if not isinstance(self.initial_value, Unset):
@@ -127,17 +133,29 @@ class BTMetadataPropertyInfo:
 
         schema_id = self.schema_id
 
-        ui_hints: dict[str, Any] | Unset = UNSET
-        if not isinstance(self.ui_hints, Unset):
+        ui_hints: dict[str, Any] | None | Unset
+        if isinstance(self.ui_hints, Unset):
+            ui_hints = UNSET
+        elif isinstance(self.ui_hints, BTMetadataPropertyUiHintsInfo):
             ui_hints = self.ui_hints.to_dict()
+        else:
+            ui_hints = self.ui_hints
 
-        validator: dict[str, Any] | Unset = UNSET
-        if not isinstance(self.validator, Unset):
+        validator: dict[str, Any] | None | Unset
+        if isinstance(self.validator, Unset):
+            validator = UNSET
+        elif isinstance(self.validator, BTMetadataPropertyValidatorInfo):
             validator = self.validator.to_dict()
+        else:
+            validator = self.validator
 
-        value: dict[str, Any] | Unset = UNSET
-        if not isinstance(self.value, Unset):
+        value: dict[str, Any] | str | Unset
+        if isinstance(self.value, Unset):
+            value = UNSET
+        elif isinstance(self.value, BTMetadataPropertyInfoValueType0):
             value = self.value.to_dict()
+        else:
+            value = self.value
 
         value_type = self.value_type
 
@@ -198,9 +216,8 @@ class BTMetadataPropertyInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_metadata_enum_value_info import BTMetadataEnumValueInfo
-        from ..models.bt_metadata_property_info_default_value import BTMetadataPropertyInfoDefaultValue
         from ..models.bt_metadata_property_info_initial_value import BTMetadataPropertyInfoInitialValue
-        from ..models.bt_metadata_property_info_value import BTMetadataPropertyInfoValue
+        from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
         from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
         from ..models.bt_metadata_property_validator_info import BTMetadataPropertyValidatorInfo
 
@@ -217,12 +234,7 @@ class BTMetadataPropertyInfo:
 
         date_format = d.pop("dateFormat", UNSET)
 
-        _default_value = d.pop("defaultValue", UNSET)
-        default_value: BTMetadataPropertyInfoDefaultValue | Unset
-        if isinstance(_default_value, Unset):
-            default_value = UNSET
-        else:
-            default_value = BTMetadataPropertyInfoDefaultValue.from_dict(_default_value)
+        default_value = d.pop("defaultValue", UNSET)
 
         dirty = d.pop("dirty", UNSET)
 
@@ -230,14 +242,27 @@ class BTMetadataPropertyInfo:
 
         editable_in_ui = d.pop("editableInUi", UNSET)
 
-        _enum_values = d.pop("enumValues", UNSET)
-        enum_values: list[BTMetadataEnumValueInfo] | Unset = UNSET
-        if _enum_values is not UNSET:
-            enum_values = []
-            for enum_values_item_data in _enum_values:
-                enum_values_item = BTMetadataEnumValueInfo.from_dict(enum_values_item_data)
+        def _parse_enum_values(data: object) -> list[BTMetadataEnumValueInfo] | None | Unset:
+            if data is None:
+                return data
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, list):
+                    raise TypeError()
+                enum_values_type_0 = []
+                _enum_values_type_0 = data
+                for enum_values_type_0_item_data in _enum_values_type_0:
+                    enum_values_type_0_item = BTMetadataEnumValueInfo.from_dict(enum_values_type_0_item_data)
 
-                enum_values.append(enum_values_item)
+                    enum_values_type_0.append(enum_values_type_0_item)
+
+                return enum_values_type_0
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(list[BTMetadataEnumValueInfo] | None | Unset, data)
+
+        enum_values = _parse_enum_values(d.pop("enumValues", UNSET))
 
         _initial_value = d.pop("initialValue", UNSET)
         initial_value: BTMetadataPropertyInfoInitialValue | Unset
@@ -262,26 +287,54 @@ class BTMetadataPropertyInfo:
 
         schema_id = d.pop("schemaId", UNSET)
 
-        _ui_hints = d.pop("uiHints", UNSET)
-        ui_hints: BTMetadataPropertyUiHintsInfo | Unset
-        if isinstance(_ui_hints, Unset):
-            ui_hints = UNSET
-        else:
-            ui_hints = BTMetadataPropertyUiHintsInfo.from_dict(_ui_hints)
+        def _parse_ui_hints(data: object) -> BTMetadataPropertyUiHintsInfo | None | Unset:
+            if data is None:
+                return data
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                ui_hints_type_0 = BTMetadataPropertyUiHintsInfo.from_dict(data)
 
-        _validator = d.pop("validator", UNSET)
-        validator: BTMetadataPropertyValidatorInfo | Unset
-        if isinstance(_validator, Unset):
-            validator = UNSET
-        else:
-            validator = BTMetadataPropertyValidatorInfo.from_dict(_validator)
+                return ui_hints_type_0
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BTMetadataPropertyUiHintsInfo | None | Unset, data)
 
-        _value = d.pop("value", UNSET)
-        value: BTMetadataPropertyInfoValue | Unset
-        if isinstance(_value, Unset):
-            value = UNSET
-        else:
-            value = BTMetadataPropertyInfoValue.from_dict(_value)
+        ui_hints = _parse_ui_hints(d.pop("uiHints", UNSET))
+
+        def _parse_validator(data: object) -> BTMetadataPropertyValidatorInfo | None | Unset:
+            if data is None:
+                return data
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                validator_type_0 = BTMetadataPropertyValidatorInfo.from_dict(data)
+
+                return validator_type_0
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BTMetadataPropertyValidatorInfo | None | Unset, data)
+
+        validator = _parse_validator(d.pop("validator", UNSET))
+
+        def _parse_value(data: object) -> BTMetadataPropertyInfoValueType0 | str | Unset:
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                value_type_0 = BTMetadataPropertyInfoValueType0.from_dict(data)
+
+                return value_type_0
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BTMetadataPropertyInfoValueType0 | str | Unset, data)
+
+        value = _parse_value(d.pop("value", UNSET))
 
         value_type = d.pop("valueType", UNSET)
 
