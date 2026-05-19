@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import datetime
 from collections.abc import Mapping
-from typing import Any, TypeVar
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,11 +19,11 @@ class BTMetadataPropertyValidatorInfo:
     Attributes:
         max_ (float | Unset):
         max_count (int | Unset):
-        max_date (datetime.datetime | Unset):
+        max_date (datetime.datetime | None | Unset):
         max_length (int | Unset):
         min_ (float | Unset):
         min_count (int | Unset):
-        min_date (datetime.datetime | Unset):
+        min_date (datetime.datetime | None | Unset):
         min_length (int | Unset):
         pattern (str | Unset):
         quantity_type (int | Unset):
@@ -31,11 +31,11 @@ class BTMetadataPropertyValidatorInfo:
 
     max_: float | Unset = UNSET
     max_count: int | Unset = UNSET
-    max_date: datetime.datetime | Unset = UNSET
+    max_date: datetime.datetime | None | Unset = UNSET
     max_length: int | Unset = UNSET
     min_: float | Unset = UNSET
     min_count: int | Unset = UNSET
-    min_date: datetime.datetime | Unset = UNSET
+    min_date: datetime.datetime | None | Unset = UNSET
     min_length: int | Unset = UNSET
     pattern: str | Unset = UNSET
     quantity_type: int | Unset = UNSET
@@ -46,9 +46,13 @@ class BTMetadataPropertyValidatorInfo:
 
         max_count = self.max_count
 
-        max_date: str | Unset = UNSET
-        if not isinstance(self.max_date, Unset):
+        max_date: None | str | Unset
+        if isinstance(self.max_date, Unset):
+            max_date = UNSET
+        elif isinstance(self.max_date, datetime.datetime):
             max_date = self.max_date.isoformat()
+        else:
+            max_date = self.max_date
 
         max_length = self.max_length
 
@@ -56,9 +60,13 @@ class BTMetadataPropertyValidatorInfo:
 
         min_count = self.min_count
 
-        min_date: str | Unset = UNSET
-        if not isinstance(self.min_date, Unset):
+        min_date: None | str | Unset
+        if isinstance(self.min_date, Unset):
+            min_date = UNSET
+        elif isinstance(self.min_date, datetime.datetime):
             min_date = self.min_date.isoformat()
+        else:
+            min_date = self.min_date
 
         min_length = self.min_length
 
@@ -99,12 +107,22 @@ class BTMetadataPropertyValidatorInfo:
 
         max_count = d.pop("maxCount", UNSET)
 
-        _max_date = d.pop("maxDate", UNSET)
-        max_date: datetime.datetime | Unset
-        if isinstance(_max_date, Unset):
-            max_date = UNSET
-        else:
-            max_date = isoparse(_max_date)
+        def _parse_max_date(data: object) -> datetime.datetime | None | Unset:
+            if data is None:
+                return data
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                max_date_type_0 = isoparse(data)
+
+                return max_date_type_0
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(datetime.datetime | None | Unset, data)
+
+        max_date = _parse_max_date(d.pop("maxDate", UNSET))
 
         max_length = d.pop("maxLength", UNSET)
 
@@ -112,12 +130,22 @@ class BTMetadataPropertyValidatorInfo:
 
         min_count = d.pop("minCount", UNSET)
 
-        _min_date = d.pop("minDate", UNSET)
-        min_date: datetime.datetime | Unset
-        if isinstance(_min_date, Unset):
-            min_date = UNSET
-        else:
-            min_date = isoparse(_min_date)
+        def _parse_min_date(data: object) -> datetime.datetime | None | Unset:
+            if data is None:
+                return data
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                min_date_type_0 = isoparse(data)
+
+                return min_date_type_0
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(datetime.datetime | None | Unset, data)
+
+        min_date = _parse_min_date(d.pop("minDate", UNSET))
 
         min_length = d.pop("minLength", UNSET)
 
