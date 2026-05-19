@@ -150,9 +150,7 @@ from .bt_assembly_instance_status import BTAssemblyInstanceStatus
 from .bt_assembly_instance_type import BTAssemblyInstanceType
 from .bt_assembly_item_metadata_info import BTAssemblyItemMetadataInfo
 from .bt_assembly_item_metadata_info_property_id_to_error import BTAssemblyItemMetadataInfoPropertyIdToError
-from .bt_assembly_item_metadata_info_property_id_to_eval_info_type_0 import (
-    BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0,
-)
+from .bt_assembly_item_metadata_info_property_id_to_eval_info import BTAssemblyItemMetadataInfoPropertyIdToEvalInfo
 from .bt_assembly_item_metadata_info_property_id_to_override_status import (
     BTAssemblyItemMetadataInfoPropertyIdToOverrideStatus,
 )
@@ -582,9 +580,9 @@ from .bt_metadata_object_list_info_bt_metadata_part_info import BTMetadataObject
 from .bt_metadata_object_type import BTMetadataObjectType
 from .bt_metadata_part_info import BTMetadataPartInfo
 from .bt_metadata_property_info import BTMetadataPropertyInfo
-from .bt_metadata_property_info_default_value_type_0 import BTMetadataPropertyInfoDefaultValueType0
+from .bt_metadata_property_info_default_value import BTMetadataPropertyInfoDefaultValue
 from .bt_metadata_property_info_initial_value import BTMetadataPropertyInfoInitialValue
-from .bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
+from .bt_metadata_property_info_value import BTMetadataPropertyInfoValue
 from .bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
 from .bt_metadata_property_update_params import BTMetadataPropertyUpdateParams
 from .bt_metadata_property_update_params_value import BTMetadataPropertyUpdateParamsValue
@@ -1900,7 +1898,7 @@ __all__ = (
     "BTAssemblyInstanceType",
     "BTAssemblyItemMetadataInfo",
     "BTAssemblyItemMetadataInfoPropertyIdToError",
-    "BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0",
+    "BTAssemblyItemMetadataInfoPropertyIdToEvalInfo",
     "BTAssemblyItemMetadataInfoPropertyIdToOverrideStatus",
     "BTAssemblyItemMetadataInfoPropertyIdToSourceType",
     "BTAssemblyItemMetadataInfoPropertyIdToValue",
@@ -2367,9 +2365,9 @@ __all__ = (
     "BTMetadataObjectType",
     "BTMetadataPartInfo",
     "BTMetadataPropertyInfo",
-    "BTMetadataPropertyInfoDefaultValueType0",
+    "BTMetadataPropertyInfoDefaultValue",
     "BTMetadataPropertyInfoInitialValue",
-    "BTMetadataPropertyInfoValueType0",
+    "BTMetadataPropertyInfoValue",
     "BTMetadataPropertyUiHintsInfo",
     "BTMetadataPropertyUpdateParams",
     "BTMetadataPropertyUpdateParamsValue",

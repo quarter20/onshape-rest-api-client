@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, cast
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -10,8 +10,8 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.bt_assembly_item_metadata_info_property_id_to_error import BTAssemblyItemMetadataInfoPropertyIdToError
-    from ..models.bt_assembly_item_metadata_info_property_id_to_eval_info_type_0 import (
-        BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0,
+    from ..models.bt_assembly_item_metadata_info_property_id_to_eval_info import (
+        BTAssemblyItemMetadataInfoPropertyIdToEvalInfo,
     )
     from ..models.bt_assembly_item_metadata_info_property_id_to_override_status import (
         BTAssemblyItemMetadataInfoPropertyIdToOverrideStatus,
@@ -32,7 +32,7 @@ class BTAssemblyItemMetadataInfo:
     Attributes:
         children (list[BTAssemblyItemMetadataInfo] | Unset):
         property_id_to_error (BTAssemblyItemMetadataInfoPropertyIdToError | Unset):
-        property_id_to_eval_info (BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0 | None | Unset):
+        property_id_to_eval_info (BTAssemblyItemMetadataInfoPropertyIdToEvalInfo | Unset):
         property_id_to_override_status (BTAssemblyItemMetadataInfoPropertyIdToOverrideStatus | Unset):
         property_id_to_source_type (BTAssemblyItemMetadataInfoPropertyIdToSourceType | Unset):
         property_id_to_value (BTAssemblyItemMetadataInfoPropertyIdToValue | Unset):
@@ -41,7 +41,7 @@ class BTAssemblyItemMetadataInfo:
 
     children: list[BTAssemblyItemMetadataInfo] | Unset = UNSET
     property_id_to_error: BTAssemblyItemMetadataInfoPropertyIdToError | Unset = UNSET
-    property_id_to_eval_info: BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0 | None | Unset = UNSET
+    property_id_to_eval_info: BTAssemblyItemMetadataInfoPropertyIdToEvalInfo | Unset = UNSET
     property_id_to_override_status: BTAssemblyItemMetadataInfoPropertyIdToOverrideStatus | Unset = UNSET
     property_id_to_source_type: BTAssemblyItemMetadataInfoPropertyIdToSourceType | Unset = UNSET
     property_id_to_value: BTAssemblyItemMetadataInfoPropertyIdToValue | Unset = UNSET
@@ -49,10 +49,6 @@ class BTAssemblyItemMetadataInfo:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        from ..models.bt_assembly_item_metadata_info_property_id_to_eval_info_type_0 import (
-            BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0,
-        )
-
         children: list[dict[str, Any]] | Unset = UNSET
         if not isinstance(self.children, Unset):
             children = []
@@ -64,13 +60,9 @@ class BTAssemblyItemMetadataInfo:
         if not isinstance(self.property_id_to_error, Unset):
             property_id_to_error = self.property_id_to_error.to_dict()
 
-        property_id_to_eval_info: dict[str, Any] | None | Unset
-        if isinstance(self.property_id_to_eval_info, Unset):
-            property_id_to_eval_info = UNSET
-        elif isinstance(self.property_id_to_eval_info, BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0):
+        property_id_to_eval_info: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.property_id_to_eval_info, Unset):
             property_id_to_eval_info = self.property_id_to_eval_info.to_dict()
-        else:
-            property_id_to_eval_info = self.property_id_to_eval_info
 
         property_id_to_override_status: dict[str, Any] | Unset = UNSET
         if not isinstance(self.property_id_to_override_status, Unset):
@@ -113,8 +105,8 @@ class BTAssemblyItemMetadataInfo:
         from ..models.bt_assembly_item_metadata_info_property_id_to_error import (
             BTAssemblyItemMetadataInfoPropertyIdToError,
         )
-        from ..models.bt_assembly_item_metadata_info_property_id_to_eval_info_type_0 import (
-            BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0,
+        from ..models.bt_assembly_item_metadata_info_property_id_to_eval_info import (
+            BTAssemblyItemMetadataInfoPropertyIdToEvalInfo,
         )
         from ..models.bt_assembly_item_metadata_info_property_id_to_override_status import (
             BTAssemblyItemMetadataInfoPropertyIdToOverrideStatus,
@@ -144,24 +136,14 @@ class BTAssemblyItemMetadataInfo:
         else:
             property_id_to_error = BTAssemblyItemMetadataInfoPropertyIdToError.from_dict(_property_id_to_error)
 
-        def _parse_property_id_to_eval_info(
-            data: object,
-        ) -> BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0 | None | Unset:
-            if data is None:
-                return data
-            if isinstance(data, Unset):
-                return data
-            try:
-                if not isinstance(data, dict):
-                    raise TypeError()
-                property_id_to_eval_info_type_0 = BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0.from_dict(data)
-
-                return property_id_to_eval_info_type_0
-            except (TypeError, ValueError, AttributeError, KeyError):
-                pass
-            return cast(BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0 | None | Unset, data)
-
-        property_id_to_eval_info = _parse_property_id_to_eval_info(d.pop("propertyIdToEvalInfo", UNSET))
+        _property_id_to_eval_info = d.pop("propertyIdToEvalInfo", UNSET)
+        property_id_to_eval_info: BTAssemblyItemMetadataInfoPropertyIdToEvalInfo | Unset
+        if isinstance(_property_id_to_eval_info, Unset):
+            property_id_to_eval_info = UNSET
+        else:
+            property_id_to_eval_info = BTAssemblyItemMetadataInfoPropertyIdToEvalInfo.from_dict(
+                _property_id_to_eval_info
+            )
 
         _property_id_to_override_status = d.pop("propertyIdToOverrideStatus", UNSET)
         property_id_to_override_status: BTAssemblyItemMetadataInfoPropertyIdToOverrideStatus | Unset
