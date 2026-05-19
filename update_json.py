@@ -37,8 +37,8 @@ def update_json(path: str) -> None:
     print('* Change "BTAssemblyItemMetadataInfo.propertyIdToEvalInfo" type to allow null')
     add_null_to_type(data["components"]["schemas"]["BTAssemblyItemMetadataInfo"]["properties"], "propertyIdToEvalInfo")
 
-    print('* Change "BTMetadataPropertyInfo.defaultValue" type to allow null')
-    add_null_to_type(data["components"]["schemas"]["BTMetadataPropertyInfo"]["properties"], "defaultValue")
+    print('* Change "BTMetadataPropertyInfo.defaultValue" type to allow ANY type')
+    data["components"]["schemas"]["BTMetadataPropertyInfo"]["properties"]["defaultValue"] = {}
 
     print('* Change "BTMetadataPropertyInfo.enumValues" type to allow null')
     add_nullable(data["components"]["schemas"]["BTMetadataPropertyInfo"]["properties"]["enumValues"])

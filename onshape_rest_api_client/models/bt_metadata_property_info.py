@@ -10,7 +10,6 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.bt_metadata_enum_value_info import BTMetadataEnumValueInfo
-    from ..models.bt_metadata_property_info_default_value_type_0 import BTMetadataPropertyInfoDefaultValueType0
     from ..models.bt_metadata_property_info_initial_value import BTMetadataPropertyInfoInitialValue
     from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
     from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
@@ -30,7 +29,7 @@ class BTMetadataPropertyInfo:
         computed_property_error (str | Unset):
         computed_property_eval_info (str | Unset):
         date_format (str | Unset):
-        default_value (BTMetadataPropertyInfoDefaultValueType0 | None | Unset):
+        default_value (Any | Unset):
         dirty (bool | Unset):
         editable (bool | Unset):
         editable_in_ui (bool | Unset):
@@ -57,7 +56,7 @@ class BTMetadataPropertyInfo:
     computed_property_error: str | Unset = UNSET
     computed_property_eval_info: str | Unset = UNSET
     date_format: str | Unset = UNSET
-    default_value: BTMetadataPropertyInfoDefaultValueType0 | None | Unset = UNSET
+    default_value: Any | Unset = UNSET
     dirty: bool | Unset = UNSET
     editable: bool | Unset = UNSET
     editable_in_ui: bool | Unset = UNSET
@@ -78,7 +77,6 @@ class BTMetadataPropertyInfo:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        from ..models.bt_metadata_property_info_default_value_type_0 import BTMetadataPropertyInfoDefaultValueType0
         from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
         from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
 
@@ -94,13 +92,7 @@ class BTMetadataPropertyInfo:
 
         date_format = self.date_format
 
-        default_value: dict[str, Any] | None | Unset
-        if isinstance(self.default_value, Unset):
-            default_value = UNSET
-        elif isinstance(self.default_value, BTMetadataPropertyInfoDefaultValueType0):
-            default_value = self.default_value.to_dict()
-        else:
-            default_value = self.default_value
+        default_value = self.default_value
 
         dirty = self.dirty
 
@@ -219,7 +211,6 @@ class BTMetadataPropertyInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_metadata_enum_value_info import BTMetadataEnumValueInfo
-        from ..models.bt_metadata_property_info_default_value_type_0 import BTMetadataPropertyInfoDefaultValueType0
         from ..models.bt_metadata_property_info_initial_value import BTMetadataPropertyInfoInitialValue
         from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
         from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
@@ -238,22 +229,7 @@ class BTMetadataPropertyInfo:
 
         date_format = d.pop("dateFormat", UNSET)
 
-        def _parse_default_value(data: object) -> BTMetadataPropertyInfoDefaultValueType0 | None | Unset:
-            if data is None:
-                return data
-            if isinstance(data, Unset):
-                return data
-            try:
-                if not isinstance(data, dict):
-                    raise TypeError()
-                default_value_type_0 = BTMetadataPropertyInfoDefaultValueType0.from_dict(data)
-
-                return default_value_type_0
-            except (TypeError, ValueError, AttributeError, KeyError):
-                pass
-            return cast(BTMetadataPropertyInfoDefaultValueType0 | None | Unset, data)
-
-        default_value = _parse_default_value(d.pop("defaultValue", UNSET))
+        default_value = d.pop("defaultValue", UNSET)
 
         dirty = d.pop("dirty", UNSET)
 
