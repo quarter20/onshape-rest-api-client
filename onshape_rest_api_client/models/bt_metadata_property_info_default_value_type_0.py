@@ -6,11 +6,11 @@ from typing import Any, TypeVar
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-T = TypeVar("T", bound="BTMetadataPropertyInfoValue")
+T = TypeVar("T", bound="BTMetadataPropertyInfoDefaultValueType0")
 
 
 @_attrs_define
-class BTMetadataPropertyInfoValue:
+class BTMetadataPropertyInfoDefaultValueType0:
     """ """
 
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -25,10 +25,10 @@ class BTMetadataPropertyInfoValue:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
-        bt_metadata_property_info_value = cls()
+        bt_metadata_property_info_default_value_type_0 = cls()
 
-        bt_metadata_property_info_value.additional_properties = d
-        return bt_metadata_property_info_value
+        bt_metadata_property_info_default_value_type_0.additional_properties = d
+        return bt_metadata_property_info_default_value_type_0
 
     @property
     def additional_keys(self) -> list[str]:
