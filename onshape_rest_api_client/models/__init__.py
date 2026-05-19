@@ -584,7 +584,7 @@ from .bt_metadata_part_info import BTMetadataPartInfo
 from .bt_metadata_property_info import BTMetadataPropertyInfo
 from .bt_metadata_property_info_default_value_type_0 import BTMetadataPropertyInfoDefaultValueType0
 from .bt_metadata_property_info_initial_value import BTMetadataPropertyInfoInitialValue
-from .bt_metadata_property_info_value import BTMetadataPropertyInfoValue
+from .bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
 from .bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
 from .bt_metadata_property_update_params import BTMetadataPropertyUpdateParams
 from .bt_metadata_property_update_params_value import BTMetadataPropertyUpdateParamsValue
@@ -2369,7 +2369,7 @@ __all__ = (
     "BTMetadataPropertyInfo",
     "BTMetadataPropertyInfoDefaultValueType0",
     "BTMetadataPropertyInfoInitialValue",
-    "BTMetadataPropertyInfoValue",
+    "BTMetadataPropertyInfoValueType0",
     "BTMetadataPropertyUiHintsInfo",
     "BTMetadataPropertyUpdateParams",
     "BTMetadataPropertyUpdateParamsValue",

@@ -12,7 +12,7 @@ if TYPE_CHECKING:
     from ..models.bt_metadata_enum_value_info import BTMetadataEnumValueInfo
     from ..models.bt_metadata_property_info_default_value_type_0 import BTMetadataPropertyInfoDefaultValueType0
     from ..models.bt_metadata_property_info_initial_value import BTMetadataPropertyInfoInitialValue
-    from ..models.bt_metadata_property_info_value import BTMetadataPropertyInfoValue
+    from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
     from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
     from ..models.bt_metadata_property_validator_info import BTMetadataPropertyValidatorInfo
 
@@ -47,7 +47,7 @@ class BTMetadataPropertyInfo:
         schema_id (str | Unset):
         ui_hints (BTMetadataPropertyUiHintsInfo | Unset):
         validator (BTMetadataPropertyValidatorInfo | Unset):
-        value (BTMetadataPropertyInfoValue | Unset):
+        value (BTMetadataPropertyInfoValueType0 | str | Unset):
         value_type (str | Unset):
     """
 
@@ -73,12 +73,13 @@ class BTMetadataPropertyInfo:
     schema_id: str | Unset = UNSET
     ui_hints: BTMetadataPropertyUiHintsInfo | Unset = UNSET
     validator: BTMetadataPropertyValidatorInfo | Unset = UNSET
-    value: BTMetadataPropertyInfoValue | Unset = UNSET
+    value: BTMetadataPropertyInfoValueType0 | str | Unset = UNSET
     value_type: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         from ..models.bt_metadata_property_info_default_value_type_0 import BTMetadataPropertyInfoDefaultValueType0
+        from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
 
         aggregation_skipped_filtered_out_values = self.aggregation_skipped_filtered_out_values
 
@@ -146,9 +147,13 @@ class BTMetadataPropertyInfo:
         if not isinstance(self.validator, Unset):
             validator = self.validator.to_dict()
 
-        value: dict[str, Any] | Unset = UNSET
-        if not isinstance(self.value, Unset):
+        value: dict[str, Any] | str | Unset
+        if isinstance(self.value, Unset):
+            value = UNSET
+        elif isinstance(self.value, BTMetadataPropertyInfoValueType0):
             value = self.value.to_dict()
+        else:
+            value = self.value
 
         value_type = self.value_type
 
@@ -211,7 +216,7 @@ class BTMetadataPropertyInfo:
         from ..models.bt_metadata_enum_value_info import BTMetadataEnumValueInfo
         from ..models.bt_metadata_property_info_default_value_type_0 import BTMetadataPropertyInfoDefaultValueType0
         from ..models.bt_metadata_property_info_initial_value import BTMetadataPropertyInfoInitialValue
-        from ..models.bt_metadata_property_info_value import BTMetadataPropertyInfoValue
+        from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
         from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
         from ..models.bt_metadata_property_validator_info import BTMetadataPropertyValidatorInfo
 
@@ -310,12 +315,20 @@ class BTMetadataPropertyInfo:
         else:
             validator = BTMetadataPropertyValidatorInfo.from_dict(_validator)
 
-        _value = d.pop("value", UNSET)
-        value: BTMetadataPropertyInfoValue | Unset
-        if isinstance(_value, Unset):
-            value = UNSET
-        else:
-            value = BTMetadataPropertyInfoValue.from_dict(_value)
+        def _parse_value(data: object) -> BTMetadataPropertyInfoValueType0 | str | Unset:
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                value_type_0 = BTMetadataPropertyInfoValueType0.from_dict(data)
+
+                return value_type_0
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BTMetadataPropertyInfoValueType0 | str | Unset, data)
+
+        value = _parse_value(d.pop("value", UNSET))
 
         value_type = d.pop("valueType", UNSET)
 

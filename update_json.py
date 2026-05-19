@@ -19,6 +19,16 @@ def update_json(path: str) -> None:
             }
         ]
     }
+    string_or_object_type = {
+        "anyOf": [
+            {
+            "type": "object"
+            },
+            {
+            "type": "string"
+            }
+        ]
+    }
     print('* Change "BTAssemblyItemMetadataInfo.propertyIdToEvalInfo" type to allow null')
     data["components"]["schemas"]["BTAssemblyItemMetadataInfo"]["properties"]["propertyIdToEvalInfo"] = nullable_object_type
 
@@ -27,6 +37,9 @@ def update_json(path: str) -> None:
 
     print('* Change "BTMetadataPropertyInfo.enumValues" type to allow null')
     data["components"]["schemas"]["BTMetadataPropertyInfo"]["properties"]["enumValues"]["nullable"] = True
+
+    print('* Change "BTMetadataPropertyInfo.value" type to allow object or string')
+    data["components"]["schemas"]["BTMetadataPropertyInfo"]["properties"]["value"] = string_or_object_type
 
     print('* Change "BTMetadataPropertyValidatorInfo.maxDate" and "BTMetadataPropertyValidatorInfo.minDate" type to allow null')
     data["components"]["schemas"]["BTMetadataPropertyValidatorInfo"]["properties"]["maxDate"]["nullable"] = True
