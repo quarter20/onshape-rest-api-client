@@ -45,7 +45,7 @@ class BTMetadataPropertyInfo:
         required (bool | Unset):
         schema_id (str | Unset):
         ui_hints (BTMetadataPropertyUiHintsInfo | None | Unset):
-        validator (BTMetadataPropertyValidatorInfo | Unset):
+        validator (BTMetadataPropertyValidatorInfo | None | Unset):
         value (BTMetadataPropertyInfoValueType0 | str | Unset):
         value_type (str | Unset):
     """
@@ -71,7 +71,7 @@ class BTMetadataPropertyInfo:
     required: bool | Unset = UNSET
     schema_id: str | Unset = UNSET
     ui_hints: BTMetadataPropertyUiHintsInfo | None | Unset = UNSET
-    validator: BTMetadataPropertyValidatorInfo | Unset = UNSET
+    validator: BTMetadataPropertyValidatorInfo | None | Unset = UNSET
     value: BTMetadataPropertyInfoValueType0 | str | Unset = UNSET
     value_type: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -79,6 +79,7 @@ class BTMetadataPropertyInfo:
     def to_dict(self) -> dict[str, Any]:
         from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
         from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
+        from ..models.bt_metadata_property_validator_info import BTMetadataPropertyValidatorInfo
 
         aggregation_skipped_filtered_out_values = self.aggregation_skipped_filtered_out_values
 
@@ -140,9 +141,13 @@ class BTMetadataPropertyInfo:
         else:
             ui_hints = self.ui_hints
 
-        validator: dict[str, Any] | Unset = UNSET
-        if not isinstance(self.validator, Unset):
+        validator: dict[str, Any] | None | Unset
+        if isinstance(self.validator, Unset):
+            validator = UNSET
+        elif isinstance(self.validator, BTMetadataPropertyValidatorInfo):
             validator = self.validator.to_dict()
+        else:
+            validator = self.validator
 
         value: dict[str, Any] | str | Unset
         if isinstance(self.value, Unset):
@@ -299,12 +304,22 @@ class BTMetadataPropertyInfo:
 
         ui_hints = _parse_ui_hints(d.pop("uiHints", UNSET))
 
-        _validator = d.pop("validator", UNSET)
-        validator: BTMetadataPropertyValidatorInfo | Unset
-        if isinstance(_validator, Unset):
-            validator = UNSET
-        else:
-            validator = BTMetadataPropertyValidatorInfo.from_dict(_validator)
+        def _parse_validator(data: object) -> BTMetadataPropertyValidatorInfo | None | Unset:
+            if data is None:
+                return data
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                validator_type_0 = BTMetadataPropertyValidatorInfo.from_dict(data)
+
+                return validator_type_0
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BTMetadataPropertyValidatorInfo | None | Unset, data)
+
+        validator = _parse_validator(d.pop("validator", UNSET))
 
         def _parse_value(data: object) -> BTMetadataPropertyInfoValueType0 | str | Unset:
             if isinstance(data, Unset):

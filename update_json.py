@@ -49,6 +49,9 @@ def update_json(path: str) -> None:
     print('* Change "BTMetadataPropertyInfo.value" type to allow object or string')
     add_str_to_type(data["components"]["schemas"]["BTMetadataPropertyInfo"]["properties"], "value")
 
+    print('* Change "BTMetadataPropertyInfo.validator" type to allow null')
+    add_null_to_type(data["components"]["schemas"]["BTMetadataPropertyInfo"]["properties"], "validator")
+
     print('* Change "BTMetadataPropertyValidatorInfo.maxDate" and "BTMetadataPropertyValidatorInfo.minDate" type to allow null')
     add_nullable(data["components"]["schemas"]["BTMetadataPropertyValidatorInfo"]["properties"]["maxDate"])
     add_nullable(data["components"]["schemas"]["BTMetadataPropertyValidatorInfo"]["properties"]["minDate"])
