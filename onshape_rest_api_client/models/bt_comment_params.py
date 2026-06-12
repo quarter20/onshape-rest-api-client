@@ -22,6 +22,7 @@ class BTCommentParams:
     Attributes:
         annotation_id (str | Unset):
         annotation_type (int | Unset):
+        app_entity (str | Unset):
         assembly_feature (str | Unset):
         assignee (str | Unset): Assign the comment during creation. Comments cannot be reassigned during an update at
             this time.
@@ -48,6 +49,7 @@ class BTCommentParams:
 
     annotation_id: str | Unset = UNSET
     annotation_type: int | Unset = UNSET
+    app_entity: str | Unset = UNSET
     assembly_feature: str | Unset = UNSET
     assignee: str | Unset = UNSET
     callout_instance_id: str | Unset = UNSET
@@ -75,6 +77,8 @@ class BTCommentParams:
         annotation_id = self.annotation_id
 
         annotation_type = self.annotation_type
+
+        app_entity = self.app_entity
 
         assembly_feature = self.assembly_feature
 
@@ -129,6 +133,8 @@ class BTCommentParams:
             field_dict["annotationId"] = annotation_id
         if annotation_type is not UNSET:
             field_dict["annotationType"] = annotation_type
+        if app_entity is not UNSET:
+            field_dict["appEntity"] = app_entity
         if assembly_feature is not UNSET:
             field_dict["assemblyFeature"] = assembly_feature
         if assignee is not UNSET:
@@ -183,6 +189,8 @@ class BTCommentParams:
         annotation_id = d.pop("annotationId", UNSET)
 
         annotation_type = d.pop("annotationType", UNSET)
+
+        app_entity = d.pop("appEntity", UNSET)
 
         assembly_feature = d.pop("assemblyFeature", UNSET)
 
@@ -239,6 +247,7 @@ class BTCommentParams:
         bt_comment_params = cls(
             annotation_id=annotation_id,
             annotation_type=annotation_type,
+            app_entity=app_entity,
             assembly_feature=assembly_feature,
             assignee=assignee,
             callout_instance_id=callout_instance_id,

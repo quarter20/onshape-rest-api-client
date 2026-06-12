@@ -4,7 +4,6 @@ from typing import Any
 from urllib.parse import quote
 
 import httpx
-from dateutil.parser import isoparse
 
 from ...client import AuthenticatedClient, Client
 from ...models.bt_list_response_bt_revision_info import BTListResponseBTRevisionInfo
@@ -17,7 +16,7 @@ def _get_kwargs(
     element_type: int | Unset = UNSET,
     limit: int | Unset = 20,
     latest_only: bool | Unset = False,
-    after: datetime.datetime | Unset = isoparse("2000-01-01T00:00:00Z"),
+    after: datetime.datetime | Unset = datetime.datetime.fromisoformat("2000-01-01T00:00:00Z"),
 ) -> dict[str, Any]:
 
     params: dict[str, Any] = {}
@@ -70,7 +69,7 @@ def sync_detailed(
     element_type: int | Unset = UNSET,
     limit: int | Unset = 20,
     latest_only: bool | Unset = False,
-    after: datetime.datetime | Unset = isoparse("2000-01-01T00:00:00Z"),
+    after: datetime.datetime | Unset = datetime.datetime.fromisoformat("2000-01-01T00:00:00Z"),
 ) -> Response[BTListResponseBTRevisionInfo]:
     """Get all revisions for a company.
 
@@ -87,7 +86,8 @@ def sync_detailed(
         element_type (int | Unset):
         limit (int | Unset):  Default: 20.
         latest_only (bool | Unset):  Default: False.
-        after (datetime.datetime | Unset):  Default: isoparse('2000-01-01T00:00:00Z').
+        after (datetime.datetime | Unset):  Default:
+            datetime.datetime.fromisoformat('2000-01-01T00:00:00Z').
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -119,7 +119,7 @@ def sync(
     element_type: int | Unset = UNSET,
     limit: int | Unset = 20,
     latest_only: bool | Unset = False,
-    after: datetime.datetime | Unset = isoparse("2000-01-01T00:00:00Z"),
+    after: datetime.datetime | Unset = datetime.datetime.fromisoformat("2000-01-01T00:00:00Z"),
 ) -> BTListResponseBTRevisionInfo | None:
     """Get all revisions for a company.
 
@@ -136,7 +136,8 @@ def sync(
         element_type (int | Unset):
         limit (int | Unset):  Default: 20.
         latest_only (bool | Unset):  Default: False.
-        after (datetime.datetime | Unset):  Default: isoparse('2000-01-01T00:00:00Z').
+        after (datetime.datetime | Unset):  Default:
+            datetime.datetime.fromisoformat('2000-01-01T00:00:00Z').
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -163,7 +164,7 @@ async def asyncio_detailed(
     element_type: int | Unset = UNSET,
     limit: int | Unset = 20,
     latest_only: bool | Unset = False,
-    after: datetime.datetime | Unset = isoparse("2000-01-01T00:00:00Z"),
+    after: datetime.datetime | Unset = datetime.datetime.fromisoformat("2000-01-01T00:00:00Z"),
 ) -> Response[BTListResponseBTRevisionInfo]:
     """Get all revisions for a company.
 
@@ -180,7 +181,8 @@ async def asyncio_detailed(
         element_type (int | Unset):
         limit (int | Unset):  Default: 20.
         latest_only (bool | Unset):  Default: False.
-        after (datetime.datetime | Unset):  Default: isoparse('2000-01-01T00:00:00Z').
+        after (datetime.datetime | Unset):  Default:
+            datetime.datetime.fromisoformat('2000-01-01T00:00:00Z').
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -210,7 +212,7 @@ async def asyncio(
     element_type: int | Unset = UNSET,
     limit: int | Unset = 20,
     latest_only: bool | Unset = False,
-    after: datetime.datetime | Unset = isoparse("2000-01-01T00:00:00Z"),
+    after: datetime.datetime | Unset = datetime.datetime.fromisoformat("2000-01-01T00:00:00Z"),
 ) -> BTListResponseBTRevisionInfo | None:
     """Get all revisions for a company.
 
@@ -227,7 +229,8 @@ async def asyncio(
         element_type (int | Unset):
         limit (int | Unset):  Default: 20.
         latest_only (bool | Unset):  Default: False.
-        after (datetime.datetime | Unset):  Default: isoparse('2000-01-01T00:00:00Z').
+        after (datetime.datetime | Unset):  Default:
+            datetime.datetime.fromisoformat('2000-01-01T00:00:00Z').
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

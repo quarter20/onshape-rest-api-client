@@ -25,6 +25,7 @@ class BTDatumTableRowMetadata3060:
         annotation_id (str | Unset):
         cross_highlight_data (BTTableCrossHighlightData1753 | Unset):
         is_derived (bool | Unset):
+        part_id (str | Unset):
     """
 
     bt_type: str | Unset = UNSET
@@ -32,6 +33,7 @@ class BTDatumTableRowMetadata3060:
     annotation_id: str | Unset = UNSET
     cross_highlight_data: BTTableCrossHighlightData1753 | Unset = UNSET
     is_derived: bool | Unset = UNSET
+    part_id: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -49,6 +51,8 @@ class BTDatumTableRowMetadata3060:
 
         is_derived = self.is_derived
 
+        part_id = self.part_id
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
@@ -62,6 +66,8 @@ class BTDatumTableRowMetadata3060:
             field_dict["crossHighlightData"] = cross_highlight_data
         if is_derived is not UNSET:
             field_dict["isDerived"] = is_derived
+        if part_id is not UNSET:
+            field_dict["partId"] = part_id
 
         return field_dict
 
@@ -91,12 +97,15 @@ class BTDatumTableRowMetadata3060:
 
         is_derived = d.pop("isDerived", UNSET)
 
+        part_id = d.pop("partId", UNSET)
+
         bt_datum_table_row_metadata_3060 = cls(
             bt_type=bt_type,
             cross_highlight_data_if_any=cross_highlight_data_if_any,
             annotation_id=annotation_id,
             cross_highlight_data=cross_highlight_data,
             is_derived=is_derived,
+            part_id=part_id,
         )
 
         bt_datum_table_row_metadata_3060.additional_properties = d

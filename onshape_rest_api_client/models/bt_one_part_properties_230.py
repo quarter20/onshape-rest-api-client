@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING, Any, TypeVar, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..models.gbt_part_fault_visibility import GBTPartFaultVisibility
 from ..models.gbt_part_visibility import GBTPartVisibility
 from ..types import UNSET, Unset
 
@@ -29,6 +30,7 @@ class BTOnePartProperties230:
         bt_type (str | Unset): Type of JSON object.
         changed_properties_set (list[str] | Unset):
         custom_properties (BTPartCustomProperties1338 | Unset):
+        fault_visibility (GBTPartFaultVisibility | Unset):
         material (BTPartMaterial1445 | Unset):
         material_for_new_cell (BTPartMaterial1445 | Unset):
         name (str | Unset):
@@ -48,6 +50,7 @@ class BTOnePartProperties230:
     bt_type: str | Unset = UNSET
     changed_properties_set: list[str] | Unset = UNSET
     custom_properties: BTPartCustomProperties1338 | Unset = UNSET
+    fault_visibility: GBTPartFaultVisibility | Unset = UNSET
     material: BTPartMaterial1445 | Unset = UNSET
     material_for_new_cell: BTPartMaterial1445 | Unset = UNSET
     name: str | Unset = UNSET
@@ -80,6 +83,10 @@ class BTOnePartProperties230:
         custom_properties: dict[str, Any] | Unset = UNSET
         if not isinstance(self.custom_properties, Unset):
             custom_properties = self.custom_properties.to_dict()
+
+        fault_visibility: str | Unset = UNSET
+        if not isinstance(self.fault_visibility, Unset):
+            fault_visibility = self.fault_visibility.value
 
         material: dict[str, Any] | Unset = UNSET
         if not isinstance(self.material, Unset):
@@ -134,6 +141,8 @@ class BTOnePartProperties230:
             field_dict["changedPropertiesSet"] = changed_properties_set
         if custom_properties is not UNSET:
             field_dict["customProperties"] = custom_properties
+        if fault_visibility is not UNSET:
+            field_dict["faultVisibility"] = fault_visibility
         if material is not UNSET:
             field_dict["material"] = material
         if material_for_new_cell is not UNSET:
@@ -194,6 +203,13 @@ class BTOnePartProperties230:
             custom_properties = UNSET
         else:
             custom_properties = BTPartCustomProperties1338.from_dict(_custom_properties)
+
+        _fault_visibility = d.pop("faultVisibility", UNSET)
+        fault_visibility: GBTPartFaultVisibility | Unset
+        if isinstance(_fault_visibility, Unset):
+            fault_visibility = UNSET
+        else:
+            fault_visibility = GBTPartFaultVisibility(_fault_visibility)
 
         _material = d.pop("material", UNSET)
         material: BTPartMaterial1445 | Unset
@@ -260,6 +276,7 @@ class BTOnePartProperties230:
             bt_type=bt_type,
             changed_properties_set=changed_properties_set,
             custom_properties=custom_properties,
+            fault_visibility=fault_visibility,
             material=material,
             material_for_new_cell=material_for_new_cell,
             name=name,

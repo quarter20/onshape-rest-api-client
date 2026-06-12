@@ -6,7 +6,6 @@ from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..models.bt_metadata_state_type import BTMetadataStateType
 from ..models.btapi_workflowable_type import BTAPIWorkflowableType
@@ -134,7 +133,7 @@ class BTObjectWorkflowInfo:
         if isinstance(_last_attempt_timestamp, Unset):
             last_attempt_timestamp = UNSET
         else:
-            last_attempt_timestamp = isoparse(_last_attempt_timestamp)
+            last_attempt_timestamp = datetime.datetime.fromisoformat(_last_attempt_timestamp)
 
         last_encountered_error_message = d.pop("lastEncounteredErrorMessage", UNSET)
 

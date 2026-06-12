@@ -6,7 +6,6 @@ from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..models.job_type import JobType
 from ..types import UNSET, Unset
@@ -131,7 +130,7 @@ class BTPLMMessageBody:
         if isinstance(_timestamp, Unset):
             timestamp = UNSET
         else:
-            timestamp = isoparse(_timestamp)
+            timestamp = datetime.datetime.fromisoformat(_timestamp)
 
         webhook_id = d.pop("webhookId", UNSET)
 

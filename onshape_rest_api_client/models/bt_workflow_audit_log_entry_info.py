@@ -6,7 +6,6 @@ from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -177,7 +176,7 @@ class BTWorkflowAuditLogEntryInfo:
         if isinstance(_date, Unset):
             date = UNSET
         else:
-            date = isoparse(_date)
+            date = datetime.datetime.fromisoformat(_date)
 
         entry_type = d.pop("entryType", UNSET)
 

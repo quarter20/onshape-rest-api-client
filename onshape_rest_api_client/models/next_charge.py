@@ -6,7 +6,6 @@ from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -64,7 +63,7 @@ class NextCharge:
         if isinstance(_current_period_end, Unset):
             current_period_end = UNSET
         else:
-            current_period_end = isoparse(_current_period_end)
+            current_period_end = datetime.datetime.fromisoformat(_current_period_end)
 
         interval = d.pop("interval", UNSET)
 

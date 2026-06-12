@@ -6,7 +6,6 @@ from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -26,6 +25,7 @@ class BTCommentInfo:
     Attributes:
         annotation_id (str | Unset):
         annotation_type (int | Unset):
+        app_entity (str | Unset):
         assembly_features (list[str] | Unset):
         assigned_at (datetime.datetime | Unset):
         assignee (BTUserSummaryInfo | Unset):
@@ -70,6 +70,7 @@ class BTCommentInfo:
 
     annotation_id: str | Unset = UNSET
     annotation_type: int | Unset = UNSET
+    app_entity: str | Unset = UNSET
     assembly_features: list[str] | Unset = UNSET
     assigned_at: datetime.datetime | Unset = UNSET
     assignee: BTUserSummaryInfo | Unset = UNSET
@@ -116,6 +117,8 @@ class BTCommentInfo:
         annotation_id = self.annotation_id
 
         annotation_type = self.annotation_type
+
+        app_entity = self.app_entity
 
         assembly_features: list[str] | Unset = UNSET
         if not isinstance(self.assembly_features, Unset):
@@ -232,6 +235,8 @@ class BTCommentInfo:
             field_dict["annotationId"] = annotation_id
         if annotation_type is not UNSET:
             field_dict["annotationType"] = annotation_type
+        if app_entity is not UNSET:
+            field_dict["appEntity"] = app_entity
         if assembly_features is not UNSET:
             field_dict["assemblyFeatures"] = assembly_features
         if assigned_at is not UNSET:
@@ -327,6 +332,8 @@ class BTCommentInfo:
 
         annotation_type = d.pop("annotationType", UNSET)
 
+        app_entity = d.pop("appEntity", UNSET)
+
         assembly_features = cast(list[str], d.pop("assemblyFeatures", UNSET))
 
         _assigned_at = d.pop("assignedAt", UNSET)
@@ -334,7 +341,7 @@ class BTCommentInfo:
         if isinstance(_assigned_at, Unset):
             assigned_at = UNSET
         else:
-            assigned_at = isoparse(_assigned_at)
+            assigned_at = datetime.datetime.fromisoformat(_assigned_at)
 
         _assignee = d.pop("assignee", UNSET)
         assignee: BTUserSummaryInfo | Unset
@@ -368,7 +375,7 @@ class BTCommentInfo:
         if isinstance(_created_at, Unset):
             created_at = UNSET
         else:
-            created_at = isoparse(_created_at)
+            created_at = datetime.datetime.fromisoformat(_created_at)
 
         dimension_constraint_id = d.pop("dimensionConstraintId", UNSET)
 
@@ -409,7 +416,7 @@ class BTCommentInfo:
         if isinstance(_reopened_at, Unset):
             reopened_at = UNSET
         else:
-            reopened_at = isoparse(_reopened_at)
+            reopened_at = datetime.datetime.fromisoformat(_reopened_at)
 
         _reopened_by = d.pop("reopenedBy", UNSET)
         reopened_by: BTUserSummaryInfo | Unset
@@ -425,7 +432,7 @@ class BTCommentInfo:
         if isinstance(_resolved_at, Unset):
             resolved_at = UNSET
         else:
-            resolved_at = isoparse(_resolved_at)
+            resolved_at = datetime.datetime.fromisoformat(_resolved_at)
 
         _resolved_by = d.pop("resolvedBy", UNSET)
         resolved_by: BTUserSummaryInfo | Unset
@@ -470,6 +477,7 @@ class BTCommentInfo:
         bt_comment_info = cls(
             annotation_id=annotation_id,
             annotation_type=annotation_type,
+            app_entity=app_entity,
             assembly_features=assembly_features,
             assigned_at=assigned_at,
             assignee=assignee,

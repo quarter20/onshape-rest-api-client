@@ -6,7 +6,6 @@ from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..models.bt_role import BTRole
 from ..types import UNSET, Unset
@@ -513,7 +512,7 @@ class BTUserInfo:
         if isinstance(_last_login_time, Unset):
             last_login_time = UNSET
         else:
-            last_login_time = isoparse(_last_login_time)
+            last_login_time = datetime.datetime.fromisoformat(_last_login_time)
 
         personal_message_allowed = d.pop("personalMessageAllowed", UNSET)
 
@@ -557,7 +556,7 @@ class BTUserInfo:
         if isinstance(_created_at, Unset):
             created_at = UNSET
         else:
-            created_at = isoparse(_created_at)
+            created_at = datetime.datetime.fromisoformat(_created_at)
 
         _credential = d.pop("credential", UNSET)
         credential: BTSessionCredentialInfo | Unset
@@ -610,7 +609,7 @@ class BTUserInfo:
         if isinstance(_need_to_reset_client_cache_time, Unset):
             need_to_reset_client_cache_time = UNSET
         else:
-            need_to_reset_client_cache_time = isoparse(_need_to_reset_client_cache_time)
+            need_to_reset_client_cache_time = datetime.datetime.fromisoformat(_need_to_reset_client_cache_time)
 
         need_to_show_new_walkthrough = d.pop("needToShowNewWalkthrough", UNSET)
 

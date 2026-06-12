@@ -19,6 +19,7 @@ class BTInsertableInfo:
     """Array of items in the current page.
 
     Attributes:
+        are_faults_ignored (bool | Unset):
         body_type (GBTBodyType | Unset):
         class_type (int | Unset):
         configuration (str | Unset):
@@ -60,6 +61,7 @@ class BTInsertableInfo:
         workspace_name (str | Unset):
     """
 
+    are_faults_ignored: bool | Unset = UNSET
     body_type: GBTBodyType | Unset = UNSET
     class_type: int | Unset = UNSET
     configuration: str | Unset = UNSET
@@ -102,6 +104,8 @@ class BTInsertableInfo:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        are_faults_ignored = self.are_faults_ignored
+
         body_type: str | Unset = UNSET
         if not isinstance(self.body_type, Unset):
             body_type = self.body_type.value
@@ -199,6 +203,8 @@ class BTInsertableInfo:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if are_faults_ignored is not UNSET:
+            field_dict["areFaultsIgnored"] = are_faults_ignored
         if body_type is not UNSET:
             field_dict["bodyType"] = body_type
         if class_type is not UNSET:
@@ -283,6 +289,8 @@ class BTInsertableInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
+        are_faults_ignored = d.pop("areFaultsIgnored", UNSET)
+
         _body_type = d.pop("bodyType", UNSET)
         body_type: GBTBodyType | Unset
         if isinstance(_body_type, Unset):
@@ -377,6 +385,7 @@ class BTInsertableInfo:
         workspace_name = d.pop("workspaceName", UNSET)
 
         bt_insertable_info = cls(
+            are_faults_ignored=are_faults_ignored,
             body_type=body_type,
             class_type=class_type,
             configuration=configuration,

@@ -6,7 +6,6 @@ from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -50,7 +49,7 @@ class BTPendingUpgradeInfo:
         if isinstance(_scheduled_time, Unset):
             scheduled_time = UNSET
         else:
-            scheduled_time = isoparse(_scheduled_time)
+            scheduled_time = datetime.datetime.fromisoformat(_scheduled_time)
 
         version = d.pop("version", UNSET)
 

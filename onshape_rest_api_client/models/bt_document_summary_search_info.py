@@ -6,17 +6,14 @@ from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..models.bt_old_permission import BTOldPermission
-from ..models.bt_version_graph_mode import BTVersionGraphMode
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.bt_base_info import BTBaseInfo
     from ..models.bt_document_label_info import BTDocumentLabelInfo
     from ..models.bt_document_search_hit_info import BTDocumentSearchHitInfo
-    from ..models.bt_element_library_summary_info import BTElementLibrarySummaryInfo
     from ..models.bt_owner_info import BTOwnerInfo
     from ..models.bt_thumbnail_info import BTThumbnailInfo
     from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo
@@ -58,17 +55,12 @@ class BTDocumentSummarySearchInfo:
         can_unshare (bool | Unset):
         created_with_education_plan (bool | Unset):
         default_element_id (str | Unset):
-        default_version_graph_mode (BTVersionGraphMode | Unset):
-        default_version_graph_show_auto_versions (bool | Unset):
-        default_version_graph_show_merges (bool | Unset):
         default_workspace (BTWorkspaceInfo | Unset):
         document_labels (list[BTDocumentLabelInfo] | Unset):
         document_type (int | Unset):
-        element_library_summary_info (list[BTElementLibrarySummaryInfo] | Unset):
         force_export_rules (bool | Unset):
         has_release_revisionable_objects (bool | Unset):
         has_relevant_insertables (bool | Unset):
-        is_orphaned (bool | Unset):
         is_using_managed_workflow (bool | Unset):
         liked_by_current_user (bool | Unset):
         likes (int | Unset):
@@ -85,8 +77,6 @@ class BTDocumentSummarySearchInfo:
         support_team_user_and_shared (bool | Unset):
         tags (list[str] | Unset):
         thumbnail (BTThumbnailInfo | Unset):
-        total_workspaces_scheduled_for_update (int | Unset):
-        total_workspaces_updating (int | Unset):
         trash (bool | Unset):
         trashed_at (datetime.datetime | Unset):
         user_account_limits_breached (bool | Unset):
@@ -121,17 +111,12 @@ class BTDocumentSummarySearchInfo:
     can_unshare: bool | Unset = UNSET
     created_with_education_plan: bool | Unset = UNSET
     default_element_id: str | Unset = UNSET
-    default_version_graph_mode: BTVersionGraphMode | Unset = UNSET
-    default_version_graph_show_auto_versions: bool | Unset = UNSET
-    default_version_graph_show_merges: bool | Unset = UNSET
     default_workspace: BTWorkspaceInfo | Unset = UNSET
     document_labels: list[BTDocumentLabelInfo] | Unset = UNSET
     document_type: int | Unset = UNSET
-    element_library_summary_info: list[BTElementLibrarySummaryInfo] | Unset = UNSET
     force_export_rules: bool | Unset = UNSET
     has_release_revisionable_objects: bool | Unset = UNSET
     has_relevant_insertables: bool | Unset = UNSET
-    is_orphaned: bool | Unset = UNSET
     is_using_managed_workflow: bool | Unset = UNSET
     liked_by_current_user: bool | Unset = UNSET
     likes: int | Unset = UNSET
@@ -148,8 +133,6 @@ class BTDocumentSummarySearchInfo:
     support_team_user_and_shared: bool | Unset = UNSET
     tags: list[str] | Unset = UNSET
     thumbnail: BTThumbnailInfo | Unset = UNSET
-    total_workspaces_scheduled_for_update: int | Unset = UNSET
-    total_workspaces_updating: int | Unset = UNSET
     trash: bool | Unset = UNSET
     trashed_at: datetime.datetime | Unset = UNSET
     user_account_limits_breached: bool | Unset = UNSET
@@ -225,14 +208,6 @@ class BTDocumentSummarySearchInfo:
 
         default_element_id = self.default_element_id
 
-        default_version_graph_mode: str | Unset = UNSET
-        if not isinstance(self.default_version_graph_mode, Unset):
-            default_version_graph_mode = self.default_version_graph_mode.value
-
-        default_version_graph_show_auto_versions = self.default_version_graph_show_auto_versions
-
-        default_version_graph_show_merges = self.default_version_graph_show_merges
-
         default_workspace: dict[str, Any] | Unset = UNSET
         if not isinstance(self.default_workspace, Unset):
             default_workspace = self.default_workspace.to_dict()
@@ -246,20 +221,11 @@ class BTDocumentSummarySearchInfo:
 
         document_type = self.document_type
 
-        element_library_summary_info: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.element_library_summary_info, Unset):
-            element_library_summary_info = []
-            for element_library_summary_info_item_data in self.element_library_summary_info:
-                element_library_summary_info_item = element_library_summary_info_item_data.to_dict()
-                element_library_summary_info.append(element_library_summary_info_item)
-
         force_export_rules = self.force_export_rules
 
         has_release_revisionable_objects = self.has_release_revisionable_objects
 
         has_relevant_insertables = self.has_relevant_insertables
-
-        is_orphaned = self.is_orphaned
 
         is_using_managed_workflow = self.is_using_managed_workflow
 
@@ -302,10 +268,6 @@ class BTDocumentSummarySearchInfo:
         thumbnail: dict[str, Any] | Unset = UNSET
         if not isinstance(self.thumbnail, Unset):
             thumbnail = self.thumbnail.to_dict()
-
-        total_workspaces_scheduled_for_update = self.total_workspaces_scheduled_for_update
-
-        total_workspaces_updating = self.total_workspaces_updating
 
         trash = self.trash
 
@@ -383,28 +345,18 @@ class BTDocumentSummarySearchInfo:
             field_dict["createdWithEducationPlan"] = created_with_education_plan
         if default_element_id is not UNSET:
             field_dict["defaultElementId"] = default_element_id
-        if default_version_graph_mode is not UNSET:
-            field_dict["defaultVersionGraphMode"] = default_version_graph_mode
-        if default_version_graph_show_auto_versions is not UNSET:
-            field_dict["defaultVersionGraphShowAutoVersions"] = default_version_graph_show_auto_versions
-        if default_version_graph_show_merges is not UNSET:
-            field_dict["defaultVersionGraphShowMerges"] = default_version_graph_show_merges
         if default_workspace is not UNSET:
             field_dict["defaultWorkspace"] = default_workspace
         if document_labels is not UNSET:
             field_dict["documentLabels"] = document_labels
         if document_type is not UNSET:
             field_dict["documentType"] = document_type
-        if element_library_summary_info is not UNSET:
-            field_dict["elementLibrarySummaryInfo"] = element_library_summary_info
         if force_export_rules is not UNSET:
             field_dict["forceExportRules"] = force_export_rules
         if has_release_revisionable_objects is not UNSET:
             field_dict["hasReleaseRevisionableObjects"] = has_release_revisionable_objects
         if has_relevant_insertables is not UNSET:
             field_dict["hasRelevantInsertables"] = has_relevant_insertables
-        if is_orphaned is not UNSET:
-            field_dict["isOrphaned"] = is_orphaned
         if is_using_managed_workflow is not UNSET:
             field_dict["isUsingManagedWorkflow"] = is_using_managed_workflow
         if liked_by_current_user is not UNSET:
@@ -437,10 +389,6 @@ class BTDocumentSummarySearchInfo:
             field_dict["tags"] = tags
         if thumbnail is not UNSET:
             field_dict["thumbnail"] = thumbnail
-        if total_workspaces_scheduled_for_update is not UNSET:
-            field_dict["totalWorkspacesScheduledForUpdate"] = total_workspaces_scheduled_for_update
-        if total_workspaces_updating is not UNSET:
-            field_dict["totalWorkspacesUpdating"] = total_workspaces_updating
         if trash is not UNSET:
             field_dict["trash"] = trash
         if trashed_at is not UNSET:
@@ -457,7 +405,6 @@ class BTDocumentSummarySearchInfo:
         from ..models.bt_base_info import BTBaseInfo
         from ..models.bt_document_label_info import BTDocumentLabelInfo
         from ..models.bt_document_search_hit_info import BTDocumentSearchHitInfo
-        from ..models.bt_element_library_summary_info import BTElementLibrarySummaryInfo
         from ..models.bt_owner_info import BTOwnerInfo
         from ..models.bt_thumbnail_info import BTThumbnailInfo
         from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo
@@ -477,7 +424,7 @@ class BTDocumentSummarySearchInfo:
         if isinstance(_created_at, Unset):
             created_at = UNSET
         else:
-            created_at = isoparse(_created_at)
+            created_at = datetime.datetime.fromisoformat(_created_at)
 
         _created_by = d.pop("createdBy", UNSET)
         created_by: BTUserBasicSummaryInfo | Unset
@@ -505,7 +452,7 @@ class BTDocumentSummarySearchInfo:
         if isinstance(_modified_at, Unset):
             modified_at = UNSET
         else:
-            modified_at = isoparse(_modified_at)
+            modified_at = datetime.datetime.fromisoformat(_modified_at)
 
         _modified_by = d.pop("modifiedBy", UNSET)
         modified_by: BTUserBasicSummaryInfo | Unset
@@ -545,17 +492,6 @@ class BTDocumentSummarySearchInfo:
 
         default_element_id = d.pop("defaultElementId", UNSET)
 
-        _default_version_graph_mode = d.pop("defaultVersionGraphMode", UNSET)
-        default_version_graph_mode: BTVersionGraphMode | Unset
-        if isinstance(_default_version_graph_mode, Unset):
-            default_version_graph_mode = UNSET
-        else:
-            default_version_graph_mode = BTVersionGraphMode(_default_version_graph_mode)
-
-        default_version_graph_show_auto_versions = d.pop("defaultVersionGraphShowAutoVersions", UNSET)
-
-        default_version_graph_show_merges = d.pop("defaultVersionGraphShowMerges", UNSET)
-
         _default_workspace = d.pop("defaultWorkspace", UNSET)
         default_workspace: BTWorkspaceInfo | Unset
         if isinstance(_default_workspace, Unset):
@@ -574,24 +510,11 @@ class BTDocumentSummarySearchInfo:
 
         document_type = d.pop("documentType", UNSET)
 
-        _element_library_summary_info = d.pop("elementLibrarySummaryInfo", UNSET)
-        element_library_summary_info: list[BTElementLibrarySummaryInfo] | Unset = UNSET
-        if _element_library_summary_info is not UNSET:
-            element_library_summary_info = []
-            for element_library_summary_info_item_data in _element_library_summary_info:
-                element_library_summary_info_item = BTElementLibrarySummaryInfo.from_dict(
-                    element_library_summary_info_item_data
-                )
-
-                element_library_summary_info.append(element_library_summary_info_item)
-
         force_export_rules = d.pop("forceExportRules", UNSET)
 
         has_release_revisionable_objects = d.pop("hasReleaseRevisionableObjects", UNSET)
 
         has_relevant_insertables = d.pop("hasRelevantInsertables", UNSET)
-
-        is_orphaned = d.pop("isOrphaned", UNSET)
 
         is_using_managed_workflow = d.pop("isUsingManagedWorkflow", UNSET)
 
@@ -640,10 +563,6 @@ class BTDocumentSummarySearchInfo:
         else:
             thumbnail = BTThumbnailInfo.from_dict(_thumbnail)
 
-        total_workspaces_scheduled_for_update = d.pop("totalWorkspacesScheduledForUpdate", UNSET)
-
-        total_workspaces_updating = d.pop("totalWorkspacesUpdating", UNSET)
-
         trash = d.pop("trash", UNSET)
 
         _trashed_at = d.pop("trashedAt", UNSET)
@@ -651,7 +570,7 @@ class BTDocumentSummarySearchInfo:
         if isinstance(_trashed_at, Unset):
             trashed_at = UNSET
         else:
-            trashed_at = isoparse(_trashed_at)
+            trashed_at = datetime.datetime.fromisoformat(_trashed_at)
 
         user_account_limits_breached = d.pop("userAccountLimitsBreached", UNSET)
 
@@ -693,17 +612,12 @@ class BTDocumentSummarySearchInfo:
             can_unshare=can_unshare,
             created_with_education_plan=created_with_education_plan,
             default_element_id=default_element_id,
-            default_version_graph_mode=default_version_graph_mode,
-            default_version_graph_show_auto_versions=default_version_graph_show_auto_versions,
-            default_version_graph_show_merges=default_version_graph_show_merges,
             default_workspace=default_workspace,
             document_labels=document_labels,
             document_type=document_type,
-            element_library_summary_info=element_library_summary_info,
             force_export_rules=force_export_rules,
             has_release_revisionable_objects=has_release_revisionable_objects,
             has_relevant_insertables=has_relevant_insertables,
-            is_orphaned=is_orphaned,
             is_using_managed_workflow=is_using_managed_workflow,
             liked_by_current_user=liked_by_current_user,
             likes=likes,
@@ -720,8 +634,6 @@ class BTDocumentSummarySearchInfo:
             support_team_user_and_shared=support_team_user_and_shared,
             tags=tags,
             thumbnail=thumbnail,
-            total_workspaces_scheduled_for_update=total_workspaces_scheduled_for_update,
-            total_workspaces_updating=total_workspaces_updating,
             trash=trash,
             trashed_at=trashed_at,
             user_account_limits_breached=user_account_limits_breached,

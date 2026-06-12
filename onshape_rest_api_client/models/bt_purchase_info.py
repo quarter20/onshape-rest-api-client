@@ -6,7 +6,6 @@ from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -384,7 +383,7 @@ class BTPurchaseInfo:
         if isinstance(_api_allocation_end_date, Unset):
             api_allocation_end_date = UNSET
         else:
-            api_allocation_end_date = isoparse(_api_allocation_end_date)
+            api_allocation_end_date = datetime.datetime.fromisoformat(_api_allocation_end_date)
 
         api_allocation_override = d.pop("apiAllocationOverride", UNSET)
 
@@ -393,7 +392,7 @@ class BTPurchaseInfo:
         if isinstance(_api_allocation_start_date, Unset):
             api_allocation_start_date = UNSET
         else:
-            api_allocation_start_date = isoparse(_api_allocation_start_date)
+            api_allocation_start_date = datetime.datetime.fromisoformat(_api_allocation_start_date)
 
         _application = d.pop("application", UNSET)
         application: BTAPIApplicationSummaryInfo | Unset
@@ -407,7 +406,7 @@ class BTPurchaseInfo:
         if isinstance(_canceled_at, Unset):
             canceled_at = UNSET
         else:
-            canceled_at = isoparse(_canceled_at)
+            canceled_at = datetime.datetime.fromisoformat(_canceled_at)
 
         _card = d.pop("card", UNSET)
         card: BTCardInfo | Unset
@@ -441,7 +440,7 @@ class BTPurchaseInfo:
         if isinstance(_last_modified, Unset):
             last_modified = UNSET
         else:
-            last_modified = isoparse(_last_modified)
+            last_modified = datetime.datetime.fromisoformat(_last_modified)
 
         last_modified_by = d.pop("lastModifiedBy", UNSET)
 
@@ -493,7 +492,7 @@ class BTPurchaseInfo:
         if isinstance(_purchase_date, Unset):
             purchase_date = UNSET
         else:
-            purchase_date = isoparse(_purchase_date)
+            purchase_date = datetime.datetime.fromisoformat(_purchase_date)
 
         reseller_name = d.pop("resellerName", UNSET)
 
@@ -515,14 +514,14 @@ class BTPurchaseInfo:
         if isinstance(_subscription_begin_at, Unset):
             subscription_begin_at = UNSET
         else:
-            subscription_begin_at = isoparse(_subscription_begin_at)
+            subscription_begin_at = datetime.datetime.fromisoformat(_subscription_begin_at)
 
         _subscription_end_at = d.pop("subscriptionEndAt", UNSET)
         subscription_end_at: datetime.datetime | Unset
         if isinstance(_subscription_end_at, Unset):
             subscription_end_at = UNSET
         else:
-            subscription_end_at = isoparse(_subscription_end_at)
+            subscription_end_at = datetime.datetime.fromisoformat(_subscription_end_at)
 
         subscription_id = d.pop("subscriptionId", UNSET)
 
@@ -535,7 +534,7 @@ class BTPurchaseInfo:
         if isinstance(_trial_end, Unset):
             trial_end = UNSET
         else:
-            trial_end = isoparse(_trial_end)
+            trial_end = datetime.datetime.fromisoformat(_trial_end)
 
         trial_initiated_by = d.pop("trialInitiatedBy", UNSET)
 

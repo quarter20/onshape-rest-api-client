@@ -2,8 +2,9 @@
 
 This package contains 100% auto-generated code, using [openapi-python-client](https://github.com/openapi-generators/openapi-python-client?tab=readme-ov-file).  Details on how the code has been generated are included in the table below.  The release number tracks with a truncated version of the Onshape API version number, e.g. `1.211.73427-ff73c7a30c29` -> `1.211.0`
 
-|Release|Date of Generation| Onshape API version | openapi-python-client|
+|Release|Date of Generation|Onshape API version| openapi-python-client|
 |-|-|-|-|
+|1.216.0|June 12, 2026|v16|0.29.0|
 |1.215.0|May 19, 2026|v16|0.28.4|
 |1.214.1|May 13, 2026|v15|0.28.4|
 |1.214.0|April 27, 2026|v14|0.28.3|

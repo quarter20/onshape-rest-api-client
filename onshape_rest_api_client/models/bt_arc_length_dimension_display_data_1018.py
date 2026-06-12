@@ -48,6 +48,7 @@ class BTArcLengthDimensionDisplayData1018:
         upper_tolerance (float | Unset):
         value (float | Unset):
         clockwise (bool | Unset):
+        is_conjugate_angle (bool | Unset):
         position_r (float | Unset):
         position_t (float | Unset):
         witness_end_point_0_r (float | Unset):
@@ -86,6 +87,7 @@ class BTArcLengthDimensionDisplayData1018:
     upper_tolerance: float | Unset = UNSET
     value: float | Unset = UNSET
     clockwise: bool | Unset = UNSET
+    is_conjugate_angle: bool | Unset = UNSET
     position_r: float | Unset = UNSET
     position_t: float | Unset = UNSET
     witness_end_point_0_r: float | Unset = UNSET
@@ -160,6 +162,8 @@ class BTArcLengthDimensionDisplayData1018:
         value = self.value
 
         clockwise = self.clockwise
+
+        is_conjugate_angle = self.is_conjugate_angle
 
         position_r = self.position_r
 
@@ -236,6 +240,8 @@ class BTArcLengthDimensionDisplayData1018:
             field_dict["value"] = value
         if clockwise is not UNSET:
             field_dict["clockwise"] = clockwise
+        if is_conjugate_angle is not UNSET:
+            field_dict["isConjugateAngle"] = is_conjugate_angle
         if position_r is not UNSET:
             field_dict["positionR"] = position_r
         if position_t is not UNSET:
@@ -337,6 +343,8 @@ class BTArcLengthDimensionDisplayData1018:
 
         clockwise = d.pop("clockwise", UNSET)
 
+        is_conjugate_angle = d.pop("isConjugateAngle", UNSET)
+
         position_r = d.pop("positionR", UNSET)
 
         position_t = d.pop("positionT", UNSET)
@@ -384,6 +392,7 @@ class BTArcLengthDimensionDisplayData1018:
             upper_tolerance=upper_tolerance,
             value=value,
             clockwise=clockwise,
+            is_conjugate_angle=is_conjugate_angle,
             position_r=position_r,
             position_t=position_t,
             witness_end_point_0_r=witness_end_point_0_r,

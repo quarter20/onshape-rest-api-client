@@ -6,7 +6,6 @@ from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -286,7 +285,7 @@ class BTCategoryPropertyConfigInfo:
         if isinstance(_max_date, Unset):
             max_date = UNSET
         else:
-            max_date = isoparse(_max_date)
+            max_date = datetime.datetime.fromisoformat(_max_date)
 
         max_length = d.pop("maxLength", UNSET)
 
@@ -299,7 +298,7 @@ class BTCategoryPropertyConfigInfo:
         if isinstance(_min_date, Unset):
             min_date = UNSET
         else:
-            min_date = isoparse(_min_date)
+            min_date = datetime.datetime.fromisoformat(_min_date)
 
         min_length = d.pop("minLength", UNSET)
 

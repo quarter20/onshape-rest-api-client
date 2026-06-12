@@ -6,7 +6,6 @@ from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -58,14 +57,14 @@ class BTDeviceLoginSecretInfo:
         if isinstance(_created_at, Unset):
             created_at = UNSET
         else:
-            created_at = isoparse(_created_at)
+            created_at = datetime.datetime.fromisoformat(_created_at)
 
         _modified_at = d.pop("modifiedAt", UNSET)
         modified_at: datetime.datetime | Unset
         if isinstance(_modified_at, Unset):
             modified_at = UNSET
         else:
-            modified_at = isoparse(_modified_at)
+            modified_at = datetime.datetime.fromisoformat(_modified_at)
 
         random_token = d.pop("randomToken", UNSET)
 

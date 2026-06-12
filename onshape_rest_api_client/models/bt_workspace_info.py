@@ -6,7 +6,6 @@ from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..models.bt_object_state import BTObjectState
 from ..models.bt_workspace_protection_rule_options import BTWorkspaceProtectionRuleOptions
@@ -191,7 +190,7 @@ class BTWorkspaceInfo:
         if isinstance(_created_at, Unset):
             created_at = UNSET
         else:
-            created_at = isoparse(_created_at)
+            created_at = datetime.datetime.fromisoformat(_created_at)
 
         _creator = d.pop("creator", UNSET)
         creator: BTUserBasicSummaryInfo | Unset
@@ -224,7 +223,7 @@ class BTWorkspaceInfo:
         if isinstance(_modified_at, Unset):
             modified_at = UNSET
         else:
-            modified_at = isoparse(_modified_at)
+            modified_at = datetime.datetime.fromisoformat(_modified_at)
 
         name = d.pop("name", UNSET)
 
@@ -233,7 +232,7 @@ class BTWorkspaceInfo:
         if isinstance(_override_date, Unset):
             override_date = UNSET
         else:
-            override_date = isoparse(_override_date)
+            override_date = datetime.datetime.fromisoformat(_override_date)
 
         parent = d.pop("parent", UNSET)
 

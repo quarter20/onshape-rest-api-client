@@ -328,7 +328,7 @@ from .bt_default_units_info import BTDefaultUnitsInfo
 from .bt_derived_assembly_mirror_4204 import BTDerivedAssemblyMirror4204
 from .bt_device_login_secret_info import BTDeviceLoginSecretInfo
 from .bt_diff_info import BTDiffInfo
-from .bt_diff_info_changes import BTDiffInfoChanges
+from .bt_diff_info_collection_changes import BTDiffInfoCollectionChanges
 from .bt_diff_info_collection_type import BTDiffInfoCollectionType
 from .bt_diff_json_response_2725 import BTDiffJsonResponse2725
 from .bt_diff_json_response_2725_patch import BTDiffJsonResponse2725Patch
@@ -339,6 +339,7 @@ from .bt_discount_metadata import BTDiscountMetadata
 from .bt_discount_metadata_additional_property import BTDiscountMetadataAdditionalProperty
 from .bt_discount_owner_id_plan_id import BTDiscountOwnerIdPlanId
 from .bt_display_state_info import BTDisplayStateInfo
+from .bt_document_base_summary_info import BTDocumentBaseSummaryInfo
 from .bt_document_contents_info import BTDocumentContentsInfo
 from .bt_document_element_creation_descriptor import BTDocumentElementCreationDescriptor
 from .bt_document_element_info import BTDocumentElementInfo
@@ -349,6 +350,7 @@ from .bt_document_info import BTDocumentInfo
 from .bt_document_label_info import BTDocumentLabelInfo
 from .bt_document_merge_info import BTDocumentMergeInfo
 from .bt_document_message_body import BTDocumentMessageBody
+from .bt_document_notes_params import BTDocumentNotesParams
 from .bt_document_params import BTDocumentParams
 from .bt_document_processing_info import BTDocumentProcessingInfo
 from .bt_document_search_hit_info import BTDocumentSearchHitInfo
@@ -589,6 +591,7 @@ from .bt_metadata_property_update_params import BTMetadataPropertyUpdateParams
 from .bt_metadata_property_update_params_value import BTMetadataPropertyUpdateParamsValue
 from .bt_metadata_property_validator_info import BTMetadataPropertyValidatorInfo
 from .bt_metadata_state_type import BTMetadataStateType
+from .bt_metadata_value_info import BTMetadataValueInfo
 from .bt_metadata_value_type import BTMetadataValueType
 from .bt_microversion_id_366 import BTMicroversionId366
 from .bt_microversion_id_and_configuration_2338 import BTMicroversionIdAndConfiguration2338
@@ -781,6 +784,9 @@ from .bt_plm_context_info import BTPlmContextInfo
 from .bt_point_entity_1439 import BTPointEntity1439
 from .bt_polyline_display_data_3522 import BTPolylineDisplayData3522
 from .bt_privacy_consent_info import BTPrivacyConsentInfo
+from .bt_product_structure_element_info import BTProductStructureElementInfo
+from .bt_product_structure_item_info import BTProductStructureItemInfo
+from .bt_product_structure_part_info import BTProductStructurePartInfo
 from .bt_project_info import BTProjectInfo
 from .bt_properties_table_template_info import BTPropertiesTableTemplateInfo
 from .bt_properties_table_template_params import BTPropertiesTableTemplateParams
@@ -1008,7 +1014,6 @@ from .bt_variable_table_info import BTVariableTableInfo
 from .bt_variable_table_row_metadata_3912 import BTVariableTableRowMetadata3912
 from .bt_vector_2d1812 import BTVector2D1812
 from .bt_vector_3d389 import BTVector3D389
-from .bt_version_graph_mode import BTVersionGraphMode
 from .bt_version_info import BTVersionInfo
 from .bt_version_or_workspace_merge_info import BTVersionOrWorkspaceMergeInfo
 from .bt_version_or_workspace_merge_info_merge_strategy_element_overrides import (
@@ -1025,6 +1030,8 @@ from .bt_webhook_info import BTWebhookInfo
 from .bt_webhook_lifecycle_message_body import BTWebhookLifecycleMessageBody
 from .bt_webhook_options import BTWebhookOptions
 from .bt_webhook_params import BTWebhookParams
+from .bt_where_used_item_info_list import BTWhereUsedItemInfoList
+from .bt_where_used_version_referenced_info import BTWhereUsedVersionReferencedInfo
 from .bt_width_mate_display_data_2888 import BTWidthMateDisplayData2888
 from .bt_workflow_action_info import BTWorkflowActionInfo
 from .bt_workflow_audit_log_entry_info import BTWorkflowAuditLogEntryInfo
@@ -1340,6 +1347,7 @@ from .components_request_bodies import ComponentsRequestBodies
 from .components_responses import ComponentsResponses
 from .components_schemas import ComponentsSchemas
 from .components_security_schemes import ComponentsSecuritySchemes
+from .config_info import ConfigInfo
 from .configuration_entry import ConfigurationEntry
 from .configuration_info_entry import ConfigurationInfoEntry
 from .contact import Contact
@@ -1442,6 +1450,7 @@ from .gbt_parameter_library_relation_type import GBTParameterLibraryRelationType
 from .gbt_parameter_visibility_logical_op import GBTParameterVisibilityLogicalOp
 from .gbt_parasolid_encoding_type import GBTParasolidEncodingType
 from .gbt_part_color_cycle_version import GBTPartColorCycleVersion
+from .gbt_part_fault_visibility import GBTPartFaultVisibility
 from .gbt_part_studio_display_data_version import GBTPartStudioDisplayDataVersion
 from .gbt_part_studio_instance_type import GBTPartStudioInstanceType
 from .gbt_part_studio_item_type import GBTPartStudioItemType
@@ -1644,6 +1653,7 @@ from .path_item import PathItem
 from .path_item_extensions import PathItemExtensions
 from .path_item_extensions_additional_property import PathItemExtensionsAdditionalProperty
 from .ping_webhook_response_default import PingWebhookResponseDefault
+from .property_ import Property
 from .prorated_charges import ProratedCharges
 from .remove_user_from_company_response_default import RemoveUserFromCompanyResponseDefault
 from .request_body import RequestBody
@@ -2069,7 +2079,7 @@ __all__ = (
     "BTDerivedAssemblyMirror4204",
     "BTDeviceLoginSecretInfo",
     "BTDiffInfo",
-    "BTDiffInfoChanges",
+    "BTDiffInfoCollectionChanges",
     "BTDiffInfoCollectionType",
     "BTDiffJsonResponse2725",
     "BTDiffJsonResponse2725Patch",
@@ -2080,6 +2090,7 @@ __all__ = (
     "BTDiscountMetadataAdditionalProperty",
     "BTDiscountOwnerIdPlanId",
     "BTDisplayStateInfo",
+    "BTDocumentBaseSummaryInfo",
     "BTDocumentContentsInfo",
     "BTDocumentElementCreationDescriptor",
     "BTDocumentElementInfo",
@@ -2090,6 +2101,7 @@ __all__ = (
     "BTDocumentLabelInfo",
     "BTDocumentMergeInfo",
     "BTDocumentMessageBody",
+    "BTDocumentNotesParams",
     "BTDocumentParams",
     "BTDocumentProcessingInfo",
     "BTDocumentSearchHitInfo",
@@ -2373,6 +2385,7 @@ __all__ = (
     "BTMetadataPropertyUpdateParamsValue",
     "BTMetadataPropertyValidatorInfo",
     "BTMetadataStateType",
+    "BTMetadataValueInfo",
     "BTMetadataValueType",
     "BTMFeature134",
     "BTMFeatureInvalid1031",
@@ -2668,6 +2681,9 @@ __all__ = (
     "BTPProcedureDeclarationBase266",
     "BTPPropertyAccessor23",
     "BTPrivacyConsentInfo",
+    "BTProductStructureElementInfo",
+    "BTProductStructureItemInfo",
+    "BTProductStructurePartInfo",
     "BTProjectInfo",
     "BTPropertiesTableTemplateInfo",
     "BTPropertiesTableTemplateParams",
@@ -2921,7 +2937,6 @@ __all__ = (
     "BTVariableTableRowMetadata3912",
     "BTVector2D1812",
     "BTVector3D389",
-    "BTVersionGraphMode",
     "BTVersionInfo",
     "BTVersionOrWorkspaceMergeInfo",
     "BTVersionOrWorkspaceMergeInfoMergeStrategyElementOverrides",
@@ -2936,6 +2951,8 @@ __all__ = (
     "BTWebhookOptions",
     "BTWebhookParams",
     "BTWebRendererPerformanceMeasurementParams",
+    "BTWhereUsedItemInfoList",
+    "BTWhereUsedVersionReferencedInfo",
     "BTWidthMateDisplayData2888",
     "BTWorkflowableObjectInfo",
     "BTWorkflowableObjectObserver",
@@ -3002,6 +3019,7 @@ __all__ = (
     "ComponentsResponses",
     "ComponentsSchemas",
     "ComponentsSecuritySchemes",
+    "ConfigInfo",
     "ConfigurationEntry",
     "ConfigurationInfoEntry",
     "Contact",
@@ -3108,6 +3126,7 @@ __all__ = (
     "GBTParameterVisibilityLogicalOp",
     "GBTParasolidEncodingType",
     "GBTPartColorCycleVersion",
+    "GBTPartFaultVisibility",
     "GBTPartStudioDisplayDataVersion",
     "GBTPartStudioInstanceType",
     "GBTPartStudioItemType",
@@ -3298,6 +3317,7 @@ __all__ = (
     "PathItemExtensions",
     "PathItemExtensionsAdditionalProperty",
     "PingWebhookResponseDefault",
+    "Property",
     "ProratedCharges",
     "RemoveUserFromCompanyResponseDefault",
     "RequestBody",

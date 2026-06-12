@@ -6,7 +6,6 @@ from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -92,14 +91,14 @@ class BTTrialInfo:
         if isinstance(_trial_end_date, Unset):
             trial_end_date = UNSET
         else:
-            trial_end_date = isoparse(_trial_end_date)
+            trial_end_date = datetime.datetime.fromisoformat(_trial_end_date)
 
         _trial_start_date = d.pop("trialStartDate", UNSET)
         trial_start_date: datetime.datetime | Unset
         if isinstance(_trial_start_date, Unset):
             trial_start_date = UNSET
         else:
-            trial_start_date = isoparse(_trial_start_date)
+            trial_start_date = datetime.datetime.fromisoformat(_trial_start_date)
 
         bt_trial_info = cls(
             paid_customer_in_past=paid_customer_in_past,

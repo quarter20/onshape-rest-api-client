@@ -22,8 +22,8 @@ class BTPublicationParams:
         description (str | Unset):
         items (list[BTPublicationItemParams] | Unset):
         name (str | Unset):
-        notes (str | Unset):
-        old_client_notes (str | Unset):
+        notes (str | Unset): Deprecated. Use the /documents/{did}/notes endpoint instead.
+        old_client_notes (str | Unset): Deprecated. Use the /documents/{did}/notes endpoint instead.
         owner_id (str | Unset):
         owner_type (int | Unset):
         parent_id (str | Unset):

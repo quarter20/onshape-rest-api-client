@@ -1,3 +1,4 @@
+import datetime
 from http import HTTPStatus
 from typing import Any
 from urllib.parse import quote
@@ -18,6 +19,9 @@ def _get_kwargs(
     include_global_permissions: bool | Unset = False,
     offset: int | Unset = 0,
     limit: int | Unset = 20,
+    role_filter: list[int] | Unset = UNSET,
+    after_date_added: datetime.datetime | Unset = UNSET,
+    before_date_added: datetime.datetime | Unset = UNSET,
 ) -> dict[str, Any]:
 
     params: dict[str, Any] = {}
@@ -33,6 +37,22 @@ def _get_kwargs(
     params["offset"] = offset
 
     params["limit"] = limit
+
+    json_role_filter: list[int] | Unset = UNSET
+    if not isinstance(role_filter, Unset):
+        json_role_filter = role_filter
+
+    params["roleFilter"] = json_role_filter
+
+    json_after_date_added: str | Unset = UNSET
+    if not isinstance(after_date_added, Unset):
+        json_after_date_added = after_date_added.isoformat()
+    params["afterDateAdded"] = json_after_date_added
+
+    json_before_date_added: str | Unset = UNSET
+    if not isinstance(before_date_added, Unset):
+        json_before_date_added = before_date_added.isoformat()
+    params["beforeDateAdded"] = json_before_date_added
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -76,6 +96,9 @@ def sync_detailed(
     include_global_permissions: bool | Unset = False,
     offset: int | Unset = 0,
     limit: int | Unset = 20,
+    role_filter: list[int] | Unset = UNSET,
+    after_date_added: datetime.datetime | Unset = UNSET,
+    before_date_added: datetime.datetime | Unset = UNSET,
 ) -> Response[BTListResponseBTCompanyUserInfo]:
     """Get a list of members in a company.
 
@@ -89,6 +112,9 @@ def sync_detailed(
         include_global_permissions (bool | Unset):  Default: False.
         offset (int | Unset):  Default: 0.
         limit (int | Unset):  Default: 20.
+        role_filter (list[int] | Unset):
+        after_date_added (datetime.datetime | Unset):
+        before_date_added (datetime.datetime | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -106,6 +132,9 @@ def sync_detailed(
         include_global_permissions=include_global_permissions,
         offset=offset,
         limit=limit,
+        role_filter=role_filter,
+        after_date_added=after_date_added,
+        before_date_added=before_date_added,
     )
 
     response = client.get_httpx_client().request(
@@ -125,6 +154,9 @@ def sync(
     include_global_permissions: bool | Unset = False,
     offset: int | Unset = 0,
     limit: int | Unset = 20,
+    role_filter: list[int] | Unset = UNSET,
+    after_date_added: datetime.datetime | Unset = UNSET,
+    before_date_added: datetime.datetime | Unset = UNSET,
 ) -> BTListResponseBTCompanyUserInfo | None:
     """Get a list of members in a company.
 
@@ -138,6 +170,9 @@ def sync(
         include_global_permissions (bool | Unset):  Default: False.
         offset (int | Unset):  Default: 0.
         limit (int | Unset):  Default: 20.
+        role_filter (list[int] | Unset):
+        after_date_added (datetime.datetime | Unset):
+        before_date_added (datetime.datetime | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -156,6 +191,9 @@ def sync(
         include_global_permissions=include_global_permissions,
         offset=offset,
         limit=limit,
+        role_filter=role_filter,
+        after_date_added=after_date_added,
+        before_date_added=before_date_added,
     ).parsed
 
 
@@ -169,6 +207,9 @@ async def asyncio_detailed(
     include_global_permissions: bool | Unset = False,
     offset: int | Unset = 0,
     limit: int | Unset = 20,
+    role_filter: list[int] | Unset = UNSET,
+    after_date_added: datetime.datetime | Unset = UNSET,
+    before_date_added: datetime.datetime | Unset = UNSET,
 ) -> Response[BTListResponseBTCompanyUserInfo]:
     """Get a list of members in a company.
 
@@ -182,6 +223,9 @@ async def asyncio_detailed(
         include_global_permissions (bool | Unset):  Default: False.
         offset (int | Unset):  Default: 0.
         limit (int | Unset):  Default: 20.
+        role_filter (list[int] | Unset):
+        after_date_added (datetime.datetime | Unset):
+        before_date_added (datetime.datetime | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -199,6 +243,9 @@ async def asyncio_detailed(
         include_global_permissions=include_global_permissions,
         offset=offset,
         limit=limit,
+        role_filter=role_filter,
+        after_date_added=after_date_added,
+        before_date_added=before_date_added,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -216,6 +263,9 @@ async def asyncio(
     include_global_permissions: bool | Unset = False,
     offset: int | Unset = 0,
     limit: int | Unset = 20,
+    role_filter: list[int] | Unset = UNSET,
+    after_date_added: datetime.datetime | Unset = UNSET,
+    before_date_added: datetime.datetime | Unset = UNSET,
 ) -> BTListResponseBTCompanyUserInfo | None:
     """Get a list of members in a company.
 
@@ -229,6 +279,9 @@ async def asyncio(
         include_global_permissions (bool | Unset):  Default: False.
         offset (int | Unset):  Default: 0.
         limit (int | Unset):  Default: 20.
+        role_filter (list[int] | Unset):
+        after_date_added (datetime.datetime | Unset):
+        before_date_added (datetime.datetime | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -248,5 +301,8 @@ async def asyncio(
             include_global_permissions=include_global_permissions,
             offset=offset,
             limit=limit,
+            role_filter=role_filter,
+            after_date_added=after_date_added,
+            before_date_added=before_date_added,
         )
     ).parsed

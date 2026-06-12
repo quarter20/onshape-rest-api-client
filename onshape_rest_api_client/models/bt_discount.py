@@ -6,7 +6,6 @@ from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -174,7 +173,7 @@ class BTDiscount:
         if isinstance(_created_at, Unset):
             created_at = UNSET
         else:
-            created_at = isoparse(_created_at)
+            created_at = datetime.datetime.fromisoformat(_created_at)
 
         created_by = d.pop("createdBy", UNSET)
 
@@ -185,7 +184,7 @@ class BTDiscount:
         if isinstance(_expires_at, Unset):
             expires_at = UNSET
         else:
-            expires_at = isoparse(_expires_at)
+            expires_at = datetime.datetime.fromisoformat(_expires_at)
 
         _id = d.pop("id", UNSET)
         id: BTDiscountOwnerIdPlanId | Unset
@@ -206,7 +205,7 @@ class BTDiscount:
         if isinstance(_modified_at, Unset):
             modified_at = UNSET
         else:
-            modified_at = isoparse(_modified_at)
+            modified_at = datetime.datetime.fromisoformat(_modified_at)
 
         modified_by = d.pop("modifiedBy", UNSET)
 
@@ -223,7 +222,7 @@ class BTDiscount:
         if isinstance(_used_at, Unset):
             used_at = UNSET
         else:
-            used_at = isoparse(_used_at)
+            used_at = datetime.datetime.fromisoformat(_used_at)
 
         bt_discount = cls(
             account_balance=account_balance,

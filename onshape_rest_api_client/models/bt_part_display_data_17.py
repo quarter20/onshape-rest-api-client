@@ -7,6 +7,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 from ..models.gbt_mesh_state import GBTMeshState
+from ..models.gbt_part_fault_visibility import GBTPartFaultVisibility
 from ..models.gbt_part_visibility import GBTPartVisibility
 from ..types import UNSET, Unset
 
@@ -31,6 +32,7 @@ class BTPartDisplayData17:
         bt_type (str | Unset): Type of JSON object.
         custom_properties (BTPartCustomProperties1338 | Unset):
         default_color_hash (str | Unset):
+        fault_visibility (GBTPartFaultVisibility | Unset):
         has_faults (bool | Unset):
         hidden (bool | Unset):
         high_box_corner (BTVector3D389 | Unset):
@@ -59,6 +61,7 @@ class BTPartDisplayData17:
     bt_type: str | Unset = UNSET
     custom_properties: BTPartCustomProperties1338 | Unset = UNSET
     default_color_hash: str | Unset = UNSET
+    fault_visibility: GBTPartFaultVisibility | Unset = UNSET
     has_faults: bool | Unset = UNSET
     hidden: bool | Unset = UNSET
     high_box_corner: BTVector3D389 | Unset = UNSET
@@ -98,6 +101,10 @@ class BTPartDisplayData17:
             custom_properties = self.custom_properties.to_dict()
 
         default_color_hash = self.default_color_hash
+
+        fault_visibility: str | Unset = UNSET
+        if not isinstance(self.fault_visibility, Unset):
+            fault_visibility = self.fault_visibility.value
 
         has_faults = self.has_faults
 
@@ -173,6 +180,8 @@ class BTPartDisplayData17:
             field_dict["customProperties"] = custom_properties
         if default_color_hash is not UNSET:
             field_dict["defaultColorHash"] = default_color_hash
+        if fault_visibility is not UNSET:
+            field_dict["faultVisibility"] = fault_visibility
         if has_faults is not UNSET:
             field_dict["hasFaults"] = has_faults
         if hidden is not UNSET:
@@ -252,6 +261,13 @@ class BTPartDisplayData17:
             custom_properties = BTPartCustomProperties1338.from_dict(_custom_properties)
 
         default_color_hash = d.pop("defaultColorHash", UNSET)
+
+        _fault_visibility = d.pop("faultVisibility", UNSET)
+        fault_visibility: GBTPartFaultVisibility | Unset
+        if isinstance(_fault_visibility, Unset):
+            fault_visibility = UNSET
+        else:
+            fault_visibility = GBTPartFaultVisibility(_fault_visibility)
 
         has_faults = d.pop("hasFaults", UNSET)
 
@@ -345,6 +361,7 @@ class BTPartDisplayData17:
             bt_type=bt_type,
             custom_properties=custom_properties,
             default_color_hash=default_color_hash,
+            fault_visibility=fault_visibility,
             has_faults=has_faults,
             hidden=hidden,
             high_box_corner=high_box_corner,

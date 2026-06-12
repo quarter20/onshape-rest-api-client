@@ -16,6 +16,8 @@ class BTElementLibrarySummaryInfo:
     """Element library metadata
 
     Attributes:
+        current_public_version (str | Unset): If present, this library is public and this field contains the version Id
+            of the current public version. If not present, this library is not public.
         href (str | Unset): URI to fetch complete information of the resource.
         id (str | Unset): Id of the resource.
         library_definition_id (str | Unset): The ID of the definition of the element library.
@@ -28,6 +30,7 @@ class BTElementLibrarySummaryInfo:
         view_ref (str | Unset): URI to visualize the resource in a webclient if applicable.
     """
 
+    current_public_version: str | Unset = UNSET
     href: str | Unset = UNSET
     id: str | Unset = UNSET
     library_definition_id: str | Unset = UNSET
@@ -41,6 +44,8 @@ class BTElementLibrarySummaryInfo:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        current_public_version = self.current_public_version
+
         href = self.href
 
         id = self.id
@@ -64,6 +69,8 @@ class BTElementLibrarySummaryInfo:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if current_public_version is not UNSET:
+            field_dict["currentPublicVersion"] = current_public_version
         if href is not UNSET:
             field_dict["href"] = href
         if id is not UNSET:
@@ -90,6 +97,8 @@ class BTElementLibrarySummaryInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
+        current_public_version = d.pop("currentPublicVersion", UNSET)
+
         href = d.pop("href", UNSET)
 
         id = d.pop("id", UNSET)
@@ -111,6 +120,7 @@ class BTElementLibrarySummaryInfo:
         view_ref = d.pop("viewRef", UNSET)
 
         bt_element_library_summary_info = cls(
+            current_public_version=current_public_version,
             href=href,
             id=id,
             library_definition_id=library_definition_id,

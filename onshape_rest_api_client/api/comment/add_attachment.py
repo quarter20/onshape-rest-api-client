@@ -27,6 +27,8 @@ def _get_kwargs(
     if not isinstance(body, Unset):
         _kwargs["files"] = body.to_multipart()
 
+    headers["Content-Type"] = "multipart/form-data; boundary=+++"
+
     _kwargs["headers"] = headers
     return _kwargs
 
@@ -53,6 +55,8 @@ def sync_detailed(
     body: BTBFileUpload | Unset = UNSET,
 ) -> Response[BTCommentInfo]:
     """Add an attachment to a comment.
+
+     Attach a file to the comment. The file must be in JPEG, PNG, or GIF format
 
     Args:
         cid (str):
@@ -86,6 +90,8 @@ def sync(
 ) -> BTCommentInfo | None:
     """Add an attachment to a comment.
 
+     Attach a file to the comment. The file must be in JPEG, PNG, or GIF format
+
     Args:
         cid (str):
         body (BTBFileUpload | Unset):
@@ -112,6 +118,8 @@ async def asyncio_detailed(
     body: BTBFileUpload | Unset = UNSET,
 ) -> Response[BTCommentInfo]:
     """Add an attachment to a comment.
+
+     Attach a file to the comment. The file must be in JPEG, PNG, or GIF format
 
     Args:
         cid (str):
@@ -142,6 +150,8 @@ async def asyncio(
     body: BTBFileUpload | Unset = UNSET,
 ) -> BTCommentInfo | None:
     """Add an attachment to a comment.
+
+     Attach a file to the comment. The file must be in JPEG, PNG, or GIF format
 
     Args:
         cid (str):

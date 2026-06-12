@@ -6,7 +6,6 @@ from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -258,7 +257,7 @@ class BTCompanyUserSummaryInfo:
         if isinstance(_last_login_time, Unset):
             last_login_time = UNSET
         else:
-            last_login_time = isoparse(_last_login_time)
+            last_login_time = datetime.datetime.fromisoformat(_last_login_time)
 
         personal_message_allowed = d.pop("personalMessageAllowed", UNSET)
 

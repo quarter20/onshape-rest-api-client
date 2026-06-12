@@ -6,7 +6,6 @@ from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..models.gbt_element_branch_status import GBTElementBranchStatus
 from ..models.gbt_element_type import GBTElementType
@@ -235,7 +234,7 @@ class BTElementMergeInfo:
         if isinstance(_source_modified_at, Unset):
             source_modified_at = UNSET
         else:
-            source_modified_at = isoparse(_source_modified_at)
+            source_modified_at = datetime.datetime.fromisoformat(_source_modified_at)
 
         _source_modified_by = d.pop("sourceModifiedBy", UNSET)
         source_modified_by: BTUserBasicSummaryInfo | Unset
@@ -264,7 +263,7 @@ class BTElementMergeInfo:
         if isinstance(_target_modified_at, Unset):
             target_modified_at = UNSET
         else:
-            target_modified_at = isoparse(_target_modified_at)
+            target_modified_at = datetime.datetime.fromisoformat(_target_modified_at)
 
         _target_modified_by = d.pop("targetModifiedBy", UNSET)
         target_modified_by: BTUserBasicSummaryInfo | Unset

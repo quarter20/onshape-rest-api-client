@@ -29,8 +29,8 @@ class BTDocumentParams:
         is_public (bool | Unset): Set to `true` to make the document public.
         name (str | Unset): Document name.
         not_revision_managed (bool | Unset): Set to `true` to indicate that revisions are not managed for this document.
-        notes (str | Unset): Document notes.
-        old_client_notes (str | Unset): Historical document notes.
+        notes (str | Unset): Deprecated. Use the /documents/{did}/notes endpoint instead.
+        old_client_notes (str | Unset): Deprecated. Use the /documents/{did}/notes endpoint instead.
         owner_email (str | Unset): The document owner's email address.
         owner_id (str | Unset): If `ownerType=USER`, this is the user ID. If `ownerType=COMPANY`, this is the company
             ID.

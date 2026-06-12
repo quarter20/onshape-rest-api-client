@@ -6,7 +6,6 @@ from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -98,14 +97,14 @@ class BTPrivacyConsentInfo:
         if isinstance(_communications_opt_in_date, Unset):
             communications_opt_in_date = UNSET
         else:
-            communications_opt_in_date = isoparse(_communications_opt_in_date)
+            communications_opt_in_date = datetime.datetime.fromisoformat(_communications_opt_in_date)
 
         _communications_opt_out_date = d.pop("communicationsOptOutDate", UNSET)
         communications_opt_out_date: datetime.datetime | Unset
         if isinstance(_communications_opt_out_date, Unset):
             communications_opt_out_date = UNSET
         else:
-            communications_opt_out_date = isoparse(_communications_opt_out_date)
+            communications_opt_out_date = datetime.datetime.fromisoformat(_communications_opt_out_date)
 
         communications_status = d.pop("communicationsStatus", UNSET)
 
@@ -116,14 +115,14 @@ class BTPrivacyConsentInfo:
         if isinstance(_data_processing_opt_in_date, Unset):
             data_processing_opt_in_date = UNSET
         else:
-            data_processing_opt_in_date = isoparse(_data_processing_opt_in_date)
+            data_processing_opt_in_date = datetime.datetime.fromisoformat(_data_processing_opt_in_date)
 
         _data_processing_opt_out_date = d.pop("dataProcessingOptOutDate", UNSET)
         data_processing_opt_out_date: datetime.datetime | Unset
         if isinstance(_data_processing_opt_out_date, Unset):
             data_processing_opt_out_date = UNSET
         else:
-            data_processing_opt_out_date = isoparse(_data_processing_opt_out_date)
+            data_processing_opt_out_date = datetime.datetime.fromisoformat(_data_processing_opt_out_date)
 
         data_processing_status = d.pop("dataProcessingStatus", UNSET)
 

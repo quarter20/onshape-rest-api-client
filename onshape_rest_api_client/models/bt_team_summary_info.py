@@ -6,7 +6,6 @@ from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -214,7 +213,7 @@ class BTTeamSummaryInfo:
         if isinstance(_created_at, Unset):
             created_at = UNSET
         else:
-            created_at = isoparse(_created_at)
+            created_at = datetime.datetime.fromisoformat(_created_at)
 
         _created_by = d.pop("createdBy", UNSET)
         created_by: BTUserBasicSummaryInfo | Unset
@@ -242,7 +241,7 @@ class BTTeamSummaryInfo:
         if isinstance(_modified_at, Unset):
             modified_at = UNSET
         else:
-            modified_at = isoparse(_modified_at)
+            modified_at = datetime.datetime.fromisoformat(_modified_at)
 
         _modified_by = d.pop("modifiedBy", UNSET)
         modified_by: BTUserBasicSummaryInfo | Unset

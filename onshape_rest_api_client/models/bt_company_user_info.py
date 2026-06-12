@@ -6,7 +6,6 @@ from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..models.user_role_priority import UserRolePriority
 from ..types import UNSET, Unset
@@ -148,7 +147,7 @@ class BTCompanyUserInfo:
         if isinstance(_date_added, Unset):
             date_added = UNSET
         else:
-            date_added = isoparse(_date_added)
+            date_added = datetime.datetime.fromisoformat(_date_added)
 
         documentation_name_override = d.pop("documentationNameOverride", UNSET)
 
@@ -163,7 +162,7 @@ class BTCompanyUserInfo:
         if isinstance(_last_login_time, Unset):
             last_login_time = UNSET
         else:
-            last_login_time = isoparse(_last_login_time)
+            last_login_time = datetime.datetime.fromisoformat(_last_login_time)
 
         light = d.pop("light", UNSET)
 

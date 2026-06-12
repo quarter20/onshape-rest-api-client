@@ -4,7 +4,6 @@ from typing import Any
 from urllib.parse import quote
 
 import httpx
-from dateutil.parser import isoparse
 
 from ...client import AuthenticatedClient, Client
 from ...models.bt_list_response_bt_object_workflow_info import BTListResponseBTObjectWorkflowInfo
@@ -18,7 +17,7 @@ def _get_kwargs(
     object_types: list[BTAPIWorkflowableType] | Unset = UNSET,
     states: list[str] | Unset = UNSET,
     limit: int | Unset = 20,
-    modified_after: datetime.datetime | Unset = isoparse("2000-01-01T00:00:00Z"),
+    modified_after: datetime.datetime | Unset = datetime.datetime.fromisoformat("2000-01-01T00:00:00Z"),
 ) -> dict[str, Any]:
 
     params: dict[str, Any] = {}
@@ -84,7 +83,7 @@ def sync_detailed(
     object_types: list[BTAPIWorkflowableType] | Unset = UNSET,
     states: list[str] | Unset = UNSET,
     limit: int | Unset = 20,
-    modified_after: datetime.datetime | Unset = isoparse("2000-01-01T00:00:00Z"),
+    modified_after: datetime.datetime | Unset = datetime.datetime.fromisoformat("2000-01-01T00:00:00Z"),
 ) -> Response[BTListResponseBTObjectWorkflowInfo]:
     """Enumerate all of a company's workflowable objects.
 
@@ -97,7 +96,8 @@ def sync_detailed(
         object_types (list[BTAPIWorkflowableType] | Unset):
         states (list[str] | Unset):
         limit (int | Unset):  Default: 20.
-        modified_after (datetime.datetime | Unset):  Default: isoparse('2000-01-01T00:00:00Z').
+        modified_after (datetime.datetime | Unset):  Default:
+            datetime.datetime.fromisoformat('2000-01-01T00:00:00Z').
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -129,7 +129,7 @@ def sync(
     object_types: list[BTAPIWorkflowableType] | Unset = UNSET,
     states: list[str] | Unset = UNSET,
     limit: int | Unset = 20,
-    modified_after: datetime.datetime | Unset = isoparse("2000-01-01T00:00:00Z"),
+    modified_after: datetime.datetime | Unset = datetime.datetime.fromisoformat("2000-01-01T00:00:00Z"),
 ) -> BTListResponseBTObjectWorkflowInfo | None:
     """Enumerate all of a company's workflowable objects.
 
@@ -142,7 +142,8 @@ def sync(
         object_types (list[BTAPIWorkflowableType] | Unset):
         states (list[str] | Unset):
         limit (int | Unset):  Default: 20.
-        modified_after (datetime.datetime | Unset):  Default: isoparse('2000-01-01T00:00:00Z').
+        modified_after (datetime.datetime | Unset):  Default:
+            datetime.datetime.fromisoformat('2000-01-01T00:00:00Z').
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -169,7 +170,7 @@ async def asyncio_detailed(
     object_types: list[BTAPIWorkflowableType] | Unset = UNSET,
     states: list[str] | Unset = UNSET,
     limit: int | Unset = 20,
-    modified_after: datetime.datetime | Unset = isoparse("2000-01-01T00:00:00Z"),
+    modified_after: datetime.datetime | Unset = datetime.datetime.fromisoformat("2000-01-01T00:00:00Z"),
 ) -> Response[BTListResponseBTObjectWorkflowInfo]:
     """Enumerate all of a company's workflowable objects.
 
@@ -182,7 +183,8 @@ async def asyncio_detailed(
         object_types (list[BTAPIWorkflowableType] | Unset):
         states (list[str] | Unset):
         limit (int | Unset):  Default: 20.
-        modified_after (datetime.datetime | Unset):  Default: isoparse('2000-01-01T00:00:00Z').
+        modified_after (datetime.datetime | Unset):  Default:
+            datetime.datetime.fromisoformat('2000-01-01T00:00:00Z').
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -212,7 +214,7 @@ async def asyncio(
     object_types: list[BTAPIWorkflowableType] | Unset = UNSET,
     states: list[str] | Unset = UNSET,
     limit: int | Unset = 20,
-    modified_after: datetime.datetime | Unset = isoparse("2000-01-01T00:00:00Z"),
+    modified_after: datetime.datetime | Unset = datetime.datetime.fromisoformat("2000-01-01T00:00:00Z"),
 ) -> BTListResponseBTObjectWorkflowInfo | None:
     """Enumerate all of a company's workflowable objects.
 
@@ -225,7 +227,8 @@ async def asyncio(
         object_types (list[BTAPIWorkflowableType] | Unset):
         states (list[str] | Unset):
         limit (int | Unset):  Default: 20.
-        modified_after (datetime.datetime | Unset):  Default: isoparse('2000-01-01T00:00:00Z').
+        modified_after (datetime.datetime | Unset):  Default:
+            datetime.datetime.fromisoformat('2000-01-01T00:00:00Z').
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

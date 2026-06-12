@@ -6,7 +6,6 @@ from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..models.bt_workflow_observer_entry_type import BTWorkflowObserverEntryType
 from ..models.bt_workflow_observer_state import BTWorkflowObserverState
@@ -196,7 +195,7 @@ class BTWorkflowableObjectObserver:
         if isinstance(_approval_date, Unset):
             approval_date = UNSET
         else:
-            approval_date = isoparse(_approval_date)
+            approval_date = datetime.datetime.fromisoformat(_approval_date)
 
         _approval_state = d.pop("approvalState", UNSET)
         approval_state: BTWorkflowObserverState | Unset
@@ -218,7 +217,7 @@ class BTWorkflowableObjectObserver:
         if isinstance(_created_at, Unset):
             created_at = UNSET
         else:
-            created_at = isoparse(_created_at)
+            created_at = datetime.datetime.fromisoformat(_created_at)
 
         created_by = d.pop("createdBy", UNSET)
 
@@ -244,7 +243,7 @@ class BTWorkflowableObjectObserver:
         if isinstance(_modified_at, Unset):
             modified_at = UNSET
         else:
-            modified_at = isoparse(_modified_at)
+            modified_at = datetime.datetime.fromisoformat(_modified_at)
 
         modified_by = d.pop("modifiedBy", UNSET)
 
@@ -263,7 +262,7 @@ class BTWorkflowableObjectObserver:
         if isinstance(_rejection_date, Unset):
             rejection_date = UNSET
         else:
-            rejection_date = isoparse(_rejection_date)
+            rejection_date = datetime.datetime.fromisoformat(_rejection_date)
 
         removable = d.pop("removable", UNSET)
 

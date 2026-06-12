@@ -6,7 +6,6 @@ from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
@@ -153,7 +152,7 @@ class BTPublishedWorkflowInfo:
         if isinstance(_published_date, Unset):
             published_date = UNSET
         else:
-            published_date = isoparse(_published_date)
+            published_date = datetime.datetime.fromisoformat(_published_date)
 
         uses_external_plm = d.pop("usesExternalPlm", UNSET)
 

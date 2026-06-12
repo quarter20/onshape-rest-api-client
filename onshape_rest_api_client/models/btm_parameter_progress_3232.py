@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import Any, TypeVar
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -27,6 +27,7 @@ class BTMParameterProgress3232:
         percent_done (float | Unset):
         status (GBTComputeStatus | Unset):
         status_message (str | Unset):
+        status_messages (list[str] | Unset):
     """
 
     bt_type: str | Unset = UNSET
@@ -39,6 +40,7 @@ class BTMParameterProgress3232:
     percent_done: float | Unset = UNSET
     status: GBTComputeStatus | Unset = UNSET
     status_message: str | Unset = UNSET
+    status_messages: list[str] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -66,6 +68,10 @@ class BTMParameterProgress3232:
 
         status_message = self.status_message
 
+        status_messages: list[str] | Unset = UNSET
+        if not isinstance(self.status_messages, Unset):
+            status_messages = self.status_messages
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
@@ -89,6 +95,8 @@ class BTMParameterProgress3232:
             field_dict["status"] = status
         if status_message is not UNSET:
             field_dict["statusMessage"] = status_message
+        if status_messages is not UNSET:
+            field_dict["statusMessages"] = status_messages
 
         return field_dict
 
@@ -125,6 +133,8 @@ class BTMParameterProgress3232:
 
         status_message = d.pop("statusMessage", UNSET)
 
+        status_messages = cast(list[str], d.pop("statusMessages", UNSET))
+
         btm_parameter_progress_3232 = cls(
             bt_type=bt_type,
             import_microversion=import_microversion,
@@ -136,6 +146,7 @@ class BTMParameterProgress3232:
             percent_done=percent_done,
             status=status,
             status_message=status_message,
+            status_messages=status_messages,
         )
 
         btm_parameter_progress_3232.additional_properties = d

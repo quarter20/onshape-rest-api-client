@@ -13,7 +13,6 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    force_reload: bool | Unset = UNSET,
     version: str | Unset = UNSET,
     version_alias: VersionAlias | Unset = UNSET,
     no_filter: bool | Unset = False,
@@ -28,8 +27,6 @@ def _get_kwargs(
 ) -> dict[str, Any]:
 
     params: dict[str, Any] = {}
-
-    params["forceReload"] = force_reload
 
     params["version"] = version
 
@@ -113,7 +110,6 @@ def _build_response(*, client: AuthenticatedClient | Client, response: httpx.Res
 def sync_detailed(
     *,
     client: AuthenticatedClient | Client,
-    force_reload: bool | Unset = UNSET,
     version: str | Unset = UNSET,
     version_alias: VersionAlias | Unset = UNSET,
     no_filter: bool | Unset = False,
@@ -131,7 +127,6 @@ def sync_detailed(
      The Onshape API OpenAPI specification is returned in the JSON format.
 
     Args:
-        force_reload (bool | Unset):
         version (str | Unset):
         version_alias (VersionAlias | Unset):
         no_filter (bool | Unset):  Default: False.
@@ -153,7 +148,6 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
-        force_reload=force_reload,
         version=version,
         version_alias=version_alias,
         no_filter=no_filter,
@@ -177,7 +171,6 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient | Client,
-    force_reload: bool | Unset = UNSET,
     version: str | Unset = UNSET,
     version_alias: VersionAlias | Unset = UNSET,
     no_filter: bool | Unset = False,
@@ -195,7 +188,6 @@ def sync(
      The Onshape API OpenAPI specification is returned in the JSON format.
 
     Args:
-        force_reload (bool | Unset):
         version (str | Unset):
         version_alias (VersionAlias | Unset):
         no_filter (bool | Unset):  Default: False.
@@ -218,7 +210,6 @@ def sync(
 
     return sync_detailed(
         client=client,
-        force_reload=force_reload,
         version=version,
         version_alias=version_alias,
         no_filter=no_filter,
@@ -236,7 +227,6 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient | Client,
-    force_reload: bool | Unset = UNSET,
     version: str | Unset = UNSET,
     version_alias: VersionAlias | Unset = UNSET,
     no_filter: bool | Unset = False,
@@ -254,7 +244,6 @@ async def asyncio_detailed(
      The Onshape API OpenAPI specification is returned in the JSON format.
 
     Args:
-        force_reload (bool | Unset):
         version (str | Unset):
         version_alias (VersionAlias | Unset):
         no_filter (bool | Unset):  Default: False.
@@ -276,7 +265,6 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
-        force_reload=force_reload,
         version=version,
         version_alias=version_alias,
         no_filter=no_filter,
@@ -298,7 +286,6 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient | Client,
-    force_reload: bool | Unset = UNSET,
     version: str | Unset = UNSET,
     version_alias: VersionAlias | Unset = UNSET,
     no_filter: bool | Unset = False,
@@ -316,7 +303,6 @@ async def asyncio(
      The Onshape API OpenAPI specification is returned in the JSON format.
 
     Args:
-        force_reload (bool | Unset):
         version (str | Unset):
         version_alias (VersionAlias | Unset):
         no_filter (bool | Unset):  Default: False.
@@ -340,7 +326,6 @@ async def asyncio(
     return (
         await asyncio_detailed(
             client=client,
-            force_reload=force_reload,
             version=version,
             version_alias=version_alias,
             no_filter=no_filter,

@@ -57,6 +57,8 @@ def sync_detailed(
 ) -> Response[BTGlobalTreeNodeSummaryInfo]:
     """Update document attributes by document ID.
 
+     Use [updateDocumentNotes](#/Document/updateDocumentNotes) to update document notes.
+
     Args:
         did (str):
         body (BTDocumentParams): Parameters for creating and updating documents.
@@ -89,6 +91,8 @@ def sync(
 ) -> BTGlobalTreeNodeSummaryInfo | None:
     """Update document attributes by document ID.
 
+     Use [updateDocumentNotes](#/Document/updateDocumentNotes) to update document notes.
+
     Args:
         did (str):
         body (BTDocumentParams): Parameters for creating and updating documents.
@@ -115,6 +119,8 @@ async def asyncio_detailed(
     body: BTDocumentParams,
 ) -> Response[BTGlobalTreeNodeSummaryInfo]:
     """Update document attributes by document ID.
+
+     Use [updateDocumentNotes](#/Document/updateDocumentNotes) to update document notes.
 
     Args:
         did (str):
@@ -145,6 +151,8 @@ async def asyncio(
     body: BTDocumentParams,
 ) -> BTGlobalTreeNodeSummaryInfo | None:
     """Update document attributes by document ID.
+
+     Use [updateDocumentNotes](#/Document/updateDocumentNotes) to update document notes.
 
     Args:
         did (str):
