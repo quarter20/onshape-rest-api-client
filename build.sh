@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 echo "-------------------------------------------"
 echo "Updating onshape_rest_api_client (Mac only)"
 pushd /tmp
@@ -11,6 +14,7 @@ echo "Changelog info:"
 jq ".servers[0].url, .info.version" onshape_openapi.json
 openapi-python-client --version
 popd
+[ -d /tmp/onshape-rest-api-client/onshape_rest_api_client ] || { echo "generation failed: /tmp/onshape-rest-api-client/onshape_rest_api_client not found"; exit 1; }
 trash onshape_rest_api_client
 mv /tmp/onshape-rest-api-client/onshape_rest_api_client .
 echo "-------------------------------------------"
