@@ -19,7 +19,10 @@ trash onshape_rest_api_client
 mv /tmp/onshape-rest-api-client/onshape_rest_api_client .
 echo "-------------------------------------------"
 echo "Now"
-echo "1. add release details to CHANGELOG.md"
+echo "1. add release details to CHANGELOG.md (doublecheck first column for duplicates!)"
+echo ""
+echo "|$(jq -r '.info.version | sub("\\.[^.]*$"; ".0")' /tmp/onshape_openapi.json)|$(date '+%B %-d, %Y')|$(jq -r '.servers[0].url | split("/") | last' /tmp/onshape_openapi.json)|$(openapi-python-client --version | awk '{print $NF}')|"
+echo "
 echo "2. update pyproject.toml [project] version"
 echo "3. if server url has changed, update README.md"
 echo "4. commit to github"
