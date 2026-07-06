@@ -59,7 +59,7 @@ class BTMLoad3538:
         version (int | Unset):
         defined_by_components (bool | Unset):
         direction_flipped (bool | Unset):
-        fgs_base_units (str | Unset):
+        fgs_units (str | Unset):
         load_component_parameter_ids (BTMLoad3538LoadComponentParameterIds | Unset):
         load_region_parameter_id (str | Unset):
         load_type (GBTLoadType | Unset):
@@ -97,7 +97,7 @@ class BTMLoad3538:
     version: int | Unset = UNSET
     defined_by_components: bool | Unset = UNSET
     direction_flipped: bool | Unset = UNSET
-    fgs_base_units: str | Unset = UNSET
+    fgs_units: str | Unset = UNSET
     load_component_parameter_ids: BTMLoad3538LoadComponentParameterIds | Unset = UNSET
     load_region_parameter_id: str | Unset = UNSET
     load_type: GBTLoadType | Unset = UNSET
@@ -198,7 +198,7 @@ class BTMLoad3538:
 
         direction_flipped = self.direction_flipped
 
-        fgs_base_units = self.fgs_base_units
+        fgs_units = self.fgs_units
 
         load_component_parameter_ids: dict[str, Any] | Unset = UNSET
         if not isinstance(self.load_component_parameter_ids, Unset):
@@ -281,8 +281,8 @@ class BTMLoad3538:
             field_dict["definedByComponents"] = defined_by_components
         if direction_flipped is not UNSET:
             field_dict["directionFlipped"] = direction_flipped
-        if fgs_base_units is not UNSET:
-            field_dict["fgsBaseUnits"] = fgs_base_units
+        if fgs_units is not UNSET:
+            field_dict["fgsUnits"] = fgs_units
         if load_component_parameter_ids is not UNSET:
             field_dict["loadComponentParameterIds"] = load_component_parameter_ids
         if load_region_parameter_id is not UNSET:
@@ -416,7 +416,7 @@ class BTMLoad3538:
 
         direction_flipped = d.pop("directionFlipped", UNSET)
 
-        fgs_base_units = d.pop("fgsBaseUnits", UNSET)
+        fgs_units = d.pop("fgsUnits", UNSET)
 
         _load_component_parameter_ids = d.pop("loadComponentParameterIds", UNSET)
         load_component_parameter_ids: BTMLoad3538LoadComponentParameterIds | Unset
@@ -481,7 +481,7 @@ class BTMLoad3538:
             version=version,
             defined_by_components=defined_by_components,
             direction_flipped=direction_flipped,
-            fgs_base_units=fgs_base_units,
+            fgs_units=fgs_units,
             load_component_parameter_ids=load_component_parameter_ids,
             load_region_parameter_id=load_region_parameter_id,
             load_type=load_type,

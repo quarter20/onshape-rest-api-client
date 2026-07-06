@@ -9,6 +9,7 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.bt_instance_properties_4828 import BTInstanceProperties4828
     from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
 
 
@@ -23,6 +24,7 @@ class BTInstanceControlNode750:
         import_microversion (str | Unset): Microversion that resulted from the import.
         node_id (str | Unset):
         parent_suppressed (bool | Unset):
+        properties (BTInstanceProperties4828 | Unset):
         suppressed (bool | Unset):
         suppressed_field_index (int | Unset):
         suppression_configured (bool | Unset): `true` if the suppression is configured in the Part Studio.
@@ -34,6 +36,7 @@ class BTInstanceControlNode750:
     import_microversion: str | Unset = UNSET
     node_id: str | Unset = UNSET
     parent_suppressed: bool | Unset = UNSET
+    properties: BTInstanceProperties4828 | Unset = UNSET
     suppressed: bool | Unset = UNSET
     suppressed_field_index: int | Unset = UNSET
     suppression_configured: bool | Unset = UNSET
@@ -49,6 +52,10 @@ class BTInstanceControlNode750:
         node_id = self.node_id
 
         parent_suppressed = self.parent_suppressed
+
+        properties: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.properties, Unset):
+            properties = self.properties.to_dict()
 
         suppressed = self.suppressed
 
@@ -73,6 +80,8 @@ class BTInstanceControlNode750:
             field_dict["nodeId"] = node_id
         if parent_suppressed is not UNSET:
             field_dict["parentSuppressed"] = parent_suppressed
+        if properties is not UNSET:
+            field_dict["properties"] = properties
         if suppressed is not UNSET:
             field_dict["suppressed"] = suppressed
         if suppressed_field_index is not UNSET:
@@ -88,6 +97,7 @@ class BTInstanceControlNode750:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        from ..models.bt_instance_properties_4828 import BTInstanceProperties4828
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
 
         d = dict(src_dict)
@@ -98,6 +108,13 @@ class BTInstanceControlNode750:
         node_id = d.pop("nodeId", UNSET)
 
         parent_suppressed = d.pop("parentSuppressed", UNSET)
+
+        _properties = d.pop("properties", UNSET)
+        properties: BTInstanceProperties4828 | Unset
+        if isinstance(_properties, Unset):
+            properties = UNSET
+        else:
+            properties = BTInstanceProperties4828.from_dict(_properties)
 
         suppressed = d.pop("suppressed", UNSET)
 
@@ -119,6 +136,7 @@ class BTInstanceControlNode750:
             import_microversion=import_microversion,
             node_id=node_id,
             parent_suppressed=parent_suppressed,
+            properties=properties,
             suppressed=suppressed,
             suppressed_field_index=suppressed_field_index,
             suppression_configured=suppression_configured,

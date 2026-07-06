@@ -28,6 +28,8 @@ class BTUserSettingsInfo:
     Attributes:
         axis_rotation_lock (bool | Unset):
         common_units (BTCommonUnitsInfo | Unset):
+        context_translucency_slider_value (float | Unset):
+        context_translucent (bool | Unset):
         custom_colors (list[str] | Unset):
         default_units (BTDefaultUnitsInfo | Unset):
         display_assembly_properties (bool | Unset):
@@ -70,6 +72,8 @@ class BTUserSettingsInfo:
 
     axis_rotation_lock: bool | Unset = UNSET
     common_units: BTCommonUnitsInfo | Unset = UNSET
+    context_translucency_slider_value: float | Unset = UNSET
+    context_translucent: bool | Unset = UNSET
     custom_colors: list[str] | Unset = UNSET
     default_units: BTDefaultUnitsInfo | Unset = UNSET
     display_assembly_properties: bool | Unset = UNSET
@@ -116,6 +120,10 @@ class BTUserSettingsInfo:
         common_units: dict[str, Any] | Unset = UNSET
         if not isinstance(self.common_units, Unset):
             common_units = self.common_units.to_dict()
+
+        context_translucency_slider_value = self.context_translucency_slider_value
+
+        context_translucent = self.context_translucent
 
         custom_colors: list[str] | Unset = UNSET
         if not isinstance(self.custom_colors, Unset):
@@ -222,6 +230,10 @@ class BTUserSettingsInfo:
             field_dict["axisRotationLock"] = axis_rotation_lock
         if common_units is not UNSET:
             field_dict["commonUnits"] = common_units
+        if context_translucency_slider_value is not UNSET:
+            field_dict["contextTranslucencySliderValue"] = context_translucency_slider_value
+        if context_translucent is not UNSET:
+            field_dict["contextTranslucent"] = context_translucent
         if custom_colors is not UNSET:
             field_dict["customColors"] = custom_colors
         if default_units is not UNSET:
@@ -321,6 +333,10 @@ class BTUserSettingsInfo:
             common_units = UNSET
         else:
             common_units = BTCommonUnitsInfo.from_dict(_common_units)
+
+        context_translucency_slider_value = d.pop("contextTranslucencySliderValue", UNSET)
+
+        context_translucent = d.pop("contextTranslucent", UNSET)
 
         custom_colors = cast(list[str], d.pop("customColors", UNSET))
 
@@ -446,6 +462,8 @@ class BTUserSettingsInfo:
         bt_user_settings_info = cls(
             axis_rotation_lock=axis_rotation_lock,
             common_units=common_units,
+            context_translucency_slider_value=context_translucency_slider_value,
+            context_translucent=context_translucent,
             custom_colors=custom_colors,
             default_units=default_units,
             display_assembly_properties=display_assembly_properties,

@@ -31,7 +31,9 @@ class BTCompanyUserInfo:
         id (str | Unset): Id of the resource.
         last_login_time (datetime.datetime | Unset):
         light (bool | Unset):
+        make_personal_copies (bool | Unset):
         name (str | Unset): Name of the resource.
+        scheduled_removal_date (datetime.datetime | Unset):
         state (int | Unset):
         user (BTUserBasicSummaryInfo | Unset):
         user_role_priority (UserRolePriority | Unset):
@@ -47,7 +49,9 @@ class BTCompanyUserInfo:
     id: str | Unset = UNSET
     last_login_time: datetime.datetime | Unset = UNSET
     light: bool | Unset = UNSET
+    make_personal_copies: bool | Unset = UNSET
     name: str | Unset = UNSET
+    scheduled_removal_date: datetime.datetime | Unset = UNSET
     state: int | Unset = UNSET
     user: BTUserBasicSummaryInfo | Unset = UNSET
     user_role_priority: UserRolePriority | Unset = UNSET
@@ -79,7 +83,13 @@ class BTCompanyUserInfo:
 
         light = self.light
 
+        make_personal_copies = self.make_personal_copies
+
         name = self.name
+
+        scheduled_removal_date: str | Unset = UNSET
+        if not isinstance(self.scheduled_removal_date, Unset):
+            scheduled_removal_date = self.scheduled_removal_date.isoformat()
 
         state = self.state
 
@@ -114,8 +124,12 @@ class BTCompanyUserInfo:
             field_dict["lastLoginTime"] = last_login_time
         if light is not UNSET:
             field_dict["light"] = light
+        if make_personal_copies is not UNSET:
+            field_dict["makePersonalCopies"] = make_personal_copies
         if name is not UNSET:
             field_dict["name"] = name
+        if scheduled_removal_date is not UNSET:
+            field_dict["scheduledRemovalDate"] = scheduled_removal_date
         if state is not UNSET:
             field_dict["state"] = state
         if user is not UNSET:
@@ -166,7 +180,16 @@ class BTCompanyUserInfo:
 
         light = d.pop("light", UNSET)
 
+        make_personal_copies = d.pop("makePersonalCopies", UNSET)
+
         name = d.pop("name", UNSET)
+
+        _scheduled_removal_date = d.pop("scheduledRemovalDate", UNSET)
+        scheduled_removal_date: datetime.datetime | Unset
+        if isinstance(_scheduled_removal_date, Unset):
+            scheduled_removal_date = UNSET
+        else:
+            scheduled_removal_date = datetime.datetime.fromisoformat(_scheduled_removal_date)
 
         state = d.pop("state", UNSET)
 
@@ -196,7 +219,9 @@ class BTCompanyUserInfo:
             id=id,
             last_login_time=last_login_time,
             light=light,
+            make_personal_copies=make_personal_copies,
             name=name,
+            scheduled_removal_date=scheduled_removal_date,
             state=state,
             user=user,
             user_role_priority=user_role_priority,

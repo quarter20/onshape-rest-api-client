@@ -35,6 +35,7 @@ class BTDocumentElementProcessingInfo:
         filename (str | Unset):
         force_units (str | Unset):
         foreign_data_id (str | Unset):
+        frequency_units (str | Unset):
         id (str | Unset):
         length_units (str | Unset):
         mass_units (str | Unset):
@@ -69,6 +70,7 @@ class BTDocumentElementProcessingInfo:
     filename: str | Unset = UNSET
     force_units: str | Unset = UNSET
     foreign_data_id: str | Unset = UNSET
+    frequency_units: str | Unset = UNSET
     id: str | Unset = UNSET
     length_units: str | Unset = UNSET
     mass_units: str | Unset = UNSET
@@ -120,6 +122,8 @@ class BTDocumentElementProcessingInfo:
         force_units = self.force_units
 
         foreign_data_id = self.foreign_data_id
+
+        frequency_units = self.frequency_units
 
         id = self.id
 
@@ -192,6 +196,8 @@ class BTDocumentElementProcessingInfo:
             field_dict["forceUnits"] = force_units
         if foreign_data_id is not UNSET:
             field_dict["foreignDataId"] = foreign_data_id
+        if frequency_units is not UNSET:
+            field_dict["frequencyUnits"] = frequency_units
         if id is not UNSET:
             field_dict["id"] = id
         if length_units is not UNSET:
@@ -276,6 +282,8 @@ class BTDocumentElementProcessingInfo:
 
         foreign_data_id = d.pop("foreignDataId", UNSET)
 
+        frequency_units = d.pop("frequencyUnits", UNSET)
+
         id = d.pop("id", UNSET)
 
         length_units = d.pop("lengthUnits", UNSET)
@@ -338,6 +346,7 @@ class BTDocumentElementProcessingInfo:
             filename=filename,
             force_units=force_units,
             foreign_data_id=foreign_data_id,
+            frequency_units=frequency_units,
             id=id,
             length_units=length_units,
             mass_units=mass_units,

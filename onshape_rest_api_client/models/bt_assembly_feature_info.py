@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING, Any, TypeVar
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..models.gbt_node_status_type import GBTNodeStatusType
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -23,12 +24,14 @@ class BTAssemblyFeatureInfo:
         feature_data (BTAssemblyFeatureDataInfo | Unset):
         feature_type (str | Unset):
         id (str | Unset):
+        status (GBTNodeStatusType | Unset):
         suppressed (bool | Unset):
     """
 
     feature_data: BTAssemblyFeatureDataInfo | Unset = UNSET
     feature_type: str | Unset = UNSET
     id: str | Unset = UNSET
+    status: GBTNodeStatusType | Unset = UNSET
     suppressed: bool | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -41,6 +44,10 @@ class BTAssemblyFeatureInfo:
 
         id = self.id
 
+        status: str | Unset = UNSET
+        if not isinstance(self.status, Unset):
+            status = self.status.value
+
         suppressed = self.suppressed
 
         field_dict: dict[str, Any] = {}
@@ -52,6 +59,8 @@ class BTAssemblyFeatureInfo:
             field_dict["featureType"] = feature_type
         if id is not UNSET:
             field_dict["id"] = id
+        if status is not UNSET:
+            field_dict["status"] = status
         if suppressed is not UNSET:
             field_dict["suppressed"] = suppressed
 
@@ -73,12 +82,20 @@ class BTAssemblyFeatureInfo:
 
         id = d.pop("id", UNSET)
 
+        _status = d.pop("status", UNSET)
+        status: GBTNodeStatusType | Unset
+        if isinstance(_status, Unset):
+            status = UNSET
+        else:
+            status = GBTNodeStatusType(_status)
+
         suppressed = d.pop("suppressed", UNSET)
 
         bt_assembly_feature_info = cls(
             feature_data=feature_data,
             feature_type=feature_type,
             id=id,
+            status=status,
             suppressed=suppressed,
         )
 

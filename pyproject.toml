@@ -1,6 +1,6 @@
 [project]
 name = "onshape-rest-api-client"
-version = "1.216.0"
+version = "1.217.0"
 description = "A heavyweight python client library for accessing the Onshape REST API"
 license = "MIT"
 license-files = [

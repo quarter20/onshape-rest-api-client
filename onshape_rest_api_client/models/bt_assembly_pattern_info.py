@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING, Any, TypeVar
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..models.gbt_node_status_type import GBTNodeStatusType
 from ..models.gbt_pattern_type import GBTPatternType
 from ..types import UNSET, Unset
 
@@ -25,6 +26,7 @@ class BTAssemblyPatternInfo:
         name (str | Unset): Name of the pattern.
         seed_to_pattern_instances (BTAssemblyPatternInfoSeedToPatternInstances | Unset): Mapping of seed to pattern
             instance ids.
+        status (GBTNodeStatusType | Unset):
         suppressed (bool | Unset): If pattern is suppressed.
         type_ (GBTPatternType | Unset):
     """
@@ -32,6 +34,7 @@ class BTAssemblyPatternInfo:
     id: str | Unset = UNSET
     name: str | Unset = UNSET
     seed_to_pattern_instances: BTAssemblyPatternInfoSeedToPatternInstances | Unset = UNSET
+    status: GBTNodeStatusType | Unset = UNSET
     suppressed: bool | Unset = UNSET
     type_: GBTPatternType | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -44,6 +47,10 @@ class BTAssemblyPatternInfo:
         seed_to_pattern_instances: dict[str, Any] | Unset = UNSET
         if not isinstance(self.seed_to_pattern_instances, Unset):
             seed_to_pattern_instances = self.seed_to_pattern_instances.to_dict()
+
+        status: str | Unset = UNSET
+        if not isinstance(self.status, Unset):
+            status = self.status.value
 
         suppressed = self.suppressed
 
@@ -60,6 +67,8 @@ class BTAssemblyPatternInfo:
             field_dict["name"] = name
         if seed_to_pattern_instances is not UNSET:
             field_dict["seedToPatternInstances"] = seed_to_pattern_instances
+        if status is not UNSET:
+            field_dict["status"] = status
         if suppressed is not UNSET:
             field_dict["suppressed"] = suppressed
         if type_ is not UNSET:
@@ -87,6 +96,13 @@ class BTAssemblyPatternInfo:
                 _seed_to_pattern_instances
             )
 
+        _status = d.pop("status", UNSET)
+        status: GBTNodeStatusType | Unset
+        if isinstance(_status, Unset):
+            status = UNSET
+        else:
+            status = GBTNodeStatusType(_status)
+
         suppressed = d.pop("suppressed", UNSET)
 
         _type_ = d.pop("type", UNSET)
@@ -100,6 +116,7 @@ class BTAssemblyPatternInfo:
             id=id,
             name=name,
             seed_to_pattern_instances=seed_to_pattern_instances,
+            status=status,
             suppressed=suppressed,
             type_=type_,
         )

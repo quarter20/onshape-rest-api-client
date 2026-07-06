@@ -27,6 +27,8 @@ class BTElementLibrarySummaryInfo:
         owner_id (str | Unset): The owner Id of an element library (either Onshape, company, or user).
         owner_type (int | Unset): The type of library owner, Onshape, user, or company
         source_folder_id (str | Unset): The id of the root folder of the library
+        subscribed (bool | Unset): If true, the current user is subscribed to this library. Applies only to public
+            libraries.
         view_ref (str | Unset): URI to visualize the resource in a webclient if applicable.
     """
 
@@ -40,6 +42,7 @@ class BTElementLibrarySummaryInfo:
     owner_id: str | Unset = UNSET
     owner_type: int | Unset = UNSET
     source_folder_id: str | Unset = UNSET
+    subscribed: bool | Unset = UNSET
     view_ref: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -63,6 +66,8 @@ class BTElementLibrarySummaryInfo:
         owner_type = self.owner_type
 
         source_folder_id = self.source_folder_id
+
+        subscribed = self.subscribed
 
         view_ref = self.view_ref
 
@@ -89,6 +94,8 @@ class BTElementLibrarySummaryInfo:
             field_dict["ownerType"] = owner_type
         if source_folder_id is not UNSET:
             field_dict["sourceFolderId"] = source_folder_id
+        if subscribed is not UNSET:
+            field_dict["subscribed"] = subscribed
         if view_ref is not UNSET:
             field_dict["viewRef"] = view_ref
 
@@ -117,6 +124,8 @@ class BTElementLibrarySummaryInfo:
 
         source_folder_id = d.pop("sourceFolderId", UNSET)
 
+        subscribed = d.pop("subscribed", UNSET)
+
         view_ref = d.pop("viewRef", UNSET)
 
         bt_element_library_summary_info = cls(
@@ -130,6 +139,7 @@ class BTElementLibrarySummaryInfo:
             owner_id=owner_id,
             owner_type=owner_type,
             source_folder_id=source_folder_id,
+            subscribed=subscribed,
             view_ref=view_ref,
         )
 

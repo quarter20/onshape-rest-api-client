@@ -13,6 +13,7 @@ class GBTQuantityType(str, Enum):
     DENSITY = "DENSITY"
     ENERGY = "ENERGY"
     FORCE = "FORCE"
+    FREQUENCY = "FREQUENCY"
     INTEGER = "INTEGER"
     LENGTH = "LENGTH"
     MASS = "MASS"

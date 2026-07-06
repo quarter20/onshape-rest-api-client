@@ -14,6 +14,7 @@ if TYPE_CHECKING:
     from ..models.bt_document_with_version_id import BTDocumentWithVersionId
     from ..models.bt_element_reference_725 import BTElementReference725
     from ..models.bt_instance_base_2263_custom_data import BTInstanceBase2263CustomData
+    from ..models.bt_instance_properties_4828 import BTInstanceProperties4828
     from ..models.bt_microversion_id_366 import BTMicroversionId366
     from ..models.bt_node_with_reference import BTNodeWithReference
     from ..models.bt_revision_custom_data_2090 import BTRevisionCustomData2090
@@ -76,6 +77,7 @@ class BTPartInstance81:
         node_with_reference_list (list[BTNodeWithReference] | Unset):
         parameter_libraries (list[BTMParameter1] | Unset):
         parameters (list[BTMParameter1] | Unset):
+        properties (BTInstanceProperties4828 | Unset):
         reference_parameter (BTMParameterReferenceWithConfiguration3028 | Unset):
         version_id (str | Unset):
         version_id_if_external (str | Unset):
@@ -129,6 +131,7 @@ class BTPartInstance81:
     node_with_reference_list: list[BTNodeWithReference] | Unset = UNSET
     parameter_libraries: list[BTMParameter1] | Unset = UNSET
     parameters: list[BTMParameter1] | Unset = UNSET
+    properties: BTInstanceProperties4828 | Unset = UNSET
     reference_parameter: BTMParameterReferenceWithConfiguration3028 | Unset = UNSET
     version_id: str | Unset = UNSET
     version_id_if_external: str | Unset = UNSET
@@ -263,6 +266,10 @@ class BTPartInstance81:
                 parameters_item = parameters_item_data.to_dict()
                 parameters.append(parameters_item)
 
+        properties: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.properties, Unset):
+            properties = self.properties.to_dict()
+
         reference_parameter: dict[str, Any] | Unset = UNSET
         if not isinstance(self.reference_parameter, Unset):
             reference_parameter = self.reference_parameter.to_dict()
@@ -376,6 +383,8 @@ class BTPartInstance81:
             field_dict["parameterLibraries"] = parameter_libraries
         if parameters is not UNSET:
             field_dict["parameters"] = parameters
+        if properties is not UNSET:
+            field_dict["properties"] = properties
         if reference_parameter is not UNSET:
             field_dict["referenceParameter"] = reference_parameter
         if version_id is not UNSET:
@@ -399,6 +408,7 @@ class BTPartInstance81:
         from ..models.bt_document_with_version_id import BTDocumentWithVersionId
         from ..models.bt_element_reference_725 import BTElementReference725
         from ..models.bt_instance_base_2263_custom_data import BTInstanceBase2263CustomData
+        from ..models.bt_instance_properties_4828 import BTInstanceProperties4828
         from ..models.bt_microversion_id_366 import BTMicroversionId366
         from ..models.bt_node_with_reference import BTNodeWithReference
         from ..models.bt_revision_custom_data_2090 import BTRevisionCustomData2090
@@ -567,6 +577,13 @@ class BTPartInstance81:
 
                 parameters.append(parameters_item)
 
+        _properties = d.pop("properties", UNSET)
+        properties: BTInstanceProperties4828 | Unset
+        if isinstance(_properties, Unset):
+            properties = UNSET
+        else:
+            properties = BTInstanceProperties4828.from_dict(_properties)
+
         _reference_parameter = d.pop("referenceParameter", UNSET)
         reference_parameter: BTMParameterReferenceWithConfiguration3028 | Unset
         if isinstance(_reference_parameter, Unset):
@@ -646,6 +663,7 @@ class BTPartInstance81:
             node_with_reference_list=node_with_reference_list,
             parameter_libraries=parameter_libraries,
             parameters=parameters,
+            properties=properties,
             reference_parameter=reference_parameter,
             version_id=version_id,
             version_id_if_external=version_id_if_external,

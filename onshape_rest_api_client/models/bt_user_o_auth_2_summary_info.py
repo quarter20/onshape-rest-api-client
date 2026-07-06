@@ -35,6 +35,7 @@ class BTUserOAuth2SummaryInfo:
         first_name (str | Unset):
         last_name (str | Unset):
         company (BTCompanySummaryInfo | Unset):
+        company_user_state (int | Unset):
         confirmation_requested (bool | Unset):
         documentation_name_override (str | Unset):
         global_permissions (GlobalPermissionInfo | Unset):
@@ -66,6 +67,7 @@ class BTUserOAuth2SummaryInfo:
     first_name: str | Unset = UNSET
     last_name: str | Unset = UNSET
     company: BTCompanySummaryInfo | Unset = UNSET
+    company_user_state: int | Unset = UNSET
     confirmation_requested: bool | Unset = UNSET
     documentation_name_override: str | Unset = UNSET
     global_permissions: GlobalPermissionInfo | Unset = UNSET
@@ -112,6 +114,8 @@ class BTUserOAuth2SummaryInfo:
         company: dict[str, Any] | Unset = UNSET
         if not isinstance(self.company, Unset):
             company = self.company.to_dict()
+
+        company_user_state = self.company_user_state
 
         confirmation_requested = self.confirmation_requested
 
@@ -185,6 +189,8 @@ class BTUserOAuth2SummaryInfo:
             field_dict["lastName"] = last_name
         if company is not UNSET:
             field_dict["company"] = company
+        if company_user_state is not UNSET:
+            field_dict["companyUserState"] = company_user_state
         if confirmation_requested is not UNSET:
             field_dict["confirmationRequested"] = confirmation_requested
         if documentation_name_override is not UNSET:
@@ -257,6 +263,8 @@ class BTUserOAuth2SummaryInfo:
         else:
             company = BTCompanySummaryInfo.from_dict(_company)
 
+        company_user_state = d.pop("companyUserState", UNSET)
+
         confirmation_requested = d.pop("confirmationRequested", UNSET)
 
         documentation_name_override = d.pop("documentationNameOverride", UNSET)
@@ -320,6 +328,7 @@ class BTUserOAuth2SummaryInfo:
             first_name=first_name,
             last_name=last_name,
             company=company,
+            company_user_state=company_user_state,
             confirmation_requested=confirmation_requested,
             documentation_name_override=documentation_name_override,
             global_permissions=global_permissions,

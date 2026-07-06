@@ -29,6 +29,7 @@ class BTMParameterConfigured2222:
         value_string (str | Unset):
         configuration_parameter_id (str | Unset):
         configuration_parameter_id_field_index (int | Unset):
+        pass_through_boolean (bool | Unset):
         values (list[BTMConfiguredValue1341] | Unset):
         values_field_index (int | Unset):
     """
@@ -42,6 +43,7 @@ class BTMParameterConfigured2222:
     value_string: str | Unset = UNSET
     configuration_parameter_id: str | Unset = UNSET
     configuration_parameter_id_field_index: int | Unset = UNSET
+    pass_through_boolean: bool | Unset = UNSET
     values: list[BTMConfiguredValue1341] | Unset = UNSET
     values_field_index: int | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -66,6 +68,8 @@ class BTMParameterConfigured2222:
         configuration_parameter_id = self.configuration_parameter_id
 
         configuration_parameter_id_field_index = self.configuration_parameter_id_field_index
+
+        pass_through_boolean = self.pass_through_boolean
 
         values: list[dict[str, Any]] | Unset = UNSET
         if not isinstance(self.values, Unset):
@@ -97,6 +101,8 @@ class BTMParameterConfigured2222:
             field_dict["configurationParameterId"] = configuration_parameter_id
         if configuration_parameter_id_field_index is not UNSET:
             field_dict["configurationParameterIdFieldIndex"] = configuration_parameter_id_field_index
+        if pass_through_boolean is not UNSET:
+            field_dict["passThroughBoolean"] = pass_through_boolean
         if values is not UNSET:
             field_dict["values"] = values
         if values_field_index is not UNSET:
@@ -132,6 +138,8 @@ class BTMParameterConfigured2222:
 
         configuration_parameter_id_field_index = d.pop("configurationParameterIdFieldIndex", UNSET)
 
+        pass_through_boolean = d.pop("passThroughBoolean", UNSET)
+
         _values = d.pop("values", UNSET)
         values: list[BTMConfiguredValue1341] | Unset = UNSET
         if _values is not UNSET:
@@ -153,6 +161,7 @@ class BTMParameterConfigured2222:
             value_string=value_string,
             configuration_parameter_id=configuration_parameter_id,
             configuration_parameter_id_field_index=configuration_parameter_id_field_index,
+            pass_through_boolean=pass_through_boolean,
             values=values,
             values_field_index=values_field_index,
         )

@@ -34,6 +34,7 @@ class BTCompanyUserSummaryInfo:
         first_name (str | Unset):
         last_name (str | Unset):
         company (BTCompanySummaryInfo | Unset):
+        company_user_state (int | Unset):
         confirmation_requested (bool | Unset):
         documentation_name_override (str | Unset):
         global_permissions (GlobalPermissionInfo | Unset):
@@ -46,7 +47,6 @@ class BTCompanyUserSummaryInfo:
         source (int | Unset):
         admin (bool | Unset):
         cls (str | Unset):
-        company_user_state (int | Unset):
     """
 
     json_type: str
@@ -62,6 +62,7 @@ class BTCompanyUserSummaryInfo:
     first_name: str | Unset = UNSET
     last_name: str | Unset = UNSET
     company: BTCompanySummaryInfo | Unset = UNSET
+    company_user_state: int | Unset = UNSET
     confirmation_requested: bool | Unset = UNSET
     documentation_name_override: str | Unset = UNSET
     global_permissions: GlobalPermissionInfo | Unset = UNSET
@@ -74,7 +75,6 @@ class BTCompanyUserSummaryInfo:
     source: int | Unset = UNSET
     admin: bool | Unset = UNSET
     cls: str | Unset = UNSET
-    company_user_state: int | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -106,6 +106,8 @@ class BTCompanyUserSummaryInfo:
         if not isinstance(self.company, Unset):
             company = self.company.to_dict()
 
+        company_user_state = self.company_user_state
+
         confirmation_requested = self.confirmation_requested
 
         documentation_name_override = self.documentation_name_override
@@ -133,8 +135,6 @@ class BTCompanyUserSummaryInfo:
         admin = self.admin
 
         cls = self.cls
-
-        company_user_state = self.company_user_state
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -167,6 +167,8 @@ class BTCompanyUserSummaryInfo:
             field_dict["lastName"] = last_name
         if company is not UNSET:
             field_dict["company"] = company
+        if company_user_state is not UNSET:
+            field_dict["companyUserState"] = company_user_state
         if confirmation_requested is not UNSET:
             field_dict["confirmationRequested"] = confirmation_requested
         if documentation_name_override is not UNSET:
@@ -191,8 +193,6 @@ class BTCompanyUserSummaryInfo:
             field_dict["admin"] = admin
         if cls is not UNSET:
             field_dict["cls"] = cls
-        if company_user_state is not UNSET:
-            field_dict["companyUserState"] = company_user_state
 
         return field_dict
 
@@ -233,6 +233,8 @@ class BTCompanyUserSummaryInfo:
         else:
             company = BTCompanySummaryInfo.from_dict(_company)
 
+        company_user_state = d.pop("companyUserState", UNSET)
+
         confirmation_requested = d.pop("confirmationRequested", UNSET)
 
         documentation_name_override = d.pop("documentationNameOverride", UNSET)
@@ -267,8 +269,6 @@ class BTCompanyUserSummaryInfo:
 
         cls = d.pop("cls", UNSET)
 
-        company_user_state = d.pop("companyUserState", UNSET)
-
         bt_company_user_summary_info = cls(
             json_type=json_type,
             href=href,
@@ -283,6 +283,7 @@ class BTCompanyUserSummaryInfo:
             first_name=first_name,
             last_name=last_name,
             company=company,
+            company_user_state=company_user_state,
             confirmation_requested=confirmation_requested,
             documentation_name_override=documentation_name_override,
             global_permissions=global_permissions,
@@ -295,7 +296,6 @@ class BTCompanyUserSummaryInfo:
             source=source,
             admin=admin,
             cls=cls,
-            company_user_state=company_user_state,
         )
 
         bt_company_user_summary_info.additional_properties = d

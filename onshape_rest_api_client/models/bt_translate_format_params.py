@@ -141,6 +141,7 @@ class BTTranslateFormatParams:
         urdf_mesh_format (GBTUrdfMeshFormat | Unset):
         urdf_stl_encoding (GBTStlEncodingType | Unset): STL encoding type, `TEXT | BINARY`
         use_file_name_to_set_single_part_name (bool | Unset):
+        use_glb_compression (bool | Unset):
         use_gltf_compression (bool | Unset):
         use_iges_import_post_processing (bool | Unset):
         use_iges_compatibility_mode (bool | Unset):
@@ -244,6 +245,7 @@ class BTTranslateFormatParams:
     urdf_mesh_format: GBTUrdfMeshFormat | Unset = UNSET
     urdf_stl_encoding: GBTStlEncodingType | Unset = UNSET
     use_file_name_to_set_single_part_name: bool | Unset = UNSET
+    use_glb_compression: bool | Unset = UNSET
     use_gltf_compression: bool | Unset = UNSET
     use_iges_import_post_processing: bool | Unset = UNSET
     use_iges_compatibility_mode: bool | Unset = UNSET
@@ -466,6 +468,8 @@ class BTTranslateFormatParams:
 
         use_file_name_to_set_single_part_name = self.use_file_name_to_set_single_part_name
 
+        use_glb_compression = self.use_glb_compression
+
         use_gltf_compression = self.use_gltf_compression
 
         use_iges_import_post_processing = self.use_iges_import_post_processing
@@ -673,6 +677,8 @@ class BTTranslateFormatParams:
             field_dict["urdfStlEncoding"] = urdf_stl_encoding
         if use_file_name_to_set_single_part_name is not UNSET:
             field_dict["useFileNameToSetSinglePartName"] = use_file_name_to_set_single_part_name
+        if use_glb_compression is not UNSET:
+            field_dict["useGlbCompression"] = use_glb_compression
         if use_gltf_compression is not UNSET:
             field_dict["useGltfCompression"] = use_gltf_compression
         if use_iges_import_post_processing is not UNSET:
@@ -923,6 +929,8 @@ class BTTranslateFormatParams:
 
         use_file_name_to_set_single_part_name = d.pop("useFileNameToSetSinglePartName", UNSET)
 
+        use_glb_compression = d.pop("useGlbCompression", UNSET)
+
         use_gltf_compression = d.pop("useGltfCompression", UNSET)
 
         use_iges_import_post_processing = d.pop("useIGESImportPostProcessing", UNSET)
@@ -1030,6 +1038,7 @@ class BTTranslateFormatParams:
             urdf_mesh_format=urdf_mesh_format,
             urdf_stl_encoding=urdf_stl_encoding,
             use_file_name_to_set_single_part_name=use_file_name_to_set_single_part_name,
+            use_glb_compression=use_glb_compression,
             use_gltf_compression=use_gltf_compression,
             use_iges_import_post_processing=use_iges_import_post_processing,
             use_iges_compatibility_mode=use_iges_compatibility_mode,

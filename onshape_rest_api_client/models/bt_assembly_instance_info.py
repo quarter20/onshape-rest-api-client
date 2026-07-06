@@ -8,6 +8,7 @@ from attrs import field as _attrs_field
 
 from ..models.bt_assembly_instance_status import BTAssemblyInstanceStatus
 from ..models.bt_assembly_instance_type import BTAssemblyInstanceType
+from ..models.gbt_node_status_type import GBTNodeStatusType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="BTAssemblyInstanceInfo")
@@ -23,6 +24,7 @@ class BTAssemblyInstanceInfo:
         document_microversion (str | Unset):
         document_version (str | Unset):
         element_id (str | Unset):
+        error_status (GBTNodeStatusType | Unset):
         feature_id (str | Unset):
         full_configuration (str | Unset):
         id (str | Unset):
@@ -41,6 +43,7 @@ class BTAssemblyInstanceInfo:
     document_microversion: str | Unset = UNSET
     document_version: str | Unset = UNSET
     element_id: str | Unset = UNSET
+    error_status: GBTNodeStatusType | Unset = UNSET
     feature_id: str | Unset = UNSET
     full_configuration: str | Unset = UNSET
     id: str | Unset = UNSET
@@ -64,6 +67,10 @@ class BTAssemblyInstanceInfo:
         document_version = self.document_version
 
         element_id = self.element_id
+
+        error_status: str | Unset = UNSET
+        if not isinstance(self.error_status, Unset):
+            error_status = self.error_status.value
 
         feature_id = self.feature_id
 
@@ -104,6 +111,8 @@ class BTAssemblyInstanceInfo:
             field_dict["documentVersion"] = document_version
         if element_id is not UNSET:
             field_dict["elementId"] = element_id
+        if error_status is not UNSET:
+            field_dict["errorStatus"] = error_status
         if feature_id is not UNSET:
             field_dict["featureId"] = feature_id
         if full_configuration is not UNSET:
@@ -141,6 +150,13 @@ class BTAssemblyInstanceInfo:
         document_version = d.pop("documentVersion", UNSET)
 
         element_id = d.pop("elementId", UNSET)
+
+        _error_status = d.pop("errorStatus", UNSET)
+        error_status: GBTNodeStatusType | Unset
+        if isinstance(_error_status, Unset):
+            error_status = UNSET
+        else:
+            error_status = GBTNodeStatusType(_error_status)
 
         feature_id = d.pop("featureId", UNSET)
 
@@ -180,6 +196,7 @@ class BTAssemblyInstanceInfo:
             document_microversion=document_microversion,
             document_version=document_version,
             element_id=element_id,
+            error_status=error_status,
             feature_id=feature_id,
             full_configuration=full_configuration,
             id=id,

@@ -167,6 +167,7 @@ from .bt_assembly_mirror_feature_interface import BTAssemblyMirrorFeatureInterfa
 from .bt_assembly_modification_params import BTAssemblyModificationParams
 from .bt_assembly_modification_params_suppression_states import BTAssemblyModificationParamsSuppressionStates
 from .bt_assembly_occurrence_info import BTAssemblyOccurrenceInfo
+from .bt_assembly_occurrence_info_mate_statuses import BTAssemblyOccurrenceInfoMateStatuses
 from .bt_assembly_parametric_instance_child_info import BTAssemblyParametricInstanceChildInfo
 from .bt_assembly_parametric_instance_info import BTAssemblyParametricInstanceInfo
 from .bt_assembly_part_body_type import BTAssemblyPartBodyType
@@ -328,7 +329,7 @@ from .bt_default_units_info import BTDefaultUnitsInfo
 from .bt_derived_assembly_mirror_4204 import BTDerivedAssemblyMirror4204
 from .bt_device_login_secret_info import BTDeviceLoginSecretInfo
 from .bt_diff_info import BTDiffInfo
-from .bt_diff_info_collection_changes import BTDiffInfoCollectionChanges
+from .bt_diff_info_changes import BTDiffInfoChanges
 from .bt_diff_info_collection_type import BTDiffInfoCollectionType
 from .bt_diff_json_response_2725 import BTDiffJsonResponse2725
 from .bt_diff_json_response_2725_patch import BTDiffJsonResponse2725Patch
@@ -513,6 +514,8 @@ from .bt_instance_base_2263 import BTInstanceBase2263
 from .bt_instance_base_2263_custom_data import BTInstanceBase2263CustomData
 from .bt_instance_control_node_750 import BTInstanceControlNode750
 from .bt_instance_folder_3627 import BTInstanceFolder3627
+from .bt_instance_properties_4828 import BTInstanceProperties4828
+from .bt_instance_properties_4828_property_values import BTInstanceProperties4828PropertyValues
 from .bt_instance_standard_content_data_2081 import BTInstanceStandardContentData2081
 from .bt_instance_with_reference import BTInstanceWithReference
 from .bt_instance_with_reference_custom_data import BTInstanceWithReferenceCustomData
@@ -639,6 +642,9 @@ from .bt_occurrence_with_full_part_ids_1464 import BTOccurrenceWithFullPartIds14
 from .bt_old_permission import BTOldPermission
 from .bt_one_configuration_part_properties_1661 import BTOneConfigurationPartProperties1661
 from .bt_one_configuration_part_properties_1661_configuration import BTOneConfigurationPartProperties1661Configuration
+from .bt_one_configuration_properties_1900 import BTOneConfigurationProperties1900
+from .bt_one_configuration_properties_1900_configuration import BTOneConfigurationProperties1900Configuration
+from .bt_one_configuration_properties_1900_property_values import BTOneConfigurationProperties1900PropertyValues
 from .bt_one_part_properties_230 import BTOnePartProperties230
 from .bt_optionally_configured_value import BTOptionallyConfiguredValue
 from .bt_or_filter_167 import BTOrFilter167
@@ -1399,6 +1405,7 @@ from .export_stl_response_default import ExportStlResponseDefault
 from .external_documentation import ExternalDocumentation
 from .external_documentation_extensions import ExternalDocumentationExtensions
 from .external_documentation_extensions_additional_property import ExternalDocumentationExtensionsAdditionalProperty
+from .gbt_annotation_attachment_location import GBTAnnotationAttachmentLocation
 from .gbt_annotation_type import GBTAnnotationType
 from .gbt_app_element_associative_data_type import GBTAppElementAssociativeDataType
 from .gbt_app_element_reference_type import GBTAppElementReferenceType
@@ -1922,6 +1929,7 @@ __all__ = (
     "BTAssemblyModificationParams",
     "BTAssemblyModificationParamsSuppressionStates",
     "BTAssemblyOccurrenceInfo",
+    "BTAssemblyOccurrenceInfoMateStatuses",
     "BTAssemblyParametricInstanceChildInfo",
     "BTAssemblyParametricInstanceInfo",
     "BTAssemblyPartBodyType",
@@ -2079,7 +2087,7 @@ __all__ = (
     "BTDerivedAssemblyMirror4204",
     "BTDeviceLoginSecretInfo",
     "BTDiffInfo",
-    "BTDiffInfoCollectionChanges",
+    "BTDiffInfoChanges",
     "BTDiffInfoCollectionType",
     "BTDiffJsonResponse2725",
     "BTDiffJsonResponse2725Patch",
@@ -2270,6 +2278,8 @@ __all__ = (
     "BTInstanceBase2263CustomData",
     "BTInstanceControlNode750",
     "BTInstanceFolder3627",
+    "BTInstanceProperties4828",
+    "BTInstanceProperties4828PropertyValues",
     "BTInstanceStandardContentData2081",
     "BTInstanceWithReference",
     "BTInstanceWithReferenceCustomData",
@@ -2529,6 +2539,9 @@ __all__ = (
     "BTOldPermission",
     "BTOneConfigurationPartProperties1661",
     "BTOneConfigurationPartProperties1661Configuration",
+    "BTOneConfigurationProperties1900",
+    "BTOneConfigurationProperties1900Configuration",
+    "BTOneConfigurationProperties1900PropertyValues",
     "BTOnePartProperties230",
     "BTOptionallyConfiguredValue",
     "BTOrFilter167",
@@ -3071,6 +3084,7 @@ __all__ = (
     "ExternalDocumentation",
     "ExternalDocumentationExtensions",
     "ExternalDocumentationExtensionsAdditionalProperty",
+    "GBTAnnotationAttachmentLocation",
     "GBTAnnotationType",
     "GBTAppearanceType",
     "GBTAppElementAssociativeDataType",

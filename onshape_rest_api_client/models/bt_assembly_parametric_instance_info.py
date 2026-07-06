@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING, Any, TypeVar
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..models.gbt_node_status_type import GBTNodeStatusType
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -23,6 +24,7 @@ class BTAssemblyParametricInstanceInfo:
         children (list[BTAssemblyParametricInstanceChildInfo] | Unset): Child instances.
         id (str | Unset): Id of the Part Studio instance.
         name (str | Unset): Name of the parametric instance.
+        status (GBTNodeStatusType | Unset):
         suppressed (bool | Unset): If the parametric is suppressed.
         type_ (str | Unset): Type of parametric instance.
     """
@@ -30,6 +32,7 @@ class BTAssemblyParametricInstanceInfo:
     children: list[BTAssemblyParametricInstanceChildInfo] | Unset = UNSET
     id: str | Unset = UNSET
     name: str | Unset = UNSET
+    status: GBTNodeStatusType | Unset = UNSET
     suppressed: bool | Unset = UNSET
     type_: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -46,6 +49,10 @@ class BTAssemblyParametricInstanceInfo:
 
         name = self.name
 
+        status: str | Unset = UNSET
+        if not isinstance(self.status, Unset):
+            status = self.status.value
+
         suppressed = self.suppressed
 
         type_ = self.type_
@@ -59,6 +66,8 @@ class BTAssemblyParametricInstanceInfo:
             field_dict["id"] = id
         if name is not UNSET:
             field_dict["name"] = name
+        if status is not UNSET:
+            field_dict["status"] = status
         if suppressed is not UNSET:
             field_dict["suppressed"] = suppressed
         if type_ is not UNSET:
@@ -84,6 +93,13 @@ class BTAssemblyParametricInstanceInfo:
 
         name = d.pop("name", UNSET)
 
+        _status = d.pop("status", UNSET)
+        status: GBTNodeStatusType | Unset
+        if isinstance(_status, Unset):
+            status = UNSET
+        else:
+            status = GBTNodeStatusType(_status)
+
         suppressed = d.pop("suppressed", UNSET)
 
         type_ = d.pop("type", UNSET)
@@ -92,6 +108,7 @@ class BTAssemblyParametricInstanceInfo:
             children=children,
             id=id,
             name=name,
+            status=status,
             suppressed=suppressed,
             type_=type_,
         )

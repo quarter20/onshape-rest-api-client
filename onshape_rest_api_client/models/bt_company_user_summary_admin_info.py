@@ -34,6 +34,7 @@ class BTCompanyUserSummaryAdminInfo:
         first_name (str | Unset):
         last_name (str | Unset):
         company (BTCompanySummaryInfo | Unset):
+        company_user_state (int | Unset):
         confirmation_requested (bool | Unset):
         documentation_name_override (str | Unset):
         global_permissions (GlobalPermissionInfo | Unset):
@@ -46,7 +47,6 @@ class BTCompanyUserSummaryAdminInfo:
         source (int | Unset):
         admin (bool | Unset):
         cls (str | Unset):
-        company_user_state (int | Unset):
         totp_enabled (bool | Unset):
     """
 
@@ -63,6 +63,7 @@ class BTCompanyUserSummaryAdminInfo:
     first_name: str | Unset = UNSET
     last_name: str | Unset = UNSET
     company: BTCompanySummaryInfo | Unset = UNSET
+    company_user_state: int | Unset = UNSET
     confirmation_requested: bool | Unset = UNSET
     documentation_name_override: str | Unset = UNSET
     global_permissions: GlobalPermissionInfo | Unset = UNSET
@@ -75,7 +76,6 @@ class BTCompanyUserSummaryAdminInfo:
     source: int | Unset = UNSET
     admin: bool | Unset = UNSET
     cls: str | Unset = UNSET
-    company_user_state: int | Unset = UNSET
     totp_enabled: bool | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -108,6 +108,8 @@ class BTCompanyUserSummaryAdminInfo:
         if not isinstance(self.company, Unset):
             company = self.company.to_dict()
 
+        company_user_state = self.company_user_state
+
         confirmation_requested = self.confirmation_requested
 
         documentation_name_override = self.documentation_name_override
@@ -135,8 +137,6 @@ class BTCompanyUserSummaryAdminInfo:
         admin = self.admin
 
         cls = self.cls
-
-        company_user_state = self.company_user_state
 
         totp_enabled = self.totp_enabled
 
@@ -171,6 +171,8 @@ class BTCompanyUserSummaryAdminInfo:
             field_dict["lastName"] = last_name
         if company is not UNSET:
             field_dict["company"] = company
+        if company_user_state is not UNSET:
+            field_dict["companyUserState"] = company_user_state
         if confirmation_requested is not UNSET:
             field_dict["confirmationRequested"] = confirmation_requested
         if documentation_name_override is not UNSET:
@@ -195,8 +197,6 @@ class BTCompanyUserSummaryAdminInfo:
             field_dict["admin"] = admin
         if cls is not UNSET:
             field_dict["cls"] = cls
-        if company_user_state is not UNSET:
-            field_dict["companyUserState"] = company_user_state
         if totp_enabled is not UNSET:
             field_dict["totpEnabled"] = totp_enabled
 
@@ -239,6 +239,8 @@ class BTCompanyUserSummaryAdminInfo:
         else:
             company = BTCompanySummaryInfo.from_dict(_company)
 
+        company_user_state = d.pop("companyUserState", UNSET)
+
         confirmation_requested = d.pop("confirmationRequested", UNSET)
 
         documentation_name_override = d.pop("documentationNameOverride", UNSET)
@@ -273,8 +275,6 @@ class BTCompanyUserSummaryAdminInfo:
 
         cls = d.pop("cls", UNSET)
 
-        company_user_state = d.pop("companyUserState", UNSET)
-
         totp_enabled = d.pop("totpEnabled", UNSET)
 
         bt_company_user_summary_admin_info = cls(
@@ -291,6 +291,7 @@ class BTCompanyUserSummaryAdminInfo:
             first_name=first_name,
             last_name=last_name,
             company=company,
+            company_user_state=company_user_state,
             confirmation_requested=confirmation_requested,
             documentation_name_override=documentation_name_override,
             global_permissions=global_permissions,
@@ -303,7 +304,6 @@ class BTCompanyUserSummaryAdminInfo:
             source=source,
             admin=admin,
             cls=cls,
-            company_user_state=company_user_state,
             totp_enabled=totp_enabled,
         )
 

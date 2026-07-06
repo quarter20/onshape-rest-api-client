@@ -1,12 +1,16 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import Any, TypeVar, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
+
+if TYPE_CHECKING:
+    from ..models.bt_assembly_occurrence_info_mate_statuses import BTAssemblyOccurrenceInfoMateStatuses
+
 
 T = TypeVar("T", bound="BTAssemblyOccurrenceInfo")
 
@@ -17,12 +21,14 @@ class BTAssemblyOccurrenceInfo:
     Attributes:
         fixed (bool | Unset):
         hidden (bool | Unset):
+        mate_statuses (BTAssemblyOccurrenceInfoMateStatuses | Unset):
         path (list[str] | Unset):
         transform (list[float] | Unset):
     """
 
     fixed: bool | Unset = UNSET
     hidden: bool | Unset = UNSET
+    mate_statuses: BTAssemblyOccurrenceInfoMateStatuses | Unset = UNSET
     path: list[str] | Unset = UNSET
     transform: list[float] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -31,6 +37,10 @@ class BTAssemblyOccurrenceInfo:
         fixed = self.fixed
 
         hidden = self.hidden
+
+        mate_statuses: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.mate_statuses, Unset):
+            mate_statuses = self.mate_statuses.to_dict()
 
         path: list[str] | Unset = UNSET
         if not isinstance(self.path, Unset):
@@ -47,6 +57,8 @@ class BTAssemblyOccurrenceInfo:
             field_dict["fixed"] = fixed
         if hidden is not UNSET:
             field_dict["hidden"] = hidden
+        if mate_statuses is not UNSET:
+            field_dict["mateStatuses"] = mate_statuses
         if path is not UNSET:
             field_dict["path"] = path
         if transform is not UNSET:
@@ -56,10 +68,19 @@ class BTAssemblyOccurrenceInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        from ..models.bt_assembly_occurrence_info_mate_statuses import BTAssemblyOccurrenceInfoMateStatuses
+
         d = dict(src_dict)
         fixed = d.pop("fixed", UNSET)
 
         hidden = d.pop("hidden", UNSET)
+
+        _mate_statuses = d.pop("mateStatuses", UNSET)
+        mate_statuses: BTAssemblyOccurrenceInfoMateStatuses | Unset
+        if isinstance(_mate_statuses, Unset):
+            mate_statuses = UNSET
+        else:
+            mate_statuses = BTAssemblyOccurrenceInfoMateStatuses.from_dict(_mate_statuses)
 
         path = cast(list[str], d.pop("path", UNSET))
 
@@ -68,6 +89,7 @@ class BTAssemblyOccurrenceInfo:
         bt_assembly_occurrence_info = cls(
             fixed=fixed,
             hidden=hidden,
+            mate_statuses=mate_statuses,
             path=path,
             transform=transform,
         )
