@@ -26,6 +26,7 @@ class GlobalPermissionInfo:
         create_releases (bool | Unset):
         create_tasks (bool | Unset):
         delete_permanently (bool | Unset):
+        enable_labs (bool | Unset):
         export_files (bool | Unset):
         import_files (bool | Unset):
         manage_guest_users (bool | Unset):
@@ -50,6 +51,7 @@ class GlobalPermissionInfo:
     create_releases: bool | Unset = UNSET
     create_tasks: bool | Unset = UNSET
     delete_permanently: bool | Unset = UNSET
+    enable_labs: bool | Unset = UNSET
     export_files: bool | Unset = UNSET
     import_files: bool | Unset = UNSET
     manage_guest_users: bool | Unset = UNSET
@@ -85,6 +87,8 @@ class GlobalPermissionInfo:
         create_tasks = self.create_tasks
 
         delete_permanently = self.delete_permanently
+
+        enable_labs = self.enable_labs
 
         export_files = self.export_files
 
@@ -133,6 +137,8 @@ class GlobalPermissionInfo:
             field_dict["createTasks"] = create_tasks
         if delete_permanently is not UNSET:
             field_dict["deletePermanently"] = delete_permanently
+        if enable_labs is not UNSET:
+            field_dict["enableLabs"] = enable_labs
         if export_files is not UNSET:
             field_dict["exportFiles"] = export_files
         if import_files is not UNSET:
@@ -183,6 +189,8 @@ class GlobalPermissionInfo:
 
         delete_permanently = d.pop("deletePermanently", UNSET)
 
+        enable_labs = d.pop("enableLabs", UNSET)
+
         export_files = d.pop("exportFiles", UNSET)
 
         import_files = d.pop("importFiles", UNSET)
@@ -217,6 +225,7 @@ class GlobalPermissionInfo:
             create_releases=create_releases,
             create_tasks=create_tasks,
             delete_permanently=delete_permanently,
+            enable_labs=enable_labs,
             export_files=export_files,
             import_files=import_files,
             manage_guest_users=manage_guest_users,

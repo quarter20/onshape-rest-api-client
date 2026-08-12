@@ -41,6 +41,7 @@ class BTPTopLevelTypeDeclaration287:
         for_export (bool | Unset):
         space_after_export (BTPSpace10 | Unset):
         symbol_name (BTPIdentifier8 | Unset):
+        top_level_type (GBTPDefinitionType | Unset):
         name (BTPIdentifier8 | Unset):
         space_after_version (BTPSpace10 | Unset):
         version (BTPLiteralNumber258 | Unset):
@@ -63,6 +64,7 @@ class BTPTopLevelTypeDeclaration287:
     for_export: bool | Unset = UNSET
     space_after_export: BTPSpace10 | Unset = UNSET
     symbol_name: BTPIdentifier8 | Unset = UNSET
+    top_level_type: GBTPDefinitionType | Unset = UNSET
     name: BTPIdentifier8 | Unset = UNSET
     space_after_version: BTPSpace10 | Unset = UNSET
     version: BTPLiteralNumber258 | Unset = UNSET
@@ -120,6 +122,10 @@ class BTPTopLevelTypeDeclaration287:
         if not isinstance(self.symbol_name, Unset):
             symbol_name = self.symbol_name.to_dict()
 
+        top_level_type: str | Unset = UNSET
+        if not isinstance(self.top_level_type, Unset):
+            top_level_type = self.top_level_type.value
+
         name: dict[str, Any] | Unset = UNSET
         if not isinstance(self.name, Unset):
             name = self.name.to_dict()
@@ -169,6 +175,8 @@ class BTPTopLevelTypeDeclaration287:
             field_dict["spaceAfterExport"] = space_after_export
         if symbol_name is not UNSET:
             field_dict["symbolName"] = symbol_name
+        if top_level_type is not UNSET:
+            field_dict["topLevelType"] = top_level_type
         if name is not UNSET:
             field_dict["name"] = name
         if space_after_version is not UNSET:
@@ -258,6 +266,13 @@ class BTPTopLevelTypeDeclaration287:
         else:
             symbol_name = BTPIdentifier8.from_dict(_symbol_name)
 
+        _top_level_type = d.pop("topLevelType", UNSET)
+        top_level_type: GBTPDefinitionType | Unset
+        if isinstance(_top_level_type, Unset):
+            top_level_type = UNSET
+        else:
+            top_level_type = GBTPDefinitionType(_top_level_type)
+
         _name = d.pop("name", UNSET)
         name: BTPIdentifier8 | Unset
         if isinstance(_name, Unset):
@@ -297,6 +312,7 @@ class BTPTopLevelTypeDeclaration287:
             for_export=for_export,
             space_after_export=space_after_export,
             symbol_name=symbol_name,
+            top_level_type=top_level_type,
             name=name,
             space_after_version=space_after_version,
             version=version,

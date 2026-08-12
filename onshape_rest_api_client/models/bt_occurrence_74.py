@@ -19,9 +19,6 @@ class BTOccurrence74:
         full_path_as_string (str | Unset):
         head_instance_id (str | Unset):
         internal_occurrence (bool | Unset):
-        occurrence_without_head (BTOccurrence74 | Unset):
-        occurrence_without_tail (BTOccurrence74 | Unset):
-        parent (BTOccurrence74 | Unset):
         path (list[str] | Unset):
         root_occurrence (bool | Unset):
         tail_instance_id (str | Unset):
@@ -31,9 +28,6 @@ class BTOccurrence74:
     full_path_as_string: str | Unset = UNSET
     head_instance_id: str | Unset = UNSET
     internal_occurrence: bool | Unset = UNSET
-    occurrence_without_head: BTOccurrence74 | Unset = UNSET
-    occurrence_without_tail: BTOccurrence74 | Unset = UNSET
-    parent: BTOccurrence74 | Unset = UNSET
     path: list[str] | Unset = UNSET
     root_occurrence: bool | Unset = UNSET
     tail_instance_id: str | Unset = UNSET
@@ -47,18 +41,6 @@ class BTOccurrence74:
         head_instance_id = self.head_instance_id
 
         internal_occurrence = self.internal_occurrence
-
-        occurrence_without_head: dict[str, Any] | Unset = UNSET
-        if not isinstance(self.occurrence_without_head, Unset):
-            occurrence_without_head = self.occurrence_without_head.to_dict()
-
-        occurrence_without_tail: dict[str, Any] | Unset = UNSET
-        if not isinstance(self.occurrence_without_tail, Unset):
-            occurrence_without_tail = self.occurrence_without_tail.to_dict()
-
-        parent: dict[str, Any] | Unset = UNSET
-        if not isinstance(self.parent, Unset):
-            parent = self.parent.to_dict()
 
         path: list[str] | Unset = UNSET
         if not isinstance(self.path, Unset):
@@ -79,12 +61,6 @@ class BTOccurrence74:
             field_dict["headInstanceId"] = head_instance_id
         if internal_occurrence is not UNSET:
             field_dict["internalOccurrence"] = internal_occurrence
-        if occurrence_without_head is not UNSET:
-            field_dict["occurrenceWithoutHead"] = occurrence_without_head
-        if occurrence_without_tail is not UNSET:
-            field_dict["occurrenceWithoutTail"] = occurrence_without_tail
-        if parent is not UNSET:
-            field_dict["parent"] = parent
         if path is not UNSET:
             field_dict["path"] = path
         if root_occurrence is not UNSET:
@@ -105,27 +81,6 @@ class BTOccurrence74:
 
         internal_occurrence = d.pop("internalOccurrence", UNSET)
 
-        _occurrence_without_head = d.pop("occurrenceWithoutHead", UNSET)
-        occurrence_without_head: BTOccurrence74 | Unset
-        if isinstance(_occurrence_without_head, Unset):
-            occurrence_without_head = UNSET
-        else:
-            occurrence_without_head = BTOccurrence74.from_dict(_occurrence_without_head)
-
-        _occurrence_without_tail = d.pop("occurrenceWithoutTail", UNSET)
-        occurrence_without_tail: BTOccurrence74 | Unset
-        if isinstance(_occurrence_without_tail, Unset):
-            occurrence_without_tail = UNSET
-        else:
-            occurrence_without_tail = BTOccurrence74.from_dict(_occurrence_without_tail)
-
-        _parent = d.pop("parent", UNSET)
-        parent: BTOccurrence74 | Unset
-        if isinstance(_parent, Unset):
-            parent = UNSET
-        else:
-            parent = BTOccurrence74.from_dict(_parent)
-
         path = cast(list[str], d.pop("path", UNSET))
 
         root_occurrence = d.pop("rootOccurrence", UNSET)
@@ -137,9 +92,6 @@ class BTOccurrence74:
             full_path_as_string=full_path_as_string,
             head_instance_id=head_instance_id,
             internal_occurrence=internal_occurrence,
-            occurrence_without_head=occurrence_without_head,
-            occurrence_without_tail=occurrence_without_tail,
-            parent=parent,
             path=path,
             root_occurrence=root_occurrence,
             tail_instance_id=tail_instance_id,

@@ -495,6 +495,9 @@ from .bt_inner_array_parameter_location_2368 import BTInnerArrayParameterLocatio
 from .bt_inner_derived_parameter_location_591 import BTInnerDerivedParameterLocation591
 from .bt_inner_parameter_location_1715 import BTInnerParameterLocation1715
 from .bt_insertable_display_data_2405 import BTInsertableDisplayData2405
+from .bt_insertable_display_data_2405_appearance_id_to_appearance_override import (
+    BTInsertableDisplayData2405AppearanceIdToAppearanceOverride,
+)
 from .bt_insertable_display_data_2405_graphics_buffers import BTInsertableDisplayData2405GraphicsBuffers
 from .bt_insertable_display_data_2405_graphics_buffers_additional_property import (
     BTInsertableDisplayData2405GraphicsBuffersAdditionalProperty,
@@ -531,6 +534,8 @@ from .bt_legacy_search_hit import BTLegacySearchHit
 from .bt_legacy_search_hit_highlighted_fields import BTLegacySearchHitHighlightedFields
 from .bt_legacy_search_hit_source_map import BTLegacySearchHitSourceMap
 from .bt_legacy_search_hit_source_map_additional_property import BTLegacySearchHitSourceMapAdditionalProperty
+from .bt_library_material_info import BTLibraryMaterialInfo
+from .bt_library_material_info_property_values import BTLibraryMaterialInfoPropertyValues
 from .bt_line_description_1559 import BTLineDescription1559
 from .bt_linear_dimension_display_data_330 import BTLinearDimensionDisplayData330
 from .bt_link_to_latest_document_info import BTLinkToLatestDocumentInfo
@@ -570,8 +575,10 @@ from .bt_mate_filter_162 import BTMateFilter162
 from .bt_mate_group_display_data_1990 import BTMateGroupDisplayData1990
 from .bt_mate_occurrence_data_1671 import BTMateOccurrenceData1671
 from .bt_mate_occurrence_data_1671_value_map import BTMateOccurrenceData1671ValueMap
+from .bt_material_library_info import BTMaterialLibraryInfo
 from .bt_material_library_metadata_info import BTMaterialLibraryMetadataInfo
 from .bt_material_library_settings_info import BTMaterialLibrarySettingsInfo
+from .bt_material_property_definition_info import BTMaterialPropertyDefinitionInfo
 from .bt_matrix_3x3340 import BTMatrix3X3340
 from .bt_merge_preview_info import BTMergePreviewInfo
 from .bt_merge_strategy import BTMergeStrategy
@@ -786,7 +793,6 @@ from .bt_plan_subscriber_info import BTPlanSubscriberInfo
 from .bt_planar_image_mapping_4398 import BTPlanarImageMapping4398
 from .bt_plane_description_692 import BTPlaneDescription692
 from .bt_plane_orientation_filter_1700 import BTPlaneOrientationFilter1700
-from .bt_plm_context_info import BTPlmContextInfo
 from .bt_point_entity_1439 import BTPointEntity1439
 from .bt_polyline_display_data_3522 import BTPolylineDisplayData3522
 from .bt_privacy_consent_info import BTPrivacyConsentInfo
@@ -822,12 +828,14 @@ from .bt_read_only_parameter_spec_1889 import BTReadOnlyParameterSpec1889
 from .bt_reference_custom_data_1551 import BTReferenceCustomData1551
 from .bt_release_comment_list_info import BTReleaseCommentListInfo
 from .bt_release_item_error_info import BTReleaseItemErrorInfo
-from .bt_release_item_message_body import BTReleaseItemMessageBody
 from .bt_release_package_info import BTReleasePackageInfo
 from .bt_release_package_info_column_names import BTReleasePackageInfoColumnNames
 from .bt_release_package_item_info import BTReleasePackageItemInfo
 from .bt_release_package_item_params import BTReleasePackageItemParams
 from .bt_release_package_params import BTReleasePackageParams
+from .bt_release_stage import BTReleaseStage
+from .bt_release_summary_state import BTReleaseSummaryState
+from .bt_release_transition_status_info import BTReleaseTransitionStatusInfo
 from .bt_resource_owner_info import BTResourceOwnerInfo
 from .bt_rest_user_role import BTRestUserRole
 from .bt_restore_from_history_info import BTRestoreFromHistoryInfo
@@ -840,8 +848,8 @@ from .bt_revision_approver_info import BTRevisionApproverInfo
 from .bt_revision_custom_data_2090 import BTRevisionCustomData2090
 from .bt_revision_info import BTRevisionInfo
 from .bt_revision_list_response import BTRevisionListResponse
-from .bt_revision_message_body import BTRevisionMessageBody
 from .bt_rho_dimension_display_data_2892 import BTRhoDimensionDisplayData2892
+from .bt_rigid_feature_display_data_1595 import BTRigidFeatureDisplayData1595
 from .bt_rigid_or_locked_sub_assembly_output_info_3860 import BTRigidOrLockedSubAssemblyOutputInfo3860
 from .bt_role import BTRole
 from .bt_root_assembly_display_data_96 import BTRootAssemblyDisplayData96
@@ -926,6 +934,10 @@ from .bt_table_assembly_cross_highlight_data_item_2659 import BTTableAssemblyCro
 from .bt_table_base_cross_highlight_data_2609 import BTTableBaseCrossHighlightData2609
 from .bt_table_base_row_metadata_3181 import BTTableBaseRowMetadata3181
 from .bt_table_cell_1114 import BTTableCell1114
+from .bt_table_cell_configuration_parameter_3590 import BTTableCellConfigurationParameter3590
+from .bt_table_cell_configuration_parameter_3590_configuration_parameter_id_to_value import (
+    BTTableCellConfigurationParameter3590ConfigurationParameterIdToValue,
+)
 from .bt_table_cell_modifier_4883 import BTTableCellModifier4883
 from .bt_table_cell_modifier_force_show_configured_5170 import BTTableCellModifierForceShowConfigured5170
 from .bt_table_cell_modifier_info_4585 import BTTableCellModifierInfo4585
@@ -1056,7 +1068,6 @@ from .bt_workflow_state_info import BTWorkflowStateInfo
 from .bt_workflowable_object_info import BTWorkflowableObjectInfo
 from .bt_workflowable_object_observer import BTWorkflowableObjectObserver
 from .bt_workspace_info import BTWorkspaceInfo
-from .bt_workspace_message_body import BTWorkspaceMessageBody
 from .bt_workspace_protection_rule_options import BTWorkspaceProtectionRuleOptions
 from .bt_zip_file_info import BTZipFileInfo
 from .btapi_application_extension_info import BTAPIApplicationExtensionInfo
@@ -1117,6 +1128,7 @@ from .btm_assembly_feature_12218 import BTMAssemblyFeature12218
 from .btm_assembly_feature_21022 import BTMAssemblyFeature21022
 from .btm_assembly_feature_folder_2543 import BTMAssemblyFeatureFolder2543
 from .btm_assembly_mirror_feature_3037 import BTMAssemblyMirrorFeature3037
+from .btm_assembly_parametric_instance_feature_5441 import BTMAssemblyParametricInstanceFeature5441
 from .btm_assembly_pattern_feature_2241 import BTMAssemblyPatternFeature2241
 from .btm_assembly_replicate_feature_1351 import BTMAssemblyReplicateFeature1351
 from .btm_boundary_condition_5556 import BTMBoundaryCondition5556
@@ -1210,6 +1222,8 @@ from .btm_parametric_part_studio_feature_3883 import BTMParametricPartStudioFeat
 from .btm_part_studio_mate_connector_query_1324 import BTMPartStudioMateConnectorQuery1324
 from .btm_read_only_parameter_3800 import BTMReadOnlyParameter3800
 from .btm_record_metrics_1169 import BTMRecordMetrics1169
+from .btm_rigid_feature_3076 import BTMRigidFeature3076
+from .btm_rigid_feature_3076_suppressed_in_simulations import BTMRigidFeature3076SuppressedInSimulations
 from .btm_rollback_150 import BTMRollback150
 from .btm_simulation_feature_5034 import BTMSimulationFeature5034
 from .btm_sketch_151 import BTMSketch151
@@ -1302,8 +1316,10 @@ from .btpl_value_249 import BTPLValue249
 from .btpl_value_access_250 import BTPLValueAccess250
 from .btpl_value_box_dereference_251 import BTPLValueBoxDereference251
 from .btpl_value_var_reference_252 import BTPLValueVarReference252
+from .btplm_context_info import BTPLMContextInfo
 from .btplm_message_body import BTPLMMessageBody
 from .btpso_identity_2741 import BTPSOIdentity2741
+from .btsm_application_type_filter_4430 import BTSMApplicationTypeFilter4430
 from .btsm_bend_table_row_metadata_1705 import BTSMBendTableRowMetadata1705
 from .btsm_definition_entity_type_filter_1651 import BTSMDefinitionEntityTypeFilter1651
 from .btsm_other_joint_table_row_metadata_2640 import BTSMOtherJointTableRowMetadata2640
@@ -1405,6 +1421,7 @@ from .export_stl_response_default import ExportStlResponseDefault
 from .external_documentation import ExternalDocumentation
 from .external_documentation_extensions import ExternalDocumentationExtensions
 from .external_documentation_extensions_additional_property import ExternalDocumentationExtensionsAdditionalProperty
+from .gbt_add_user_to_company_message_body import GBTAddUserToCompanyMessageBody
 from .gbt_annotation_attachment_location import GBTAnnotationAttachmentLocation
 from .gbt_annotation_type import GBTAnnotationType
 from .gbt_app_element_associative_data_type import GBTAppElementAssociativeDataType
@@ -1416,14 +1433,22 @@ from .gbt_bill_of_materials_exclusion_status import GBTBillOfMaterialsExclusionS
 from .gbt_bill_of_materials_expansion_status import GBTBillOfMaterialsExpansionStatus
 from .gbt_bill_of_materials_suppression_status import GBTBillOfMaterialsSuppressionStatus
 from .gbt_body_type import GBTBodyType
+from .gbt_branch_workspace_message_body import GBTBranchWorkspaceMessageBody
 from .gbt_compute_status import GBTComputeStatus
 from .gbt_configuration_parameter_type import GBTConfigurationParameterType
 from .gbt_configured_parent_type import GBTConfiguredParentType
 from .gbt_constraint_type import GBTConstraintType
+from .gbt_create_document_message_body import GBTCreateDocumentMessageBody
+from .gbt_create_element_message_body import GBTCreateElementMessageBody
+from .gbt_create_revision_message_body import GBTCreateRevisionMessageBody
+from .gbt_create_version_message_body import GBTCreateVersionMessageBody
 from .gbt_curve_type_enum import GBTCurveTypeEnum
 from .gbt_data_item_format import GBTDataItemFormat
 from .gbt_debug_entity_color import GBTDebugEntityColor
 from .gbt_debug_entity_style import GBTDebugEntityStyle
+from .gbt_delete_comment_message_body import GBTDeleteCommentMessageBody
+from .gbt_delete_element_message_body import GBTDeleteElementMessageBody
+from .gbt_delete_workspace_message_body import GBTDeleteWorkspaceMessageBody
 from .gbt_display_data_usage import GBTDisplayDataUsage
 from .gbt_edge_topology import GBTEdgeTopology
 from .gbt_edge_type import GBTEdgeType
@@ -1446,9 +1471,11 @@ from .gbt_hole_type import GBTHoleType
 from .gbt_insertable_type import GBTInsertableType
 from .gbt_load_type import GBTLoadType
 from .gbt_mate_type import GBTMateType
+from .gbt_merge_branch_message_body import GBTMergeBranchMessageBody
 from .gbt_mesh_state import GBTMeshState
 from .gbt_metadata_override_status_type import GBTMetadataOverrideStatusType
 from .gbt_metadata_source_type import GBTMetadataSourceType
+from .gbt_new_comment_message_body import GBTNewCommentMessageBody
 from .gbt_node_change import GBTNodeChange
 from .gbt_node_status_type import GBTNodeStatusType
 from .gbt_notice_level import GBTNoticeLevel
@@ -1466,6 +1493,8 @@ from .gbt_pattern_type import GBTPatternType
 from .gbt_pre_process_parasolid_option import GBTPreProcessParasolidOption
 from .gbt_quantity_type import GBTQuantityType
 from .gbt_radius_display import GBTRadiusDisplay
+from .gbt_remove_user_from_company_message_body import GBTRemoveUserFromCompanyMessageBody
+from .gbt_restore_document_from_history_message_body import GBTRestoreDocumentFromHistoryMessageBody
 from .gbt_rhino_versions import GBTRhinoVersions
 from .gbt_simulation_contact_behavior import GBTSimulationContactBehavior
 from .gbt_sketch_curve_type import GBTSketchCurveType
@@ -1481,7 +1510,9 @@ from .gbt_tessellation_setting_enum import GBTTessellationSettingEnum
 from .gbt_tolerance_precision import GBTTolerancePrecision
 from .gbt_tolerance_schema_class import GBTToleranceSchemaClass
 from .gbt_tolerance_type import GBTToleranceType
+from .gbt_translation_request_complete_message_body import GBTTranslationRequestCompleteMessageBody
 from .gbt_ui_selection_type import GBTUiSelectionType
+from .gbt_update_workspace_units_message_body import GBTUpdateWorkspaceUnitsMessageBody
 from .gbt_urdf_mesh_format import GBTUrdfMeshFormat
 from .gbt_value_use import GBTValueUse
 from .gbt_variable_type import GBTVariableType
@@ -1497,6 +1528,7 @@ from .gbtm_geom_status import GBTMGeomStatus
 from .gbtp_definition_type import GBTPDefinitionType
 from .gbtp_operator import GBTPOperator
 from .gbtp_type import GBTPType
+from .gbtsm_application_type import GBTSMApplicationType
 from .gbtui_hint import GBTUIHint
 from .get_assembly_bounding_boxes_wvm import GetAssemblyBoundingBoxesWvm
 from .get_assembly_definition_wvm import GetAssemblyDefinitionWvm
@@ -1754,6 +1786,7 @@ from .unshare_from_support_response_default import UnshareFromSupportResponseDef
 from .update_anonymous_access_response_default import UpdateAnonymousAccessResponseDefault
 from .update_app_company_settings_response_default import UpdateAppCompanySettingsResponseDefault
 from .update_app_settings_response_default import UpdateAppSettingsResponseDefault
+from .update_library_response_default import UpdateLibraryResponseDefault
 from .update_next_numbers_response_default import UpdateNextNumbersResponseDefault
 from .update_params import UpdateParams
 from .update_public_access_response_default import UpdatePublicAccessResponseDefault
@@ -2263,6 +2296,7 @@ __all__ = (
     "BTInnerDerivedParameterLocation591",
     "BTInnerParameterLocation1715",
     "BTInsertableDisplayData2405",
+    "BTInsertableDisplayData2405AppearanceIdToAppearanceOverride",
     "BTInsertableDisplayData2405GraphicsBuffers",
     "BTInsertableDisplayData2405GraphicsBuffersAdditionalProperty",
     "BTInsertableInfo",
@@ -2307,6 +2341,8 @@ __all__ = (
     "BTLegacySearchHitHighlightedFields",
     "BTLegacySearchHitSourceMap",
     "BTLegacySearchHitSourceMapAdditionalProperty",
+    "BTLibraryMaterialInfo",
+    "BTLibraryMaterialInfoPropertyValues",
     "BTLinearDimensionDisplayData330",
     "BTLineDescription1559",
     "BTLinkToLatestDocumentInfo",
@@ -2341,6 +2377,7 @@ __all__ = (
     "BTMAssemblyFeature887",
     "BTMAssemblyFeatureFolder2543",
     "BTMAssemblyMirrorFeature3037",
+    "BTMAssemblyParametricInstanceFeature5441",
     "BTMAssemblyPatternFeature2241",
     "BTMAssemblyReplicateFeature1351",
     "BTMassPropertiesBulkInfo",
@@ -2355,8 +2392,10 @@ __all__ = (
     "BTMateGroupDisplayData1990",
     "BTMateOccurrenceData1671",
     "BTMateOccurrenceData1671ValueMap",
+    "BTMaterialLibraryInfo",
     "BTMaterialLibraryMetadataInfo",
     "BTMaterialLibrarySettingsInfo",
+    "BTMaterialPropertyDefinitionInfo",
     "BTMatrix3X3340",
     "BTMBoundaryCondition5556",
     "BTMConfigurationData1560",
@@ -2489,6 +2528,8 @@ __all__ = (
     "BTMPartStudioMateConnectorQuery1324",
     "BTMReadOnlyParameter3800",
     "BTMRecordMetrics1169",
+    "BTMRigidFeature3076",
+    "BTMRigidFeature3076SuppressedInSimulations",
     "BTMRollback150",
     "BTMSimulationFeature5034",
     "BTMSketch151",
@@ -2675,7 +2716,7 @@ __all__ = (
     "BTPLiteralNumber258",
     "BTPLiteralString259",
     "BTPLiteralUndefined260",
-    "BTPlmContextInfo",
+    "BTPLMContextInfo",
     "BTPLMMessageBody",
     "BTPLValue249",
     "BTPLValueAccess250",
@@ -2754,12 +2795,14 @@ __all__ = (
     "BTReferenceCustomData1551",
     "BTReleaseCommentListInfo",
     "BTReleaseItemErrorInfo",
-    "BTReleaseItemMessageBody",
     "BTReleasePackageInfo",
     "BTReleasePackageInfoColumnNames",
     "BTReleasePackageItemInfo",
     "BTReleasePackageItemParams",
     "BTReleasePackageParams",
+    "BTReleaseStage",
+    "BTReleaseSummaryState",
+    "BTReleaseTransitionStatusInfo",
     "BTResourceOwnerInfo",
     "BTRestoreFromHistoryInfo",
     "BTRestoreInfo",
@@ -2772,8 +2815,8 @@ __all__ = (
     "BTRevisionCustomData2090",
     "BTRevisionInfo",
     "BTRevisionListResponse",
-    "BTRevisionMessageBody",
     "BTRhoDimensionDisplayData2892",
+    "BTRigidFeatureDisplayData1595",
     "BTRigidOrLockedSubAssemblyOutputInfo3860",
     "BTRole",
     "BTRootAssemblyDisplayData96",
@@ -2819,6 +2862,7 @@ __all__ = (
     "BTSketchSolveStatusFilter3657",
     "BTSketchSplineDisplayData359",
     "BTSketchTextDisplayData1707",
+    "BTSMApplicationTypeFilter4430",
     "BTSmartFolderInfo",
     "BTSmartFolderPredicateInfo",
     "BTSmartFolderPredicateInfoValue",
@@ -2860,6 +2904,8 @@ __all__ = (
     "BTTableBaseCrossHighlightData2609",
     "BTTableBaseRowMetadata3181",
     "BTTableCell1114",
+    "BTTableCellConfigurationParameter3590",
+    "BTTableCellConfigurationParameter3590ConfigurationParameterIdToValue",
     "BTTableCellModifier4883",
     "BTTableCellModifierForceShowConfigured5170",
     "BTTableCellModifierInfo4585",
@@ -2984,7 +3030,6 @@ __all__ = (
     "BTWorkflowSnapshotInfo",
     "BTWorkflowStateInfo",
     "BTWorkspaceInfo",
-    "BTWorkspaceMessageBody",
     "BTWorkspaceProtectionRuleOptions",
     "BTZipFileInfo",
     "Buffer",
@@ -3084,6 +3129,7 @@ __all__ = (
     "ExternalDocumentation",
     "ExternalDocumentationExtensions",
     "ExternalDocumentationExtensionsAdditionalProperty",
+    "GBTAddUserToCompanyMessageBody",
     "GBTAnnotationAttachmentLocation",
     "GBTAnnotationType",
     "GBTAppearanceType",
@@ -3095,15 +3141,23 @@ __all__ = (
     "GBTBillOfMaterialsExpansionStatus",
     "GBTBillOfMaterialsSuppressionStatus",
     "GBTBodyType",
+    "GBTBranchWorkspaceMessageBody",
     "GBTBSFeatureVisibility",
     "GBTComputeStatus",
     "GBTConfigurationParameterType",
     "GBTConfiguredParentType",
     "GBTConstraintType",
+    "GBTCreateDocumentMessageBody",
+    "GBTCreateElementMessageBody",
+    "GBTCreateRevisionMessageBody",
+    "GBTCreateVersionMessageBody",
     "GBTCurveTypeEnum",
     "GBTDataItemFormat",
     "GBTDebugEntityColor",
     "GBTDebugEntityStyle",
+    "GBTDeleteCommentMessageBody",
+    "GBTDeleteElementMessageBody",
+    "GBTDeleteWorkspaceMessageBody",
     "GBTDisplayDataUsage",
     "GBTEdgeTopology",
     "GBTEdgeType",
@@ -3128,10 +3182,12 @@ __all__ = (
     "GBTInsertableType",
     "GBTLoadType",
     "GBTMateType",
+    "GBTMergeBranchMessageBody",
     "GBTMeshState",
     "GBTMetadataOverrideStatusType",
     "GBTMetadataSourceType",
     "GBTMGeomStatus",
+    "GBTNewCommentMessageBody",
     "GBTNodeChange",
     "GBTNodeStatusType",
     "GBTNoticeLevel",
@@ -3152,11 +3208,14 @@ __all__ = (
     "GBTPType",
     "GBTQuantityType",
     "GBTRadiusDisplay",
+    "GBTRemoveUserFromCompanyMessageBody",
+    "GBTRestoreDocumentFromHistoryMessageBody",
     "GBTRhinoVersions",
     "GBTSimulationContactBehavior",
     "GBTSketchCurveType",
     "GBTSketchEntityType",
     "GBTSketchObjectType",
+    "GBTSMApplicationType",
     "GBTStlEncodingType",
     "GBTSubAssemblyLockType",
     "GBTSurfaceType",
@@ -3167,8 +3226,10 @@ __all__ = (
     "GBTTolerancePrecision",
     "GBTToleranceSchemaClass",
     "GBTToleranceType",
+    "GBTTranslationRequestCompleteMessageBody",
     "GBTUIHint",
     "GBTUiSelectionType",
+    "GBTUpdateWorkspaceUnitsMessageBody",
     "GBTUrdfMeshFormat",
     "GBTValueUse",
     "GBTVariableType",
@@ -3425,6 +3486,7 @@ __all__ = (
     "UpdateAnonymousAccessResponseDefault",
     "UpdateAppCompanySettingsResponseDefault",
     "UpdateAppSettingsResponseDefault",
+    "UpdateLibraryResponseDefault",
     "UpdateNextNumbersResponseDefault",
     "UpdateParams",
     "UpdatePublicAccessResponseDefault",

@@ -19,11 +19,13 @@ class BTPLMMessageBody:
 
     Attributes:
         app_element_session_id (str | Unset):
+        capabilities_changed (bool | Unset): Whether PLM capabilities were changed.
         data (str | Unset):
         document_id (str | Unset): Background PLM job's document ID.
         event (str | Unset):
         job_id (str | Unset): ID of the background PLM job that was created.
         job_type (JobType | Unset): All types of PLM background jobs
+        mappings_refreshed (bool | Unset): Whether PLM mappings were refreshed.
         message_id (str | Unset):
         settings_disabled (bool | Unset): Whether PLM integration was disabled.
         settings_modified (bool | Unset): Whether PLM integration settings parameters were modified.
@@ -32,11 +34,13 @@ class BTPLMMessageBody:
     """
 
     app_element_session_id: str | Unset = UNSET
+    capabilities_changed: bool | Unset = UNSET
     data: str | Unset = UNSET
     document_id: str | Unset = UNSET
     event: str | Unset = UNSET
     job_id: str | Unset = UNSET
     job_type: JobType | Unset = UNSET
+    mappings_refreshed: bool | Unset = UNSET
     message_id: str | Unset = UNSET
     settings_disabled: bool | Unset = UNSET
     settings_modified: bool | Unset = UNSET
@@ -46,6 +50,8 @@ class BTPLMMessageBody:
 
     def to_dict(self) -> dict[str, Any]:
         app_element_session_id = self.app_element_session_id
+
+        capabilities_changed = self.capabilities_changed
 
         data = self.data
 
@@ -58,6 +64,8 @@ class BTPLMMessageBody:
         job_type: str | Unset = UNSET
         if not isinstance(self.job_type, Unset):
             job_type = self.job_type.value
+
+        mappings_refreshed = self.mappings_refreshed
 
         message_id = self.message_id
 
@@ -76,6 +84,8 @@ class BTPLMMessageBody:
         field_dict.update({})
         if app_element_session_id is not UNSET:
             field_dict["appElementSessionId"] = app_element_session_id
+        if capabilities_changed is not UNSET:
+            field_dict["capabilitiesChanged"] = capabilities_changed
         if data is not UNSET:
             field_dict["data"] = data
         if document_id is not UNSET:
@@ -86,6 +96,8 @@ class BTPLMMessageBody:
             field_dict["jobId"] = job_id
         if job_type is not UNSET:
             field_dict["jobType"] = job_type
+        if mappings_refreshed is not UNSET:
+            field_dict["mappingsRefreshed"] = mappings_refreshed
         if message_id is not UNSET:
             field_dict["messageId"] = message_id
         if settings_disabled is not UNSET:
@@ -104,6 +116,8 @@ class BTPLMMessageBody:
         d = dict(src_dict)
         app_element_session_id = d.pop("appElementSessionId", UNSET)
 
+        capabilities_changed = d.pop("capabilitiesChanged", UNSET)
+
         data = d.pop("data", UNSET)
 
         document_id = d.pop("documentId", UNSET)
@@ -118,6 +132,8 @@ class BTPLMMessageBody:
             job_type = UNSET
         else:
             job_type = JobType(_job_type)
+
+        mappings_refreshed = d.pop("mappingsRefreshed", UNSET)
 
         message_id = d.pop("messageId", UNSET)
 
@@ -136,11 +152,13 @@ class BTPLMMessageBody:
 
         btplm_message_body = cls(
             app_element_session_id=app_element_session_id,
+            capabilities_changed=capabilities_changed,
             data=data,
             document_id=document_id,
             event=event,
             job_id=job_id,
             job_type=job_type,
+            mappings_refreshed=mappings_refreshed,
             message_id=message_id,
             settings_disabled=settings_disabled,
             settings_modified=settings_modified,

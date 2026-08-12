@@ -66,7 +66,7 @@ def sync_detailed(
 ) -> Response[BTAppAssociativeDataArrayInfo]:
     """Copy associative data from one view to another.
 
-     Can only be copied between tabs in the same document. You can manage associativity with
+     You can manage associativity with
     [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).
 
     Args:
@@ -107,7 +107,7 @@ def sync(
 ) -> BTAppAssociativeDataArrayInfo | None:
     """Copy associative data from one view to another.
 
-     Can only be copied between tabs in the same document. You can manage associativity with
+     You can manage associativity with
     [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).
 
     Args:
@@ -143,7 +143,7 @@ async def asyncio_detailed(
 ) -> Response[BTAppAssociativeDataArrayInfo]:
     """Copy associative data from one view to another.
 
-     Can only be copied between tabs in the same document. You can manage associativity with
+     You can manage associativity with
     [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).
 
     Args:
@@ -182,7 +182,7 @@ async def asyncio(
 ) -> BTAppAssociativeDataArrayInfo | None:
     """Copy associative data from one view to another.
 
-     Can only be copied between tabs in the same document. You can manage associativity with
+     You can manage associativity with
     [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).
 
     Args:

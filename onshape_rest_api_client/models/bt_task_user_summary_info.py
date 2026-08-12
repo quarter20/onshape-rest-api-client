@@ -42,6 +42,8 @@ class BTTaskUserSummaryInfo:
         last_name (str | Unset):
         name (str | Unset): Name of the resource.
         personal_message_allowed (bool | Unset):
+        scheduled_removal_date (datetime.datetime | Unset):
+        show_off_boarding_notification (bool | Unset):
         source (int | Unset):
         state (int | Unset):
         view_ref (str | Unset): URI to visualize the resource in a webclient if applicable.
@@ -68,6 +70,8 @@ class BTTaskUserSummaryInfo:
     last_name: str | Unset = UNSET
     name: str | Unset = UNSET
     personal_message_allowed: bool | Unset = UNSET
+    scheduled_removal_date: datetime.datetime | Unset = UNSET
+    show_off_boarding_notification: bool | Unset = UNSET
     source: int | Unset = UNSET
     state: int | Unset = UNSET
     view_ref: str | Unset = UNSET
@@ -122,6 +126,12 @@ class BTTaskUserSummaryInfo:
 
         personal_message_allowed = self.personal_message_allowed
 
+        scheduled_removal_date: str | Unset = UNSET
+        if not isinstance(self.scheduled_removal_date, Unset):
+            scheduled_removal_date = self.scheduled_removal_date.isoformat()
+
+        show_off_boarding_notification = self.show_off_boarding_notification
+
         source = self.source
 
         state = self.state
@@ -173,6 +183,10 @@ class BTTaskUserSummaryInfo:
             field_dict["name"] = name
         if personal_message_allowed is not UNSET:
             field_dict["personalMessageAllowed"] = personal_message_allowed
+        if scheduled_removal_date is not UNSET:
+            field_dict["scheduledRemovalDate"] = scheduled_removal_date
+        if show_off_boarding_notification is not UNSET:
+            field_dict["showOffBoardingNotification"] = show_off_boarding_notification
         if source is not UNSET:
             field_dict["source"] = source
         if state is not UNSET:
@@ -245,6 +259,15 @@ class BTTaskUserSummaryInfo:
 
         personal_message_allowed = d.pop("personalMessageAllowed", UNSET)
 
+        _scheduled_removal_date = d.pop("scheduledRemovalDate", UNSET)
+        scheduled_removal_date: datetime.datetime | Unset
+        if isinstance(_scheduled_removal_date, Unset):
+            scheduled_removal_date = UNSET
+        else:
+            scheduled_removal_date = datetime.datetime.fromisoformat(_scheduled_removal_date)
+
+        show_off_boarding_notification = d.pop("showOffBoardingNotification", UNSET)
+
         source = d.pop("source", UNSET)
 
         state = d.pop("state", UNSET)
@@ -273,6 +296,8 @@ class BTTaskUserSummaryInfo:
             last_name=last_name,
             name=name,
             personal_message_allowed=personal_message_allowed,
+            scheduled_removal_date=scheduled_removal_date,
+            show_off_boarding_notification=show_off_boarding_notification,
             source=source,
             state=state,
             view_ref=view_ref,

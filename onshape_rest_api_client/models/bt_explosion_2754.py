@@ -12,8 +12,6 @@ if TYPE_CHECKING:
     from ..models.bt_explosion_step_feature_3008 import BTExplosionStepFeature3008
     from ..models.bt_microversion_id_and_configuration_2338 import BTMicroversionIdAndConfiguration2338
     from ..models.btm_feature_134 import BTMFeature134
-    from ..models.btm_individual_query_with_occurrence_base_904 import BTMIndividualQueryWithOccurrenceBase904
-    from ..models.btm_mate_connector_66 import BTMMateConnector66
     from ..models.btm_parameter_1 import BTMParameter1
     from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
 
@@ -46,14 +44,6 @@ class BTExplosion2754:
         suppression_configured (bool | Unset): `true` if the suppression is configured in the Part Studio.
         suppression_state (BTMSuppressionState1924 | Unset):
         variable_studio_reference (bool | Unset): If `true`, the feature references a Variable Studio.
-        auxiliary_tree_feature (bool | Unset):
-        feature_folder (bool | Unset):
-        feature_list_field_index (int | Unset):
-        field_index_for_owned_mate_connectors (int | Unset):
-        mate_connectors (list[BTMMateConnector66] | Unset):
-        occurrence_queries_from_all_configurations (list[BTMIndividualQueryWithOccurrenceBase904] | Unset):
-        parametric_instance_feature (bool | Unset):
-        sub_features_not_used_in_query (list[BTMFeature134] | Unset):
         version (int | Unset):
         explode_steps (list[BTExplosionStepFeature3008] | Unset):
         starting_position_id (BTMicroversionIdAndConfiguration2338 | Unset):
@@ -76,14 +66,6 @@ class BTExplosion2754:
     suppression_configured: bool | Unset = UNSET
     suppression_state: BTMSuppressionState1924 | Unset = UNSET
     variable_studio_reference: bool | Unset = UNSET
-    auxiliary_tree_feature: bool | Unset = UNSET
-    feature_folder: bool | Unset = UNSET
-    feature_list_field_index: int | Unset = UNSET
-    field_index_for_owned_mate_connectors: int | Unset = UNSET
-    mate_connectors: list[BTMMateConnector66] | Unset = UNSET
-    occurrence_queries_from_all_configurations: list[BTMIndividualQueryWithOccurrenceBase904] | Unset = UNSET
-    parametric_instance_feature: bool | Unset = UNSET
-    sub_features_not_used_in_query: list[BTMFeature134] | Unset = UNSET
     version: int | Unset = UNSET
     explode_steps: list[BTExplosionStepFeature3008] | Unset = UNSET
     starting_position_id: BTMicroversionIdAndConfiguration2338 | Unset = UNSET
@@ -141,39 +123,6 @@ class BTExplosion2754:
 
         variable_studio_reference = self.variable_studio_reference
 
-        auxiliary_tree_feature = self.auxiliary_tree_feature
-
-        feature_folder = self.feature_folder
-
-        feature_list_field_index = self.feature_list_field_index
-
-        field_index_for_owned_mate_connectors = self.field_index_for_owned_mate_connectors
-
-        mate_connectors: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.mate_connectors, Unset):
-            mate_connectors = []
-            for mate_connectors_item_data in self.mate_connectors:
-                mate_connectors_item = mate_connectors_item_data.to_dict()
-                mate_connectors.append(mate_connectors_item)
-
-        occurrence_queries_from_all_configurations: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.occurrence_queries_from_all_configurations, Unset):
-            occurrence_queries_from_all_configurations = []
-            for occurrence_queries_from_all_configurations_item_data in self.occurrence_queries_from_all_configurations:
-                occurrence_queries_from_all_configurations_item = (
-                    occurrence_queries_from_all_configurations_item_data.to_dict()
-                )
-                occurrence_queries_from_all_configurations.append(occurrence_queries_from_all_configurations_item)
-
-        parametric_instance_feature = self.parametric_instance_feature
-
-        sub_features_not_used_in_query: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.sub_features_not_used_in_query, Unset):
-            sub_features_not_used_in_query = []
-            for sub_features_not_used_in_query_item_data in self.sub_features_not_used_in_query:
-                sub_features_not_used_in_query_item = sub_features_not_used_in_query_item_data.to_dict()
-                sub_features_not_used_in_query.append(sub_features_not_used_in_query_item)
-
         version = self.version
 
         explode_steps: list[dict[str, Any]] | Unset = UNSET
@@ -224,22 +173,6 @@ class BTExplosion2754:
             field_dict["suppressionState"] = suppression_state
         if variable_studio_reference is not UNSET:
             field_dict["variableStudioReference"] = variable_studio_reference
-        if auxiliary_tree_feature is not UNSET:
-            field_dict["auxiliaryTreeFeature"] = auxiliary_tree_feature
-        if feature_folder is not UNSET:
-            field_dict["featureFolder"] = feature_folder
-        if feature_list_field_index is not UNSET:
-            field_dict["featureListFieldIndex"] = feature_list_field_index
-        if field_index_for_owned_mate_connectors is not UNSET:
-            field_dict["fieldIndexForOwnedMateConnectors"] = field_index_for_owned_mate_connectors
-        if mate_connectors is not UNSET:
-            field_dict["mateConnectors"] = mate_connectors
-        if occurrence_queries_from_all_configurations is not UNSET:
-            field_dict["occurrenceQueriesFromAllConfigurations"] = occurrence_queries_from_all_configurations
-        if parametric_instance_feature is not UNSET:
-            field_dict["parametricInstanceFeature"] = parametric_instance_feature
-        if sub_features_not_used_in_query is not UNSET:
-            field_dict["subFeaturesNotUsedInQuery"] = sub_features_not_used_in_query
         if version is not UNSET:
             field_dict["version"] = version
         if explode_steps is not UNSET:
@@ -254,8 +187,6 @@ class BTExplosion2754:
         from ..models.bt_explosion_step_feature_3008 import BTExplosionStepFeature3008
         from ..models.bt_microversion_id_and_configuration_2338 import BTMicroversionIdAndConfiguration2338
         from ..models.btm_feature_134 import BTMFeature134
-        from ..models.btm_individual_query_with_occurrence_base_904 import BTMIndividualQueryWithOccurrenceBase904
-        from ..models.btm_mate_connector_66 import BTMMateConnector66
         from ..models.btm_parameter_1 import BTMParameter1
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
 
@@ -320,45 +251,6 @@ class BTExplosion2754:
 
         variable_studio_reference = d.pop("variableStudioReference", UNSET)
 
-        auxiliary_tree_feature = d.pop("auxiliaryTreeFeature", UNSET)
-
-        feature_folder = d.pop("featureFolder", UNSET)
-
-        feature_list_field_index = d.pop("featureListFieldIndex", UNSET)
-
-        field_index_for_owned_mate_connectors = d.pop("fieldIndexForOwnedMateConnectors", UNSET)
-
-        _mate_connectors = d.pop("mateConnectors", UNSET)
-        mate_connectors: list[BTMMateConnector66] | Unset = UNSET
-        if _mate_connectors is not UNSET:
-            mate_connectors = []
-            for mate_connectors_item_data in _mate_connectors:
-                mate_connectors_item = BTMMateConnector66.from_dict(mate_connectors_item_data)
-
-                mate_connectors.append(mate_connectors_item)
-
-        _occurrence_queries_from_all_configurations = d.pop("occurrenceQueriesFromAllConfigurations", UNSET)
-        occurrence_queries_from_all_configurations: list[BTMIndividualQueryWithOccurrenceBase904] | Unset = UNSET
-        if _occurrence_queries_from_all_configurations is not UNSET:
-            occurrence_queries_from_all_configurations = []
-            for occurrence_queries_from_all_configurations_item_data in _occurrence_queries_from_all_configurations:
-                occurrence_queries_from_all_configurations_item = BTMIndividualQueryWithOccurrenceBase904.from_dict(
-                    occurrence_queries_from_all_configurations_item_data
-                )
-
-                occurrence_queries_from_all_configurations.append(occurrence_queries_from_all_configurations_item)
-
-        parametric_instance_feature = d.pop("parametricInstanceFeature", UNSET)
-
-        _sub_features_not_used_in_query = d.pop("subFeaturesNotUsedInQuery", UNSET)
-        sub_features_not_used_in_query: list[BTMFeature134] | Unset = UNSET
-        if _sub_features_not_used_in_query is not UNSET:
-            sub_features_not_used_in_query = []
-            for sub_features_not_used_in_query_item_data in _sub_features_not_used_in_query:
-                sub_features_not_used_in_query_item = BTMFeature134.from_dict(sub_features_not_used_in_query_item_data)
-
-                sub_features_not_used_in_query.append(sub_features_not_used_in_query_item)
-
         version = d.pop("version", UNSET)
 
         _explode_steps = d.pop("explodeSteps", UNSET)
@@ -395,14 +287,6 @@ class BTExplosion2754:
             suppression_configured=suppression_configured,
             suppression_state=suppression_state,
             variable_studio_reference=variable_studio_reference,
-            auxiliary_tree_feature=auxiliary_tree_feature,
-            feature_folder=feature_folder,
-            feature_list_field_index=feature_list_field_index,
-            field_index_for_owned_mate_connectors=field_index_for_owned_mate_connectors,
-            mate_connectors=mate_connectors,
-            occurrence_queries_from_all_configurations=occurrence_queries_from_all_configurations,
-            parametric_instance_feature=parametric_instance_feature,
-            sub_features_not_used_in_query=sub_features_not_used_in_query,
             version=version,
             explode_steps=explode_steps,
             starting_position_id=starting_position_id,

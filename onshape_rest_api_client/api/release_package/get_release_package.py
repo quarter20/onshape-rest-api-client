@@ -13,11 +13,14 @@ def _get_kwargs(
     rpid: str,
     *,
     detailed: bool | Unset = False,
+    full_history: bool | Unset = False,
 ) -> dict[str, Any]:
 
     params: dict[str, Any] = {}
 
     params["detailed"] = detailed
+
+    params["fullHistory"] = full_history
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -54,12 +57,14 @@ def sync_detailed(
     *,
     client: AuthenticatedClient,
     detailed: bool | Unset = False,
+    full_history: bool | Unset = False,
 ) -> Response[BTReleasePackageInfo]:
     """Get details about the specified release candidate.
 
     Args:
         rpid (str):
         detailed (bool | Unset):  Default: False.
+        full_history (bool | Unset):  Default: False.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -72,6 +77,7 @@ def sync_detailed(
     kwargs = _get_kwargs(
         rpid=rpid,
         detailed=detailed,
+        full_history=full_history,
     )
 
     response = client.get_httpx_client().request(
@@ -86,12 +92,14 @@ def sync(
     *,
     client: AuthenticatedClient,
     detailed: bool | Unset = False,
+    full_history: bool | Unset = False,
 ) -> BTReleasePackageInfo | None:
     """Get details about the specified release candidate.
 
     Args:
         rpid (str):
         detailed (bool | Unset):  Default: False.
+        full_history (bool | Unset):  Default: False.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -105,6 +113,7 @@ def sync(
         rpid=rpid,
         client=client,
         detailed=detailed,
+        full_history=full_history,
     ).parsed
 
 
@@ -113,12 +122,14 @@ async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
     detailed: bool | Unset = False,
+    full_history: bool | Unset = False,
 ) -> Response[BTReleasePackageInfo]:
     """Get details about the specified release candidate.
 
     Args:
         rpid (str):
         detailed (bool | Unset):  Default: False.
+        full_history (bool | Unset):  Default: False.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -131,6 +142,7 @@ async def asyncio_detailed(
     kwargs = _get_kwargs(
         rpid=rpid,
         detailed=detailed,
+        full_history=full_history,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -143,12 +155,14 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     detailed: bool | Unset = False,
+    full_history: bool | Unset = False,
 ) -> BTReleasePackageInfo | None:
     """Get details about the specified release candidate.
 
     Args:
         rpid (str):
         detailed (bool | Unset):  Default: False.
+        full_history (bool | Unset):  Default: False.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -163,5 +177,6 @@ async def asyncio(
             rpid=rpid,
             client=client,
             detailed=detailed,
+            full_history=full_history,
         )
     ).parsed

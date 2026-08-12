@@ -20,6 +20,7 @@ class BTAssemblyInstanceInfo:
 
     Attributes:
         configuration (str | Unset):
+        designator (str | Unset): Reference designator of the instance.
         document_id (str | Unset):
         document_microversion (str | Unset):
         document_version (str | Unset):
@@ -39,6 +40,7 @@ class BTAssemblyInstanceInfo:
     """
 
     configuration: str | Unset = UNSET
+    designator: str | Unset = UNSET
     document_id: str | Unset = UNSET
     document_microversion: str | Unset = UNSET
     document_version: str | Unset = UNSET
@@ -59,6 +61,8 @@ class BTAssemblyInstanceInfo:
 
     def to_dict(self) -> dict[str, Any]:
         configuration = self.configuration
+
+        designator = self.designator
 
         document_id = self.document_id
 
@@ -103,6 +107,8 @@ class BTAssemblyInstanceInfo:
         field_dict.update({})
         if configuration is not UNSET:
             field_dict["configuration"] = configuration
+        if designator is not UNSET:
+            field_dict["designator"] = designator
         if document_id is not UNSET:
             field_dict["documentId"] = document_id
         if document_microversion is not UNSET:
@@ -142,6 +148,8 @@ class BTAssemblyInstanceInfo:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
         configuration = d.pop("configuration", UNSET)
+
+        designator = d.pop("designator", UNSET)
 
         document_id = d.pop("documentId", UNSET)
 
@@ -192,6 +200,7 @@ class BTAssemblyInstanceInfo:
 
         bt_assembly_instance_info = cls(
             configuration=configuration,
+            designator=designator,
             document_id=document_id,
             document_microversion=document_microversion,
             document_version=document_version,

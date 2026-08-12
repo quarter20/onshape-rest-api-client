@@ -44,6 +44,8 @@ class BTUserSummaryInfo:
         is_light (bool | Unset):
         last_login_time (datetime.datetime | Unset):
         personal_message_allowed (bool | Unset):
+        scheduled_removal_date (datetime.datetime | Unset):
+        show_off_boarding_notification (bool | Unset):
         source (int | Unset):
     """
 
@@ -70,6 +72,8 @@ class BTUserSummaryInfo:
     is_light: bool | Unset = UNSET
     last_login_time: datetime.datetime | Unset = UNSET
     personal_message_allowed: bool | Unset = UNSET
+    scheduled_removal_date: datetime.datetime | Unset = UNSET
+    show_off_boarding_notification: bool | Unset = UNSET
     source: int | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -126,6 +130,12 @@ class BTUserSummaryInfo:
 
         personal_message_allowed = self.personal_message_allowed
 
+        scheduled_removal_date: str | Unset = UNSET
+        if not isinstance(self.scheduled_removal_date, Unset):
+            scheduled_removal_date = self.scheduled_removal_date.isoformat()
+
+        show_off_boarding_notification = self.show_off_boarding_notification
+
         source = self.source
 
         field_dict: dict[str, Any] = {}
@@ -179,6 +189,10 @@ class BTUserSummaryInfo:
             field_dict["lastLoginTime"] = last_login_time
         if personal_message_allowed is not UNSET:
             field_dict["personalMessageAllowed"] = personal_message_allowed
+        if scheduled_removal_date is not UNSET:
+            field_dict["scheduledRemovalDate"] = scheduled_removal_date
+        if show_off_boarding_notification is not UNSET:
+            field_dict["showOffBoardingNotification"] = show_off_boarding_notification
         if source is not UNSET:
             field_dict["source"] = source
 
@@ -251,6 +265,15 @@ class BTUserSummaryInfo:
 
         personal_message_allowed = d.pop("personalMessageAllowed", UNSET)
 
+        _scheduled_removal_date = d.pop("scheduledRemovalDate", UNSET)
+        scheduled_removal_date: datetime.datetime | Unset
+        if isinstance(_scheduled_removal_date, Unset):
+            scheduled_removal_date = UNSET
+        else:
+            scheduled_removal_date = datetime.datetime.fromisoformat(_scheduled_removal_date)
+
+        show_off_boarding_notification = d.pop("showOffBoardingNotification", UNSET)
+
         source = d.pop("source", UNSET)
 
         bt_user_summary_info = cls(
@@ -277,6 +300,8 @@ class BTUserSummaryInfo:
             is_light=is_light,
             last_login_time=last_login_time,
             personal_message_allowed=personal_message_allowed,
+            scheduled_removal_date=scheduled_removal_date,
+            show_off_boarding_notification=show_off_boarding_notification,
             source=source,
         )
 

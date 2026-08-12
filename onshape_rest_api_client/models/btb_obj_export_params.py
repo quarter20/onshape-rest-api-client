@@ -25,6 +25,7 @@ class BTBObjExportParams:
     Attributes:
         advanced_params (BTBExportAdvancedParams | Unset): Advanced element export options.
         cloud_storage_options (BTBCloudStorageOptions | Unset): Options for exporting elements to cloud storage.
+        correlation_id (str | Unset): User specified identifier that can be used as a correlation id across api calls.
         destination_name (str | Unset): The name of the exported file. Default: 'Untitled'.
         email_export_options (BTBEmailExportOptions | Unset): Options for exporting elements as a link in an email.
         exclude_hidden_entities (bool | Unset): Whether or not to exclude hidden parts from export. Default: False.
@@ -41,6 +42,7 @@ class BTBObjExportParams:
 
     advanced_params: BTBExportAdvancedParams | Unset = UNSET
     cloud_storage_options: BTBCloudStorageOptions | Unset = UNSET
+    correlation_id: str | Unset = UNSET
     destination_name: str | Unset = "Untitled"
     email_export_options: BTBEmailExportOptions | Unset = UNSET
     exclude_hidden_entities: bool | Unset = False
@@ -61,6 +63,8 @@ class BTBObjExportParams:
         cloud_storage_options: dict[str, Any] | Unset = UNSET
         if not isinstance(self.cloud_storage_options, Unset):
             cloud_storage_options = self.cloud_storage_options.to_dict()
+
+        correlation_id = self.correlation_id
 
         destination_name = self.destination_name
 
@@ -93,6 +97,8 @@ class BTBObjExportParams:
             field_dict["advancedParams"] = advanced_params
         if cloud_storage_options is not UNSET:
             field_dict["cloudStorageOptions"] = cloud_storage_options
+        if correlation_id is not UNSET:
+            field_dict["correlationId"] = correlation_id
         if destination_name is not UNSET:
             field_dict["destinationName"] = destination_name
         if email_export_options is not UNSET:
@@ -138,6 +144,8 @@ class BTBObjExportParams:
         else:
             cloud_storage_options = BTBCloudStorageOptions.from_dict(_cloud_storage_options)
 
+        correlation_id = d.pop("correlationId", UNSET)
+
         destination_name = d.pop("destinationName", UNSET)
 
         _email_export_options = d.pop("emailExportOptions", UNSET)
@@ -171,6 +179,7 @@ class BTBObjExportParams:
         btb_obj_export_params = cls(
             advanced_params=advanced_params,
             cloud_storage_options=cloud_storage_options,
+            correlation_id=correlation_id,
             destination_name=destination_name,
             email_export_options=email_export_options,
             exclude_hidden_entities=exclude_hidden_entities,

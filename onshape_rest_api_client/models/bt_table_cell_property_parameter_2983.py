@@ -32,6 +32,7 @@ class BTTableCellPropertyParameter2983:
         override_spec (BTParameterSpec6 | Unset):
         parameter (BTMParameter1 | Unset): A list of parameter values for instantiation of the feature spec. Parameters
             are present for all defined parameters, even if not used in a specific instantiation.
+        warning (str | Unset):
         aggregation_skipped_filtered_out_values (bool | Unset):
         is_unchanged (bool | Unset):
         override_status_type (GBTMetadataOverrideStatusType | Unset):
@@ -46,6 +47,7 @@ class BTTableCellPropertyParameter2983:
     info: str | Unset = UNSET
     override_spec: BTParameterSpec6 | Unset = UNSET
     parameter: BTMParameter1 | Unset = UNSET
+    warning: str | Unset = UNSET
     aggregation_skipped_filtered_out_values: bool | Unset = UNSET
     is_unchanged: bool | Unset = UNSET
     override_status_type: GBTMetadataOverrideStatusType | Unset = UNSET
@@ -78,6 +80,8 @@ class BTTableCellPropertyParameter2983:
         if not isinstance(self.parameter, Unset):
             parameter = self.parameter.to_dict()
 
+        warning = self.warning
+
         aggregation_skipped_filtered_out_values = self.aggregation_skipped_filtered_out_values
 
         is_unchanged = self.is_unchanged
@@ -109,6 +113,8 @@ class BTTableCellPropertyParameter2983:
             field_dict["overrideSpec"] = override_spec
         if parameter is not UNSET:
             field_dict["parameter"] = parameter
+        if warning is not UNSET:
+            field_dict["warning"] = warning
         if aggregation_skipped_filtered_out_values is not UNSET:
             field_dict["aggregationSkippedFilteredOutValues"] = aggregation_skipped_filtered_out_values
         if is_unchanged is not UNSET:
@@ -160,6 +166,8 @@ class BTTableCellPropertyParameter2983:
         else:
             parameter = BTMParameter1.from_dict(_parameter)
 
+        warning = d.pop("warning", UNSET)
+
         aggregation_skipped_filtered_out_values = d.pop("aggregationSkippedFilteredOutValues", UNSET)
 
         is_unchanged = d.pop("isUnchanged", UNSET)
@@ -187,6 +195,7 @@ class BTTableCellPropertyParameter2983:
             info=info,
             override_spec=override_spec,
             parameter=parameter,
+            warning=warning,
             aggregation_skipped_filtered_out_values=aggregation_skipped_filtered_out_values,
             is_unchanged=is_unchanged,
             override_status_type=override_status_type,

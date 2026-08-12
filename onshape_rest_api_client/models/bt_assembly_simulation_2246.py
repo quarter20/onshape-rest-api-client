@@ -11,8 +11,6 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.btm_feature_134 import BTMFeature134
-    from ..models.btm_individual_query_with_occurrence_base_904 import BTMIndividualQueryWithOccurrenceBase904
-    from ..models.btm_mate_connector_66 import BTMMateConnector66
     from ..models.btm_parameter_1 import BTMParameter1
     from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
 
@@ -24,17 +22,12 @@ T = TypeVar("T", bound="BTAssemblySimulation2246")
 class BTAssemblySimulation2246:
     """
     Attributes:
-        auxiliary_tree_feature (bool | Unset):
         bt_type (str | Unset): Type of JSON object.
-        feature_folder (bool | Unset):
         feature_id (str | Unset): Unique ID of the feature instance within this Part Studio.
-        feature_list_field_index (int | Unset):
         feature_type (str | Unset): The name of the feature spec that this feature instantiates.
-        field_index_for_owned_mate_connectors (int | Unset):
         import_microversion (str | Unset): Element microversion that is being imported.
         inertial_relief (bool | Unset):
         mate_connector_feature (bool | Unset):
-        mate_connectors (list[BTMMateConnector66] | Unset):
         modal (bool | Unset):
         name (str | Unset): User-visible name of the feature.
         namespace (str | Unset): Indicates where the feature definition lives. Features in the FeatureScript standard
@@ -42,13 +35,10 @@ class BTAssemblySimulation2246:
             definition.
         node_id (str | Unset): ID for the feature node.
         number_of_modes (float | Unset):
-        occurrence_queries_from_all_configurations (list[BTMIndividualQueryWithOccurrenceBase904] | Unset):
         parameter_libraries (list[BTMParameter1] | Unset):
-        parametric_instance_feature (bool | Unset):
         parent_suppressed (bool | Unset):
         return_after_subfeatures (bool | Unset): For internal use only. Should always be `false`.
         sub_features (list[BTMFeature134] | Unset): List of subfeatures belonging to the feature.
-        sub_features_not_used_in_query (list[BTMFeature134] | Unset):
         suppressed (bool | Unset): If `true`, the feature is suppressed. It will skip regeneration, denoted by a line
             through the name in the Feature list.
         suppression_configured (bool | Unset): `true` if the suppression is configured in the Part Studio.
@@ -58,29 +48,21 @@ class BTAssemblySimulation2246:
         version (int | Unset):
     """
 
-    auxiliary_tree_feature: bool | Unset = UNSET
     bt_type: str | Unset = UNSET
-    feature_folder: bool | Unset = UNSET
     feature_id: str | Unset = UNSET
-    feature_list_field_index: int | Unset = UNSET
     feature_type: str | Unset = UNSET
-    field_index_for_owned_mate_connectors: int | Unset = UNSET
     import_microversion: str | Unset = UNSET
     inertial_relief: bool | Unset = UNSET
     mate_connector_feature: bool | Unset = UNSET
-    mate_connectors: list[BTMMateConnector66] | Unset = UNSET
     modal: bool | Unset = UNSET
     name: str | Unset = UNSET
     namespace: str | Unset = UNSET
     node_id: str | Unset = UNSET
     number_of_modes: float | Unset = UNSET
-    occurrence_queries_from_all_configurations: list[BTMIndividualQueryWithOccurrenceBase904] | Unset = UNSET
     parameter_libraries: list[BTMParameter1] | Unset = UNSET
-    parametric_instance_feature: bool | Unset = UNSET
     parent_suppressed: bool | Unset = UNSET
     return_after_subfeatures: bool | Unset = UNSET
     sub_features: list[BTMFeature134] | Unset = UNSET
-    sub_features_not_used_in_query: list[BTMFeature134] | Unset = UNSET
     suppressed: bool | Unset = UNSET
     suppression_configured: bool | Unset = UNSET
     suppression_state: BTMSuppressionState1924 | Unset = UNSET
@@ -90,32 +72,17 @@ class BTAssemblySimulation2246:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        auxiliary_tree_feature = self.auxiliary_tree_feature
-
         bt_type = self.bt_type
-
-        feature_folder = self.feature_folder
 
         feature_id = self.feature_id
 
-        feature_list_field_index = self.feature_list_field_index
-
         feature_type = self.feature_type
-
-        field_index_for_owned_mate_connectors = self.field_index_for_owned_mate_connectors
 
         import_microversion = self.import_microversion
 
         inertial_relief = self.inertial_relief
 
         mate_connector_feature = self.mate_connector_feature
-
-        mate_connectors: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.mate_connectors, Unset):
-            mate_connectors = []
-            for mate_connectors_item_data in self.mate_connectors:
-                mate_connectors_item = mate_connectors_item_data.to_dict()
-                mate_connectors.append(mate_connectors_item)
 
         modal = self.modal
 
@@ -127,23 +94,12 @@ class BTAssemblySimulation2246:
 
         number_of_modes = self.number_of_modes
 
-        occurrence_queries_from_all_configurations: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.occurrence_queries_from_all_configurations, Unset):
-            occurrence_queries_from_all_configurations = []
-            for occurrence_queries_from_all_configurations_item_data in self.occurrence_queries_from_all_configurations:
-                occurrence_queries_from_all_configurations_item = (
-                    occurrence_queries_from_all_configurations_item_data.to_dict()
-                )
-                occurrence_queries_from_all_configurations.append(occurrence_queries_from_all_configurations_item)
-
         parameter_libraries: list[dict[str, Any]] | Unset = UNSET
         if not isinstance(self.parameter_libraries, Unset):
             parameter_libraries = []
             for parameter_libraries_item_data in self.parameter_libraries:
                 parameter_libraries_item = parameter_libraries_item_data.to_dict()
                 parameter_libraries.append(parameter_libraries_item)
-
-        parametric_instance_feature = self.parametric_instance_feature
 
         parent_suppressed = self.parent_suppressed
 
@@ -155,13 +111,6 @@ class BTAssemblySimulation2246:
             for sub_features_item_data in self.sub_features:
                 sub_features_item = sub_features_item_data.to_dict()
                 sub_features.append(sub_features_item)
-
-        sub_features_not_used_in_query: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.sub_features_not_used_in_query, Unset):
-            sub_features_not_used_in_query = []
-            for sub_features_not_used_in_query_item_data in self.sub_features_not_used_in_query:
-                sub_features_not_used_in_query_item = sub_features_not_used_in_query_item_data.to_dict()
-                sub_features_not_used_in_query.append(sub_features_not_used_in_query_item)
 
         suppressed = self.suppressed
 
@@ -182,28 +131,18 @@ class BTAssemblySimulation2246:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
-        if auxiliary_tree_feature is not UNSET:
-            field_dict["auxiliaryTreeFeature"] = auxiliary_tree_feature
         if bt_type is not UNSET:
             field_dict["btType"] = bt_type
-        if feature_folder is not UNSET:
-            field_dict["featureFolder"] = feature_folder
         if feature_id is not UNSET:
             field_dict["featureId"] = feature_id
-        if feature_list_field_index is not UNSET:
-            field_dict["featureListFieldIndex"] = feature_list_field_index
         if feature_type is not UNSET:
             field_dict["featureType"] = feature_type
-        if field_index_for_owned_mate_connectors is not UNSET:
-            field_dict["fieldIndexForOwnedMateConnectors"] = field_index_for_owned_mate_connectors
         if import_microversion is not UNSET:
             field_dict["importMicroversion"] = import_microversion
         if inertial_relief is not UNSET:
             field_dict["inertialRelief"] = inertial_relief
         if mate_connector_feature is not UNSET:
             field_dict["mateConnectorFeature"] = mate_connector_feature
-        if mate_connectors is not UNSET:
-            field_dict["mateConnectors"] = mate_connectors
         if modal is not UNSET:
             field_dict["modal"] = modal
         if name is not UNSET:
@@ -214,20 +153,14 @@ class BTAssemblySimulation2246:
             field_dict["nodeId"] = node_id
         if number_of_modes is not UNSET:
             field_dict["numberOfModes"] = number_of_modes
-        if occurrence_queries_from_all_configurations is not UNSET:
-            field_dict["occurrenceQueriesFromAllConfigurations"] = occurrence_queries_from_all_configurations
         if parameter_libraries is not UNSET:
             field_dict["parameterLibraries"] = parameter_libraries
-        if parametric_instance_feature is not UNSET:
-            field_dict["parametricInstanceFeature"] = parametric_instance_feature
         if parent_suppressed is not UNSET:
             field_dict["parentSuppressed"] = parent_suppressed
         if return_after_subfeatures is not UNSET:
             field_dict["returnAfterSubfeatures"] = return_after_subfeatures
         if sub_features is not UNSET:
             field_dict["subFeatures"] = sub_features
-        if sub_features_not_used_in_query is not UNSET:
-            field_dict["subFeaturesNotUsedInQuery"] = sub_features_not_used_in_query
         if suppressed is not UNSET:
             field_dict["suppressed"] = suppressed
         if suppression_configured is not UNSET:
@@ -246,40 +179,21 @@ class BTAssemblySimulation2246:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.btm_feature_134 import BTMFeature134
-        from ..models.btm_individual_query_with_occurrence_base_904 import BTMIndividualQueryWithOccurrenceBase904
-        from ..models.btm_mate_connector_66 import BTMMateConnector66
         from ..models.btm_parameter_1 import BTMParameter1
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
 
         d = dict(src_dict)
-        auxiliary_tree_feature = d.pop("auxiliaryTreeFeature", UNSET)
-
         bt_type = d.pop("btType", UNSET)
-
-        feature_folder = d.pop("featureFolder", UNSET)
 
         feature_id = d.pop("featureId", UNSET)
 
-        feature_list_field_index = d.pop("featureListFieldIndex", UNSET)
-
         feature_type = d.pop("featureType", UNSET)
-
-        field_index_for_owned_mate_connectors = d.pop("fieldIndexForOwnedMateConnectors", UNSET)
 
         import_microversion = d.pop("importMicroversion", UNSET)
 
         inertial_relief = d.pop("inertialRelief", UNSET)
 
         mate_connector_feature = d.pop("mateConnectorFeature", UNSET)
-
-        _mate_connectors = d.pop("mateConnectors", UNSET)
-        mate_connectors: list[BTMMateConnector66] | Unset = UNSET
-        if _mate_connectors is not UNSET:
-            mate_connectors = []
-            for mate_connectors_item_data in _mate_connectors:
-                mate_connectors_item = BTMMateConnector66.from_dict(mate_connectors_item_data)
-
-                mate_connectors.append(mate_connectors_item)
 
         modal = d.pop("modal", UNSET)
 
@@ -291,17 +205,6 @@ class BTAssemblySimulation2246:
 
         number_of_modes = d.pop("numberOfModes", UNSET)
 
-        _occurrence_queries_from_all_configurations = d.pop("occurrenceQueriesFromAllConfigurations", UNSET)
-        occurrence_queries_from_all_configurations: list[BTMIndividualQueryWithOccurrenceBase904] | Unset = UNSET
-        if _occurrence_queries_from_all_configurations is not UNSET:
-            occurrence_queries_from_all_configurations = []
-            for occurrence_queries_from_all_configurations_item_data in _occurrence_queries_from_all_configurations:
-                occurrence_queries_from_all_configurations_item = BTMIndividualQueryWithOccurrenceBase904.from_dict(
-                    occurrence_queries_from_all_configurations_item_data
-                )
-
-                occurrence_queries_from_all_configurations.append(occurrence_queries_from_all_configurations_item)
-
         _parameter_libraries = d.pop("parameterLibraries", UNSET)
         parameter_libraries: list[BTMParameter1] | Unset = UNSET
         if _parameter_libraries is not UNSET:
@@ -310,8 +213,6 @@ class BTAssemblySimulation2246:
                 parameter_libraries_item = BTMParameter1.from_dict(parameter_libraries_item_data)
 
                 parameter_libraries.append(parameter_libraries_item)
-
-        parametric_instance_feature = d.pop("parametricInstanceFeature", UNSET)
 
         parent_suppressed = d.pop("parentSuppressed", UNSET)
 
@@ -325,15 +226,6 @@ class BTAssemblySimulation2246:
                 sub_features_item = BTMFeature134.from_dict(sub_features_item_data)
 
                 sub_features.append(sub_features_item)
-
-        _sub_features_not_used_in_query = d.pop("subFeaturesNotUsedInQuery", UNSET)
-        sub_features_not_used_in_query: list[BTMFeature134] | Unset = UNSET
-        if _sub_features_not_used_in_query is not UNSET:
-            sub_features_not_used_in_query = []
-            for sub_features_not_used_in_query_item_data in _sub_features_not_used_in_query:
-                sub_features_not_used_in_query_item = BTMFeature134.from_dict(sub_features_not_used_in_query_item_data)
-
-                sub_features_not_used_in_query.append(sub_features_not_used_in_query_item)
 
         suppressed = d.pop("suppressed", UNSET)
 
@@ -358,29 +250,21 @@ class BTAssemblySimulation2246:
         version = d.pop("version", UNSET)
 
         bt_assembly_simulation_2246 = cls(
-            auxiliary_tree_feature=auxiliary_tree_feature,
             bt_type=bt_type,
-            feature_folder=feature_folder,
             feature_id=feature_id,
-            feature_list_field_index=feature_list_field_index,
             feature_type=feature_type,
-            field_index_for_owned_mate_connectors=field_index_for_owned_mate_connectors,
             import_microversion=import_microversion,
             inertial_relief=inertial_relief,
             mate_connector_feature=mate_connector_feature,
-            mate_connectors=mate_connectors,
             modal=modal,
             name=name,
             namespace=namespace,
             node_id=node_id,
             number_of_modes=number_of_modes,
-            occurrence_queries_from_all_configurations=occurrence_queries_from_all_configurations,
             parameter_libraries=parameter_libraries,
-            parametric_instance_feature=parametric_instance_feature,
             parent_suppressed=parent_suppressed,
             return_after_subfeatures=return_after_subfeatures,
             sub_features=sub_features,
-            sub_features_not_used_in_query=sub_features_not_used_in_query,
             suppressed=suppressed,
             suppression_configured=suppression_configured,
             suppression_state=suppression_state,

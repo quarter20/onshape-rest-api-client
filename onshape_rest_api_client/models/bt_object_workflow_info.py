@@ -20,6 +20,7 @@ class BTObjectWorkflowInfo:
 
     Attributes:
         can_be_discarded (bool | Unset): Whether workflowable object can be discarded.
+        created_at (datetime.datetime | Unset): The timestamp the workflowable object was created.
         href (str | Unset): URI to fetch complete information of the resource.
         id (str | Unset): Id of the resource.
         is_discarded (bool | Unset): Whether workflowable object has been discarded.
@@ -27,6 +28,7 @@ class BTObjectWorkflowInfo:
         last_attempt_timestamp (datetime.datetime | Unset): The timestamp of the last workflow action.
         last_encountered_error_message (str | Unset): The error message from the last failed workflow action, if any.
         metadata_state (BTMetadataStateType | Unset): The current state metadata values if applicable.
+        modified_at (datetime.datetime | Unset): The timestamp the workflowable object was last modified.
         name (str | Unset): Name of the resource.
         object_type (BTAPIWorkflowableType | Unset): All workflowable types that can be enumerated.
         state_id (str | Unset): The current state of object like SETUP, REJECTED etc. Custom workflows can have any
@@ -36,6 +38,7 @@ class BTObjectWorkflowInfo:
     """
 
     can_be_discarded: bool | Unset = UNSET
+    created_at: datetime.datetime | Unset = UNSET
     href: str | Unset = UNSET
     id: str | Unset = UNSET
     is_discarded: bool | Unset = UNSET
@@ -43,6 +46,7 @@ class BTObjectWorkflowInfo:
     last_attempt_timestamp: datetime.datetime | Unset = UNSET
     last_encountered_error_message: str | Unset = UNSET
     metadata_state: BTMetadataStateType | Unset = UNSET
+    modified_at: datetime.datetime | Unset = UNSET
     name: str | Unset = UNSET
     object_type: BTAPIWorkflowableType | Unset = UNSET
     state_id: str | Unset = UNSET
@@ -52,6 +56,10 @@ class BTObjectWorkflowInfo:
 
     def to_dict(self) -> dict[str, Any]:
         can_be_discarded = self.can_be_discarded
+
+        created_at: str | Unset = UNSET
+        if not isinstance(self.created_at, Unset):
+            created_at = self.created_at.isoformat()
 
         href = self.href
 
@@ -71,6 +79,10 @@ class BTObjectWorkflowInfo:
         if not isinstance(self.metadata_state, Unset):
             metadata_state = self.metadata_state.value
 
+        modified_at: str | Unset = UNSET
+        if not isinstance(self.modified_at, Unset):
+            modified_at = self.modified_at.isoformat()
+
         name = self.name
 
         object_type: str | Unset = UNSET
@@ -88,6 +100,8 @@ class BTObjectWorkflowInfo:
         field_dict.update({})
         if can_be_discarded is not UNSET:
             field_dict["canBeDiscarded"] = can_be_discarded
+        if created_at is not UNSET:
+            field_dict["createdAt"] = created_at
         if href is not UNSET:
             field_dict["href"] = href
         if id is not UNSET:
@@ -102,6 +116,8 @@ class BTObjectWorkflowInfo:
             field_dict["lastEncounteredErrorMessage"] = last_encountered_error_message
         if metadata_state is not UNSET:
             field_dict["metadataState"] = metadata_state
+        if modified_at is not UNSET:
+            field_dict["modifiedAt"] = modified_at
         if name is not UNSET:
             field_dict["name"] = name
         if object_type is not UNSET:
@@ -119,6 +135,13 @@ class BTObjectWorkflowInfo:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
         can_be_discarded = d.pop("canBeDiscarded", UNSET)
+
+        _created_at = d.pop("createdAt", UNSET)
+        created_at: datetime.datetime | Unset
+        if isinstance(_created_at, Unset):
+            created_at = UNSET
+        else:
+            created_at = datetime.datetime.fromisoformat(_created_at)
 
         href = d.pop("href", UNSET)
 
@@ -144,6 +167,13 @@ class BTObjectWorkflowInfo:
         else:
             metadata_state = BTMetadataStateType(_metadata_state)
 
+        _modified_at = d.pop("modifiedAt", UNSET)
+        modified_at: datetime.datetime | Unset
+        if isinstance(_modified_at, Unset):
+            modified_at = UNSET
+        else:
+            modified_at = datetime.datetime.fromisoformat(_modified_at)
+
         name = d.pop("name", UNSET)
 
         _object_type = d.pop("objectType", UNSET)
@@ -161,6 +191,7 @@ class BTObjectWorkflowInfo:
 
         bt_object_workflow_info = cls(
             can_be_discarded=can_be_discarded,
+            created_at=created_at,
             href=href,
             id=id,
             is_discarded=is_discarded,
@@ -168,6 +199,7 @@ class BTObjectWorkflowInfo:
             last_attempt_timestamp=last_attempt_timestamp,
             last_encountered_error_message=last_encountered_error_message,
             metadata_state=metadata_state,
+            modified_at=modified_at,
             name=name,
             object_type=object_type,
             state_id=state_id,

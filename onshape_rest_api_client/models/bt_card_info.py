@@ -24,6 +24,7 @@ class BTCardInfo:
         exp_year (int | Unset):
         last4 (str | Unset):
         name (str | Unset):
+        payment_method_id (str | Unset):
         type_ (str | Unset):
     """
 
@@ -32,6 +33,7 @@ class BTCardInfo:
     exp_year: int | Unset = UNSET
     last4: str | Unset = UNSET
     name: str | Unset = UNSET
+    payment_method_id: str | Unset = UNSET
     type_: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -48,6 +50,8 @@ class BTCardInfo:
 
         name = self.name
 
+        payment_method_id = self.payment_method_id
+
         type_ = self.type_
 
         field_dict: dict[str, Any] = {}
@@ -63,6 +67,8 @@ class BTCardInfo:
             field_dict["last4"] = last4
         if name is not UNSET:
             field_dict["name"] = name
+        if payment_method_id is not UNSET:
+            field_dict["paymentMethodId"] = payment_method_id
         if type_ is not UNSET:
             field_dict["type"] = type_
 
@@ -88,6 +94,8 @@ class BTCardInfo:
 
         name = d.pop("name", UNSET)
 
+        payment_method_id = d.pop("paymentMethodId", UNSET)
+
         type_ = d.pop("type", UNSET)
 
         bt_card_info = cls(
@@ -96,6 +104,7 @@ class BTCardInfo:
             exp_year=exp_year,
             last4=last4,
             name=name,
+            payment_method_id=payment_method_id,
             type_=type_,
         )
 

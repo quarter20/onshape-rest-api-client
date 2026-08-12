@@ -26,6 +26,7 @@ class BTPropertiesTableTemplateInfo:
         is_active (bool | Unset):
         is_all_caps (bool | Unset):
         is_indented (bool | Unset):
+        is_showing_top_level_assembly_row (bool | Unset):
         name (str | Unset): Name of the resource.
         property_columns (list[BTSimplePropertyInfo] | Unset):
         table_type (BTPropertiesTableTemplateType | Unset):
@@ -39,6 +40,7 @@ class BTPropertiesTableTemplateInfo:
     is_active: bool | Unset = UNSET
     is_all_caps: bool | Unset = UNSET
     is_indented: bool | Unset = UNSET
+    is_showing_top_level_assembly_row: bool | Unset = UNSET
     name: str | Unset = UNSET
     property_columns: list[BTSimplePropertyInfo] | Unset = UNSET
     table_type: BTPropertiesTableTemplateType | Unset = UNSET
@@ -58,6 +60,8 @@ class BTPropertiesTableTemplateInfo:
         is_all_caps = self.is_all_caps
 
         is_indented = self.is_indented
+
+        is_showing_top_level_assembly_row = self.is_showing_top_level_assembly_row
 
         name = self.name
 
@@ -91,6 +95,8 @@ class BTPropertiesTableTemplateInfo:
             field_dict["isAllCaps"] = is_all_caps
         if is_indented is not UNSET:
             field_dict["isIndented"] = is_indented
+        if is_showing_top_level_assembly_row is not UNSET:
+            field_dict["isShowingTopLevelAssemblyRow"] = is_showing_top_level_assembly_row
         if name is not UNSET:
             field_dict["name"] = name
         if property_columns is not UNSET:
@@ -121,6 +127,8 @@ class BTPropertiesTableTemplateInfo:
 
         is_indented = d.pop("isIndented", UNSET)
 
+        is_showing_top_level_assembly_row = d.pop("isShowingTopLevelAssemblyRow", UNSET)
+
         name = d.pop("name", UNSET)
 
         _property_columns = d.pop("propertyColumns", UNSET)
@@ -150,6 +158,7 @@ class BTPropertiesTableTemplateInfo:
             is_active=is_active,
             is_all_caps=is_all_caps,
             is_indented=is_indented,
+            is_showing_top_level_assembly_row=is_showing_top_level_assembly_row,
             name=name,
             property_columns=property_columns,
             table_type=table_type,

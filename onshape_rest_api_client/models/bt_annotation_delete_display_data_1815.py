@@ -7,6 +7,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 from ..models.gbt_annotation_attachment_location import GBTAnnotationAttachmentLocation
+from ..models.gbt_annotation_type import GBTAnnotationType
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -25,6 +26,7 @@ class BTAnnotationDeleteDisplayData1815:
         all_references_populated (bool | Unset):
         annotation_id (str | Unset):
         annotation_plane (BTCoordinateSystem387 | Unset):
+        annotation_type (GBTAnnotationType | Unset):
         attachment_location (GBTAnnotationAttachmentLocation | Unset):
         base_plane (BTCoordinateSystem387 | Unset):
         bt_type (str | Unset): Type of JSON object.
@@ -34,6 +36,7 @@ class BTAnnotationDeleteDisplayData1815:
         is_constrained_to_plane (bool | Unset):
         is_deletion (bool | Unset):
         is_derived (bool | Unset):
+        is_plane_reference_missing (bool | Unset):
         main_annotation_id (str | Unset):
         main_constraint_id (str | Unset):
         main_feature_id (str | Unset):
@@ -46,6 +49,7 @@ class BTAnnotationDeleteDisplayData1815:
     all_references_populated: bool | Unset = UNSET
     annotation_id: str | Unset = UNSET
     annotation_plane: BTCoordinateSystem387 | Unset = UNSET
+    annotation_type: GBTAnnotationType | Unset = UNSET
     attachment_location: GBTAnnotationAttachmentLocation | Unset = UNSET
     base_plane: BTCoordinateSystem387 | Unset = UNSET
     bt_type: str | Unset = UNSET
@@ -55,6 +59,7 @@ class BTAnnotationDeleteDisplayData1815:
     is_constrained_to_plane: bool | Unset = UNSET
     is_deletion: bool | Unset = UNSET
     is_derived: bool | Unset = UNSET
+    is_plane_reference_missing: bool | Unset = UNSET
     main_annotation_id: str | Unset = UNSET
     main_constraint_id: str | Unset = UNSET
     main_feature_id: str | Unset = UNSET
@@ -75,6 +80,10 @@ class BTAnnotationDeleteDisplayData1815:
         annotation_plane: dict[str, Any] | Unset = UNSET
         if not isinstance(self.annotation_plane, Unset):
             annotation_plane = self.annotation_plane.to_dict()
+
+        annotation_type: str | Unset = UNSET
+        if not isinstance(self.annotation_type, Unset):
+            annotation_type = self.annotation_type.value
 
         attachment_location: str | Unset = UNSET
         if not isinstance(self.attachment_location, Unset):
@@ -103,6 +112,8 @@ class BTAnnotationDeleteDisplayData1815:
 
         is_derived = self.is_derived
 
+        is_plane_reference_missing = self.is_plane_reference_missing
+
         main_annotation_id = self.main_annotation_id
 
         main_constraint_id = self.main_constraint_id
@@ -126,6 +137,8 @@ class BTAnnotationDeleteDisplayData1815:
             field_dict["annotationId"] = annotation_id
         if annotation_plane is not UNSET:
             field_dict["annotationPlane"] = annotation_plane
+        if annotation_type is not UNSET:
+            field_dict["annotationType"] = annotation_type
         if attachment_location is not UNSET:
             field_dict["attachmentLocation"] = attachment_location
         if base_plane is not UNSET:
@@ -144,6 +157,8 @@ class BTAnnotationDeleteDisplayData1815:
             field_dict["isDeletion"] = is_deletion
         if is_derived is not UNSET:
             field_dict["isDerived"] = is_derived
+        if is_plane_reference_missing is not UNSET:
+            field_dict["isPlaneReferenceMissing"] = is_plane_reference_missing
         if main_annotation_id is not UNSET:
             field_dict["mainAnnotationId"] = main_annotation_id
         if main_constraint_id is not UNSET:
@@ -177,6 +192,13 @@ class BTAnnotationDeleteDisplayData1815:
             annotation_plane = UNSET
         else:
             annotation_plane = BTCoordinateSystem387.from_dict(_annotation_plane)
+
+        _annotation_type = d.pop("annotationType", UNSET)
+        annotation_type: GBTAnnotationType | Unset
+        if isinstance(_annotation_type, Unset):
+            annotation_type = UNSET
+        else:
+            annotation_type = GBTAnnotationType(_annotation_type)
 
         _attachment_location = d.pop("attachmentLocation", UNSET)
         attachment_location: GBTAnnotationAttachmentLocation | Unset
@@ -213,6 +235,8 @@ class BTAnnotationDeleteDisplayData1815:
 
         is_derived = d.pop("isDerived", UNSET)
 
+        is_plane_reference_missing = d.pop("isPlaneReferenceMissing", UNSET)
+
         main_annotation_id = d.pop("mainAnnotationId", UNSET)
 
         main_constraint_id = d.pop("mainConstraintId", UNSET)
@@ -230,6 +254,7 @@ class BTAnnotationDeleteDisplayData1815:
             all_references_populated=all_references_populated,
             annotation_id=annotation_id,
             annotation_plane=annotation_plane,
+            annotation_type=annotation_type,
             attachment_location=attachment_location,
             base_plane=base_plane,
             bt_type=bt_type,
@@ -239,6 +264,7 @@ class BTAnnotationDeleteDisplayData1815:
             is_constrained_to_plane=is_constrained_to_plane,
             is_deletion=is_deletion,
             is_derived=is_derived,
+            is_plane_reference_missing=is_plane_reference_missing,
             main_annotation_id=main_annotation_id,
             main_constraint_id=main_constraint_id,
             main_feature_id=main_feature_id,

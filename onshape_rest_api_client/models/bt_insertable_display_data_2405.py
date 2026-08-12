@@ -12,6 +12,9 @@ if TYPE_CHECKING:
     from ..models.bt_full_element_id_756 import BTFullElementId756
     from ..models.bt_graphics_buffer_2668 import BTGraphicsBuffer2668
     from ..models.bt_immutable_byte_array import BTImmutableByteArray
+    from ..models.bt_insertable_display_data_2405_appearance_id_to_appearance_override import (
+        BTInsertableDisplayData2405AppearanceIdToAppearanceOverride,
+    )
     from ..models.bt_insertable_display_data_2405_graphics_buffers import BTInsertableDisplayData2405GraphicsBuffers
 
 
@@ -22,6 +25,7 @@ T = TypeVar("T", bound="BTInsertableDisplayData2405")
 class BTInsertableDisplayData2405:
     """
     Attributes:
+        appearance_id_to_appearance_override (BTInsertableDisplayData2405AppearanceIdToAppearanceOverride | Unset):
         bt_type (str | Unset): Type of JSON object.
         buffers (list[BTGraphicsBuffer2668] | Unset):
         full_element_id (BTFullElementId756 | Unset):
@@ -33,6 +37,7 @@ class BTInsertableDisplayData2405:
         tessellation_setting_index (int | Unset):
     """
 
+    appearance_id_to_appearance_override: BTInsertableDisplayData2405AppearanceIdToAppearanceOverride | Unset = UNSET
     bt_type: str | Unset = UNSET
     buffers: list[BTGraphicsBuffer2668] | Unset = UNSET
     full_element_id: BTFullElementId756 | Unset = UNSET
@@ -45,6 +50,10 @@ class BTInsertableDisplayData2405:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        appearance_id_to_appearance_override: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.appearance_id_to_appearance_override, Unset):
+            appearance_id_to_appearance_override = self.appearance_id_to_appearance_override.to_dict()
+
         bt_type = self.bt_type
 
         buffers: list[dict[str, Any]] | Unset = UNSET
@@ -77,6 +86,8 @@ class BTInsertableDisplayData2405:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if appearance_id_to_appearance_override is not UNSET:
+            field_dict["appearanceIdToAppearanceOverride"] = appearance_id_to_appearance_override
         if bt_type is not UNSET:
             field_dict["btType"] = bt_type
         if buffers is not UNSET:
@@ -103,9 +114,23 @@ class BTInsertableDisplayData2405:
         from ..models.bt_full_element_id_756 import BTFullElementId756
         from ..models.bt_graphics_buffer_2668 import BTGraphicsBuffer2668
         from ..models.bt_immutable_byte_array import BTImmutableByteArray
+        from ..models.bt_insertable_display_data_2405_appearance_id_to_appearance_override import (
+            BTInsertableDisplayData2405AppearanceIdToAppearanceOverride,
+        )
         from ..models.bt_insertable_display_data_2405_graphics_buffers import BTInsertableDisplayData2405GraphicsBuffers
 
         d = dict(src_dict)
+        _appearance_id_to_appearance_override = d.pop("appearanceIdToAppearanceOverride", UNSET)
+        appearance_id_to_appearance_override: BTInsertableDisplayData2405AppearanceIdToAppearanceOverride | Unset
+        if isinstance(_appearance_id_to_appearance_override, Unset):
+            appearance_id_to_appearance_override = UNSET
+        else:
+            appearance_id_to_appearance_override = (
+                BTInsertableDisplayData2405AppearanceIdToAppearanceOverride.from_dict(
+                    _appearance_id_to_appearance_override
+                )
+            )
+
         bt_type = d.pop("btType", UNSET)
 
         _buffers = d.pop("buffers", UNSET)
@@ -147,6 +172,7 @@ class BTInsertableDisplayData2405:
         tessellation_setting_index = d.pop("tessellationSettingIndex", UNSET)
 
         bt_insertable_display_data_2405 = cls(
+            appearance_id_to_appearance_override=appearance_id_to_appearance_override,
             bt_type=bt_type,
             buffers=buffers,
             full_element_id=full_element_id,

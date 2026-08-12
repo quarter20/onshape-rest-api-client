@@ -4,6 +4,7 @@ This package contains 100% auto-generated code, using [openapi-python-client](ht
 
 |Release|Date of Generation|Onshape API version| openapi-python-client|
 |-|-|-|-|
+|1.219.0|August 12, 2026|v16|0.29.0|
 |1.217.0|July 6, 2026|v16|0.29.0|
 |1.216.0|June 12, 2026|v16|0.29.0|
 |1.215.0|May 19, 2026|v16|0.28.4|

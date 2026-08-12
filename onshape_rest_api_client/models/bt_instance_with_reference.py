@@ -15,6 +15,7 @@ if TYPE_CHECKING:
     from ..models.bt_instance_with_reference_custom_data import BTInstanceWithReferenceCustomData
     from ..models.bt_microversion_id_366 import BTMicroversionId366
     from ..models.bt_node_with_reference import BTNodeWithReference
+    from ..models.bt_object_id import BTObjectId
     from ..models.btm_parameter_1 import BTMParameter1
     from ..models.btm_parameter_reference_with_configuration_3028 import BTMParameterReferenceWithConfiguration3028
 
@@ -38,6 +39,7 @@ class BTInstanceWithReference:
         locked_state (BTInstanceWithReference | Unset):
         microversion_id (BTMicroversionId366 | Unset):
         node_id (str | Unset):
+        node_id_raw (BTObjectId | Unset):
         node_with_reference_list (list[BTNodeWithReference] | Unset):
         reference_parameter (BTMParameterReferenceWithConfiguration3028 | Unset):
         standard_content (bool | Unset):
@@ -59,6 +61,7 @@ class BTInstanceWithReference:
     locked_state: BTInstanceWithReference | Unset = UNSET
     microversion_id: BTMicroversionId366 | Unset = UNSET
     node_id: str | Unset = UNSET
+    node_id_raw: BTObjectId | Unset = UNSET
     node_with_reference_list: list[BTNodeWithReference] | Unset = UNSET
     reference_parameter: BTMParameterReferenceWithConfiguration3028 | Unset = UNSET
     standard_content: bool | Unset = UNSET
@@ -110,6 +113,10 @@ class BTInstanceWithReference:
 
         node_id = self.node_id
 
+        node_id_raw: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.node_id_raw, Unset):
+            node_id_raw = self.node_id_raw.to_dict()
+
         node_with_reference_list: list[dict[str, Any]] | Unset = UNSET
         if not isinstance(self.node_with_reference_list, Unset):
             node_with_reference_list = []
@@ -158,6 +165,8 @@ class BTInstanceWithReference:
             field_dict["microversionId"] = microversion_id
         if node_id is not UNSET:
             field_dict["nodeId"] = node_id
+        if node_id_raw is not UNSET:
+            field_dict["nodeIdRaw"] = node_id_raw
         if node_with_reference_list is not UNSET:
             field_dict["nodeWithReferenceList"] = node_with_reference_list
         if reference_parameter is not UNSET:
@@ -183,6 +192,7 @@ class BTInstanceWithReference:
         from ..models.bt_instance_with_reference_custom_data import BTInstanceWithReferenceCustomData
         from ..models.bt_microversion_id_366 import BTMicroversionId366
         from ..models.bt_node_with_reference import BTNodeWithReference
+        from ..models.bt_object_id import BTObjectId
         from ..models.btm_parameter_1 import BTMParameter1
         from ..models.btm_parameter_reference_with_configuration_3028 import BTMParameterReferenceWithConfiguration3028
 
@@ -250,6 +260,13 @@ class BTInstanceWithReference:
 
         node_id = d.pop("nodeId", UNSET)
 
+        _node_id_raw = d.pop("nodeIdRaw", UNSET)
+        node_id_raw: BTObjectId | Unset
+        if isinstance(_node_id_raw, Unset):
+            node_id_raw = UNSET
+        else:
+            node_id_raw = BTObjectId.from_dict(_node_id_raw)
+
         _node_with_reference_list = d.pop("nodeWithReferenceList", UNSET)
         node_with_reference_list: list[BTNodeWithReference] | Unset = UNSET
         if _node_with_reference_list is not UNSET:
@@ -289,6 +306,7 @@ class BTInstanceWithReference:
             locked_state=locked_state,
             microversion_id=microversion_id,
             node_id=node_id,
+            node_id_raw=node_id_raw,
             node_with_reference_list=node_with_reference_list,
             reference_parameter=reference_parameter,
             standard_content=standard_content,

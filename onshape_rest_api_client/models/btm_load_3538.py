@@ -12,10 +12,8 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.btm_feature_134 import BTMFeature134
-    from ..models.btm_individual_query_with_occurrence_base_904 import BTMIndividualQueryWithOccurrenceBase904
     from ..models.btm_load_3538_load_component_parameter_ids import BTMLoad3538LoadComponentParameterIds
     from ..models.btm_load_3538_suppressed_in_simulations import BTMLoad3538SuppressedInSimulations
-    from ..models.btm_mate_connector_66 import BTMMateConnector66
     from ..models.btm_parameter_1 import BTMParameter1
     from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
 
@@ -38,8 +36,6 @@ class BTMLoad3538:
             definition.
         node_id (str | Unset): ID for the feature node.
         parameter_libraries (list[BTMParameter1] | Unset):
-        parameters (list[BTMParameter1] | Unset): A list of parameter values for instantiation of the feature spec.
-            Parameters are present for all defined parameters, even if not used in a specific instantiation.
         parent_suppressed (bool | Unset):
         return_after_subfeatures (bool | Unset): For internal use only. Should always be `false`.
         sub_features (list[BTMFeature134] | Unset): List of subfeatures belonging to the feature.
@@ -48,18 +44,11 @@ class BTMLoad3538:
         suppression_configured (bool | Unset): `true` if the suppression is configured in the Part Studio.
         suppression_state (BTMSuppressionState1924 | Unset):
         variable_studio_reference (bool | Unset): If `true`, the feature references a Variable Studio.
-        auxiliary_tree_feature (bool | Unset):
-        feature_folder (bool | Unset):
-        feature_list_field_index (int | Unset):
-        field_index_for_owned_mate_connectors (int | Unset):
-        mate_connectors (list[BTMMateConnector66] | Unset):
-        occurrence_queries_from_all_configurations (list[BTMIndividualQueryWithOccurrenceBase904] | Unset):
-        parametric_instance_feature (bool | Unset):
-        sub_features_not_used_in_query (list[BTMFeature134] | Unset):
         version (int | Unset):
         defined_by_components (bool | Unset):
         direction_flipped (bool | Unset):
         fgs_units (str | Unset):
+        field_index_for_suppressed_in_simulations_map (int | Unset):
         load_component_parameter_ids (BTMLoad3538LoadComponentParameterIds | Unset):
         load_region_parameter_id (str | Unset):
         load_type (GBTLoadType | Unset):
@@ -78,7 +67,6 @@ class BTMLoad3538:
     namespace: str | Unset = UNSET
     node_id: str | Unset = UNSET
     parameter_libraries: list[BTMParameter1] | Unset = UNSET
-    parameters: list[BTMParameter1] | Unset = UNSET
     parent_suppressed: bool | Unset = UNSET
     return_after_subfeatures: bool | Unset = UNSET
     sub_features: list[BTMFeature134] | Unset = UNSET
@@ -86,18 +74,11 @@ class BTMLoad3538:
     suppression_configured: bool | Unset = UNSET
     suppression_state: BTMSuppressionState1924 | Unset = UNSET
     variable_studio_reference: bool | Unset = UNSET
-    auxiliary_tree_feature: bool | Unset = UNSET
-    feature_folder: bool | Unset = UNSET
-    feature_list_field_index: int | Unset = UNSET
-    field_index_for_owned_mate_connectors: int | Unset = UNSET
-    mate_connectors: list[BTMMateConnector66] | Unset = UNSET
-    occurrence_queries_from_all_configurations: list[BTMIndividualQueryWithOccurrenceBase904] | Unset = UNSET
-    parametric_instance_feature: bool | Unset = UNSET
-    sub_features_not_used_in_query: list[BTMFeature134] | Unset = UNSET
     version: int | Unset = UNSET
     defined_by_components: bool | Unset = UNSET
     direction_flipped: bool | Unset = UNSET
     fgs_units: str | Unset = UNSET
+    field_index_for_suppressed_in_simulations_map: int | Unset = UNSET
     load_component_parameter_ids: BTMLoad3538LoadComponentParameterIds | Unset = UNSET
     load_region_parameter_id: str | Unset = UNSET
     load_type: GBTLoadType | Unset = UNSET
@@ -131,13 +112,6 @@ class BTMLoad3538:
                 parameter_libraries_item = parameter_libraries_item_data.to_dict()
                 parameter_libraries.append(parameter_libraries_item)
 
-        parameters: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.parameters, Unset):
-            parameters = []
-            for parameters_item_data in self.parameters:
-                parameters_item = parameters_item_data.to_dict()
-                parameters.append(parameters_item)
-
         parent_suppressed = self.parent_suppressed
 
         return_after_subfeatures = self.return_after_subfeatures
@@ -159,39 +133,6 @@ class BTMLoad3538:
 
         variable_studio_reference = self.variable_studio_reference
 
-        auxiliary_tree_feature = self.auxiliary_tree_feature
-
-        feature_folder = self.feature_folder
-
-        feature_list_field_index = self.feature_list_field_index
-
-        field_index_for_owned_mate_connectors = self.field_index_for_owned_mate_connectors
-
-        mate_connectors: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.mate_connectors, Unset):
-            mate_connectors = []
-            for mate_connectors_item_data in self.mate_connectors:
-                mate_connectors_item = mate_connectors_item_data.to_dict()
-                mate_connectors.append(mate_connectors_item)
-
-        occurrence_queries_from_all_configurations: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.occurrence_queries_from_all_configurations, Unset):
-            occurrence_queries_from_all_configurations = []
-            for occurrence_queries_from_all_configurations_item_data in self.occurrence_queries_from_all_configurations:
-                occurrence_queries_from_all_configurations_item = (
-                    occurrence_queries_from_all_configurations_item_data.to_dict()
-                )
-                occurrence_queries_from_all_configurations.append(occurrence_queries_from_all_configurations_item)
-
-        parametric_instance_feature = self.parametric_instance_feature
-
-        sub_features_not_used_in_query: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.sub_features_not_used_in_query, Unset):
-            sub_features_not_used_in_query = []
-            for sub_features_not_used_in_query_item_data in self.sub_features_not_used_in_query:
-                sub_features_not_used_in_query_item = sub_features_not_used_in_query_item_data.to_dict()
-                sub_features_not_used_in_query.append(sub_features_not_used_in_query_item)
-
         version = self.version
 
         defined_by_components = self.defined_by_components
@@ -199,6 +140,8 @@ class BTMLoad3538:
         direction_flipped = self.direction_flipped
 
         fgs_units = self.fgs_units
+
+        field_index_for_suppressed_in_simulations_map = self.field_index_for_suppressed_in_simulations_map
 
         load_component_parameter_ids: dict[str, Any] | Unset = UNSET
         if not isinstance(self.load_component_parameter_ids, Unset):
@@ -243,8 +186,6 @@ class BTMLoad3538:
             field_dict["nodeId"] = node_id
         if parameter_libraries is not UNSET:
             field_dict["parameterLibraries"] = parameter_libraries
-        if parameters is not UNSET:
-            field_dict["parameters"] = parameters
         if parent_suppressed is not UNSET:
             field_dict["parentSuppressed"] = parent_suppressed
         if return_after_subfeatures is not UNSET:
@@ -259,22 +200,6 @@ class BTMLoad3538:
             field_dict["suppressionState"] = suppression_state
         if variable_studio_reference is not UNSET:
             field_dict["variableStudioReference"] = variable_studio_reference
-        if auxiliary_tree_feature is not UNSET:
-            field_dict["auxiliaryTreeFeature"] = auxiliary_tree_feature
-        if feature_folder is not UNSET:
-            field_dict["featureFolder"] = feature_folder
-        if feature_list_field_index is not UNSET:
-            field_dict["featureListFieldIndex"] = feature_list_field_index
-        if field_index_for_owned_mate_connectors is not UNSET:
-            field_dict["fieldIndexForOwnedMateConnectors"] = field_index_for_owned_mate_connectors
-        if mate_connectors is not UNSET:
-            field_dict["mateConnectors"] = mate_connectors
-        if occurrence_queries_from_all_configurations is not UNSET:
-            field_dict["occurrenceQueriesFromAllConfigurations"] = occurrence_queries_from_all_configurations
-        if parametric_instance_feature is not UNSET:
-            field_dict["parametricInstanceFeature"] = parametric_instance_feature
-        if sub_features_not_used_in_query is not UNSET:
-            field_dict["subFeaturesNotUsedInQuery"] = sub_features_not_used_in_query
         if version is not UNSET:
             field_dict["version"] = version
         if defined_by_components is not UNSET:
@@ -283,6 +208,8 @@ class BTMLoad3538:
             field_dict["directionFlipped"] = direction_flipped
         if fgs_units is not UNSET:
             field_dict["fgsUnits"] = fgs_units
+        if field_index_for_suppressed_in_simulations_map is not UNSET:
+            field_dict["fieldIndexForSuppressedInSimulationsMap"] = field_index_for_suppressed_in_simulations_map
         if load_component_parameter_ids is not UNSET:
             field_dict["loadComponentParameterIds"] = load_component_parameter_ids
         if load_region_parameter_id is not UNSET:
@@ -303,10 +230,8 @@ class BTMLoad3538:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.btm_feature_134 import BTMFeature134
-        from ..models.btm_individual_query_with_occurrence_base_904 import BTMIndividualQueryWithOccurrenceBase904
         from ..models.btm_load_3538_load_component_parameter_ids import BTMLoad3538LoadComponentParameterIds
         from ..models.btm_load_3538_suppressed_in_simulations import BTMLoad3538SuppressedInSimulations
-        from ..models.btm_mate_connector_66 import BTMMateConnector66
         from ..models.btm_parameter_1 import BTMParameter1
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
 
@@ -336,15 +261,6 @@ class BTMLoad3538:
 
                 parameter_libraries.append(parameter_libraries_item)
 
-        _parameters = d.pop("parameters", UNSET)
-        parameters: list[BTMParameter1] | Unset = UNSET
-        if _parameters is not UNSET:
-            parameters = []
-            for parameters_item_data in _parameters:
-                parameters_item = BTMParameter1.from_dict(parameters_item_data)
-
-                parameters.append(parameters_item)
-
         parent_suppressed = d.pop("parentSuppressed", UNSET)
 
         return_after_subfeatures = d.pop("returnAfterSubfeatures", UNSET)
@@ -371,45 +287,6 @@ class BTMLoad3538:
 
         variable_studio_reference = d.pop("variableStudioReference", UNSET)
 
-        auxiliary_tree_feature = d.pop("auxiliaryTreeFeature", UNSET)
-
-        feature_folder = d.pop("featureFolder", UNSET)
-
-        feature_list_field_index = d.pop("featureListFieldIndex", UNSET)
-
-        field_index_for_owned_mate_connectors = d.pop("fieldIndexForOwnedMateConnectors", UNSET)
-
-        _mate_connectors = d.pop("mateConnectors", UNSET)
-        mate_connectors: list[BTMMateConnector66] | Unset = UNSET
-        if _mate_connectors is not UNSET:
-            mate_connectors = []
-            for mate_connectors_item_data in _mate_connectors:
-                mate_connectors_item = BTMMateConnector66.from_dict(mate_connectors_item_data)
-
-                mate_connectors.append(mate_connectors_item)
-
-        _occurrence_queries_from_all_configurations = d.pop("occurrenceQueriesFromAllConfigurations", UNSET)
-        occurrence_queries_from_all_configurations: list[BTMIndividualQueryWithOccurrenceBase904] | Unset = UNSET
-        if _occurrence_queries_from_all_configurations is not UNSET:
-            occurrence_queries_from_all_configurations = []
-            for occurrence_queries_from_all_configurations_item_data in _occurrence_queries_from_all_configurations:
-                occurrence_queries_from_all_configurations_item = BTMIndividualQueryWithOccurrenceBase904.from_dict(
-                    occurrence_queries_from_all_configurations_item_data
-                )
-
-                occurrence_queries_from_all_configurations.append(occurrence_queries_from_all_configurations_item)
-
-        parametric_instance_feature = d.pop("parametricInstanceFeature", UNSET)
-
-        _sub_features_not_used_in_query = d.pop("subFeaturesNotUsedInQuery", UNSET)
-        sub_features_not_used_in_query: list[BTMFeature134] | Unset = UNSET
-        if _sub_features_not_used_in_query is not UNSET:
-            sub_features_not_used_in_query = []
-            for sub_features_not_used_in_query_item_data in _sub_features_not_used_in_query:
-                sub_features_not_used_in_query_item = BTMFeature134.from_dict(sub_features_not_used_in_query_item_data)
-
-                sub_features_not_used_in_query.append(sub_features_not_used_in_query_item)
-
         version = d.pop("version", UNSET)
 
         defined_by_components = d.pop("definedByComponents", UNSET)
@@ -417,6 +294,8 @@ class BTMLoad3538:
         direction_flipped = d.pop("directionFlipped", UNSET)
 
         fgs_units = d.pop("fgsUnits", UNSET)
+
+        field_index_for_suppressed_in_simulations_map = d.pop("fieldIndexForSuppressedInSimulationsMap", UNSET)
 
         _load_component_parameter_ids = d.pop("loadComponentParameterIds", UNSET)
         load_component_parameter_ids: BTMLoad3538LoadComponentParameterIds | Unset
@@ -462,7 +341,6 @@ class BTMLoad3538:
             namespace=namespace,
             node_id=node_id,
             parameter_libraries=parameter_libraries,
-            parameters=parameters,
             parent_suppressed=parent_suppressed,
             return_after_subfeatures=return_after_subfeatures,
             sub_features=sub_features,
@@ -470,18 +348,11 @@ class BTMLoad3538:
             suppression_configured=suppression_configured,
             suppression_state=suppression_state,
             variable_studio_reference=variable_studio_reference,
-            auxiliary_tree_feature=auxiliary_tree_feature,
-            feature_folder=feature_folder,
-            feature_list_field_index=feature_list_field_index,
-            field_index_for_owned_mate_connectors=field_index_for_owned_mate_connectors,
-            mate_connectors=mate_connectors,
-            occurrence_queries_from_all_configurations=occurrence_queries_from_all_configurations,
-            parametric_instance_feature=parametric_instance_feature,
-            sub_features_not_used_in_query=sub_features_not_used_in_query,
             version=version,
             defined_by_components=defined_by_components,
             direction_flipped=direction_flipped,
             fgs_units=fgs_units,
+            field_index_for_suppressed_in_simulations_map=field_index_for_suppressed_in_simulations_map,
             load_component_parameter_ids=load_component_parameter_ids,
             load_region_parameter_id=load_region_parameter_id,
             load_type=load_type,

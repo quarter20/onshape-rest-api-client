@@ -22,6 +22,7 @@ class BTCompanyInfo:
     Attributes:
         address (BTAddressInfo | Unset):
         admin (bool | Unset):
+        aws_cmk_kms_arn (str | Unset):
         description (str | Unset):
         domain_prefix (str | Unset):
         enterprise_base_url (str | Unset):
@@ -41,6 +42,7 @@ class BTCompanyInfo:
 
     address: BTAddressInfo | Unset = UNSET
     admin: bool | Unset = UNSET
+    aws_cmk_kms_arn: str | Unset = UNSET
     description: str | Unset = UNSET
     domain_prefix: str | Unset = UNSET
     enterprise_base_url: str | Unset = UNSET
@@ -64,6 +66,8 @@ class BTCompanyInfo:
             address = self.address.to_dict()
 
         admin = self.admin
+
+        aws_cmk_kms_arn = self.aws_cmk_kms_arn
 
         description = self.description
 
@@ -106,6 +110,8 @@ class BTCompanyInfo:
             field_dict["address"] = address
         if admin is not UNSET:
             field_dict["admin"] = admin
+        if aws_cmk_kms_arn is not UNSET:
+            field_dict["awsCmkKmsArn"] = aws_cmk_kms_arn
         if description is not UNSET:
             field_dict["description"] = description
         if domain_prefix is not UNSET:
@@ -154,6 +160,8 @@ class BTCompanyInfo:
 
         admin = d.pop("admin", UNSET)
 
+        aws_cmk_kms_arn = d.pop("awsCmkKmsArn", UNSET)
+
         description = d.pop("description", UNSET)
 
         domain_prefix = d.pop("domainPrefix", UNSET)
@@ -192,6 +200,7 @@ class BTCompanyInfo:
         bt_company_info = cls(
             address=address,
             admin=admin,
+            aws_cmk_kms_arn=aws_cmk_kms_arn,
             description=description,
             domain_prefix=domain_prefix,
             enterprise_base_url=enterprise_base_url,

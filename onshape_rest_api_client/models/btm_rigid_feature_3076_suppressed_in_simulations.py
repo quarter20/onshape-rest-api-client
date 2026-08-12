@@ -6,53 +6,38 @@ from typing import Any, TypeVar
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..types import UNSET, Unset
-
-T = TypeVar("T", bound="BTPlmContextInfo")
+T = TypeVar("T", bound="BTMRigidFeature3076SuppressedInSimulations")
 
 
 @_attrs_define
-class BTPlmContextInfo:
-    """PLM Context information .
+class BTMRigidFeature3076SuppressedInSimulations:
+    """ """
 
-    Attributes:
-        description (str | Unset):
-    """
-
-    description: str | Unset = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, int] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        description = self.description
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update({})
-        if description is not UNSET:
-            field_dict["description"] = description
 
         return field_dict
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
-        description = d.pop("description", UNSET)
+        btm_rigid_feature_3076_suppressed_in_simulations = cls()
 
-        bt_plm_context_info = cls(
-            description=description,
-        )
-
-        bt_plm_context_info.additional_properties = d
-        return bt_plm_context_info
+        btm_rigid_feature_3076_suppressed_in_simulations.additional_properties = d
+        return btm_rigid_feature_3076_suppressed_in_simulations
 
     @property
     def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
-    def __getitem__(self, key: str) -> Any:
+    def __getitem__(self, key: str) -> int:
         return self.additional_properties[key]
 
-    def __setitem__(self, key: str, value: Any) -> None:
+    def __setitem__(self, key: str, value: int) -> None:
         self.additional_properties[key] = value
 
     def __delitem__(self, key: str) -> None:

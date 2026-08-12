@@ -10,6 +10,7 @@ from ..models.gbt_parameter_library_relation_type import GBTParameterLibraryRela
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.bt_element_library_reference_data_3133 import BTElementLibraryReferenceData3133
     from ..models.btm_import_136 import BTMImport136
 
 
@@ -28,6 +29,7 @@ class BTMParameterBlobReference1679:
         parameter_name (str | Unset):
         value_string (str | Unset):
         blob_import (BTMImport136 | Unset):
+        element_library_data (BTElementLibraryReferenceData3133 | Unset):
         namespace (str | Unset):
     """
 
@@ -39,6 +41,7 @@ class BTMParameterBlobReference1679:
     parameter_name: str | Unset = UNSET
     value_string: str | Unset = UNSET
     blob_import: BTMImport136 | Unset = UNSET
+    element_library_data: BTElementLibraryReferenceData3133 | Unset = UNSET
     namespace: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -63,6 +66,10 @@ class BTMParameterBlobReference1679:
         if not isinstance(self.blob_import, Unset):
             blob_import = self.blob_import.to_dict()
 
+        element_library_data: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.element_library_data, Unset):
+            element_library_data = self.element_library_data.to_dict()
+
         namespace = self.namespace
 
         field_dict: dict[str, Any] = {}
@@ -84,6 +91,8 @@ class BTMParameterBlobReference1679:
             field_dict["valueString"] = value_string
         if blob_import is not UNSET:
             field_dict["blobImport"] = blob_import
+        if element_library_data is not UNSET:
+            field_dict["elementLibraryData"] = element_library_data
         if namespace is not UNSET:
             field_dict["namespace"] = namespace
 
@@ -91,6 +100,7 @@ class BTMParameterBlobReference1679:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        from ..models.bt_element_library_reference_data_3133 import BTElementLibraryReferenceData3133
         from ..models.btm_import_136 import BTMImport136
 
         d = dict(src_dict)
@@ -120,6 +130,13 @@ class BTMParameterBlobReference1679:
         else:
             blob_import = BTMImport136.from_dict(_blob_import)
 
+        _element_library_data = d.pop("elementLibraryData", UNSET)
+        element_library_data: BTElementLibraryReferenceData3133 | Unset
+        if isinstance(_element_library_data, Unset):
+            element_library_data = UNSET
+        else:
+            element_library_data = BTElementLibraryReferenceData3133.from_dict(_element_library_data)
+
         namespace = d.pop("namespace", UNSET)
 
         btm_parameter_blob_reference_1679 = cls(
@@ -131,6 +148,7 @@ class BTMParameterBlobReference1679:
             parameter_name=parameter_name,
             value_string=value_string,
             blob_import=blob_import,
+            element_library_data=element_library_data,
             namespace=namespace,
         )
 

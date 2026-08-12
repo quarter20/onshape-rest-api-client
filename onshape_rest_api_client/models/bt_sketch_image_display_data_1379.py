@@ -25,6 +25,7 @@ class BTSketchImageDisplayData1379:
         bt_type (str | Unset): Type of JSON object.
         entities (list[BTSketchEntityDisplayData354] | Unset):
         feature_id (str | Unset):
+        is_element_library_reference (bool | Unset):
         is_on_flat (bool | Unset):
         points (list[float] | Unset):
         source_id (str | Unset):
@@ -36,6 +37,7 @@ class BTSketchImageDisplayData1379:
     bt_type: str | Unset = UNSET
     entities: list[BTSketchEntityDisplayData354] | Unset = UNSET
     feature_id: str | Unset = UNSET
+    is_element_library_reference: bool | Unset = UNSET
     is_on_flat: bool | Unset = UNSET
     points: list[float] | Unset = UNSET
     source_id: str | Unset = UNSET
@@ -62,6 +64,8 @@ class BTSketchImageDisplayData1379:
 
         feature_id = self.feature_id
 
+        is_element_library_reference = self.is_element_library_reference
+
         is_on_flat = self.is_on_flat
 
         points: list[float] | Unset = UNSET
@@ -87,6 +91,8 @@ class BTSketchImageDisplayData1379:
             field_dict["entities"] = entities
         if feature_id is not UNSET:
             field_dict["featureId"] = feature_id
+        if is_element_library_reference is not UNSET:
+            field_dict["isElementLibraryReference"] = is_element_library_reference
         if is_on_flat is not UNSET:
             field_dict["isOnFlat"] = is_on_flat
         if points is not UNSET:
@@ -131,6 +137,8 @@ class BTSketchImageDisplayData1379:
 
         feature_id = d.pop("featureId", UNSET)
 
+        is_element_library_reference = d.pop("isElementLibraryReference", UNSET)
+
         is_on_flat = d.pop("isOnFlat", UNSET)
 
         points = cast(list[float], d.pop("points", UNSET))
@@ -150,6 +158,7 @@ class BTSketchImageDisplayData1379:
             bt_type=bt_type,
             entities=entities,
             feature_id=feature_id,
+            is_element_library_reference=is_element_library_reference,
             is_on_flat=is_on_flat,
             points=points,
             source_id=source_id,

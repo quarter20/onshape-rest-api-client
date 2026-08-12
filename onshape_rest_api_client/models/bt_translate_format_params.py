@@ -41,6 +41,7 @@ class BTTranslateFormatParams:
         configuration (str | Unset): URL-encoded string of configuration values (separated by `;`). See the
             [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
         connection_id (str | Unset):
+        correlation_id (str | Unset): User specified identifier that can be used as a correlation id across api calls.
         create_composite (bool | Unset):
         current_sheet_only (bool | Unset):
         destination_name (str | Unset): The name of the exported file.
@@ -160,6 +161,7 @@ class BTTranslateFormatParams:
     color_method: str | Unset = UNSET
     configuration: str | Unset = UNSET
     connection_id: str | Unset = UNSET
+    correlation_id: str | Unset = UNSET
     create_composite: bool | Unset = UNSET
     current_sheet_only: bool | Unset = UNSET
     destination_name: str | Unset = UNSET
@@ -275,6 +277,8 @@ class BTTranslateFormatParams:
         configuration = self.configuration
 
         connection_id = self.connection_id
+
+        correlation_id = self.correlation_id
 
         create_composite = self.create_composite
 
@@ -507,6 +511,8 @@ class BTTranslateFormatParams:
             field_dict["configuration"] = configuration
         if connection_id is not UNSET:
             field_dict["connectionId"] = connection_id
+        if correlation_id is not UNSET:
+            field_dict["correlationId"] = correlation_id
         if create_composite is not UNSET:
             field_dict["createComposite"] = create_composite
         if current_sheet_only is not UNSET:
@@ -718,6 +724,8 @@ class BTTranslateFormatParams:
         configuration = d.pop("configuration", UNSET)
 
         connection_id = d.pop("connectionId", UNSET)
+
+        correlation_id = d.pop("correlationId", UNSET)
 
         create_composite = d.pop("createComposite", UNSET)
 
@@ -953,6 +961,7 @@ class BTTranslateFormatParams:
             color_method=color_method,
             configuration=configuration,
             connection_id=connection_id,
+            correlation_id=correlation_id,
             create_composite=create_composite,
             current_sheet_only=current_sheet_only,
             destination_name=destination_name,

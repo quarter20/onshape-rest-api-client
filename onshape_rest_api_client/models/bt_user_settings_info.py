@@ -34,6 +34,8 @@ class BTUserSettingsInfo:
         default_units (BTDefaultUnitsInfo | Unset):
         display_assembly_properties (bool | Unset):
         drawing_background_id (int | Unset):
+        enable_labs (bool | Unset):
+        enabled_labs_features (list[int] | Unset):
         enforce_application_acl (bool | Unset):
         export_drawing_options (str | Unset):
         export_solid_options (str | Unset):
@@ -78,6 +80,8 @@ class BTUserSettingsInfo:
     default_units: BTDefaultUnitsInfo | Unset = UNSET
     display_assembly_properties: bool | Unset = UNSET
     drawing_background_id: int | Unset = UNSET
+    enable_labs: bool | Unset = UNSET
+    enabled_labs_features: list[int] | Unset = UNSET
     enforce_application_acl: bool | Unset = UNSET
     export_drawing_options: str | Unset = UNSET
     export_solid_options: str | Unset = UNSET
@@ -136,6 +140,12 @@ class BTUserSettingsInfo:
         display_assembly_properties = self.display_assembly_properties
 
         drawing_background_id = self.drawing_background_id
+
+        enable_labs = self.enable_labs
+
+        enabled_labs_features: list[int] | Unset = UNSET
+        if not isinstance(self.enabled_labs_features, Unset):
+            enabled_labs_features = self.enabled_labs_features
 
         enforce_application_acl = self.enforce_application_acl
 
@@ -242,6 +252,10 @@ class BTUserSettingsInfo:
             field_dict["displayAssemblyProperties"] = display_assembly_properties
         if drawing_background_id is not UNSET:
             field_dict["drawingBackgroundId"] = drawing_background_id
+        if enable_labs is not UNSET:
+            field_dict["enableLabs"] = enable_labs
+        if enabled_labs_features is not UNSET:
+            field_dict["enabledLabsFeatures"] = enabled_labs_features
         if enforce_application_acl is not UNSET:
             field_dict["enforceApplicationAcl"] = enforce_application_acl
         if export_drawing_options is not UNSET:
@@ -350,6 +364,10 @@ class BTUserSettingsInfo:
         display_assembly_properties = d.pop("displayAssemblyProperties", UNSET)
 
         drawing_background_id = d.pop("drawingBackgroundId", UNSET)
+
+        enable_labs = d.pop("enableLabs", UNSET)
+
+        enabled_labs_features = cast(list[int], d.pop("enabledLabsFeatures", UNSET))
 
         enforce_application_acl = d.pop("enforceApplicationAcl", UNSET)
 
@@ -468,6 +486,8 @@ class BTUserSettingsInfo:
             default_units=default_units,
             display_assembly_properties=display_assembly_properties,
             drawing_background_id=drawing_background_id,
+            enable_labs=enable_labs,
+            enabled_labs_features=enabled_labs_features,
             enforce_application_acl=enforce_application_acl,
             export_drawing_options=export_drawing_options,
             export_solid_options=export_solid_options,

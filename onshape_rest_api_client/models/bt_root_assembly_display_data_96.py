@@ -41,6 +41,7 @@ class BTRootAssemblyDisplayData96:
         assembly_features (list[BTAssemblyFeatureDisplayData1783] | Unset):
         bt_type (str | Unset): Type of JSON object.
         build_duration_millis (float | Unset):
+        debug_description (str | Unset):
         deleted_assembly_features (list[str] | Unset):
         deleted_geometry_mate_ids (list[str] | Unset):
         deleted_loads (list[str] | Unset):
@@ -78,6 +79,7 @@ class BTRootAssemblyDisplayData96:
     assembly_features: list[BTAssemblyFeatureDisplayData1783] | Unset = UNSET
     bt_type: str | Unset = UNSET
     build_duration_millis: float | Unset = UNSET
+    debug_description: str | Unset = UNSET
     deleted_assembly_features: list[str] | Unset = UNSET
     deleted_geometry_mate_ids: list[str] | Unset = UNSET
     deleted_loads: list[str] | Unset = UNSET
@@ -127,6 +129,8 @@ class BTRootAssemblyDisplayData96:
         bt_type = self.bt_type
 
         build_duration_millis = self.build_duration_millis
+
+        debug_description = self.debug_description
 
         deleted_assembly_features: list[str] | Unset = UNSET
         if not isinstance(self.deleted_assembly_features, Unset):
@@ -267,6 +271,8 @@ class BTRootAssemblyDisplayData96:
             field_dict["btType"] = bt_type
         if build_duration_millis is not UNSET:
             field_dict["buildDurationMillis"] = build_duration_millis
+        if debug_description is not UNSET:
+            field_dict["debugDescription"] = debug_description
         if deleted_assembly_features is not UNSET:
             field_dict["deletedAssemblyFeatures"] = deleted_assembly_features
         if deleted_geometry_mate_ids is not UNSET:
@@ -374,6 +380,8 @@ class BTRootAssemblyDisplayData96:
         bt_type = d.pop("btType", UNSET)
 
         build_duration_millis = d.pop("buildDurationMillis", UNSET)
+
+        debug_description = d.pop("debugDescription", UNSET)
 
         deleted_assembly_features = cast(list[str], d.pop("deletedAssemblyFeatures", UNSET))
 
@@ -544,6 +552,7 @@ class BTRootAssemblyDisplayData96:
             assembly_features=assembly_features,
             bt_type=bt_type,
             build_duration_millis=build_duration_millis,
+            debug_description=debug_description,
             deleted_assembly_features=deleted_assembly_features,
             deleted_geometry_mate_ids=deleted_geometry_mate_ids,
             deleted_loads=deleted_loads,

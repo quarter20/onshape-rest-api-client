@@ -12,6 +12,9 @@ if TYPE_CHECKING:
     from ..models.bt_full_element_id_756 import BTFullElementId756
     from ..models.bt_graphics_buffer_2668 import BTGraphicsBuffer2668
     from ..models.bt_immutable_byte_array import BTImmutableByteArray
+    from ..models.bt_insertable_display_data_2405_appearance_id_to_appearance_override import (
+        BTInsertableDisplayData2405AppearanceIdToAppearanceOverride,
+    )
     from ..models.bt_insertable_display_data_2405_graphics_buffers import BTInsertableDisplayData2405GraphicsBuffers
     from ..models.bt_part_data_16 import BTPartData16
     from ..models.bt_part_display_data_17 import BTPartDisplayData17
@@ -24,6 +27,7 @@ T = TypeVar("T", bound="BTInsertablePartDisplayData3103")
 class BTInsertablePartDisplayData3103:
     """
     Attributes:
+        appearance_id_to_appearance_override (BTInsertableDisplayData2405AppearanceIdToAppearanceOverride | Unset):
         bt_type (str | Unset): Type of JSON object.
         buffers (list[BTGraphicsBuffer2668] | Unset):
         full_element_id (BTFullElementId756 | Unset):
@@ -33,12 +37,14 @@ class BTInsertablePartDisplayData3103:
         part (bool | Unset):
         sketch_feature (bool | Unset):
         tessellation_setting_index (int | Unset):
+        body_part_data_list (list[BTPartData16] | Unset):
         part_data (BTPartData16 | Unset):
         part_display_data (BTPartDisplayData17 | Unset):
         part_id (str | Unset):
         tessellation_setting (int | Unset):
     """
 
+    appearance_id_to_appearance_override: BTInsertableDisplayData2405AppearanceIdToAppearanceOverride | Unset = UNSET
     bt_type: str | Unset = UNSET
     buffers: list[BTGraphicsBuffer2668] | Unset = UNSET
     full_element_id: BTFullElementId756 | Unset = UNSET
@@ -48,6 +54,7 @@ class BTInsertablePartDisplayData3103:
     part: bool | Unset = UNSET
     sketch_feature: bool | Unset = UNSET
     tessellation_setting_index: int | Unset = UNSET
+    body_part_data_list: list[BTPartData16] | Unset = UNSET
     part_data: BTPartData16 | Unset = UNSET
     part_display_data: BTPartDisplayData17 | Unset = UNSET
     part_id: str | Unset = UNSET
@@ -55,6 +62,10 @@ class BTInsertablePartDisplayData3103:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        appearance_id_to_appearance_override: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.appearance_id_to_appearance_override, Unset):
+            appearance_id_to_appearance_override = self.appearance_id_to_appearance_override.to_dict()
+
         bt_type = self.bt_type
 
         buffers: list[dict[str, Any]] | Unset = UNSET
@@ -84,6 +95,13 @@ class BTInsertablePartDisplayData3103:
 
         tessellation_setting_index = self.tessellation_setting_index
 
+        body_part_data_list: list[dict[str, Any]] | Unset = UNSET
+        if not isinstance(self.body_part_data_list, Unset):
+            body_part_data_list = []
+            for body_part_data_list_item_data in self.body_part_data_list:
+                body_part_data_list_item = body_part_data_list_item_data.to_dict()
+                body_part_data_list.append(body_part_data_list_item)
+
         part_data: dict[str, Any] | Unset = UNSET
         if not isinstance(self.part_data, Unset):
             part_data = self.part_data.to_dict()
@@ -99,6 +117,8 @@ class BTInsertablePartDisplayData3103:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if appearance_id_to_appearance_override is not UNSET:
+            field_dict["appearanceIdToAppearanceOverride"] = appearance_id_to_appearance_override
         if bt_type is not UNSET:
             field_dict["btType"] = bt_type
         if buffers is not UNSET:
@@ -117,6 +137,8 @@ class BTInsertablePartDisplayData3103:
             field_dict["sketchFeature"] = sketch_feature
         if tessellation_setting_index is not UNSET:
             field_dict["tessellationSettingIndex"] = tessellation_setting_index
+        if body_part_data_list is not UNSET:
+            field_dict["bodyPartDataList"] = body_part_data_list
         if part_data is not UNSET:
             field_dict["partData"] = part_data
         if part_display_data is not UNSET:
@@ -133,11 +155,25 @@ class BTInsertablePartDisplayData3103:
         from ..models.bt_full_element_id_756 import BTFullElementId756
         from ..models.bt_graphics_buffer_2668 import BTGraphicsBuffer2668
         from ..models.bt_immutable_byte_array import BTImmutableByteArray
+        from ..models.bt_insertable_display_data_2405_appearance_id_to_appearance_override import (
+            BTInsertableDisplayData2405AppearanceIdToAppearanceOverride,
+        )
         from ..models.bt_insertable_display_data_2405_graphics_buffers import BTInsertableDisplayData2405GraphicsBuffers
         from ..models.bt_part_data_16 import BTPartData16
         from ..models.bt_part_display_data_17 import BTPartDisplayData17
 
         d = dict(src_dict)
+        _appearance_id_to_appearance_override = d.pop("appearanceIdToAppearanceOverride", UNSET)
+        appearance_id_to_appearance_override: BTInsertableDisplayData2405AppearanceIdToAppearanceOverride | Unset
+        if isinstance(_appearance_id_to_appearance_override, Unset):
+            appearance_id_to_appearance_override = UNSET
+        else:
+            appearance_id_to_appearance_override = (
+                BTInsertableDisplayData2405AppearanceIdToAppearanceOverride.from_dict(
+                    _appearance_id_to_appearance_override
+                )
+            )
+
         bt_type = d.pop("btType", UNSET)
 
         _buffers = d.pop("buffers", UNSET)
@@ -178,6 +214,15 @@ class BTInsertablePartDisplayData3103:
 
         tessellation_setting_index = d.pop("tessellationSettingIndex", UNSET)
 
+        _body_part_data_list = d.pop("bodyPartDataList", UNSET)
+        body_part_data_list: list[BTPartData16] | Unset = UNSET
+        if _body_part_data_list is not UNSET:
+            body_part_data_list = []
+            for body_part_data_list_item_data in _body_part_data_list:
+                body_part_data_list_item = BTPartData16.from_dict(body_part_data_list_item_data)
+
+                body_part_data_list.append(body_part_data_list_item)
+
         _part_data = d.pop("partData", UNSET)
         part_data: BTPartData16 | Unset
         if isinstance(_part_data, Unset):
@@ -197,6 +242,7 @@ class BTInsertablePartDisplayData3103:
         tessellation_setting = d.pop("tessellationSetting", UNSET)
 
         bt_insertable_part_display_data_3103 = cls(
+            appearance_id_to_appearance_override=appearance_id_to_appearance_override,
             bt_type=bt_type,
             buffers=buffers,
             full_element_id=full_element_id,
@@ -206,6 +252,7 @@ class BTInsertablePartDisplayData3103:
             part=part,
             sketch_feature=sketch_feature,
             tessellation_setting_index=tessellation_setting_index,
+            body_part_data_list=body_part_data_list,
             part_data=part_data,
             part_display_data=part_display_data,
             part_id=part_id,

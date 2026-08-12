@@ -23,6 +23,7 @@ class BTWorkflowSnapshotInfo:
         actions (list[BTWorkflowActionInfo] | Unset):
         approver_ids (list[str] | Unset):
         can_be_discarded (bool | Unset):
+        can_create_releases (bool | Unset):
         current_state_display_name (str | Unset):
         debug_microversion_id (str | Unset):
         error_message (str | Unset):
@@ -39,6 +40,7 @@ class BTWorkflowSnapshotInfo:
     actions: list[BTWorkflowActionInfo] | Unset = UNSET
     approver_ids: list[str] | Unset = UNSET
     can_be_discarded: bool | Unset = UNSET
+    can_create_releases: bool | Unset = UNSET
     current_state_display_name: str | Unset = UNSET
     debug_microversion_id: str | Unset = UNSET
     error_message: str | Unset = UNSET
@@ -65,6 +67,8 @@ class BTWorkflowSnapshotInfo:
             approver_ids = self.approver_ids
 
         can_be_discarded = self.can_be_discarded
+
+        can_create_releases = self.can_create_releases
 
         current_state_display_name = self.current_state_display_name
 
@@ -101,6 +105,8 @@ class BTWorkflowSnapshotInfo:
             field_dict["approverIds"] = approver_ids
         if can_be_discarded is not UNSET:
             field_dict["canBeDiscarded"] = can_be_discarded
+        if can_create_releases is not UNSET:
+            field_dict["canCreateReleases"] = can_create_releases
         if current_state_display_name is not UNSET:
             field_dict["currentStateDisplayName"] = current_state_display_name
         if debug_microversion_id is not UNSET:
@@ -145,6 +151,8 @@ class BTWorkflowSnapshotInfo:
 
         can_be_discarded = d.pop("canBeDiscarded", UNSET)
 
+        can_create_releases = d.pop("canCreateReleases", UNSET)
+
         current_state_display_name = d.pop("currentStateDisplayName", UNSET)
 
         debug_microversion_id = d.pop("debugMicroversionId", UNSET)
@@ -176,6 +184,7 @@ class BTWorkflowSnapshotInfo:
             actions=actions,
             approver_ids=approver_ids,
             can_be_discarded=can_be_discarded,
+            can_create_releases=can_create_releases,
             current_state_display_name=current_state_display_name,
             debug_microversion_id=debug_microversion_id,
             error_message=error_message,

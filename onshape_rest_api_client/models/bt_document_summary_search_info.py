@@ -71,6 +71,7 @@ class BTDocumentSummarySearchInfo:
         permission (BTOldPermission | Unset):
         permission_set (list[str] | Unset):
         public (bool | Unset):
+        public_linkable (bool | Unset):
         published_version_id (str | Unset):
         recent_version (BTBaseInfo | Unset):
         sequence (str | Unset):
@@ -127,6 +128,7 @@ class BTDocumentSummarySearchInfo:
     permission: BTOldPermission | Unset = UNSET
     permission_set: list[str] | Unset = UNSET
     public: bool | Unset = UNSET
+    public_linkable: bool | Unset = UNSET
     published_version_id: str | Unset = UNSET
     recent_version: BTBaseInfo | Unset = UNSET
     sequence: str | Unset = UNSET
@@ -250,6 +252,8 @@ class BTDocumentSummarySearchInfo:
             permission_set = self.permission_set
 
         public = self.public
+
+        public_linkable = self.public_linkable
 
         published_version_id = self.published_version_id
 
@@ -377,6 +381,8 @@ class BTDocumentSummarySearchInfo:
             field_dict["permissionSet"] = permission_set
         if public is not UNSET:
             field_dict["public"] = public
+        if public_linkable is not UNSET:
+            field_dict["publicLinkable"] = public_linkable
         if published_version_id is not UNSET:
             field_dict["publishedVersionId"] = published_version_id
         if recent_version is not UNSET:
@@ -541,6 +547,8 @@ class BTDocumentSummarySearchInfo:
 
         public = d.pop("public", UNSET)
 
+        public_linkable = d.pop("publicLinkable", UNSET)
+
         published_version_id = d.pop("publishedVersionId", UNSET)
 
         _recent_version = d.pop("recentVersion", UNSET)
@@ -628,6 +636,7 @@ class BTDocumentSummarySearchInfo:
             permission=permission,
             permission_set=permission_set,
             public=public,
+            public_linkable=public_linkable,
             published_version_id=published_version_id,
             recent_version=recent_version,
             sequence=sequence,

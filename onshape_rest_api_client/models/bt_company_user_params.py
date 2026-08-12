@@ -43,7 +43,9 @@ class BTCompanyUserParams:
              * `22`: Manage standard content metadata
              * `23`: Workspace protection permissions
              * `24`: Import files
-             * `25`: Use revision tools  * `26`: Export files
+             * `25`: Use revision tools
+             * `26`: Export files
+             * `27`: Allow access to Onshape Labs
         guest (bool | Unset): Indicates the user is a guest user if true.
         light (bool | Unset): Indicates the user is a light user if true.
     """

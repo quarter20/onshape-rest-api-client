@@ -86,7 +86,9 @@ def sync_detailed(
      * `22`: Manage standard content metadata
      * `23`: Workspace protection permissions
      * `24`: Import files
-     * `25`: Use revision tools  * `26`: Export files
+     * `25`: Use revision tools
+     * `26`: Export files
+     * `27`: Allow access to Onshape Labs
 
     Args:
         cid (str):
@@ -150,7 +152,9 @@ def sync(
      * `22`: Manage standard content metadata
      * `23`: Workspace protection permissions
      * `24`: Import files
-     * `25`: Use revision tools  * `26`: Export files
+     * `25`: Use revision tools
+     * `26`: Export files
+     * `27`: Allow access to Onshape Labs
 
     Args:
         cid (str):
@@ -209,7 +213,9 @@ async def asyncio_detailed(
      * `22`: Manage standard content metadata
      * `23`: Workspace protection permissions
      * `24`: Import files
-     * `25`: Use revision tools  * `26`: Export files
+     * `25`: Use revision tools
+     * `26`: Export files
+     * `27`: Allow access to Onshape Labs
 
     Args:
         cid (str):
@@ -271,7 +277,9 @@ async def asyncio(
      * `22`: Manage standard content metadata
      * `23`: Workspace protection permissions
      * `24`: Import files
-     * `25`: Use revision tools  * `26`: Export files
+     * `25`: Use revision tools
+     * `26`: Export files
+     * `27`: Allow access to Onshape Labs
 
     Args:
         cid (str):

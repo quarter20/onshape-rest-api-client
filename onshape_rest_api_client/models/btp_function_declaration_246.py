@@ -50,6 +50,7 @@ class BTPFunctionDeclaration246:
         space_in_empty_list (BTPSpace10 | Unset):
         start_source_location (int | Unset):
         symbol_name (BTPIdentifier8 | Unset):
+        top_level_type (GBTPDefinitionType | Unset):
     """
 
     annotation: BTPAnnotation231 | Unset = UNSET
@@ -76,6 +77,7 @@ class BTPFunctionDeclaration246:
     space_in_empty_list: BTPSpace10 | Unset = UNSET
     start_source_location: int | Unset = UNSET
     symbol_name: BTPIdentifier8 | Unset = UNSET
+    top_level_type: GBTPDefinitionType | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -161,6 +163,10 @@ class BTPFunctionDeclaration246:
         if not isinstance(self.symbol_name, Unset):
             symbol_name = self.symbol_name.to_dict()
 
+        top_level_type: str | Unset = UNSET
+        if not isinstance(self.top_level_type, Unset):
+            top_level_type = self.top_level_type.value
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
@@ -212,6 +218,8 @@ class BTPFunctionDeclaration246:
             field_dict["startSourceLocation"] = start_source_location
         if symbol_name is not UNSET:
             field_dict["symbolName"] = symbol_name
+        if top_level_type is not UNSET:
+            field_dict["topLevelType"] = top_level_type
 
         return field_dict
 
@@ -348,6 +356,13 @@ class BTPFunctionDeclaration246:
         else:
             symbol_name = BTPIdentifier8.from_dict(_symbol_name)
 
+        _top_level_type = d.pop("topLevelType", UNSET)
+        top_level_type: GBTPDefinitionType | Unset
+        if isinstance(_top_level_type, Unset):
+            top_level_type = UNSET
+        else:
+            top_level_type = GBTPDefinitionType(_top_level_type)
+
         btp_function_declaration_246 = cls(
             annotation=annotation,
             arguments=arguments,
@@ -373,6 +388,7 @@ class BTPFunctionDeclaration246:
             space_in_empty_list=space_in_empty_list,
             start_source_location=start_source_location,
             symbol_name=symbol_name,
+            top_level_type=top_level_type,
         )
 
         btp_function_declaration_246.additional_properties = d

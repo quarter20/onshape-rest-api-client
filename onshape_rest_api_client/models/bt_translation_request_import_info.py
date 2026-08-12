@@ -16,6 +16,7 @@ T = TypeVar("T", bound="BTTranslationRequestImportInfo")
 class BTTranslationRequestImportInfo:
     """
     Attributes:
+        correlation_id (str | Unset): User specified identifier that can be used as a correlation id across api calls.
         document_id (str | Unset):
         failure_reason (str | Unset):
         href (str | Unset): URI to fetch complete information of the resource.
@@ -32,6 +33,7 @@ class BTTranslationRequestImportInfo:
         workspace_id (str | Unset):
     """
 
+    correlation_id: str | Unset = UNSET
     document_id: str | Unset = UNSET
     failure_reason: str | Unset = UNSET
     href: str | Unset = UNSET
@@ -49,6 +51,8 @@ class BTTranslationRequestImportInfo:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        correlation_id = self.correlation_id
+
         document_id = self.document_id
 
         failure_reason = self.failure_reason
@@ -86,6 +90,8 @@ class BTTranslationRequestImportInfo:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if correlation_id is not UNSET:
+            field_dict["correlationId"] = correlation_id
         if document_id is not UNSET:
             field_dict["documentId"] = document_id
         if failure_reason is not UNSET:
@@ -120,6 +126,8 @@ class BTTranslationRequestImportInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
+        correlation_id = d.pop("correlationId", UNSET)
+
         document_id = d.pop("documentId", UNSET)
 
         failure_reason = d.pop("failureReason", UNSET)
@@ -154,6 +162,7 @@ class BTTranslationRequestImportInfo:
         workspace_id = d.pop("workspaceId", UNSET)
 
         bt_translation_request_import_info = cls(
+            correlation_id=correlation_id,
             document_id=document_id,
             failure_reason=failure_reason,
             href=href,

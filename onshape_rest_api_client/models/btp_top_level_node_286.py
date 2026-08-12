@@ -40,6 +40,7 @@ class BTPTopLevelNode286:
         for_export (bool | Unset):
         space_after_export (BTPSpace10 | Unset):
         symbol_name (BTPIdentifier8 | Unset):
+        top_level_type (GBTPDefinitionType | Unset):
     """
 
     atomic: bool | Unset = UNSET
@@ -59,6 +60,7 @@ class BTPTopLevelNode286:
     for_export: bool | Unset = UNSET
     space_after_export: BTPSpace10 | Unset = UNSET
     symbol_name: BTPIdentifier8 | Unset = UNSET
+    top_level_type: GBTPDefinitionType | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -113,6 +115,10 @@ class BTPTopLevelNode286:
         if not isinstance(self.symbol_name, Unset):
             symbol_name = self.symbol_name.to_dict()
 
+        top_level_type: str | Unset = UNSET
+        if not isinstance(self.top_level_type, Unset):
+            top_level_type = self.top_level_type.value
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
@@ -150,6 +156,8 @@ class BTPTopLevelNode286:
             field_dict["spaceAfterExport"] = space_after_export
         if symbol_name is not UNSET:
             field_dict["symbolName"] = symbol_name
+        if top_level_type is not UNSET:
+            field_dict["topLevelType"] = top_level_type
 
         return field_dict
 
@@ -232,6 +240,13 @@ class BTPTopLevelNode286:
         else:
             symbol_name = BTPIdentifier8.from_dict(_symbol_name)
 
+        _top_level_type = d.pop("topLevelType", UNSET)
+        top_level_type: GBTPDefinitionType | Unset
+        if isinstance(_top_level_type, Unset):
+            top_level_type = UNSET
+        else:
+            top_level_type = GBTPDefinitionType(_top_level_type)
+
         btp_top_level_node_286 = cls(
             atomic=atomic,
             bt_type=bt_type,
@@ -250,6 +265,7 @@ class BTPTopLevelNode286:
             for_export=for_export,
             space_after_export=space_after_export,
             symbol_name=symbol_name,
+            top_level_type=top_level_type,
         )
 
         btp_top_level_node_286.additional_properties = d

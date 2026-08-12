@@ -19,6 +19,7 @@ class BTPropertiesTableTemplateParams:
         company_id (str | Unset):
         is_all_caps (bool | Unset):
         is_indented (bool | Unset):
+        is_showing_top_level_assembly_row (bool | Unset):
         name (str | Unset):
         property_columns (list[str] | Unset):
         table_type (BTPropertiesTableTemplateType | Unset):
@@ -27,6 +28,7 @@ class BTPropertiesTableTemplateParams:
     company_id: str | Unset = UNSET
     is_all_caps: bool | Unset = UNSET
     is_indented: bool | Unset = UNSET
+    is_showing_top_level_assembly_row: bool | Unset = UNSET
     name: str | Unset = UNSET
     property_columns: list[str] | Unset = UNSET
     table_type: BTPropertiesTableTemplateType | Unset = UNSET
@@ -38,6 +40,8 @@ class BTPropertiesTableTemplateParams:
         is_all_caps = self.is_all_caps
 
         is_indented = self.is_indented
+
+        is_showing_top_level_assembly_row = self.is_showing_top_level_assembly_row
 
         name = self.name
 
@@ -58,6 +62,8 @@ class BTPropertiesTableTemplateParams:
             field_dict["isAllCaps"] = is_all_caps
         if is_indented is not UNSET:
             field_dict["isIndented"] = is_indented
+        if is_showing_top_level_assembly_row is not UNSET:
+            field_dict["isShowingTopLevelAssemblyRow"] = is_showing_top_level_assembly_row
         if name is not UNSET:
             field_dict["name"] = name
         if property_columns is not UNSET:
@@ -76,6 +82,8 @@ class BTPropertiesTableTemplateParams:
 
         is_indented = d.pop("isIndented", UNSET)
 
+        is_showing_top_level_assembly_row = d.pop("isShowingTopLevelAssemblyRow", UNSET)
+
         name = d.pop("name", UNSET)
 
         property_columns = cast(list[str], d.pop("propertyColumns", UNSET))
@@ -91,6 +99,7 @@ class BTPropertiesTableTemplateParams:
             company_id=company_id,
             is_all_caps=is_all_caps,
             is_indented=is_indented,
+            is_showing_top_level_assembly_row=is_showing_top_level_assembly_row,
             name=name,
             property_columns=property_columns,
             table_type=table_type,

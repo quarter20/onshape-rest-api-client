@@ -9,6 +9,7 @@ from attrs import field as _attrs_field
 from ..models.gbt_mesh_state import GBTMeshState
 from ..models.gbt_part_fault_visibility import GBTPartFaultVisibility
 from ..models.gbt_part_visibility import GBTPartVisibility
+from ..models.gbtsm_application_type import GBTSMApplicationType
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -53,6 +54,7 @@ class BTPartDisplayData17:
         part_id (str | Unset):
         property_id_to_source (BTPartDisplayData17PropertyIdToSource | Unset):
         referencing_configured_part_node_ids (list[BTObjectId] | Unset):
+        sm_application_type (GBTSMApplicationType | Unset):
         visibility (GBTPartVisibility | Unset):
     """
 
@@ -82,6 +84,7 @@ class BTPartDisplayData17:
     part_id: str | Unset = UNSET
     property_id_to_source: BTPartDisplayData17PropertyIdToSource | Unset = UNSET
     referencing_configured_part_node_ids: list[BTObjectId] | Unset = UNSET
+    sm_application_type: GBTSMApplicationType | Unset = UNSET
     visibility: GBTPartVisibility | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -163,6 +166,10 @@ class BTPartDisplayData17:
                 referencing_configured_part_node_ids_item = referencing_configured_part_node_ids_item_data.to_dict()
                 referencing_configured_part_node_ids.append(referencing_configured_part_node_ids_item)
 
+        sm_application_type: str | Unset = UNSET
+        if not isinstance(self.sm_application_type, Unset):
+            sm_application_type = self.sm_application_type.value
+
         visibility: str | Unset = UNSET
         if not isinstance(self.visibility, Unset):
             visibility = self.visibility.value
@@ -222,6 +229,8 @@ class BTPartDisplayData17:
             field_dict["propertyIdToSource"] = property_id_to_source
         if referencing_configured_part_node_ids is not UNSET:
             field_dict["referencingConfiguredPartNodeIds"] = referencing_configured_part_node_ids
+        if sm_application_type is not UNSET:
+            field_dict["smApplicationType"] = sm_application_type
         if visibility is not UNSET:
             field_dict["visibility"] = visibility
 
@@ -348,6 +357,13 @@ class BTPartDisplayData17:
 
                 referencing_configured_part_node_ids.append(referencing_configured_part_node_ids_item)
 
+        _sm_application_type = d.pop("smApplicationType", UNSET)
+        sm_application_type: GBTSMApplicationType | Unset
+        if isinstance(_sm_application_type, Unset):
+            sm_application_type = UNSET
+        else:
+            sm_application_type = GBTSMApplicationType(_sm_application_type)
+
         _visibility = d.pop("visibility", UNSET)
         visibility: GBTPartVisibility | Unset
         if isinstance(_visibility, Unset):
@@ -382,6 +398,7 @@ class BTPartDisplayData17:
             part_id=part_id,
             property_id_to_source=property_id_to_source,
             referencing_configured_part_node_ids=referencing_configured_part_node_ids,
+            sm_application_type=sm_application_type,
             visibility=visibility,
         )
 

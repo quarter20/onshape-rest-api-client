@@ -10,6 +10,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.bt_microversion_id_366 import BTMicroversionId366
+    from ..models.bt_object_id import BTObjectId
     from ..models.btm_parameter_1 import BTMParameter1
     from ..models.btm_parameter_reference_with_configuration_3028 import BTMParameterReferenceWithConfiguration3028
 
@@ -26,6 +27,7 @@ class BTNodeWithReference:
         element_id (str | Unset):
         microversion_id (BTMicroversionId366 | Unset):
         node_id (str | Unset):
+        node_id_raw (BTObjectId | Unset):
         reference_parameter (BTMParameterReferenceWithConfiguration3028 | Unset):
         valid_revision_reference (bool | Unset):
         version_id (str | Unset):
@@ -36,6 +38,7 @@ class BTNodeWithReference:
     element_id: str | Unset = UNSET
     microversion_id: BTMicroversionId366 | Unset = UNSET
     node_id: str | Unset = UNSET
+    node_id_raw: BTObjectId | Unset = UNSET
     reference_parameter: BTMParameterReferenceWithConfiguration3028 | Unset = UNSET
     valid_revision_reference: bool | Unset = UNSET
     version_id: str | Unset = UNSET
@@ -59,6 +62,10 @@ class BTNodeWithReference:
 
         node_id = self.node_id
 
+        node_id_raw: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.node_id_raw, Unset):
+            node_id_raw = self.node_id_raw.to_dict()
+
         reference_parameter: dict[str, Any] | Unset = UNSET
         if not isinstance(self.reference_parameter, Unset):
             reference_parameter = self.reference_parameter.to_dict()
@@ -80,6 +87,8 @@ class BTNodeWithReference:
             field_dict["microversionId"] = microversion_id
         if node_id is not UNSET:
             field_dict["nodeId"] = node_id
+        if node_id_raw is not UNSET:
+            field_dict["nodeIdRaw"] = node_id_raw
         if reference_parameter is not UNSET:
             field_dict["referenceParameter"] = reference_parameter
         if valid_revision_reference is not UNSET:
@@ -92,6 +101,7 @@ class BTNodeWithReference:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_microversion_id_366 import BTMicroversionId366
+        from ..models.bt_object_id import BTObjectId
         from ..models.btm_parameter_1 import BTMParameter1
         from ..models.btm_parameter_reference_with_configuration_3028 import BTMParameterReferenceWithConfiguration3028
 
@@ -118,6 +128,13 @@ class BTNodeWithReference:
 
         node_id = d.pop("nodeId", UNSET)
 
+        _node_id_raw = d.pop("nodeIdRaw", UNSET)
+        node_id_raw: BTObjectId | Unset
+        if isinstance(_node_id_raw, Unset):
+            node_id_raw = UNSET
+        else:
+            node_id_raw = BTObjectId.from_dict(_node_id_raw)
+
         _reference_parameter = d.pop("referenceParameter", UNSET)
         reference_parameter: BTMParameterReferenceWithConfiguration3028 | Unset
         if isinstance(_reference_parameter, Unset):
@@ -135,6 +152,7 @@ class BTNodeWithReference:
             element_id=element_id,
             microversion_id=microversion_id,
             node_id=node_id,
+            node_id_raw=node_id_raw,
             reference_parameter=reference_parameter,
             valid_revision_reference=valid_revision_reference,
             version_id=version_id,

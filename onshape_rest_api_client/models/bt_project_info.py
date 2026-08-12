@@ -11,9 +11,9 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.bt_owner_info import BTOwnerInfo
-    from ..models.bt_plm_context_info import BTPlmContextInfo
     from ..models.bt_rbac_permission_scheme_info import BTRbacPermissionSchemeInfo
     from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo
+    from ..models.btplm_context_info import BTPLMContextInfo
     from ..models.role_map_entry import RoleMapEntry
 
 
@@ -49,7 +49,7 @@ class BTProjectInfo:
         view_ref (str | Unset): URI to visualize the resource in a webclient if applicable.
         permission_scheme (BTRbacPermissionSchemeInfo | Unset):
         permission_set (list[str] | Unset):
-        plm_context (BTPlmContextInfo | Unset): PLM Context information .
+        plm_context (BTPLMContextInfo | Unset): PLM Context information .
         role_map_entries (list[RoleMapEntry] | Unset):
         trash (bool | Unset):
     """
@@ -79,7 +79,7 @@ class BTProjectInfo:
     view_ref: str | Unset = UNSET
     permission_scheme: BTRbacPermissionSchemeInfo | Unset = UNSET
     permission_set: list[str] | Unset = UNSET
-    plm_context: BTPlmContextInfo | Unset = UNSET
+    plm_context: BTPLMContextInfo | Unset = UNSET
     role_map_entries: list[RoleMapEntry] | Unset = UNSET
     trash: bool | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -231,9 +231,9 @@ class BTProjectInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_owner_info import BTOwnerInfo
-        from ..models.bt_plm_context_info import BTPlmContextInfo
         from ..models.bt_rbac_permission_scheme_info import BTRbacPermissionSchemeInfo
         from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo
+        from ..models.btplm_context_info import BTPLMContextInfo
         from ..models.role_map_entry import RoleMapEntry
 
         d = dict(src_dict)
@@ -318,11 +318,11 @@ class BTProjectInfo:
         permission_set = cast(list[str], d.pop("permissionSet", UNSET))
 
         _plm_context = d.pop("plmContext", UNSET)
-        plm_context: BTPlmContextInfo | Unset
+        plm_context: BTPLMContextInfo | Unset
         if isinstance(_plm_context, Unset):
             plm_context = UNSET
         else:
-            plm_context = BTPlmContextInfo.from_dict(_plm_context)
+            plm_context = BTPLMContextInfo.from_dict(_plm_context)
 
         _role_map_entries = d.pop("roleMapEntries", UNSET)
         role_map_entries: list[RoleMapEntry] | Unset = UNSET

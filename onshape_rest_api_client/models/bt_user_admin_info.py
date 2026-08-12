@@ -54,6 +54,8 @@ class BTUserAdminInfo:
         is_light (bool | Unset):
         last_login_time (datetime.datetime | Unset):
         personal_message_allowed (bool | Unset):
+        scheduled_removal_date (datetime.datetime | Unset):
+        show_off_boarding_notification (bool | Unset):
         source (int | Unset):
         active_plan (BTBillingPlanInfo | Unset):
         active_plan_id (str | Unset):
@@ -62,6 +64,7 @@ class BTUserAdminInfo:
         b_2_c_id (str | Unset):
         billing_update_required (bool | Unset):
         cad_system_at_signup (str | Unset):
+        company_purchase (BTPurchaseInfo | Unset):
         country_code (str | Unset):
         created_at (datetime.datetime | Unset):
         credential (BTSessionCredentialInfo | Unset):
@@ -124,6 +127,8 @@ class BTUserAdminInfo:
     is_light: bool | Unset = UNSET
     last_login_time: datetime.datetime | Unset = UNSET
     personal_message_allowed: bool | Unset = UNSET
+    scheduled_removal_date: datetime.datetime | Unset = UNSET
+    show_off_boarding_notification: bool | Unset = UNSET
     source: int | Unset = UNSET
     active_plan: BTBillingPlanInfo | Unset = UNSET
     active_plan_id: str | Unset = UNSET
@@ -132,6 +137,7 @@ class BTUserAdminInfo:
     b_2_c_id: str | Unset = UNSET
     billing_update_required: bool | Unset = UNSET
     cad_system_at_signup: str | Unset = UNSET
+    company_purchase: BTPurchaseInfo | Unset = UNSET
     country_code: str | Unset = UNSET
     created_at: datetime.datetime | Unset = UNSET
     credential: BTSessionCredentialInfo | Unset = UNSET
@@ -224,6 +230,12 @@ class BTUserAdminInfo:
 
         personal_message_allowed = self.personal_message_allowed
 
+        scheduled_removal_date: str | Unset = UNSET
+        if not isinstance(self.scheduled_removal_date, Unset):
+            scheduled_removal_date = self.scheduled_removal_date.isoformat()
+
+        show_off_boarding_notification = self.show_off_boarding_notification
+
         source = self.source
 
         active_plan: dict[str, Any] | Unset = UNSET
@@ -248,6 +260,10 @@ class BTUserAdminInfo:
         billing_update_required = self.billing_update_required
 
         cad_system_at_signup = self.cad_system_at_signup
+
+        company_purchase: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.company_purchase, Unset):
+            company_purchase = self.company_purchase.to_dict()
 
         country_code = self.country_code
 
@@ -412,6 +428,10 @@ class BTUserAdminInfo:
             field_dict["lastLoginTime"] = last_login_time
         if personal_message_allowed is not UNSET:
             field_dict["personalMessageAllowed"] = personal_message_allowed
+        if scheduled_removal_date is not UNSET:
+            field_dict["scheduledRemovalDate"] = scheduled_removal_date
+        if show_off_boarding_notification is not UNSET:
+            field_dict["showOffBoardingNotification"] = show_off_boarding_notification
         if source is not UNSET:
             field_dict["source"] = source
         if active_plan is not UNSET:
@@ -428,6 +448,8 @@ class BTUserAdminInfo:
             field_dict["billingUpdateRequired"] = billing_update_required
         if cad_system_at_signup is not UNSET:
             field_dict["cadSystemAtSignup"] = cad_system_at_signup
+        if company_purchase is not UNSET:
+            field_dict["companyPurchase"] = company_purchase
         if country_code is not UNSET:
             field_dict["countryCode"] = country_code
         if created_at is not UNSET:
@@ -581,6 +603,15 @@ class BTUserAdminInfo:
 
         personal_message_allowed = d.pop("personalMessageAllowed", UNSET)
 
+        _scheduled_removal_date = d.pop("scheduledRemovalDate", UNSET)
+        scheduled_removal_date: datetime.datetime | Unset
+        if isinstance(_scheduled_removal_date, Unset):
+            scheduled_removal_date = UNSET
+        else:
+            scheduled_removal_date = datetime.datetime.fromisoformat(_scheduled_removal_date)
+
+        show_off_boarding_notification = d.pop("showOffBoardingNotification", UNSET)
+
         source = d.pop("source", UNSET)
 
         _active_plan = d.pop("activePlan", UNSET)
@@ -613,6 +644,13 @@ class BTUserAdminInfo:
         billing_update_required = d.pop("billingUpdateRequired", UNSET)
 
         cad_system_at_signup = d.pop("cadSystemAtSignup", UNSET)
+
+        _company_purchase = d.pop("companyPurchase", UNSET)
+        company_purchase: BTPurchaseInfo | Unset
+        if isinstance(_company_purchase, Unset):
+            company_purchase = UNSET
+        else:
+            company_purchase = BTPurchaseInfo.from_dict(_company_purchase)
 
         country_code = d.pop("countryCode", UNSET)
 
@@ -780,6 +818,8 @@ class BTUserAdminInfo:
             is_light=is_light,
             last_login_time=last_login_time,
             personal_message_allowed=personal_message_allowed,
+            scheduled_removal_date=scheduled_removal_date,
+            show_off_boarding_notification=show_off_boarding_notification,
             source=source,
             active_plan=active_plan,
             active_plan_id=active_plan_id,
@@ -788,6 +828,7 @@ class BTUserAdminInfo:
             b_2_c_id=b_2_c_id,
             billing_update_required=billing_update_required,
             cad_system_at_signup=cad_system_at_signup,
+            company_purchase=company_purchase,
             country_code=country_code,
             created_at=created_at,
             credential=credential,

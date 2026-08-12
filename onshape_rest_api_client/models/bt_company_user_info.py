@@ -34,6 +34,7 @@ class BTCompanyUserInfo:
         make_personal_copies (bool | Unset):
         name (str | Unset): Name of the resource.
         scheduled_removal_date (datetime.datetime | Unset):
+        show_off_boarding_notification (bool | Unset):
         state (int | Unset):
         user (BTUserBasicSummaryInfo | Unset):
         user_role_priority (UserRolePriority | Unset):
@@ -52,6 +53,7 @@ class BTCompanyUserInfo:
     make_personal_copies: bool | Unset = UNSET
     name: str | Unset = UNSET
     scheduled_removal_date: datetime.datetime | Unset = UNSET
+    show_off_boarding_notification: bool | Unset = UNSET
     state: int | Unset = UNSET
     user: BTUserBasicSummaryInfo | Unset = UNSET
     user_role_priority: UserRolePriority | Unset = UNSET
@@ -90,6 +92,8 @@ class BTCompanyUserInfo:
         scheduled_removal_date: str | Unset = UNSET
         if not isinstance(self.scheduled_removal_date, Unset):
             scheduled_removal_date = self.scheduled_removal_date.isoformat()
+
+        show_off_boarding_notification = self.show_off_boarding_notification
 
         state = self.state
 
@@ -130,6 +134,8 @@ class BTCompanyUserInfo:
             field_dict["name"] = name
         if scheduled_removal_date is not UNSET:
             field_dict["scheduledRemovalDate"] = scheduled_removal_date
+        if show_off_boarding_notification is not UNSET:
+            field_dict["showOffBoardingNotification"] = show_off_boarding_notification
         if state is not UNSET:
             field_dict["state"] = state
         if user is not UNSET:
@@ -191,6 +197,8 @@ class BTCompanyUserInfo:
         else:
             scheduled_removal_date = datetime.datetime.fromisoformat(_scheduled_removal_date)
 
+        show_off_boarding_notification = d.pop("showOffBoardingNotification", UNSET)
+
         state = d.pop("state", UNSET)
 
         _user = d.pop("user", UNSET)
@@ -222,6 +230,7 @@ class BTCompanyUserInfo:
             make_personal_copies=make_personal_copies,
             name=name,
             scheduled_removal_date=scheduled_removal_date,
+            show_off_boarding_notification=show_off_boarding_notification,
             state=state,
             user=user,
             user_role_priority=user_role_priority,

@@ -30,6 +30,7 @@ class BTTableCellParameter2399:
         override_spec (BTParameterSpec6 | Unset):
         parameter (BTMParameter1 | Unset): A list of parameter values for instantiation of the feature spec. Parameters
             are present for all defined parameters, even if not used in a specific instantiation.
+        warning (str | Unset):
     """
 
     bt_type: str | Unset = UNSET
@@ -40,6 +41,7 @@ class BTTableCellParameter2399:
     info: str | Unset = UNSET
     override_spec: BTParameterSpec6 | Unset = UNSET
     parameter: BTMParameter1 | Unset = UNSET
+    warning: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -68,6 +70,8 @@ class BTTableCellParameter2399:
         if not isinstance(self.parameter, Unset):
             parameter = self.parameter.to_dict()
 
+        warning = self.warning
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
@@ -87,6 +91,8 @@ class BTTableCellParameter2399:
             field_dict["overrideSpec"] = override_spec
         if parameter is not UNSET:
             field_dict["parameter"] = parameter
+        if warning is not UNSET:
+            field_dict["warning"] = warning
 
         return field_dict
 
@@ -130,6 +136,8 @@ class BTTableCellParameter2399:
         else:
             parameter = BTMParameter1.from_dict(_parameter)
 
+        warning = d.pop("warning", UNSET)
+
         bt_table_cell_parameter_2399 = cls(
             bt_type=bt_type,
             is_ever_visible=is_ever_visible,
@@ -139,6 +147,7 @@ class BTTableCellParameter2399:
             info=info,
             override_spec=override_spec,
             parameter=parameter,
+            warning=warning,
         )
 
         bt_table_cell_parameter_2399.additional_properties = d

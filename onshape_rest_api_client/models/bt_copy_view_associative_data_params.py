@@ -17,14 +17,20 @@ class BTCopyViewAssociativeDataParams:
     Attributes:
         associative_data_ids (list[str] | Unset):
         destination_view_id (str | Unset):
+        source_document_id (str | Unset):
         source_element_id (str | Unset):
         source_view_id (str | Unset):
+        source_wvm (str | Unset):
+        source_wvm_id (str | Unset):
     """
 
     associative_data_ids: list[str] | Unset = UNSET
     destination_view_id: str | Unset = UNSET
+    source_document_id: str | Unset = UNSET
     source_element_id: str | Unset = UNSET
     source_view_id: str | Unset = UNSET
+    source_wvm: str | Unset = UNSET
+    source_wvm_id: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -34,9 +40,15 @@ class BTCopyViewAssociativeDataParams:
 
         destination_view_id = self.destination_view_id
 
+        source_document_id = self.source_document_id
+
         source_element_id = self.source_element_id
 
         source_view_id = self.source_view_id
+
+        source_wvm = self.source_wvm
+
+        source_wvm_id = self.source_wvm_id
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -45,10 +57,16 @@ class BTCopyViewAssociativeDataParams:
             field_dict["associativeDataIds"] = associative_data_ids
         if destination_view_id is not UNSET:
             field_dict["destinationViewId"] = destination_view_id
+        if source_document_id is not UNSET:
+            field_dict["sourceDocumentId"] = source_document_id
         if source_element_id is not UNSET:
             field_dict["sourceElementId"] = source_element_id
         if source_view_id is not UNSET:
             field_dict["sourceViewId"] = source_view_id
+        if source_wvm is not UNSET:
+            field_dict["sourceWvm"] = source_wvm
+        if source_wvm_id is not UNSET:
+            field_dict["sourceWvmId"] = source_wvm_id
 
         return field_dict
 
@@ -59,15 +77,24 @@ class BTCopyViewAssociativeDataParams:
 
         destination_view_id = d.pop("destinationViewId", UNSET)
 
+        source_document_id = d.pop("sourceDocumentId", UNSET)
+
         source_element_id = d.pop("sourceElementId", UNSET)
 
         source_view_id = d.pop("sourceViewId", UNSET)
 
+        source_wvm = d.pop("sourceWvm", UNSET)
+
+        source_wvm_id = d.pop("sourceWvmId", UNSET)
+
         bt_copy_view_associative_data_params = cls(
             associative_data_ids=associative_data_ids,
             destination_view_id=destination_view_id,
+            source_document_id=source_document_id,
             source_element_id=source_element_id,
             source_view_id=source_view_id,
+            source_wvm=source_wvm,
+            source_wvm_id=source_wvm_id,
         )
 
         bt_copy_view_associative_data_params.additional_properties = d

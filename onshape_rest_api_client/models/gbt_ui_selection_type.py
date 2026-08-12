@@ -4,6 +4,7 @@ from enum import Enum
 class GBTUiSelectionType(str, Enum):
     ANNOTATION = "ANNOTATION"
     BODY = "BODY"
+    CENTER_OF_MASS = "CENTER_OF_MASS"
     DIMENSION = "DIMENSION"
     EDGE_POINT = "EDGE_POINT"
     ELEMENT = "ELEMENT"

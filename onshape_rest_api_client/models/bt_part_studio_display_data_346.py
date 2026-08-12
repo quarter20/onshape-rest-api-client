@@ -70,6 +70,7 @@ class BTPartStudioDisplayData346:
         body_id_to_entity_appearance_settings_changed (bool | Unset):
         bt_type (str | Unset): Type of JSON object.
         cacheable_part_studio_display_data_version (GBTPartStudioDisplayDataVersion | Unset):
+        debug_description (str | Unset):
         decal_id_to_decal (BTPartStudioDisplayData346DecalIdToDecal | Unset):
         deterministic_id_to_associated_feature_ids (BTPartStudioDisplayData346DeterministicIdToAssociatedFeatureIds |
             Unset):
@@ -115,6 +116,7 @@ class BTPartStudioDisplayData346:
     body_id_to_entity_appearance_settings_changed: bool | Unset = UNSET
     bt_type: str | Unset = UNSET
     cacheable_part_studio_display_data_version: GBTPartStudioDisplayDataVersion | Unset = UNSET
+    debug_description: str | Unset = UNSET
     decal_id_to_decal: BTPartStudioDisplayData346DecalIdToDecal | Unset = UNSET
     deterministic_id_to_associated_feature_ids: (
         BTPartStudioDisplayData346DeterministicIdToAssociatedFeatureIds | Unset
@@ -183,6 +185,8 @@ class BTPartStudioDisplayData346:
         cacheable_part_studio_display_data_version: str | Unset = UNSET
         if not isinstance(self.cacheable_part_studio_display_data_version, Unset):
             cacheable_part_studio_display_data_version = self.cacheable_part_studio_display_data_version.value
+
+        debug_description = self.debug_description
 
         decal_id_to_decal: dict[str, Any] | Unset = UNSET
         if not isinstance(self.decal_id_to_decal, Unset):
@@ -315,6 +319,8 @@ class BTPartStudioDisplayData346:
             field_dict["btType"] = bt_type
         if cacheable_part_studio_display_data_version is not UNSET:
             field_dict["cacheablePartStudioDisplayDataVersion"] = cacheable_part_studio_display_data_version
+        if debug_description is not UNSET:
+            field_dict["debugDescription"] = debug_description
         if decal_id_to_decal is not UNSET:
             field_dict["decalIdToDecal"] = decal_id_to_decal
         if deterministic_id_to_associated_feature_ids is not UNSET:
@@ -489,6 +495,8 @@ class BTPartStudioDisplayData346:
             cacheable_part_studio_display_data_version = GBTPartStudioDisplayDataVersion(
                 _cacheable_part_studio_display_data_version
             )
+
+        debug_description = d.pop("debugDescription", UNSET)
 
         _decal_id_to_decal = d.pop("decalIdToDecal", UNSET)
         decal_id_to_decal: BTPartStudioDisplayData346DecalIdToDecal | Unset
@@ -694,6 +702,7 @@ class BTPartStudioDisplayData346:
             body_id_to_entity_appearance_settings_changed=body_id_to_entity_appearance_settings_changed,
             bt_type=bt_type,
             cacheable_part_studio_display_data_version=cacheable_part_studio_display_data_version,
+            debug_description=debug_description,
             decal_id_to_decal=decal_id_to_decal,
             deterministic_id_to_associated_feature_ids=deterministic_id_to_associated_feature_ids,
             deterministic_id_to_entity=deterministic_id_to_entity,

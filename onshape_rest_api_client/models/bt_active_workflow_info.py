@@ -46,18 +46,18 @@ class BTActiveWorkflowInfo:
             releaseWorkflowInfo.pickableWorkflows > 1
         has_inactive_custom_workflows (bool | Unset): Deprecated, use hasInactiveCustomWorkflows field on the
             workflowInfo object
-        is_current_user_logged_into_to_plm (bool | Unset): Whether user has even authenticated against PLM. Used to
-            trigger OAuth handshake
+        is_current_user_logged_into_to_plm (bool | Unset): Whether user has authenticated against PLM. Used to trigger
+            OAuth handshake
         obsoletion_workflow (BTPublishedWorkflowInfo | Unset): Captures information about a published workflow
         obsoletion_workflow_id (str | Unset): Deprecated, use obsoletionWorkflowInfo.workflow.id instead
         obsoletion_workflow_info (BTActiveWorkflowTypeInfo | Unset):
         os_category_id_to_arena_number_format_id (BTActiveWorkflowInfoOsCategoryIdToArenaNumberFormatId | Unset):
             Deprecated, no current alternative
-        p_lm_integration_type (int | Unset):
-        p_lm_name (str | Unset):
         part_numbering_scheme_id (str | Unset):
         pickable_workflows (list[BTPublishedWorkflowInfo] | Unset): Deprecated, use the pickableWorkflows field on the
             workflowInfo object
+        plm_integration_type (int | Unset):
+        plm_name (str | Unset):
         release_workflow (BTPublishedWorkflowInfo | Unset): Captures information about a published workflow
         release_workflow_id (str | Unset): Deprecated, use releaseWorkflowInfo.workflow.id instead
         release_workflow_info (BTActiveWorkflowTypeInfo | Unset):
@@ -97,10 +97,10 @@ class BTActiveWorkflowInfo:
     obsoletion_workflow_id: str | Unset = UNSET
     obsoletion_workflow_info: BTActiveWorkflowTypeInfo | Unset = UNSET
     os_category_id_to_arena_number_format_id: BTActiveWorkflowInfoOsCategoryIdToArenaNumberFormatId | Unset = UNSET
-    p_lm_integration_type: int | Unset = UNSET
-    p_lm_name: str | Unset = UNSET
     part_numbering_scheme_id: str | Unset = UNSET
     pickable_workflows: list[BTPublishedWorkflowInfo] | Unset = UNSET
+    plm_integration_type: int | Unset = UNSET
+    plm_name: str | Unset = UNSET
     release_workflow: BTPublishedWorkflowInfo | Unset = UNSET
     release_workflow_id: str | Unset = UNSET
     release_workflow_info: BTActiveWorkflowTypeInfo | Unset = UNSET
@@ -172,10 +172,6 @@ class BTActiveWorkflowInfo:
         if not isinstance(self.os_category_id_to_arena_number_format_id, Unset):
             os_category_id_to_arena_number_format_id = self.os_category_id_to_arena_number_format_id.to_dict()
 
-        p_lm_integration_type = self.p_lm_integration_type
-
-        p_lm_name = self.p_lm_name
-
         part_numbering_scheme_id = self.part_numbering_scheme_id
 
         pickable_workflows: list[dict[str, Any]] | Unset = UNSET
@@ -184,6 +180,10 @@ class BTActiveWorkflowInfo:
             for pickable_workflows_item_data in self.pickable_workflows:
                 pickable_workflows_item = pickable_workflows_item_data.to_dict()
                 pickable_workflows.append(pickable_workflows_item)
+
+        plm_integration_type = self.plm_integration_type
+
+        plm_name = self.plm_name
 
         release_workflow: dict[str, Any] | Unset = UNSET
         if not isinstance(self.release_workflow, Unset):
@@ -272,14 +272,14 @@ class BTActiveWorkflowInfo:
             field_dict["obsoletionWorkflowInfo"] = obsoletion_workflow_info
         if os_category_id_to_arena_number_format_id is not UNSET:
             field_dict["osCategoryIdToArenaNumberFormatId"] = os_category_id_to_arena_number_format_id
-        if p_lm_integration_type is not UNSET:
-            field_dict["pLMIntegrationType"] = p_lm_integration_type
-        if p_lm_name is not UNSET:
-            field_dict["pLMName"] = p_lm_name
         if part_numbering_scheme_id is not UNSET:
             field_dict["partNumberingSchemeId"] = part_numbering_scheme_id
         if pickable_workflows is not UNSET:
             field_dict["pickableWorkflows"] = pickable_workflows
+        if plm_integration_type is not UNSET:
+            field_dict["plmIntegrationType"] = plm_integration_type
+        if plm_name is not UNSET:
+            field_dict["plmName"] = plm_name
         if release_workflow is not UNSET:
             field_dict["releaseWorkflow"] = release_workflow
         if release_workflow_id is not UNSET:
@@ -385,10 +385,6 @@ class BTActiveWorkflowInfo:
                 _os_category_id_to_arena_number_format_id
             )
 
-        p_lm_integration_type = d.pop("pLMIntegrationType", UNSET)
-
-        p_lm_name = d.pop("pLMName", UNSET)
-
         part_numbering_scheme_id = d.pop("partNumberingSchemeId", UNSET)
 
         _pickable_workflows = d.pop("pickableWorkflows", UNSET)
@@ -399,6 +395,10 @@ class BTActiveWorkflowInfo:
                 pickable_workflows_item = BTPublishedWorkflowInfo.from_dict(pickable_workflows_item_data)
 
                 pickable_workflows.append(pickable_workflows_item)
+
+        plm_integration_type = d.pop("plmIntegrationType", UNSET)
+
+        plm_name = d.pop("plmName", UNSET)
 
         _release_workflow = d.pop("releaseWorkflow", UNSET)
         release_workflow: BTPublishedWorkflowInfo | Unset
@@ -470,10 +470,10 @@ class BTActiveWorkflowInfo:
             obsoletion_workflow_id=obsoletion_workflow_id,
             obsoletion_workflow_info=obsoletion_workflow_info,
             os_category_id_to_arena_number_format_id=os_category_id_to_arena_number_format_id,
-            p_lm_integration_type=p_lm_integration_type,
-            p_lm_name=p_lm_name,
             part_numbering_scheme_id=part_numbering_scheme_id,
             pickable_workflows=pickable_workflows,
+            plm_integration_type=plm_integration_type,
+            plm_name=plm_name,
             release_workflow=release_workflow,
             release_workflow_id=release_workflow_id,
             release_workflow_info=release_workflow_info,

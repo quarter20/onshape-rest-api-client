@@ -15,6 +15,7 @@ if TYPE_CHECKING:
     from ..models.bt_release_comment_list_info import BTReleaseCommentListInfo
     from ..models.bt_release_package_info_column_names import BTReleasePackageInfoColumnNames
     from ..models.bt_release_package_item_info import BTReleasePackageItemInfo
+    from ..models.bt_release_transition_status_info import BTReleaseTransitionStatusInfo
     from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo
     from ..models.bt_workflow_property_info import BTWorkflowPropertyInfo
     from ..models.bt_workflow_snapshot_info import BTWorkflowSnapshotInfo
@@ -54,6 +55,7 @@ class BTReleasePackageInfo:
         retained_as_draft (bool | Unset): Indicates whether the release is still in setup state and saved as a draft.
         revision_rule_id (str | Unset):
         root_items_to_rebuild (list[str] | Unset):
+        transition_status (list[BTReleaseTransitionStatusInfo] | Unset):
         updated_item_ids (list[str] | Unset):
         version_id (str | Unset):
         view_ref (str | Unset): URI to visualize the resource in a webclient if applicable.
@@ -90,6 +92,7 @@ class BTReleasePackageInfo:
     retained_as_draft: bool | Unset = UNSET
     revision_rule_id: str | Unset = UNSET
     root_items_to_rebuild: list[str] | Unset = UNSET
+    transition_status: list[BTReleaseTransitionStatusInfo] | Unset = UNSET
     updated_item_ids: list[str] | Unset = UNSET
     version_id: str | Unset = UNSET
     view_ref: str | Unset = UNSET
@@ -190,6 +193,13 @@ class BTReleasePackageInfo:
         if not isinstance(self.root_items_to_rebuild, Unset):
             root_items_to_rebuild = self.root_items_to_rebuild
 
+        transition_status: list[dict[str, Any]] | Unset = UNSET
+        if not isinstance(self.transition_status, Unset):
+            transition_status = []
+            for transition_status_item_data in self.transition_status:
+                transition_status_item = transition_status_item_data.to_dict()
+                transition_status.append(transition_status_item)
+
         updated_item_ids: list[str] | Unset = UNSET
         if not isinstance(self.updated_item_ids, Unset):
             updated_item_ids = self.updated_item_ids
@@ -267,6 +277,8 @@ class BTReleasePackageInfo:
             field_dict["revisionRuleId"] = revision_rule_id
         if root_items_to_rebuild is not UNSET:
             field_dict["rootItemsToRebuild"] = root_items_to_rebuild
+        if transition_status is not UNSET:
+            field_dict["transitionStatus"] = transition_status
         if updated_item_ids is not UNSET:
             field_dict["updatedItemIds"] = updated_item_ids
         if version_id is not UNSET:
@@ -291,6 +303,7 @@ class BTReleasePackageInfo:
         from ..models.bt_release_comment_list_info import BTReleaseCommentListInfo
         from ..models.bt_release_package_info_column_names import BTReleasePackageInfoColumnNames
         from ..models.bt_release_package_item_info import BTReleasePackageItemInfo
+        from ..models.bt_release_transition_status_info import BTReleaseTransitionStatusInfo
         from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo
         from ..models.bt_workflow_property_info import BTWorkflowPropertyInfo
         from ..models.bt_workflow_snapshot_info import BTWorkflowSnapshotInfo
@@ -403,6 +416,15 @@ class BTReleasePackageInfo:
 
         root_items_to_rebuild = cast(list[str], d.pop("rootItemsToRebuild", UNSET))
 
+        _transition_status = d.pop("transitionStatus", UNSET)
+        transition_status: list[BTReleaseTransitionStatusInfo] | Unset = UNSET
+        if _transition_status is not UNSET:
+            transition_status = []
+            for transition_status_item_data in _transition_status:
+                transition_status_item = BTReleaseTransitionStatusInfo.from_dict(transition_status_item_data)
+
+                transition_status.append(transition_status_item)
+
         updated_item_ids = cast(list[str], d.pop("updatedItemIds", UNSET))
 
         version_id = d.pop("versionId", UNSET)
@@ -455,6 +477,7 @@ class BTReleasePackageInfo:
             retained_as_draft=retained_as_draft,
             revision_rule_id=revision_rule_id,
             root_items_to_rebuild=root_items_to_rebuild,
+            transition_status=transition_status,
             updated_item_ids=updated_item_ids,
             version_id=version_id,
             view_ref=view_ref,

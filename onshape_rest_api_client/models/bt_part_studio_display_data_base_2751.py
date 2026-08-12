@@ -26,6 +26,7 @@ class BTPartStudioDisplayDataBase2751:
     Attributes:
         annotations_for_element (BTAnnotationElementDisplayData894 | Unset):
         bt_type (str | Unset): Type of JSON object.
+        debug_description (str | Unset):
         element_id (str | Unset):
         from_full_element_id (BTFullElementId756 | Unset):
         full_element_id (BTFullElementId756 | Unset):
@@ -42,6 +43,7 @@ class BTPartStudioDisplayDataBase2751:
 
     annotations_for_element: BTAnnotationElementDisplayData894 | Unset = UNSET
     bt_type: str | Unset = UNSET
+    debug_description: str | Unset = UNSET
     element_id: str | Unset = UNSET
     from_full_element_id: BTFullElementId756 | Unset = UNSET
     full_element_id: BTFullElementId756 | Unset = UNSET
@@ -62,6 +64,8 @@ class BTPartStudioDisplayDataBase2751:
             annotations_for_element = self.annotations_for_element.to_dict()
 
         bt_type = self.bt_type
+
+        debug_description = self.debug_description
 
         element_id = self.element_id
 
@@ -106,6 +110,8 @@ class BTPartStudioDisplayDataBase2751:
             field_dict["annotationsForElement"] = annotations_for_element
         if bt_type is not UNSET:
             field_dict["btType"] = bt_type
+        if debug_description is not UNSET:
+            field_dict["debugDescription"] = debug_description
         if element_id is not UNSET:
             field_dict["elementId"] = element_id
         if from_full_element_id is not UNSET:
@@ -153,6 +159,8 @@ class BTPartStudioDisplayDataBase2751:
             annotations_for_element = BTAnnotationElementDisplayData894.from_dict(_annotations_for_element)
 
         bt_type = d.pop("btType", UNSET)
+
+        debug_description = d.pop("debugDescription", UNSET)
 
         element_id = d.pop("elementId", UNSET)
 
@@ -213,6 +221,7 @@ class BTPartStudioDisplayDataBase2751:
         bt_part_studio_display_data_base_2751 = cls(
             annotations_for_element=annotations_for_element,
             bt_type=bt_type,
+            debug_description=debug_description,
             element_id=element_id,
             from_full_element_id=from_full_element_id,
             full_element_id=full_element_id,

@@ -22,6 +22,7 @@ class BTReleasePackageItemInfo:
     Attributes:
         added_automatically (bool | Unset):
         can_export (bool | Unset):
+        can_revert (bool | Unset):
         change_detection_status (int | Unset):
         company_id (str | Unset):
         configuration (str | Unset):
@@ -61,6 +62,7 @@ class BTReleasePackageItemInfo:
 
     added_automatically: bool | Unset = UNSET
     can_export: bool | Unset = UNSET
+    can_revert: bool | Unset = UNSET
     change_detection_status: int | Unset = UNSET
     company_id: str | Unset = UNSET
     configuration: str | Unset = UNSET
@@ -102,6 +104,8 @@ class BTReleasePackageItemInfo:
         added_automatically = self.added_automatically
 
         can_export = self.can_export
+
+        can_revert = self.can_revert
 
         change_detection_status = self.change_detection_status
 
@@ -196,6 +200,8 @@ class BTReleasePackageItemInfo:
             field_dict["addedAutomatically"] = added_automatically
         if can_export is not UNSET:
             field_dict["canExport"] = can_export
+        if can_revert is not UNSET:
+            field_dict["canRevert"] = can_revert
         if change_detection_status is not UNSET:
             field_dict["changeDetectionStatus"] = change_detection_status
         if company_id is not UNSET:
@@ -278,6 +284,8 @@ class BTReleasePackageItemInfo:
         added_automatically = d.pop("addedAutomatically", UNSET)
 
         can_export = d.pop("canExport", UNSET)
+
+        can_revert = d.pop("canRevert", UNSET)
 
         change_detection_status = d.pop("changeDetectionStatus", UNSET)
 
@@ -366,6 +374,7 @@ class BTReleasePackageItemInfo:
         bt_release_package_item_info = cls(
             added_automatically=added_automatically,
             can_export=can_export,
+            can_revert=can_revert,
             change_detection_status=change_detection_status,
             company_id=company_id,
             configuration=configuration,

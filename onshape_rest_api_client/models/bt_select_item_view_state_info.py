@@ -22,11 +22,13 @@ class BTSelectItemViewStateInfo:
         active_selector_id (str | Unset):
         document_selectors (list[BTDocumentSelectorInfo] | Unset):
         purpose (str | Unset):
+        standard_content_source (int | Unset):
     """
 
     active_selector_id: str | Unset = UNSET
     document_selectors: list[BTDocumentSelectorInfo] | Unset = UNSET
     purpose: str | Unset = UNSET
+    standard_content_source: int | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -41,6 +43,8 @@ class BTSelectItemViewStateInfo:
 
         purpose = self.purpose
 
+        standard_content_source = self.standard_content_source
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
@@ -50,6 +54,8 @@ class BTSelectItemViewStateInfo:
             field_dict["documentSelectors"] = document_selectors
         if purpose is not UNSET:
             field_dict["purpose"] = purpose
+        if standard_content_source is not UNSET:
+            field_dict["standardContentSource"] = standard_content_source
 
         return field_dict
 
@@ -71,10 +77,13 @@ class BTSelectItemViewStateInfo:
 
         purpose = d.pop("purpose", UNSET)
 
+        standard_content_source = d.pop("standardContentSource", UNSET)
+
         bt_select_item_view_state_info = cls(
             active_selector_id=active_selector_id,
             document_selectors=document_selectors,
             purpose=purpose,
+            standard_content_source=standard_content_source,
         )
 
         bt_select_item_view_state_info.additional_properties = d

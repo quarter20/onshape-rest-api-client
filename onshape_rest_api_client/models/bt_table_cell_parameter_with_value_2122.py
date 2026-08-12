@@ -31,6 +31,7 @@ class BTTableCellParameterWithValue2122:
         override_spec (BTParameterSpec6 | Unset):
         parameter (BTMParameter1 | Unset): A list of parameter values for instantiation of the feature spec. Parameters
             are present for all defined parameters, even if not used in a specific instantiation.
+        warning (str | Unset):
         value (BTFSValue1888 | Unset):
     """
 
@@ -42,6 +43,7 @@ class BTTableCellParameterWithValue2122:
     info: str | Unset = UNSET
     override_spec: BTParameterSpec6 | Unset = UNSET
     parameter: BTMParameter1 | Unset = UNSET
+    warning: str | Unset = UNSET
     value: BTFSValue1888 | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -71,6 +73,8 @@ class BTTableCellParameterWithValue2122:
         if not isinstance(self.parameter, Unset):
             parameter = self.parameter.to_dict()
 
+        warning = self.warning
+
         value: dict[str, Any] | Unset = UNSET
         if not isinstance(self.value, Unset):
             value = self.value.to_dict()
@@ -94,6 +98,8 @@ class BTTableCellParameterWithValue2122:
             field_dict["overrideSpec"] = override_spec
         if parameter is not UNSET:
             field_dict["parameter"] = parameter
+        if warning is not UNSET:
+            field_dict["warning"] = warning
         if value is not UNSET:
             field_dict["value"] = value
 
@@ -140,6 +146,8 @@ class BTTableCellParameterWithValue2122:
         else:
             parameter = BTMParameter1.from_dict(_parameter)
 
+        warning = d.pop("warning", UNSET)
+
         _value = d.pop("value", UNSET)
         value: BTFSValue1888 | Unset
         if isinstance(_value, Unset):
@@ -156,6 +164,7 @@ class BTTableCellParameterWithValue2122:
             info=info,
             override_spec=override_spec,
             parameter=parameter,
+            warning=warning,
             value=value,
         )
 

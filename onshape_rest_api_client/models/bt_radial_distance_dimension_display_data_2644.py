@@ -37,6 +37,7 @@ class BTRadialDistanceDimensionDisplayData2644:
         is_derived (bool | Unset):
         is_driven (bool | Unset):
         is_over_defined (bool | Unset):
+        is_plane_reference_missing (bool | Unset):
         lower_tolerance (float | Unset):
         maximum_limit (float | Unset):
         minimum_limit (float | Unset):
@@ -72,6 +73,7 @@ class BTRadialDistanceDimensionDisplayData2644:
     is_derived: bool | Unset = UNSET
     is_driven: bool | Unset = UNSET
     is_over_defined: bool | Unset = UNSET
+    is_plane_reference_missing: bool | Unset = UNSET
     lower_tolerance: float | Unset = UNSET
     maximum_limit: float | Unset = UNSET
     minimum_limit: float | Unset = UNSET
@@ -126,6 +128,8 @@ class BTRadialDistanceDimensionDisplayData2644:
         is_driven = self.is_driven
 
         is_over_defined = self.is_over_defined
+
+        is_plane_reference_missing = self.is_plane_reference_missing
 
         lower_tolerance = self.lower_tolerance
 
@@ -202,6 +206,8 @@ class BTRadialDistanceDimensionDisplayData2644:
             field_dict["isDriven"] = is_driven
         if is_over_defined is not UNSET:
             field_dict["isOverDefined"] = is_over_defined
+        if is_plane_reference_missing is not UNSET:
+            field_dict["isPlaneReferenceMissing"] = is_plane_reference_missing
         if lower_tolerance is not UNSET:
             field_dict["lowerTolerance"] = lower_tolerance
         if maximum_limit is not UNSET:
@@ -282,6 +288,8 @@ class BTRadialDistanceDimensionDisplayData2644:
 
         is_over_defined = d.pop("isOverDefined", UNSET)
 
+        is_plane_reference_missing = d.pop("isPlaneReferenceMissing", UNSET)
+
         lower_tolerance = d.pop("lowerTolerance", UNSET)
 
         maximum_limit = d.pop("maximumLimit", UNSET)
@@ -349,6 +357,7 @@ class BTRadialDistanceDimensionDisplayData2644:
             is_derived=is_derived,
             is_driven=is_driven,
             is_over_defined=is_over_defined,
+            is_plane_reference_missing=is_plane_reference_missing,
             lower_tolerance=lower_tolerance,
             maximum_limit=maximum_limit,
             minimum_limit=minimum_limit,
