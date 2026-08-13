@@ -10,20 +10,23 @@ if TYPE_CHECKING:
     from ..models.bt_diff_info import BTDiffInfo
 
 
-T = TypeVar("T", bound="BTDiffInfoChanges")
+T = TypeVar("T", bound="BTDiffInfoCollectionChanges")
 
 
 @_attrs_define
-class BTDiffInfoChanges:
+class BTDiffInfoCollectionChanges:
     """ """
 
-    additional_properties: dict[str, BTDiffInfo] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, list[BTDiffInfo]] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
 
         field_dict: dict[str, Any] = {}
         for prop_name, prop in self.additional_properties.items():
-            field_dict[prop_name] = prop.to_dict()
+            field_dict[prop_name] = []
+            for additional_property_item_data in prop:
+                additional_property_item = additional_property_item_data.to_dict()
+                field_dict[prop_name].append(additional_property_item)
 
         return field_dict
 
@@ -32,25 +35,30 @@ class BTDiffInfoChanges:
         from ..models.bt_diff_info import BTDiffInfo
 
         d = dict(src_dict)
-        bt_diff_info_changes = cls()
+        bt_diff_info_collection_changes = cls()
 
         additional_properties = {}
         for prop_name, prop_dict in d.items():
-            additional_property = BTDiffInfo.from_dict(prop_dict)
+            additional_property = []
+            _additional_property = prop_dict
+            for additional_property_item_data in _additional_property:
+                additional_property_item = BTDiffInfo.from_dict(additional_property_item_data)
+
+                additional_property.append(additional_property_item)
 
             additional_properties[prop_name] = additional_property
 
-        bt_diff_info_changes.additional_properties = additional_properties
-        return bt_diff_info_changes
+        bt_diff_info_collection_changes.additional_properties = additional_properties
+        return bt_diff_info_collection_changes
 
     @property
     def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
-    def __getitem__(self, key: str) -> BTDiffInfo:
+    def __getitem__(self, key: str) -> list[BTDiffInfo]:
         return self.additional_properties[key]
 
-    def __setitem__(self, key: str, value: BTDiffInfo) -> None:
+    def __setitem__(self, key: str, value: list[BTDiffInfo]) -> None:
         self.additional_properties[key] = value
 
     def __delitem__(self, key: str) -> None:
