@@ -88,6 +88,7 @@ Things to know:
 1. All path/query params, and bodies become method arguments.
 1. If your endpoint had any tags on it, the first tag will be used as a module name for the function (my_tag above)
 1. Any endpoint which did not have a tag will be in `onshape_rest_api_client.api.default`
+1. The Onshape API is large, so `onshape_rest_api_client.models` imports models lazily. `from onshape_rest_api_client.models import MyDataModel` loads only that model's module, not all of them, which keeps startup time and memory proportional to what you use. Importing straight from the defining module (`from onshape_rest_api_client.models.my_data_model import MyDataModel`) is equivalent.
 
 ## Advanced customizations
 

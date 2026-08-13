@@ -8,6 +8,26 @@ Instead follow these instructions to regenerate the code using [openapi-python-c
 
 If you're using a Mac, the [build.sh](build.sh) script automates some of the steps.
 
+## Custom templates
+
+One generated file is produced from a hand-maintained template in [templates](templates) rather than
+from openapi-python-client's stock template, so generation must be pointed at it:
+
+```
+openapi-python-client generate ... --custom-template-path=templates
+```
+
+Only [templates/models_init.py.jinja](templates/models_init.py.jinja) is overridden; every other
+file uses the stock template. It makes `models/__init__.py` resolve models lazily instead of
+importing all ~1700 of them, which cuts import time and resident memory by roughly 70 MB for
+callers that use a handful of models. See the comment at the top of the template for details.
+
+Custom template support is a beta feature of openapi-python-client and the context passed to
+templates (`imports`, `alls`) is explicitly undocumented and unstable, so re-check the template
+against [the stock one](https://github.com/openapi-generators/openapi-python-client/blob/main/openapi_python_client/templates/models_init.py.jinja)
+when upgrading the generator. [build.sh](build.sh) runs [check_lazy_imports.py](check_lazy_imports.py)
+after every generation to catch it if that happens.
+
 
 ## Regenerate Code
 1. go to a temporary directory, e.g.
@@ -21,7 +41,7 @@ cd /tmp
 3. run the generation command against onshape's latest openapi specification
 
 ```
-openapi-python-client generate --url https://cad.onshape.com/api/openapi
+openapi-python-client generate --url https://cad.onshape.com/api/openapi --custom-template-path=/path/to/this/repo/templates
 ```
 
 4. replace the [onshape_rest_api_client](onshape_rest_api_client) directory with the new generated directory

@@ -1,0 +1,67 @@
+{#
+  Custom override of openapi-python-client's models_init.py.jinja.
+
+  The stock template imports every model eagerly, so `from .models.foo import Foo`
+  runs this package's __init__ first and pulls in all model modules. For an API this
+  size that costs ~70 MB of resident memory and ~1.2 s of import time, nearly all of
+  it wasted for callers that use a handful of models.
+
+  This version keeps the same public surface but resolves names on demand (PEP 562).
+
+  Template context supplied by the generator: `imports` (a list of
+  "from .module_name import ClassName" statements) and `alls` (the exported names).
+#}
+"""Contains all the data models used in inputs/outputs.
+
+Models are imported lazily (PEP 562): looking up a name on this package imports only
+that model's own module rather than every model in the package. Both of these work and
+give you the same class, the first at the cost of the second:
+
+    from onshape_rest_api_client.models import BTBStepExportParams
+    from onshape_rest_api_client.models.btb_step_export_params import BTBStepExportParams
+
+No other module in this library imports from here, so an application pays only for the
+models it actually touches.
+"""
+
+{% if imports %}
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    # Resolved by type checkers and IDEs; never executed at runtime.
+{% for import in imports | sort %}
+    {{ import }}
+{% endfor %}
+
+# Exported name -> the module in this package that defines it.
+_LAZY_MODULES: dict[str, str] = {
+{% for import in imports | sort %}
+{% set parts = import.split(" import ") %}
+    "{{ parts[1] }}": "{{ parts[0].removeprefix('from .') }}",
+{% endfor %}
+}
+
+
+def __getattr__(name: str) -> Any:
+    """Import the module defining `name` on first access, then cache it in globals()."""
+    module = _LAZY_MODULES.get(name)
+    if module is None:
+        raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
+
+    from importlib import import_module
+
+    value = getattr(import_module(f".{module}", __name__), name)
+    globals()[name] = value  # later lookups skip __getattr__ entirely
+    return value
+
+
+def __dir__() -> list[str]:
+    return sorted(__all__)
+
+
+__all__ = (
+{% for all in alls | sort %}
+    "{{ all }}",
+{% endfor %}
+)
+{% endif %}

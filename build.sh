@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 echo "-------------------------------------------"
 echo "Updating onshape_rest_api_client (Mac only)"
 pushd /tmp
@@ -9,7 +11,7 @@ curl -H "Accept: application/json" https://cad.onshape.com/api/openapi -o onshap
 popd
 python3 update_json.py /tmp/onshape_openapi.json
 pushd /tmp
-openapi-python-client generate --path onshape_openapi.json --overwrite
+openapi-python-client generate --path onshape_openapi.json --overwrite --custom-template-path="$REPO_DIR/templates"
 echo "Changelog info:"
 jq ".servers[0].url, .info.version" onshape_openapi.json
 openapi-python-client --version
@@ -17,6 +19,10 @@ popd
 [ -d /tmp/onshape-rest-api-client/onshape_rest_api_client ] || { echo "generation failed: /tmp/onshape-rest-api-client/onshape_rest_api_client not found"; exit 1; }
 trash onshape_rest_api_client
 mv /tmp/onshape-rest-api-client/onshape_rest_api_client .
+
+echo "-------------------------------------------"
+echo "Checking lazy model imports"
+python3 check_lazy_imports.py
 echo "-------------------------------------------"
 echo "Now"
 echo "1. add release details to CHANGELOG.md (doublecheck first column for duplicates!)"
