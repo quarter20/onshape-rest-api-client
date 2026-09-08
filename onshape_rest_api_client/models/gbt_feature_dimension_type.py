@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTFeatureDimensionType(str, Enum):
+class GBTFeatureDimensionType(StrEnum):
     ANGLE = "ANGLE"
     AXIS_DISTANCE = "AXIS_DISTANCE"
     DIAMETER = "DIAMETER"

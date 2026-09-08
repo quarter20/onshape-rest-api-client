@@ -88,9 +88,9 @@ class BTWhereUsedItemInfoList:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_product_structure_item_info import BTProductStructureItemInfo
-        from ..models.bt_where_used_version_referenced_info import BTWhereUsedVersionReferencedInfo
-        from ..models.config_info import ConfigInfo
+        from ..models.bt_product_structure_item_info import BTProductStructureItemInfo  # noqa: PLC0415
+        from ..models.bt_where_used_version_referenced_info import BTWhereUsedVersionReferencedInfo  # noqa: PLC0415
+        from ..models.config_info import ConfigInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _default_config = d.pop("defaultConfig", UNSET)

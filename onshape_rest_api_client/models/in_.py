@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class In(str, Enum):
+class In(StrEnum):
     COOKIE = "COOKIE"
     HEADER = "HEADER"
     QUERY = "QUERY"

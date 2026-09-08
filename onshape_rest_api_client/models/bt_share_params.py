@@ -105,7 +105,7 @@ class BTShareParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_share_entry_params import BTShareEntryParams
+        from ..models.bt_share_entry_params import BTShareEntryParams  # noqa: PLC0415
 
         d = dict(src_dict)
         connection_id = d.pop("connectionId", UNSET)

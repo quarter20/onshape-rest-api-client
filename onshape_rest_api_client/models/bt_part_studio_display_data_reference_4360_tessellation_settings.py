@@ -11,8 +11,6 @@ T = TypeVar("T", bound="BTPartStudioDisplayDataReference4360TessellationSettings
 
 @_attrs_define
 class BTPartStudioDisplayDataReference4360TessellationSettings:
-    """ """
-
     additional_properties: dict[str, list[int]] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

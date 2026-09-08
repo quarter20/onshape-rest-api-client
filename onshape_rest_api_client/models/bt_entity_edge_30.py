@@ -133,9 +133,9 @@ class BTEntityEdge30:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_entity_geometry_35 import BTEntityGeometry35
-        from ..models.bt_immutable_byte_array import BTImmutableByteArray
-        from ..models.bt_immutable_float_array import BTImmutableFloatArray
+        from ..models.bt_entity_geometry_35 import BTEntityGeometry35  # noqa: PLC0415
+        from ..models.bt_immutable_byte_array import BTImmutableByteArray  # noqa: PLC0415
+        from ..models.bt_immutable_float_array import BTImmutableFloatArray  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

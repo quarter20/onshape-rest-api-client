@@ -63,7 +63,7 @@ class BTOtherDocumentSelectorParametersInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_folder_state_info import BTFolderStateInfo
+        from ..models.bt_folder_state_info import BTFolderStateInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         json_type = d.pop("jsonType")

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTDrawingHiddenLineOption(str, Enum):
+class BTDrawingHiddenLineOption(StrEnum):
     DRAFTING = "drafting"
     EXCLUDED = "excluded"
     MARKED = "marked"

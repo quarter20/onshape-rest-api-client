@@ -46,7 +46,7 @@ class BTDocumentSelectorInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_document_selector_parameters_info import BTDocumentSelectorParametersInfo
+        from ..models.bt_document_selector_parameters_info import BTDocumentSelectorParametersInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _parameters = d.pop("parameters", UNSET)

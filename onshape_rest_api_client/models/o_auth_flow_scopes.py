@@ -46,7 +46,7 @@ class OAuthFlowScopes:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.o_auth_flow_scopes_extensions import OAuthFlowScopesExtensions
+        from ..models.o_auth_flow_scopes_extensions import OAuthFlowScopesExtensions  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

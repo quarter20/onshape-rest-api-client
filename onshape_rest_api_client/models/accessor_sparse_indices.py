@@ -67,8 +67,8 @@ class AccessorSparseIndices:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.accessor_sparse_indices_extensions import AccessorSparseIndicesExtensions
-        from ..models.accessor_sparse_indices_extras import AccessorSparseIndicesExtras
+        from ..models.accessor_sparse_indices_extensions import AccessorSparseIndicesExtensions  # noqa: PLC0415
+        from ..models.accessor_sparse_indices_extras import AccessorSparseIndicesExtras  # noqa: PLC0415
 
         d = dict(src_dict)
         buffer_view = d.pop("bufferView", UNSET)

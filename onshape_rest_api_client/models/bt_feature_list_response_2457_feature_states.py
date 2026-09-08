@@ -32,7 +32,7 @@ class BTFeatureListResponse2457FeatureStates:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_feature_state_1688 import BTFeatureState1688
+        from ..models.bt_feature_state_1688 import BTFeatureState1688  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_feature_list_response_2457_feature_states = cls()

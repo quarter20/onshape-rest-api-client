@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTTableColumnWidthUnits(str, Enum):
+class GBTTableColumnWidthUnits(StrEnum):
     CHARS = "CHARS"
     PERCENT = "PERCENT"
     PIXELS = "PIXELS"

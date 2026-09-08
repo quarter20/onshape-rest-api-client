@@ -170,7 +170,7 @@ class BTTaskItemInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_view_data_info import BTViewDataInfo
+        from ..models.bt_view_data_info import BTViewDataInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         assembly_features = cast(list[str], d.pop("assemblyFeatures", UNSET))

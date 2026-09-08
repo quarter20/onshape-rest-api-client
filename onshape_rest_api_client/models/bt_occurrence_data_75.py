@@ -111,10 +111,10 @@ class BTOccurrenceData75:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_locked_sub_assembly_4590 import BTLockedSubAssembly4590
-        from ..models.bt_occurrence_74 import BTOccurrence74
-        from ..models.bt_occurrence_data_75_feature_data import BTOccurrenceData75FeatureData
-        from ..models.btbs_matrix_386 import BTBSMatrix386
+        from ..models.bt_locked_sub_assembly_4590 import BTLockedSubAssembly4590  # noqa: PLC0415
+        from ..models.bt_occurrence_74 import BTOccurrence74  # noqa: PLC0415
+        from ..models.bt_occurrence_data_75_feature_data import BTOccurrenceData75FeatureData  # noqa: PLC0415
+        from ..models.btbs_matrix_386 import BTBSMatrix386  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

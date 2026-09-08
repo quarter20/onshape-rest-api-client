@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTFieldWeldFlag(str, Enum):
+class GBTFieldWeldFlag(StrEnum):
     LOWER = "LOWER"
     NONE = "NONE"
     UNKNOWN = "UNKNOWN"

@@ -15,8 +15,6 @@ T = TypeVar("T", bound="OperationCallbacks")
 
 @_attrs_define
 class OperationCallbacks:
-    """ """
-
     additional_properties: dict[str, Callback] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class OperationCallbacks:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.callback import Callback
+        from ..models.callback import Callback  # noqa: PLC0415
 
         d = dict(src_dict)
         operation_callbacks = cls()

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTAnnotationAttachmentLocation(str, Enum):
+class GBTAnnotationAttachmentLocation(StrEnum):
     BOTTOM_MIDDLE = "BOTTOM_MIDDLE"
     LEFT_MIDDLE = "LEFT_MIDDLE"
     OPPOSITE_LEADER_EDGE = "OPPOSITE_LEADER_EDGE"

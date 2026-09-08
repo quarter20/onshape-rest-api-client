@@ -224,9 +224,9 @@ class BTCategoryPropertyConfigInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_computed_assembly_property_config import BTComputedAssemblyPropertyConfig
-        from ..models.bt_computed_part_property_config import BTComputedPartPropertyConfig
-        from ..models.bt_metadata_enum_value import BTMetadataEnumValue
+        from ..models.bt_computed_assembly_property_config import BTComputedAssemblyPropertyConfig  # noqa: PLC0415
+        from ..models.bt_computed_part_property_config import BTComputedPartPropertyConfig  # noqa: PLC0415
+        from ..models.bt_metadata_enum_value import BTMetadataEnumValue  # noqa: PLC0415
 
         d = dict(src_dict)
         computed_assembly_property_aggregated_property_id = d.pop("computedAssemblyPropertyAggregatedPropertyId", UNSET)

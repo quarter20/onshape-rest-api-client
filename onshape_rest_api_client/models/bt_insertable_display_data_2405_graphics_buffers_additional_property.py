@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTInsertableDisplayData2405GraphicsBuffersAdditionalProp
 
 @_attrs_define
 class BTInsertableDisplayData2405GraphicsBuffersAdditionalProperty:
-    """ """
-
     additional_properties: dict[str, BTGraphicsBuffer2668] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTInsertableDisplayData2405GraphicsBuffersAdditionalProperty:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_graphics_buffer_2668 import BTGraphicsBuffer2668
+        from ..models.bt_graphics_buffer_2668 import BTGraphicsBuffer2668  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_insertable_display_data_2405_graphics_buffers_additional_property = cls()

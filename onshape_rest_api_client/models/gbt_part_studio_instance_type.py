@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTPartStudioInstanceType(str, Enum):
+class GBTPartStudioInstanceType(StrEnum):
     COMPOSITE = "COMPOSITE"
     PART = "PART"
     SKETCH = "SKETCH"

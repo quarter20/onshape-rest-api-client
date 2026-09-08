@@ -77,7 +77,9 @@ class BTAssemblyParametricInstanceInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_assembly_parametric_instance_child_info import BTAssemblyParametricInstanceChildInfo
+        from ..models.bt_assembly_parametric_instance_child_info import (
+            BTAssemblyParametricInstanceChildInfo,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         _children = d.pop("children", UNSET)

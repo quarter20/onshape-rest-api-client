@@ -96,7 +96,7 @@ class BTDocumentWithVersionAndElementId:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.object_id import ObjectId
+        from ..models.object_id import ObjectId  # noqa: PLC0415
 
         d = dict(src_dict)
         document_id = d.pop("documentId", UNSET)

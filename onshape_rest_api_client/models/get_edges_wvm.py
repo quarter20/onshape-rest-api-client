@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetEdgesWvm(str, Enum):
+class GetEdgesWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

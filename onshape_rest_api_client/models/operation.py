@@ -144,14 +144,14 @@ class Operation:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.external_documentation import ExternalDocumentation
-        from ..models.operation_callbacks import OperationCallbacks
-        from ..models.operation_extensions import OperationExtensions
-        from ..models.operation_responses import OperationResponses
-        from ..models.parameter import Parameter
-        from ..models.request_body import RequestBody
-        from ..models.security_requirement import SecurityRequirement
-        from ..models.server import Server
+        from ..models.external_documentation import ExternalDocumentation  # noqa: PLC0415
+        from ..models.operation_callbacks import OperationCallbacks  # noqa: PLC0415
+        from ..models.operation_extensions import OperationExtensions  # noqa: PLC0415
+        from ..models.operation_responses import OperationResponses  # noqa: PLC0415
+        from ..models.parameter import Parameter  # noqa: PLC0415
+        from ..models.request_body import RequestBody  # noqa: PLC0415
+        from ..models.security_requirement import SecurityRequirement  # noqa: PLC0415
+        from ..models.server import Server  # noqa: PLC0415
 
         d = dict(src_dict)
         _callbacks = d.pop("callbacks", UNSET)

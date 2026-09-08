@@ -15,8 +15,6 @@ T = TypeVar("T", bound="NextNumbersResponseDefault")
 
 @_attrs_define
 class NextNumbersResponseDefault:
-    """ """
-
     additional_properties: dict[str, list[BTNextPartNumber]] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -32,7 +30,7 @@ class NextNumbersResponseDefault:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_next_part_number import BTNextPartNumber
+        from ..models.bt_next_part_number import BTNextPartNumber  # noqa: PLC0415
 
         d = dict(src_dict)
         next_numbers_response_default = cls()

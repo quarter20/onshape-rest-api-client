@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetUnitInfoWvm(str, Enum):
+class GetUnitInfoWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

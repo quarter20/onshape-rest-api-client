@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetFeaturesWvm(str, Enum):
+class GetFeaturesWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

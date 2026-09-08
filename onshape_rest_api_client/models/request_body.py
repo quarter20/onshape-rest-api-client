@@ -67,8 +67,8 @@ class RequestBody:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.request_body_content import RequestBodyContent
-        from ..models.request_body_extensions import RequestBodyExtensions
+        from ..models.request_body_content import RequestBodyContent  # noqa: PLC0415
+        from ..models.request_body_extensions import RequestBodyExtensions  # noqa: PLC0415
 
         d = dict(src_dict)
         _content = d.pop("content", UNSET)

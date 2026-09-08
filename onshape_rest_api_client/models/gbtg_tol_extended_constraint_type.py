@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTGTolExtendedConstraintType(str, Enum):
+class GBTGTolExtendedConstraintType(StrEnum):
     ANGULARITY = "ANGULARITY"
     CIRCULAR_RUNOUT = "CIRCULAR_RUNOUT"
     COMPOSITE_FRAME = "COMPOSITE_FRAME"

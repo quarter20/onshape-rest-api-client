@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetElementTranslatorFormatsByVersionOrWorkspaceWv(str, Enum):
+class GetElementTranslatorFormatsByVersionOrWorkspaceWv(StrEnum):
     V = "v"
     W = "w"
 

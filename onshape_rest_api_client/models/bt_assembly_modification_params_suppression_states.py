@@ -33,7 +33,7 @@ class BTAssemblyModificationParamsSuppressionStates:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_optionally_configured_value import BTOptionallyConfiguredValue
+        from ..models.bt_optionally_configured_value import BTOptionallyConfiguredValue  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_assembly_modification_params_suppression_states = cls()

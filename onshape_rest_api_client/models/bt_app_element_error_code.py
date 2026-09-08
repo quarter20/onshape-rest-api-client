@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTAppElementErrorCode(str, Enum):
+class BTAppElementErrorCode(StrEnum):
     INCONSISTENT_CHANGES = "INCONSISTENT_CHANGES"
     NOT_FOUND = "NOT_FOUND"
     OK = "OK"

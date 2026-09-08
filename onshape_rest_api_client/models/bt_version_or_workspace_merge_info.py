@@ -64,7 +64,7 @@ class BTVersionOrWorkspaceMergeInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_version_or_workspace_merge_info_merge_strategy_element_overrides import (
-            BTVersionOrWorkspaceMergeInfoMergeStrategyElementOverrides,
+            BTVersionOrWorkspaceMergeInfoMergeStrategyElementOverrides,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

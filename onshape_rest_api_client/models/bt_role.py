@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTRole(str, Enum):
+class BTRole(StrEnum):
     ADMIN = "ADMIN"
     ANONYMOUS = "ANONYMOUS"
     DEVELOPER = "DEVELOPER"

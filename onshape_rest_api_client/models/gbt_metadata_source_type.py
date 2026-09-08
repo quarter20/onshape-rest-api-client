@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTMetadataSourceType(str, Enum):
+class GBTMetadataSourceType(StrEnum):
     AUTOMATIC = "AUTOMATIC"
     COMPUTED = "COMPUTED"
     COMPUTED_CONFIGURED = "COMPUTED_CONFIGURED"

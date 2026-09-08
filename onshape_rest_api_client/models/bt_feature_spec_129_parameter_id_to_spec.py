@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTFeatureSpec129ParameterIdToSpec")
 
 @_attrs_define
 class BTFeatureSpec129ParameterIdToSpec:
-    """ """
-
     additional_properties: dict[str, BTParameterSpec6] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTFeatureSpec129ParameterIdToSpec:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_parameter_spec_6 import BTParameterSpec6
+        from ..models.bt_parameter_spec_6 import BTParameterSpec6  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_feature_spec_129_parameter_id_to_spec = cls()

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetFullAssemblyMetadataWvm(str, Enum):
+class GetFullAssemblyMetadataWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

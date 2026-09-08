@@ -52,7 +52,7 @@ class BTSubstituteApproverInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_identity_info import BTIdentityInfo
+        from ..models.bt_identity_info import BTIdentityInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         company_id = d.pop("companyId", UNSET)

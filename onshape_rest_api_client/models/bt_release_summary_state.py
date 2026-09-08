@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTReleaseSummaryState(str, Enum):
+class BTReleaseSummaryState(StrEnum):
     DEGRADED_POSTCOMMIT = "DEGRADED_POSTCOMMIT"
     FAILED = "FAILED"
     FAILED_POSTCOMMIT = "FAILED_POSTCOMMIT"

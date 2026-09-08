@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTWorkflowObserverState(str, Enum):
+class BTWorkflowObserverState(StrEnum):
     APPROVED = "APPROVED"
     NONE = "NONE"
     OVERRIDDEN = "OVERRIDDEN"

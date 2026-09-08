@@ -73,8 +73,8 @@ class CameraPerspective:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.camera_perspective_extensions import CameraPerspectiveExtensions
-        from ..models.camera_perspective_extras import CameraPerspectiveExtras
+        from ..models.camera_perspective_extensions import CameraPerspectiveExtensions  # noqa: PLC0415
+        from ..models.camera_perspective_extras import CameraPerspectiveExtras  # noqa: PLC0415
 
         d = dict(src_dict)
         aspect_ratio = d.pop("aspectRatio", UNSET)

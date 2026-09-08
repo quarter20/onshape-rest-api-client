@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTSketchCurveType(str, Enum):
+class GBTSketchCurveType(StrEnum):
     BEZIER_CURVE = "BEZIER_CURVE"
     INTERPOLATED_SPLINE = "INTERPOLATED_SPLINE"
     UNKNOWN = "UNKNOWN"

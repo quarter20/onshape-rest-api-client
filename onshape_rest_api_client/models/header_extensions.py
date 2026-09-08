@@ -15,8 +15,6 @@ T = TypeVar("T", bound="HeaderExtensions")
 
 @_attrs_define
 class HeaderExtensions:
-    """ """
-
     additional_properties: dict[str, HeaderExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class HeaderExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.header_extensions_additional_property import HeaderExtensionsAdditionalProperty
+        from ..models.header_extensions_additional_property import HeaderExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         header_extensions = cls()

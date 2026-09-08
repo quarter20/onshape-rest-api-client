@@ -15,8 +15,6 @@ T = TypeVar("T", bound="MeshExtensions")
 
 @_attrs_define
 class MeshExtensions:
-    """ """
-
     additional_properties: dict[str, MeshExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class MeshExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.mesh_extensions_additional_property import MeshExtensionsAdditionalProperty
+        from ..models.mesh_extensions_additional_property import MeshExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         mesh_extensions = cls()

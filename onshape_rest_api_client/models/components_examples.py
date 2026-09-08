@@ -15,8 +15,6 @@ T = TypeVar("T", bound="ComponentsExamples")
 
 @_attrs_define
 class ComponentsExamples:
-    """ """
-
     additional_properties: dict[str, Example] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class ComponentsExamples:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.example import Example
+        from ..models.example import Example  # noqa: PLC0415
 
         d = dict(src_dict)
         components_examples = cls()

@@ -259,11 +259,11 @@ class BTParametricInstance2641:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_instance_base_2263_custom_data import BTInstanceBase2263CustomData
-        from ..models.bt_instance_control_node_750 import BTInstanceControlNode750
-        from ..models.bt_revision_custom_data_2090 import BTRevisionCustomData2090
-        from ..models.btm_assembly_feature_887 import BTMAssemblyFeature887
-        from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
+        from ..models.bt_instance_base_2263_custom_data import BTInstanceBase2263CustomData  # noqa: PLC0415
+        from ..models.bt_instance_control_node_750 import BTInstanceControlNode750  # noqa: PLC0415
+        from ..models.bt_revision_custom_data_2090 import BTRevisionCustomData2090  # noqa: PLC0415
+        from ..models.btm_assembly_feature_887 import BTMAssemblyFeature887  # noqa: PLC0415
+        from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

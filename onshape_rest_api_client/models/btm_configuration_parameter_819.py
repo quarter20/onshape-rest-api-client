@@ -108,8 +108,8 @@ class BTMConfigurationParameter819:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_parameter_visibility_condition_177 import BTParameterVisibilityCondition177
-        from ..models.bt_tree_node_20 import BTTreeNode20
+        from ..models.bt_parameter_visibility_condition_177 import BTParameterVisibilityCondition177  # noqa: PLC0415
+        from ..models.bt_tree_node_20 import BTTreeNode20  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

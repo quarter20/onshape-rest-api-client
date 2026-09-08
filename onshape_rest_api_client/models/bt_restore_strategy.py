@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTRestoreStrategy(str, Enum):
+class BTRestoreStrategy(StrEnum):
     KEEP = "KEEP"
     REPLACE = "REPLACE"
 

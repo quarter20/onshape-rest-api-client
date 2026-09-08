@@ -52,7 +52,7 @@ class ExternalDocumentation:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.external_documentation_extensions import ExternalDocumentationExtensions
+        from ..models.external_documentation_extensions import ExternalDocumentationExtensions  # noqa: PLC0415
 
         d = dict(src_dict)
         description = d.pop("description", UNSET)

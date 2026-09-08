@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTTranslateFormatParamsResolution(str, Enum):
+class BTTranslateFormatParamsResolution(StrEnum):
     COARSE = "coarse"
     FINE = "fine"
     MEDIUM = "medium"

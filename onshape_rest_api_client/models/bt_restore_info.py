@@ -49,7 +49,9 @@ class BTRestoreInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_restore_info_element_id_to_strategy_override import BTRestoreInfoElementIdToStrategyOverride
+        from ..models.bt_restore_info_element_id_to_strategy_override import (
+            BTRestoreInfoElementIdToStrategyOverride,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         _default_restore_strategy = d.pop("defaultRestoreStrategy", UNSET)

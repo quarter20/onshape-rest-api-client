@@ -77,10 +77,10 @@ def sync_detailed(
     link_document_id: str | Unset = "",
     parent_change_id: str | Unset = UNSET,
 ) -> Response[BTDocumentElementProcessingInfo]:
-    r"""Update a blob element by uploading a file.
+    """Update a blob element by uploading a file.
 
-     Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-
-    data\"` in the request header.
+     Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"`
+    in the request header.
 
     Args:
         did (str):
@@ -124,10 +124,10 @@ def sync(
     link_document_id: str | Unset = "",
     parent_change_id: str | Unset = UNSET,
 ) -> BTDocumentElementProcessingInfo | None:
-    r"""Update a blob element by uploading a file.
+    """Update a blob element by uploading a file.
 
-     Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-
-    data\"` in the request header.
+     Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"`
+    in the request header.
 
     Args:
         did (str):
@@ -166,10 +166,10 @@ async def asyncio_detailed(
     link_document_id: str | Unset = "",
     parent_change_id: str | Unset = UNSET,
 ) -> Response[BTDocumentElementProcessingInfo]:
-    r"""Update a blob element by uploading a file.
+    """Update a blob element by uploading a file.
 
-     Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-
-    data\"` in the request header.
+     Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"`
+    in the request header.
 
     Args:
         did (str):
@@ -211,10 +211,10 @@ async def asyncio(
     link_document_id: str | Unset = "",
     parent_change_id: str | Unset = UNSET,
 ) -> BTDocumentElementProcessingInfo | None:
-    r"""Update a blob element by uploading a file.
+    """Update a blob element by uploading a file.
 
-     Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-
-    data\"` in the request header.
+     Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"`
+    in the request header.
 
     Args:
         did (str):

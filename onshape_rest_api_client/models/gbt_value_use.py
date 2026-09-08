@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTValueUse(str, Enum):
+class GBTValueUse(StrEnum):
     INTEGER = "INTEGER"
     LOCALIZE = "LOCALIZE"
     STRING = "STRING"

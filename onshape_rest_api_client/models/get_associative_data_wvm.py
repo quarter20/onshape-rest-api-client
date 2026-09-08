@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetAssociativeDataWvm(str, Enum):
+class GetAssociativeDataWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

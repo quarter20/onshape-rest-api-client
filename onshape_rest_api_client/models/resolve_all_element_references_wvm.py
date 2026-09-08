@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class ResolveAllElementReferencesWvm(str, Enum):
+class ResolveAllElementReferencesWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

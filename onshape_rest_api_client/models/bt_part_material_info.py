@@ -70,8 +70,8 @@ class BTPartMaterialInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_external_element_reference_info import BTExternalElementReferenceInfo
-        from ..models.bt_part_material_property_info import BTPartMaterialPropertyInfo
+        from ..models.bt_external_element_reference_info import BTExternalElementReferenceInfo  # noqa: PLC0415
+        from ..models.bt_part_material_property_info import BTPartMaterialPropertyInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         display_name = d.pop("displayName", UNSET)

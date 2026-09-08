@@ -227,10 +227,10 @@ class BTProductStructureItemInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_metadata_value_info import BTMetadataValueInfo
-        from ..models.bt_thumbnail_info import BTThumbnailInfo
-        from ..models.config_info import ConfigInfo
-        from ..models.property_ import Property
+        from ..models.bt_metadata_value_info import BTMetadataValueInfo  # noqa: PLC0415
+        from ..models.bt_thumbnail_info import BTThumbnailInfo  # noqa: PLC0415
+        from ..models.config_info import ConfigInfo  # noqa: PLC0415
+        from ..models.property_ import Property  # noqa: PLC0415
 
         d = dict(src_dict)
         json_type = d.pop("jsonType")

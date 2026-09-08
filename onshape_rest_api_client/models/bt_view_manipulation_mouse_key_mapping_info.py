@@ -98,7 +98,7 @@ class BTViewManipulationMouseKeyMappingInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_key_mouse_values_info import BTKeyMouseValuesInfo
+        from ..models.bt_key_mouse_values_info import BTKeyMouseValuesInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _axis_rotate_3d_mapping = d.pop("axisRotate3DMapping", UNSET)

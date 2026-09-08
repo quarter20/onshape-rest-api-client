@@ -11,8 +11,6 @@ T = TypeVar("T", bound="BTMateOccurrenceData1671ValueMap")
 
 @_attrs_define
 class BTMateOccurrenceData1671ValueMap:
-    """ """
-
     additional_properties: dict[str, float] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

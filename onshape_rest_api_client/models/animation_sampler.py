@@ -67,8 +67,8 @@ class AnimationSampler:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.animation_sampler_extensions import AnimationSamplerExtensions
-        from ..models.animation_sampler_extras import AnimationSamplerExtras
+        from ..models.animation_sampler_extensions import AnimationSamplerExtensions  # noqa: PLC0415
+        from ..models.animation_sampler_extras import AnimationSamplerExtras  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

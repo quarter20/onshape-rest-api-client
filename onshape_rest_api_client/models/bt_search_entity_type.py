@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTSearchEntityType(str, Enum):
+class BTSearchEntityType(StrEnum):
     APPLICATION = "application"
     APP_STORE_ENTRY = "app_store_entry"
     ASSIGNMENT = "assignment"

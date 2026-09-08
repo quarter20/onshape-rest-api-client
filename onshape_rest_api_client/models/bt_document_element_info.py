@@ -229,9 +229,9 @@ class BTDocumentElementInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_application_target_info import BTApplicationTargetInfo
-        from ..models.bt_thumbnail_info import BTThumbnailInfo
-        from ..models.bt_zip_file_info import BTZipFileInfo
+        from ..models.bt_application_target_info import BTApplicationTargetInfo  # noqa: PLC0415
+        from ..models.bt_thumbnail_info import BTThumbnailInfo  # noqa: PLC0415
+        from ..models.bt_zip_file_info import BTZipFileInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         acceleration_units = d.pop("accelerationUnits", UNSET)

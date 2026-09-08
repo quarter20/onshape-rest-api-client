@@ -100,11 +100,11 @@ class Link:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.link_extensions import LinkExtensions
-        from ..models.link_headers import LinkHeaders
-        from ..models.link_parameters import LinkParameters
-        from ..models.link_request_body import LinkRequestBody
-        from ..models.server import Server
+        from ..models.link_extensions import LinkExtensions  # noqa: PLC0415
+        from ..models.link_headers import LinkHeaders  # noqa: PLC0415
+        from ..models.link_parameters import LinkParameters  # noqa: PLC0415
+        from ..models.link_request_body import LinkRequestBody  # noqa: PLC0415
+        from ..models.server import Server  # noqa: PLC0415
 
         d = dict(src_dict)
         description = d.pop("description", UNSET)

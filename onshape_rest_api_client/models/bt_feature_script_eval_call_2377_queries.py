@@ -11,8 +11,6 @@ T = TypeVar("T", bound="BTFeatureScriptEvalCall2377Queries")
 
 @_attrs_define
 class BTFeatureScriptEvalCall2377Queries:
-    """ """
-
     additional_properties: dict[str, list[str]] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

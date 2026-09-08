@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTTableTextAlignment(str, Enum):
+class GBTTableTextAlignment(StrEnum):
     CENTER = "CENTER"
     LEFT = "LEFT"
     RIGHT = "RIGHT"

@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTConfiguredPartProperties2645PropertyIdToConfiguredTabl
 
 @_attrs_define
 class BTConfiguredPartProperties2645PropertyIdToConfiguredTable:
-    """ """
-
     additional_properties: dict[str, BTPartWithConfiguredProperties2163] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTConfiguredPartProperties2645PropertyIdToConfiguredTable:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_part_with_configured_properties_2163 import BTPartWithConfiguredProperties2163
+        from ..models.bt_part_with_configured_properties_2163 import BTPartWithConfiguredProperties2163  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_configured_part_properties_2645_property_id_to_configured_table = cls()

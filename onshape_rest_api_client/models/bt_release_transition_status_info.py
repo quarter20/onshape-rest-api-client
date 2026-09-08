@@ -16,20 +16,25 @@ T = TypeVar("T", bound="BTReleaseTransitionStatusInfo")
 
 @_attrs_define
 class BTReleaseTransitionStatusInfo:
-    """
+    """Status of a single release package workflow transition attempt.
+
     Attributes:
-        error_message (str | Unset):
-        last_stage (BTReleaseStage | Unset):
-        last_updated_at (datetime.datetime | Unset):
-        retryable (bool | Unset):
-        summary_state (BTReleaseSummaryState | Unset):
-        support_code (str | Unset):
+        error_message (str | Unset): Error message if the transition failed, null otherwise.
+        last_stage (BTReleaseStage | Unset): Last pipeline stage reached before the transition completed or failed.
+        last_updated_at (datetime.datetime | Unset): Timestamp of the last update to this transition status entry.
+        retryable (bool | Unset): Whether the failed transition can be retried.
+        sequence_number (int | Unset): Sequence number identifying insertion order within a release package. The entry
+            with the highest value is the latest. Legacy entries backfilled before this field was introduced may have
+            negative values. Example: 3.
+        summary_state (BTReleaseSummaryState | Unset): Overall result of the transition attempt.
+        support_code (str | Unset): Support code for diagnosing the failure, null if no failure occurred.
     """
 
     error_message: str | Unset = UNSET
     last_stage: BTReleaseStage | Unset = UNSET
     last_updated_at: datetime.datetime | Unset = UNSET
     retryable: bool | Unset = UNSET
+    sequence_number: int | Unset = UNSET
     summary_state: BTReleaseSummaryState | Unset = UNSET
     support_code: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -46,6 +51,8 @@ class BTReleaseTransitionStatusInfo:
             last_updated_at = self.last_updated_at.isoformat()
 
         retryable = self.retryable
+
+        sequence_number = self.sequence_number
 
         summary_state: str | Unset = UNSET
         if not isinstance(self.summary_state, Unset):
@@ -64,6 +71,8 @@ class BTReleaseTransitionStatusInfo:
             field_dict["lastUpdatedAt"] = last_updated_at
         if retryable is not UNSET:
             field_dict["retryable"] = retryable
+        if sequence_number is not UNSET:
+            field_dict["sequenceNumber"] = sequence_number
         if summary_state is not UNSET:
             field_dict["summaryState"] = summary_state
         if support_code is not UNSET:
@@ -92,6 +101,8 @@ class BTReleaseTransitionStatusInfo:
 
         retryable = d.pop("retryable", UNSET)
 
+        sequence_number = d.pop("sequenceNumber", UNSET)
+
         _summary_state = d.pop("summaryState", UNSET)
         summary_state: BTReleaseSummaryState | Unset
         if isinstance(_summary_state, Unset):
@@ -106,6 +117,7 @@ class BTReleaseTransitionStatusInfo:
             last_stage=last_stage,
             last_updated_at=last_updated_at,
             retryable=retryable,
+            sequence_number=sequence_number,
             summary_state=summary_state,
             support_code=support_code,
         )

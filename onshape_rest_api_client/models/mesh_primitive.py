@@ -88,10 +88,10 @@ class MeshPrimitive:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.mesh_primitive_attributes import MeshPrimitiveAttributes
-        from ..models.mesh_primitive_extensions import MeshPrimitiveExtensions
-        from ..models.mesh_primitive_extras import MeshPrimitiveExtras
-        from ..models.mesh_primitive_targets_item import MeshPrimitiveTargetsItem
+        from ..models.mesh_primitive_attributes import MeshPrimitiveAttributes  # noqa: PLC0415
+        from ..models.mesh_primitive_extensions import MeshPrimitiveExtensions  # noqa: PLC0415
+        from ..models.mesh_primitive_extras import MeshPrimitiveExtras  # noqa: PLC0415
+        from ..models.mesh_primitive_targets_item import MeshPrimitiveTargetsItem  # noqa: PLC0415
 
         d = dict(src_dict)
         _attributes = d.pop("attributes", UNSET)

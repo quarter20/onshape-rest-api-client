@@ -132,7 +132,7 @@ class BTBillOfMaterialsItemSourceInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_thumbnail_info import BTThumbnailInfo
+        from ..models.bt_thumbnail_info import BTThumbnailInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         configuration = d.pop("configuration", UNSET)

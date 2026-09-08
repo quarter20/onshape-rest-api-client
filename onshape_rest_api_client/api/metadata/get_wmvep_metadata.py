@@ -6,17 +6,17 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.bt_metadata_object_info import BTMetadataObjectInfo
-from ...models.get_wmvep_metadata_iden import GetWMVEPMetadataIden
-from ...models.get_wmvep_metadata_wvm import GetWMVEPMetadataWvm
+from ...models.get_wmvep_metadata_iden import GetWmvepMetadataIden
+from ...models.get_wmvep_metadata_wvm import GetWmvepMetadataWvm
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     did: str,
-    wvm: GetWMVEPMetadataWvm,
+    wvm: GetWmvepMetadataWvm,
     wvmid: str,
     eid: str,
-    iden: GetWMVEPMetadataIden,
+    iden: GetWmvepMetadataIden,
     pid: str,
     *,
     link_document_id: str | Unset = "",
@@ -84,10 +84,10 @@ def _build_response(
 
 def sync_detailed(
     did: str,
-    wvm: GetWMVEPMetadataWvm,
+    wvm: GetWmvepMetadataWvm,
     wvmid: str,
     eid: str,
-    iden: GetWMVEPMetadataIden,
+    iden: GetWmvepMetadataIden,
     pid: str,
     *,
     client: AuthenticatedClient,
@@ -116,10 +116,10 @@ def sync_detailed(
 
     Args:
         did (str):
-        wvm (GetWMVEPMetadataWvm):
+        wvm (GetWmvepMetadataWvm):
         wvmid (str):
         eid (str):
-        iden (GetWMVEPMetadataIden):
+        iden (GetWmvepMetadataIden):
         pid (str):
         link_document_id (str | Unset):  Default: ''.
         configuration (str | Unset):  Default: ''.
@@ -164,10 +164,10 @@ def sync_detailed(
 
 def sync(
     did: str,
-    wvm: GetWMVEPMetadataWvm,
+    wvm: GetWmvepMetadataWvm,
     wvmid: str,
     eid: str,
-    iden: GetWMVEPMetadataIden,
+    iden: GetWmvepMetadataIden,
     pid: str,
     *,
     client: AuthenticatedClient,
@@ -196,10 +196,10 @@ def sync(
 
     Args:
         did (str):
-        wvm (GetWMVEPMetadataWvm):
+        wvm (GetWmvepMetadataWvm):
         wvmid (str):
         eid (str):
-        iden (GetWMVEPMetadataIden):
+        iden (GetWmvepMetadataIden):
         pid (str):
         link_document_id (str | Unset):  Default: ''.
         configuration (str | Unset):  Default: ''.
@@ -239,10 +239,10 @@ def sync(
 
 async def asyncio_detailed(
     did: str,
-    wvm: GetWMVEPMetadataWvm,
+    wvm: GetWmvepMetadataWvm,
     wvmid: str,
     eid: str,
-    iden: GetWMVEPMetadataIden,
+    iden: GetWmvepMetadataIden,
     pid: str,
     *,
     client: AuthenticatedClient,
@@ -271,10 +271,10 @@ async def asyncio_detailed(
 
     Args:
         did (str):
-        wvm (GetWMVEPMetadataWvm):
+        wvm (GetWmvepMetadataWvm):
         wvmid (str):
         eid (str):
-        iden (GetWMVEPMetadataIden):
+        iden (GetWmvepMetadataIden):
         pid (str):
         link_document_id (str | Unset):  Default: ''.
         configuration (str | Unset):  Default: ''.
@@ -317,10 +317,10 @@ async def asyncio_detailed(
 
 async def asyncio(
     did: str,
-    wvm: GetWMVEPMetadataWvm,
+    wvm: GetWmvepMetadataWvm,
     wvmid: str,
     eid: str,
-    iden: GetWMVEPMetadataIden,
+    iden: GetWmvepMetadataIden,
     pid: str,
     *,
     client: AuthenticatedClient,
@@ -349,10 +349,10 @@ async def asyncio(
 
     Args:
         did (str):
-        wvm (GetWMVEPMetadataWvm):
+        wvm (GetWmvepMetadataWvm):
         wvmid (str):
         eid (str):
-        iden (GetWMVEPMetadataIden):
+        iden (GetWmvepMetadataIden):
         pid (str):
         link_document_id (str | Unset):  Default: ''.
         configuration (str | Unset):  Default: ''.

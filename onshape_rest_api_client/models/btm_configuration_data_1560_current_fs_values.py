@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTMConfigurationData1560CurrentFSValues")
 
 @_attrs_define
 class BTMConfigurationData1560CurrentFSValues:
-    """ """
-
     additional_properties: dict[str, BTFSValue1888] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTMConfigurationData1560CurrentFSValues:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btfs_value_1888 import BTFSValue1888
+        from ..models.btfs_value_1888 import BTFSValue1888  # noqa: PLC0415
 
         d = dict(src_dict)
         btm_configuration_data_1560_current_fs_values = cls()

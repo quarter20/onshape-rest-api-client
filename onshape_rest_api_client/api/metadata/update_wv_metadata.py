@@ -5,7 +5,7 @@ from urllib.parse import quote
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.update_wv_metadata_response_default import UpdateWVMetadataResponseDefault
+from ...models.update_wv_metadata_response_default import UpdateWvMetadataResponseDefault
 from ...types import Response
 
 
@@ -37,15 +37,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> UpdateWVMetadataResponseDefault:
-    response_default = UpdateWVMetadataResponseDefault.from_dict(response.json())
+) -> UpdateWvMetadataResponseDefault:
+    response_default = UpdateWvMetadataResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[UpdateWVMetadataResponseDefault]:
+) -> Response[UpdateWvMetadataResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -61,7 +61,7 @@ def sync_detailed(
     *,
     client: AuthenticatedClient,
     body: str,
-) -> Response[UpdateWVMetadataResponseDefault]:
+) -> Response[UpdateWvMetadataResponseDefault]:
     """Update the metadata for a workspace or version.
 
      See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
@@ -77,7 +77,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[UpdateWVMetadataResponseDefault]
+        Response[UpdateWvMetadataResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -101,7 +101,7 @@ def sync(
     *,
     client: AuthenticatedClient,
     body: str,
-) -> UpdateWVMetadataResponseDefault | None:
+) -> UpdateWvMetadataResponseDefault | None:
     """Update the metadata for a workspace or version.
 
      See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
@@ -117,7 +117,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        UpdateWVMetadataResponseDefault
+        UpdateWvMetadataResponseDefault
     """
 
     return sync_detailed(
@@ -136,7 +136,7 @@ async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
     body: str,
-) -> Response[UpdateWVMetadataResponseDefault]:
+) -> Response[UpdateWvMetadataResponseDefault]:
     """Update the metadata for a workspace or version.
 
      See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
@@ -152,7 +152,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[UpdateWVMetadataResponseDefault]
+        Response[UpdateWvMetadataResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -174,7 +174,7 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     body: str,
-) -> UpdateWVMetadataResponseDefault | None:
+) -> UpdateWvMetadataResponseDefault | None:
     """Update the metadata for a workspace or version.
 
      See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
@@ -190,7 +190,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        UpdateWVMetadataResponseDefault
+        UpdateWvMetadataResponseDefault
     """
 
     return (

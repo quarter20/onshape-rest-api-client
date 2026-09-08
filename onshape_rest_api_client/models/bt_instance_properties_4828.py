@@ -78,8 +78,10 @@ class BTInstanceProperties4828:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_instance_properties_4828_property_values import BTInstanceProperties4828PropertyValues
-        from ..models.bt_one_configuration_properties_1900 import BTOneConfigurationProperties1900
+        from ..models.bt_instance_properties_4828_property_values import (
+            BTInstanceProperties4828PropertyValues,  # noqa: PLC0415
+        )
+        from ..models.bt_one_configuration_properties_1900 import BTOneConfigurationProperties1900  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTToleranceSchemaClass(str, Enum):
+class GBTToleranceSchemaClass(StrEnum):
     CHAMFER_ANGLE = "CHAMFER_ANGLE"
     CHAMFER_DISTANCE = "CHAMFER_DISTANCE"
     FILLET_RADIUS = "FILLET_RADIUS"

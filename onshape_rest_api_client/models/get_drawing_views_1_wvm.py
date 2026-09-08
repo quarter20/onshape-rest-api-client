@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetDrawingViews1Wvm(str, Enum):
+class GetDrawingViews1Wvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

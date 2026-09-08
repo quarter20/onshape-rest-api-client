@@ -58,7 +58,7 @@ class BTMUnitsDefault160:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btm_units_default_160_units import BTMUnitsDefault160Units
+        from ..models.btm_units_default_160_units import BTMUnitsDefault160Units  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

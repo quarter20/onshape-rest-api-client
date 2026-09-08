@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTWeldType(str, Enum):
+class GBTWeldType(StrEnum):
     BEAD_JOINT = "BEAD_JOINT"
     BEVEL_FLARE_GROOVE = "BEVEL_FLARE_GROOVE"
     BEVEL_GROOVE = "BEVEL_GROOVE"

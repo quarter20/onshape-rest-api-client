@@ -15,8 +15,6 @@ T = TypeVar("T", bound="ComponentsLinks")
 
 @_attrs_define
 class ComponentsLinks:
-    """ """
-
     additional_properties: dict[str, Link] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class ComponentsLinks:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.link import Link
+        from ..models.link import Link  # noqa: PLC0415
 
         d = dict(src_dict)
         components_links = cls()

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTUserState(str, Enum):
+class BTUserState(StrEnum):
     ACTIVE = "ACTIVE"
     ALL = "ALL"
     APPROVED = "APPROVED"

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTUIHint(str, Enum):
+class GBTUIHint(StrEnum):
     ALLOW_ARRAY_FOCUS = "ALLOW_ARRAY_FOCUS"
     ALLOW_FEATURE_SELECTION = "ALLOW_FEATURE_SELECTION"
     ALLOW_FLAT_SKETCH_SELECTION = "ALLOW_FLAT_SKETCH_SELECTION"

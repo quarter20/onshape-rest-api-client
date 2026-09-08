@@ -15,8 +15,6 @@ T = TypeVar("T", bound="ResolveAllElementReferencesResponseDefault")
 
 @_attrs_define
 class ResolveAllElementReferencesResponseDefault:
-    """ """
-
     additional_properties: dict[str, BTAppElementReferencesResolveInfo] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class ResolveAllElementReferencesResponseDefault:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_app_element_references_resolve_info import BTAppElementReferencesResolveInfo
+        from ..models.bt_app_element_references_resolve_info import BTAppElementReferencesResolveInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         resolve_all_element_references_response_default = cls()

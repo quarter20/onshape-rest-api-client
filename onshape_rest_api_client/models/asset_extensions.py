@@ -15,8 +15,6 @@ T = TypeVar("T", bound="AssetExtensions")
 
 @_attrs_define
 class AssetExtensions:
-    """ """
-
     additional_properties: dict[str, AssetExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class AssetExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.asset_extensions_additional_property import AssetExtensionsAdditionalProperty
+        from ..models.asset_extensions_additional_property import AssetExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         asset_extensions = cls()

@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTInsertableDisplayData2405AppearanceIdToAppearanceOverr
 
 @_attrs_define
 class BTInsertableDisplayData2405AppearanceIdToAppearanceOverride:
-    """ """
-
     additional_properties: dict[str, BTAppearanceOverride2517] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTInsertableDisplayData2405AppearanceIdToAppearanceOverride:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_appearance_override_2517 import BTAppearanceOverride2517
+        from ..models.bt_appearance_override_2517 import BTAppearanceOverride2517  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_insertable_display_data_2405_appearance_id_to_appearance_override = cls()

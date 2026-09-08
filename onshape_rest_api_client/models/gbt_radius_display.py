@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTRadiusDisplay(str, Enum):
+class GBTRadiusDisplay(StrEnum):
     DIAMETRAL = "DIAMETRAL"
     NONE = "NONE"
     RADIAL = "RADIAL"

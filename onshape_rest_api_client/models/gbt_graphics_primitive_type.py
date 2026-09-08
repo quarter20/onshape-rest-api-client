@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTGraphicsPrimitiveType(str, Enum):
+class GBTGraphicsPrimitiveType(StrEnum):
     INFINITE_LINES = "INFINITE_LINES"
     LINES = "LINES"
     POINTS = "POINTS"

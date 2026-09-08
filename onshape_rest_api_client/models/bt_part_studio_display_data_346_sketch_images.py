@@ -17,8 +17,6 @@ T = TypeVar("T", bound="BTPartStudioDisplayData346SketchImages")
 
 @_attrs_define
 class BTPartStudioDisplayData346SketchImages:
-    """ """
-
     additional_properties: dict[str, BTPartStudioDisplayData346SketchImagesAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -34,7 +32,7 @@ class BTPartStudioDisplayData346SketchImages:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_part_studio_display_data_346_sketch_images_additional_property import (
-            BTPartStudioDisplayData346SketchImagesAdditionalProperty,
+            BTPartStudioDisplayData346SketchImagesAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

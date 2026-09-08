@@ -13,8 +13,6 @@ T = TypeVar("T", bound="BTAssemblyOccurrenceInfoMateStatuses")
 
 @_attrs_define
 class BTAssemblyOccurrenceInfoMateStatuses:
-    """ """
-
     additional_properties: dict[str, GBTNodeStatusType] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

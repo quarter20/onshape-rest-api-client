@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetConfigurationWvm(str, Enum):
+class GetConfigurationWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

@@ -88,8 +88,8 @@ class BTMergePreviewInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_element_merge_info import BTElementMergeInfo
-        from ..models.bt_merge_upgrade_info import BTMergeUpgradeInfo
+        from ..models.bt_element_merge_info import BTElementMergeInfo  # noqa: PLC0415
+        from ..models.bt_merge_upgrade_info import BTMergeUpgradeInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         branch_point_microversion_id = d.pop("branchPointMicroversionId", UNSET)

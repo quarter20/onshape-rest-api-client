@@ -142,7 +142,7 @@ class BTBillingPlanInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_discount_info import BTDiscountInfo
+        from ..models.bt_discount_info import BTDiscountInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         amount_cents = d.pop("amountCents", UNSET)

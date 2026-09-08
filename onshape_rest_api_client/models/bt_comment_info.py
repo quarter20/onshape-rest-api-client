@@ -322,10 +322,10 @@ class BTCommentInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_comment_attachment_info import BTCommentAttachmentInfo
-        from ..models.bt_user_summary_info import BTUserSummaryInfo
-        from ..models.bt_view_data_info import BTViewDataInfo
-        from ..models.coordinates_info import CoordinatesInfo
+        from ..models.bt_comment_attachment_info import BTCommentAttachmentInfo  # noqa: PLC0415
+        from ..models.bt_user_summary_info import BTUserSummaryInfo  # noqa: PLC0415
+        from ..models.bt_view_data_info import BTViewDataInfo  # noqa: PLC0415
+        from ..models.coordinates_info import CoordinatesInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         annotation_id = d.pop("annotationId", UNSET)

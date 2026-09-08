@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTAssemblyInstanceType(str, Enum):
+class BTAssemblyInstanceType(StrEnum):
     ASSEMBLY = "Assembly"
     FEATURE = "Feature"
     PART = "Part"

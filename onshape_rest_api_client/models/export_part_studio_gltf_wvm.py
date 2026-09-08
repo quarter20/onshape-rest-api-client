@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class ExportPartStudioGltfWvm(str, Enum):
+class ExportPartStudioGltfWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

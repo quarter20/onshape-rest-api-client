@@ -67,8 +67,8 @@ class BTDiffJsonResponse2725:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_diff_json_response_2725_patch import BTDiffJsonResponse2725Patch
-        from ..models.btj_edit_3734 import BTJEdit3734
+        from ..models.bt_diff_json_response_2725_patch import BTDiffJsonResponse2725Patch  # noqa: PLC0415
+        from ..models.btj_edit_3734 import BTJEdit3734  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

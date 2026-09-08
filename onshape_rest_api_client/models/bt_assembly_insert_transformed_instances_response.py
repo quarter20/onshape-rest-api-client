@@ -55,8 +55,8 @@ class BTAssemblyInsertTransformedInstancesResponse:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_assembly_instance_occurrence_info import BTAssemblyInstanceOccurrenceInfo
-        from ..models.bt_assembly_occurrence_info import BTAssemblyOccurrenceInfo
+        from ..models.bt_assembly_instance_occurrence_info import BTAssemblyInstanceOccurrenceInfo  # noqa: PLC0415
+        from ..models.bt_assembly_occurrence_info import BTAssemblyOccurrenceInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _insert_instance_responses = d.pop("insertInstanceResponses", UNSET)

@@ -49,7 +49,7 @@ class BTPolylineDisplayData3522:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_vector_3d389 import BTVector3D389
+        from ..models.bt_vector_3d389 import BTVector3D389  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

@@ -11,7 +11,7 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     did: str,
-    eid: str,
+    entity_id: str,
     *,
     entry_type: int | Unset = 0,
 ) -> dict[str, Any]:
@@ -24,9 +24,9 @@ def _get_kwargs(
 
     _kwargs: dict[str, Any] = {
         "method": "delete",
-        "url": "/documents/{did}/share/{eid}".format(
+        "url": "/documents/{did}/share/{entity_id}".format(
             did=quote(str(did), safe=""),
-            eid=quote(str(eid), safe=""),
+            entity_id=quote(str(entity_id), safe=""),
         ),
         "params": params,
     }
@@ -55,7 +55,7 @@ def _build_response(
 
 def sync_detailed(
     did: str,
-    eid: str,
+    entity_id: str,
     *,
     client: AuthenticatedClient,
     entry_type: int | Unset = 0,
@@ -68,7 +68,7 @@ def sync_detailed(
 
     Args:
         did (str):
-        eid (str):
+        entity_id (str):
         entry_type (int | Unset):  Default: 0.
 
     Raises:
@@ -81,7 +81,7 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         did=did,
-        eid=eid,
+        entity_id=entity_id,
         entry_type=entry_type,
     )
 
@@ -94,7 +94,7 @@ def sync_detailed(
 
 def sync(
     did: str,
-    eid: str,
+    entity_id: str,
     *,
     client: AuthenticatedClient,
     entry_type: int | Unset = 0,
@@ -107,7 +107,7 @@ def sync(
 
     Args:
         did (str):
-        eid (str):
+        entity_id (str):
         entry_type (int | Unset):  Default: 0.
 
     Raises:
@@ -120,7 +120,7 @@ def sync(
 
     return sync_detailed(
         did=did,
-        eid=eid,
+        entity_id=entity_id,
         client=client,
         entry_type=entry_type,
     ).parsed
@@ -128,7 +128,7 @@ def sync(
 
 async def asyncio_detailed(
     did: str,
-    eid: str,
+    entity_id: str,
     *,
     client: AuthenticatedClient,
     entry_type: int | Unset = 0,
@@ -141,7 +141,7 @@ async def asyncio_detailed(
 
     Args:
         did (str):
-        eid (str):
+        entity_id (str):
         entry_type (int | Unset):  Default: 0.
 
     Raises:
@@ -154,7 +154,7 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         did=did,
-        eid=eid,
+        entity_id=entity_id,
         entry_type=entry_type,
     )
 
@@ -165,7 +165,7 @@ async def asyncio_detailed(
 
 async def asyncio(
     did: str,
-    eid: str,
+    entity_id: str,
     *,
     client: AuthenticatedClient,
     entry_type: int | Unset = 0,
@@ -178,7 +178,7 @@ async def asyncio(
 
     Args:
         did (str):
-        eid (str):
+        entity_id (str):
         entry_type (int | Unset):  Default: 0.
 
     Raises:
@@ -192,7 +192,7 @@ async def asyncio(
     return (
         await asyncio_detailed(
             did=did,
-            eid=eid,
+            entity_id=entity_id,
             client=client,
             entry_type=entry_type,
         )

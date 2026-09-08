@@ -62,7 +62,7 @@ class BTListResponseBTObjectWorkflowInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_object_workflow_info import BTObjectWorkflowInfo
+        from ..models.bt_object_workflow_info import BTObjectWorkflowInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         href = d.pop("href", UNSET)

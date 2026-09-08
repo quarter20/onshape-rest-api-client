@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class Type(str, Enum):
+class Type(StrEnum):
     APIKEY = "APIKEY"
     HTTP = "HTTP"
     MUTUALTLS = "MUTUALTLS"

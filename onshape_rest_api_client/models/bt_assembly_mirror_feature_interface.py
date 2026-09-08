@@ -55,8 +55,8 @@ class BTAssemblyMirrorFeatureInterface:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btm_assembly_feature_887 import BTMAssemblyFeature887
-        from ..models.btm_parameter_array_2025 import BTMParameterArray2025
+        from ..models.btm_assembly_feature_887 import BTMAssemblyFeature887  # noqa: PLC0415
+        from ..models.btm_parameter_array_2025 import BTMParameterArray2025  # noqa: PLC0415
 
         d = dict(src_dict)
         _array_parameter_from_feature = d.pop("arrayParameterFromFeature", UNSET)

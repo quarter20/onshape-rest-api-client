@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTEdgeType(str, Enum):
+class GBTEdgeType(StrEnum):
     CIRCLE = "CIRCLE"
     CONIC = "CONIC"
     ELLIPSE = "ELLIPSE"

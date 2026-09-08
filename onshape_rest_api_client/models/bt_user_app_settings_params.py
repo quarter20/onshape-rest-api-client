@@ -43,7 +43,7 @@ class BTUserAppSettingsParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_setting_param import BTSettingParam
+        from ..models.bt_setting_param import BTSettingParam  # noqa: PLC0415
 
         d = dict(src_dict)
         _settings = d.pop("settings", UNSET)

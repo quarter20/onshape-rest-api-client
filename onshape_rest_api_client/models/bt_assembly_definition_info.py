@@ -76,10 +76,10 @@ class BTAssemblyDefinitionInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_assembly_part_info import BTAssemblyPartInfo
-        from ..models.bt_assembly_ps_feature_info import BTAssemblyPsFeatureInfo
-        from ..models.bt_root_assembly_info import BTRootAssemblyInfo
-        from ..models.bt_sub_assembly_info import BTSubAssemblyInfo
+        from ..models.bt_assembly_part_info import BTAssemblyPartInfo  # noqa: PLC0415
+        from ..models.bt_assembly_ps_feature_info import BTAssemblyPsFeatureInfo  # noqa: PLC0415
+        from ..models.bt_root_assembly_info import BTRootAssemblyInfo  # noqa: PLC0415
+        from ..models.bt_sub_assembly_info import BTSubAssemblyInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _part_studio_features = d.pop("partStudioFeatures", UNSET)

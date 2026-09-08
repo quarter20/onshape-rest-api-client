@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTPModule234DeepImports")
 
 @_attrs_define
 class BTPModule234DeepImports:
-    """ """
-
     additional_properties: dict[str, list[BTImport]] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -32,7 +30,7 @@ class BTPModule234DeepImports:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_import import BTImport
+        from ..models.bt_import import BTImport  # noqa: PLC0415
 
         d = dict(src_dict)
         btp_module_234_deep_imports = cls()

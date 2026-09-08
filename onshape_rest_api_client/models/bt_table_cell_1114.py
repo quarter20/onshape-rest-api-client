@@ -61,7 +61,7 @@ class BTTableCell1114:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_table_cell_modifier_4883 import BTTableCellModifier4883
+        from ..models.bt_table_cell_modifier_4883 import BTTableCellModifier4883  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

@@ -68,7 +68,7 @@ class BTAssemblyFeatureInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_assembly_feature_data_info import BTAssemblyFeatureDataInfo
+        from ..models.bt_assembly_feature_data_info import BTAssemblyFeatureDataInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _feature_data = d.pop("featureData", UNSET)

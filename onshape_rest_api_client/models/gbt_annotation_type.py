@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTAnnotationType(str, Enum):
+class GBTAnnotationType(StrEnum):
     CHAMFER_CALLOUT = "CHAMFER_CALLOUT"
     CHAMFER_CALLOUT_POSITION = "CHAMFER_CALLOUT_POSITION"
     DATUM = "DATUM"

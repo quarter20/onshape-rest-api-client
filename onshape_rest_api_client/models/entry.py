@@ -48,7 +48,7 @@ class Entry:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_rbac_role_info import BTRbacRoleInfo
+        from ..models.bt_rbac_role_info import BTRbacRoleInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         permission_set = cast(list[str], d.pop("permissionSet", UNSET))

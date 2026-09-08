@@ -11,8 +11,6 @@ T = TypeVar("T", bound="BTPartProperties293IdentityIdToQueryIndex")
 
 @_attrs_define
 class BTPartProperties293IdentityIdToQueryIndex:
-    """ """
-
     additional_properties: dict[str, int] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

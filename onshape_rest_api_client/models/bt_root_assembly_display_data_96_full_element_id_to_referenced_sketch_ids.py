@@ -11,8 +11,6 @@ T = TypeVar("T", bound="BTRootAssemblyDisplayData96FullElementIdToReferencedSket
 
 @_attrs_define
 class BTRootAssemblyDisplayData96FullElementIdToReferencedSketchIds:
-    """ """
-
     additional_properties: dict[str, list[str]] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

@@ -15,8 +15,6 @@ T = TypeVar("T", bound="SchemaJsonSchema")
 
 @_attrs_define
 class SchemaJsonSchema:
-    """ """
-
     additional_properties: dict[str, SchemaJsonSchemaAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class SchemaJsonSchema:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.schema_json_schema_additional_property import SchemaJsonSchemaAdditionalProperty
+        from ..models.schema_json_schema_additional_property import SchemaJsonSchemaAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         schema_json_schema = cls()

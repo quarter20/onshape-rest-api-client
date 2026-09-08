@@ -77,9 +77,9 @@ class BTMetadataPropertyInfo:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
-        from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
-        from ..models.bt_metadata_property_validator_info import BTMetadataPropertyValidatorInfo
+        from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0  # noqa: PLC0415
+        from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo  # noqa: PLC0415
+        from ..models.bt_metadata_property_validator_info import BTMetadataPropertyValidatorInfo  # noqa: PLC0415
 
         aggregation_skipped_filtered_out_values = self.aggregation_skipped_filtered_out_values
 
@@ -215,11 +215,11 @@ class BTMetadataPropertyInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_metadata_enum_value_info import BTMetadataEnumValueInfo
-        from ..models.bt_metadata_property_info_initial_value import BTMetadataPropertyInfoInitialValue
-        from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0
-        from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
-        from ..models.bt_metadata_property_validator_info import BTMetadataPropertyValidatorInfo
+        from ..models.bt_metadata_enum_value_info import BTMetadataEnumValueInfo  # noqa: PLC0415
+        from ..models.bt_metadata_property_info_initial_value import BTMetadataPropertyInfoInitialValue  # noqa: PLC0415
+        from ..models.bt_metadata_property_info_value_type_0 import BTMetadataPropertyInfoValueType0  # noqa: PLC0415
+        from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo  # noqa: PLC0415
+        from ..models.bt_metadata_property_validator_info import BTMetadataPropertyValidatorInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         aggregation_skipped_filtered_out_values = d.pop("aggregationSkippedFilteredOutValues", UNSET)

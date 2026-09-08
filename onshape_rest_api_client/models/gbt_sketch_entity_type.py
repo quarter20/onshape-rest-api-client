@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTSketchEntityType(str, Enum):
+class GBTSketchEntityType(StrEnum):
     CIRCLE = "CIRCLE"
     CONIC = "CONIC"
     CURVE = "CURVE"

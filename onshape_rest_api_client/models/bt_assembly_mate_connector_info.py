@@ -46,7 +46,7 @@ class BTAssemblyMateConnectorInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_mate_connector_cs_info import BTMateConnectorCSInfo
+        from ..models.bt_mate_connector_cs_info import BTMateConnectorCSInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         feature_id = d.pop("featureId", UNSET)

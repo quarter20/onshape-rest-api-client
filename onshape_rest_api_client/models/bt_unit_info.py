@@ -50,8 +50,8 @@ class BTUnitInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_default_units_info import BTDefaultUnitsInfo
-        from ..models.bt_unit_info_units_display_precision import BTUnitInfoUnitsDisplayPrecision
+        from ..models.bt_default_units_info import BTDefaultUnitsInfo  # noqa: PLC0415
+        from ..models.bt_unit_info_units_display_precision import BTUnitInfoUnitsDisplayPrecision  # noqa: PLC0415
 
         d = dict(src_dict)
         _default_units = d.pop("defaultUnits", UNSET)

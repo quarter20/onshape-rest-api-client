@@ -70,7 +70,7 @@ class BTCopyDocumentInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_owner_info import BTOwnerInfo
+        from ..models.bt_owner_info import BTOwnerInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         new_document_id = d.pop("newDocumentId", UNSET)

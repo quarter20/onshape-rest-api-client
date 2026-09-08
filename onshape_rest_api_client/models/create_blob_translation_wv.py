@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class CreateBlobTranslationWv(str, Enum):
+class CreateBlobTranslationWv(StrEnum):
     V = "v"
     W = "w"
 

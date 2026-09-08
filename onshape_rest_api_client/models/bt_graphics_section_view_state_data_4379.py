@@ -84,8 +84,8 @@ class BTGraphicsSectionViewStateData4379:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_graphics_section_plane_data_1429 import BTGraphicsSectionPlaneData1429
-        from ..models.bt_ui_selection_1185 import BTUiSelection1185
+        from ..models.bt_graphics_section_plane_data_1429 import BTGraphicsSectionPlaneData1429  # noqa: PLC0415
+        from ..models.bt_ui_selection_1185 import BTUiSelection1185  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

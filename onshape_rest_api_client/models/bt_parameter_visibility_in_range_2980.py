@@ -58,7 +58,7 @@ class BTParameterVisibilityInRange2980:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_enum_option_range_3741 import BTEnumOptionRange3741
+        from ..models.bt_enum_option_range_3741 import BTEnumOptionRange3741  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

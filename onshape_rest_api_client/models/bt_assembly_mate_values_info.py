@@ -45,7 +45,7 @@ class BTAssemblyMateValuesInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_assembly_mate_value_info import BTAssemblyMateValueInfo
+        from ..models.bt_assembly_mate_value_info import BTAssemblyMateValueInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _mate_values = d.pop("mateValues", UNSET)

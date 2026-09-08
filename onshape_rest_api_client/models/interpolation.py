@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class Interpolation(str, Enum):
+class Interpolation(StrEnum):
     CATMULLROMSPLINE = "CATMULLROMSPLINE"
     CUBICSPLINE = "CUBICSPLINE"
     LINEAR = "LINEAR"

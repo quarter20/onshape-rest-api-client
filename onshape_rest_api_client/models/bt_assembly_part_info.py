@@ -112,7 +112,7 @@ class BTAssemblyPartInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_assembly_mate_connector_info import BTAssemblyMateConnectorInfo
+        from ..models.bt_assembly_mate_connector_info import BTAssemblyMateConnectorInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _body_type = d.pop("bodyType", UNSET)

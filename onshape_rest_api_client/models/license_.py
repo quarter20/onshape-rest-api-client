@@ -58,7 +58,7 @@ class License:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.license_extensions import LicenseExtensions
+        from ..models.license_extensions import LicenseExtensions  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

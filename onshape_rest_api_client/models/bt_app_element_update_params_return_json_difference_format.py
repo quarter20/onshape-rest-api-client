@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTAppElementUpdateParamsReturnJsonDifferenceFormat(str, Enum):
+class BTAppElementUpdateParamsReturnJsonDifferenceFormat(StrEnum):
     DEFAULT = "default"
     FULL_PATH = "full_path"
     JSON_PATCH = "json_patch"

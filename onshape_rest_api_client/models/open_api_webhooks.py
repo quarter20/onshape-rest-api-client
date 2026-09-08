@@ -15,8 +15,6 @@ T = TypeVar("T", bound="OpenAPIWebhooks")
 
 @_attrs_define
 class OpenAPIWebhooks:
-    """ """
-
     additional_properties: dict[str, PathItem] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class OpenAPIWebhooks:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.path_item import PathItem
+        from ..models.path_item import PathItem  # noqa: PLC0415
 
         d = dict(src_dict)
         open_api_webhooks = cls()

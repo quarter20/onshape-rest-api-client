@@ -77,7 +77,7 @@ class BTElementLibraryReferenceData3133:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_object_id import BTObjectId
+        from ..models.bt_object_id import BTObjectId  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

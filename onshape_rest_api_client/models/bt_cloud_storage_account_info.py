@@ -229,9 +229,9 @@ class BTCloudStorageAccountInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_cloud_storage_object_info import BTCloudStorageObjectInfo
-        from ..models.bt_owner_info import BTOwnerInfo
-        from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo
+        from ..models.bt_cloud_storage_object_info import BTCloudStorageObjectInfo  # noqa: PLC0415
+        from ..models.bt_owner_info import BTOwnerInfo  # noqa: PLC0415
+        from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         json_type = d.pop("jsonType")

@@ -135,7 +135,7 @@ class BTPublicationInfoItem:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_application_target_info import BTApplicationTargetInfo
+        from ..models.bt_application_target_info import BTApplicationTargetInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         json_type = d.pop("jsonType")

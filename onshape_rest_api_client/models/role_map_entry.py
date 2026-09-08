@@ -52,8 +52,8 @@ class RoleMapEntry:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_identity_info import BTIdentityInfo
-        from ..models.bt_rbac_role_info import BTRbacRoleInfo
+        from ..models.bt_identity_info import BTIdentityInfo  # noqa: PLC0415
+        from ..models.bt_rbac_role_info import BTRbacRoleInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _identities = d.pop("identities", UNSET)

@@ -78,10 +78,10 @@ class BTBillOfMaterialsObjectWithPropertiesInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_bill_of_materials_object_with_properties_info_header_id_to_value import (
-            BTBillOfMaterialsObjectWithPropertiesInfoHeaderIdToValue,
+            BTBillOfMaterialsObjectWithPropertiesInfoHeaderIdToValue,  # noqa: PLC0415
         )
         from ..models.bt_bill_of_materials_object_with_properties_info_selected_metadata_enum_values import (
-            BTBillOfMaterialsObjectWithPropertiesInfoSelectedMetadataEnumValues,
+            BTBillOfMaterialsObjectWithPropertiesInfoSelectedMetadataEnumValues,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

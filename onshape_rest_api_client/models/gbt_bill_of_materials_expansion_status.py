@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTBillOfMaterialsExpansionStatus(str, Enum):
+class GBTBillOfMaterialsExpansionStatus(StrEnum):
     COLLAPSED = "COLLAPSED"
     EXPANDED = "EXPANDED"
     NOT_EXPANDABLE = "NOT_EXPANDABLE"

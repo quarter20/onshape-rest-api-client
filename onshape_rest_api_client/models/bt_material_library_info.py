@@ -88,9 +88,9 @@ class BTMaterialLibraryInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_external_element_reference_info import BTExternalElementReferenceInfo
-        from ..models.bt_library_material_info import BTLibraryMaterialInfo
-        from ..models.bt_material_property_definition_info import BTMaterialPropertyDefinitionInfo
+        from ..models.bt_external_element_reference_info import BTExternalElementReferenceInfo  # noqa: PLC0415
+        from ..models.bt_library_material_info import BTLibraryMaterialInfo  # noqa: PLC0415
+        from ..models.bt_material_property_definition_info import BTMaterialPropertyDefinitionInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         description = d.pop("description", UNSET)

@@ -73,10 +73,10 @@ class AccessorSparse:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.accessor_sparse_extensions import AccessorSparseExtensions
-        from ..models.accessor_sparse_extras import AccessorSparseExtras
-        from ..models.accessor_sparse_indices import AccessorSparseIndices
-        from ..models.accessor_sparse_values import AccessorSparseValues
+        from ..models.accessor_sparse_extensions import AccessorSparseExtensions  # noqa: PLC0415
+        from ..models.accessor_sparse_extras import AccessorSparseExtras  # noqa: PLC0415
+        from ..models.accessor_sparse_indices import AccessorSparseIndices  # noqa: PLC0415
+        from ..models.accessor_sparse_values import AccessorSparseValues  # noqa: PLC0415
 
         d = dict(src_dict)
         count = d.pop("count", UNSET)

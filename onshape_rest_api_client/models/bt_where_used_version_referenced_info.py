@@ -115,9 +115,9 @@ class BTWhereUsedVersionReferencedInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_base_info import BTBaseInfo
-        from ..models.bt_document_base_summary_info import BTDocumentBaseSummaryInfo
-        from ..models.config_info import ConfigInfo
+        from ..models.bt_base_info import BTBaseInfo  # noqa: PLC0415
+        from ..models.bt_document_base_summary_info import BTDocumentBaseSummaryInfo  # noqa: PLC0415
+        from ..models.config_info import ConfigInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _configuration = d.pop("configuration", UNSET)

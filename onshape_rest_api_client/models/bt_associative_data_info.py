@@ -106,7 +106,7 @@ class BTAssociativeDataInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_name_value_pair import BTNameValuePair
+        from ..models.bt_name_value_pair import BTNameValuePair  # noqa: PLC0415
 
         d = dict(src_dict)
         associative_data_id = d.pop("associativeDataId", UNSET)

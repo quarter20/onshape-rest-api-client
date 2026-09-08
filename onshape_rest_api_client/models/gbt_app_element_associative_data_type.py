@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTAppElementAssociativeDataType(str, Enum):
+class GBTAppElementAssociativeDataType(StrEnum):
     MODEL_DEFINITION_ENTITY = "MODEL_DEFINITION_ENTITY"
     MODEL_DEFINITION_FEATURE = "MODEL_DEFINITION_FEATURE"
     MODEL_TOPOLOGY = "MODEL_TOPOLOGY"

@@ -274,10 +274,10 @@ class BTPModuleId235:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_document_with_version_and_element_id import BTDocumentWithVersionAndElementId
-        from ..models.bt_document_with_version_id import BTDocumentWithVersionId
-        from ..models.btp_literal_string_259 import BTPLiteralString259
-        from ..models.btp_space_10 import BTPSpace10
+        from ..models.bt_document_with_version_and_element_id import BTDocumentWithVersionAndElementId  # noqa: PLC0415
+        from ..models.bt_document_with_version_id import BTDocumentWithVersionId  # noqa: PLC0415
+        from ..models.btp_literal_string_259 import BTPLiteralString259  # noqa: PLC0415
+        from ..models.btp_space_10 import BTPSpace10  # noqa: PLC0415
 
         d = dict(src_dict)
         atomic = d.pop("atomic", UNSET)

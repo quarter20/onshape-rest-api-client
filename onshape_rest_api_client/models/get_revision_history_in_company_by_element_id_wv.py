@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetRevisionHistoryInCompanyByElementIdWv(str, Enum):
+class GetRevisionHistoryInCompanyByElementIdWv(StrEnum):
     V = "v"
     W = "w"
 

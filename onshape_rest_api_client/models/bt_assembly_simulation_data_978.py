@@ -126,11 +126,13 @@ class BTAssemblySimulationData978:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_assembly_simulation_2246 import BTAssemblySimulation2246
-        from ..models.bt_assembly_simulation_data_978_loads_by_node_id import BTAssemblySimulationData978LoadsByNodeId
-        from ..models.btm_load_3538 import BTMLoad3538
-        from ..models.btm_rigid_feature_3076 import BTMRigidFeature3076
-        from ..models.btm_simulation_feature_5034 import BTMSimulationFeature5034
+        from ..models.bt_assembly_simulation_2246 import BTAssemblySimulation2246  # noqa: PLC0415
+        from ..models.bt_assembly_simulation_data_978_loads_by_node_id import (
+            BTAssemblySimulationData978LoadsByNodeId,  # noqa: PLC0415
+        )
+        from ..models.btm_load_3538 import BTMLoad3538  # noqa: PLC0415
+        from ..models.btm_rigid_feature_3076 import BTMRigidFeature3076  # noqa: PLC0415
+        from ..models.btm_simulation_feature_5034 import BTMSimulationFeature5034  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

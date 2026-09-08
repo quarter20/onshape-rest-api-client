@@ -52,7 +52,7 @@ class BTNextPartNumbersParam:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_next_part_number_param import BTNextPartNumberParam
+        from ..models.bt_next_part_number_param import BTNextPartNumberParam  # noqa: PLC0415
 
         d = dict(src_dict)
         _item_part_numbers = d.pop("itemPartNumbers", UNSET)

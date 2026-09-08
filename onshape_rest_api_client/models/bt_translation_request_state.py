@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTTranslationRequestState(str, Enum):
+class BTTranslationRequestState(StrEnum):
     ACTIVE = "ACTIVE"
     DONE = "DONE"
     FAILED = "FAILED"

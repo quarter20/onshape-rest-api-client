@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class EditType(str, Enum):
+class EditType(StrEnum):
     CHANGE = "CHANGE"
     CHANGE_FIELD = "CHANGE_FIELD"
     DELETION = "DELETION"

@@ -17,8 +17,6 @@ T = TypeVar("T", bound="OperationResponsesExtensions")
 
 @_attrs_define
 class OperationResponsesExtensions:
-    """ """
-
     additional_properties: dict[str, OperationResponsesExtensionsAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -34,7 +32,7 @@ class OperationResponsesExtensions:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.operation_responses_extensions_additional_property import (
-            OperationResponsesExtensionsAdditionalProperty,
+            OperationResponsesExtensionsAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

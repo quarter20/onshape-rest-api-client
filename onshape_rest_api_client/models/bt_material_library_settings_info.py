@@ -54,7 +54,7 @@ class BTMaterialLibrarySettingsInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_material_library_metadata_info import BTMaterialLibraryMetadataInfo
+        from ..models.bt_material_library_metadata_info import BTMaterialLibraryMetadataInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _company_libraries = d.pop("companyLibraries", UNSET)

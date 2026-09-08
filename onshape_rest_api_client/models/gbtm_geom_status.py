@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTMGeomStatus(str, Enum):
+class GBTMGeomStatus(StrEnum):
     FIXED = "FIXED"
     NOT_CONSISTENT = "NOT_CONSISTENT"
     OVER_DEFINED = "OVER_DEFINED"

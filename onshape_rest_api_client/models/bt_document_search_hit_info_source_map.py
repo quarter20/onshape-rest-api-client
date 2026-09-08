@@ -17,8 +17,6 @@ T = TypeVar("T", bound="BTDocumentSearchHitInfoSourceMap")
 
 @_attrs_define
 class BTDocumentSearchHitInfoSourceMap:
-    """ """
-
     additional_properties: dict[str, BTDocumentSearchHitInfoSourceMapAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -34,7 +32,7 @@ class BTDocumentSearchHitInfoSourceMap:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_document_search_hit_info_source_map_additional_property import (
-            BTDocumentSearchHitInfoSourceMapAdditionalProperty,
+            BTDocumentSearchHitInfoSourceMapAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

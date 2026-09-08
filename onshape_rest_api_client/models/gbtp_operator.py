@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTPOperator(str, Enum):
+class GBTPOperator(StrEnum):
     AND = "AND"
     CONCATENATE = "CONCATENATE"
     CONDITIONAL = "CONDITIONAL"

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class VersionAlias(str, Enum):
+class VersionAlias(StrEnum):
     LAST_BUILD = "LAST_BUILD"
     LAST_MINOR = "LAST_MINOR"
 

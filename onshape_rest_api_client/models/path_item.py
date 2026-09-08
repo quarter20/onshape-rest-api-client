@@ -147,10 +147,10 @@ class PathItem:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.operation import Operation
-        from ..models.parameter import Parameter
-        from ..models.path_item_extensions import PathItemExtensions
-        from ..models.server import Server
+        from ..models.operation import Operation  # noqa: PLC0415
+        from ..models.parameter import Parameter  # noqa: PLC0415
+        from ..models.path_item_extensions import PathItemExtensions  # noqa: PLC0415
+        from ..models.server import Server  # noqa: PLC0415
 
         d = dict(src_dict)
         _delete = d.pop("delete", UNSET)

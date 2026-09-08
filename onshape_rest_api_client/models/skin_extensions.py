@@ -15,8 +15,6 @@ T = TypeVar("T", bound="SkinExtensions")
 
 @_attrs_define
 class SkinExtensions:
-    """ """
-
     additional_properties: dict[str, SkinExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class SkinExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.skin_extensions_additional_property import SkinExtensionsAdditionalProperty
+        from ..models.skin_extensions_additional_property import SkinExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         skin_extensions = cls()

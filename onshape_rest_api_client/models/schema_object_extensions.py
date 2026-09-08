@@ -15,8 +15,6 @@ T = TypeVar("T", bound="SchemaObjectExtensions")
 
 @_attrs_define
 class SchemaObjectExtensions:
-    """ """
-
     additional_properties: dict[str, SchemaObjectExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,9 @@ class SchemaObjectExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.schema_object_extensions_additional_property import SchemaObjectExtensionsAdditionalProperty
+        from ..models.schema_object_extensions_additional_property import (
+            SchemaObjectExtensionsAdditionalProperty,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         schema_object_extensions = cls()

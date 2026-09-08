@@ -49,7 +49,7 @@ class BTDefaultUnitsInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_default_unit_info import BTDefaultUnitInfo
+        from ..models.bt_default_unit_info import BTDefaultUnitInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         node_id = d.pop("nodeId", UNSET)

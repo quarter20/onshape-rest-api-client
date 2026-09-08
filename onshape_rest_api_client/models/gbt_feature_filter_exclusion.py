@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTFeatureFilterExclusion(str, Enum):
+class GBTFeatureFilterExclusion(StrEnum):
     EXCLUDE_EVERYTHING_ELSE = "EXCLUDE_EVERYTHING_ELSE"
     EXCLUDE_THIS = "EXCLUDE_THIS"
     UNKNOWN = "UNKNOWN"

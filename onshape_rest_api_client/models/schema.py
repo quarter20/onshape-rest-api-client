@@ -534,23 +534,23 @@ class Schema:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.discriminator import Discriminator
-        from ..models.external_documentation import ExternalDocumentation
-        from ..models.schema_additional_properties import SchemaAdditionalProperties
-        from ..models.schema_const import SchemaConst
-        from ..models.schema_default import SchemaDefault
-        from ..models.schema_dependent_required import SchemaDependentRequired
-        from ..models.schema_dependent_schemas import SchemaDependentSchemas
-        from ..models.schema_enum_item import SchemaEnumItem
-        from ..models.schema_example import SchemaExample
-        from ..models.schema_examples_item import SchemaExamplesItem
-        from ..models.schema_extensions import SchemaExtensions
-        from ..models.schema_json_schema import SchemaJsonSchema
-        from ..models.schema_json_schema_impl import SchemaJsonSchemaImpl
-        from ..models.schema_object import SchemaObject
-        from ..models.schema_pattern_properties import SchemaPatternProperties
-        from ..models.schema_properties import SchemaProperties
-        from ..models.xml import XML
+        from ..models.discriminator import Discriminator  # noqa: PLC0415
+        from ..models.external_documentation import ExternalDocumentation  # noqa: PLC0415
+        from ..models.schema_additional_properties import SchemaAdditionalProperties  # noqa: PLC0415
+        from ..models.schema_const import SchemaConst  # noqa: PLC0415
+        from ..models.schema_default import SchemaDefault  # noqa: PLC0415
+        from ..models.schema_dependent_required import SchemaDependentRequired  # noqa: PLC0415
+        from ..models.schema_dependent_schemas import SchemaDependentSchemas  # noqa: PLC0415
+        from ..models.schema_enum_item import SchemaEnumItem  # noqa: PLC0415
+        from ..models.schema_example import SchemaExample  # noqa: PLC0415
+        from ..models.schema_examples_item import SchemaExamplesItem  # noqa: PLC0415
+        from ..models.schema_extensions import SchemaExtensions  # noqa: PLC0415
+        from ..models.schema_json_schema import SchemaJsonSchema  # noqa: PLC0415
+        from ..models.schema_json_schema_impl import SchemaJsonSchemaImpl  # noqa: PLC0415
+        from ..models.schema_object import SchemaObject  # noqa: PLC0415
+        from ..models.schema_pattern_properties import SchemaPatternProperties  # noqa: PLC0415
+        from ..models.schema_properties import SchemaProperties  # noqa: PLC0415
+        from ..models.xml import XML  # noqa: PLC0415
 
         d = dict(src_dict)
         _additional_items = d.pop("additionalItems", UNSET)

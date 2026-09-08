@@ -117,12 +117,12 @@ class Material:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.material_extensions import MaterialExtensions
-        from ..models.material_extras import MaterialExtras
-        from ..models.material_normal_texture_info import MaterialNormalTextureInfo
-        from ..models.material_occlusion_texture_info import MaterialOcclusionTextureInfo
-        from ..models.material_pbr_metallic_roughness import MaterialPbrMetallicRoughness
-        from ..models.texture_info import TextureInfo
+        from ..models.material_extensions import MaterialExtensions  # noqa: PLC0415
+        from ..models.material_extras import MaterialExtras  # noqa: PLC0415
+        from ..models.material_normal_texture_info import MaterialNormalTextureInfo  # noqa: PLC0415
+        from ..models.material_occlusion_texture_info import MaterialOcclusionTextureInfo  # noqa: PLC0415
+        from ..models.material_pbr_metallic_roughness import MaterialPbrMetallicRoughness  # noqa: PLC0415
+        from ..models.texture_info import TextureInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         alpha_cutoff = d.pop("alphaCutoff", UNSET)

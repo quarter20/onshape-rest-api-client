@@ -76,8 +76,8 @@ class BTWorkflowAuditLogInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_published_workflow_id import BTPublishedWorkflowId
-        from ..models.bt_workflow_audit_log_entry_info import BTWorkflowAuditLogEntryInfo
+        from ..models.bt_published_workflow_id import BTPublishedWorkflowId  # noqa: PLC0415
+        from ..models.bt_workflow_audit_log_entry_info import BTWorkflowAuditLogEntryInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         company_id = d.pop("companyId", UNSET)

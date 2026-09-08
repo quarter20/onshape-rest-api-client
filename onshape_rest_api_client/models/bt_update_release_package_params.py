@@ -64,8 +64,8 @@ class BTUpdateReleasePackageParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_property_value_param import BTPropertyValueParam
-        from ..models.bt_release_package_item_params import BTReleasePackageItemParams
+        from ..models.bt_property_value_param import BTPropertyValueParam  # noqa: PLC0415
+        from ..models.bt_release_package_item_params import BTReleasePackageItemParams  # noqa: PLC0415
 
         d = dict(src_dict)
         item_ids = cast(list[str], d.pop("itemIds", UNSET))

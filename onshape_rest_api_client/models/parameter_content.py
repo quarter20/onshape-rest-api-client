@@ -40,7 +40,7 @@ class ParameterContent:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.media_type import MediaType
+        from ..models.media_type import MediaType  # noqa: PLC0415
 
         d = dict(src_dict)
         empty = d.pop("empty", UNSET)

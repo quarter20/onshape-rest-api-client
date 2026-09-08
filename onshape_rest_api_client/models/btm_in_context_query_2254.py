@@ -112,7 +112,7 @@ class BTMInContextQuery2254:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btm_individual_query_base_139 import BTMIndividualQueryBase139
+        from ..models.btm_individual_query_base_139 import BTMIndividualQueryBase139  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

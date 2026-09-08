@@ -43,7 +43,7 @@ class BTPublicationBulkItemParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_publication_item_params import BTPublicationItemParams
+        from ..models.bt_publication_item_params import BTPublicationItemParams  # noqa: PLC0415
 
         d = dict(src_dict)
         _items = d.pop("items", UNSET)

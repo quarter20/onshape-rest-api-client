@@ -298,15 +298,15 @@ class BTReleasePackageInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_comment_info import BTCommentInfo
-        from ..models.bt_published_workflow_id import BTPublishedWorkflowId
-        from ..models.bt_release_comment_list_info import BTReleaseCommentListInfo
-        from ..models.bt_release_package_info_column_names import BTReleasePackageInfoColumnNames
-        from ..models.bt_release_package_item_info import BTReleasePackageItemInfo
-        from ..models.bt_release_transition_status_info import BTReleaseTransitionStatusInfo
-        from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo
-        from ..models.bt_workflow_property_info import BTWorkflowPropertyInfo
-        from ..models.bt_workflow_snapshot_info import BTWorkflowSnapshotInfo
+        from ..models.bt_comment_info import BTCommentInfo  # noqa: PLC0415
+        from ..models.bt_published_workflow_id import BTPublishedWorkflowId  # noqa: PLC0415
+        from ..models.bt_release_comment_list_info import BTReleaseCommentListInfo  # noqa: PLC0415
+        from ..models.bt_release_package_info_column_names import BTReleasePackageInfoColumnNames  # noqa: PLC0415
+        from ..models.bt_release_package_item_info import BTReleasePackageItemInfo  # noqa: PLC0415
+        from ..models.bt_release_transition_status_info import BTReleaseTransitionStatusInfo  # noqa: PLC0415
+        from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo  # noqa: PLC0415
+        from ..models.bt_workflow_property_info import BTWorkflowPropertyInfo  # noqa: PLC0415
+        from ..models.bt_workflow_snapshot_info import BTWorkflowSnapshotInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         add_all_drawings_active = d.pop("addAllDrawingsActive", UNSET)

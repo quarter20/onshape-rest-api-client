@@ -73,7 +73,7 @@ class BTVariableParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_configured_value import BTConfiguredValue
+        from ..models.bt_configured_value import BTConfiguredValue  # noqa: PLC0415
 
         d = dict(src_dict)
         name = d.pop("name")

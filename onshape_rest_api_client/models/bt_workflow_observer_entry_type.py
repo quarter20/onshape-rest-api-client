@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTWorkflowObserverEntryType(str, Enum):
+class BTWorkflowObserverEntryType(StrEnum):
     ALIAS = "ALIAS"
     ROLE = "ROLE"
     TEAM = "TEAM"

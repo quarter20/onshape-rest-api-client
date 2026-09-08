@@ -17,8 +17,6 @@ T = TypeVar("T", bound="CameraOrthographicExtensions")
 
 @_attrs_define
 class CameraOrthographicExtensions:
-    """ """
-
     additional_properties: dict[str, CameraOrthographicExtensionsAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -34,7 +32,7 @@ class CameraOrthographicExtensions:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.camera_orthographic_extensions_additional_property import (
-            CameraOrthographicExtensionsAdditionalProperty,
+            CameraOrthographicExtensionsAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

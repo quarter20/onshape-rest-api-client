@@ -120,9 +120,9 @@ class BTBillOfMaterialsInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_bill_of_materials_header_info import BTBillOfMaterialsHeaderInfo
-        from ..models.bt_bill_of_materials_row_info import BTBillOfMaterialsRowInfo
-        from ..models.bt_bill_of_materials_source_info import BTBillOfMaterialsSourceInfo
+        from ..models.bt_bill_of_materials_header_info import BTBillOfMaterialsHeaderInfo  # noqa: PLC0415
+        from ..models.bt_bill_of_materials_row_info import BTBillOfMaterialsRowInfo  # noqa: PLC0415
+        from ..models.bt_bill_of_materials_source_info import BTBillOfMaterialsSourceInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _bom_source = d.pop("bomSource", UNSET)

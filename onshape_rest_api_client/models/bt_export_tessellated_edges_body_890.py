@@ -69,7 +69,7 @@ class BTExportTessellatedEdgesBody890:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_export_tessellated_edges_edge_1364 import BTExportTessellatedEdgesEdge1364
+        from ..models.bt_export_tessellated_edges_edge_1364 import BTExportTessellatedEdgesEdge1364  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTAssemblySimulationType(str, Enum):
+class GBTAssemblySimulationType(StrEnum):
     CONTACT_ANALYSIS = "CONTACT_ANALYSIS"
     LINEAR_STATIC = "LINEAR_STATIC"
     MODAL = "MODAL"

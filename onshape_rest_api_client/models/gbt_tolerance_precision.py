@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTTolerancePrecision(str, Enum):
+class GBTTolerancePrecision(StrEnum):
     DEFAULT = "DEFAULT"
     HUNDREDTHS = "HUNDREDTHS"
     HUNDRED_THOUSANDTHS = "HUNDRED_THOUSANDTHS"

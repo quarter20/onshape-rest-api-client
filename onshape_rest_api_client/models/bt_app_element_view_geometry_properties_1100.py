@@ -49,7 +49,7 @@ class BTAppElementViewGeometryProperties1100:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_app_element_view_geometry_properties_1100_property_to_value import (
-            BTAppElementViewGeometryProperties1100PropertyToValue,
+            BTAppElementViewGeometryProperties1100PropertyToValue,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

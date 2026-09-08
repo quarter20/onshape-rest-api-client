@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTOccurrenceData75FeatureData")
 
 @_attrs_define
 class BTOccurrenceData75FeatureData:
-    """ """
-
     additional_properties: dict[str, BTFeatureOccurrenceData775] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTOccurrenceData75FeatureData:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_feature_occurrence_data_775 import BTFeatureOccurrenceData775
+        from ..models.bt_feature_occurrence_data_775 import BTFeatureOccurrenceData775  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_occurrence_data_75_feature_data = cls()

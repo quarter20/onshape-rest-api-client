@@ -72,7 +72,7 @@ class BTIndividualTableProperties3760:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_string_node_wrapper_4224 import BTStringNodeWrapper4224
+        from ..models.bt_string_node_wrapper_4224 import BTStringNodeWrapper4224  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

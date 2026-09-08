@@ -130,9 +130,9 @@ class BTMIndividualSketchRegionQuery140:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btm_individual_query_138 import BTMIndividualQuery138
-        from ..models.btm_individual_query_base_139 import BTMIndividualQueryBase139
-        from ..models.btp_statement_269 import BTPStatement269
+        from ..models.btm_individual_query_138 import BTMIndividualQuery138  # noqa: PLC0415
+        from ..models.btm_individual_query_base_139 import BTMIndividualQueryBase139  # noqa: PLC0415
+        from ..models.btp_statement_269 import BTPStatement269  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

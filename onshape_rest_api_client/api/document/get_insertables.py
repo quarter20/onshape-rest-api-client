@@ -17,6 +17,7 @@ def _get_kwargs(
     element_id: str | Unset = UNSET,
     configuration: str | Unset = UNSET,
     link_document_id: str | Unset = UNSET,
+    include_element_groups: bool | Unset = False,
     include_parts: bool | Unset = False,
     include_surfaces: bool | Unset = False,
     include_sketches: bool | Unset = False,
@@ -50,6 +51,8 @@ def _get_kwargs(
     params["configuration"] = configuration
 
     params["linkDocumentId"] = link_document_id
+
+    params["includeElementGroups"] = include_element_groups
 
     params["includeParts"] = include_parts
 
@@ -140,6 +143,7 @@ def sync_detailed(
     element_id: str | Unset = UNSET,
     configuration: str | Unset = UNSET,
     link_document_id: str | Unset = UNSET,
+    include_element_groups: bool | Unset = False,
     include_parts: bool | Unset = False,
     include_surfaces: bool | Unset = False,
     include_sketches: bool | Unset = False,
@@ -174,6 +178,7 @@ def sync_detailed(
         element_id (str | Unset):
         configuration (str | Unset):
         link_document_id (str | Unset):
+        include_element_groups (bool | Unset):  Default: False.
         include_parts (bool | Unset):  Default: False.
         include_surfaces (bool | Unset):  Default: False.
         include_sketches (bool | Unset):  Default: False.
@@ -214,6 +219,7 @@ def sync_detailed(
         element_id=element_id,
         configuration=configuration,
         link_document_id=link_document_id,
+        include_element_groups=include_element_groups,
         include_parts=include_parts,
         include_surfaces=include_surfaces,
         include_sketches=include_sketches,
@@ -256,6 +262,7 @@ def sync(
     element_id: str | Unset = UNSET,
     configuration: str | Unset = UNSET,
     link_document_id: str | Unset = UNSET,
+    include_element_groups: bool | Unset = False,
     include_parts: bool | Unset = False,
     include_surfaces: bool | Unset = False,
     include_sketches: bool | Unset = False,
@@ -290,6 +297,7 @@ def sync(
         element_id (str | Unset):
         configuration (str | Unset):
         link_document_id (str | Unset):
+        include_element_groups (bool | Unset):  Default: False.
         include_parts (bool | Unset):  Default: False.
         include_surfaces (bool | Unset):  Default: False.
         include_sketches (bool | Unset):  Default: False.
@@ -331,6 +339,7 @@ def sync(
         element_id=element_id,
         configuration=configuration,
         link_document_id=link_document_id,
+        include_element_groups=include_element_groups,
         include_parts=include_parts,
         include_surfaces=include_surfaces,
         include_sketches=include_sketches,
@@ -367,6 +376,7 @@ async def asyncio_detailed(
     element_id: str | Unset = UNSET,
     configuration: str | Unset = UNSET,
     link_document_id: str | Unset = UNSET,
+    include_element_groups: bool | Unset = False,
     include_parts: bool | Unset = False,
     include_surfaces: bool | Unset = False,
     include_sketches: bool | Unset = False,
@@ -401,6 +411,7 @@ async def asyncio_detailed(
         element_id (str | Unset):
         configuration (str | Unset):
         link_document_id (str | Unset):
+        include_element_groups (bool | Unset):  Default: False.
         include_parts (bool | Unset):  Default: False.
         include_surfaces (bool | Unset):  Default: False.
         include_sketches (bool | Unset):  Default: False.
@@ -441,6 +452,7 @@ async def asyncio_detailed(
         element_id=element_id,
         configuration=configuration,
         link_document_id=link_document_id,
+        include_element_groups=include_element_groups,
         include_parts=include_parts,
         include_surfaces=include_surfaces,
         include_sketches=include_sketches,
@@ -481,6 +493,7 @@ async def asyncio(
     element_id: str | Unset = UNSET,
     configuration: str | Unset = UNSET,
     link_document_id: str | Unset = UNSET,
+    include_element_groups: bool | Unset = False,
     include_parts: bool | Unset = False,
     include_surfaces: bool | Unset = False,
     include_sketches: bool | Unset = False,
@@ -515,6 +528,7 @@ async def asyncio(
         element_id (str | Unset):
         configuration (str | Unset):
         link_document_id (str | Unset):
+        include_element_groups (bool | Unset):  Default: False.
         include_parts (bool | Unset):  Default: False.
         include_surfaces (bool | Unset):  Default: False.
         include_sketches (bool | Unset):  Default: False.
@@ -557,6 +571,7 @@ async def asyncio(
             element_id=element_id,
             configuration=configuration,
             link_document_id=link_document_id,
+            include_element_groups=include_element_groups,
             include_parts=include_parts,
             include_surfaces=include_surfaces,
             include_sketches=include_sketches,

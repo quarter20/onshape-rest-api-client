@@ -104,8 +104,8 @@ class BTEntityDeletion24:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_base_entity_data_33 import BTBaseEntityData33
-        from ..models.bt_entity_geometry_35 import BTEntityGeometry35
+        from ..models.bt_base_entity_data_33 import BTBaseEntityData33  # noqa: PLC0415
+        from ..models.bt_entity_geometry_35 import BTEntityGeometry35  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

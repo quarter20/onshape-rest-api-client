@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTTransitionType(str, Enum):
+class BTTransitionType(StrEnum):
     APPROVE = "APPROVE"
     APPROVE_DIRECT = "APPROVE_DIRECT"
     COMMENT = "COMMENT"

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTPDefinitionType(str, Enum):
+class GBTPDefinitionType(StrEnum):
     CONSTANT = "CONSTANT"
     CONST_LAMBDA = "CONST_LAMBDA"
     ENUM = "ENUM"

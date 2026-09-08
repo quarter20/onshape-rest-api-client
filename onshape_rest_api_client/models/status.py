@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class Status(str, Enum):
+class Status(StrEnum):
     DB_MAX_NUMBER_ITEMS_EXCEEDED = "DB_MAX_NUMBER_ITEMS_EXCEEDED"
     DB_TIMEOUT = "DB_TIMEOUT"
 

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTFilterFlattenedGeometryOptions(str, Enum):
+class GBTFilterFlattenedGeometryOptions(StrEnum):
     FLATTENED_ONLY = "FLATTENED_ONLY"
     MODEL_AND_FLATTENED = "MODEL_AND_FLATTENED"
     MODEL_ONLY = "MODEL_ONLY"

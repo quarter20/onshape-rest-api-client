@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTPartStudioDisplayData346DeterministicIdToEntity")
 
 @_attrs_define
 class BTPartStudioDisplayData346DeterministicIdToEntity:
-    """ """
-
     additional_properties: dict[str, BTBaseEntityData33] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTPartStudioDisplayData346DeterministicIdToEntity:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_base_entity_data_33 import BTBaseEntityData33
+        from ..models.bt_base_entity_data_33 import BTBaseEntityData33  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_part_studio_display_data_346_deterministic_id_to_entity = cls()

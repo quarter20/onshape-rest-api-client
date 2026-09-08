@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTAssemblyFeatureDisplayStatus(str, Enum):
+class GBTAssemblyFeatureDisplayStatus(StrEnum):
     ERROR = "ERROR"
     OK = "OK"
     SUPPRESSED = "SUPPRESSED"

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTParasolidEncodingType(str, Enum):
+class GBTParasolidEncodingType(StrEnum):
     BINARY = "BINARY"
     TEXT = "TEXT"
     UNKNOWN = "UNKNOWN"

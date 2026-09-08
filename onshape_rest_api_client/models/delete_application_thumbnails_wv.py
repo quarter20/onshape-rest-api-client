@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class DeleteApplicationThumbnailsWv(str, Enum):
+class DeleteApplicationThumbnailsWv(StrEnum):
     V = "v"
     W = "w"
 

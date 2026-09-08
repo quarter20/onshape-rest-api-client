@@ -61,7 +61,9 @@ class BTBDrawingOperationParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btb_drawing_operation_params_other_fields import BTBDrawingOperationParamsOtherFields
+        from ..models.btb_drawing_operation_params_other_fields import (
+            BTBDrawingOperationParamsOtherFields,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         format_version = d.pop("formatVersion")

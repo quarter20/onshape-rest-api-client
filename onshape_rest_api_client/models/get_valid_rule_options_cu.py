@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetValidRuleOptionsCu(str, Enum):
+class GetValidRuleOptionsCu(StrEnum):
     C = "c"
     U = "u"
 

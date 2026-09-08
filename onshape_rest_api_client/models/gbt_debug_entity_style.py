@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTDebugEntityStyle(str, Enum):
+class GBTDebugEntityStyle(StrEnum):
     DEFAULT = "DEFAULT"
     ERROR = "ERROR"
     STAR = "STAR"

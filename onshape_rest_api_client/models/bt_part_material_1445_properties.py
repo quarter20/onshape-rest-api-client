@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTPartMaterial1445Properties")
 
 @_attrs_define
 class BTPartMaterial1445Properties:
-    """ """
-
     additional_properties: dict[str, BTPartMaterialProperty1453] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTPartMaterial1445Properties:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_part_material_property_1453 import BTPartMaterialProperty1453
+        from ..models.bt_part_material_property_1453 import BTPartMaterialProperty1453  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_part_material_1445_properties = cls()

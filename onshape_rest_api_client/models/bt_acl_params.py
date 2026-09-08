@@ -76,7 +76,7 @@ class BTAclParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_acl_params_doc_state_params import BTAclParamsDocStateParams
+        from ..models.bt_acl_params_doc_state_params import BTAclParamsDocStateParams  # noqa: PLC0415
 
         d = dict(src_dict)
         anonymous_access_allowed = d.pop("anonymousAccessAllowed", UNSET)

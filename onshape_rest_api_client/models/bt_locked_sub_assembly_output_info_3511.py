@@ -76,8 +76,8 @@ class BTLockedSubAssemblyOutputInfo3511:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_locked_sub_assembly_4590 import BTLockedSubAssembly4590
-        from ..models.bt_microversion_id_366 import BTMicroversionId366
+        from ..models.bt_locked_sub_assembly_4590 import BTLockedSubAssembly4590  # noqa: PLC0415
+        from ..models.bt_microversion_id_366 import BTMicroversionId366  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

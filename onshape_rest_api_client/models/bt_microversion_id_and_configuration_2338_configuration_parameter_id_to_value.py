@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTMicroversionIdAndConfiguration2338ConfigurationParamet
 
 @_attrs_define
 class BTMicroversionIdAndConfiguration2338ConfigurationParameterIdToValue:
-    """ """
-
     additional_properties: dict[str, BTFSValue1888] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTMicroversionIdAndConfiguration2338ConfigurationParameterIdToValue:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btfs_value_1888 import BTFSValue1888
+        from ..models.btfs_value_1888 import BTFSValue1888  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_microversion_id_and_configuration_2338_configuration_parameter_id_to_value = cls()

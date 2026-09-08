@@ -159,9 +159,9 @@ class BTWorkflowAuditLogEntryInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_property_update_info import BTPropertyUpdateInfo
+        from ..models.bt_property_update_info import BTPropertyUpdateInfo  # noqa: PLC0415
         from ..models.bt_workflow_audit_log_entry_info_feature_script_response import (
-            BTWorkflowAuditLogEntryInfoFeatureScriptResponse,
+            BTWorkflowAuditLogEntryInfoFeatureScriptResponse,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

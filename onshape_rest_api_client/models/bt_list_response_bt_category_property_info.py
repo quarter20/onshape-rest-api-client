@@ -62,7 +62,7 @@ class BTListResponseBTCategoryPropertyInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_category_property_info import BTCategoryPropertyInfo
+        from ..models.bt_category_property_info import BTCategoryPropertyInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         href = d.pop("href", UNSET)

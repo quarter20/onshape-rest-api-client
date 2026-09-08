@@ -145,9 +145,9 @@ class BTTable1825:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_table_column_info_1222 import BTTableColumnInfo1222
-        from ..models.bt_table_row_1054 import BTTableRow1054
-        from ..models.bt_table_sort_order_4371 import BTTableSortOrder4371
+        from ..models.bt_table_column_info_1222 import BTTableColumnInfo1222  # noqa: PLC0415
+        from ..models.bt_table_row_1054 import BTTableRow1054  # noqa: PLC0415
+        from ..models.bt_table_sort_order_4371 import BTTableSortOrder4371  # noqa: PLC0415
 
         d = dict(src_dict)
         _all_row_values = d.pop("allRowValues", UNSET)

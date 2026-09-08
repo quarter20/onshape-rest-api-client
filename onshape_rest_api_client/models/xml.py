@@ -70,7 +70,7 @@ class XML:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.xml_extensions import XMLExtensions
+        from ..models.xml_extensions import XMLExtensions  # noqa: PLC0415
 
         d = dict(src_dict)
         attribute = d.pop("attribute", UNSET)

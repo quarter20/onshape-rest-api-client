@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTPreProcessParasolidOption(str, Enum):
+class GBTPreProcessParasolidOption(StrEnum):
     NO_PRE_PROCESSING = "NO_PRE_PROCESSING"
     UNKNOWN = "UNKNOWN"
     USE_BODYSHOP_PRE_PROCESSING = "USE_BODYSHOP_PRE_PROCESSING"

@@ -62,7 +62,7 @@ class BTListResponseBTTranslationRequestInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_translation_request_info import BTTranslationRequestInfo
+        from ..models.bt_translation_request_info import BTTranslationRequestInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         href = d.pop("href", UNSET)

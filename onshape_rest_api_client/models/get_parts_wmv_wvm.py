@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetPartsWMVWvm(str, Enum):
+class GetPartsWmvWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

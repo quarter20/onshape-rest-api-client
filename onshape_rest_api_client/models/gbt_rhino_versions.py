@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTRhinoVersions(str, Enum):
+class GBTRhinoVersions(StrEnum):
     UNKNOWN = "UNKNOWN"
     V2 = "V2"
     V3 = "V3"

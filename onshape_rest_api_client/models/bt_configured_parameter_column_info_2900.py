@@ -94,8 +94,8 @@ class BTConfiguredParameterColumnInfo2900:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_inner_parameter_location_1715 import BTInnerParameterLocation1715
-        from ..models.bt_table_column_spec_1967 import BTTableColumnSpec1967
+        from ..models.bt_inner_parameter_location_1715 import BTInnerParameterLocation1715  # noqa: PLC0415
+        from ..models.bt_table_column_spec_1967 import BTTableColumnSpec1967  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

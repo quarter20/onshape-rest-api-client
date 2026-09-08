@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetDocumentContentsWvm(str, Enum):
+class GetDocumentContentsWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

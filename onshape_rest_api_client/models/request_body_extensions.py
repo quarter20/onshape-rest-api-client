@@ -15,8 +15,6 @@ T = TypeVar("T", bound="RequestBodyExtensions")
 
 @_attrs_define
 class RequestBodyExtensions:
-    """ """
-
     additional_properties: dict[str, RequestBodyExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,9 @@ class RequestBodyExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.request_body_extensions_additional_property import RequestBodyExtensionsAdditionalProperty
+        from ..models.request_body_extensions_additional_property import (
+            RequestBodyExtensionsAdditionalProperty,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         request_body_extensions = cls()

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTPType(str, Enum):
+class GBTPType(StrEnum):
     ARRAY = "ARRAY"
     BOOLEAN = "BOOLEAN"
     BOX = "BOX"

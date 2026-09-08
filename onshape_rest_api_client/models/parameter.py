@@ -139,11 +139,11 @@ class Parameter:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.parameter_content import ParameterContent
-        from ..models.parameter_example import ParameterExample
-        from ..models.parameter_examples import ParameterExamples
-        from ..models.parameter_extensions import ParameterExtensions
-        from ..models.schema import Schema
+        from ..models.parameter_content import ParameterContent  # noqa: PLC0415
+        from ..models.parameter_example import ParameterExample  # noqa: PLC0415
+        from ..models.parameter_examples import ParameterExamples  # noqa: PLC0415
+        from ..models.parameter_extensions import ParameterExtensions  # noqa: PLC0415
+        from ..models.schema import Schema  # noqa: PLC0415
 
         d = dict(src_dict)
         allow_empty_value = d.pop("allowEmptyValue", UNSET)

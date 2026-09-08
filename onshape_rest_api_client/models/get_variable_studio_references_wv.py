@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetVariableStudioReferencesWv(str, Enum):
+class GetVariableStudioReferencesWv(StrEnum):
     V = "v"
     W = "w"
 

@@ -15,8 +15,6 @@ T = TypeVar("T", bound="MediaTypeExamples")
 
 @_attrs_define
 class MediaTypeExamples:
-    """ """
-
     additional_properties: dict[str, Example] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class MediaTypeExamples:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.example import Example
+        from ..models.example import Example  # noqa: PLC0415
 
         d = dict(src_dict)
         media_type_examples = cls()

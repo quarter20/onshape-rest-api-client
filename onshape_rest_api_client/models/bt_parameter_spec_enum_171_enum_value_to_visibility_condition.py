@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTParameterSpecEnum171EnumValueToVisibilityCondition")
 
 @_attrs_define
 class BTParameterSpecEnum171EnumValueToVisibilityCondition:
-    """ """
-
     additional_properties: dict[str, BTParameterVisibilityCondition177] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTParameterSpecEnum171EnumValueToVisibilityCondition:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_parameter_visibility_condition_177 import BTParameterVisibilityCondition177
+        from ..models.bt_parameter_visibility_condition_177 import BTParameterVisibilityCondition177  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_parameter_spec_enum_171_enum_value_to_visibility_condition = cls()

@@ -11,8 +11,6 @@ T = TypeVar("T", bound="BTGraphicsBuffer2668MapGraphicsAttributeToComponentCount
 
 @_attrs_define
 class BTGraphicsBuffer2668MapGraphicsAttributeToComponentCount:
-    """ """
-
     additional_properties: dict[str, int] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

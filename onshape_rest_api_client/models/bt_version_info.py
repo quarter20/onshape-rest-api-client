@@ -148,8 +148,8 @@ class BTVersionInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_thumbnail_info import BTThumbnailInfo
-        from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo
+        from ..models.bt_thumbnail_info import BTThumbnailInfo  # noqa: PLC0415
+        from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _created_at = d.pop("createdAt", UNSET)

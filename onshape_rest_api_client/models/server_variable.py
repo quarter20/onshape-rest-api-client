@@ -60,7 +60,7 @@ class ServerVariable:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.server_variable_extensions import ServerVariableExtensions
+        from ..models.server_variable_extensions import ServerVariableExtensions  # noqa: PLC0415
 
         d = dict(src_dict)
         default = d.pop("default", UNSET)

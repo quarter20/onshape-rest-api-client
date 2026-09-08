@@ -58,7 +58,7 @@ class BTJPath3073:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btj_path_element_2297 import BTJPathElement2297
+        from ..models.btj_path_element_2297 import BTJPathElement2297  # noqa: PLC0415
 
         d = dict(src_dict)
         start_node = d.pop("startNode")

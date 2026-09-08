@@ -43,7 +43,7 @@ class BTGetJsonResponse2137Tree:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_get_json_response_2137_tree_additional_property import (
-            BTGetJsonResponse2137TreeAdditionalProperty,
+            BTGetJsonResponse2137TreeAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

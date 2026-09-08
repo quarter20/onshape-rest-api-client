@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTBaseEntityAppearanceSettings1391ColorIdToBaseEntityApp
 
 @_attrs_define
 class BTBaseEntityAppearanceSettings1391ColorIdToBaseEntityAppearanceEntry:
-    """ """
-
     additional_properties: dict[str, BTBaseEntityAppearanceEntry3607] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTBaseEntityAppearanceSettings1391ColorIdToBaseEntityAppearanceEntry:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_base_entity_appearance_entry_3607 import BTBaseEntityAppearanceEntry3607
+        from ..models.bt_base_entity_appearance_entry_3607 import BTBaseEntityAppearanceEntry3607  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_base_entity_appearance_settings_1391_color_id_to_base_entity_appearance_entry = cls()

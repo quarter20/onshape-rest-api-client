@@ -284,11 +284,11 @@ class BTToleranceSpec3441:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_editing_logic_2350 import BTEditingLogic2350
-        from ..models.bt_feature_spec_129_parameter_id_to_spec import BTFeatureSpec129ParameterIdToSpec
-        from ..models.bt_location_info_226 import BTLocationInfo226
-        from ..models.bt_parameter_group_spec_3469 import BTParameterGroupSpec3469
-        from ..models.bt_parameter_spec_6 import BTParameterSpec6
+        from ..models.bt_editing_logic_2350 import BTEditingLogic2350  # noqa: PLC0415
+        from ..models.bt_feature_spec_129_parameter_id_to_spec import BTFeatureSpec129ParameterIdToSpec  # noqa: PLC0415
+        from ..models.bt_location_info_226 import BTLocationInfo226  # noqa: PLC0415
+        from ..models.bt_parameter_group_spec_3469 import BTParameterGroupSpec3469  # noqa: PLC0415
+        from ..models.bt_parameter_spec_6 import BTParameterSpec6  # noqa: PLC0415
 
         d = dict(src_dict)
         additional_localized_strings = d.pop("additionalLocalizedStrings", UNSET)

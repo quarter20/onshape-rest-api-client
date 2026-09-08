@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTWeldStandard(str, Enum):
+class GBTWeldStandard(StrEnum):
     ANSI = "ANSI"
     ISO = "ISO"
     UNKNOWN = "UNKNOWN"

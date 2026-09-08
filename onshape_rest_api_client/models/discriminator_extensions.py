@@ -15,8 +15,6 @@ T = TypeVar("T", bound="DiscriminatorExtensions")
 
 @_attrs_define
 class DiscriminatorExtensions:
-    """ """
-
     additional_properties: dict[str, DiscriminatorExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,9 @@ class DiscriminatorExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.discriminator_extensions_additional_property import DiscriminatorExtensionsAdditionalProperty
+        from ..models.discriminator_extensions_additional_property import (
+            DiscriminatorExtensionsAdditionalProperty,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         discriminator_extensions = cls()

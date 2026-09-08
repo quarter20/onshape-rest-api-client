@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTToleranceType(str, Enum):
+class GBTToleranceType(StrEnum):
     BASIC = "BASIC"
     DEFAULT = "DEFAULT"
     DEVIATION = "DEVIATION"

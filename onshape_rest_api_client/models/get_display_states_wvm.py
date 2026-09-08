@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetDisplayStatesWvm(str, Enum):
+class GetDisplayStatesWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTDebugEntityColor(str, Enum):
+class GBTDebugEntityColor(StrEnum):
     BLACK = "BLACK"
     BLUE = "BLUE"
     CYAN = "CYAN"

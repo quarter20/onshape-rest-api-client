@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class UserRolePriority(str, Enum):
+class UserRolePriority(StrEnum):
     ADMIN = "ADMIN"
     GUEST = "GUEST"
     MEMBER = "MEMBER"

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTConfiguredParentType(str, Enum):
+class GBTConfiguredParentType(StrEnum):
     FEATURE = "FEATURE"
     INSTANCE = "INSTANCE"
     MATE = "MATE"

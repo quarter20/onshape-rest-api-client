@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTExportResolution(str, Enum):
+class GBTExportResolution(StrEnum):
     COARSE = "COARSE"
     FINE = "FINE"
     MEDIUM = "MEDIUM"

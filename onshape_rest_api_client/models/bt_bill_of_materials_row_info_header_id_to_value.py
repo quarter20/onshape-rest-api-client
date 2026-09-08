@@ -17,8 +17,6 @@ T = TypeVar("T", bound="BTBillOfMaterialsRowInfoHeaderIdToValue")
 
 @_attrs_define
 class BTBillOfMaterialsRowInfoHeaderIdToValue:
-    """ """
-
     additional_properties: dict[str, BTBillOfMaterialsRowInfoHeaderIdToValueAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -34,7 +32,7 @@ class BTBillOfMaterialsRowInfoHeaderIdToValue:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_bill_of_materials_row_info_header_id_to_value_additional_property import (
-            BTBillOfMaterialsRowInfoHeaderIdToValueAdditionalProperty,
+            BTBillOfMaterialsRowInfoHeaderIdToValueAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

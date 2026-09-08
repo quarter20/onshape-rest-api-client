@@ -239,13 +239,13 @@ class BTWorkflowPropertyInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_metadata_enum_value_info import BTMetadataEnumValueInfo
-        from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo
-        from ..models.bt_metadata_property_validator_info import BTMetadataPropertyValidatorInfo
-        from ..models.bt_workflow_property_info_default_value import BTWorkflowPropertyInfoDefaultValue
-        from ..models.bt_workflow_property_info_initial_value import BTWorkflowPropertyInfoInitialValue
-        from ..models.bt_workflow_property_info_value import BTWorkflowPropertyInfoValue
-        from ..models.bt_workflowable_object_observer import BTWorkflowableObjectObserver
+        from ..models.bt_metadata_enum_value_info import BTMetadataEnumValueInfo  # noqa: PLC0415
+        from ..models.bt_metadata_property_ui_hints_info import BTMetadataPropertyUiHintsInfo  # noqa: PLC0415
+        from ..models.bt_metadata_property_validator_info import BTMetadataPropertyValidatorInfo  # noqa: PLC0415
+        from ..models.bt_workflow_property_info_default_value import BTWorkflowPropertyInfoDefaultValue  # noqa: PLC0415
+        from ..models.bt_workflow_property_info_initial_value import BTWorkflowPropertyInfoInitialValue  # noqa: PLC0415
+        from ..models.bt_workflow_property_info_value import BTWorkflowPropertyInfoValue  # noqa: PLC0415
+        from ..models.bt_workflowable_object_observer import BTWorkflowableObjectObserver  # noqa: PLC0415
 
         d = dict(src_dict)
         aggregation_skipped_filtered_out_values = d.pop("aggregationSkippedFilteredOutValues", UNSET)

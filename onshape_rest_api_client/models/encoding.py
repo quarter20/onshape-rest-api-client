@@ -76,8 +76,8 @@ class Encoding:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.encoding_extensions import EncodingExtensions
-        from ..models.encoding_headers import EncodingHeaders
+        from ..models.encoding_extensions import EncodingExtensions  # noqa: PLC0415
+        from ..models.encoding_headers import EncodingHeaders  # noqa: PLC0415
 
         d = dict(src_dict)
         allow_reserved = d.pop("allowReserved", UNSET)

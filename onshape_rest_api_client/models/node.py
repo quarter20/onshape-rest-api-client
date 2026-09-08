@@ -121,8 +121,8 @@ class Node:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.node_extensions import NodeExtensions
-        from ..models.node_extras import NodeExtras
+        from ..models.node_extensions import NodeExtensions  # noqa: PLC0415
+        from ..models.node_extras import NodeExtras  # noqa: PLC0415
 
         d = dict(src_dict)
         camera = d.pop("camera", UNSET)

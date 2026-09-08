@@ -73,8 +73,8 @@ class CameraOrthographic:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.camera_orthographic_extensions import CameraOrthographicExtensions
-        from ..models.camera_orthographic_extras import CameraOrthographicExtras
+        from ..models.camera_orthographic_extensions import CameraOrthographicExtensions  # noqa: PLC0415
+        from ..models.camera_orthographic_extras import CameraOrthographicExtras  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

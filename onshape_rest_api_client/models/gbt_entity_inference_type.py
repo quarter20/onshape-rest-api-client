@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTEntityInferenceType(str, Enum):
+class GBTEntityInferenceType(StrEnum):
     BOTTOM_AXIS_POINT = "BOTTOM_AXIS_POINT"
     CENTER = "CENTER"
     CENTROID = "CENTROID"

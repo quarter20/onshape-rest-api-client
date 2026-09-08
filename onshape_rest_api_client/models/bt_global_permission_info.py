@@ -43,7 +43,7 @@ class BTGlobalPermissionInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_global_permission_info_item import BTGlobalPermissionInfoItem
+        from ..models.bt_global_permission_info_item import BTGlobalPermissionInfoItem  # noqa: PLC0415
 
         d = dict(src_dict)
         _items = d.pop("items", UNSET)

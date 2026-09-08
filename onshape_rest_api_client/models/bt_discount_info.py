@@ -137,7 +137,7 @@ class BTDiscountInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_user_summary_info import BTUserSummaryInfo
+        from ..models.bt_user_summary_info import BTUserSummaryInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         account_balance = d.pop("accountBalance", UNSET)

@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTDiscountMetadata")
 
 @_attrs_define
 class BTDiscountMetadata:
-    """ """
-
     additional_properties: dict[str, BTDiscountMetadataAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,9 @@ class BTDiscountMetadata:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_discount_metadata_additional_property import BTDiscountMetadataAdditionalProperty
+        from ..models.bt_discount_metadata_additional_property import (
+            BTDiscountMetadataAdditionalProperty,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         bt_discount_metadata = cls()

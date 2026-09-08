@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTWorkspaceProtectionRuleOptions(str, Enum):
+class BTWorkspaceProtectionRuleOptions(StrEnum):
     FAST_FORWARD_MERGE = "FAST_FORWARD_MERGE"
     MERGE = "MERGE"
     OPEN = "OPEN"

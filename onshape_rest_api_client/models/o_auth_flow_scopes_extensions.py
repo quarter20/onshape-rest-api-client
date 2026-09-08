@@ -15,8 +15,6 @@ T = TypeVar("T", bound="OAuthFlowScopesExtensions")
 
 @_attrs_define
 class OAuthFlowScopesExtensions:
-    """ """
-
     additional_properties: dict[str, OAuthFlowScopesExtensionsAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -32,7 +30,7 @@ class OAuthFlowScopesExtensions:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.o_auth_flow_scopes_extensions_additional_property import (
-            OAuthFlowScopesExtensionsAdditionalProperty,
+            OAuthFlowScopesExtensionsAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

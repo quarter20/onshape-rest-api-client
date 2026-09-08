@@ -77,7 +77,7 @@ class BTItemInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_item_info_properties import BTItemInfoProperties
+        from ..models.bt_item_info_properties import BTItemInfoProperties  # noqa: PLC0415
 
         d = dict(src_dict)
         company_id = d.pop("companyId", UNSET)

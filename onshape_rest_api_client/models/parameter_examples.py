@@ -15,8 +15,6 @@ T = TypeVar("T", bound="ParameterExamples")
 
 @_attrs_define
 class ParameterExamples:
-    """ """
-
     additional_properties: dict[str, Example] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class ParameterExamples:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.example import Example
+        from ..models.example import Example  # noqa: PLC0415
 
         d = dict(src_dict)
         parameter_examples = cls()

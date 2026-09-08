@@ -182,8 +182,8 @@ class BTCommentParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_view_data_params import BTViewDataParams
-        from ..models.coordinates_params import CoordinatesParams
+        from ..models.bt_view_data_params import BTViewDataParams  # noqa: PLC0415
+        from ..models.coordinates_params import CoordinatesParams  # noqa: PLC0415
 
         d = dict(src_dict)
         annotation_id = d.pop("annotationId", UNSET)

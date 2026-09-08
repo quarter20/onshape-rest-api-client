@@ -63,8 +63,8 @@ class Scene:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.scene_extensions import SceneExtensions
-        from ..models.scene_extras import SceneExtras
+        from ..models.scene_extensions import SceneExtensions  # noqa: PLC0415
+        from ..models.scene_extras import SceneExtras  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

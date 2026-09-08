@@ -130,7 +130,7 @@ class BTReleasePackageItemParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_property_value_param import BTPropertyValueParam
+        from ..models.bt_property_value_param import BTPropertyValueParam  # noqa: PLC0415
 
         d = dict(src_dict)
         configuration = d.pop("configuration", UNSET)

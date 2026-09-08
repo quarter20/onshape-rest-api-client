@@ -75,8 +75,8 @@ class Skin:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.skin_extensions import SkinExtensions
-        from ..models.skin_extras import SkinExtras
+        from ..models.skin_extensions import SkinExtensions  # noqa: PLC0415
+        from ..models.skin_extras import SkinExtras  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

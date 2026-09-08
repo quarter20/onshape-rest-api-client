@@ -17,8 +17,6 @@ T = TypeVar("T", bound="BTPartStudioDisplayData346SketchFeatureIdAndTessellation
 
 @_attrs_define
 class BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffers:
-    """ """
-
     additional_properties: dict[
         str, BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffersAdditionalProperty
     ] = _attrs_field(init=False, factory=dict)
@@ -34,7 +32,7 @@ class BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffers:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_part_studio_display_data_346_sketch_feature_id_and_tessellation_setting_to_buffers_additional_property import (
-            BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffersAdditionalProperty,
+            BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffersAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

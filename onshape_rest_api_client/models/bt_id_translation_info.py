@@ -67,7 +67,7 @@ class BTIdTranslationInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_id_translation_result_info import BTIdTranslationResultInfo
+        from ..models.bt_id_translation_result_info import BTIdTranslationResultInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         document_id = d.pop("documentId", UNSET)

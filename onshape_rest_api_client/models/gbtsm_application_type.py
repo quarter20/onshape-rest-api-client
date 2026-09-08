@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTSMApplicationType(str, Enum):
+class GBTSMApplicationType(StrEnum):
     FLEXIBLE_PCB = "FLEXIBLE_PCB"
     NONE = "NONE"
     SHEET_METAL = "SHEET_METAL"

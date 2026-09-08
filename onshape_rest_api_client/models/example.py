@@ -79,8 +79,8 @@ class Example:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.example_extensions import ExampleExtensions
-        from ..models.example_value import ExampleValue
+        from ..models.example_extensions import ExampleExtensions  # noqa: PLC0415
+        from ..models.example_value import ExampleValue  # noqa: PLC0415
 
         d = dict(src_dict)
         description = d.pop("description", UNSET)

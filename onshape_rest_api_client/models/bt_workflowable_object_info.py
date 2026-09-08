@@ -143,10 +143,10 @@ class BTWorkflowableObjectInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_published_workflow_id import BTPublishedWorkflowId
-        from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo
-        from ..models.bt_workflow_property_info import BTWorkflowPropertyInfo
-        from ..models.bt_workflow_snapshot_info import BTWorkflowSnapshotInfo
+        from ..models.bt_published_workflow_id import BTPublishedWorkflowId  # noqa: PLC0415
+        from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo  # noqa: PLC0415
+        from ..models.bt_workflow_property_info import BTWorkflowPropertyInfo  # noqa: PLC0415
+        from ..models.bt_workflow_snapshot_info import BTWorkflowSnapshotInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         company_id = d.pop("companyId", UNSET)

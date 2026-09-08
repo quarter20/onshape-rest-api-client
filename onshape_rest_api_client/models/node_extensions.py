@@ -15,8 +15,6 @@ T = TypeVar("T", bound="NodeExtensions")
 
 @_attrs_define
 class NodeExtensions:
-    """ """
-
     additional_properties: dict[str, NodeExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class NodeExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.node_extensions_additional_property import NodeExtensionsAdditionalProperty
+        from ..models.node_extensions_additional_property import NodeExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         node_extensions = cls()

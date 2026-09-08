@@ -43,7 +43,7 @@ class BTVariableStudioReferenceListInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_variable_studio_reference_info import BTVariableStudioReferenceInfo
+        from ..models.bt_variable_studio_reference_info import BTVariableStudioReferenceInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _references = d.pop("references", UNSET)

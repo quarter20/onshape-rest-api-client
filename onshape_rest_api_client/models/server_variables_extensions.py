@@ -15,8 +15,6 @@ T = TypeVar("T", bound="ServerVariablesExtensions")
 
 @_attrs_define
 class ServerVariablesExtensions:
-    """ """
-
     additional_properties: dict[str, ServerVariablesExtensionsAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -31,7 +29,9 @@ class ServerVariablesExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.server_variables_extensions_additional_property import ServerVariablesExtensionsAdditionalProperty
+        from ..models.server_variables_extensions_additional_property import (
+            ServerVariablesExtensionsAdditionalProperty,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         server_variables_extensions = cls()

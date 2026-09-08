@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTMateType(str, Enum):
+class GBTMateType(StrEnum):
     BALL = "BALL"
     CYLINDRICAL = "CYLINDRICAL"
     FASTENED = "FASTENED"

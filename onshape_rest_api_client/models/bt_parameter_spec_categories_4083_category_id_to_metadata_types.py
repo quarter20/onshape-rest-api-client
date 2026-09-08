@@ -11,8 +11,6 @@ T = TypeVar("T", bound="BTParameterSpecCategories4083CategoryIdToMetadataTypes")
 
 @_attrs_define
 class BTParameterSpecCategories4083CategoryIdToMetadataTypes:
-    """ """
-
     additional_properties: dict[str, list[int]] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTGTolConstraintType(str, Enum):
+class GBTGTolConstraintType(StrEnum):
     ANGULARITY = "ANGULARITY"
     CIRCULAR_RUNOUT = "CIRCULAR_RUNOUT"
     CONCENTRICITY = "CONCENTRICITY"

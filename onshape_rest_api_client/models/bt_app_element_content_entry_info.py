@@ -55,7 +55,7 @@ class BTAppElementContentEntryInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_app_element_content_delta_info import BTAppElementContentDeltaInfo
+        from ..models.bt_app_element_content_delta_info import BTAppElementContentDeltaInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         base_content = d.pop("baseContent", UNSET)

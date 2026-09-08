@@ -43,7 +43,7 @@ class BTAssemblyInstanceOccurrenceInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_assembly_occurrence_info import BTAssemblyOccurrenceInfo
+        from ..models.bt_assembly_occurrence_info import BTAssemblyOccurrenceInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _occurrences = d.pop("occurrences", UNSET)

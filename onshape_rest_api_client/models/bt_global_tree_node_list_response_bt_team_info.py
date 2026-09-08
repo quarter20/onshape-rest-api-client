@@ -62,7 +62,7 @@ class BTGlobalTreeNodeListResponseBTTeamInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_team_info import BTTeamInfo
+        from ..models.bt_team_info import BTTeamInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         href = d.pop("href", UNSET)

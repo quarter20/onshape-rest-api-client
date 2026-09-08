@@ -73,8 +73,8 @@ class OAuthFlows:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.o_auth_flow import OAuthFlow
-        from ..models.o_auth_flows_extensions import OAuthFlowsExtensions
+        from ..models.o_auth_flow import OAuthFlow  # noqa: PLC0415
+        from ..models.o_auth_flows_extensions import OAuthFlowsExtensions  # noqa: PLC0415
 
         d = dict(src_dict)
         _authorization_code = d.pop("authorizationCode", UNSET)

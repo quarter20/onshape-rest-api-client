@@ -67,8 +67,8 @@ class BTPropertyUpdateInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_property_update_info_new_value import BTPropertyUpdateInfoNewValue
-        from ..models.bt_property_update_info_old_value import BTPropertyUpdateInfoOldValue
+        from ..models.bt_property_update_info_new_value import BTPropertyUpdateInfoNewValue  # noqa: PLC0415
+        from ..models.bt_property_update_info_old_value import BTPropertyUpdateInfoOldValue  # noqa: PLC0415
 
         d = dict(src_dict)
         error_message = d.pop("errorMessage", UNSET)

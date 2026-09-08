@@ -392,50 +392,56 @@ class BTPartStudioDisplayData346:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_annotation_element_display_data_894 import BTAnnotationElementDisplayData894
-        from ..models.bt_assembly_references_display_data_1562 import BTAssemblyReferencesDisplayData1562
-        from ..models.bt_base_part_color_cycle_2614 import BTBasePartColorCycle2614
-        from ..models.bt_dimension_display_data_323 import BTDimensionDisplayData323
-        from ..models.bt_element_display_data_326 import BTElementDisplayData326
-        from ..models.bt_full_element_id_756 import BTFullElementId756
-        from ..models.bt_microversion_id_366 import BTMicroversionId366
-        from ..models.bt_microversion_id_and_configuration_interval_2364 import (
-            BTMicroversionIdAndConfigurationInterval2364,
+        from ..models.bt_annotation_element_display_data_894 import BTAnnotationElementDisplayData894  # noqa: PLC0415
+        from ..models.bt_assembly_references_display_data_1562 import (
+            BTAssemblyReferencesDisplayData1562,  # noqa: PLC0415
         )
-        from ..models.bt_microversion_id_interval_367 import BTMicroversionIdInterval367
-        from ..models.bt_part_display_data_17 import BTPartDisplayData17
+        from ..models.bt_base_part_color_cycle_2614 import BTBasePartColorCycle2614  # noqa: PLC0415
+        from ..models.bt_dimension_display_data_323 import BTDimensionDisplayData323  # noqa: PLC0415
+        from ..models.bt_element_display_data_326 import BTElementDisplayData326  # noqa: PLC0415
+        from ..models.bt_full_element_id_756 import BTFullElementId756  # noqa: PLC0415
+        from ..models.bt_microversion_id_366 import BTMicroversionId366  # noqa: PLC0415
+        from ..models.bt_microversion_id_and_configuration_interval_2364 import (
+            BTMicroversionIdAndConfigurationInterval2364,  # noqa: PLC0415
+        )
+        from ..models.bt_microversion_id_interval_367 import BTMicroversionIdInterval367  # noqa: PLC0415
+        from ..models.bt_part_display_data_17 import BTPartDisplayData17  # noqa: PLC0415
         from ..models.bt_part_studio_display_data_346_all_insertable_display_data import (
-            BTPartStudioDisplayData346AllInsertableDisplayData,
+            BTPartStudioDisplayData346AllInsertableDisplayData,  # noqa: PLC0415
         )
         from ..models.bt_part_studio_display_data_346_appearance_id_to_appearance_override import (
-            BTPartStudioDisplayData346AppearanceIdToAppearanceOverride,
+            BTPartStudioDisplayData346AppearanceIdToAppearanceOverride,  # noqa: PLC0415
         )
         from ..models.bt_part_studio_display_data_346_body_id_to_entity_appearance_settings import (
-            BTPartStudioDisplayData346BodyIdToEntityAppearanceSettings,
+            BTPartStudioDisplayData346BodyIdToEntityAppearanceSettings,  # noqa: PLC0415
         )
-        from ..models.bt_part_studio_display_data_346_decal_id_to_decal import BTPartStudioDisplayData346DecalIdToDecal
+        from ..models.bt_part_studio_display_data_346_decal_id_to_decal import (
+            BTPartStudioDisplayData346DecalIdToDecal,  # noqa: PLC0415
+        )
         from ..models.bt_part_studio_display_data_346_deterministic_id_to_associated_feature_ids import (
-            BTPartStudioDisplayData346DeterministicIdToAssociatedFeatureIds,
+            BTPartStudioDisplayData346DeterministicIdToAssociatedFeatureIds,  # noqa: PLC0415
         )
         from ..models.bt_part_studio_display_data_346_deterministic_id_to_entity import (
-            BTPartStudioDisplayData346DeterministicIdToEntity,
+            BTPartStudioDisplayData346DeterministicIdToEntity,  # noqa: PLC0415
         )
         from ..models.bt_part_studio_display_data_346_deterministic_id_to_part_display_data import (
-            BTPartStudioDisplayData346DeterministicIdToPartDisplayData,
+            BTPartStudioDisplayData346DeterministicIdToPartDisplayData,  # noqa: PLC0415
         )
         from ..models.bt_part_studio_display_data_346_deterministic_part_id_to_data import (
-            BTPartStudioDisplayData346DeterministicPartIdToData,
+            BTPartStudioDisplayData346DeterministicPartIdToData,  # noqa: PLC0415
         )
         from ..models.bt_part_studio_display_data_346_feature_id_to_operation_indices import (
-            BTPartStudioDisplayData346FeatureIdToOperationIndices,
+            BTPartStudioDisplayData346FeatureIdToOperationIndices,  # noqa: PLC0415
         )
         from ..models.bt_part_studio_display_data_346_part_id_and_tessellation_setting_to_buffers import (
-            BTPartStudioDisplayData346PartIdAndTessellationSettingToBuffers,
+            BTPartStudioDisplayData346PartIdAndTessellationSettingToBuffers,  # noqa: PLC0415
         )
         from ..models.bt_part_studio_display_data_346_sketch_feature_id_and_tessellation_setting_to_buffers import (
-            BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffers,
+            BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffers,  # noqa: PLC0415
         )
-        from ..models.bt_part_studio_display_data_346_sketch_images import BTPartStudioDisplayData346SketchImages
+        from ..models.bt_part_studio_display_data_346_sketch_images import (
+            BTPartStudioDisplayData346SketchImages,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         _all_insertable_display_data = d.pop("allInsertableDisplayData", UNSET)

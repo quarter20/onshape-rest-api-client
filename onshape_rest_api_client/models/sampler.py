@@ -57,7 +57,7 @@ class Sampler:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.accessor_model import AccessorModel
+        from ..models.accessor_model import AccessorModel  # noqa: PLC0415
 
         d = dict(src_dict)
         _input_ = d.pop("input", UNSET)

@@ -133,15 +133,15 @@ class OpenAPI:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.components import Components
-        from ..models.external_documentation import ExternalDocumentation
-        from ..models.info import Info
-        from ..models.open_api_extensions import OpenAPIExtensions
-        from ..models.open_api_paths import OpenAPIPaths
-        from ..models.open_api_webhooks import OpenAPIWebhooks
-        from ..models.security_requirement import SecurityRequirement
-        from ..models.server import Server
-        from ..models.tag import Tag
+        from ..models.components import Components  # noqa: PLC0415
+        from ..models.external_documentation import ExternalDocumentation  # noqa: PLC0415
+        from ..models.info import Info  # noqa: PLC0415
+        from ..models.open_api_extensions import OpenAPIExtensions  # noqa: PLC0415
+        from ..models.open_api_paths import OpenAPIPaths  # noqa: PLC0415
+        from ..models.open_api_webhooks import OpenAPIWebhooks  # noqa: PLC0415
+        from ..models.security_requirement import SecurityRequirement  # noqa: PLC0415
+        from ..models.server import Server  # noqa: PLC0415
+        from ..models.tag import Tag  # noqa: PLC0415
 
         d = dict(src_dict)
         _components = d.pop("components", UNSET)

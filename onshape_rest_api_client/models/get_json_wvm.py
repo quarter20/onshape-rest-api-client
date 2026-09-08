@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetJsonWvm(str, Enum):
+class GetJsonWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

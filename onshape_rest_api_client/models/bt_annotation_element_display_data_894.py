@@ -57,7 +57,7 @@ class BTAnnotationElementDisplayData894:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_annotation_element_display_data_894_annotation_id_to_display_object import (
-            BTAnnotationElementDisplayData894AnnotationIdToDisplayObject,
+            BTAnnotationElementDisplayData894AnnotationIdToDisplayObject,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

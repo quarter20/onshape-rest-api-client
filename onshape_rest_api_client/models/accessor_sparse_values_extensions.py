@@ -17,8 +17,6 @@ T = TypeVar("T", bound="AccessorSparseValuesExtensions")
 
 @_attrs_define
 class AccessorSparseValuesExtensions:
-    """ """
-
     additional_properties: dict[str, AccessorSparseValuesExtensionsAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -34,7 +32,7 @@ class AccessorSparseValuesExtensions:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.accessor_sparse_values_extensions_additional_property import (
-            AccessorSparseValuesExtensionsAdditionalProperty,
+            AccessorSparseValuesExtensionsAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

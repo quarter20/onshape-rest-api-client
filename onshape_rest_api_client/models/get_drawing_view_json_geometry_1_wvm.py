@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetDrawingViewJsonGeometry1Wvm(str, Enum):
+class GetDrawingViewJsonGeometry1Wvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

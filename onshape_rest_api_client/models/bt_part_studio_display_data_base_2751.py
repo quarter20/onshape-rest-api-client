@@ -141,14 +141,14 @@ class BTPartStudioDisplayDataBase2751:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_annotation_element_display_data_894 import BTAnnotationElementDisplayData894
-        from ..models.bt_element_display_data_326 import BTElementDisplayData326
-        from ..models.bt_full_element_id_756 import BTFullElementId756
-        from ..models.bt_microversion_id_366 import BTMicroversionId366
+        from ..models.bt_annotation_element_display_data_894 import BTAnnotationElementDisplayData894  # noqa: PLC0415
+        from ..models.bt_element_display_data_326 import BTElementDisplayData326  # noqa: PLC0415
+        from ..models.bt_full_element_id_756 import BTFullElementId756  # noqa: PLC0415
+        from ..models.bt_microversion_id_366 import BTMicroversionId366  # noqa: PLC0415
         from ..models.bt_microversion_id_and_configuration_interval_2364 import (
-            BTMicroversionIdAndConfigurationInterval2364,
+            BTMicroversionIdAndConfigurationInterval2364,  # noqa: PLC0415
         )
-        from ..models.bt_microversion_id_interval_367 import BTMicroversionIdInterval367
+        from ..models.bt_microversion_id_interval_367 import BTMicroversionIdInterval367  # noqa: PLC0415
 
         d = dict(src_dict)
         _annotations_for_element = d.pop("annotationsForElement", UNSET)

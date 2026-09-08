@@ -47,7 +47,7 @@ class BTPropertyValueParam:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_property_value_param_value import BTPropertyValueParamValue
+        from ..models.bt_property_value_param_value import BTPropertyValueParamValue  # noqa: PLC0415
 
         d = dict(src_dict)
         property_id = d.pop("propertyId", UNSET)

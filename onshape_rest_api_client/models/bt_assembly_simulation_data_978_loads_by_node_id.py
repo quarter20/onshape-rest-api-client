@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTAssemblySimulationData978LoadsByNodeId")
 
 @_attrs_define
 class BTAssemblySimulationData978LoadsByNodeId:
-    """ """
-
     additional_properties: dict[str, BTMLoad3538] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTAssemblySimulationData978LoadsByNodeId:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btm_load_3538 import BTMLoad3538
+        from ..models.btm_load_3538 import BTMLoad3538  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_assembly_simulation_data_978_loads_by_node_id = cls()

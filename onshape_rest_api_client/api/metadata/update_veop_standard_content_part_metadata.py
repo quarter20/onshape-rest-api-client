@@ -6,7 +6,7 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.update_veop_standard_content_part_metadata_response_default import (
-    UpdateVEOPStandardContentPartMetadataResponseDefault,
+    UpdateVeopStandardContentPartMetadataResponseDefault,
 )
 from ...types import UNSET, Response, Unset
 
@@ -46,15 +46,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> UpdateVEOPStandardContentPartMetadataResponseDefault:
-    response_default = UpdateVEOPStandardContentPartMetadataResponseDefault.from_dict(response.json())
+) -> UpdateVeopStandardContentPartMetadataResponseDefault:
+    response_default = UpdateVeopStandardContentPartMetadataResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[UpdateVEOPStandardContentPartMetadataResponseDefault]:
+) -> Response[UpdateVeopStandardContentPartMetadataResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -70,7 +70,7 @@ def sync_detailed(
     body: str,
     link_document_id: str | Unset = UNSET,
     company_id: str | Unset = UNSET,
-) -> Response[UpdateVEOPStandardContentPartMetadataResponseDefault]:
+) -> Response[UpdateVeopStandardContentPartMetadataResponseDefault]:
     """Update the metadata for a standard content part.
 
      Specify the property metadata to update in the Request body. See [API Guide:
@@ -88,7 +88,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[UpdateVEOPStandardContentPartMetadataResponseDefault]
+        Response[UpdateVeopStandardContentPartMetadataResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -112,7 +112,7 @@ def sync(
     body: str,
     link_document_id: str | Unset = UNSET,
     company_id: str | Unset = UNSET,
-) -> UpdateVEOPStandardContentPartMetadataResponseDefault | None:
+) -> UpdateVeopStandardContentPartMetadataResponseDefault | None:
     """Update the metadata for a standard content part.
 
      Specify the property metadata to update in the Request body. See [API Guide:
@@ -130,7 +130,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        UpdateVEOPStandardContentPartMetadataResponseDefault
+        UpdateVeopStandardContentPartMetadataResponseDefault
     """
 
     return sync_detailed(
@@ -149,7 +149,7 @@ async def asyncio_detailed(
     body: str,
     link_document_id: str | Unset = UNSET,
     company_id: str | Unset = UNSET,
-) -> Response[UpdateVEOPStandardContentPartMetadataResponseDefault]:
+) -> Response[UpdateVeopStandardContentPartMetadataResponseDefault]:
     """Update the metadata for a standard content part.
 
      Specify the property metadata to update in the Request body. See [API Guide:
@@ -167,7 +167,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[UpdateVEOPStandardContentPartMetadataResponseDefault]
+        Response[UpdateVeopStandardContentPartMetadataResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -189,7 +189,7 @@ async def asyncio(
     body: str,
     link_document_id: str | Unset = UNSET,
     company_id: str | Unset = UNSET,
-) -> UpdateVEOPStandardContentPartMetadataResponseDefault | None:
+) -> UpdateVeopStandardContentPartMetadataResponseDefault | None:
     """Update the metadata for a standard content part.
 
      Specify the property metadata to update in the Request body. See [API Guide:
@@ -207,7 +207,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        UpdateVEOPStandardContentPartMetadataResponseDefault
+        UpdateVeopStandardContentPartMetadataResponseDefault
     """
 
     return (

@@ -15,8 +15,6 @@ T = TypeVar("T", bound="OpenAPIPathsExtensions")
 
 @_attrs_define
 class OpenAPIPathsExtensions:
-    """ """
-
     additional_properties: dict[str, OpenAPIPathsExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,9 @@ class OpenAPIPathsExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.open_api_paths_extensions_additional_property import OpenAPIPathsExtensionsAdditionalProperty
+        from ..models.open_api_paths_extensions_additional_property import (
+            OpenAPIPathsExtensionsAdditionalProperty,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         open_api_paths_extensions = cls()

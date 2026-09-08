@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTBillOfMaterialsElementInfoSelectedMetadataEnumValues")
 
 @_attrs_define
 class BTBillOfMaterialsElementInfoSelectedMetadataEnumValues:
-    """ """
-
     additional_properties: dict[str, BTSelectedMetadataEnumValue] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTBillOfMaterialsElementInfoSelectedMetadataEnumValues:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_selected_metadata_enum_value import BTSelectedMetadataEnumValue
+        from ..models.bt_selected_metadata_enum_value import BTSelectedMetadataEnumValue  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_bill_of_materials_element_info_selected_metadata_enum_values = cls()

@@ -34,7 +34,6 @@ class BTAssemblySimulation2246:
             library have a namespace value of `""`. Custom features identify the Feature Studio that contains the
             definition.
         node_id (str | Unset): ID for the feature node.
-        number_of_modes (float | Unset):
         parameter_libraries (list[BTMParameter1] | Unset):
         parent_suppressed (bool | Unset):
         return_after_subfeatures (bool | Unset): For internal use only. Should always be `false`.
@@ -58,7 +57,6 @@ class BTAssemblySimulation2246:
     name: str | Unset = UNSET
     namespace: str | Unset = UNSET
     node_id: str | Unset = UNSET
-    number_of_modes: float | Unset = UNSET
     parameter_libraries: list[BTMParameter1] | Unset = UNSET
     parent_suppressed: bool | Unset = UNSET
     return_after_subfeatures: bool | Unset = UNSET
@@ -91,8 +89,6 @@ class BTAssemblySimulation2246:
         namespace = self.namespace
 
         node_id = self.node_id
-
-        number_of_modes = self.number_of_modes
 
         parameter_libraries: list[dict[str, Any]] | Unset = UNSET
         if not isinstance(self.parameter_libraries, Unset):
@@ -151,8 +147,6 @@ class BTAssemblySimulation2246:
             field_dict["namespace"] = namespace
         if node_id is not UNSET:
             field_dict["nodeId"] = node_id
-        if number_of_modes is not UNSET:
-            field_dict["numberOfModes"] = number_of_modes
         if parameter_libraries is not UNSET:
             field_dict["parameterLibraries"] = parameter_libraries
         if parent_suppressed is not UNSET:
@@ -178,9 +172,9 @@ class BTAssemblySimulation2246:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btm_feature_134 import BTMFeature134
-        from ..models.btm_parameter_1 import BTMParameter1
-        from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
+        from ..models.btm_feature_134 import BTMFeature134  # noqa: PLC0415
+        from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
+        from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)
@@ -202,8 +196,6 @@ class BTAssemblySimulation2246:
         namespace = d.pop("namespace", UNSET)
 
         node_id = d.pop("nodeId", UNSET)
-
-        number_of_modes = d.pop("numberOfModes", UNSET)
 
         _parameter_libraries = d.pop("parameterLibraries", UNSET)
         parameter_libraries: list[BTMParameter1] | Unset = UNSET
@@ -260,7 +252,6 @@ class BTAssemblySimulation2246:
             name=name,
             namespace=namespace,
             node_id=node_id,
-            number_of_modes=number_of_modes,
             parameter_libraries=parameter_libraries,
             parent_suppressed=parent_suppressed,
             return_after_subfeatures=return_after_subfeatures,

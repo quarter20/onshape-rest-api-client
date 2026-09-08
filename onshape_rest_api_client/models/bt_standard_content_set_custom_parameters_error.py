@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTStandardContentSetCustomParametersError(str, Enum):
+class BTStandardContentSetCustomParametersError(StrEnum):
     FAILED_TO_SPECIFY_REQUIRED_PARAMETER = "FAILED_TO_SPECIFY_REQUIRED_PARAMETER"
     INVALID_PARAMETER_ID = "INVALID_PARAMETER_ID"
     INVALID_PARAMETER_VALUE = "INVALID_PARAMETER_VALUE"

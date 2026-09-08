@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetAssemblyDefinitionWvm(str, Enum):
+class GetAssemblyDefinitionWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

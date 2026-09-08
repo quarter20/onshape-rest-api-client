@@ -475,14 +475,14 @@ class BTUserInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_billing_plan_info import BTBillingPlanInfo
-        from ..models.bt_company_summary_info import BTCompanySummaryInfo
-        from ..models.bt_device_login_secret_info import BTDeviceLoginSecretInfo
-        from ..models.bt_discount_info import BTDiscountInfo
-        from ..models.bt_purchase_info import BTPurchaseInfo
-        from ..models.bt_session_credential_info import BTSessionCredentialInfo
-        from ..models.bt_trial_info import BTTrialInfo
-        from ..models.global_permission_info import GlobalPermissionInfo
+        from ..models.bt_billing_plan_info import BTBillingPlanInfo  # noqa: PLC0415
+        from ..models.bt_company_summary_info import BTCompanySummaryInfo  # noqa: PLC0415
+        from ..models.bt_device_login_secret_info import BTDeviceLoginSecretInfo  # noqa: PLC0415
+        from ..models.bt_discount_info import BTDiscountInfo  # noqa: PLC0415
+        from ..models.bt_purchase_info import BTPurchaseInfo  # noqa: PLC0415
+        from ..models.bt_session_credential_info import BTSessionCredentialInfo  # noqa: PLC0415
+        from ..models.bt_trial_info import BTTrialInfo  # noqa: PLC0415
+        from ..models.global_permission_info import GlobalPermissionInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         json_type = d.pop("jsonType")

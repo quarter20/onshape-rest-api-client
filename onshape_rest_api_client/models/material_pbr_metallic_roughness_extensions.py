@@ -17,8 +17,6 @@ T = TypeVar("T", bound="MaterialPbrMetallicRoughnessExtensions")
 
 @_attrs_define
 class MaterialPbrMetallicRoughnessExtensions:
-    """ """
-
     additional_properties: dict[str, MaterialPbrMetallicRoughnessExtensionsAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -34,7 +32,7 @@ class MaterialPbrMetallicRoughnessExtensions:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.material_pbr_metallic_roughness_extensions_additional_property import (
-            MaterialPbrMetallicRoughnessExtensionsAdditionalProperty,
+            MaterialPbrMetallicRoughnessExtensionsAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

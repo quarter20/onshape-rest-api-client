@@ -15,8 +15,6 @@ T = TypeVar("T", bound="AccessorExtensions")
 
 @_attrs_define
 class AccessorExtensions:
-    """ """
-
     additional_properties: dict[str, AccessorExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,9 @@ class AccessorExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.accessor_extensions_additional_property import AccessorExtensionsAdditionalProperty
+        from ..models.accessor_extensions_additional_property import (
+            AccessorExtensionsAdditionalProperty,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         accessor_extensions = cls()

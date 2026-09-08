@@ -65,10 +65,10 @@ def sync_detailed(
     client: AuthenticatedClient,
     body: BTBAppElementBlobUploadParams | Unset = UNSET,
 ) -> Response[BTAppElementModifyInfo]:
-    r"""Create a new blob subelement from an uploaded file.
+    """Create a new blob subelement from an uploaded file.
 
-     Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-
-    data\"` in the request header.
+     Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"`
+    in the request header.
 
     Args:
         did (str):
@@ -109,10 +109,10 @@ def sync(
     client: AuthenticatedClient,
     body: BTBAppElementBlobUploadParams | Unset = UNSET,
 ) -> BTAppElementModifyInfo | None:
-    r"""Create a new blob subelement from an uploaded file.
+    """Create a new blob subelement from an uploaded file.
 
-     Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-
-    data\"` in the request header.
+     Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"`
+    in the request header.
 
     Args:
         did (str):
@@ -148,10 +148,10 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     body: BTBAppElementBlobUploadParams | Unset = UNSET,
 ) -> Response[BTAppElementModifyInfo]:
-    r"""Create a new blob subelement from an uploaded file.
+    """Create a new blob subelement from an uploaded file.
 
-     Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-
-    data\"` in the request header.
+     Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"`
+    in the request header.
 
     Args:
         did (str):
@@ -190,10 +190,10 @@ async def asyncio(
     client: AuthenticatedClient,
     body: BTBAppElementBlobUploadParams | Unset = UNSET,
 ) -> BTAppElementModifyInfo | None:
-    r"""Create a new blob subelement from an uploaded file.
+    """Create a new blob subelement from an uploaded file.
 
-     Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-
-    data\"` in the request header.
+     Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"`
+    in the request header.
 
     Args:
         did (str):

@@ -242,12 +242,14 @@ class BTPartData16:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_closed_constituent_part_data_2911 import BTClosedConstituentPartData2911
+        from ..models.bt_closed_constituent_part_data_2911 import BTClosedConstituentPartData2911  # noqa: PLC0415
         from ..models.bt_part_data_16_flattened_to_unflattened_entities_mapping import (
-            BTPartData16FlattenedToUnflattenedEntitiesMapping,
+            BTPartData16FlattenedToUnflattenedEntitiesMapping,  # noqa: PLC0415
         )
-        from ..models.bt_part_data_16_flattened_to_unflattened_mapping import BTPartData16FlattenedToUnflattenedMapping
-        from ..models.bt_vector_3d389 import BTVector3D389
+        from ..models.bt_part_data_16_flattened_to_unflattened_mapping import (
+            BTPartData16FlattenedToUnflattenedMapping,  # noqa: PLC0415
+        )
+        from ..models.bt_vector_3d389 import BTVector3D389  # noqa: PLC0415
 
         d = dict(src_dict)
         _best_available_tessellation_setting = d.pop("bestAvailableTessellationSetting", UNSET)

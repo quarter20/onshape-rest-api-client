@@ -63,7 +63,7 @@ class BTMateOccurrenceData1671:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_mate_occurrence_data_1671_value_map import BTMateOccurrenceData1671ValueMap
+        from ..models.bt_mate_occurrence_data_1671_value_map import BTMateOccurrenceData1671ValueMap  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

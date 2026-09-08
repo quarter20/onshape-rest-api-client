@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTAssemblyPartBodyType(str, Enum):
+class BTAssemblyPartBodyType(StrEnum):
     COMPOSITE = "composite"
     SHEET = "sheet"
     SOLID = "solid"

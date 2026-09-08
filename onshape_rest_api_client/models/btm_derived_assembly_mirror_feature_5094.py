@@ -178,12 +178,14 @@ class BTMDerivedAssemblyMirrorFeature5094:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btm_assembly_feature_887 import BTMAssemblyFeature887
-        from ..models.btm_feature_134 import BTMFeature134
-        from ..models.btm_parameter_1 import BTMParameter1
-        from ..models.btm_parameter_array_2025 import BTMParameterArray2025
-        from ..models.btm_parameter_reference_with_configuration_3028 import BTMParameterReferenceWithConfiguration3028
-        from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
+        from ..models.btm_assembly_feature_887 import BTMAssemblyFeature887  # noqa: PLC0415
+        from ..models.btm_feature_134 import BTMFeature134  # noqa: PLC0415
+        from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
+        from ..models.btm_parameter_array_2025 import BTMParameterArray2025  # noqa: PLC0415
+        from ..models.btm_parameter_reference_with_configuration_3028 import (
+            BTMParameterReferenceWithConfiguration3028,  # noqa: PLC0415
+        )
+        from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
 
         d = dict(src_dict)
         _array_parameter_from_feature = d.pop("arrayParameterFromFeature", UNSET)

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTNoticeLevel(str, Enum):
+class GBTNoticeLevel(StrEnum):
     ERROR = "ERROR"
     INFO = "INFO"
     INTERNAL = "INTERNAL"

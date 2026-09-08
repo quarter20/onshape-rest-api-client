@@ -100,8 +100,8 @@ class BTBillOfMaterialsUniqueItemId2029:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_element_reference_725 import BTElementReference725
-        from ..models.btpso_identity_2741 import BTPSOIdentity2741
+        from ..models.bt_element_reference_725 import BTElementReference725  # noqa: PLC0415
+        from ..models.btpso_identity_2741 import BTPSOIdentity2741  # noqa: PLC0415
 
         d = dict(src_dict)
         api_configuration = d.pop("apiConfiguration", UNSET)

@@ -63,8 +63,8 @@ class BTBaseEntityAppearanceEntry3607:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_graphics_appearance_1152 import BTGraphicsAppearance1152
-        from ..models.bt_part_metadata_source_2895 import BTPartMetadataSource2895
+        from ..models.bt_graphics_appearance_1152 import BTGraphicsAppearance1152  # noqa: PLC0415
+        from ..models.bt_part_metadata_source_2895 import BTPartMetadataSource2895  # noqa: PLC0415
 
         d = dict(src_dict)
         affected_deterministic_ids = cast(list[str], d.pop("affectedDeterministicIds", UNSET))

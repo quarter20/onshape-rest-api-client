@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTWeldFinishing(str, Enum):
+class GBTWeldFinishing(StrEnum):
     CHIPPING = "CHIPPING"
     GRINDING = "GRINDING"
     HAMMERING = "HAMMERING"

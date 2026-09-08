@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTQuantityType(str, Enum):
+class GBTQuantityType(StrEnum):
     ACCELERATION = "ACCELERATION"
     ANGLE = "ANGLE"
     ANGULAR_VELOCITY = "ANGULAR_VELOCITY"

@@ -6,13 +6,13 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.bt_metadata_object_list_info_bt_metadata_part_info import BTMetadataObjectListInfoBTMetadataPartInfo
-from ...models.get_wmve_ps_metadata_wvm import GetWMVEPsMetadataWvm
+from ...models.get_wmve_ps_metadata_wvm import GetWmvePsMetadataWvm
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     did: str,
-    wvm: GetWMVEPsMetadataWvm,
+    wvm: GetWmvePsMetadataWvm,
     wvmid: str,
     eid: str,
     *,
@@ -75,7 +75,7 @@ def _build_response(
 
 def sync_detailed(
     did: str,
-    wvm: GetWMVEPsMetadataWvm,
+    wvm: GetWmvePsMetadataWvm,
     wvmid: str,
     eid: str,
     *,
@@ -104,7 +104,7 @@ def sync_detailed(
 
     Args:
         did (str):
-        wvm (GetWMVEPsMetadataWvm):
+        wvm (GetWmvePsMetadataWvm):
         wvmid (str):
         eid (str):
         link_document_id (str | Unset):  Default: ''.
@@ -144,7 +144,7 @@ def sync_detailed(
 
 def sync(
     did: str,
-    wvm: GetWMVEPsMetadataWvm,
+    wvm: GetWmvePsMetadataWvm,
     wvmid: str,
     eid: str,
     *,
@@ -173,7 +173,7 @@ def sync(
 
     Args:
         did (str):
-        wvm (GetWMVEPsMetadataWvm):
+        wvm (GetWmvePsMetadataWvm):
         wvmid (str):
         eid (str):
         link_document_id (str | Unset):  Default: ''.
@@ -208,7 +208,7 @@ def sync(
 
 async def asyncio_detailed(
     did: str,
-    wvm: GetWMVEPsMetadataWvm,
+    wvm: GetWmvePsMetadataWvm,
     wvmid: str,
     eid: str,
     *,
@@ -237,7 +237,7 @@ async def asyncio_detailed(
 
     Args:
         did (str):
-        wvm (GetWMVEPsMetadataWvm):
+        wvm (GetWmvePsMetadataWvm):
         wvmid (str):
         eid (str):
         link_document_id (str | Unset):  Default: ''.
@@ -275,7 +275,7 @@ async def asyncio_detailed(
 
 async def asyncio(
     did: str,
-    wvm: GetWMVEPsMetadataWvm,
+    wvm: GetWmvePsMetadataWvm,
     wvmid: str,
     eid: str,
     *,
@@ -304,7 +304,7 @@ async def asyncio(
 
     Args:
         did (str):
-        wvm (GetWMVEPsMetadataWvm):
+        wvm (GetWmvePsMetadataWvm):
         wvmid (str):
         eid (str):
         link_document_id (str | Unset):  Default: ''.

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTMeshState(str, Enum):
+class GBTMeshState(StrEnum):
     ALL_MESH = "ALL_MESH"
     MIXED = "MIXED"
     NO_MESH = "NO_MESH"

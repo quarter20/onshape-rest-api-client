@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class ElementType(str, Enum):
+class ElementType(StrEnum):
     MAT2 = "MAT2"
     MAT3 = "MAT3"
     MAT4 = "MAT4"

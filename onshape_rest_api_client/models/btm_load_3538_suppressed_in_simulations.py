@@ -11,8 +11,6 @@ T = TypeVar("T", bound="BTMLoad3538SuppressedInSimulations")
 
 @_attrs_define
 class BTMLoad3538SuppressedInSimulations:
-    """ """
-
     additional_properties: dict[str, int] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

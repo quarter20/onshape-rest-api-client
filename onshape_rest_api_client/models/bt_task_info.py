@@ -64,6 +64,7 @@ class BTTaskInfo:
         version_id (str | Unset):
         view_ref (str | Unset): URI to visualize the resource in a webclient if applicable.
         workflow_info (BTWorkflowableObjectInfo | Unset):
+        workflow_state (str | Unset):
         workflowable_object_type (int | Unset):
         workspace_id (str | Unset):
     """
@@ -103,6 +104,7 @@ class BTTaskInfo:
     version_id: str | Unset = UNSET
     view_ref: str | Unset = UNSET
     workflow_info: BTWorkflowableObjectInfo | Unset = UNSET
+    workflow_state: str | Unset = UNSET
     workflowable_object_type: int | Unset = UNSET
     workspace_id: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -222,6 +224,8 @@ class BTTaskInfo:
         if not isinstance(self.workflow_info, Unset):
             workflow_info = self.workflow_info.to_dict()
 
+        workflow_state = self.workflow_state
+
         workflowable_object_type = self.workflowable_object_type
 
         workspace_id = self.workspace_id
@@ -299,6 +303,8 @@ class BTTaskInfo:
             field_dict["viewRef"] = view_ref
         if workflow_info is not UNSET:
             field_dict["workflowInfo"] = workflow_info
+        if workflow_state is not UNSET:
+            field_dict["workflowState"] = workflow_state
         if workflowable_object_type is not UNSET:
             field_dict["workflowableObjectType"] = workflowable_object_type
         if workspace_id is not UNSET:
@@ -308,16 +314,16 @@ class BTTaskInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_comment_info import BTCommentInfo
-        from ..models.bt_metadata_property_info import BTMetadataPropertyInfo
-        from ..models.bt_published_workflow_info import BTPublishedWorkflowInfo
-        from ..models.bt_task_item_info import BTTaskItemInfo
-        from ..models.bt_task_rbac_role_info import BTTaskRbacRoleInfo
-        from ..models.bt_task_team_summary_info import BTTaskTeamSummaryInfo
-        from ..models.bt_task_user_summary_info import BTTaskUserSummaryInfo
-        from ..models.bt_thumbnail_info import BTThumbnailInfo
-        from ..models.bt_user_summary_info import BTUserSummaryInfo
-        from ..models.bt_workflowable_object_info import BTWorkflowableObjectInfo
+        from ..models.bt_comment_info import BTCommentInfo  # noqa: PLC0415
+        from ..models.bt_metadata_property_info import BTMetadataPropertyInfo  # noqa: PLC0415
+        from ..models.bt_published_workflow_info import BTPublishedWorkflowInfo  # noqa: PLC0415
+        from ..models.bt_task_item_info import BTTaskItemInfo  # noqa: PLC0415
+        from ..models.bt_task_rbac_role_info import BTTaskRbacRoleInfo  # noqa: PLC0415
+        from ..models.bt_task_team_summary_info import BTTaskTeamSummaryInfo  # noqa: PLC0415
+        from ..models.bt_task_user_summary_info import BTTaskUserSummaryInfo  # noqa: PLC0415
+        from ..models.bt_thumbnail_info import BTThumbnailInfo  # noqa: PLC0415
+        from ..models.bt_user_summary_info import BTUserSummaryInfo  # noqa: PLC0415
+        from ..models.bt_workflowable_object_info import BTWorkflowableObjectInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         action = d.pop("action", UNSET)
@@ -467,6 +473,8 @@ class BTTaskInfo:
         else:
             workflow_info = BTWorkflowableObjectInfo.from_dict(_workflow_info)
 
+        workflow_state = d.pop("workflowState", UNSET)
+
         workflowable_object_type = d.pop("workflowableObjectType", UNSET)
 
         workspace_id = d.pop("workspaceId", UNSET)
@@ -507,6 +515,7 @@ class BTTaskInfo:
             version_id=version_id,
             view_ref=view_ref,
             workflow_info=workflow_info,
+            workflow_state=workflow_state,
             workflowable_object_type=workflowable_object_type,
             workspace_id=workspace_id,
         )

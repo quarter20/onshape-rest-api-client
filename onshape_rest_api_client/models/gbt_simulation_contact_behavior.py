@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTSimulationContactBehavior(str, Enum):
+class GBTSimulationContactBehavior(StrEnum):
     FUSE_IN_CONTACT = "FUSE_IN_CONTACT"
     FUSE_IN_CONTACT_AND_USE_MATES = "FUSE_IN_CONTACT_AND_USE_MATES"
     MATES_ONLY = "MATES_ONLY"

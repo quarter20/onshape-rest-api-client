@@ -124,10 +124,10 @@ class BTBObjExportParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btb_cloud_storage_options import BTBCloudStorageOptions
-        from ..models.btb_email_export_options import BTBEmailExportOptions
-        from ..models.btb_export_advanced_params import BTBExportAdvancedParams
-        from ..models.btb_export_mesh_params import BTBExportMeshParams
+        from ..models.btb_cloud_storage_options import BTBCloudStorageOptions  # noqa: PLC0415
+        from ..models.btb_email_export_options import BTBEmailExportOptions  # noqa: PLC0415
+        from ..models.btb_export_advanced_params import BTBExportAdvancedParams  # noqa: PLC0415
+        from ..models.btb_export_mesh_params import BTBExportMeshParams  # noqa: PLC0415
 
         d = dict(src_dict)
         _advanced_params = d.pop("advancedParams", UNSET)

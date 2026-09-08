@@ -55,7 +55,7 @@ class BTUpdateReferenceParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.update_params import UpdateParams
+        from ..models.update_params import UpdateParams  # noqa: PLC0415
 
         d = dict(src_dict)
         connection_id = d.pop("connectionId", UNSET)

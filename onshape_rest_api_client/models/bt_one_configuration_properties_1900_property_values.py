@@ -11,8 +11,6 @@ T = TypeVar("T", bound="BTOneConfigurationProperties1900PropertyValues")
 
 @_attrs_define
 class BTOneConfigurationProperties1900PropertyValues:
-    """ """
-
     additional_properties: dict[str, str] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

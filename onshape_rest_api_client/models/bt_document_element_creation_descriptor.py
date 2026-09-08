@@ -47,7 +47,7 @@ class BTDocumentElementCreationDescriptor:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_app_element_params import BTAppElementParams
+        from ..models.bt_app_element_params import BTAppElementParams  # noqa: PLC0415
 
         d = dict(src_dict)
         _element_params = d.pop("elementParams", UNSET)

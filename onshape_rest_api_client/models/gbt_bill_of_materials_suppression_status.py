@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTBillOfMaterialsSuppressionStatus(str, Enum):
+class GBTBillOfMaterialsSuppressionStatus(StrEnum):
     SUPPRESSED = "SUPPRESSED"
     UNKNOWN = "UNKNOWN"
     UNSET = "UNSET"

@@ -141,11 +141,11 @@ class BTRootAssemblyInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_assembly_feature_info import BTAssemblyFeatureInfo
-        from ..models.bt_assembly_instance_info import BTAssemblyInstanceInfo
-        from ..models.bt_assembly_occurrence_info import BTAssemblyOccurrenceInfo
-        from ..models.bt_assembly_parametric_instance_info import BTAssemblyParametricInstanceInfo
-        from ..models.bt_assembly_pattern_info import BTAssemblyPatternInfo
+        from ..models.bt_assembly_feature_info import BTAssemblyFeatureInfo  # noqa: PLC0415
+        from ..models.bt_assembly_instance_info import BTAssemblyInstanceInfo  # noqa: PLC0415
+        from ..models.bt_assembly_occurrence_info import BTAssemblyOccurrenceInfo  # noqa: PLC0415
+        from ..models.bt_assembly_parametric_instance_info import BTAssemblyParametricInstanceInfo  # noqa: PLC0415
+        from ..models.bt_assembly_pattern_info import BTAssemblyPatternInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         configuration = d.pop("configuration", UNSET)

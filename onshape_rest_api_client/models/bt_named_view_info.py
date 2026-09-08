@@ -80,8 +80,10 @@ class BTNamedViewInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_graphics_section_view_state_data_4379 import BTGraphicsSectionViewStateData4379
-        from ..models.bt_section_plane_info import BTSectionPlaneInfo
+        from ..models.bt_graphics_section_view_state_data_4379 import (
+            BTGraphicsSectionViewStateData4379,  # noqa: PLC0415
+        )
+        from ..models.bt_section_plane_info import BTSectionPlaneInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         angle = d.pop("angle", UNSET)

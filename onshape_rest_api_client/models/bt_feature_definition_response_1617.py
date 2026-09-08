@@ -89,8 +89,8 @@ class BTFeatureDefinitionResponse1617:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_feature_state_1688 import BTFeatureState1688
-        from ..models.btm_feature_134 import BTMFeature134
+        from ..models.bt_feature_state_1688 import BTFeatureState1688  # noqa: PLC0415
+        from ..models.btm_feature_134 import BTMFeature134  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

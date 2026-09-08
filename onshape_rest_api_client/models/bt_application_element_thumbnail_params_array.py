@@ -43,7 +43,9 @@ class BTApplicationElementThumbnailParamsArray:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_application_element_thumbnail_params import BTApplicationElementThumbnailParams
+        from ..models.bt_application_element_thumbnail_params import (
+            BTApplicationElementThumbnailParams,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         _thumbnails = d.pop("thumbnails", UNSET)

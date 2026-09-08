@@ -15,8 +15,6 @@ T = TypeVar("T", bound="LicenseExtensions")
 
 @_attrs_define
 class LicenseExtensions:
-    """ """
-
     additional_properties: dict[str, LicenseExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class LicenseExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.license_extensions_additional_property import LicenseExtensionsAdditionalProperty
+        from ..models.license_extensions_additional_property import LicenseExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         license_extensions = cls()

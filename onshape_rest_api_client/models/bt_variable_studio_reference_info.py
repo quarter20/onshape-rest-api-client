@@ -81,7 +81,7 @@ class BTVariableStudioReferenceInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_variable_studio_reference_info_configuration_id_to_value import (
-            BTVariableStudioReferenceInfoConfigurationIdToValue,
+            BTVariableStudioReferenceInfoConfigurationIdToValue,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

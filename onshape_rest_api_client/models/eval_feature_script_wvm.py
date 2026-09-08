@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class EvalFeatureScriptWvm(str, Enum):
+class EvalFeatureScriptWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

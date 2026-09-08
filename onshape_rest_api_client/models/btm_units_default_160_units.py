@@ -11,8 +11,6 @@ T = TypeVar("T", bound="BTMUnitsDefault160Units")
 
 @_attrs_define
 class BTMUnitsDefault160Units:
-    """ """
-
     additional_properties: dict[str, str] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

@@ -116,8 +116,8 @@ class AccessorModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.accessor_data import AccessorData
-        from ..models.buffer_view_model import BufferViewModel
+        from ..models.accessor_data import AccessorData  # noqa: PLC0415
+        from ..models.buffer_view_model import BufferViewModel  # noqa: PLC0415
 
         d = dict(src_dict)
         _accessor_data = d.pop("accessorData", UNSET)

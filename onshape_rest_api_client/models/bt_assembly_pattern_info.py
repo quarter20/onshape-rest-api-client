@@ -79,7 +79,7 @@ class BTAssemblyPatternInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_assembly_pattern_info_seed_to_pattern_instances import (
-            BTAssemblyPatternInfoSeedToPatternInstances,
+            BTAssemblyPatternInfoSeedToPatternInstances,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

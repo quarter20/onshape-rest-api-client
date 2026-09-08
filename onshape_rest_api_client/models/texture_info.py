@@ -61,8 +61,8 @@ class TextureInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.texture_info_extensions import TextureInfoExtensions
-        from ..models.texture_info_extras import TextureInfoExtras
+        from ..models.texture_info_extensions import TextureInfoExtensions  # noqa: PLC0415
+        from ..models.texture_info_extras import TextureInfoExtras  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

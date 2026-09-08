@@ -57,7 +57,7 @@ class BTFSValueMap2062:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btfs_value_map_entry_2077 import BTFSValueMapEntry2077
+        from ..models.btfs_value_map_entry_2077 import BTFSValueMapEntry2077  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType")

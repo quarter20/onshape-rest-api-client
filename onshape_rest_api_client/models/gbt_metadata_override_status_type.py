@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTMetadataOverrideStatusType(str, Enum):
+class GBTMetadataOverrideStatusType(StrEnum):
     COMPUTED_WITH_NO_OVERRIDES = "COMPUTED_WITH_NO_OVERRIDES"
     COMPUTED_WITH_OVERRIDES = "COMPUTED_WITH_OVERRIDES"
     COMPUTED_WITH_SUBASSEMBLY_OVERRIDES = "COMPUTED_WITH_SUBASSEMBLY_OVERRIDES"

@@ -48,7 +48,9 @@ class BTConfiguredValue:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_configured_value_configuration_to_value import BTConfiguredValueConfigurationToValue
+        from ..models.bt_configured_value_configuration_to_value import (
+            BTConfiguredValueConfigurationToValue,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         configuration_parameter_id = d.pop("configurationParameterId", UNSET)

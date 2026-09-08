@@ -15,8 +15,6 @@ T = TypeVar("T", bound="TextureInfoExtensions")
 
 @_attrs_define
 class TextureInfoExtensions:
-    """ """
-
     additional_properties: dict[str, TextureInfoExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,9 @@ class TextureInfoExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.texture_info_extensions_additional_property import TextureInfoExtensionsAdditionalProperty
+        from ..models.texture_info_extensions_additional_property import (
+            TextureInfoExtensionsAdditionalProperty,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         texture_info_extensions = cls()

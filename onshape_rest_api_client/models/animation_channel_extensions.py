@@ -15,8 +15,6 @@ T = TypeVar("T", bound="AnimationChannelExtensions")
 
 @_attrs_define
 class AnimationChannelExtensions:
-    """ """
-
     additional_properties: dict[str, AnimationChannelExtensionsAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -32,7 +30,7 @@ class AnimationChannelExtensions:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.animation_channel_extensions_additional_property import (
-            AnimationChannelExtensionsAdditionalProperty,
+            AnimationChannelExtensionsAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

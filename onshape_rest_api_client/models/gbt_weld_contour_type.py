@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTWeldContourType(str, Enum):
+class GBTWeldContourType(StrEnum):
     CONCAVE = "CONCAVE"
     CONVEX = "CONVEX"
     FLAT = "FLAT"

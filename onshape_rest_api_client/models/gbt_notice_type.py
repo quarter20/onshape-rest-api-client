@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTNoticeType(str, Enum):
+class GBTNoticeType(StrEnum):
     EXECUTION = "EXECUTION"
     MODELING = "MODELING"
     OTHER = "OTHER"

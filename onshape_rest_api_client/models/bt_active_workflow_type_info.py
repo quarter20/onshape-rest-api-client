@@ -57,7 +57,7 @@ class BTActiveWorkflowTypeInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_published_workflow_info import BTPublishedWorkflowInfo
+        from ..models.bt_published_workflow_info import BTPublishedWorkflowInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         has_inactive_custom_workflows = d.pop("hasInactiveCustomWorkflows", UNSET)

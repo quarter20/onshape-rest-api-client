@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTLoadType(str, Enum):
+class GBTLoadType(StrEnum):
     ACCELERATION = "ACCELERATION"
     ANGULAR_VELOCITY = "ANGULAR_VELOCITY"
     BEARING_LOAD = "BEARING_LOAD"

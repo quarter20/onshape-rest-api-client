@@ -54,7 +54,7 @@ class BTImageMapping3821:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_matrix_3x3340 import BTMatrix3X3340
+        from ..models.bt_matrix_3x3340 import BTMatrix3X3340  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

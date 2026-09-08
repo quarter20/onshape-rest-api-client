@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTExportModelBodiesResponse734NodeIdToReferencedProperty
 
 @_attrs_define
 class BTExportModelBodiesResponse734NodeIdToReferencedProperty:
-    """ """
-
     additional_properties: dict[str, BTExportModelProperties3216] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTExportModelBodiesResponse734NodeIdToReferencedProperty:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_export_model_properties_3216 import BTExportModelProperties3216
+        from ..models.bt_export_model_properties_3216 import BTExportModelProperties3216  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_export_model_bodies_response_734_node_id_to_referenced_property = cls()

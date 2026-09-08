@@ -160,8 +160,8 @@ class BTWebhookInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_user_summary_info import BTUserSummaryInfo
-        from ..models.bt_webhook_options import BTWebhookOptions
+        from ..models.bt_user_summary_info import BTUserSummaryInfo  # noqa: PLC0415
+        from ..models.bt_webhook_options import BTWebhookOptions  # noqa: PLC0415
 
         d = dict(src_dict)
         company_id = d.pop("companyId", UNSET)

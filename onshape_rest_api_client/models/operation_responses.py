@@ -57,8 +57,8 @@ class OperationResponses:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.api_response import ApiResponse
-        from ..models.operation_responses_extensions import OperationResponsesExtensions
+        from ..models.api_response import ApiResponse  # noqa: PLC0415
+        from ..models.operation_responses_extensions import OperationResponsesExtensions  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

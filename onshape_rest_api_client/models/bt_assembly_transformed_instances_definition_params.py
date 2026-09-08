@@ -43,7 +43,7 @@ class BTAssemblyTransformedInstancesDefinitionParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.transform_group import TransformGroup
+        from ..models.transform_group import TransformGroup  # noqa: PLC0415
 
         d = dict(src_dict)
         _transform_groups = d.pop("transformGroups", UNSET)

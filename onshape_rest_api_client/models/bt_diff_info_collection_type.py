@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTDiffInfoCollectionType(str, Enum):
+class BTDiffInfoCollectionType(StrEnum):
     CURVES = "curves"
     MATECONNECTORS = "mateConnectors"
     PARTS = "parts"

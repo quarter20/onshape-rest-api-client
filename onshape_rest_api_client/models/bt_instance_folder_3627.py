@@ -288,11 +288,11 @@ class BTInstanceFolder3627:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_instance_base_2263_custom_data import BTInstanceBase2263CustomData
-        from ..models.bt_object_id import BTObjectId
-        from ..models.bt_revision_custom_data_2090 import BTRevisionCustomData2090
-        from ..models.btm_parameter_1 import BTMParameter1
-        from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
+        from ..models.bt_instance_base_2263_custom_data import BTInstanceBase2263CustomData  # noqa: PLC0415
+        from ..models.bt_object_id import BTObjectId  # noqa: PLC0415
+        from ..models.bt_revision_custom_data_2090 import BTRevisionCustomData2090  # noqa: PLC0415
+        from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
+        from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

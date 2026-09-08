@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTBodyType(str, Enum):
+class GBTBodyType(StrEnum):
     COMPOSITE = "COMPOSITE"
     MATE_CONNECTOR = "MATE_CONNECTOR"
     POINT = "POINT"

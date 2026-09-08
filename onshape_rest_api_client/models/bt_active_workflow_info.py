@@ -58,6 +58,7 @@ class BTActiveWorkflowInfo:
             workflowInfo object
         plm_integration_type (int | Unset):
         plm_name (str | Unset):
+        release_name_numbering_scheme_id (str | Unset):
         release_workflow (BTPublishedWorkflowInfo | Unset): Captures information about a published workflow
         release_workflow_id (str | Unset): Deprecated, use releaseWorkflowInfo.workflow.id instead
         release_workflow_info (BTActiveWorkflowTypeInfo | Unset):
@@ -101,6 +102,7 @@ class BTActiveWorkflowInfo:
     pickable_workflows: list[BTPublishedWorkflowInfo] | Unset = UNSET
     plm_integration_type: int | Unset = UNSET
     plm_name: str | Unset = UNSET
+    release_name_numbering_scheme_id: str | Unset = UNSET
     release_workflow: BTPublishedWorkflowInfo | Unset = UNSET
     release_workflow_id: str | Unset = UNSET
     release_workflow_info: BTActiveWorkflowTypeInfo | Unset = UNSET
@@ -184,6 +186,8 @@ class BTActiveWorkflowInfo:
         plm_integration_type = self.plm_integration_type
 
         plm_name = self.plm_name
+
+        release_name_numbering_scheme_id = self.release_name_numbering_scheme_id
 
         release_workflow: dict[str, Any] | Unset = UNSET
         if not isinstance(self.release_workflow, Unset):
@@ -280,6 +284,8 @@ class BTActiveWorkflowInfo:
             field_dict["plmIntegrationType"] = plm_integration_type
         if plm_name is not UNSET:
             field_dict["plmName"] = plm_name
+        if release_name_numbering_scheme_id is not UNSET:
+            field_dict["releaseNameNumberingSchemeId"] = release_name_numbering_scheme_id
         if release_workflow is not UNSET:
             field_dict["releaseWorkflow"] = release_workflow
         if release_workflow_id is not UNSET:
@@ -312,10 +318,10 @@ class BTActiveWorkflowInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_active_workflow_info_os_category_id_to_arena_number_format_id import (
-            BTActiveWorkflowInfoOsCategoryIdToArenaNumberFormatId,
+            BTActiveWorkflowInfoOsCategoryIdToArenaNumberFormatId,  # noqa: PLC0415
         )
-        from ..models.bt_active_workflow_type_info import BTActiveWorkflowTypeInfo
-        from ..models.bt_published_workflow_info import BTPublishedWorkflowInfo
+        from ..models.bt_active_workflow_type_info import BTActiveWorkflowTypeInfo  # noqa: PLC0415
+        from ..models.bt_published_workflow_info import BTPublishedWorkflowInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         allow_release_items_from_other_documents = d.pop("allowReleaseItemsFromOtherDocuments", UNSET)
@@ -400,6 +406,8 @@ class BTActiveWorkflowInfo:
 
         plm_name = d.pop("plmName", UNSET)
 
+        release_name_numbering_scheme_id = d.pop("releaseNameNumberingSchemeId", UNSET)
+
         _release_workflow = d.pop("releaseWorkflow", UNSET)
         release_workflow: BTPublishedWorkflowInfo | Unset
         if isinstance(_release_workflow, Unset):
@@ -474,6 +482,7 @@ class BTActiveWorkflowInfo:
             pickable_workflows=pickable_workflows,
             plm_integration_type=plm_integration_type,
             plm_name=plm_name,
+            release_name_numbering_scheme_id=release_name_numbering_scheme_id,
             release_workflow=release_workflow,
             release_workflow_id=release_workflow_id,
             release_workflow_info=release_workflow_info,

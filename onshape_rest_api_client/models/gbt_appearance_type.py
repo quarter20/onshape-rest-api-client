@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTAppearanceType(str, Enum):
+class GBTAppearanceType(StrEnum):
     SKETCH = "SKETCH"
     UNKNOWN = "UNKNOWN"
 

@@ -77,7 +77,7 @@ class BTAliasParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_alias_entry_params import BTAliasEntryParams
+        from ..models.bt_alias_entry_params import BTAliasEntryParams  # noqa: PLC0415
 
         d = dict(src_dict)
         _additions = d.pop("additions", UNSET)

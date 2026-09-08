@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTSketchObjectType(str, Enum):
+class GBTSketchObjectType(StrEnum):
     ANY_SKETCH_OBJECT = "ANY_SKETCH_OBJECT"
     NOT_SKETCH_OBJECT = "NOT_SKETCH_OBJECT"
     UNKNOWN = "UNKNOWN"

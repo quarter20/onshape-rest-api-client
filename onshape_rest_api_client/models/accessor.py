@@ -116,9 +116,9 @@ class Accessor:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.accessor_extensions import AccessorExtensions
-        from ..models.accessor_extras import AccessorExtras
-        from ..models.accessor_sparse import AccessorSparse
+        from ..models.accessor_extensions import AccessorExtensions  # noqa: PLC0415
+        from ..models.accessor_extras import AccessorExtras  # noqa: PLC0415
+        from ..models.accessor_sparse import AccessorSparse  # noqa: PLC0415
 
         d = dict(src_dict)
         buffer_view = d.pop("bufferView", UNSET)

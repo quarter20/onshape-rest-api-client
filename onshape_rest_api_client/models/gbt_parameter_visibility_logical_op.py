@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTParameterVisibilityLogicalOp(str, Enum):
+class GBTParameterVisibilityLogicalOp(StrEnum):
     AND = "AND"
     NOT = "NOT"
     OR = "OR"

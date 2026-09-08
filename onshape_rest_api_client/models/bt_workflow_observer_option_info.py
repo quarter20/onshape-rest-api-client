@@ -101,11 +101,11 @@ class BTWorkflowObserverOptionInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_alias_info import BTAliasInfo
-        from ..models.bt_company_summary_info import BTCompanySummaryInfo
-        from ..models.bt_rbac_role_info import BTRbacRoleInfo
-        from ..models.bt_team_summary_info import BTTeamSummaryInfo
-        from ..models.bt_user_summary_info import BTUserSummaryInfo
+        from ..models.bt_alias_info import BTAliasInfo  # noqa: PLC0415
+        from ..models.bt_company_summary_info import BTCompanySummaryInfo  # noqa: PLC0415
+        from ..models.bt_rbac_role_info import BTRbacRoleInfo  # noqa: PLC0415
+        from ..models.bt_team_summary_info import BTTeamSummaryInfo  # noqa: PLC0415
+        from ..models.bt_user_summary_info import BTUserSummaryInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _alias = d.pop("alias", UNSET)

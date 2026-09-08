@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTDataItemFormat(str, Enum):
+class GBTDataItemFormat(StrEnum):
     JSON = "JSON"
     OBJ_MTL_ZIP = "OBJ_MTL_ZIP"
     ONSHAPE = "ONSHAPE"

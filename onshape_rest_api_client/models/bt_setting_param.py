@@ -61,7 +61,7 @@ class BTSettingParam:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_setting_param_value import BTSettingParamValue
+        from ..models.bt_setting_param_value import BTSettingParamValue  # noqa: PLC0415
 
         d = dict(src_dict)
         field = d.pop("field", UNSET)

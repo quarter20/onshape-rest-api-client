@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTInsertableType(str, Enum):
+class GBTInsertableType(StrEnum):
     COMPOSITE_PARTS = "COMPOSITE_PARTS"
     FLATTENED_PARTS = "FLATTENED_PARTS"
     PARAMETRIC_PART_STUDIOS = "PARAMETRIC_PART_STUDIOS"

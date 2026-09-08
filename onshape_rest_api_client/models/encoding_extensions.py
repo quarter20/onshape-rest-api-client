@@ -15,8 +15,6 @@ T = TypeVar("T", bound="EncodingExtensions")
 
 @_attrs_define
 class EncodingExtensions:
-    """ """
-
     additional_properties: dict[str, EncodingExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,9 @@ class EncodingExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.encoding_extensions_additional_property import EncodingExtensionsAdditionalProperty
+        from ..models.encoding_extensions_additional_property import (
+            EncodingExtensionsAdditionalProperty,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         encoding_extensions = cls()

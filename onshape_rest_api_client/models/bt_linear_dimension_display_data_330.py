@@ -264,9 +264,9 @@ class BTLinearDimensionDisplayData330:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_curve_display_data_4722 import BTCurveDisplayData4722
-        from ..models.bt_matrix_3x3340 import BTMatrix3X3340
-        from ..models.btbs_matrix_386 import BTBSMatrix386
+        from ..models.bt_curve_display_data_4722 import BTCurveDisplayData4722  # noqa: PLC0415
+        from ..models.bt_matrix_3x3340 import BTMatrix3X3340  # noqa: PLC0415
+        from ..models.btbs_matrix_386 import BTBSMatrix386  # noqa: PLC0415
 
         d = dict(src_dict)
         all_references = cast(list[str], d.pop("allReferences", UNSET))

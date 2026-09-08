@@ -70,10 +70,10 @@ def sync_detailed(
     body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
 ) -> Response[BTDocumentElementProcessingInfo]:
-    r"""Upload a file and create a blob element from it.
+    """Upload a file and create a blob element from it.
 
-     Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-
-    data\"` in the request header.
+     Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"`
+    in the request header.
 
     Args:
         did (str):
@@ -111,10 +111,10 @@ def sync(
     body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
 ) -> BTDocumentElementProcessingInfo | None:
-    r"""Upload a file and create a blob element from it.
+    """Upload a file and create a blob element from it.
 
-     Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-
-    data\"` in the request header.
+     Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"`
+    in the request header.
 
     Args:
         did (str):
@@ -147,10 +147,10 @@ async def asyncio_detailed(
     body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
 ) -> Response[BTDocumentElementProcessingInfo]:
-    r"""Upload a file and create a blob element from it.
+    """Upload a file and create a blob element from it.
 
-     Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-
-    data\"` in the request header.
+     Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"`
+    in the request header.
 
     Args:
         did (str):
@@ -186,10 +186,10 @@ async def asyncio(
     body: BTBTranslationRequestParams | Unset = UNSET,
     link_document_id: str | Unset = "",
 ) -> BTDocumentElementProcessingInfo | None:
-    r"""Upload a file and create a blob element from it.
+    """Upload a file and create a blob element from it.
 
-     Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-
-    data\"` in the request header.
+     Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"`
+    in the request header.
 
     Args:
         did (str):

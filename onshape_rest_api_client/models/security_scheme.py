@@ -103,8 +103,8 @@ class SecurityScheme:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.o_auth_flows import OAuthFlows
-        from ..models.security_scheme_extensions import SecuritySchemeExtensions
+        from ..models.o_auth_flows import OAuthFlows  # noqa: PLC0415
+        from ..models.security_scheme_extensions import SecuritySchemeExtensions  # noqa: PLC0415
 
         d = dict(src_dict)
         bearer_format = d.pop("bearerFormat", UNSET)

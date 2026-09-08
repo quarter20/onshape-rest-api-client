@@ -29,7 +29,7 @@ class BTVariableStudioReferenceInfoConfigurationIdToValue:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_optionally_configured_value import BTOptionallyConfiguredValue
+        from ..models.bt_optionally_configured_value import BTOptionallyConfiguredValue  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_variable_studio_reference_info_configuration_id_to_value = cls()

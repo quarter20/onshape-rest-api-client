@@ -20,6 +20,7 @@ T = TypeVar("T", bound="BTMateConnectorDisplayData94")
 class BTMateConnectorDisplayData94:
     """
     Attributes:
+        attach_entity_id (str | Unset):
         bt_type (str | Unset): Type of JSON object.
         element_id (str | Unset):
         entity_ids (list[str] | Unset):
@@ -29,10 +30,12 @@ class BTMateConnectorDisplayData94:
         location (BTCoordinateSystem387 | Unset):
         node_id (str | Unset):
         occurrence (BTOccurrence74 | Unset):
+        origin_entity_id (str | Unset):
         owner_occurrence (BTOccurrence74 | Unset):
         part_id (str | Unset):
     """
 
+    attach_entity_id: str | Unset = UNSET
     bt_type: str | Unset = UNSET
     element_id: str | Unset = UNSET
     entity_ids: list[str] | Unset = UNSET
@@ -42,11 +45,14 @@ class BTMateConnectorDisplayData94:
     location: BTCoordinateSystem387 | Unset = UNSET
     node_id: str | Unset = UNSET
     occurrence: BTOccurrence74 | Unset = UNSET
+    origin_entity_id: str | Unset = UNSET
     owner_occurrence: BTOccurrence74 | Unset = UNSET
     part_id: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        attach_entity_id = self.attach_entity_id
+
         bt_type = self.bt_type
 
         element_id = self.element_id
@@ -71,6 +77,8 @@ class BTMateConnectorDisplayData94:
         if not isinstance(self.occurrence, Unset):
             occurrence = self.occurrence.to_dict()
 
+        origin_entity_id = self.origin_entity_id
+
         owner_occurrence: dict[str, Any] | Unset = UNSET
         if not isinstance(self.owner_occurrence, Unset):
             owner_occurrence = self.owner_occurrence.to_dict()
@@ -80,6 +88,8 @@ class BTMateConnectorDisplayData94:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if attach_entity_id is not UNSET:
+            field_dict["attachEntityId"] = attach_entity_id
         if bt_type is not UNSET:
             field_dict["btType"] = bt_type
         if element_id is not UNSET:
@@ -98,6 +108,8 @@ class BTMateConnectorDisplayData94:
             field_dict["nodeId"] = node_id
         if occurrence is not UNSET:
             field_dict["occurrence"] = occurrence
+        if origin_entity_id is not UNSET:
+            field_dict["originEntityId"] = origin_entity_id
         if owner_occurrence is not UNSET:
             field_dict["ownerOccurrence"] = owner_occurrence
         if part_id is not UNSET:
@@ -107,10 +119,12 @@ class BTMateConnectorDisplayData94:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_coordinate_system_387 import BTCoordinateSystem387
-        from ..models.bt_occurrence_74 import BTOccurrence74
+        from ..models.bt_coordinate_system_387 import BTCoordinateSystem387  # noqa: PLC0415
+        from ..models.bt_occurrence_74 import BTOccurrence74  # noqa: PLC0415
 
         d = dict(src_dict)
+        attach_entity_id = d.pop("attachEntityId", UNSET)
+
         bt_type = d.pop("btType", UNSET)
 
         element_id = d.pop("elementId", UNSET)
@@ -139,6 +153,8 @@ class BTMateConnectorDisplayData94:
         else:
             occurrence = BTOccurrence74.from_dict(_occurrence)
 
+        origin_entity_id = d.pop("originEntityId", UNSET)
+
         _owner_occurrence = d.pop("ownerOccurrence", UNSET)
         owner_occurrence: BTOccurrence74 | Unset
         if isinstance(_owner_occurrence, Unset):
@@ -149,6 +165,7 @@ class BTMateConnectorDisplayData94:
         part_id = d.pop("partId", UNSET)
 
         bt_mate_connector_display_data_94 = cls(
+            attach_entity_id=attach_entity_id,
             bt_type=bt_type,
             element_id=element_id,
             entity_ids=entity_ids,
@@ -158,6 +175,7 @@ class BTMateConnectorDisplayData94:
             location=location,
             node_id=node_id,
             occurrence=occurrence,
+            origin_entity_id=origin_entity_id,
             owner_occurrence=owner_occurrence,
             part_id=part_id,
         )

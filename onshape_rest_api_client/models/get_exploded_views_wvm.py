@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetExplodedViewsWvm(str, Enum):
+class GetExplodedViewsWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

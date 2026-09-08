@@ -66,8 +66,8 @@ class BTMetadataObjectInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_metadata_property_info import BTMetadataPropertyInfo
-        from ..models.bt_thumbnail_info import BTThumbnailInfo
+        from ..models.bt_metadata_property_info import BTMetadataPropertyInfo  # noqa: PLC0415
+        from ..models.bt_thumbnail_info import BTThumbnailInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         json_type = d.pop("jsonType")

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTVariableType(str, Enum):
+class GBTVariableType(StrEnum):
     ANGLE = "ANGLE"
     ANY = "ANY"
     LENGTH = "LENGTH"

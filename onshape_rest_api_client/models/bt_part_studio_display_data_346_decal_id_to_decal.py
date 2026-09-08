@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTPartStudioDisplayData346DecalIdToDecal")
 
 @_attrs_define
 class BTPartStudioDisplayData346DecalIdToDecal:
-    """ """
-
     additional_properties: dict[str, BTDecal2404] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTPartStudioDisplayData346DecalIdToDecal:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_decal_2404 import BTDecal2404
+        from ..models.bt_decal_2404 import BTDecal2404  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_part_studio_display_data_346_decal_id_to_decal = cls()

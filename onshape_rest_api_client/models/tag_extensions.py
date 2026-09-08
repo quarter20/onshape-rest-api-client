@@ -15,8 +15,6 @@ T = TypeVar("T", bound="TagExtensions")
 
 @_attrs_define
 class TagExtensions:
-    """ """
-
     additional_properties: dict[str, TagExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class TagExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.tag_extensions_additional_property import TagExtensionsAdditionalProperty
+        from ..models.tag_extensions_additional_property import TagExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         tag_extensions = cls()

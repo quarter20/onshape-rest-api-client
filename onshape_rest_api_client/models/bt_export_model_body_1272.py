@@ -117,10 +117,10 @@ class BTExportModelBody1272:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_export_body_properties_3559 import BTExportBodyProperties3559
-        from ..models.bt_export_model_edge_1782 import BTExportModelEdge1782
-        from ..models.bt_export_model_face_1363 import BTExportModelFace1363
-        from ..models.bt_export_model_vertex_858 import BTExportModelVertex858
+        from ..models.bt_export_body_properties_3559 import BTExportBodyProperties3559  # noqa: PLC0415
+        from ..models.bt_export_model_edge_1782 import BTExportModelEdge1782  # noqa: PLC0415
+        from ..models.bt_export_model_face_1363 import BTExportModelFace1363  # noqa: PLC0415
+        from ..models.bt_export_model_vertex_858 import BTExportModelVertex858  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

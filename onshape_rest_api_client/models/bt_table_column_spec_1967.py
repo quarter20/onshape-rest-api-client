@@ -94,7 +94,7 @@ class BTTableColumnSpec1967:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_parameter_spec_6 import BTParameterSpec6
+        from ..models.bt_parameter_spec_6 import BTParameterSpec6  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

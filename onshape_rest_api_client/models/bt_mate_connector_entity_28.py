@@ -34,7 +34,9 @@ class BTMateConnectorEntity28:
         origin (bool | Unset):
         domain_specific_metadata (list[BTDomainSpecificMetadata961] | Unset):
         first_geometry (BTEntityGeometry35 | Unset):
+        attach_entity_id (str | Unset):
         coordinate_system (BTCoordinateSystem387 | Unset):
+        origin_entity_id (str | Unset):
         part_id (str | Unset):
     """
 
@@ -50,7 +52,9 @@ class BTMateConnectorEntity28:
     origin: bool | Unset = UNSET
     domain_specific_metadata: list[BTDomainSpecificMetadata961] | Unset = UNSET
     first_geometry: BTEntityGeometry35 | Unset = UNSET
+    attach_entity_id: str | Unset = UNSET
     coordinate_system: BTCoordinateSystem387 | Unset = UNSET
+    origin_entity_id: str | Unset = UNSET
     part_id: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -97,9 +101,13 @@ class BTMateConnectorEntity28:
         if not isinstance(self.first_geometry, Unset):
             first_geometry = self.first_geometry.to_dict()
 
+        attach_entity_id = self.attach_entity_id
+
         coordinate_system: dict[str, Any] | Unset = UNSET
         if not isinstance(self.coordinate_system, Unset):
             coordinate_system = self.coordinate_system.to_dict()
+
+        origin_entity_id = self.origin_entity_id
 
         part_id = self.part_id
 
@@ -130,8 +138,12 @@ class BTMateConnectorEntity28:
             field_dict["domainSpecificMetadata"] = domain_specific_metadata
         if first_geometry is not UNSET:
             field_dict["firstGeometry"] = first_geometry
+        if attach_entity_id is not UNSET:
+            field_dict["attachEntityId"] = attach_entity_id
         if coordinate_system is not UNSET:
             field_dict["coordinateSystem"] = coordinate_system
+        if origin_entity_id is not UNSET:
+            field_dict["originEntityId"] = origin_entity_id
         if part_id is not UNSET:
             field_dict["partId"] = part_id
 
@@ -139,10 +151,10 @@ class BTMateConnectorEntity28:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_base_entity_data_33 import BTBaseEntityData33
-        from ..models.bt_coordinate_system_387 import BTCoordinateSystem387
-        from ..models.bt_domain_specific_metadata_961 import BTDomainSpecificMetadata961
-        from ..models.bt_entity_geometry_35 import BTEntityGeometry35
+        from ..models.bt_base_entity_data_33 import BTBaseEntityData33  # noqa: PLC0415
+        from ..models.bt_coordinate_system_387 import BTCoordinateSystem387  # noqa: PLC0415
+        from ..models.bt_domain_specific_metadata_961 import BTDomainSpecificMetadata961  # noqa: PLC0415
+        from ..models.bt_entity_geometry_35 import BTEntityGeometry35  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)
@@ -200,12 +212,16 @@ class BTMateConnectorEntity28:
         else:
             first_geometry = BTEntityGeometry35.from_dict(_first_geometry)
 
+        attach_entity_id = d.pop("attachEntityId", UNSET)
+
         _coordinate_system = d.pop("coordinateSystem", UNSET)
         coordinate_system: BTCoordinateSystem387 | Unset
         if isinstance(_coordinate_system, Unset):
             coordinate_system = UNSET
         else:
             coordinate_system = BTCoordinateSystem387.from_dict(_coordinate_system)
+
+        origin_entity_id = d.pop("originEntityId", UNSET)
 
         part_id = d.pop("partId", UNSET)
 
@@ -222,7 +238,9 @@ class BTMateConnectorEntity28:
             origin=origin,
             domain_specific_metadata=domain_specific_metadata,
             first_geometry=first_geometry,
+            attach_entity_id=attach_entity_id,
             coordinate_system=coordinate_system,
+            origin_entity_id=origin_entity_id,
             part_id=part_id,
         )
 

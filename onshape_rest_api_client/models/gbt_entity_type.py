@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTEntityType(str, Enum):
+class GBTEntityType(StrEnum):
     BODY = "BODY"
     DEGENERATE_EDGE = "DEGENERATE_EDGE"
     EDGE = "EDGE"

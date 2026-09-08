@@ -49,7 +49,7 @@ class BTConfigurationParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.configuration_entry import ConfigurationEntry
+        from ..models.configuration_entry import ConfigurationEntry  # noqa: PLC0415
 
         d = dict(src_dict)
         _parameters = d.pop("parameters", UNSET)

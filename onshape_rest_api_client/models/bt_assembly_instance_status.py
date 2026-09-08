@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTAssemblyInstanceStatus(str, Enum):
+class BTAssemblyInstanceStatus(StrEnum):
     DELETEDELEMENT = "DeletedElement"
 
     def __str__(self) -> str:

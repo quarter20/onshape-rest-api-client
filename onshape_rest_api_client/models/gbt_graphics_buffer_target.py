@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTGraphicsBufferTarget(str, Enum):
+class GBTGraphicsBufferTarget(StrEnum):
     ARRAY_BUFFER = "ARRAY_BUFFER"
     ELEMENT_ARRAY_BUFFER = "ELEMENT_ARRAY_BUFFER"
     ENTITY_PART_INDEX_BUFFER = "ENTITY_PART_INDEX_BUFFER"

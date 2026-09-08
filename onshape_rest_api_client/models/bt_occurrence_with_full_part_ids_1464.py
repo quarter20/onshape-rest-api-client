@@ -101,8 +101,8 @@ class BTOccurrenceWithFullPartIds1464:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_full_element_id_with_document_1729 import BTFullElementIdWithDocument1729
-        from ..models.btbs_matrix_386 import BTBSMatrix386
+        from ..models.bt_full_element_id_with_document_1729 import BTFullElementIdWithDocument1729  # noqa: PLC0415
+        from ..models.btbs_matrix_386 import BTBSMatrix386  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

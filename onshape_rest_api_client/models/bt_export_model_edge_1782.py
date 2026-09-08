@@ -69,8 +69,8 @@ class BTExportModelEdge1782:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_curve_description_1583 import BTCurveDescription1583
-        from ..models.bt_export_model_edge_geometry_1125 import BTExportModelEdgeGeometry1125
+        from ..models.bt_curve_description_1583 import BTCurveDescription1583  # noqa: PLC0415
+        from ..models.bt_export_model_edge_geometry_1125 import BTExportModelEdgeGeometry1125  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

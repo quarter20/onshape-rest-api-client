@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTPatternType(str, Enum):
+class GBTPatternType(StrEnum):
     CIRCULAR = "CIRCULAR"
     LINEAR = "LINEAR"
     UNKNOWN = "UNKNOWN"

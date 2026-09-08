@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTPartStudioItemType(str, Enum):
+class GBTPartStudioItemType(StrEnum):
     COMPOSITE_PART = "COMPOSITE_PART"
     CONSTRUCTION_PLANE = "CONSTRUCTION_PLANE"
     ENTIRE_PART_STUDIO = "ENTIRE_PART_STUDIO"

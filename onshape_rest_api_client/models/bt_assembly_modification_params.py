@@ -90,9 +90,11 @@ class BTAssemblyModificationParams:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_assembly_modification_params_suppression_states import (
-            BTAssemblyModificationParamsSuppressionStates,
+            BTAssemblyModificationParamsSuppressionStates,  # noqa: PLC0415
         )
-        from ..models.bt_assembly_transform_definition_params import BTAssemblyTransformDefinitionParams
+        from ..models.bt_assembly_transform_definition_params import (
+            BTAssemblyTransformDefinitionParams,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         delete_instances = cast(list[str], d.pop("deleteInstances", UNSET))

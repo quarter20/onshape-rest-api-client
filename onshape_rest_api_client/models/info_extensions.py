@@ -15,8 +15,6 @@ T = TypeVar("T", bound="InfoExtensions")
 
 @_attrs_define
 class InfoExtensions:
-    """ """
-
     additional_properties: dict[str, InfoExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class InfoExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.info_extensions_additional_property import InfoExtensionsAdditionalProperty
+        from ..models.info_extensions_additional_property import InfoExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         info_extensions = cls()

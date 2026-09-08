@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTMConfigurationData1560DefaultConfigurationValues")
 
 @_attrs_define
 class BTMConfigurationData1560DefaultConfigurationValues:
-    """ """
-
     additional_properties: dict[str, BTFSValue1888] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTMConfigurationData1560DefaultConfigurationValues:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btfs_value_1888 import BTFSValue1888
+        from ..models.btfs_value_1888 import BTFSValue1888  # noqa: PLC0415
 
         d = dict(src_dict)
         btm_configuration_data_1560_default_configuration_values = cls()

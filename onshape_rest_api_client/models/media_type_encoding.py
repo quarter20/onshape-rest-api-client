@@ -15,8 +15,6 @@ T = TypeVar("T", bound="MediaTypeEncoding")
 
 @_attrs_define
 class MediaTypeEncoding:
-    """ """
-
     additional_properties: dict[str, Encoding] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class MediaTypeEncoding:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.encoding import Encoding
+        from ..models.encoding import Encoding  # noqa: PLC0415
 
         d = dict(src_dict)
         media_type_encoding = cls()

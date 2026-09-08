@@ -50,7 +50,7 @@ class BTAssemblyItemMetadataInfo:
 
     def to_dict(self) -> dict[str, Any]:
         from ..models.bt_assembly_item_metadata_info_property_id_to_eval_info_type_0 import (
-            BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0,
+            BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0,  # noqa: PLC0415
         )
 
         children: list[dict[str, Any]] | Unset = UNSET
@@ -111,21 +111,21 @@ class BTAssemblyItemMetadataInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_assembly_item_metadata_info_property_id_to_error import (
-            BTAssemblyItemMetadataInfoPropertyIdToError,
+            BTAssemblyItemMetadataInfoPropertyIdToError,  # noqa: PLC0415
         )
         from ..models.bt_assembly_item_metadata_info_property_id_to_eval_info_type_0 import (
-            BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0,
+            BTAssemblyItemMetadataInfoPropertyIdToEvalInfoType0,  # noqa: PLC0415
         )
         from ..models.bt_assembly_item_metadata_info_property_id_to_override_status import (
-            BTAssemblyItemMetadataInfoPropertyIdToOverrideStatus,
+            BTAssemblyItemMetadataInfoPropertyIdToOverrideStatus,  # noqa: PLC0415
         )
         from ..models.bt_assembly_item_metadata_info_property_id_to_source_type import (
-            BTAssemblyItemMetadataInfoPropertyIdToSourceType,
+            BTAssemblyItemMetadataInfoPropertyIdToSourceType,  # noqa: PLC0415
         )
         from ..models.bt_assembly_item_metadata_info_property_id_to_value import (
-            BTAssemblyItemMetadataInfoPropertyIdToValue,
+            BTAssemblyItemMetadataInfoPropertyIdToValue,  # noqa: PLC0415
         )
-        from ..models.bt_assembly_item_metadata_request_info import BTAssemblyItemMetadataRequestInfo
+        from ..models.bt_assembly_item_metadata_request_info import BTAssemblyItemMetadataRequestInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _children = d.pop("children", UNSET)

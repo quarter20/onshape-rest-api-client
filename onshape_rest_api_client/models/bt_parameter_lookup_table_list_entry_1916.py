@@ -105,7 +105,7 @@ class BTParameterLookupTableListEntry1916:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_parameter_lookup_table_entry_1667 import BTParameterLookupTableEntry1667
+        from ..models.bt_parameter_lookup_table_entry_1667 import BTParameterLookupTableEntry1667  # noqa: PLC0415
 
         d = dict(src_dict)
         additional_localized_strings = d.pop("additionalLocalizedStrings", UNSET)

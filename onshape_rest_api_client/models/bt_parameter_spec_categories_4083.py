@@ -204,13 +204,13 @@ class BTParameterSpecCategories4083:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_parameter_spec_categories_4083_category_id_to_metadata_types import (
-            BTParameterSpecCategories4083CategoryIdToMetadataTypes,
+            BTParameterSpecCategories4083CategoryIdToMetadataTypes,  # noqa: PLC0415
         )
         from ..models.bt_parameter_spec_multi_enum_3118_enum_value_to_visibility_condition import (
-            BTParameterSpecMultiEnum3118EnumValueToVisibilityCondition,
+            BTParameterSpecMultiEnum3118EnumValueToVisibilityCondition,  # noqa: PLC0415
         )
-        from ..models.bt_parameter_visibility_condition_177 import BTParameterVisibilityCondition177
-        from ..models.btm_parameter_1 import BTMParameter1
+        from ..models.bt_parameter_visibility_condition_177 import BTParameterVisibilityCondition177  # noqa: PLC0415
+        from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
 
         d = dict(src_dict)
         additional_localized_strings = d.pop("additionalLocalizedStrings", UNSET)

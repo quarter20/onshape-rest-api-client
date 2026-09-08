@@ -15,8 +15,6 @@ T = TypeVar("T", bound="ApiResponseHeaders")
 
 @_attrs_define
 class ApiResponseHeaders:
-    """ """
-
     additional_properties: dict[str, Header] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class ApiResponseHeaders:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.header import Header
+        from ..models.header import Header  # noqa: PLC0415
 
         d = dict(src_dict)
         api_response_headers = cls()

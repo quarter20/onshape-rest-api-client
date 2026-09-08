@@ -15,8 +15,6 @@ T = TypeVar("T", bound="ComponentsParameters")
 
 @_attrs_define
 class ComponentsParameters:
-    """ """
-
     additional_properties: dict[str, Parameter] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class ComponentsParameters:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.parameter import Parameter
+        from ..models.parameter import Parameter  # noqa: PLC0415
 
         d = dict(src_dict)
         components_parameters = cls()

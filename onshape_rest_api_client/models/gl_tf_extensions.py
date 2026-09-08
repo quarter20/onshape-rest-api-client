@@ -15,8 +15,6 @@ T = TypeVar("T", bound="GlTFExtensions")
 
 @_attrs_define
 class GlTFExtensions:
-    """ """
-
     additional_properties: dict[str, GlTFExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class GlTFExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.gl_tf_extensions_additional_property import GlTFExtensionsAdditionalProperty
+        from ..models.gl_tf_extensions_additional_property import GlTFExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         gl_tf_extensions = cls()

@@ -67,8 +67,8 @@ class Buffer:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.buffer_extensions import BufferExtensions
-        from ..models.buffer_extras import BufferExtras
+        from ..models.buffer_extensions import BufferExtensions  # noqa: PLC0415
+        from ..models.buffer_extras import BufferExtras  # noqa: PLC0415
 
         d = dict(src_dict)
         byte_length = d.pop("byteLength", UNSET)

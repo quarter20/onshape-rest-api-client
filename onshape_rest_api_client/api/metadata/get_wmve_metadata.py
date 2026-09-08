@@ -6,13 +6,13 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.bt_metadata_object_info import BTMetadataObjectInfo
-from ...models.get_wmve_metadata_wvm import GetWMVEMetadataWvm
+from ...models.get_wmve_metadata_wvm import GetWmveMetadataWvm
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     did: str,
-    wvm: GetWMVEMetadataWvm,
+    wvm: GetWmveMetadataWvm,
     wvmid: str,
     eid: str,
     *,
@@ -76,7 +76,7 @@ def _build_response(
 
 def sync_detailed(
     did: str,
-    wvm: GetWMVEMetadataWvm,
+    wvm: GetWmveMetadataWvm,
     wvmid: str,
     eid: str,
     *,
@@ -105,7 +105,7 @@ def sync_detailed(
 
     Args:
         did (str):
-        wvm (GetWMVEMetadataWvm):
+        wvm (GetWmveMetadataWvm):
         wvmid (str):
         eid (str):
         link_document_id (str | Unset):  Default: ''.
@@ -147,7 +147,7 @@ def sync_detailed(
 
 def sync(
     did: str,
-    wvm: GetWMVEMetadataWvm,
+    wvm: GetWmveMetadataWvm,
     wvmid: str,
     eid: str,
     *,
@@ -176,7 +176,7 @@ def sync(
 
     Args:
         did (str):
-        wvm (GetWMVEMetadataWvm):
+        wvm (GetWmveMetadataWvm):
         wvmid (str):
         eid (str):
         link_document_id (str | Unset):  Default: ''.
@@ -213,7 +213,7 @@ def sync(
 
 async def asyncio_detailed(
     did: str,
-    wvm: GetWMVEMetadataWvm,
+    wvm: GetWmveMetadataWvm,
     wvmid: str,
     eid: str,
     *,
@@ -242,7 +242,7 @@ async def asyncio_detailed(
 
     Args:
         did (str):
-        wvm (GetWMVEMetadataWvm):
+        wvm (GetWmveMetadataWvm):
         wvmid (str):
         eid (str):
         link_document_id (str | Unset):  Default: ''.
@@ -282,7 +282,7 @@ async def asyncio_detailed(
 
 async def asyncio(
     did: str,
-    wvm: GetWMVEMetadataWvm,
+    wvm: GetWmveMetadataWvm,
     wvmid: str,
     eid: str,
     *,
@@ -311,7 +311,7 @@ async def asyncio(
 
     Args:
         did (str):
-        wvm (GetWMVEMetadataWvm):
+        wvm (GetWmveMetadataWvm):
         wvmid (str):
         eid (str):
         link_document_id (str | Unset):  Default: ''.

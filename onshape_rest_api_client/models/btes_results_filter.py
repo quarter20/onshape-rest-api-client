@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTESResultsFilter(str, Enum):
+class BTESResultsFilter(StrEnum):
     ALL = "ALL"
     LATEST = "LATEST"
     LATEST_PER_HIT = "LATEST_PER_HIT"

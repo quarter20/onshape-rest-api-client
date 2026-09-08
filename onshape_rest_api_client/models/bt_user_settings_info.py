@@ -28,6 +28,7 @@ class BTUserSettingsInfo:
     Attributes:
         axis_rotation_lock (bool | Unset):
         common_units (BTCommonUnitsInfo | Unset):
+        context_picking_enabled (bool | Unset):
         context_translucency_slider_value (float | Unset):
         context_translucent (bool | Unset):
         custom_colors (list[str] | Unset):
@@ -57,6 +58,7 @@ class BTUserSettingsInfo:
         previous_sketch_font (str | Unset):
         reverse_scroll_wheel_zoom_direction (bool | Unset):
         select_item_view_state_infos (list[BTSelectItemViewStateInfo] | Unset):
+        sketch_auto_normal_view (bool | Unset):
         sketch_show_constraints (bool | Unset):
         sketch_show_errors (bool | Unset):
         sketch_show_expressions (bool | Unset):
@@ -74,6 +76,7 @@ class BTUserSettingsInfo:
 
     axis_rotation_lock: bool | Unset = UNSET
     common_units: BTCommonUnitsInfo | Unset = UNSET
+    context_picking_enabled: bool | Unset = UNSET
     context_translucency_slider_value: float | Unset = UNSET
     context_translucent: bool | Unset = UNSET
     custom_colors: list[str] | Unset = UNSET
@@ -103,6 +106,7 @@ class BTUserSettingsInfo:
     previous_sketch_font: str | Unset = UNSET
     reverse_scroll_wheel_zoom_direction: bool | Unset = UNSET
     select_item_view_state_infos: list[BTSelectItemViewStateInfo] | Unset = UNSET
+    sketch_auto_normal_view: bool | Unset = UNSET
     sketch_show_constraints: bool | Unset = UNSET
     sketch_show_errors: bool | Unset = UNSET
     sketch_show_expressions: bool | Unset = UNSET
@@ -124,6 +128,8 @@ class BTUserSettingsInfo:
         common_units: dict[str, Any] | Unset = UNSET
         if not isinstance(self.common_units, Unset):
             common_units = self.common_units.to_dict()
+
+        context_picking_enabled = self.context_picking_enabled
 
         context_translucency_slider_value = self.context_translucency_slider_value
 
@@ -196,6 +202,8 @@ class BTUserSettingsInfo:
                 select_item_view_state_infos_item = select_item_view_state_infos_item_data.to_dict()
                 select_item_view_state_infos.append(select_item_view_state_infos_item)
 
+        sketch_auto_normal_view = self.sketch_auto_normal_view
+
         sketch_show_constraints = self.sketch_show_constraints
 
         sketch_show_errors = self.sketch_show_errors
@@ -240,6 +248,8 @@ class BTUserSettingsInfo:
             field_dict["axisRotationLock"] = axis_rotation_lock
         if common_units is not UNSET:
             field_dict["commonUnits"] = common_units
+        if context_picking_enabled is not UNSET:
+            field_dict["contextPickingEnabled"] = context_picking_enabled
         if context_translucency_slider_value is not UNSET:
             field_dict["contextTranslucencySliderValue"] = context_translucency_slider_value
         if context_translucent is not UNSET:
@@ -298,6 +308,8 @@ class BTUserSettingsInfo:
             field_dict["reverseScrollWheelZoomDirection"] = reverse_scroll_wheel_zoom_direction
         if select_item_view_state_infos is not UNSET:
             field_dict["selectItemViewStateInfos"] = select_item_view_state_infos
+        if sketch_auto_normal_view is not UNSET:
+            field_dict["sketchAutoNormalView"] = sketch_auto_normal_view
         if sketch_show_constraints is not UNSET:
             field_dict["sketchShowConstraints"] = sketch_show_constraints
         if sketch_show_errors is not UNSET:
@@ -329,14 +341,18 @@ class BTUserSettingsInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_common_units_info import BTCommonUnitsInfo
-        from ..models.bt_default_units_info import BTDefaultUnitsInfo
-        from ..models.bt_material_library_settings_info import BTMaterialLibrarySettingsInfo
-        from ..models.bt_select_item_view_state_info import BTSelectItemViewStateInfo
-        from ..models.bt_substitute_approver_info import BTSubstituteApproverInfo
-        from ..models.bt_units_maximum_display_precision_info import BTUnitsMaximumDisplayPrecisionInfo
-        from ..models.bt_user_settings_info_units_display_precision import BTUserSettingsInfoUnitsDisplayPrecision
-        from ..models.bt_view_manipulation_mouse_key_mapping_info import BTViewManipulationMouseKeyMappingInfo
+        from ..models.bt_common_units_info import BTCommonUnitsInfo  # noqa: PLC0415
+        from ..models.bt_default_units_info import BTDefaultUnitsInfo  # noqa: PLC0415
+        from ..models.bt_material_library_settings_info import BTMaterialLibrarySettingsInfo  # noqa: PLC0415
+        from ..models.bt_select_item_view_state_info import BTSelectItemViewStateInfo  # noqa: PLC0415
+        from ..models.bt_substitute_approver_info import BTSubstituteApproverInfo  # noqa: PLC0415
+        from ..models.bt_units_maximum_display_precision_info import BTUnitsMaximumDisplayPrecisionInfo  # noqa: PLC0415
+        from ..models.bt_user_settings_info_units_display_precision import (
+            BTUserSettingsInfoUnitsDisplayPrecision,  # noqa: PLC0415
+        )
+        from ..models.bt_view_manipulation_mouse_key_mapping_info import (
+            BTViewManipulationMouseKeyMappingInfo,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         axis_rotation_lock = d.pop("axisRotationLock", UNSET)
@@ -347,6 +363,8 @@ class BTUserSettingsInfo:
             common_units = UNSET
         else:
             common_units = BTCommonUnitsInfo.from_dict(_common_units)
+
+        context_picking_enabled = d.pop("contextPickingEnabled", UNSET)
 
         context_translucency_slider_value = d.pop("contextTranslucencySliderValue", UNSET)
 
@@ -425,6 +443,8 @@ class BTUserSettingsInfo:
 
                 select_item_view_state_infos.append(select_item_view_state_infos_item)
 
+        sketch_auto_normal_view = d.pop("sketchAutoNormalView", UNSET)
+
         sketch_show_constraints = d.pop("sketchShowConstraints", UNSET)
 
         sketch_show_errors = d.pop("sketchShowErrors", UNSET)
@@ -480,6 +500,7 @@ class BTUserSettingsInfo:
         bt_user_settings_info = cls(
             axis_rotation_lock=axis_rotation_lock,
             common_units=common_units,
+            context_picking_enabled=context_picking_enabled,
             context_translucency_slider_value=context_translucency_slider_value,
             context_translucent=context_translucent,
             custom_colors=custom_colors,
@@ -509,6 +530,7 @@ class BTUserSettingsInfo:
             previous_sketch_font=previous_sketch_font,
             reverse_scroll_wheel_zoom_direction=reverse_scroll_wheel_zoom_direction,
             select_item_view_state_infos=select_item_view_state_infos,
+            sketch_auto_normal_view=sketch_auto_normal_view,
             sketch_show_constraints=sketch_show_constraints,
             sketch_show_errors=sketch_show_errors,
             sketch_show_expressions=sketch_show_expressions,

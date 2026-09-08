@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTAppElementReferenceType(str, Enum):
+class GBTAppElementReferenceType(StrEnum):
     ASSEMBLY = "ASSEMBLY"
     BILLOFMATERIALS = "BILLOFMATERIALS"
     COMPOSITE_PART = "COMPOSITE_PART"

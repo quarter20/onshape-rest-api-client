@@ -11,8 +11,6 @@ T = TypeVar("T", bound="BTPartStudioDisplayData346FeatureIdToOperationIndices")
 
 @_attrs_define
 class BTPartStudioDisplayData346FeatureIdToOperationIndices:
-    """ """
-
     additional_properties: dict[str, list[int]] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

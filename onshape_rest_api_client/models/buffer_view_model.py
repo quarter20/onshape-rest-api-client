@@ -79,8 +79,8 @@ class BufferViewModel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.buffer_model import BufferModel
-        from ..models.buffer_view_model_buffer_view_data import BufferViewModelBufferViewData
+        from ..models.buffer_model import BufferModel  # noqa: PLC0415
+        from ..models.buffer_view_model_buffer_view_data import BufferViewModelBufferViewData  # noqa: PLC0415
 
         d = dict(src_dict)
         _buffer_model = d.pop("bufferModel", UNSET)

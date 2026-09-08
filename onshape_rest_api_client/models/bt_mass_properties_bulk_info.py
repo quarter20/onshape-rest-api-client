@@ -46,7 +46,7 @@ class BTMassPropertiesBulkInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_mass_properties_bulk_info_bodies import BTMassPropertiesBulkInfoBodies
+        from ..models.bt_mass_properties_bulk_info_bodies import BTMassPropertiesBulkInfoBodies  # noqa: PLC0415
 
         d = dict(src_dict)
         _bodies = d.pop("bodies", UNSET)

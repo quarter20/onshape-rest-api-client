@@ -106,7 +106,9 @@ class BTPartCustomProperties1338:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_part_custom_properties_1338_properties import BTPartCustomProperties1338Properties
+        from ..models.bt_part_custom_properties_1338_properties import (
+            BTPartCustomProperties1338Properties,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

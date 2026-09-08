@@ -106,10 +106,10 @@ class Header:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.header_example import HeaderExample
-        from ..models.header_examples import HeaderExamples
-        from ..models.header_extensions import HeaderExtensions
-        from ..models.schema import Schema
+        from ..models.header_example import HeaderExample  # noqa: PLC0415
+        from ..models.header_examples import HeaderExamples  # noqa: PLC0415
+        from ..models.header_extensions import HeaderExtensions  # noqa: PLC0415
+        from ..models.schema import Schema  # noqa: PLC0415
 
         d = dict(src_dict)
         deprecated = d.pop("deprecated", UNSET)

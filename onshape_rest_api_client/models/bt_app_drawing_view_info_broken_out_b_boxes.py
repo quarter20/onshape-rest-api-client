@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTAppDrawingViewInfoBrokenOutBBoxes")
 
 @_attrs_define
 class BTAppDrawingViewInfoBrokenOutBBoxes:
-    """ """
-
     additional_properties: dict[str, BTBoundingBox1052] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTAppDrawingViewInfoBrokenOutBBoxes:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_bounding_box_1052 import BTBoundingBox1052
+        from ..models.bt_bounding_box_1052 import BTBoundingBox1052  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_app_drawing_view_info_broken_out_b_boxes = cls()

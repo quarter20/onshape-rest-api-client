@@ -61,8 +61,8 @@ class Server:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.server_extensions import ServerExtensions
-        from ..models.server_variables import ServerVariables
+        from ..models.server_extensions import ServerExtensions  # noqa: PLC0415
+        from ..models.server_variables import ServerVariables  # noqa: PLC0415
 
         d = dict(src_dict)
         description = d.pop("description", UNSET)

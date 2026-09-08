@@ -79,8 +79,8 @@ class BTPartMaterial1445:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_element_reference_725 import BTElementReference725
-        from ..models.bt_part_material_1445_properties import BTPartMaterial1445Properties
+        from ..models.bt_element_reference_725 import BTElementReference725  # noqa: PLC0415
+        from ..models.bt_part_material_1445_properties import BTPartMaterial1445Properties  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

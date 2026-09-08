@@ -67,8 +67,8 @@ class OAuthFlow:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.o_auth_flow_extensions import OAuthFlowExtensions
-        from ..models.o_auth_flow_scopes import OAuthFlowScopes
+        from ..models.o_auth_flow_extensions import OAuthFlowExtensions  # noqa: PLC0415
+        from ..models.o_auth_flow_scopes import OAuthFlowScopes  # noqa: PLC0415
 
         d = dict(src_dict)
         authorization_url = d.pop("authorizationUrl", UNSET)

@@ -120,7 +120,7 @@ class BTCurveGeometryInterpolatedSpline116:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_curve_geometry_interpolated_spline_116_derivatives import (
-            BTCurveGeometryInterpolatedSpline116Derivatives,
+            BTCurveGeometryInterpolatedSpline116Derivatives,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

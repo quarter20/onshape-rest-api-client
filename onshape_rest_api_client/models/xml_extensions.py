@@ -15,8 +15,6 @@ T = TypeVar("T", bound="XMLExtensions")
 
 @_attrs_define
 class XMLExtensions:
-    """ """
-
     additional_properties: dict[str, XMLExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class XMLExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.xml_extensions_additional_property import XMLExtensionsAdditionalProperty
+        from ..models.xml_extensions_additional_property import XMLExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         xml_extensions = cls()

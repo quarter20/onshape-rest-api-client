@@ -125,8 +125,8 @@ class BTPLiteralMap256:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btp_literal_map_entry_257 import BTPLiteralMapEntry257
-        from ..models.btp_space_10 import BTPSpace10
+        from ..models.btp_literal_map_entry_257 import BTPLiteralMapEntry257  # noqa: PLC0415
+        from ..models.btp_space_10 import BTPSpace10  # noqa: PLC0415
 
         d = dict(src_dict)
         atomic = d.pop("atomic", UNSET)

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTMetadataValueType(str, Enum):
+class BTMetadataValueType(StrEnum):
     BLOB = "BLOB"
     BOOL = "BOOL"
     CATEGORY = "CATEGORY"

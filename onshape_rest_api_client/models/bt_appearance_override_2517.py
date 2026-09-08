@@ -74,7 +74,7 @@ class BTAppearanceOverride2517:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_graphics_appearance_1152 import BTGraphicsAppearance1152
+        from ..models.bt_graphics_appearance_1152 import BTGraphicsAppearance1152  # noqa: PLC0415
 
         d = dict(src_dict)
         _appearance = d.pop("appearance", UNSET)

@@ -160,11 +160,13 @@ class BTSingleAssemblyReferenceDisplayData1557:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_assembly_context_named_position_info_3801 import BTAssemblyContextNamedPositionInfo3801
-        from ..models.bt_full_element_id_756 import BTFullElementId756
-        from ..models.bt_occurrence_74 import BTOccurrence74
-        from ..models.bt_root_assembly_display_data_96 import BTRootAssemblyDisplayData96
-        from ..models.btbs_matrix_386 import BTBSMatrix386
+        from ..models.bt_assembly_context_named_position_info_3801 import (
+            BTAssemblyContextNamedPositionInfo3801,  # noqa: PLC0415
+        )
+        from ..models.bt_full_element_id_756 import BTFullElementId756  # noqa: PLC0415
+        from ..models.bt_occurrence_74 import BTOccurrence74  # noqa: PLC0415
+        from ..models.bt_root_assembly_display_data_96 import BTRootAssemblyDisplayData96  # noqa: PLC0415
+        from ..models.btbs_matrix_386 import BTBSMatrix386  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

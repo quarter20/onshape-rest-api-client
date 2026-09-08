@@ -61,8 +61,8 @@ class AccessorSparseValues:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.accessor_sparse_values_extensions import AccessorSparseValuesExtensions
-        from ..models.accessor_sparse_values_extras import AccessorSparseValuesExtras
+        from ..models.accessor_sparse_values_extensions import AccessorSparseValuesExtensions  # noqa: PLC0415
+        from ..models.accessor_sparse_values_extras import AccessorSparseValuesExtras  # noqa: PLC0415
 
         d = dict(src_dict)
         buffer_view = d.pop("bufferView", UNSET)

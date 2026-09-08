@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTESVersionWorkspaceChoice(str, Enum):
+class BTESVersionWorkspaceChoice(StrEnum):
     ALL = "ALL"
     VERSIONS = "VERSIONS"
     WORKSPACES = "WORKSPACES"

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTEntityEdgeSmoothnessStatus(str, Enum):
+class GBTEntityEdgeSmoothnessStatus(StrEnum):
     NOT_SMOOTH = "NOT_SMOOTH"
     SMOOTH = "SMOOTH"
     SMOOTH_V2 = "SMOOTH_V2"

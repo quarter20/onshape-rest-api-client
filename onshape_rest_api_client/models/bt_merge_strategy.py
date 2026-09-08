@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTMergeStrategy(str, Enum):
+class BTMergeStrategy(StrEnum):
     KEEP = "KEEP"
     MERGE = "MERGE"
     REPLACE = "REPLACE"

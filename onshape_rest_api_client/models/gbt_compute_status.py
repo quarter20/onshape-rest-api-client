@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTComputeStatus(str, Enum):
+class GBTComputeStatus(StrEnum):
     COMPUTED = "COMPUTED"
     COMPUTING = "COMPUTING"
     ERROR = "ERROR"

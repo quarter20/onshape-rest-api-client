@@ -79,10 +79,10 @@ class Camera:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.camera_extensions import CameraExtensions
-        from ..models.camera_extras import CameraExtras
-        from ..models.camera_orthographic import CameraOrthographic
-        from ..models.camera_perspective import CameraPerspective
+        from ..models.camera_extensions import CameraExtensions  # noqa: PLC0415
+        from ..models.camera_extras import CameraExtras  # noqa: PLC0415
+        from ..models.camera_orthographic import CameraOrthographic  # noqa: PLC0415
+        from ..models.camera_perspective import CameraPerspective  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

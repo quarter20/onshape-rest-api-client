@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTUiSelectionType(str, Enum):
+class GBTUiSelectionType(StrEnum):
     ANNOTATION = "ANNOTATION"
     BODY = "BODY"
     CENTER_OF_MASS = "CENTER_OF_MASS"

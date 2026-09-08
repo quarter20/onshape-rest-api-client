@@ -11,8 +11,6 @@ T = TypeVar("T", bound="BTAppElementViewGeometryProperties1100PropertyToValue")
 
 @_attrs_define
 class BTAppElementViewGeometryProperties1100PropertyToValue:
-    """ """
-
     additional_properties: dict[str, str] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTBillOfMaterialsExclusionStatus(str, Enum):
+class GBTBillOfMaterialsExclusionStatus(StrEnum):
     EXCLUDED = "EXCLUDED"
     NOT_EXCLUDED = "NOT_EXCLUDED"
     PARENT_EXCLUDED = "PARENT_EXCLUDED"

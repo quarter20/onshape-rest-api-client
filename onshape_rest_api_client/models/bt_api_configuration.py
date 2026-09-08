@@ -70,7 +70,7 @@ class BTApiConfiguration:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_api_configuration_parameter_map import BTApiConfigurationParameterMap
+        from ..models.bt_api_configuration_parameter_map import BTApiConfigurationParameterMap  # noqa: PLC0415
 
         d = dict(src_dict)
         current = d.pop("current", UNSET)

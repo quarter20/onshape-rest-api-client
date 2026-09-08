@@ -350,7 +350,7 @@ if TYPE_CHECKING:
     from .bt_derived_assembly_mirror_4204 import BTDerivedAssemblyMirror4204
     from .bt_device_login_secret_info import BTDeviceLoginSecretInfo
     from .bt_diff_info import BTDiffInfo
-    from .bt_diff_info_collection_changes import BTDiffInfoCollectionChanges
+    from .bt_diff_info_changes import BTDiffInfoChanges
     from .bt_diff_info_collection_type import BTDiffInfoCollectionType
     from .bt_diff_json_response_2725 import BTDiffJsonResponse2725
     from .bt_diff_json_response_2725_patch import BTDiffJsonResponse2725Patch
@@ -1603,7 +1603,7 @@ if TYPE_CHECKING:
     from .get_part_studio_faces_wvm import GetPartStudioFacesWvm
     from .get_part_studio_features_wvm import GetPartStudioFeaturesWvm
     from .get_part_studio_mass_properties_wvm import GetPartStudioMassPropertiesWvm
-    from .get_parts_wmv_wvm import GetPartsWMVWvm
+    from .get_parts_wmv_wvm import GetPartsWmvWvm
     from .get_revision_history_in_company_by_element_id_wv import GetRevisionHistoryInCompanyByElementIdWv
     from .get_sketch_info_response_default import GetSketchInfoResponseDefault
     from .get_sub_element_content_batch_wvm import GetSubElementContentBatchWvm
@@ -1614,10 +1614,10 @@ if TYPE_CHECKING:
     from .get_variable_studio_references_wv import GetVariableStudioReferencesWv
     from .get_variable_studio_scope_wv import GetVariableStudioScopeWv
     from .get_variables_wv import GetVariablesWv
-    from .get_wmve_metadata_wvm import GetWMVEMetadataWvm
-    from .get_wmve_ps_metadata_wvm import GetWMVEPsMetadataWvm
-    from .get_wmvep_metadata_iden import GetWMVEPMetadataIden
-    from .get_wmvep_metadata_wvm import GetWMVEPMetadataWvm
+    from .get_wmve_metadata_wvm import GetWmveMetadataWvm
+    from .get_wmve_ps_metadata_wvm import GetWmvePsMetadataWvm
+    from .get_wmvep_metadata_iden import GetWmvepMetadataIden
+    from .get_wmvep_metadata_wvm import GetWmvepMetadataWvm
     from .gl_tf import GlTF
     from .gl_tf_extensions import GlTFExtensions
     from .gl_tf_extensions_additional_property import GlTFExtensionsAdditionalProperty
@@ -1828,13 +1828,13 @@ if TYPE_CHECKING:
     from .update_publication_attributes_response_default import UpdatePublicationAttributesResponseDefault
     from .update_references_response_default import UpdateReferencesResponseDefault
     from .update_veop_standard_content_part_metadata_response_default import (
-        UpdateVEOPStandardContentPartMetadataResponseDefault,
+        UpdateVeopStandardContentPartMetadataResponseDefault,
     )
-    from .update_wv_metadata_response_default import UpdateWVMetadataResponseDefault
-    from .update_wve_metadata_response_default import UpdateWVEMetadataResponseDefault
-    from .update_wvep_metadata_iden import UpdateWVEPMetadataIden
-    from .update_wvep_metadata_response_default import UpdateWVEPMetadataResponseDefault
-    from .update_wvep_metadata_wvm import UpdateWVEPMetadataWvm
+    from .update_wv_metadata_response_default import UpdateWvMetadataResponseDefault
+    from .update_wve_metadata_response_default import UpdateWveMetadataResponseDefault
+    from .update_wvep_metadata_iden import UpdateWvepMetadataIden
+    from .update_wvep_metadata_response_default import UpdateWvepMetadataResponseDefault
+    from .update_wvep_metadata_wvm import UpdateWvepMetadataWvm
     from .user_role_priority import UserRolePriority
     from .version_alias import VersionAlias
     from .versions import Versions
@@ -2137,7 +2137,7 @@ _LAZY_MODULES: dict[str, str] = {
     "BTDerivedAssemblyMirror4204": "bt_derived_assembly_mirror_4204",
     "BTDeviceLoginSecretInfo": "bt_device_login_secret_info",
     "BTDiffInfo": "bt_diff_info",
-    "BTDiffInfoCollectionChanges": "bt_diff_info_collection_changes",
+    "BTDiffInfoChanges": "bt_diff_info_changes",
     "BTDiffInfoCollectionType": "bt_diff_info_collection_type",
     "BTDiffJsonResponse2725": "bt_diff_json_response_2725",
     "BTDiffJsonResponse2725Patch": "bt_diff_json_response_2725_patch",
@@ -3310,7 +3310,7 @@ _LAZY_MODULES: dict[str, str] = {
     "GetPartStudioFacesWvm": "get_part_studio_faces_wvm",
     "GetPartStudioFeaturesWvm": "get_part_studio_features_wvm",
     "GetPartStudioMassPropertiesWvm": "get_part_studio_mass_properties_wvm",
-    "GetPartsWMVWvm": "get_parts_wmv_wvm",
+    "GetPartsWmvWvm": "get_parts_wmv_wvm",
     "GetRevisionHistoryInCompanyByElementIdWv": "get_revision_history_in_company_by_element_id_wv",
     "GetSketchInfoResponseDefault": "get_sketch_info_response_default",
     "GetSubElementContentBatchWvm": "get_sub_element_content_batch_wvm",
@@ -3321,10 +3321,10 @@ _LAZY_MODULES: dict[str, str] = {
     "GetVariableStudioReferencesWv": "get_variable_studio_references_wv",
     "GetVariableStudioScopeWv": "get_variable_studio_scope_wv",
     "GetVariablesWv": "get_variables_wv",
-    "GetWMVEMetadataWvm": "get_wmve_metadata_wvm",
-    "GetWMVEPsMetadataWvm": "get_wmve_ps_metadata_wvm",
-    "GetWMVEPMetadataIden": "get_wmvep_metadata_iden",
-    "GetWMVEPMetadataWvm": "get_wmvep_metadata_wvm",
+    "GetWmveMetadataWvm": "get_wmve_metadata_wvm",
+    "GetWmvePsMetadataWvm": "get_wmve_ps_metadata_wvm",
+    "GetWmvepMetadataIden": "get_wmvep_metadata_iden",
+    "GetWmvepMetadataWvm": "get_wmvep_metadata_wvm",
     "GlTF": "gl_tf",
     "GlTFExtensions": "gl_tf_extensions",
     "GlTFExtensionsAdditionalProperty": "gl_tf_extensions_additional_property",
@@ -3528,12 +3528,12 @@ _LAZY_MODULES: dict[str, str] = {
     "UpdatePublicAccessResponseDefault": "update_public_access_response_default",
     "UpdatePublicationAttributesResponseDefault": "update_publication_attributes_response_default",
     "UpdateReferencesResponseDefault": "update_references_response_default",
-    "UpdateVEOPStandardContentPartMetadataResponseDefault": "update_veop_standard_content_part_metadata_response_default",
-    "UpdateWVMetadataResponseDefault": "update_wv_metadata_response_default",
-    "UpdateWVEMetadataResponseDefault": "update_wve_metadata_response_default",
-    "UpdateWVEPMetadataIden": "update_wvep_metadata_iden",
-    "UpdateWVEPMetadataResponseDefault": "update_wvep_metadata_response_default",
-    "UpdateWVEPMetadataWvm": "update_wvep_metadata_wvm",
+    "UpdateVeopStandardContentPartMetadataResponseDefault": "update_veop_standard_content_part_metadata_response_default",
+    "UpdateWvMetadataResponseDefault": "update_wv_metadata_response_default",
+    "UpdateWveMetadataResponseDefault": "update_wve_metadata_response_default",
+    "UpdateWvepMetadataIden": "update_wvep_metadata_iden",
+    "UpdateWvepMetadataResponseDefault": "update_wvep_metadata_response_default",
+    "UpdateWvepMetadataWvm": "update_wvep_metadata_wvm",
     "UserRolePriority": "user_role_priority",
     "VersionAlias": "version_alias",
     "Versions": "versions",
@@ -3873,7 +3873,7 @@ __all__ = (
     "BTDerivedAssemblyMirror4204",
     "BTDeviceLoginSecretInfo",
     "BTDiffInfo",
-    "BTDiffInfoCollectionChanges",
+    "BTDiffInfoChanges",
     "BTDiffInfoCollectionType",
     "BTDiffJsonResponse2725",
     "BTDiffJsonResponse2725Patch",
@@ -5027,7 +5027,7 @@ __all__ = (
     "GetPartStudioFacesWvm",
     "GetPartStudioFeaturesWvm",
     "GetPartStudioMassPropertiesWvm",
-    "GetPartsWMVWvm",
+    "GetPartsWmvWvm",
     "GetRevisionHistoryInCompanyByElementIdWv",
     "GetSketchInfoResponseDefault",
     "GetSubElementContentBatchWvm",
@@ -5038,10 +5038,10 @@ __all__ = (
     "GetVariableStudioReferencesWv",
     "GetVariableStudioScopeWv",
     "GetVariablesWv",
-    "GetWMVEMetadataWvm",
-    "GetWMVEPMetadataIden",
-    "GetWMVEPMetadataWvm",
-    "GetWMVEPsMetadataWvm",
+    "GetWmveMetadataWvm",
+    "GetWmvepMetadataIden",
+    "GetWmvepMetadataWvm",
+    "GetWmvePsMetadataWvm",
     "GlobalPermissionInfo",
     "GlTF",
     "GlTFExtensions",
@@ -5245,12 +5245,12 @@ __all__ = (
     "UpdatePublicAccessResponseDefault",
     "UpdatePublicationAttributesResponseDefault",
     "UpdateReferencesResponseDefault",
-    "UpdateVEOPStandardContentPartMetadataResponseDefault",
-    "UpdateWVEMetadataResponseDefault",
-    "UpdateWVEPMetadataIden",
-    "UpdateWVEPMetadataResponseDefault",
-    "UpdateWVEPMetadataWvm",
-    "UpdateWVMetadataResponseDefault",
+    "UpdateVeopStandardContentPartMetadataResponseDefault",
+    "UpdateWveMetadataResponseDefault",
+    "UpdateWvepMetadataIden",
+    "UpdateWvepMetadataResponseDefault",
+    "UpdateWvepMetadataWvm",
+    "UpdateWvMetadataResponseDefault",
     "UserRolePriority",
     "VersionAlias",
     "Versions",

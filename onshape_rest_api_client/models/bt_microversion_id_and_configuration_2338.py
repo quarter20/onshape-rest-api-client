@@ -78,9 +78,9 @@ class BTMicroversionIdAndConfiguration2338:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_microversion_id_366 import BTMicroversionId366
+        from ..models.bt_microversion_id_366 import BTMicroversionId366  # noqa: PLC0415
         from ..models.bt_microversion_id_and_configuration_2338_configuration_parameter_id_to_value import (
-            BTMicroversionIdAndConfiguration2338ConfigurationParameterIdToValue,
+            BTMicroversionIdAndConfiguration2338ConfigurationParameterIdToValue,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

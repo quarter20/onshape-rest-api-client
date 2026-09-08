@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetAssemblyBoundingBoxesWvm(str, Enum):
+class GetAssemblyBoundingBoxesWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

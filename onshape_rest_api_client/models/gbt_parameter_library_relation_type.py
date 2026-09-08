@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTParameterLibraryRelationType(str, Enum):
+class GBTParameterLibraryRelationType(StrEnum):
     DEFAULT = "DEFAULT"
     IGNORE_LIBRARY_VALUES = "IGNORE_LIBRARY_VALUES"
     UNKNOWN = "UNKNOWN"

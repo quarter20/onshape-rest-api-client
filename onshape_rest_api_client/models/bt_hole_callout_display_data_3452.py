@@ -312,9 +312,9 @@ class BTHoleCalloutDisplayData3452:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_coordinate_system_387 import BTCoordinateSystem387
-        from ..models.bt_tolerant_value_display_data_3483 import BTTolerantValueDisplayData3483
-        from ..models.bt_vector_2d1812 import BTVector2D1812
+        from ..models.bt_coordinate_system_387 import BTCoordinateSystem387  # noqa: PLC0415
+        from ..models.bt_tolerant_value_display_data_3483 import BTTolerantValueDisplayData3483  # noqa: PLC0415
+        from ..models.bt_vector_2d1812 import BTVector2D1812  # noqa: PLC0415
 
         d = dict(src_dict)
         all_references = cast(list[str], d.pop("allReferences", UNSET))

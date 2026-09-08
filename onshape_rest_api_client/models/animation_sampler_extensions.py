@@ -15,8 +15,6 @@ T = TypeVar("T", bound="AnimationSamplerExtensions")
 
 @_attrs_define
 class AnimationSamplerExtensions:
-    """ """
-
     additional_properties: dict[str, AnimationSamplerExtensionsAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -32,7 +30,7 @@ class AnimationSamplerExtensions:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.animation_sampler_extensions_additional_property import (
-            AnimationSamplerExtensionsAdditionalProperty,
+            AnimationSamplerExtensionsAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

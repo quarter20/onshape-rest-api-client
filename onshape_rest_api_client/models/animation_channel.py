@@ -64,9 +64,9 @@ class AnimationChannel:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.animation_channel_extensions import AnimationChannelExtensions
-        from ..models.animation_channel_extras import AnimationChannelExtras
-        from ..models.animation_channel_target import AnimationChannelTarget
+        from ..models.animation_channel_extensions import AnimationChannelExtensions  # noqa: PLC0415
+        from ..models.animation_channel_extras import AnimationChannelExtras  # noqa: PLC0415
+        from ..models.animation_channel_target import AnimationChannelTarget  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

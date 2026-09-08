@@ -127,11 +127,11 @@ class BTExportTessellatedFacesResponse898:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_export_model_bodies_response_734 import BTExportModelBodiesResponse734
-        from ..models.bt_export_tessellated_body_3398 import BTExportTessellatedBody3398
-        from ..models.bt_full_element_id_756 import BTFullElementId756
-        from ..models.bt_part_studio_display_data_346 import BTPartStudioDisplayData346
-        from ..models.bt_vector_3d389 import BTVector3D389
+        from ..models.bt_export_model_bodies_response_734 import BTExportModelBodiesResponse734  # noqa: PLC0415
+        from ..models.bt_export_tessellated_body_3398 import BTExportTessellatedBody3398  # noqa: PLC0415
+        from ..models.bt_full_element_id_756 import BTFullElementId756  # noqa: PLC0415
+        from ..models.bt_part_studio_display_data_346 import BTPartStudioDisplayData346  # noqa: PLC0415
+        from ..models.bt_vector_3d389 import BTVector3D389  # noqa: PLC0415
 
         d = dict(src_dict)
         _bodies = d.pop("bodies", UNSET)

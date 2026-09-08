@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTBSFeatureVisibility(str, Enum):
+class GBTBSFeatureVisibility(StrEnum):
     HIDDEN = "HIDDEN"
     UNKNOWN = "UNKNOWN"
     UNSET = "UNSET"

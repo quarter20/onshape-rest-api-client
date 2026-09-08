@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTNodeChange(str, Enum):
+class GBTNodeChange(StrEnum):
     ADDED = "ADDED"
     DELETED = "DELETED"
     MODIFIED = "MODIFIED"

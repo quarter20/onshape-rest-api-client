@@ -5,18 +5,18 @@ from urllib.parse import quote
 import httpx
 
 from ...client import AuthenticatedClient, Client
-from ...models.update_wvep_metadata_iden import UpdateWVEPMetadataIden
-from ...models.update_wvep_metadata_response_default import UpdateWVEPMetadataResponseDefault
-from ...models.update_wvep_metadata_wvm import UpdateWVEPMetadataWvm
+from ...models.update_wvep_metadata_iden import UpdateWvepMetadataIden
+from ...models.update_wvep_metadata_response_default import UpdateWvepMetadataResponseDefault
+from ...models.update_wvep_metadata_wvm import UpdateWvepMetadataWvm
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     did: str,
-    wvm: UpdateWVEPMetadataWvm,
+    wvm: UpdateWvepMetadataWvm,
     wvmid: str,
     eid: str,
-    iden: UpdateWVEPMetadataIden,
+    iden: UpdateWvepMetadataIden,
     pid: str,
     *,
     body: str,
@@ -62,15 +62,15 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> UpdateWVEPMetadataResponseDefault:
-    response_default = UpdateWVEPMetadataResponseDefault.from_dict(response.json())
+) -> UpdateWvepMetadataResponseDefault:
+    response_default = UpdateWvepMetadataResponseDefault.from_dict(response.json())
 
     return response_default
 
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[UpdateWVEPMetadataResponseDefault]:
+) -> Response[UpdateWvepMetadataResponseDefault]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -81,10 +81,10 @@ def _build_response(
 
 def sync_detailed(
     did: str,
-    wvm: UpdateWVEPMetadataWvm,
+    wvm: UpdateWvepMetadataWvm,
     wvmid: str,
     eid: str,
-    iden: UpdateWVEPMetadataIden,
+    iden: UpdateWvepMetadataIden,
     pid: str,
     *,
     client: AuthenticatedClient,
@@ -93,7 +93,7 @@ def sync_detailed(
     configuration: str | Unset = "",
     rollback_bar_index: int | Unset = -1,
     element_microversion_id: str | Unset = UNSET,
-) -> Response[UpdateWVEPMetadataResponseDefault]:
+) -> Response[UpdateWvepMetadataResponseDefault]:
     """Update the metadata for a part.
 
      See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
@@ -106,10 +106,10 @@ def sync_detailed(
 
     Args:
         did (str):
-        wvm (UpdateWVEPMetadataWvm):
+        wvm (UpdateWvepMetadataWvm):
         wvmid (str):
         eid (str):
-        iden (UpdateWVEPMetadataIden):
+        iden (UpdateWvepMetadataIden):
         pid (str):
         link_document_id (str | Unset):  Default: ''.
         configuration (str | Unset):  Default: ''.
@@ -122,7 +122,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[UpdateWVEPMetadataResponseDefault]
+        Response[UpdateWvepMetadataResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -148,10 +148,10 @@ def sync_detailed(
 
 def sync(
     did: str,
-    wvm: UpdateWVEPMetadataWvm,
+    wvm: UpdateWvepMetadataWvm,
     wvmid: str,
     eid: str,
-    iden: UpdateWVEPMetadataIden,
+    iden: UpdateWvepMetadataIden,
     pid: str,
     *,
     client: AuthenticatedClient,
@@ -160,7 +160,7 @@ def sync(
     configuration: str | Unset = "",
     rollback_bar_index: int | Unset = -1,
     element_microversion_id: str | Unset = UNSET,
-) -> UpdateWVEPMetadataResponseDefault | None:
+) -> UpdateWvepMetadataResponseDefault | None:
     """Update the metadata for a part.
 
      See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
@@ -173,10 +173,10 @@ def sync(
 
     Args:
         did (str):
-        wvm (UpdateWVEPMetadataWvm):
+        wvm (UpdateWvepMetadataWvm):
         wvmid (str):
         eid (str):
-        iden (UpdateWVEPMetadataIden):
+        iden (UpdateWvepMetadataIden):
         pid (str):
         link_document_id (str | Unset):  Default: ''.
         configuration (str | Unset):  Default: ''.
@@ -189,7 +189,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        UpdateWVEPMetadataResponseDefault
+        UpdateWvepMetadataResponseDefault
     """
 
     return sync_detailed(
@@ -210,10 +210,10 @@ def sync(
 
 async def asyncio_detailed(
     did: str,
-    wvm: UpdateWVEPMetadataWvm,
+    wvm: UpdateWvepMetadataWvm,
     wvmid: str,
     eid: str,
-    iden: UpdateWVEPMetadataIden,
+    iden: UpdateWvepMetadataIden,
     pid: str,
     *,
     client: AuthenticatedClient,
@@ -222,7 +222,7 @@ async def asyncio_detailed(
     configuration: str | Unset = "",
     rollback_bar_index: int | Unset = -1,
     element_microversion_id: str | Unset = UNSET,
-) -> Response[UpdateWVEPMetadataResponseDefault]:
+) -> Response[UpdateWvepMetadataResponseDefault]:
     """Update the metadata for a part.
 
      See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
@@ -235,10 +235,10 @@ async def asyncio_detailed(
 
     Args:
         did (str):
-        wvm (UpdateWVEPMetadataWvm):
+        wvm (UpdateWvepMetadataWvm):
         wvmid (str):
         eid (str):
-        iden (UpdateWVEPMetadataIden):
+        iden (UpdateWvepMetadataIden):
         pid (str):
         link_document_id (str | Unset):  Default: ''.
         configuration (str | Unset):  Default: ''.
@@ -251,7 +251,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[UpdateWVEPMetadataResponseDefault]
+        Response[UpdateWvepMetadataResponseDefault]
     """
 
     kwargs = _get_kwargs(
@@ -275,10 +275,10 @@ async def asyncio_detailed(
 
 async def asyncio(
     did: str,
-    wvm: UpdateWVEPMetadataWvm,
+    wvm: UpdateWvepMetadataWvm,
     wvmid: str,
     eid: str,
-    iden: UpdateWVEPMetadataIden,
+    iden: UpdateWvepMetadataIden,
     pid: str,
     *,
     client: AuthenticatedClient,
@@ -287,7 +287,7 @@ async def asyncio(
     configuration: str | Unset = "",
     rollback_bar_index: int | Unset = -1,
     element_microversion_id: str | Unset = UNSET,
-) -> UpdateWVEPMetadataResponseDefault | None:
+) -> UpdateWvepMetadataResponseDefault | None:
     """Update the metadata for a part.
 
      See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
@@ -300,10 +300,10 @@ async def asyncio(
 
     Args:
         did (str):
-        wvm (UpdateWVEPMetadataWvm):
+        wvm (UpdateWvepMetadataWvm):
         wvmid (str):
         eid (str):
-        iden (UpdateWVEPMetadataIden):
+        iden (UpdateWvepMetadataIden):
         pid (str):
         link_document_id (str | Unset):  Default: ''.
         configuration (str | Unset):  Default: ''.
@@ -316,7 +316,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        UpdateWVEPMetadataResponseDefault
+        UpdateWvepMetadataResponseDefault
     """
 
     return (

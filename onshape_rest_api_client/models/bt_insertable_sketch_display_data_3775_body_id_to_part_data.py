@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTInsertableSketchDisplayData3775BodyIdToPartData")
 
 @_attrs_define
 class BTInsertableSketchDisplayData3775BodyIdToPartData:
-    """ """
-
     additional_properties: dict[str, BTPartData16] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTInsertableSketchDisplayData3775BodyIdToPartData:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_part_data_16 import BTPartData16
+        from ..models.bt_part_data_16 import BTPartData16  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_insertable_sketch_display_data_3775_body_id_to_part_data = cls()

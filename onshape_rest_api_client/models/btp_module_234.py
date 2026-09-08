@@ -189,13 +189,13 @@ class BTPModule234:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_lazily_parsed_feature_script import BTLazilyParsedFeatureScript
-        from ..models.btp_literal_number_258 import BTPLiteralNumber258
-        from ..models.btp_module_234_deep_imports import BTPModule234DeepImports
-        from ..models.btp_module_234_path_map import BTPModule234PathMap
-        from ..models.btp_space_10 import BTPSpace10
-        from ..models.btp_top_level_import_285 import BTPTopLevelImport285
-        from ..models.btp_top_level_node_286 import BTPTopLevelNode286
+        from ..models.bt_lazily_parsed_feature_script import BTLazilyParsedFeatureScript  # noqa: PLC0415
+        from ..models.btp_literal_number_258 import BTPLiteralNumber258  # noqa: PLC0415
+        from ..models.btp_module_234_deep_imports import BTPModule234DeepImports  # noqa: PLC0415
+        from ..models.btp_module_234_path_map import BTPModule234PathMap  # noqa: PLC0415
+        from ..models.btp_space_10 import BTPSpace10  # noqa: PLC0415
+        from ..models.btp_top_level_import_285 import BTPTopLevelImport285  # noqa: PLC0415
+        from ..models.btp_top_level_node_286 import BTPTopLevelNode286  # noqa: PLC0415
 
         d = dict(src_dict)
         atomic = d.pop("atomic", UNSET)

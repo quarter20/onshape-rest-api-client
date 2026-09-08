@@ -11,8 +11,6 @@ T = TypeVar("T", bound="BTMModel141ChildNodeIdToIndex")
 
 @_attrs_define
 class BTMModel141ChildNodeIdToIndex:
-    """ """
-
     additional_properties: dict[str, int] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

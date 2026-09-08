@@ -17,8 +17,6 @@ T = TypeVar("T", bound="BTCommonUnitsInfoQuantityTypeToBaseUnits")
 
 @_attrs_define
 class BTCommonUnitsInfoQuantityTypeToBaseUnits:
-    """ """
-
     additional_properties: dict[str, BTCommonUnitsInfoQuantityTypeToBaseUnitsAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -34,7 +32,7 @@ class BTCommonUnitsInfoQuantityTypeToBaseUnits:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_common_units_info_quantity_type_to_base_units_additional_property import (
-            BTCommonUnitsInfoQuantityTypeToBaseUnitsAdditionalProperty,
+            BTCommonUnitsInfoQuantityTypeToBaseUnitsAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

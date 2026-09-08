@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTRestUserRole(str, Enum):
+class BTRestUserRole(StrEnum):
     INTERNAL = "INTERNAL"
     PUBLIC = "PUBLIC"
 

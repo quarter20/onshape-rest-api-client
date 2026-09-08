@@ -112,7 +112,7 @@ class BTPropertiesTableTemplateInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_simple_property_info import BTSimplePropertyInfo
+        from ..models.bt_simple_property_info import BTSimplePropertyInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         company_id = d.pop("companyId", UNSET)

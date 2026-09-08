@@ -62,7 +62,7 @@ class BTListResponseBTTeamMemberInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_team_member_info import BTTeamMemberInfo
+        from ..models.bt_team_member_info import BTTeamMemberInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         href = d.pop("href", UNSET)

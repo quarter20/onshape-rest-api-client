@@ -40,7 +40,7 @@ class BTNamedViewsInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_named_views_info_named_views import BTNamedViewsInfoNamedViews
+        from ..models.bt_named_views_info_named_views import BTNamedViewsInfoNamedViews  # noqa: PLC0415
 
         d = dict(src_dict)
         _named_views = d.pop("namedViews", UNSET)

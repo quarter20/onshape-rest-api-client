@@ -61,7 +61,7 @@ class BTSelectItemViewStateInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_document_selector_info import BTDocumentSelectorInfo
+        from ..models.bt_document_selector_info import BTDocumentSelectorInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         active_selector_id = d.pop("activeSelectorId", UNSET)

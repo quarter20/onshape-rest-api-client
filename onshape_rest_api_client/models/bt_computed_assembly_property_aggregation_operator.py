@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTComputedAssemblyPropertyAggregationOperator(str, Enum):
+class BTComputedAssemblyPropertyAggregationOperator(StrEnum):
     ALL = "ALL"
     ANY = "ANY"
     AVERAGE = "AVERAGE"

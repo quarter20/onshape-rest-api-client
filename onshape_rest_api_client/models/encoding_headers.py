@@ -15,8 +15,6 @@ T = TypeVar("T", bound="EncodingHeaders")
 
 @_attrs_define
 class EncodingHeaders:
-    """ """
-
     additional_properties: dict[str, Header] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class EncodingHeaders:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.header import Header
+        from ..models.header import Header  # noqa: PLC0415
 
         d = dict(src_dict)
         encoding_headers = cls()

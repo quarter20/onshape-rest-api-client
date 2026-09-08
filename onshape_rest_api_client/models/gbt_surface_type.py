@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTSurfaceType(str, Enum):
+class GBTSurfaceType(StrEnum):
     CONE = "CONE"
     CYLINDER = "CYLINDER"
     EXTRUDED = "EXTRUDED"

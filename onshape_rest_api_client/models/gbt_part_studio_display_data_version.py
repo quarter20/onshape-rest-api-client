@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTPartStudioDisplayDataVersion(str, Enum):
+class GBTPartStudioDisplayDataVersion(StrEnum):
     UNKNOWN = "UNKNOWN"
     V0_ORIGINAL_VERSION = "V0_ORIGINAL_VERSION"
     V1_SMOOTH_EDGES_RENDERING_OPTIONS = "V1_SMOOTH_EDGES_RENDERING_OPTIONS"

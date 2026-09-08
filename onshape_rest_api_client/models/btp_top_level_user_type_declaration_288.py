@@ -197,12 +197,12 @@ class BTPTopLevelUserTypeDeclaration288:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btp_annotation_231 import BTPAnnotation231
-        from ..models.btp_argument_declaration_232 import BTPArgumentDeclaration232
-        from ..models.btp_identifier_8 import BTPIdentifier8
-        from ..models.btp_literal_number_258 import BTPLiteralNumber258
-        from ..models.btp_name_261 import BTPName261
-        from ..models.btp_space_10 import BTPSpace10
+        from ..models.btp_annotation_231 import BTPAnnotation231  # noqa: PLC0415
+        from ..models.btp_argument_declaration_232 import BTPArgumentDeclaration232  # noqa: PLC0415
+        from ..models.btp_identifier_8 import BTPIdentifier8  # noqa: PLC0415
+        from ..models.btp_literal_number_258 import BTPLiteralNumber258  # noqa: PLC0415
+        from ..models.btp_name_261 import BTPName261  # noqa: PLC0415
+        from ..models.btp_space_10 import BTPSpace10  # noqa: PLC0415
 
         d = dict(src_dict)
         atomic = d.pop("atomic", UNSET)

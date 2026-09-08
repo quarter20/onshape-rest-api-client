@@ -15,8 +15,6 @@ T = TypeVar("T", bound="ComponentsRequestBodies")
 
 @_attrs_define
 class ComponentsRequestBodies:
-    """ """
-
     additional_properties: dict[str, RequestBody] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class ComponentsRequestBodies:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.request_body import RequestBody
+        from ..models.request_body import RequestBody  # noqa: PLC0415
 
         d = dict(src_dict)
         components_request_bodies = cls()

@@ -73,8 +73,8 @@ class Asset:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.asset_extensions import AssetExtensions
-        from ..models.asset_extras import AssetExtras
+        from ..models.asset_extensions import AssetExtensions  # noqa: PLC0415
+        from ..models.asset_extras import AssetExtras  # noqa: PLC0415
 
         d = dict(src_dict)
         copyright_ = d.pop("copyright", UNSET)

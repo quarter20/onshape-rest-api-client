@@ -76,7 +76,7 @@ class BTCardInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_address_info import BTAddressInfo
+        from ..models.bt_address_info import BTAddressInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _billing_address = d.pop("billingAddress", UNSET)

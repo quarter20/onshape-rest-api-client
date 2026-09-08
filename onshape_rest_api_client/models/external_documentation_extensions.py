@@ -17,8 +17,6 @@ T = TypeVar("T", bound="ExternalDocumentationExtensions")
 
 @_attrs_define
 class ExternalDocumentationExtensions:
-    """ """
-
     additional_properties: dict[str, ExternalDocumentationExtensionsAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -34,7 +32,7 @@ class ExternalDocumentationExtensions:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.external_documentation_extensions_additional_property import (
-            ExternalDocumentationExtensionsAdditionalProperty,
+            ExternalDocumentationExtensionsAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

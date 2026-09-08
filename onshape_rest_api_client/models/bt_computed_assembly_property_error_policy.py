@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTComputedAssemblyPropertyErrorPolicy(str, Enum):
+class BTComputedAssemblyPropertyErrorPolicy(StrEnum):
     EXCLUDEFROMCOMPUTATION = "ExcludeFromComputation"
     PROPAGATEERROR = "PropagateError"
     TREATASFALSE = "TreatAsFalse"

@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTPartDisplayData17PropertyIdToSource")
 
 @_attrs_define
 class BTPartDisplayData17PropertyIdToSource:
-    """ """
-
     additional_properties: dict[str, BTPartMetadataSource2895] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTPartDisplayData17PropertyIdToSource:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_part_metadata_source_2895 import BTPartMetadataSource2895
+        from ..models.bt_part_metadata_source_2895 import BTPartMetadataSource2895  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_part_display_data_17_property_id_to_source = cls()

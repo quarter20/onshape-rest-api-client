@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTHoleType(str, Enum):
+class GBTHoleType(StrEnum):
     C_BORE = "C_BORE"
     C_SINK = "C_SINK"
     SIMPLE = "SIMPLE"

@@ -73,8 +73,8 @@ class Image:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.image_extensions import ImageExtensions
-        from ..models.image_extras import ImageExtras
+        from ..models.image_extensions import ImageExtensions  # noqa: PLC0415
+        from ..models.image_extras import ImageExtras  # noqa: PLC0415
 
         d = dict(src_dict)
         buffer_view = d.pop("bufferView", UNSET)

@@ -75,9 +75,9 @@ class Mesh:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.mesh_extensions import MeshExtensions
-        from ..models.mesh_extras import MeshExtras
-        from ..models.mesh_primitive import MeshPrimitive
+        from ..models.mesh_extensions import MeshExtensions  # noqa: PLC0415
+        from ..models.mesh_extras import MeshExtras  # noqa: PLC0415
+        from ..models.mesh_primitive import MeshPrimitive  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

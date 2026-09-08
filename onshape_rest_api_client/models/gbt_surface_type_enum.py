@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTSurfaceTypeEnum(str, Enum):
+class GBTSurfaceTypeEnum(StrEnum):
     BLEND = "BLEND"
     BSURFACE = "BSURFACE"
     CONE = "CONE"

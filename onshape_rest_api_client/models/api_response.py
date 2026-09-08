@@ -79,10 +79,10 @@ class ApiResponse:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.api_response_content import ApiResponseContent
-        from ..models.api_response_extensions import ApiResponseExtensions
-        from ..models.api_response_headers import ApiResponseHeaders
-        from ..models.api_response_links import ApiResponseLinks
+        from ..models.api_response_content import ApiResponseContent  # noqa: PLC0415
+        from ..models.api_response_extensions import ApiResponseExtensions  # noqa: PLC0415
+        from ..models.api_response_headers import ApiResponseHeaders  # noqa: PLC0415
+        from ..models.api_response_links import ApiResponseLinks  # noqa: PLC0415
 
         d = dict(src_dict)
         _content = d.pop("content", UNSET)

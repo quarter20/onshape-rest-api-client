@@ -9,6 +9,7 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.bt_element_library_reference_data_3133 import BTElementLibraryReferenceData3133
     from ..models.bt_sketch_entity_display_data_354 import BTSketchEntityDisplayData354
     from ..models.bt_vector_3d389 import BTVector3D389
 
@@ -23,6 +24,7 @@ class BTSketchImageDisplayData1379:
         bottom_left_corner (BTVector3D389 | Unset):
         bottom_right_corner (BTVector3D389 | Unset):
         bt_type (str | Unset): Type of JSON object.
+        element_library_data (BTElementLibraryReferenceData3133 | Unset):
         entities (list[BTSketchEntityDisplayData354] | Unset):
         feature_id (str | Unset):
         is_element_library_reference (bool | Unset):
@@ -35,6 +37,7 @@ class BTSketchImageDisplayData1379:
     bottom_left_corner: BTVector3D389 | Unset = UNSET
     bottom_right_corner: BTVector3D389 | Unset = UNSET
     bt_type: str | Unset = UNSET
+    element_library_data: BTElementLibraryReferenceData3133 | Unset = UNSET
     entities: list[BTSketchEntityDisplayData354] | Unset = UNSET
     feature_id: str | Unset = UNSET
     is_element_library_reference: bool | Unset = UNSET
@@ -54,6 +57,10 @@ class BTSketchImageDisplayData1379:
             bottom_right_corner = self.bottom_right_corner.to_dict()
 
         bt_type = self.bt_type
+
+        element_library_data: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.element_library_data, Unset):
+            element_library_data = self.element_library_data.to_dict()
 
         entities: list[dict[str, Any]] | Unset = UNSET
         if not isinstance(self.entities, Unset):
@@ -87,6 +94,8 @@ class BTSketchImageDisplayData1379:
             field_dict["bottomRightCorner"] = bottom_right_corner
         if bt_type is not UNSET:
             field_dict["btType"] = bt_type
+        if element_library_data is not UNSET:
+            field_dict["elementLibraryData"] = element_library_data
         if entities is not UNSET:
             field_dict["entities"] = entities
         if feature_id is not UNSET:
@@ -106,8 +115,9 @@ class BTSketchImageDisplayData1379:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_sketch_entity_display_data_354 import BTSketchEntityDisplayData354
-        from ..models.bt_vector_3d389 import BTVector3D389
+        from ..models.bt_element_library_reference_data_3133 import BTElementLibraryReferenceData3133  # noqa: PLC0415
+        from ..models.bt_sketch_entity_display_data_354 import BTSketchEntityDisplayData354  # noqa: PLC0415
+        from ..models.bt_vector_3d389 import BTVector3D389  # noqa: PLC0415
 
         d = dict(src_dict)
         _bottom_left_corner = d.pop("bottomLeftCorner", UNSET)
@@ -125,6 +135,13 @@ class BTSketchImageDisplayData1379:
             bottom_right_corner = BTVector3D389.from_dict(_bottom_right_corner)
 
         bt_type = d.pop("btType", UNSET)
+
+        _element_library_data = d.pop("elementLibraryData", UNSET)
+        element_library_data: BTElementLibraryReferenceData3133 | Unset
+        if isinstance(_element_library_data, Unset):
+            element_library_data = UNSET
+        else:
+            element_library_data = BTElementLibraryReferenceData3133.from_dict(_element_library_data)
 
         _entities = d.pop("entities", UNSET)
         entities: list[BTSketchEntityDisplayData354] | Unset = UNSET
@@ -156,6 +173,7 @@ class BTSketchImageDisplayData1379:
             bottom_left_corner=bottom_left_corner,
             bottom_right_corner=bottom_right_corner,
             bt_type=bt_type,
+            element_library_data=element_library_data,
             entities=entities,
             feature_id=feature_id,
             is_element_library_reference=is_element_library_reference,

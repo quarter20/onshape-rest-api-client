@@ -104,8 +104,8 @@ class BTBExportAdvancedParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_parts_export_filter_4308 import BTPartsExportFilter4308
-        from ..models.btb_assembly_export_params import BTBAssemblyExportParams
+        from ..models.bt_parts_export_filter_4308 import BTPartsExportFilter4308  # noqa: PLC0415
+        from ..models.btb_assembly_export_params import BTBAssemblyExportParams  # noqa: PLC0415
 
         d = dict(src_dict)
         _assembly_export_params = d.pop("assemblyExportParams", UNSET)

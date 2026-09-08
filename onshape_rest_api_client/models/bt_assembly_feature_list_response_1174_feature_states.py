@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTAssemblyFeatureListResponse1174FeatureStates")
 
 @_attrs_define
 class BTAssemblyFeatureListResponse1174FeatureStates:
-    """ """
-
     additional_properties: dict[str, BTFeatureState1688] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTAssemblyFeatureListResponse1174FeatureStates:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_feature_state_1688 import BTFeatureState1688
+        from ..models.bt_feature_state_1688 import BTFeatureState1688  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_assembly_feature_list_response_1174_feature_states = cls()

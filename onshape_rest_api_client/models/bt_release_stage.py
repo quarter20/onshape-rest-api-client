@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTReleaseStage(str, Enum):
+class BTReleaseStage(StrEnum):
     APPROVERS_METADATA_STARTED = "APPROVERS_METADATA_STARTED"
     APPROVERS_RECORDED = "APPROVERS_RECORDED"
     CREATE_RELEASE_PACKAGE_INFO = "CREATE_RELEASE_PACKAGE_INFO"

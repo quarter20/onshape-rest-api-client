@@ -67,8 +67,10 @@ class MaterialNormalTextureInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.material_normal_texture_info_extensions import MaterialNormalTextureInfoExtensions
-        from ..models.material_normal_texture_info_extras import MaterialNormalTextureInfoExtras
+        from ..models.material_normal_texture_info_extensions import (
+            MaterialNormalTextureInfoExtensions,  # noqa: PLC0415
+        )
+        from ..models.material_normal_texture_info_extras import MaterialNormalTextureInfoExtras  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

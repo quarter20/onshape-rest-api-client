@@ -130,17 +130,17 @@ class Components:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.components_callbacks import ComponentsCallbacks
-        from ..models.components_examples import ComponentsExamples
-        from ..models.components_extensions import ComponentsExtensions
-        from ..models.components_headers import ComponentsHeaders
-        from ..models.components_links import ComponentsLinks
-        from ..models.components_parameters import ComponentsParameters
-        from ..models.components_path_items import ComponentsPathItems
-        from ..models.components_request_bodies import ComponentsRequestBodies
-        from ..models.components_responses import ComponentsResponses
-        from ..models.components_schemas import ComponentsSchemas
-        from ..models.components_security_schemes import ComponentsSecuritySchemes
+        from ..models.components_callbacks import ComponentsCallbacks  # noqa: PLC0415
+        from ..models.components_examples import ComponentsExamples  # noqa: PLC0415
+        from ..models.components_extensions import ComponentsExtensions  # noqa: PLC0415
+        from ..models.components_headers import ComponentsHeaders  # noqa: PLC0415
+        from ..models.components_links import ComponentsLinks  # noqa: PLC0415
+        from ..models.components_parameters import ComponentsParameters  # noqa: PLC0415
+        from ..models.components_path_items import ComponentsPathItems  # noqa: PLC0415
+        from ..models.components_request_bodies import ComponentsRequestBodies  # noqa: PLC0415
+        from ..models.components_responses import ComponentsResponses  # noqa: PLC0415
+        from ..models.components_schemas import ComponentsSchemas  # noqa: PLC0415
+        from ..models.components_security_schemes import ComponentsSecuritySchemes  # noqa: PLC0415
 
         d = dict(src_dict)
         _callbacks = d.pop("callbacks", UNSET)

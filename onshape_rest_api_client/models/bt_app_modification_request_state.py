@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTAppModificationRequestState(str, Enum):
+class BTAppModificationRequestState(StrEnum):
     ACTIVE = "ACTIVE"
     DONE = "DONE"
     FAILED = "FAILED"

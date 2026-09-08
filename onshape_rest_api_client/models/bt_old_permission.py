@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTOldPermission(str, Enum):
+class BTOldPermission(StrEnum):
     ANONYMOUS_ACCESS = "ANONYMOUS_ACCESS"
     COMMENT = "COMMENT"
     FULL = "FULL"

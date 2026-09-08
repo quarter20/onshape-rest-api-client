@@ -100,8 +100,8 @@ class BTAppElementUpdateParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_metadata_property_update_params import BTMetadataPropertyUpdateParams
-        from ..models.btj_edit_3734 import BTJEdit3734
+        from ..models.bt_metadata_property_update_params import BTMetadataPropertyUpdateParams  # noqa: PLC0415
+        from ..models.btj_edit_3734 import BTJEdit3734  # noqa: PLC0415
 
         d = dict(src_dict)
         description = d.pop("description", UNSET)

@@ -62,7 +62,7 @@ class UpdateParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_unique_document_item_params import BTUniqueDocumentItemParams
+        from ..models.bt_unique_document_item_params import BTUniqueDocumentItemParams  # noqa: PLC0415
 
         d = dict(src_dict)
         _from_reference = d.pop("fromReference", UNSET)

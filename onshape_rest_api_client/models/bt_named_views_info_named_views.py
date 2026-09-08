@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTNamedViewsInfoNamedViews")
 
 @_attrs_define
 class BTNamedViewsInfoNamedViews:
-    """ """
-
     additional_properties: dict[str, BTNamedViewInfo] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTNamedViewsInfoNamedViews:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_named_view_info import BTNamedViewInfo
+        from ..models.bt_named_view_info import BTNamedViewInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_named_views_info_named_views = cls()

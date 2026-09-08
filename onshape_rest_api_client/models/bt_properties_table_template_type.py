@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTPropertiesTableTemplateType(str, Enum):
+class BTPropertiesTableTemplateType(StrEnum):
     BOM = "BOM"
     INSPECTION_TABLE = "INSPECTION_TABLE"
     REVISION_TABLE = "REVISION_TABLE"

@@ -148,8 +148,8 @@ class BTCategoryPropertyInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_category_property_config_info import BTCategoryPropertyConfigInfo
-        from ..models.bt_metadata_category_summary_info import BTMetadataCategorySummaryInfo
+        from ..models.bt_category_property_config_info import BTCategoryPropertyConfigInfo  # noqa: PLC0415
+        from ..models.bt_metadata_category_summary_info import BTMetadataCategorySummaryInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         array = d.pop("array", UNSET)

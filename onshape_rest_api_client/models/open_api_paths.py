@@ -49,8 +49,8 @@ class OpenAPIPaths:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.open_api_paths_extensions import OpenAPIPathsExtensions
-        from ..models.path_item import PathItem
+        from ..models.open_api_paths_extensions import OpenAPIPathsExtensions  # noqa: PLC0415
+        from ..models.path_item import PathItem  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

@@ -189,7 +189,7 @@ class BTElementMergeInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo
+        from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         branch_point_element_name = d.pop("branchPointElementName", UNSET)

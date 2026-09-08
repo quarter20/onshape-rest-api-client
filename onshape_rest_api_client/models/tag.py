@@ -61,8 +61,8 @@ class Tag:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.external_documentation import ExternalDocumentation
-        from ..models.tag_extensions import TagExtensions
+        from ..models.external_documentation import ExternalDocumentation  # noqa: PLC0415
+        from ..models.tag_extensions import TagExtensions  # noqa: PLC0415
 
         d = dict(src_dict)
         description = d.pop("description", UNSET)

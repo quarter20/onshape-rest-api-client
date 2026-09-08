@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTInstanceBase2263CustomData")
 
 @_attrs_define
 class BTInstanceBase2263CustomData:
-    """ """
-
     additional_properties: dict[str, BTReferenceCustomData1551] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTInstanceBase2263CustomData:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_reference_custom_data_1551 import BTReferenceCustomData1551
+        from ..models.bt_reference_custom_data_1551 import BTReferenceCustomData1551  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_instance_base_2263_custom_data = cls()

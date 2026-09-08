@@ -58,7 +58,7 @@ class BTBaseEntityAppearanceSettings1391:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_base_entity_appearance_settings_1391_color_id_to_base_entity_appearance_entry import (
-            BTBaseEntityAppearanceSettings1391ColorIdToBaseEntityAppearanceEntry,
+            BTBaseEntityAppearanceSettings1391ColorIdToBaseEntityAppearanceEntry,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

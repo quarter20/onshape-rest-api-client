@@ -50,7 +50,7 @@ class BTDrawingModificationParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btb_drawing_operation_params import BTBDrawingOperationParams
+        from ..models.btb_drawing_operation_params import BTBDrawingOperationParams  # noqa: PLC0415
 
         d = dict(src_dict)
         description = d.pop("description", UNSET)

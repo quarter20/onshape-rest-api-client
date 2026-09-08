@@ -52,7 +52,7 @@ class BTSmartFolderPredicateInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_smart_folder_predicate_info_value import BTSmartFolderPredicateInfoValue
+        from ..models.bt_smart_folder_predicate_info_value import BTSmartFolderPredicateInfoValue  # noqa: PLC0415
 
         d = dict(src_dict)
         field = d.pop("field", UNSET)

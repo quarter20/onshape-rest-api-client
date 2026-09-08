@@ -61,7 +61,7 @@ class BTMetadataObjectListInfoBTMetadataPartInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_metadata_part_info import BTMetadataPartInfo
+        from ..models.bt_metadata_part_info import BTMetadataPartInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         href = d.pop("href", UNSET)

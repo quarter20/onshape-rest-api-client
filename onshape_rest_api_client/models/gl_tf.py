@@ -236,22 +236,22 @@ class GlTF:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.accessor import Accessor
-        from ..models.animation import Animation
-        from ..models.asset import Asset
-        from ..models.buffer import Buffer
-        from ..models.buffer_view import BufferView
-        from ..models.camera import Camera
-        from ..models.gl_tf_extensions import GlTFExtensions
-        from ..models.gl_tf_extras import GlTFExtras
-        from ..models.image import Image
-        from ..models.material import Material
-        from ..models.mesh import Mesh
-        from ..models.node import Node
-        from ..models.sampler import Sampler
-        from ..models.scene import Scene
-        from ..models.skin import Skin
-        from ..models.texture import Texture
+        from ..models.accessor import Accessor  # noqa: PLC0415
+        from ..models.animation import Animation  # noqa: PLC0415
+        from ..models.asset import Asset  # noqa: PLC0415
+        from ..models.buffer import Buffer  # noqa: PLC0415
+        from ..models.buffer_view import BufferView  # noqa: PLC0415
+        from ..models.camera import Camera  # noqa: PLC0415
+        from ..models.gl_tf_extensions import GlTFExtensions  # noqa: PLC0415
+        from ..models.gl_tf_extras import GlTFExtras  # noqa: PLC0415
+        from ..models.image import Image  # noqa: PLC0415
+        from ..models.material import Material  # noqa: PLC0415
+        from ..models.mesh import Mesh  # noqa: PLC0415
+        from ..models.node import Node  # noqa: PLC0415
+        from ..models.sampler import Sampler  # noqa: PLC0415
+        from ..models.scene import Scene  # noqa: PLC0415
+        from ..models.skin import Skin  # noqa: PLC0415
+        from ..models.texture import Texture  # noqa: PLC0415
 
         d = dict(src_dict)
         _accessors = d.pop("accessors", UNSET)

@@ -55,7 +55,7 @@ class BTDecal2404:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_image_mapping_3821 import BTImageMapping3821
+        from ..models.bt_image_mapping_3821 import BTImageMapping3821  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

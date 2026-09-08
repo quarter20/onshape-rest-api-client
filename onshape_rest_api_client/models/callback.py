@@ -55,8 +55,8 @@ class Callback:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.callback_extensions import CallbackExtensions
-        from ..models.path_item import PathItem
+        from ..models.callback_extensions import CallbackExtensions  # noqa: PLC0415
+        from ..models.path_item import PathItem  # noqa: PLC0415
 
         d = dict(src_dict)
         empty = d.pop("empty", UNSET)

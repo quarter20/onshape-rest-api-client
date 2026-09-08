@@ -80,8 +80,8 @@ class BTSweepDescription1473:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_spline_description_2118 import BTSplineDescription2118
-        from ..models.bt_vector_3d389 import BTVector3D389
+        from ..models.bt_spline_description_2118 import BTSplineDescription2118  # noqa: PLC0415
+        from ..models.bt_vector_3d389 import BTVector3D389  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

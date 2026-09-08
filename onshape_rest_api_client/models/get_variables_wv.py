@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetVariablesWv(str, Enum):
+class GetVariablesWv(StrEnum):
     V = "v"
     W = "w"
 

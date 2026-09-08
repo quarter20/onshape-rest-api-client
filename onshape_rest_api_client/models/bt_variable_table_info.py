@@ -52,8 +52,8 @@ class BTVariableTableInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_variable_info import BTVariableInfo
-        from ..models.bt_variable_studio_reference_info import BTVariableStudioReferenceInfo
+        from ..models.bt_variable_info import BTVariableInfo  # noqa: PLC0415
+        from ..models.bt_variable_studio_reference_info import BTVariableStudioReferenceInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         variables = []

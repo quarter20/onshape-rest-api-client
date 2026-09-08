@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTConfigurationParameterType(str, Enum):
+class GBTConfigurationParameterType(StrEnum):
     BOOLEAN = "BOOLEAN"
     ENUM = "ENUM"
     QUANTITY = "QUANTITY"

@@ -55,7 +55,7 @@ class BTValueAndUse4696:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btfs_value_1888 import BTFSValue1888
+        from ..models.btfs_value_1888 import BTFSValue1888  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

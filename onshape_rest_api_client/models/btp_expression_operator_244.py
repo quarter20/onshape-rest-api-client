@@ -193,9 +193,9 @@ class BTPExpressionOperator244:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btp_expression_9 import BTPExpression9
-        from ..models.btp_identifier_8 import BTPIdentifier8
-        from ..models.btp_space_10 import BTPSpace10
+        from ..models.btp_expression_9 import BTPExpression9  # noqa: PLC0415
+        from ..models.btp_identifier_8 import BTPIdentifier8  # noqa: PLC0415
+        from ..models.btp_space_10 import BTPSpace10  # noqa: PLC0415
 
         d = dict(src_dict)
         atomic = d.pop("atomic", UNSET)

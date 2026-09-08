@@ -15,8 +15,6 @@ T = TypeVar("T", bound="ComponentsSecuritySchemes")
 
 @_attrs_define
 class ComponentsSecuritySchemes:
-    """ """
-
     additional_properties: dict[str, SecurityScheme] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class ComponentsSecuritySchemes:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.security_scheme import SecurityScheme
+        from ..models.security_scheme import SecurityScheme  # noqa: PLC0415
 
         d = dict(src_dict)
         components_security_schemes = cls()

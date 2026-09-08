@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTCurveTypeEnum(str, Enum):
+class GBTCurveTypeEnum(StrEnum):
     BCURVE = "BCURVE"
     CIRCLE = "CIRCLE"
     ELLIPSE = "ELLIPSE"

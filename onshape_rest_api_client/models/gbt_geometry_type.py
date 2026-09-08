@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTGeometryType(str, Enum):
+class GBTGeometryType(StrEnum):
     ALL_MESH = "ALL_MESH"
     ARC = "ARC"
     CIRCLE = "CIRCLE"

@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTTableRow1054ColumnIdToCell")
 
 @_attrs_define
 class BTTableRow1054ColumnIdToCell:
-    """ """
-
     additional_properties: dict[str, BTTableCell1114] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTTableRow1054ColumnIdToCell:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_table_cell_1114 import BTTableCell1114
+        from ..models.bt_table_cell_1114 import BTTableCell1114  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_table_row_1054_column_id_to_cell = cls()

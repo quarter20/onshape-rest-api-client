@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class Export2JsonWv(str, Enum):
+class Export2JsonWv(StrEnum):
     V = "v"
     W = "w"
 

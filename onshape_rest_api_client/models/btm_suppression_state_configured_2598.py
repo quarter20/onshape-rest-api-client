@@ -85,7 +85,7 @@ class BTMSuppressionStateConfigured2598:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btm_configured_value_1341 import BTMConfiguredValue1341
+        from ..models.btm_configured_value_1341 import BTMConfiguredValue1341  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

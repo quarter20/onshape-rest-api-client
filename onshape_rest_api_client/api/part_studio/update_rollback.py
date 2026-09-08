@@ -62,13 +62,13 @@ def sync_detailed(
     client: AuthenticatedClient,
     body: str,
 ) -> Response[BTSetFeatureRollbackResponse1042]:
-    r"""Move the Feature List rollback bar in the Part Studio.
+    """Move the Feature List rollback bar in the Part Studio.
 
-     Replace `\"string\"` in the request body with an object that specifies the new location for the
+     Replace `"string"` in the request body with an object that specifies the new location for the
     rollback bar:
-     `{ \"rollbackIndex\": integer }`
+     `{ "rollbackIndex": integer }`
 
-    For example: `{ \"rollbackIndex\": 2 }`
+    For example: `{ "rollbackIndex": 2 }`
 
     Set to `-1` to move the rollback bar to the end of the list.
 
@@ -111,13 +111,13 @@ def sync(
     client: AuthenticatedClient,
     body: str,
 ) -> BTSetFeatureRollbackResponse1042 | None:
-    r"""Move the Feature List rollback bar in the Part Studio.
+    """Move the Feature List rollback bar in the Part Studio.
 
-     Replace `\"string\"` in the request body with an object that specifies the new location for the
+     Replace `"string"` in the request body with an object that specifies the new location for the
     rollback bar:
-     `{ \"rollbackIndex\": integer }`
+     `{ "rollbackIndex": integer }`
 
-    For example: `{ \"rollbackIndex\": 2 }`
+    For example: `{ "rollbackIndex": 2 }`
 
     Set to `-1` to move the rollback bar to the end of the list.
 
@@ -155,13 +155,13 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     body: str,
 ) -> Response[BTSetFeatureRollbackResponse1042]:
-    r"""Move the Feature List rollback bar in the Part Studio.
+    """Move the Feature List rollback bar in the Part Studio.
 
-     Replace `\"string\"` in the request body with an object that specifies the new location for the
+     Replace `"string"` in the request body with an object that specifies the new location for the
     rollback bar:
-     `{ \"rollbackIndex\": integer }`
+     `{ "rollbackIndex": integer }`
 
-    For example: `{ \"rollbackIndex\": 2 }`
+    For example: `{ "rollbackIndex": 2 }`
 
     Set to `-1` to move the rollback bar to the end of the list.
 
@@ -202,13 +202,13 @@ async def asyncio(
     client: AuthenticatedClient,
     body: str,
 ) -> BTSetFeatureRollbackResponse1042 | None:
-    r"""Move the Feature List rollback bar in the Part Studio.
+    """Move the Feature List rollback bar in the Part Studio.
 
-     Replace `\"string\"` in the request body with an object that specifies the new location for the
+     Replace `"string"` in the request body with an object that specifies the new location for the
     rollback bar:
-     `{ \"rollbackIndex\": integer }`
+     `{ "rollbackIndex": integer }`
 
-    For example: `{ \"rollbackIndex\": 2 }`
+    For example: `{ "rollbackIndex": 2 }`
 
     Set to `-1` to move the rollback bar to the end of the list.
 

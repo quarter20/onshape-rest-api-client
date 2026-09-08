@@ -148,17 +148,19 @@ class BTInsertableSketchDisplayData3775:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_full_element_id_756 import BTFullElementId756
-        from ..models.bt_graphics_buffer_2668 import BTGraphicsBuffer2668
-        from ..models.bt_immutable_byte_array import BTImmutableByteArray
+        from ..models.bt_full_element_id_756 import BTFullElementId756  # noqa: PLC0415
+        from ..models.bt_graphics_buffer_2668 import BTGraphicsBuffer2668  # noqa: PLC0415
+        from ..models.bt_immutable_byte_array import BTImmutableByteArray  # noqa: PLC0415
         from ..models.bt_insertable_display_data_2405_appearance_id_to_appearance_override import (
-            BTInsertableDisplayData2405AppearanceIdToAppearanceOverride,
+            BTInsertableDisplayData2405AppearanceIdToAppearanceOverride,  # noqa: PLC0415
         )
-        from ..models.bt_insertable_display_data_2405_graphics_buffers import BTInsertableDisplayData2405GraphicsBuffers
+        from ..models.bt_insertable_display_data_2405_graphics_buffers import (
+            BTInsertableDisplayData2405GraphicsBuffers,  # noqa: PLC0415
+        )
         from ..models.bt_insertable_sketch_display_data_3775_body_id_to_part_data import (
-            BTInsertableSketchDisplayData3775BodyIdToPartData,
+            BTInsertableSketchDisplayData3775BodyIdToPartData,  # noqa: PLC0415
         )
-        from ..models.bt_part_data_16 import BTPartData16
+        from ..models.bt_part_data_16 import BTPartData16  # noqa: PLC0415
 
         d = dict(src_dict)
         _appearance_id_to_appearance_override = d.pop("appearanceIdToAppearanceOverride", UNSET)

@@ -190,10 +190,10 @@ class BTMAssemblyFeatureFolder2543:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_object_id import BTObjectId
-        from ..models.btm_feature_134 import BTMFeature134
-        from ..models.btm_parameter_1 import BTMParameter1
-        from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
+        from ..models.bt_object_id import BTObjectId  # noqa: PLC0415
+        from ..models.btm_feature_134 import BTMFeature134  # noqa: PLC0415
+        from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
+        from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

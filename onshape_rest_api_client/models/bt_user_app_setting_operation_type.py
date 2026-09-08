@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTUserAppSettingOperationType(str, Enum):
+class BTUserAppSettingOperationType(StrEnum):
     ADD = "ADD"
     REMOVE = "REMOVE"
     UPDATE = "UPDATE"

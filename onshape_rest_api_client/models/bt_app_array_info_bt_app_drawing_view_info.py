@@ -77,7 +77,7 @@ class BTAppArrayInfoBTAppDrawingViewInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_app_drawing_view_info import BTAppDrawingViewInfo
+        from ..models.bt_app_drawing_view_info import BTAppDrawingViewInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         change_id = d.pop("changeId", UNSET)

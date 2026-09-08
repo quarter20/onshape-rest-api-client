@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetNamedPositionsWvm(str, Enum):
+class GetNamedPositionsWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

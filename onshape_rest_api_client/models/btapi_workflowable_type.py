@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTAPIWorkflowableType(str, Enum):
+class BTAPIWorkflowableType(StrEnum):
     ASSIGNMENT = "ASSIGNMENT"
     OBSOLETION = "OBSOLETION"
     RELEASE = "RELEASE"

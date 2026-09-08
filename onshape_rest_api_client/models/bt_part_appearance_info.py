@@ -52,7 +52,7 @@ class BTPartAppearanceInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_color_info import BTColorInfo
+        from ..models.bt_color_info import BTColorInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _color = d.pop("color", UNSET)

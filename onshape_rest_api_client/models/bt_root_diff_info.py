@@ -147,8 +147,8 @@ class BTRootDiffInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_root_diff_info_changes import BTRootDiffInfoChanges
-        from ..models.bt_root_diff_info_collection_changes import BTRootDiffInfoCollectionChanges
+        from ..models.bt_root_diff_info_changes import BTRootDiffInfoChanges  # noqa: PLC0415
+        from ..models.bt_root_diff_info_collection_changes import BTRootDiffInfoCollectionChanges  # noqa: PLC0415
 
         d = dict(src_dict)
         _changes = d.pop("changes", UNSET)

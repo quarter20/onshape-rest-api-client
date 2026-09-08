@@ -82,11 +82,11 @@ class MediaType:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.media_type_encoding import MediaTypeEncoding
-        from ..models.media_type_example import MediaTypeExample
-        from ..models.media_type_examples import MediaTypeExamples
-        from ..models.media_type_extensions import MediaTypeExtensions
-        from ..models.schema import Schema
+        from ..models.media_type_encoding import MediaTypeEncoding  # noqa: PLC0415
+        from ..models.media_type_example import MediaTypeExample  # noqa: PLC0415
+        from ..models.media_type_examples import MediaTypeExamples  # noqa: PLC0415
+        from ..models.media_type_extensions import MediaTypeExtensions  # noqa: PLC0415
+        from ..models.schema import Schema  # noqa: PLC0415
 
         d = dict(src_dict)
         _encoding = d.pop("encoding", UNSET)

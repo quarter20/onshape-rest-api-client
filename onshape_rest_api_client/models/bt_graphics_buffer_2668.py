@@ -103,9 +103,9 @@ class BTGraphicsBuffer2668:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_graphics_buffer_2668_map_graphics_attribute_to_component_count import (
-            BTGraphicsBuffer2668MapGraphicsAttributeToComponentCount,
+            BTGraphicsBuffer2668MapGraphicsAttributeToComponentCount,  # noqa: PLC0415
         )
-        from ..models.bt_immutable_byte_array import BTImmutableByteArray
+        from ..models.bt_immutable_byte_array import BTImmutableByteArray  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

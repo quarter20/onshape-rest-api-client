@@ -55,8 +55,8 @@ class Discriminator:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.discriminator_extensions import DiscriminatorExtensions
-        from ..models.discriminator_mapping import DiscriminatorMapping
+        from ..models.discriminator_extensions import DiscriminatorExtensions  # noqa: PLC0415
+        from ..models.discriminator_mapping import DiscriminatorMapping  # noqa: PLC0415
 
         d = dict(src_dict)
         _extensions = d.pop("extensions", UNSET)

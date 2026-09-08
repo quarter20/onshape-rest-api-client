@@ -63,7 +63,7 @@ class BTMergeUpgradeInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_pending_upgrade_info import BTPendingUpgradeInfo
+        from ..models.bt_pending_upgrade_info import BTPendingUpgradeInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _pending_source_upgrade = d.pop("pendingSourceUpgrade", UNSET)

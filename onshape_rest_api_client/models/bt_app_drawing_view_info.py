@@ -387,14 +387,16 @@ class BTAppDrawingViewInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_app_drawing_view_info_broken_out_b_boxes import BTAppDrawingViewInfoBrokenOutBBoxes
+        from ..models.bt_app_drawing_view_info_broken_out_b_boxes import (
+            BTAppDrawingViewInfoBrokenOutBBoxes,  # noqa: PLC0415
+        )
         from ..models.bt_app_drawing_view_info_broken_out_end_conditions import (
-            BTAppDrawingViewInfoBrokenOutEndConditions,
+            BTAppDrawingViewInfoBrokenOutEndConditions,  # noqa: PLC0415
         )
         from ..models.bt_app_drawing_view_info_occurrence_or_query_to_geometry_properties import (
-            BTAppDrawingViewInfoOccurrenceOrQueryToGeometryProperties,
+            BTAppDrawingViewInfoOccurrenceOrQueryToGeometryProperties,  # noqa: PLC0415
         )
-        from ..models.bt_broken_out_end_condition_1107 import BTBrokenOutEndCondition1107
+        from ..models.bt_broken_out_end_condition_1107 import BTBrokenOutEndCondition1107  # noqa: PLC0415
 
         d = dict(src_dict)
         associativity_change_id = d.pop("associativityChangeId", UNSET)

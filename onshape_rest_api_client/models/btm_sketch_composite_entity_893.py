@@ -112,9 +112,9 @@ class BTMSketchCompositeEntity893:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btm_parameter_1 import BTMParameter1
-        from ..models.btm_sketch_entity_3 import BTMSketchEntity3
-        from ..models.combined_sketch_entity_type import CombinedSketchEntityType
+        from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
+        from ..models.btm_sketch_entity_3 import BTMSketchEntity3  # noqa: PLC0415
+        from ..models.combined_sketch_entity_type import CombinedSketchEntityType  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

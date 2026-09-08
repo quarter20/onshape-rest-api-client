@@ -43,7 +43,7 @@ class BTUnitsMaximumDisplayPrecisionInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_units_maximum_display_precision_info_units_display_precision import (
-            BTUnitsMaximumDisplayPrecisionInfoUnitsDisplayPrecision,
+            BTUnitsMaximumDisplayPrecisionInfoUnitsDisplayPrecision,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

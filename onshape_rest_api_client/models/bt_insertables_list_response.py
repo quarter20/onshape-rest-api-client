@@ -9,6 +9,7 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.bt_element_group_1458 import BTElementGroup1458
     from ..models.bt_insertable_info import BTInsertableInfo
     from ..models.bt_insertables_list_response_configuration import BTInsertablesListResponseConfiguration
 
@@ -24,6 +25,7 @@ class BTInsertablesListResponse:
         changes_since_version_save (int | Unset):
         configuration (BTInsertablesListResponseConfiguration | Unset):
         configuration_key (str | Unset):
+        element_group (BTElementGroup1458 | Unset):
         has_multiple_versions (bool | Unset):
         href (str | Unset): URI for current page of resources.
         items (list[BTInsertableInfo] | Unset): Array of items in the current page.
@@ -36,6 +38,7 @@ class BTInsertablesListResponse:
     changes_since_version_save: int | Unset = UNSET
     configuration: BTInsertablesListResponseConfiguration | Unset = UNSET
     configuration_key: str | Unset = UNSET
+    element_group: BTElementGroup1458 | Unset = UNSET
     has_multiple_versions: bool | Unset = UNSET
     href: str | Unset = UNSET
     items: list[BTInsertableInfo] | Unset = UNSET
@@ -54,6 +57,10 @@ class BTInsertablesListResponse:
             configuration = self.configuration.to_dict()
 
         configuration_key = self.configuration_key
+
+        element_group: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.element_group, Unset):
+            element_group = self.element_group.to_dict()
 
         has_multiple_versions = self.has_multiple_versions
 
@@ -83,6 +90,8 @@ class BTInsertablesListResponse:
             field_dict["configuration"] = configuration
         if configuration_key is not UNSET:
             field_dict["configurationKey"] = configuration_key
+        if element_group is not UNSET:
+            field_dict["elementGroup"] = element_group
         if has_multiple_versions is not UNSET:
             field_dict["hasMultipleVersions"] = has_multiple_versions
         if href is not UNSET:
@@ -100,8 +109,11 @@ class BTInsertablesListResponse:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_insertable_info import BTInsertableInfo
-        from ..models.bt_insertables_list_response_configuration import BTInsertablesListResponseConfiguration
+        from ..models.bt_element_group_1458 import BTElementGroup1458  # noqa: PLC0415
+        from ..models.bt_insertable_info import BTInsertableInfo  # noqa: PLC0415
+        from ..models.bt_insertables_list_response_configuration import (
+            BTInsertablesListResponseConfiguration,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         can_save_version = d.pop("canSaveVersion", UNSET)
@@ -116,6 +128,13 @@ class BTInsertablesListResponse:
             configuration = BTInsertablesListResponseConfiguration.from_dict(_configuration)
 
         configuration_key = d.pop("configurationKey", UNSET)
+
+        _element_group = d.pop("elementGroup", UNSET)
+        element_group: BTElementGroup1458 | Unset
+        if isinstance(_element_group, Unset):
+            element_group = UNSET
+        else:
+            element_group = BTElementGroup1458.from_dict(_element_group)
 
         has_multiple_versions = d.pop("hasMultipleVersions", UNSET)
 
@@ -141,6 +160,7 @@ class BTInsertablesListResponse:
             changes_since_version_save=changes_since_version_save,
             configuration=configuration,
             configuration_key=configuration_key,
+            element_group=element_group,
             has_multiple_versions=has_multiple_versions,
             href=href,
             items=items,

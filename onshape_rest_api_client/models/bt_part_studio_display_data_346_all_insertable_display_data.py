@@ -17,8 +17,6 @@ T = TypeVar("T", bound="BTPartStudioDisplayData346AllInsertableDisplayData")
 
 @_attrs_define
 class BTPartStudioDisplayData346AllInsertableDisplayData:
-    """ """
-
     additional_properties: dict[str, BTPartStudioDisplayData346AllInsertableDisplayDataAdditionalProperty] = (
         _attrs_field(init=False, factory=dict)
     )
@@ -34,7 +32,7 @@ class BTPartStudioDisplayData346AllInsertableDisplayData:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_part_studio_display_data_346_all_insertable_display_data_additional_property import (
-            BTPartStudioDisplayData346AllInsertableDisplayDataAdditionalProperty,
+            BTPartStudioDisplayData346AllInsertableDisplayDataAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

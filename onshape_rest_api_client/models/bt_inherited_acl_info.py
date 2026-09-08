@@ -112,8 +112,8 @@ class BTInheritedAclInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_acl_entry_info import BTAclEntryInfo
-        from ..models.bt_owner_info import BTOwnerInfo
+        from ..models.bt_acl_entry_info import BTAclEntryInfo  # noqa: PLC0415
+        from ..models.bt_owner_info import BTOwnerInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _entries = d.pop("entries", UNSET)

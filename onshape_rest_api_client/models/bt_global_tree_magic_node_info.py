@@ -192,8 +192,8 @@ class BTGlobalTreeMagicNodeInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_owner_info import BTOwnerInfo
-        from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo
+        from ..models.bt_owner_info import BTOwnerInfo  # noqa: PLC0415
+        from ..models.bt_user_basic_summary_info import BTUserBasicSummaryInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         json_type = d.pop("jsonType")

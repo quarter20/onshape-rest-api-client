@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTConstraintType(str, Enum):
+class GBTConstraintType(StrEnum):
     ANGLE = "ANGLE"
     BEZIER_DEGREE = "BEZIER_DEGREE"
     CENTERLINE_DIMENSION = "CENTERLINE_DIMENSION"

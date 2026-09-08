@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTElementBranchStatus(str, Enum):
+class GBTElementBranchStatus(StrEnum):
     CREATED = "CREATED"
     DELETED = "DELETED"
     EDITS = "EDITS"

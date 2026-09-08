@@ -65,7 +65,7 @@ class BTAppElementTransactionsInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_element_transaction import BTElementTransaction
+        from ..models.bt_element_transaction import BTElementTransaction  # noqa: PLC0415
 
         d = dict(src_dict)
         _element_transactions = d.pop("elementTransactions", UNSET)

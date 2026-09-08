@@ -74,10 +74,10 @@ class BTOneConfigurationProperties1900:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_one_configuration_properties_1900_configuration import (
-            BTOneConfigurationProperties1900Configuration,
+            BTOneConfigurationProperties1900Configuration,  # noqa: PLC0415
         )
         from ..models.bt_one_configuration_properties_1900_property_values import (
-            BTOneConfigurationProperties1900PropertyValues,
+            BTOneConfigurationProperties1900PropertyValues,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

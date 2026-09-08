@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTElementType(str, Enum):
+class GBTElementType(StrEnum):
     APPLICATION = "APPLICATION"
     ASSEMBLY = "ASSEMBLY"
     BILLOFMATERIALS = "BILLOFMATERIALS"

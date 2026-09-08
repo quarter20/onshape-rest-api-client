@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTStlEncodingType(str, Enum):
+class GBTStlEncodingType(StrEnum):
     BINARY = "BINARY"
     TEXT = "TEXT"
     UNKNOWN = "UNKNOWN"

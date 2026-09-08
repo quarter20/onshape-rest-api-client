@@ -15,8 +15,6 @@ T = TypeVar("T", bound="CallbackExtensions")
 
 @_attrs_define
 class CallbackExtensions:
-    """ """
-
     additional_properties: dict[str, CallbackExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,9 @@ class CallbackExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.callback_extensions_additional_property import CallbackExtensionsAdditionalProperty
+        from ..models.callback_extensions_additional_property import (
+            CallbackExtensionsAdditionalProperty,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         callback_extensions = cls()

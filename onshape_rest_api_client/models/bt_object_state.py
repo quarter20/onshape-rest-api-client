@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTObjectState(str, Enum):
+class BTObjectState(StrEnum):
     ACTIVE = "ACTIVE"
     DELETED = "DELETED"
     INACTIVE = "INACTIVE"

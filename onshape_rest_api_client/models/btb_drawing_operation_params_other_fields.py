@@ -34,7 +34,7 @@ class BTBDrawingOperationParamsOtherFields:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.btb_drawing_operation_params_other_fields_additional_property import (
-            BTBDrawingOperationParamsOtherFieldsAdditionalProperty,
+            BTBDrawingOperationParamsOtherFieldsAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

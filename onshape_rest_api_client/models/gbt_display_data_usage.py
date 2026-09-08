@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTDisplayDataUsage(str, Enum):
+class GBTDisplayDataUsage(StrEnum):
     BASE = "BASE"
     COMPARE_TARGET = "COMPARE_TARGET"
     PREVIEW_AFTER = "PREVIEW_AFTER"

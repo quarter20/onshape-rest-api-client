@@ -52,7 +52,7 @@ class BTJsonMatch2290:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_json_match_2290_node import BTJsonMatch2290Node
+        from ..models.bt_json_match_2290_node import BTJsonMatch2290Node  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

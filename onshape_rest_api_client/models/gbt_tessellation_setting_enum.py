@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTTessellationSettingEnum(str, Enum):
+class GBTTessellationSettingEnum(StrEnum):
     AUTO = "AUTO"
     COARSE = "COARSE"
     CURVATURE_VISUALIZATION = "CURVATURE_VISUALIZATION"

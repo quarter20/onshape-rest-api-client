@@ -88,7 +88,7 @@ class BTMParameterArray2025:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btm_array_parameter_item_1843 import BTMArrayParameterItem1843
+        from ..models.btm_array_parameter_item_1843 import BTMArrayParameterItem1843  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

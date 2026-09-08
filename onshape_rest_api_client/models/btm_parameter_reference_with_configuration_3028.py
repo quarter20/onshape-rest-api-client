@@ -141,8 +141,8 @@ class BTMParameterReferenceWithConfiguration3028:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_element_library_reference_data_3133 import BTElementLibraryReferenceData3133
-        from ..models.btm_parameter_1 import BTMParameter1
+        from ..models.bt_element_library_reference_data_3133 import BTElementLibraryReferenceData3133  # noqa: PLC0415
+        from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

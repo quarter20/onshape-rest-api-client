@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTMetadataStateType(str, Enum):
+class BTMetadataStateType(StrEnum):
     DISCARDED = "DISCARDED"
     IN_PROGRESS = "IN_PROGRESS"
     OBSOLETE = "OBSOLETE"

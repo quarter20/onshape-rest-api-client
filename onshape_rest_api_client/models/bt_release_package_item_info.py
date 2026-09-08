@@ -277,8 +277,8 @@ class BTReleasePackageItemInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_metadata_property_info import BTMetadataPropertyInfo
-        from ..models.bt_release_item_error_info import BTReleaseItemErrorInfo
+        from ..models.bt_metadata_property_info import BTMetadataPropertyInfo  # noqa: PLC0415
+        from ..models.bt_release_item_error_info import BTReleaseItemErrorInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         added_automatically = d.pop("addedAutomatically", UNSET)

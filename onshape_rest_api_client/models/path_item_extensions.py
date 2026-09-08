@@ -15,8 +15,6 @@ T = TypeVar("T", bound="PathItemExtensions")
 
 @_attrs_define
 class PathItemExtensions:
-    """ """
-
     additional_properties: dict[str, PathItemExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,9 @@ class PathItemExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.path_item_extensions_additional_property import PathItemExtensionsAdditionalProperty
+        from ..models.path_item_extensions_additional_property import (
+            PathItemExtensionsAdditionalProperty,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         path_item_extensions = cls()

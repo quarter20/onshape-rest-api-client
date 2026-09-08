@@ -99,9 +99,9 @@ class BTExportTessellatedFacesBody1321:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_export_tessellated_faces_face_1192 import BTExportTessellatedFacesFace1192
-        from ..models.bt_graphics_appearance_1152 import BTGraphicsAppearance1152
-        from ..models.bt_vector_3d389 import BTVector3D389
+        from ..models.bt_export_tessellated_faces_face_1192 import BTExportTessellatedFacesFace1192  # noqa: PLC0415
+        from ..models.bt_graphics_appearance_1152 import BTGraphicsAppearance1152  # noqa: PLC0415
+        from ..models.bt_vector_3d389 import BTVector3D389  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTMassPropertiesBulkInfoBodies")
 
 @_attrs_define
 class BTMassPropertiesBulkInfoBodies:
-    """ """
-
     additional_properties: dict[str, BTMassPropertiesInfo] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTMassPropertiesBulkInfoBodies:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_mass_properties_info import BTMassPropertiesInfo
+        from ..models.bt_mass_properties_info import BTMassPropertiesInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_mass_properties_bulk_info_bodies = cls()

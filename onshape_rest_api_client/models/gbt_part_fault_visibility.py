@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTPartFaultVisibility(str, Enum):
+class GBTPartFaultVisibility(StrEnum):
     HIDDEN = "HIDDEN"
     UNKNOWN = "UNKNOWN"
     UNSPECIFIED = "UNSPECIFIED"

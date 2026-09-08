@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTApplicationSettingsType(str, Enum):
+class BTApplicationSettingsType(StrEnum):
     COMPANY = "COMPANY"
     TEAM = "TEAM"
     USER = "USER"

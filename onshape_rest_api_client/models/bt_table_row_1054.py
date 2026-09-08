@@ -76,9 +76,9 @@ class BTTableRow1054:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_table_base_row_metadata_3181 import BTTableBaseRowMetadata3181
-        from ..models.bt_table_row_1054_column_id_to_cell import BTTableRow1054ColumnIdToCell
-        from ..models.bt_tree_node_20 import BTTreeNode20
+        from ..models.bt_table_base_row_metadata_3181 import BTTableBaseRowMetadata3181  # noqa: PLC0415
+        from ..models.bt_table_row_1054_column_id_to_cell import BTTableRow1054ColumnIdToCell  # noqa: PLC0415
+        from ..models.bt_tree_node_20 import BTTreeNode20  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

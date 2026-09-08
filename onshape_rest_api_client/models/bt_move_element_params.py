@@ -217,7 +217,7 @@ class BTMoveElementParams:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_move_element_params_element_original_to_new_map import (
-            BTMoveElementParamsElementOriginalToNewMap,
+            BTMoveElementParamsElementOriginalToNewMap,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

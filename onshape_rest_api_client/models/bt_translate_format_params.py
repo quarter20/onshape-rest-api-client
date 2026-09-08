@@ -59,6 +59,7 @@ class BTTranslateFormatParams:
             include an `exportRuleFileName` value in the response. Default: False.
         exclude_hidden_entities (bool | Unset): Whether or not to exclude hidden parts from export.
         exclude_off_sheet_content (bool | Unset):
+        export_composite_constituents_with_original_body_ids (bool | Unset):
         extract_assembly_hierarchy (bool | Unset):
         flat_pattern_async (bool | Unset):
         flatten (bool | Unset):
@@ -176,6 +177,7 @@ class BTTranslateFormatParams:
     evaluate_export_rule: bool | Unset = False
     exclude_hidden_entities: bool | Unset = UNSET
     exclude_off_sheet_content: bool | Unset = UNSET
+    export_composite_constituents_with_original_body_ids: bool | Unset = UNSET
     extract_assembly_hierarchy: bool | Unset = UNSET
     flat_pattern_async: bool | Unset = UNSET
     flatten: bool | Unset = UNSET
@@ -311,6 +313,8 @@ class BTTranslateFormatParams:
         exclude_hidden_entities = self.exclude_hidden_entities
 
         exclude_off_sheet_content = self.exclude_off_sheet_content
+
+        export_composite_constituents_with_original_body_ids = self.export_composite_constituents_with_original_body_ids
 
         extract_assembly_hierarchy = self.extract_assembly_hierarchy
 
@@ -541,6 +545,10 @@ class BTTranslateFormatParams:
             field_dict["excludeHiddenEntities"] = exclude_hidden_entities
         if exclude_off_sheet_content is not UNSET:
             field_dict["excludeOffSheetContent"] = exclude_off_sheet_content
+        if export_composite_constituents_with_original_body_ids is not UNSET:
+            field_dict["exportCompositeConstituentsWithOriginalBodyIds"] = (
+                export_composite_constituents_with_original_body_ids
+            )
         if extract_assembly_hierarchy is not UNSET:
             field_dict["extractAssemblyHierarchy"] = extract_assembly_hierarchy
         if flat_pattern_async is not UNSET:
@@ -700,7 +708,7 @@ class BTTranslateFormatParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_parts_export_filter_4308 import BTPartsExportFilter4308
+        from ..models.bt_parts_export_filter_4308 import BTPartsExportFilter4308  # noqa: PLC0415
 
         d = dict(src_dict)
         format_name = d.pop("formatName")
@@ -754,6 +762,10 @@ class BTTranslateFormatParams:
         exclude_hidden_entities = d.pop("excludeHiddenEntities", UNSET)
 
         exclude_off_sheet_content = d.pop("excludeOffSheetContent", UNSET)
+
+        export_composite_constituents_with_original_body_ids = d.pop(
+            "exportCompositeConstituentsWithOriginalBodyIds", UNSET
+        )
 
         extract_assembly_hierarchy = d.pop("extractAssemblyHierarchy", UNSET)
 
@@ -976,6 +988,7 @@ class BTTranslateFormatParams:
             evaluate_export_rule=evaluate_export_rule,
             exclude_hidden_entities=exclude_hidden_entities,
             exclude_off_sheet_content=exclude_off_sheet_content,
+            export_composite_constituents_with_original_body_ids=export_composite_constituents_with_original_body_ids,
             extract_assembly_hierarchy=extract_assembly_hierarchy,
             flat_pattern_async=flat_pattern_async,
             flatten=flatten,

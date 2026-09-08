@@ -6,13 +6,13 @@ import httpx
 
 from ...client import AuthenticatedClient, Client
 from ...models.bt_part_metadata_info import BTPartMetadataInfo
-from ...models.get_parts_wmv_wvm import GetPartsWMVWvm
+from ...models.get_parts_wmv_wvm import GetPartsWmvWvm
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     did: str,
-    wvm: GetPartsWMVWvm,
+    wvm: GetPartsWmvWvm,
     wvmid: str,
     *,
     link_document_id: str | Unset = "",
@@ -76,7 +76,7 @@ def _build_response(
 
 def sync_detailed(
     did: str,
-    wvm: GetPartsWMVWvm,
+    wvm: GetPartsWmvWvm,
     wvmid: str,
     *,
     client: AuthenticatedClient,
@@ -91,7 +91,7 @@ def sync_detailed(
 
     Args:
         did (str):
-        wvm (GetPartsWMVWvm):
+        wvm (GetPartsWmvWvm):
         wvmid (str):
         link_document_id (str | Unset):  Default: ''.
         element_id (str):
@@ -129,7 +129,7 @@ def sync_detailed(
 
 def sync(
     did: str,
-    wvm: GetPartsWMVWvm,
+    wvm: GetPartsWmvWvm,
     wvmid: str,
     *,
     client: AuthenticatedClient,
@@ -144,7 +144,7 @@ def sync(
 
     Args:
         did (str):
-        wvm (GetPartsWMVWvm):
+        wvm (GetPartsWmvWvm):
         wvmid (str):
         link_document_id (str | Unset):  Default: ''.
         element_id (str):
@@ -177,7 +177,7 @@ def sync(
 
 async def asyncio_detailed(
     did: str,
-    wvm: GetPartsWMVWvm,
+    wvm: GetPartsWmvWvm,
     wvmid: str,
     *,
     client: AuthenticatedClient,
@@ -192,7 +192,7 @@ async def asyncio_detailed(
 
     Args:
         did (str):
-        wvm (GetPartsWMVWvm):
+        wvm (GetPartsWmvWvm):
         wvmid (str):
         link_document_id (str | Unset):  Default: ''.
         element_id (str):
@@ -228,7 +228,7 @@ async def asyncio_detailed(
 
 async def asyncio(
     did: str,
-    wvm: GetPartsWMVWvm,
+    wvm: GetPartsWmvWvm,
     wvmid: str,
     *,
     client: AuthenticatedClient,
@@ -243,7 +243,7 @@ async def asyncio(
 
     Args:
         did (str):
-        wvm (GetPartsWMVWvm):
+        wvm (GetPartsWmvWvm):
         wvmid (str):
         link_document_id (str | Unset):  Default: ''.
         element_id (str):

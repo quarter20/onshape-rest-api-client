@@ -172,12 +172,14 @@ class BTFSTable953:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_individual_table_properties_3760 import BTIndividualTableProperties3760
-        from ..models.bt_table_base_cross_highlight_data_2609 import BTTableBaseCrossHighlightData2609
-        from ..models.bt_table_column_info_1222 import BTTableColumnInfo1222
-        from ..models.bt_table_row_1054 import BTTableRow1054
-        from ..models.bt_table_sort_order_4371 import BTTableSortOrder4371
-        from ..models.btfs_table_953_hidden_column_ids_to_names import BTFSTable953HiddenColumnIdsToNames
+        from ..models.bt_individual_table_properties_3760 import BTIndividualTableProperties3760  # noqa: PLC0415
+        from ..models.bt_table_base_cross_highlight_data_2609 import BTTableBaseCrossHighlightData2609  # noqa: PLC0415
+        from ..models.bt_table_column_info_1222 import BTTableColumnInfo1222  # noqa: PLC0415
+        from ..models.bt_table_row_1054 import BTTableRow1054  # noqa: PLC0415
+        from ..models.bt_table_sort_order_4371 import BTTableSortOrder4371  # noqa: PLC0415
+        from ..models.btfs_table_953_hidden_column_ids_to_names import (
+            BTFSTable953HiddenColumnIdsToNames,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         _all_row_values = d.pop("allRowValues", UNSET)

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetWMVEMetadataWvm(str, Enum):
+class GetWmveMetadataWvm(StrEnum):
     M = "m"
     V = "v"
     W = "w"

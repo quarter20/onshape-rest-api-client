@@ -60,7 +60,7 @@ class BTFSTableRowMetadata2262:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_table_base_cross_highlight_data_2609 import BTTableBaseCrossHighlightData2609
+        from ..models.bt_table_base_cross_highlight_data_2609 import BTTableBaseCrossHighlightData2609  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

@@ -1,7 +1,8 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTUrdfMeshFormat(str, Enum):
+class GBTUrdfMeshFormat(StrEnum):
+    GLB = "GLB"
     GLTF = "GLTF"
     OBJ = "OBJ"
     STL = "STL"

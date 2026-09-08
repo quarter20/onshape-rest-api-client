@@ -52,7 +52,7 @@ class BTJEditList2707:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btj_edit_3734 import BTJEdit3734
+        from ..models.btj_edit_3734 import BTJEdit3734  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType")

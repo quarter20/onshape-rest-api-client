@@ -52,7 +52,7 @@ class BTTableResponse1546:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_table_1825 import BTTable1825
+        from ..models.bt_table_1825 import BTTable1825  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

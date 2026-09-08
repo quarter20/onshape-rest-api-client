@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class BTMergeUpgradeType(str, Enum):
+class BTMergeUpgradeType(StrEnum):
     SOURCE = "SOURCE"
     SOURCE_AND_TARGET = "SOURCE_AND_TARGET"
     TARGET = "TARGET"

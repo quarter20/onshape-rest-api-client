@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BufferViewExtensions")
 
 @_attrs_define
 class BufferViewExtensions:
-    """ """
-
     additional_properties: dict[str, BufferViewExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,9 @@ class BufferViewExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.buffer_view_extensions_additional_property import BufferViewExtensionsAdditionalProperty
+        from ..models.buffer_view_extensions_additional_property import (
+            BufferViewExtensionsAdditionalProperty,  # noqa: PLC0415
+        )
 
         d = dict(src_dict)
         buffer_view_extensions = cls()

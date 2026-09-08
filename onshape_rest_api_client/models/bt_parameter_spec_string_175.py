@@ -171,9 +171,9 @@ class BTParameterSpecString175:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_parameter_visibility_condition_177 import BTParameterVisibilityCondition177
-        from ..models.bt_string_format_condition_683 import BTStringFormatCondition683
-        from ..models.btm_parameter_1 import BTMParameter1
+        from ..models.bt_parameter_visibility_condition_177 import BTParameterVisibilityCondition177  # noqa: PLC0415
+        from ..models.bt_string_format_condition_683 import BTStringFormatCondition683  # noqa: PLC0415
+        from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
 
         d = dict(src_dict)
         additional_localized_strings = d.pop("additionalLocalizedStrings", UNSET)

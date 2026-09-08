@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTAnnotationElementDisplayData894AnnotationIdToDisplayOb
 
 @_attrs_define
 class BTAnnotationElementDisplayData894AnnotationIdToDisplayObject:
-    """ """
-
     additional_properties: dict[str, BTAnnotationDisplayData3225] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTAnnotationElementDisplayData894AnnotationIdToDisplayObject:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_annotation_display_data_3225 import BTAnnotationDisplayData3225
+        from ..models.bt_annotation_display_data_3225 import BTAnnotationDisplayData3225  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_annotation_element_display_data_894_annotation_id_to_display_object = cls()

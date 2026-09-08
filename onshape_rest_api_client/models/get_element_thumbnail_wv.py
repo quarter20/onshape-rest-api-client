@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetElementThumbnailWv(str, Enum):
+class GetElementThumbnailWv(StrEnum):
     V = "v"
     W = "w"
 

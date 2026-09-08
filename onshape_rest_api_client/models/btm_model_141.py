@@ -287,22 +287,22 @@ class BTMModel141:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_cache_data_path_191 import BTCacheDataPath191
-        from ..models.bt_configurable_tree_node import BTConfigurableTreeNode
-        from ..models.bt_default_features_119 import BTDefaultFeatures119
-        from ..models.bt_model_annotations_3945 import BTModelAnnotations3945
-        from ..models.bt_model_properties_1258 import BTModelProperties1258
-        from ..models.bt_part_properties_293 import BTPartProperties293
-        from ..models.btm_configuration_data_1560 import BTMConfigurationData1560
-        from ..models.btm_feature_134 import BTMFeature134
-        from ..models.btm_import_136 import BTMImport136
-        from ..models.btm_model_141_child_node_id_to_index import BTMModel141ChildNodeIdToIndex
-        from ..models.btm_model_141_deep_imports import BTMModel141DeepImports
-        from ..models.btm_model_141_feature_imports import BTMModel141FeatureImports
-        from ..models.btm_rollback_150 import BTMRollback150
-        from ..models.btm_units_default_160 import BTMUnitsDefault160
-        from ..models.btm_variable_studio_reference_2764 import BTMVariableStudioReference2764
-        from ..models.btp_module_id_235 import BTPModuleId235
+        from ..models.bt_cache_data_path_191 import BTCacheDataPath191  # noqa: PLC0415
+        from ..models.bt_configurable_tree_node import BTConfigurableTreeNode  # noqa: PLC0415
+        from ..models.bt_default_features_119 import BTDefaultFeatures119  # noqa: PLC0415
+        from ..models.bt_model_annotations_3945 import BTModelAnnotations3945  # noqa: PLC0415
+        from ..models.bt_model_properties_1258 import BTModelProperties1258  # noqa: PLC0415
+        from ..models.bt_part_properties_293 import BTPartProperties293  # noqa: PLC0415
+        from ..models.btm_configuration_data_1560 import BTMConfigurationData1560  # noqa: PLC0415
+        from ..models.btm_feature_134 import BTMFeature134  # noqa: PLC0415
+        from ..models.btm_import_136 import BTMImport136  # noqa: PLC0415
+        from ..models.btm_model_141_child_node_id_to_index import BTMModel141ChildNodeIdToIndex  # noqa: PLC0415
+        from ..models.btm_model_141_deep_imports import BTMModel141DeepImports  # noqa: PLC0415
+        from ..models.btm_model_141_feature_imports import BTMModel141FeatureImports  # noqa: PLC0415
+        from ..models.btm_rollback_150 import BTMRollback150  # noqa: PLC0415
+        from ..models.btm_units_default_160 import BTMUnitsDefault160  # noqa: PLC0415
+        from ..models.btm_variable_studio_reference_2764 import BTMVariableStudioReference2764  # noqa: PLC0415
+        from ..models.btp_module_id_235 import BTPModuleId235  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

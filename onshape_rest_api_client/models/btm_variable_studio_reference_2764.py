@@ -272,13 +272,15 @@ class BTMVariableStudioReference2764:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_api_configuration import BTApiConfiguration
-        from ..models.bt_microversion_id_366 import BTMicroversionId366
-        from ..models.bt_tree_edit_13 import BTTreeEdit13
-        from ..models.btm_feature_134 import BTMFeature134
-        from ..models.btm_parameter_1 import BTMParameter1
-        from ..models.btm_parameter_reference_with_configuration_3028 import BTMParameterReferenceWithConfiguration3028
-        from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
+        from ..models.bt_api_configuration import BTApiConfiguration  # noqa: PLC0415
+        from ..models.bt_microversion_id_366 import BTMicroversionId366  # noqa: PLC0415
+        from ..models.bt_tree_edit_13 import BTTreeEdit13  # noqa: PLC0415
+        from ..models.btm_feature_134 import BTMFeature134  # noqa: PLC0415
+        from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
+        from ..models.btm_parameter_reference_with_configuration_3028 import (
+            BTMParameterReferenceWithConfiguration3028,  # noqa: PLC0415
+        )
+        from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

@@ -15,8 +15,6 @@ T = TypeVar("T", bound="BTRootDiffInfoChanges")
 
 @_attrs_define
 class BTRootDiffInfoChanges:
-    """ """
-
     additional_properties: dict[str, BTDiffInfo] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class BTRootDiffInfoChanges:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_diff_info import BTDiffInfo
+        from ..models.bt_diff_info import BTDiffInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_root_diff_info_changes = cls()

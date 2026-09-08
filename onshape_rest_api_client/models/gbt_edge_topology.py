@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTEdgeTopology(str, Enum):
+class GBTEdgeTopology(StrEnum):
     LAMINAR = "LAMINAR"
     ONE_SIDED = "ONE_SIDED"
     TWO_SIDED = "TWO_SIDED"

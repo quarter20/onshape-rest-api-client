@@ -88,7 +88,7 @@ class BTMParameterStringWithTolerances4286:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_tolerance_string_3274 import BTToleranceString3274
+        from ..models.bt_tolerance_string_3274 import BTToleranceString3274  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

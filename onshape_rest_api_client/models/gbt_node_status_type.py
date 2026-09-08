@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GBTNodeStatusType(str, Enum):
+class GBTNodeStatusType(StrEnum):
     ERROR = "ERROR"
     INFO = "INFO"
     OK = "OK"

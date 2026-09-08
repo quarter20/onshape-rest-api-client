@@ -15,8 +15,6 @@ T = TypeVar("T", bound="ImageExtensions")
 
 @_attrs_define
 class ImageExtensions:
-    """ """
-
     additional_properties: dict[str, ImageExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class ImageExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.image_extensions_additional_property import ImageExtensionsAdditionalProperty
+        from ..models.image_extensions_additional_property import ImageExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         image_extensions = cls()

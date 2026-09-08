@@ -15,8 +15,6 @@ T = TypeVar("T", bound="LinkExtensions")
 
 @_attrs_define
 class LinkExtensions:
-    """ """
-
     additional_properties: dict[str, LinkExtensionsAdditionalProperty] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -29,7 +27,7 @@ class LinkExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.link_extensions_additional_property import LinkExtensionsAdditionalProperty
+        from ..models.link_extensions_additional_property import LinkExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         link_extensions = cls()

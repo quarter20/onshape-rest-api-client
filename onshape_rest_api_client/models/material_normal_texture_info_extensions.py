@@ -17,8 +17,6 @@ T = TypeVar("T", bound="MaterialNormalTextureInfoExtensions")
 
 @_attrs_define
 class MaterialNormalTextureInfoExtensions:
-    """ """
-
     additional_properties: dict[str, MaterialNormalTextureInfoExtensionsAdditionalProperty] = _attrs_field(
         init=False, factory=dict
     )
@@ -34,7 +32,7 @@ class MaterialNormalTextureInfoExtensions:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.material_normal_texture_info_extensions_additional_property import (
-            MaterialNormalTextureInfoExtensionsAdditionalProperty,
+            MaterialNormalTextureInfoExtensionsAdditionalProperty,  # noqa: PLC0415
         )
 
         d = dict(src_dict)

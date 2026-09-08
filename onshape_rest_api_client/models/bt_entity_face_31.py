@@ -177,11 +177,11 @@ class BTEntityFace31:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_entity_geometry_35 import BTEntityGeometry35
-        from ..models.bt_immutable_byte_array import BTImmutableByteArray
-        from ..models.bt_immutable_double_array import BTImmutableDoubleArray
-        from ..models.bt_immutable_float_array import BTImmutableFloatArray
-        from ..models.bt_immutable_int_array import BTImmutableIntArray
+        from ..models.bt_entity_geometry_35 import BTEntityGeometry35  # noqa: PLC0415
+        from ..models.bt_immutable_byte_array import BTImmutableByteArray  # noqa: PLC0415
+        from ..models.bt_immutable_double_array import BTImmutableDoubleArray  # noqa: PLC0415
+        from ..models.bt_immutable_float_array import BTImmutableFloatArray  # noqa: PLC0415
+        from ..models.bt_immutable_int_array import BTImmutableIntArray  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
 
-class GetWMVEPMetadataIden(str, Enum):
+class GetWmvepMetadataIden(StrEnum):
     P = "p"
     PI = "pi"
 

@@ -12,6 +12,7 @@ def _get_kwargs(
     *,
     all_: bool | Unset = False,
     own_purchase_only: bool | Unset = False,
+    company_purchase_only: bool | Unset = False,
 ) -> dict[str, Any]:
 
     params: dict[str, Any] = {}
@@ -19,6 +20,8 @@ def _get_kwargs(
     params["all"] = all_
 
     params["ownPurchaseOnly"] = own_purchase_only
+
+    params["companyPurchaseOnly"] = company_purchase_only
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -58,6 +61,7 @@ def sync_detailed(
     client: AuthenticatedClient | Client,
     all_: bool | Unset = False,
     own_purchase_only: bool | Unset = False,
+    company_purchase_only: bool | Unset = False,
 ) -> Response[list[BTPurchaseInfo]]:
     """Get a list of all app purchases made by the current user.
 
@@ -66,6 +70,7 @@ def sync_detailed(
     Args:
         all_ (bool | Unset):  Default: False.
         own_purchase_only (bool | Unset):  Default: False.
+        company_purchase_only (bool | Unset):  Default: False.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -78,6 +83,7 @@ def sync_detailed(
     kwargs = _get_kwargs(
         all_=all_,
         own_purchase_only=own_purchase_only,
+        company_purchase_only=company_purchase_only,
     )
 
     response = client.get_httpx_client().request(
@@ -92,6 +98,7 @@ def sync(
     client: AuthenticatedClient | Client,
     all_: bool | Unset = False,
     own_purchase_only: bool | Unset = False,
+    company_purchase_only: bool | Unset = False,
 ) -> list[BTPurchaseInfo] | None:
     """Get a list of all app purchases made by the current user.
 
@@ -100,6 +107,7 @@ def sync(
     Args:
         all_ (bool | Unset):  Default: False.
         own_purchase_only (bool | Unset):  Default: False.
+        company_purchase_only (bool | Unset):  Default: False.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -113,6 +121,7 @@ def sync(
         client=client,
         all_=all_,
         own_purchase_only=own_purchase_only,
+        company_purchase_only=company_purchase_only,
     ).parsed
 
 
@@ -121,6 +130,7 @@ async def asyncio_detailed(
     client: AuthenticatedClient | Client,
     all_: bool | Unset = False,
     own_purchase_only: bool | Unset = False,
+    company_purchase_only: bool | Unset = False,
 ) -> Response[list[BTPurchaseInfo]]:
     """Get a list of all app purchases made by the current user.
 
@@ -129,6 +139,7 @@ async def asyncio_detailed(
     Args:
         all_ (bool | Unset):  Default: False.
         own_purchase_only (bool | Unset):  Default: False.
+        company_purchase_only (bool | Unset):  Default: False.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -141,6 +152,7 @@ async def asyncio_detailed(
     kwargs = _get_kwargs(
         all_=all_,
         own_purchase_only=own_purchase_only,
+        company_purchase_only=company_purchase_only,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -153,6 +165,7 @@ async def asyncio(
     client: AuthenticatedClient | Client,
     all_: bool | Unset = False,
     own_purchase_only: bool | Unset = False,
+    company_purchase_only: bool | Unset = False,
 ) -> list[BTPurchaseInfo] | None:
     """Get a list of all app purchases made by the current user.
 
@@ -161,6 +174,7 @@ async def asyncio(
     Args:
         all_ (bool | Unset):  Default: False.
         own_purchase_only (bool | Unset):  Default: False.
+        company_purchase_only (bool | Unset):  Default: False.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -175,5 +189,6 @@ async def asyncio(
             client=client,
             all_=all_,
             own_purchase_only=own_purchase_only,
+            company_purchase_only=company_purchase_only,
         )
     ).parsed

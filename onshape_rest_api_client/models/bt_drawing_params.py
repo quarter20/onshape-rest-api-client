@@ -365,7 +365,7 @@ class BTDrawingParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_element_location_params import BTElementLocationParams
+        from ..models.bt_element_location_params import BTElementLocationParams  # noqa: PLC0415
 
         d = dict(src_dict)
         border = d.pop("border", UNSET)

@@ -49,7 +49,7 @@ class BTSelectedMetadataEnumValue:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_metadata_enum_value_info import BTMetadataEnumValueInfo
+        from ..models.bt_metadata_enum_value_info import BTMetadataEnumValueInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         _enum_options = d.pop("enumOptions", UNSET)

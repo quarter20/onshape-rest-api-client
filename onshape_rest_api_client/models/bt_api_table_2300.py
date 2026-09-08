@@ -81,8 +81,8 @@ class BTApiTable2300:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_api_table_column_3141 import BTApiTableColumn3141
-        from ..models.bt_api_table_row_2915 import BTApiTableRow2915
+        from ..models.bt_api_table_column_3141 import BTApiTableColumn3141  # noqa: PLC0415
+        from ..models.bt_api_table_row_2915 import BTApiTableRow2915  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)
