@@ -18,6 +18,7 @@ def _get_kwargs(
     *,
     link_document_id: str | Unset = "",
     configuration: str | Unset = "",
+    named_position_id: str | Unset = UNSET,
 ) -> dict[str, Any]:
 
     params: dict[str, Any] = {}
@@ -25,6 +26,8 @@ def _get_kwargs(
     params["linkDocumentId"] = link_document_id
 
     params["configuration"] = configuration
+
+    params["namedPositionId"] = named_position_id
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -68,6 +71,7 @@ def sync_detailed(
     client: AuthenticatedClient,
     link_document_id: str | Unset = "",
     configuration: str | Unset = "",
+    named_position_id: str | Unset = UNSET,
 ) -> Response[BTMassPropertiesInfo]:
     """Get the mass properties for the assembly.
 
@@ -85,6 +89,7 @@ def sync_detailed(
         eid (str):
         link_document_id (str | Unset):  Default: ''.
         configuration (str | Unset):  Default: ''.
+        named_position_id (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -101,6 +106,7 @@ def sync_detailed(
         eid=eid,
         link_document_id=link_document_id,
         configuration=configuration,
+        named_position_id=named_position_id,
     )
 
     response = client.get_httpx_client().request(
@@ -119,6 +125,7 @@ def sync(
     client: AuthenticatedClient,
     link_document_id: str | Unset = "",
     configuration: str | Unset = "",
+    named_position_id: str | Unset = UNSET,
 ) -> BTMassPropertiesInfo | None:
     """Get the mass properties for the assembly.
 
@@ -136,6 +143,7 @@ def sync(
         eid (str):
         link_document_id (str | Unset):  Default: ''.
         configuration (str | Unset):  Default: ''.
+        named_position_id (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -153,6 +161,7 @@ def sync(
         client=client,
         link_document_id=link_document_id,
         configuration=configuration,
+        named_position_id=named_position_id,
     ).parsed
 
 
@@ -165,6 +174,7 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     link_document_id: str | Unset = "",
     configuration: str | Unset = "",
+    named_position_id: str | Unset = UNSET,
 ) -> Response[BTMassPropertiesInfo]:
     """Get the mass properties for the assembly.
 
@@ -182,6 +192,7 @@ async def asyncio_detailed(
         eid (str):
         link_document_id (str | Unset):  Default: ''.
         configuration (str | Unset):  Default: ''.
+        named_position_id (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -198,6 +209,7 @@ async def asyncio_detailed(
         eid=eid,
         link_document_id=link_document_id,
         configuration=configuration,
+        named_position_id=named_position_id,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -214,6 +226,7 @@ async def asyncio(
     client: AuthenticatedClient,
     link_document_id: str | Unset = "",
     configuration: str | Unset = "",
+    named_position_id: str | Unset = UNSET,
 ) -> BTMassPropertiesInfo | None:
     """Get the mass properties for the assembly.
 
@@ -231,6 +244,7 @@ async def asyncio(
         eid (str):
         link_document_id (str | Unset):  Default: ''.
         configuration (str | Unset):  Default: ''.
+        named_position_id (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -249,5 +263,6 @@ async def asyncio(
             client=client,
             link_document_id=link_document_id,
             configuration=configuration,
+            named_position_id=named_position_id,
         )
     ).parsed

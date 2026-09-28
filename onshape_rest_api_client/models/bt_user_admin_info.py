@@ -8,6 +8,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 from ..models.bt_role import BTRole
+from ..models.bt_user_trust_status import BTUserTrustStatus
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -43,6 +44,7 @@ class BTUserAdminInfo:
         email (str | Unset):
         first_name (str | Unset):
         last_name (str | Unset):
+        can_make_personal_copies (bool | Unset):
         company (BTCompanySummaryInfo | Unset):
         company_user_state (int | Unset):
         confirmation_requested (bool | Unset):
@@ -85,6 +87,7 @@ class BTUserAdminInfo:
         phone_number (str | Unset):
         pro_discovery_trial_rejected (bool | Unset):
         product_type (list[str] | Unset):
+        purchase_hold (bool | Unset):
         redirect_url (str | Unset):
         role (int | Unset):
         roles (list[BTRole] | Unset):
@@ -101,6 +104,7 @@ class BTUserAdminInfo:
         invited_document_id (str | Unset):
         is_trial_request (bool | Unset):
         privacy_consents (list[BTPrivacyConsentInfo] | Unset):
+        trust_status (BTUserTrustStatus | Unset):
         user_metrics (BTUserMetricsInfo | Unset):
     """
 
@@ -116,6 +120,7 @@ class BTUserAdminInfo:
     email: str | Unset = UNSET
     first_name: str | Unset = UNSET
     last_name: str | Unset = UNSET
+    can_make_personal_copies: bool | Unset = UNSET
     company: BTCompanySummaryInfo | Unset = UNSET
     company_user_state: int | Unset = UNSET
     confirmation_requested: bool | Unset = UNSET
@@ -158,6 +163,7 @@ class BTUserAdminInfo:
     phone_number: str | Unset = UNSET
     pro_discovery_trial_rejected: bool | Unset = UNSET
     product_type: list[str] | Unset = UNSET
+    purchase_hold: bool | Unset = UNSET
     redirect_url: str | Unset = UNSET
     role: int | Unset = UNSET
     roles: list[BTRole] | Unset = UNSET
@@ -174,6 +180,7 @@ class BTUserAdminInfo:
     invited_document_id: str | Unset = UNSET
     is_trial_request: bool | Unset = UNSET
     privacy_consents: list[BTPrivacyConsentInfo] | Unset = UNSET
+    trust_status: BTUserTrustStatus | Unset = UNSET
     user_metrics: BTUserMetricsInfo | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -201,6 +208,8 @@ class BTUserAdminInfo:
         first_name = self.first_name
 
         last_name = self.last_name
+
+        can_make_personal_copies = self.can_make_personal_copies
 
         company: dict[str, Any] | Unset = UNSET
         if not isinstance(self.company, Unset):
@@ -324,6 +333,8 @@ class BTUserAdminInfo:
         if not isinstance(self.product_type, Unset):
             product_type = self.product_type
 
+        purchase_hold = self.purchase_hold
+
         redirect_url = self.redirect_url
 
         role = self.role
@@ -373,6 +384,10 @@ class BTUserAdminInfo:
                 privacy_consents_item = privacy_consents_item_data.to_dict()
                 privacy_consents.append(privacy_consents_item)
 
+        trust_status: str | Unset = UNSET
+        if not isinstance(self.trust_status, Unset):
+            trust_status = self.trust_status.value
+
         user_metrics: dict[str, Any] | Unset = UNSET
         if not isinstance(self.user_metrics, Unset):
             user_metrics = self.user_metrics.to_dict()
@@ -406,6 +421,8 @@ class BTUserAdminInfo:
             field_dict["firstName"] = first_name
         if last_name is not UNSET:
             field_dict["lastName"] = last_name
+        if can_make_personal_copies is not UNSET:
+            field_dict["canMakePersonalCopies"] = can_make_personal_copies
         if company is not UNSET:
             field_dict["company"] = company
         if company_user_state is not UNSET:
@@ -490,6 +507,8 @@ class BTUserAdminInfo:
             field_dict["proDiscoveryTrialRejected"] = pro_discovery_trial_rejected
         if product_type is not UNSET:
             field_dict["productType"] = product_type
+        if purchase_hold is not UNSET:
+            field_dict["purchaseHold"] = purchase_hold
         if redirect_url is not UNSET:
             field_dict["redirectUrl"] = redirect_url
         if role is not UNSET:
@@ -522,6 +541,8 @@ class BTUserAdminInfo:
             field_dict["isTrialRequest"] = is_trial_request
         if privacy_consents is not UNSET:
             field_dict["privacyConsents"] = privacy_consents
+        if trust_status is not UNSET:
+            field_dict["trustStatus"] = trust_status
         if user_metrics is not UNSET:
             field_dict["userMetrics"] = user_metrics
 
@@ -565,6 +586,8 @@ class BTUserAdminInfo:
         first_name = d.pop("firstName", UNSET)
 
         last_name = d.pop("lastName", UNSET)
+
+        can_make_personal_copies = d.pop("canMakePersonalCopies", UNSET)
 
         _company = d.pop("company", UNSET)
         company: BTCompanySummaryInfo | Unset
@@ -729,6 +752,8 @@ class BTUserAdminInfo:
 
         product_type = cast(list[str], d.pop("productType", UNSET))
 
+        purchase_hold = d.pop("purchaseHold", UNSET)
+
         redirect_url = d.pop("redirectUrl", UNSET)
 
         role = d.pop("role", UNSET)
@@ -787,6 +812,13 @@ class BTUserAdminInfo:
 
                 privacy_consents.append(privacy_consents_item)
 
+        _trust_status = d.pop("trustStatus", UNSET)
+        trust_status: BTUserTrustStatus | Unset
+        if isinstance(_trust_status, Unset):
+            trust_status = UNSET
+        else:
+            trust_status = BTUserTrustStatus(_trust_status)
+
         _user_metrics = d.pop("userMetrics", UNSET)
         user_metrics: BTUserMetricsInfo | Unset
         if isinstance(_user_metrics, Unset):
@@ -807,6 +839,7 @@ class BTUserAdminInfo:
             email=email,
             first_name=first_name,
             last_name=last_name,
+            can_make_personal_copies=can_make_personal_copies,
             company=company,
             company_user_state=company_user_state,
             confirmation_requested=confirmation_requested,
@@ -849,6 +882,7 @@ class BTUserAdminInfo:
             phone_number=phone_number,
             pro_discovery_trial_rejected=pro_discovery_trial_rejected,
             product_type=product_type,
+            purchase_hold=purchase_hold,
             redirect_url=redirect_url,
             role=role,
             roles=roles,
@@ -865,6 +899,7 @@ class BTUserAdminInfo:
             invited_document_id=invited_document_id,
             is_trial_request=is_trial_request,
             privacy_consents=privacy_consents,
+            trust_status=trust_status,
             user_metrics=user_metrics,
         )
 

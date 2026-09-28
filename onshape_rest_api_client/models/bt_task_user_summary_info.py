@@ -22,6 +22,7 @@ class BTTaskUserSummaryInfo:
     """
     Attributes:
         acted (bool | Unset):
+        can_make_personal_copies (bool | Unset):
         company (BTCompanySummaryInfo | Unset):
         company_user_state (int | Unset):
         confirmation_requested (bool | Unset):
@@ -50,6 +51,7 @@ class BTTaskUserSummaryInfo:
     """
 
     acted: bool | Unset = UNSET
+    can_make_personal_copies: bool | Unset = UNSET
     company: BTCompanySummaryInfo | Unset = UNSET
     company_user_state: int | Unset = UNSET
     confirmation_requested: bool | Unset = UNSET
@@ -79,6 +81,8 @@ class BTTaskUserSummaryInfo:
 
     def to_dict(self) -> dict[str, Any]:
         acted = self.acted
+
+        can_make_personal_copies = self.can_make_personal_copies
 
         company: dict[str, Any] | Unset = UNSET
         if not isinstance(self.company, Unset):
@@ -143,6 +147,8 @@ class BTTaskUserSummaryInfo:
         field_dict.update({})
         if acted is not UNSET:
             field_dict["acted"] = acted
+        if can_make_personal_copies is not UNSET:
+            field_dict["canMakePersonalCopies"] = can_make_personal_copies
         if company is not UNSET:
             field_dict["company"] = company
         if company_user_state is not UNSET:
@@ -203,6 +209,8 @@ class BTTaskUserSummaryInfo:
 
         d = dict(src_dict)
         acted = d.pop("acted", UNSET)
+
+        can_make_personal_copies = d.pop("canMakePersonalCopies", UNSET)
 
         _company = d.pop("company", UNSET)
         company: BTCompanySummaryInfo | Unset
@@ -276,6 +284,7 @@ class BTTaskUserSummaryInfo:
 
         bt_task_user_summary_info = cls(
             acted=acted,
+            can_make_personal_copies=can_make_personal_copies,
             company=company,
             company_user_state=company_user_state,
             confirmation_requested=confirmation_requested,

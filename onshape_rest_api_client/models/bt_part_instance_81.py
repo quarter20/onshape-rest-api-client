@@ -81,6 +81,7 @@ class BTPartInstance81:
         reference_parameter (BTMParameterReferenceWithConfiguration3028 | Unset):
         version_id (str | Unset):
         version_id_if_external (str | Unset):
+        custom_standard_content (bool | Unset):
         part_identity (BTPSOIdentity2741 | Unset):
         part_query (str | Unset):
         part_reference (BTMParameterReferencePartStudio3302 | Unset):
@@ -135,6 +136,7 @@ class BTPartInstance81:
     reference_parameter: BTMParameterReferenceWithConfiguration3028 | Unset = UNSET
     version_id: str | Unset = UNSET
     version_id_if_external: str | Unset = UNSET
+    custom_standard_content: bool | Unset = UNSET
     part_identity: BTPSOIdentity2741 | Unset = UNSET
     part_query: str | Unset = UNSET
     part_reference: BTMParameterReferencePartStudio3302 | Unset = UNSET
@@ -278,6 +280,8 @@ class BTPartInstance81:
 
         version_id_if_external = self.version_id_if_external
 
+        custom_standard_content = self.custom_standard_content
+
         part_identity: dict[str, Any] | Unset = UNSET
         if not isinstance(self.part_identity, Unset):
             part_identity = self.part_identity.to_dict()
@@ -391,6 +395,8 @@ class BTPartInstance81:
             field_dict["versionId"] = version_id
         if version_id_if_external is not UNSET:
             field_dict["versionIdIfExternal"] = version_id_if_external
+        if custom_standard_content is not UNSET:
+            field_dict["customStandardContent"] = custom_standard_content
         if part_identity is not UNSET:
             field_dict["partIdentity"] = part_identity
         if part_query is not UNSET:
@@ -599,6 +605,8 @@ class BTPartInstance81:
 
         version_id_if_external = d.pop("versionIdIfExternal", UNSET)
 
+        custom_standard_content = d.pop("customStandardContent", UNSET)
+
         _part_identity = d.pop("partIdentity", UNSET)
         part_identity: BTPSOIdentity2741 | Unset
         if isinstance(_part_identity, Unset):
@@ -671,6 +679,7 @@ class BTPartInstance81:
             reference_parameter=reference_parameter,
             version_id=version_id,
             version_id_if_external=version_id_if_external,
+            custom_standard_content=custom_standard_content,
             part_identity=part_identity,
             part_query=part_query,
             part_reference=part_reference,

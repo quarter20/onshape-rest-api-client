@@ -44,6 +44,7 @@ class BTAnnotationGTolDisplayData4887:
         main_parameter_id (str | Unset):
         main_part_id (str | Unset):
         parent_characteristic_id (str | Unset):
+        annotation_mentioned_ids (list[str] | Unset):
         lower (str | Unset):
         rows (list[BTAnnotationGTolRowDisplayData4397] | Unset):
         upper (str | Unset):
@@ -70,6 +71,7 @@ class BTAnnotationGTolDisplayData4887:
     main_parameter_id: str | Unset = UNSET
     main_part_id: str | Unset = UNSET
     parent_characteristic_id: str | Unset = UNSET
+    annotation_mentioned_ids: list[str] | Unset = UNSET
     lower: str | Unset = UNSET
     rows: list[BTAnnotationGTolRowDisplayData4397] | Unset = UNSET
     upper: str | Unset = UNSET
@@ -133,6 +135,10 @@ class BTAnnotationGTolDisplayData4887:
 
         parent_characteristic_id = self.parent_characteristic_id
 
+        annotation_mentioned_ids: list[str] | Unset = UNSET
+        if not isinstance(self.annotation_mentioned_ids, Unset):
+            annotation_mentioned_ids = self.annotation_mentioned_ids
+
         lower = self.lower
 
         rows: list[dict[str, Any]] | Unset = UNSET
@@ -189,6 +195,8 @@ class BTAnnotationGTolDisplayData4887:
             field_dict["mainPartId"] = main_part_id
         if parent_characteristic_id is not UNSET:
             field_dict["parentCharacteristicId"] = parent_characteristic_id
+        if annotation_mentioned_ids is not UNSET:
+            field_dict["annotationMentionedIds"] = annotation_mentioned_ids
         if lower is not UNSET:
             field_dict["lower"] = lower
         if rows is not UNSET:
@@ -276,6 +284,8 @@ class BTAnnotationGTolDisplayData4887:
 
         parent_characteristic_id = d.pop("parentCharacteristicId", UNSET)
 
+        annotation_mentioned_ids = cast(list[str], d.pop("annotationMentionedIds", UNSET))
+
         lower = d.pop("lower", UNSET)
 
         _rows = d.pop("rows", UNSET)
@@ -311,6 +321,7 @@ class BTAnnotationGTolDisplayData4887:
             main_parameter_id=main_parameter_id,
             main_part_id=main_part_id,
             parent_characteristic_id=parent_characteristic_id,
+            annotation_mentioned_ids=annotation_mentioned_ids,
             lower=lower,
             rows=rows,
             upper=upper,

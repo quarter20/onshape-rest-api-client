@@ -9,9 +9,11 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.btm_boundary_condition_5556_suppressed_in_simulations import (
+        BTMBoundaryCondition5556SuppressedInSimulations,
+    )
     from ..models.btm_feature_134 import BTMFeature134
     from ..models.btm_parameter_1 import BTMParameter1
-    from ..models.btm_parameter_boolean_144 import BTMParameterBoolean144
     from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
 
 
@@ -42,7 +44,8 @@ class BTMBoundaryCondition5556:
         suppression_state (BTMSuppressionState1924 | Unset):
         variable_studio_reference (bool | Unset): If `true`, the feature references a Variable Studio.
         version (int | Unset):
-        constraints_parameters (list[BTMParameterBoolean144] | Unset):
+        field_index_for_suppressed_in_simulations_map (int | Unset):
+        suppressed_in_simulations (BTMBoundaryCondition5556SuppressedInSimulations | Unset):
     """
 
     bt_type: str | Unset = UNSET
@@ -62,7 +65,8 @@ class BTMBoundaryCondition5556:
     suppression_state: BTMSuppressionState1924 | Unset = UNSET
     variable_studio_reference: bool | Unset = UNSET
     version: int | Unset = UNSET
-    constraints_parameters: list[BTMParameterBoolean144] | Unset = UNSET
+    field_index_for_suppressed_in_simulations_map: int | Unset = UNSET
+    suppressed_in_simulations: BTMBoundaryCondition5556SuppressedInSimulations | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -112,12 +116,11 @@ class BTMBoundaryCondition5556:
 
         version = self.version
 
-        constraints_parameters: list[dict[str, Any]] | Unset = UNSET
-        if not isinstance(self.constraints_parameters, Unset):
-            constraints_parameters = []
-            for constraints_parameters_item_data in self.constraints_parameters:
-                constraints_parameters_item = constraints_parameters_item_data.to_dict()
-                constraints_parameters.append(constraints_parameters_item)
+        field_index_for_suppressed_in_simulations_map = self.field_index_for_suppressed_in_simulations_map
+
+        suppressed_in_simulations: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.suppressed_in_simulations, Unset):
+            suppressed_in_simulations = self.suppressed_in_simulations.to_dict()
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -156,16 +159,20 @@ class BTMBoundaryCondition5556:
             field_dict["variableStudioReference"] = variable_studio_reference
         if version is not UNSET:
             field_dict["version"] = version
-        if constraints_parameters is not UNSET:
-            field_dict["constraintsParameters"] = constraints_parameters
+        if field_index_for_suppressed_in_simulations_map is not UNSET:
+            field_dict["fieldIndexForSuppressedInSimulationsMap"] = field_index_for_suppressed_in_simulations_map
+        if suppressed_in_simulations is not UNSET:
+            field_dict["suppressedInSimulations"] = suppressed_in_simulations
 
         return field_dict
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        from ..models.btm_boundary_condition_5556_suppressed_in_simulations import (
+            BTMBoundaryCondition5556SuppressedInSimulations,  # noqa: PLC0415
+        )
         from ..models.btm_feature_134 import BTMFeature134  # noqa: PLC0415
         from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
-        from ..models.btm_parameter_boolean_144 import BTMParameterBoolean144  # noqa: PLC0415
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
 
         d = dict(src_dict)
@@ -222,14 +229,16 @@ class BTMBoundaryCondition5556:
 
         version = d.pop("version", UNSET)
 
-        _constraints_parameters = d.pop("constraintsParameters", UNSET)
-        constraints_parameters: list[BTMParameterBoolean144] | Unset = UNSET
-        if _constraints_parameters is not UNSET:
-            constraints_parameters = []
-            for constraints_parameters_item_data in _constraints_parameters:
-                constraints_parameters_item = BTMParameterBoolean144.from_dict(constraints_parameters_item_data)
+        field_index_for_suppressed_in_simulations_map = d.pop("fieldIndexForSuppressedInSimulationsMap", UNSET)
 
-                constraints_parameters.append(constraints_parameters_item)
+        _suppressed_in_simulations = d.pop("suppressedInSimulations", UNSET)
+        suppressed_in_simulations: BTMBoundaryCondition5556SuppressedInSimulations | Unset
+        if isinstance(_suppressed_in_simulations, Unset):
+            suppressed_in_simulations = UNSET
+        else:
+            suppressed_in_simulations = BTMBoundaryCondition5556SuppressedInSimulations.from_dict(
+                _suppressed_in_simulations
+            )
 
         btm_boundary_condition_5556 = cls(
             bt_type=bt_type,
@@ -249,7 +258,8 @@ class BTMBoundaryCondition5556:
             suppression_state=suppression_state,
             variable_studio_reference=variable_studio_reference,
             version=version,
-            constraints_parameters=constraints_parameters,
+            field_index_for_suppressed_in_simulations_map=field_index_for_suppressed_in_simulations_map,
+            suppressed_in_simulations=suppressed_in_simulations,
         )
 
         btm_boundary_condition_5556.additional_properties = d

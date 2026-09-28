@@ -20,12 +20,14 @@ T = TypeVar("T", bound="BTParameterVisibilityLogical178")
 class BTParameterVisibilityLogical178:
     """
     Attributes:
+        always_shown (bool | Unset):
         bt_type (str | Unset): Type of JSON object.
         self_or_child_always_visible (bool | Unset):
         children (list[BTParameterVisibilityCondition177] | Unset):
         operation (GBTParameterVisibilityLogicalOp | Unset):
     """
 
+    always_shown: bool | Unset = UNSET
     bt_type: str | Unset = UNSET
     self_or_child_always_visible: bool | Unset = UNSET
     children: list[BTParameterVisibilityCondition177] | Unset = UNSET
@@ -33,6 +35,8 @@ class BTParameterVisibilityLogical178:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        always_shown = self.always_shown
+
         bt_type = self.bt_type
 
         self_or_child_always_visible = self.self_or_child_always_visible
@@ -51,6 +55,8 @@ class BTParameterVisibilityLogical178:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if always_shown is not UNSET:
+            field_dict["alwaysShown"] = always_shown
         if bt_type is not UNSET:
             field_dict["btType"] = bt_type
         if self_or_child_always_visible is not UNSET:
@@ -67,6 +73,8 @@ class BTParameterVisibilityLogical178:
         from ..models.bt_parameter_visibility_condition_177 import BTParameterVisibilityCondition177  # noqa: PLC0415
 
         d = dict(src_dict)
+        always_shown = d.pop("alwaysShown", UNSET)
+
         bt_type = d.pop("btType", UNSET)
 
         self_or_child_always_visible = d.pop("selfOrChildAlwaysVisible", UNSET)
@@ -88,6 +96,7 @@ class BTParameterVisibilityLogical178:
             operation = GBTParameterVisibilityLogicalOp(_operation)
 
         bt_parameter_visibility_logical_178 = cls(
+            always_shown=always_shown,
             bt_type=bt_type,
             self_or_child_always_visible=self_or_child_always_visible,
             children=children,

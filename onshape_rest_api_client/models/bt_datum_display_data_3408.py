@@ -43,6 +43,7 @@ class BTDatumDisplayData3408:
         main_parameter_id (str | Unset):
         main_part_id (str | Unset):
         parent_characteristic_id (str | Unset):
+        annotation_mentioned_ids (list[str] | Unset):
         name (str | Unset):
     """
 
@@ -67,6 +68,7 @@ class BTDatumDisplayData3408:
     main_parameter_id: str | Unset = UNSET
     main_part_id: str | Unset = UNSET
     parent_characteristic_id: str | Unset = UNSET
+    annotation_mentioned_ids: list[str] | Unset = UNSET
     name: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -128,6 +130,10 @@ class BTDatumDisplayData3408:
 
         parent_characteristic_id = self.parent_characteristic_id
 
+        annotation_mentioned_ids: list[str] | Unset = UNSET
+        if not isinstance(self.annotation_mentioned_ids, Unset):
+            annotation_mentioned_ids = self.annotation_mentioned_ids
+
         name = self.name
 
         field_dict: dict[str, Any] = {}
@@ -175,6 +181,8 @@ class BTDatumDisplayData3408:
             field_dict["mainPartId"] = main_part_id
         if parent_characteristic_id is not UNSET:
             field_dict["parentCharacteristicId"] = parent_characteristic_id
+        if annotation_mentioned_ids is not UNSET:
+            field_dict["annotationMentionedIds"] = annotation_mentioned_ids
         if name is not UNSET:
             field_dict["name"] = name
 
@@ -255,6 +263,8 @@ class BTDatumDisplayData3408:
 
         parent_characteristic_id = d.pop("parentCharacteristicId", UNSET)
 
+        annotation_mentioned_ids = cast(list[str], d.pop("annotationMentionedIds", UNSET))
+
         name = d.pop("name", UNSET)
 
         bt_datum_display_data_3408 = cls(
@@ -279,6 +289,7 @@ class BTDatumDisplayData3408:
             main_parameter_id=main_parameter_id,
             main_part_id=main_part_id,
             parent_characteristic_id=parent_characteristic_id,
+            annotation_mentioned_ids=annotation_mentioned_ids,
             name=name,
         )
 

@@ -46,6 +46,7 @@ class BTCompanyUserParams:
              * `25`: Use revision tools
              * `26`: Export files
              * `27`: Allow access to Onshape Labs
+             * `28`: Make personal copies of enterprise documents (EDU Enterprise only)
         guest (bool | Unset): Indicates the user is a guest user if true.
         light (bool | Unset): Indicates the user is a light user if true.
     """

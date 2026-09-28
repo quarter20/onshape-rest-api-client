@@ -27,6 +27,7 @@ class BTTableColumnSpec1967:
         default_column_width_value (int | Unset):
         default_header_name (str | Unset):
         default_text_alignment (GBTTableTextAlignment | Unset):
+        header_icon_id (str | Unset):
         is_expandable (bool | Unset):
         is_renamable (bool | Unset):
         read_only (bool | Unset):
@@ -38,6 +39,7 @@ class BTTableColumnSpec1967:
     default_column_width_value: int | Unset = UNSET
     default_header_name: str | Unset = UNSET
     default_text_alignment: GBTTableTextAlignment | Unset = UNSET
+    header_icon_id: str | Unset = UNSET
     is_expandable: bool | Unset = UNSET
     is_renamable: bool | Unset = UNSET
     read_only: bool | Unset = UNSET
@@ -62,6 +64,8 @@ class BTTableColumnSpec1967:
         if not isinstance(self.default_text_alignment, Unset):
             default_text_alignment = self.default_text_alignment.value
 
+        header_icon_id = self.header_icon_id
+
         is_expandable = self.is_expandable
 
         is_renamable = self.is_renamable
@@ -83,6 +87,8 @@ class BTTableColumnSpec1967:
             field_dict["defaultHeaderName"] = default_header_name
         if default_text_alignment is not UNSET:
             field_dict["defaultTextAlignment"] = default_text_alignment
+        if header_icon_id is not UNSET:
+            field_dict["headerIconId"] = header_icon_id
         if is_expandable is not UNSET:
             field_dict["isExpandable"] = is_expandable
         if is_renamable is not UNSET:
@@ -124,6 +130,8 @@ class BTTableColumnSpec1967:
         else:
             default_text_alignment = GBTTableTextAlignment(_default_text_alignment)
 
+        header_icon_id = d.pop("headerIconId", UNSET)
+
         is_expandable = d.pop("isExpandable", UNSET)
 
         is_renamable = d.pop("isRenamable", UNSET)
@@ -137,6 +145,7 @@ class BTTableColumnSpec1967:
             default_column_width_value=default_column_width_value,
             default_header_name=default_header_name,
             default_text_alignment=default_text_alignment,
+            header_icon_id=header_icon_id,
             is_expandable=is_expandable,
             is_renamable=is_renamable,
             read_only=read_only,

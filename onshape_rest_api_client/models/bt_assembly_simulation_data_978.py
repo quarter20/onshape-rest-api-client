@@ -12,6 +12,7 @@ from ..types import UNSET, Unset
 if TYPE_CHECKING:
     from ..models.bt_assembly_simulation_2246 import BTAssemblySimulation2246
     from ..models.bt_assembly_simulation_data_978_loads_by_node_id import BTAssemblySimulationData978LoadsByNodeId
+    from ..models.btm_boundary_condition_5556 import BTMBoundaryCondition5556
     from ..models.btm_load_3538 import BTMLoad3538
     from ..models.btm_rigid_feature_3076 import BTMRigidFeature3076
     from ..models.btm_simulation_feature_5034 import BTMSimulationFeature5034
@@ -27,6 +28,7 @@ class BTAssemblySimulationData978:
         bt_type (str | Unset): Type of JSON object.
         import_microversion (str | Unset): Microversion that resulted from the import.
         node_id (str | Unset):
+        boundary_conditions (list[BTMBoundaryCondition5556] | Unset):
         contact_behavior (GBTSimulationContactBehavior | Unset):
         loads (list[BTMLoad3538] | Unset):
         loads_by_node_id (BTAssemblySimulationData978LoadsByNodeId | Unset):
@@ -39,6 +41,7 @@ class BTAssemblySimulationData978:
     bt_type: str | Unset = UNSET
     import_microversion: str | Unset = UNSET
     node_id: str | Unset = UNSET
+    boundary_conditions: list[BTMBoundaryCondition5556] | Unset = UNSET
     contact_behavior: GBTSimulationContactBehavior | Unset = UNSET
     loads: list[BTMLoad3538] | Unset = UNSET
     loads_by_node_id: BTAssemblySimulationData978LoadsByNodeId | Unset = UNSET
@@ -54,6 +57,13 @@ class BTAssemblySimulationData978:
         import_microversion = self.import_microversion
 
         node_id = self.node_id
+
+        boundary_conditions: list[dict[str, Any]] | Unset = UNSET
+        if not isinstance(self.boundary_conditions, Unset):
+            boundary_conditions = []
+            for boundary_conditions_item_data in self.boundary_conditions:
+                boundary_conditions_item = boundary_conditions_item_data.to_dict()
+                boundary_conditions.append(boundary_conditions_item)
 
         contact_behavior: str | Unset = UNSET
         if not isinstance(self.contact_behavior, Unset):
@@ -107,6 +117,8 @@ class BTAssemblySimulationData978:
             field_dict["importMicroversion"] = import_microversion
         if node_id is not UNSET:
             field_dict["nodeId"] = node_id
+        if boundary_conditions is not UNSET:
+            field_dict["boundaryConditions"] = boundary_conditions
         if contact_behavior is not UNSET:
             field_dict["contactBehavior"] = contact_behavior
         if loads is not UNSET:
@@ -130,6 +142,7 @@ class BTAssemblySimulationData978:
         from ..models.bt_assembly_simulation_data_978_loads_by_node_id import (
             BTAssemblySimulationData978LoadsByNodeId,  # noqa: PLC0415
         )
+        from ..models.btm_boundary_condition_5556 import BTMBoundaryCondition5556  # noqa: PLC0415
         from ..models.btm_load_3538 import BTMLoad3538  # noqa: PLC0415
         from ..models.btm_rigid_feature_3076 import BTMRigidFeature3076  # noqa: PLC0415
         from ..models.btm_simulation_feature_5034 import BTMSimulationFeature5034  # noqa: PLC0415
@@ -140,6 +153,15 @@ class BTAssemblySimulationData978:
         import_microversion = d.pop("importMicroversion", UNSET)
 
         node_id = d.pop("nodeId", UNSET)
+
+        _boundary_conditions = d.pop("boundaryConditions", UNSET)
+        boundary_conditions: list[BTMBoundaryCondition5556] | Unset = UNSET
+        if _boundary_conditions is not UNSET:
+            boundary_conditions = []
+            for boundary_conditions_item_data in _boundary_conditions:
+                boundary_conditions_item = BTMBoundaryCondition5556.from_dict(boundary_conditions_item_data)
+
+                boundary_conditions.append(boundary_conditions_item)
 
         _contact_behavior = d.pop("contactBehavior", UNSET)
         contact_behavior: GBTSimulationContactBehavior | Unset
@@ -204,6 +226,7 @@ class BTAssemblySimulationData978:
             bt_type=bt_type,
             import_microversion=import_microversion,
             node_id=node_id,
+            boundary_conditions=boundary_conditions,
             contact_behavior=contact_behavior,
             loads=loads,
             loads_by_node_id=loads_by_node_id,

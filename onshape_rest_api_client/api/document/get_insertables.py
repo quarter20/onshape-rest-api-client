@@ -29,6 +29,7 @@ def _get_kwargs(
     exclude_newer_fs_versions: bool | Unset = False,
     max_feature_script_version: int | Unset = UNSET,
     include_part_studios: bool | Unset = False,
+    include_non_empty_part_studios: bool | Unset = False,
     include_features: bool | Unset = False,
     include_meshes: bool | Unset = False,
     include_wires: bool | Unset = False,
@@ -75,6 +76,8 @@ def _get_kwargs(
     params["maxFeatureScriptVersion"] = max_feature_script_version
 
     params["includePartStudios"] = include_part_studios
+
+    params["includeNonEmptyPartStudios"] = include_non_empty_part_studios
 
     params["includeFeatures"] = include_features
 
@@ -155,6 +158,7 @@ def sync_detailed(
     exclude_newer_fs_versions: bool | Unset = False,
     max_feature_script_version: int | Unset = UNSET,
     include_part_studios: bool | Unset = False,
+    include_non_empty_part_studios: bool | Unset = False,
     include_features: bool | Unset = False,
     include_meshes: bool | Unset = False,
     include_wires: bool | Unset = False,
@@ -190,6 +194,7 @@ def sync_detailed(
         exclude_newer_fs_versions (bool | Unset):  Default: False.
         max_feature_script_version (int | Unset):
         include_part_studios (bool | Unset):  Default: False.
+        include_non_empty_part_studios (bool | Unset):  Default: False.
         include_features (bool | Unset):  Default: False.
         include_meshes (bool | Unset):  Default: False.
         include_wires (bool | Unset):  Default: False.
@@ -231,6 +236,7 @@ def sync_detailed(
         exclude_newer_fs_versions=exclude_newer_fs_versions,
         max_feature_script_version=max_feature_script_version,
         include_part_studios=include_part_studios,
+        include_non_empty_part_studios=include_non_empty_part_studios,
         include_features=include_features,
         include_meshes=include_meshes,
         include_wires=include_wires,
@@ -274,6 +280,7 @@ def sync(
     exclude_newer_fs_versions: bool | Unset = False,
     max_feature_script_version: int | Unset = UNSET,
     include_part_studios: bool | Unset = False,
+    include_non_empty_part_studios: bool | Unset = False,
     include_features: bool | Unset = False,
     include_meshes: bool | Unset = False,
     include_wires: bool | Unset = False,
@@ -309,6 +316,7 @@ def sync(
         exclude_newer_fs_versions (bool | Unset):  Default: False.
         max_feature_script_version (int | Unset):
         include_part_studios (bool | Unset):  Default: False.
+        include_non_empty_part_studios (bool | Unset):  Default: False.
         include_features (bool | Unset):  Default: False.
         include_meshes (bool | Unset):  Default: False.
         include_wires (bool | Unset):  Default: False.
@@ -351,6 +359,7 @@ def sync(
         exclude_newer_fs_versions=exclude_newer_fs_versions,
         max_feature_script_version=max_feature_script_version,
         include_part_studios=include_part_studios,
+        include_non_empty_part_studios=include_non_empty_part_studios,
         include_features=include_features,
         include_meshes=include_meshes,
         include_wires=include_wires,
@@ -388,6 +397,7 @@ async def asyncio_detailed(
     exclude_newer_fs_versions: bool | Unset = False,
     max_feature_script_version: int | Unset = UNSET,
     include_part_studios: bool | Unset = False,
+    include_non_empty_part_studios: bool | Unset = False,
     include_features: bool | Unset = False,
     include_meshes: bool | Unset = False,
     include_wires: bool | Unset = False,
@@ -423,6 +433,7 @@ async def asyncio_detailed(
         exclude_newer_fs_versions (bool | Unset):  Default: False.
         max_feature_script_version (int | Unset):
         include_part_studios (bool | Unset):  Default: False.
+        include_non_empty_part_studios (bool | Unset):  Default: False.
         include_features (bool | Unset):  Default: False.
         include_meshes (bool | Unset):  Default: False.
         include_wires (bool | Unset):  Default: False.
@@ -464,6 +475,7 @@ async def asyncio_detailed(
         exclude_newer_fs_versions=exclude_newer_fs_versions,
         max_feature_script_version=max_feature_script_version,
         include_part_studios=include_part_studios,
+        include_non_empty_part_studios=include_non_empty_part_studios,
         include_features=include_features,
         include_meshes=include_meshes,
         include_wires=include_wires,
@@ -505,6 +517,7 @@ async def asyncio(
     exclude_newer_fs_versions: bool | Unset = False,
     max_feature_script_version: int | Unset = UNSET,
     include_part_studios: bool | Unset = False,
+    include_non_empty_part_studios: bool | Unset = False,
     include_features: bool | Unset = False,
     include_meshes: bool | Unset = False,
     include_wires: bool | Unset = False,
@@ -540,6 +553,7 @@ async def asyncio(
         exclude_newer_fs_versions (bool | Unset):  Default: False.
         max_feature_script_version (int | Unset):
         include_part_studios (bool | Unset):  Default: False.
+        include_non_empty_part_studios (bool | Unset):  Default: False.
         include_features (bool | Unset):  Default: False.
         include_meshes (bool | Unset):  Default: False.
         include_wires (bool | Unset):  Default: False.
@@ -583,6 +597,7 @@ async def asyncio(
             exclude_newer_fs_versions=exclude_newer_fs_versions,
             max_feature_script_version=max_feature_script_version,
             include_part_studios=include_part_studios,
+            include_non_empty_part_studios=include_non_empty_part_studios,
             include_features=include_features,
             include_meshes=include_meshes,
             include_wires=include_wires,

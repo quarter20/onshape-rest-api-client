@@ -347,6 +347,7 @@ if TYPE_CHECKING:
     from .bt_default_features_119 import BTDefaultFeatures119
     from .bt_default_unit_info import BTDefaultUnitInfo
     from .bt_default_units_info import BTDefaultUnitsInfo
+    from .bt_delete_features_call_1432 import BTDeleteFeaturesCall1432
     from .bt_derived_assembly_mirror_4204 import BTDerivedAssemblyMirror4204
     from .bt_device_login_secret_info import BTDeviceLoginSecretInfo
     from .bt_diff_info import BTDiffInfo
@@ -682,6 +683,7 @@ if TYPE_CHECKING:
     from .bt_origin_entity_935 import BTOriginEntity935
     from .bt_other_document_selector_parameters_info import BTOtherDocumentSelectorParametersInfo
     from .bt_owner_info import BTOwnerInfo
+    from .bt_owner_type import BTOwnerType
     from .bt_parameter_expression_error_info_2037 import BTParameterExpressionErrorInfo2037
     from .bt_parameter_group_spec_3469 import BTParameterGroupSpec3469
     from .bt_parameter_lookup_table_entry_1667 import BTParameterLookupTableEntry1667
@@ -875,6 +877,7 @@ if TYPE_CHECKING:
     from .bt_revision_list_response import BTRevisionListResponse
     from .bt_rho_dimension_display_data_2892 import BTRhoDimensionDisplayData2892
     from .bt_rigid_feature_display_data_1595 import BTRigidFeatureDisplayData1595
+    from .bt_rigid_mirror_seed_sub_assembly_output_info_6098 import BTRigidMirrorSeedSubAssemblyOutputInfo6098
     from .bt_rigid_or_locked_sub_assembly_output_info_3860 import BTRigidOrLockedSubAssemblyOutputInfo3860
     from .bt_role import BTRole
     from .bt_root_assembly_display_data_96 import BTRootAssemblyDisplayData96
@@ -1047,6 +1050,7 @@ if TYPE_CHECKING:
     from .bt_user_settings_info_units_display_precision import BTUserSettingsInfoUnitsDisplayPrecision
     from .bt_user_state import BTUserState
     from .bt_user_summary_info import BTUserSummaryInfo
+    from .bt_user_trust_status import BTUserTrustStatus
     from .bt_value_and_use_4696 import BTValueAndUse4696
     from .bt_variable_info import BTVariableInfo
     from .bt_variable_params import BTVariableParams
@@ -1163,6 +1167,7 @@ if TYPE_CHECKING:
     from .btm_assembly_pattern_feature_2241 import BTMAssemblyPatternFeature2241
     from .btm_assembly_replicate_feature_1351 import BTMAssemblyReplicateFeature1351
     from .btm_boundary_condition_5556 import BTMBoundaryCondition5556
+    from .btm_boundary_condition_5556_suppressed_in_simulations import BTMBoundaryCondition5556SuppressedInSimulations
     from .btm_configuration_data_1560 import BTMConfigurationData1560
     from .btm_configuration_data_1560_current_fs_values import BTMConfigurationData1560CurrentFSValues
     from .btm_configuration_data_1560_default_configuration_values import (
@@ -1454,6 +1459,7 @@ if TYPE_CHECKING:
     from .external_documentation import ExternalDocumentation
     from .external_documentation_extensions import ExternalDocumentationExtensions
     from .external_documentation_extensions_additional_property import ExternalDocumentationExtensionsAdditionalProperty
+    from .gbt_add_member_to_team_message_body import GBTAddMemberToTeamMessageBody
     from .gbt_add_user_to_company_message_body import GBTAddUserToCompanyMessageBody
     from .gbt_annotation_attachment_location import GBTAnnotationAttachmentLocation
     from .gbt_annotation_type import GBTAnnotationType
@@ -1471,9 +1477,12 @@ if TYPE_CHECKING:
     from .gbt_configuration_parameter_type import GBTConfigurationParameterType
     from .gbt_configured_parent_type import GBTConfiguredParentType
     from .gbt_constraint_type import GBTConstraintType
+    from .gbt_copy_workspace_message_body import GBTCopyWorkspaceMessageBody
     from .gbt_create_document_message_body import GBTCreateDocumentMessageBody
     from .gbt_create_element_message_body import GBTCreateElementMessageBody
     from .gbt_create_revision_message_body import GBTCreateRevisionMessageBody
+    from .gbt_create_task_message_body import GBTCreateTaskMessageBody
+    from .gbt_create_team_message_body import GBTCreateTeamMessageBody
     from .gbt_create_version_message_body import GBTCreateVersionMessageBody
     from .gbt_curve_type_enum import GBTCurveTypeEnum
     from .gbt_data_item_format import GBTDataItemFormat
@@ -1481,6 +1490,8 @@ if TYPE_CHECKING:
     from .gbt_debug_entity_style import GBTDebugEntityStyle
     from .gbt_delete_comment_message_body import GBTDeleteCommentMessageBody
     from .gbt_delete_element_message_body import GBTDeleteElementMessageBody
+    from .gbt_delete_task_message_body import GBTDeleteTaskMessageBody
+    from .gbt_delete_team_message_body import GBTDeleteTeamMessageBody
     from .gbt_delete_workspace_message_body import GBTDeleteWorkspaceMessageBody
     from .gbt_display_data_usage import GBTDisplayDataUsage
     from .gbt_edge_topology import GBTEdgeTopology
@@ -1491,6 +1502,8 @@ if TYPE_CHECKING:
     from .gbt_entity_inference_type import GBTEntityInferenceType
     from .gbt_entity_type import GBTEntityType
     from .gbt_error_string_enum import GBTErrorStringEnum
+    from .gbt_export_document_message_body import GBTExportDocumentMessageBody
+    from .gbt_export_document_to_cloud_storage_message_body import GBTExportDocumentToCloudStorageMessageBody
     from .gbt_export_resolution import GBTExportResolution
     from .gbt_export_unit import GBTExportUnit
     from .gbt_feature_dimension_type import GBTFeatureDimensionType
@@ -1498,11 +1511,15 @@ if TYPE_CHECKING:
     from .gbt_field_weld_flag import GBTFieldWeldFlag
     from .gbt_filter_flattened_geometry_options import GBTFilterFlattenedGeometryOptions
     from .gbt_geometry_type import GBTGeometryType
+    from .gbt_global_permission_grant_change_message_body import GBTGlobalPermissionGrantChangeMessageBody
     from .gbt_graphics_buffer_target import GBTGraphicsBufferTarget
     from .gbt_graphics_primitive_type import GBTGraphicsPrimitiveType
     from .gbt_hole_type import GBTHoleType
+    from .gbt_import_document_message_body import GBTImportDocumentMessageBody
     from .gbt_insertable_type import GBTInsertableType
     from .gbt_load_type import GBTLoadType
+    from .gbt_make_document_private_message_body import GBTMakeDocumentPrivateMessageBody
+    from .gbt_make_document_public_message_body import GBTMakeDocumentPublicMessageBody
     from .gbt_mate_type import GBTMateType
     from .gbt_merge_branch_message_body import GBTMergeBranchMessageBody
     from .gbt_mesh_state import GBTMeshState
@@ -1522,10 +1539,12 @@ if TYPE_CHECKING:
     from .gbt_part_studio_instance_type import GBTPartStudioInstanceType
     from .gbt_part_studio_item_type import GBTPartStudioItemType
     from .gbt_part_visibility import GBTPartVisibility
+    from .gbt_password_reset_user_message_body import GBTPasswordResetUserMessageBody
     from .gbt_pattern_type import GBTPatternType
     from .gbt_pre_process_parasolid_option import GBTPreProcessParasolidOption
     from .gbt_quantity_type import GBTQuantityType
     from .gbt_radius_display import GBTRadiusDisplay
+    from .gbt_remove_member_from_team_message_body import GBTRemoveMemberFromTeamMessageBody
     from .gbt_remove_user_from_company_message_body import GBTRemoveUserFromCompanyMessageBody
     from .gbt_restore_document_from_history_message_body import GBTRestoreDocumentFromHistoryMessageBody
     from .gbt_rhino_versions import GBTRhinoVersions
@@ -1539,12 +1558,16 @@ if TYPE_CHECKING:
     from .gbt_surface_type_enum import GBTSurfaceTypeEnum
     from .gbt_table_column_width_units import GBTTableColumnWidthUnits
     from .gbt_table_text_alignment import GBTTableTextAlignment
+    from .gbt_task_notification_message_body import GBTTaskNotificationMessageBody
     from .gbt_tessellation_setting_enum import GBTTessellationSettingEnum
     from .gbt_tolerance_precision import GBTTolerancePrecision
     from .gbt_tolerance_schema_class import GBTToleranceSchemaClass
     from .gbt_tolerance_type import GBTToleranceType
     from .gbt_translation_request_complete_message_body import GBTTranslationRequestCompleteMessageBody
     from .gbt_ui_selection_type import GBTUiSelectionType
+    from .gbt_update_2fa_policy_message_body import GBTUpdate2FAPolicyMessageBody
+    from .gbt_update_sso_policy_message_body import GBTUpdateSSOPolicyMessageBody
+    from .gbt_update_task_message_body import GBTUpdateTaskMessageBody
     from .gbt_update_workspace_units_message_body import GBTUpdateWorkspaceUnitsMessageBody
     from .gbt_urdf_mesh_format import GBTUrdfMeshFormat
     from .gbt_value_use import GBTValueUse
@@ -1558,6 +1581,7 @@ if TYPE_CHECKING:
     from .gbtg_tol_constraint_type import GBTGTolConstraintType
     from .gbtg_tol_extended_constraint_type import GBTGTolExtendedConstraintType
     from .gbtm_geom_status import GBTMGeomStatus
+    from .gbto_auth_app_authorized_message_body import GBTOAuthAppAuthorizedMessageBody
     from .gbtp_definition_type import GBTPDefinitionType
     from .gbtp_operator import GBTPOperator
     from .gbtp_type import GBTPType
@@ -2134,6 +2158,7 @@ _LAZY_MODULES: dict[str, str] = {
     "BTDefaultFeatures119": "bt_default_features_119",
     "BTDefaultUnitInfo": "bt_default_unit_info",
     "BTDefaultUnitsInfo": "bt_default_units_info",
+    "BTDeleteFeaturesCall1432": "bt_delete_features_call_1432",
     "BTDerivedAssemblyMirror4204": "bt_derived_assembly_mirror_4204",
     "BTDeviceLoginSecretInfo": "bt_device_login_secret_info",
     "BTDiffInfo": "bt_diff_info",
@@ -2451,6 +2476,7 @@ _LAZY_MODULES: dict[str, str] = {
     "BTOriginEntity935": "bt_origin_entity_935",
     "BTOtherDocumentSelectorParametersInfo": "bt_other_document_selector_parameters_info",
     "BTOwnerInfo": "bt_owner_info",
+    "BTOwnerType": "bt_owner_type",
     "BTParameterExpressionErrorInfo2037": "bt_parameter_expression_error_info_2037",
     "BTParameterGroupSpec3469": "bt_parameter_group_spec_3469",
     "BTParameterLookupTableEntry1667": "bt_parameter_lookup_table_entry_1667",
@@ -2606,6 +2632,7 @@ _LAZY_MODULES: dict[str, str] = {
     "BTRevisionListResponse": "bt_revision_list_response",
     "BTRhoDimensionDisplayData2892": "bt_rho_dimension_display_data_2892",
     "BTRigidFeatureDisplayData1595": "bt_rigid_feature_display_data_1595",
+    "BTRigidMirrorSeedSubAssemblyOutputInfo6098": "bt_rigid_mirror_seed_sub_assembly_output_info_6098",
     "BTRigidOrLockedSubAssemblyOutputInfo3860": "bt_rigid_or_locked_sub_assembly_output_info_3860",
     "BTRole": "bt_role",
     "BTRootAssemblyDisplayData96": "bt_root_assembly_display_data_96",
@@ -2768,6 +2795,7 @@ _LAZY_MODULES: dict[str, str] = {
     "BTUserSettingsInfoUnitsDisplayPrecision": "bt_user_settings_info_units_display_precision",
     "BTUserState": "bt_user_state",
     "BTUserSummaryInfo": "bt_user_summary_info",
+    "BTUserTrustStatus": "bt_user_trust_status",
     "BTValueAndUse4696": "bt_value_and_use_4696",
     "BTVariableInfo": "bt_variable_info",
     "BTVariableParams": "bt_variable_params",
@@ -2876,6 +2904,7 @@ _LAZY_MODULES: dict[str, str] = {
     "BTMAssemblyPatternFeature2241": "btm_assembly_pattern_feature_2241",
     "BTMAssemblyReplicateFeature1351": "btm_assembly_replicate_feature_1351",
     "BTMBoundaryCondition5556": "btm_boundary_condition_5556",
+    "BTMBoundaryCondition5556SuppressedInSimulations": "btm_boundary_condition_5556_suppressed_in_simulations",
     "BTMConfigurationData1560": "btm_configuration_data_1560",
     "BTMConfigurationData1560CurrentFSValues": "btm_configuration_data_1560_current_fs_values",
     "BTMConfigurationData1560DefaultConfigurationValues": "btm_configuration_data_1560_default_configuration_values",
@@ -3165,6 +3194,7 @@ _LAZY_MODULES: dict[str, str] = {
     "ExternalDocumentation": "external_documentation",
     "ExternalDocumentationExtensions": "external_documentation_extensions",
     "ExternalDocumentationExtensionsAdditionalProperty": "external_documentation_extensions_additional_property",
+    "GBTAddMemberToTeamMessageBody": "gbt_add_member_to_team_message_body",
     "GBTAddUserToCompanyMessageBody": "gbt_add_user_to_company_message_body",
     "GBTAnnotationAttachmentLocation": "gbt_annotation_attachment_location",
     "GBTAnnotationType": "gbt_annotation_type",
@@ -3182,9 +3212,12 @@ _LAZY_MODULES: dict[str, str] = {
     "GBTConfigurationParameterType": "gbt_configuration_parameter_type",
     "GBTConfiguredParentType": "gbt_configured_parent_type",
     "GBTConstraintType": "gbt_constraint_type",
+    "GBTCopyWorkspaceMessageBody": "gbt_copy_workspace_message_body",
     "GBTCreateDocumentMessageBody": "gbt_create_document_message_body",
     "GBTCreateElementMessageBody": "gbt_create_element_message_body",
     "GBTCreateRevisionMessageBody": "gbt_create_revision_message_body",
+    "GBTCreateTaskMessageBody": "gbt_create_task_message_body",
+    "GBTCreateTeamMessageBody": "gbt_create_team_message_body",
     "GBTCreateVersionMessageBody": "gbt_create_version_message_body",
     "GBTCurveTypeEnum": "gbt_curve_type_enum",
     "GBTDataItemFormat": "gbt_data_item_format",
@@ -3192,6 +3225,8 @@ _LAZY_MODULES: dict[str, str] = {
     "GBTDebugEntityStyle": "gbt_debug_entity_style",
     "GBTDeleteCommentMessageBody": "gbt_delete_comment_message_body",
     "GBTDeleteElementMessageBody": "gbt_delete_element_message_body",
+    "GBTDeleteTaskMessageBody": "gbt_delete_task_message_body",
+    "GBTDeleteTeamMessageBody": "gbt_delete_team_message_body",
     "GBTDeleteWorkspaceMessageBody": "gbt_delete_workspace_message_body",
     "GBTDisplayDataUsage": "gbt_display_data_usage",
     "GBTEdgeTopology": "gbt_edge_topology",
@@ -3202,6 +3237,8 @@ _LAZY_MODULES: dict[str, str] = {
     "GBTEntityInferenceType": "gbt_entity_inference_type",
     "GBTEntityType": "gbt_entity_type",
     "GBTErrorStringEnum": "gbt_error_string_enum",
+    "GBTExportDocumentMessageBody": "gbt_export_document_message_body",
+    "GBTExportDocumentToCloudStorageMessageBody": "gbt_export_document_to_cloud_storage_message_body",
     "GBTExportResolution": "gbt_export_resolution",
     "GBTExportUnit": "gbt_export_unit",
     "GBTFeatureDimensionType": "gbt_feature_dimension_type",
@@ -3209,11 +3246,15 @@ _LAZY_MODULES: dict[str, str] = {
     "GBTFieldWeldFlag": "gbt_field_weld_flag",
     "GBTFilterFlattenedGeometryOptions": "gbt_filter_flattened_geometry_options",
     "GBTGeometryType": "gbt_geometry_type",
+    "GBTGlobalPermissionGrantChangeMessageBody": "gbt_global_permission_grant_change_message_body",
     "GBTGraphicsBufferTarget": "gbt_graphics_buffer_target",
     "GBTGraphicsPrimitiveType": "gbt_graphics_primitive_type",
     "GBTHoleType": "gbt_hole_type",
+    "GBTImportDocumentMessageBody": "gbt_import_document_message_body",
     "GBTInsertableType": "gbt_insertable_type",
     "GBTLoadType": "gbt_load_type",
+    "GBTMakeDocumentPrivateMessageBody": "gbt_make_document_private_message_body",
+    "GBTMakeDocumentPublicMessageBody": "gbt_make_document_public_message_body",
     "GBTMateType": "gbt_mate_type",
     "GBTMergeBranchMessageBody": "gbt_merge_branch_message_body",
     "GBTMeshState": "gbt_mesh_state",
@@ -3233,10 +3274,12 @@ _LAZY_MODULES: dict[str, str] = {
     "GBTPartStudioInstanceType": "gbt_part_studio_instance_type",
     "GBTPartStudioItemType": "gbt_part_studio_item_type",
     "GBTPartVisibility": "gbt_part_visibility",
+    "GBTPasswordResetUserMessageBody": "gbt_password_reset_user_message_body",
     "GBTPatternType": "gbt_pattern_type",
     "GBTPreProcessParasolidOption": "gbt_pre_process_parasolid_option",
     "GBTQuantityType": "gbt_quantity_type",
     "GBTRadiusDisplay": "gbt_radius_display",
+    "GBTRemoveMemberFromTeamMessageBody": "gbt_remove_member_from_team_message_body",
     "GBTRemoveUserFromCompanyMessageBody": "gbt_remove_user_from_company_message_body",
     "GBTRestoreDocumentFromHistoryMessageBody": "gbt_restore_document_from_history_message_body",
     "GBTRhinoVersions": "gbt_rhino_versions",
@@ -3250,12 +3293,16 @@ _LAZY_MODULES: dict[str, str] = {
     "GBTSurfaceTypeEnum": "gbt_surface_type_enum",
     "GBTTableColumnWidthUnits": "gbt_table_column_width_units",
     "GBTTableTextAlignment": "gbt_table_text_alignment",
+    "GBTTaskNotificationMessageBody": "gbt_task_notification_message_body",
     "GBTTessellationSettingEnum": "gbt_tessellation_setting_enum",
     "GBTTolerancePrecision": "gbt_tolerance_precision",
     "GBTToleranceSchemaClass": "gbt_tolerance_schema_class",
     "GBTToleranceType": "gbt_tolerance_type",
     "GBTTranslationRequestCompleteMessageBody": "gbt_translation_request_complete_message_body",
     "GBTUiSelectionType": "gbt_ui_selection_type",
+    "GBTUpdate2FAPolicyMessageBody": "gbt_update_2fa_policy_message_body",
+    "GBTUpdateSSOPolicyMessageBody": "gbt_update_sso_policy_message_body",
+    "GBTUpdateTaskMessageBody": "gbt_update_task_message_body",
     "GBTUpdateWorkspaceUnitsMessageBody": "gbt_update_workspace_units_message_body",
     "GBTUrdfMeshFormat": "gbt_urdf_mesh_format",
     "GBTValueUse": "gbt_value_use",
@@ -3269,6 +3316,7 @@ _LAZY_MODULES: dict[str, str] = {
     "GBTGTolConstraintType": "gbtg_tol_constraint_type",
     "GBTGTolExtendedConstraintType": "gbtg_tol_extended_constraint_type",
     "GBTMGeomStatus": "gbtm_geom_status",
+    "GBTOAuthAppAuthorizedMessageBody": "gbto_auth_app_authorized_message_body",
     "GBTPDefinitionType": "gbtp_definition_type",
     "GBTPOperator": "gbtp_operator",
     "GBTPType": "gbtp_type",
@@ -3870,6 +3918,7 @@ __all__ = (
     "BTDefaultFeatures119",
     "BTDefaultUnitInfo",
     "BTDefaultUnitsInfo",
+    "BTDeleteFeaturesCall1432",
     "BTDerivedAssemblyMirror4204",
     "BTDeviceLoginSecretInfo",
     "BTDiffInfo",
@@ -4151,6 +4200,7 @@ __all__ = (
     "BTMaterialPropertyDefinitionInfo",
     "BTMatrix3X3340",
     "BTMBoundaryCondition5556",
+    "BTMBoundaryCondition5556SuppressedInSimulations",
     "BTMConfigurationData1560",
     "BTMConfigurationData1560CurrentFSValues",
     "BTMConfigurationData1560DefaultConfigurationValues",
@@ -4343,6 +4393,7 @@ __all__ = (
     "BTOriginEntity935",
     "BTOtherDocumentSelectorParametersInfo",
     "BTOwnerInfo",
+    "BTOwnerType",
     "BTPAnnotation231",
     "BTParameterExpressionErrorInfo2037",
     "BTParameterGroupSpec3469",
@@ -4570,6 +4621,7 @@ __all__ = (
     "BTRevisionListResponse",
     "BTRhoDimensionDisplayData2892",
     "BTRigidFeatureDisplayData1595",
+    "BTRigidMirrorSeedSubAssemblyOutputInfo6098",
     "BTRigidOrLockedSubAssemblyOutputInfo3860",
     "BTRole",
     "BTRootAssemblyDisplayData96",
@@ -4737,6 +4789,7 @@ __all__ = (
     "BTUserSettingsInfoUnitsDisplayPrecision",
     "BTUserState",
     "BTUserSummaryInfo",
+    "BTUserTrustStatus",
     "BTValueAndUse4696",
     "BTVariableInfo",
     "BTVariableParams",
@@ -4882,6 +4935,7 @@ __all__ = (
     "ExternalDocumentation",
     "ExternalDocumentationExtensions",
     "ExternalDocumentationExtensionsAdditionalProperty",
+    "GBTAddMemberToTeamMessageBody",
     "GBTAddUserToCompanyMessageBody",
     "GBTAnnotationAttachmentLocation",
     "GBTAnnotationType",
@@ -4900,9 +4954,12 @@ __all__ = (
     "GBTConfigurationParameterType",
     "GBTConfiguredParentType",
     "GBTConstraintType",
+    "GBTCopyWorkspaceMessageBody",
     "GBTCreateDocumentMessageBody",
     "GBTCreateElementMessageBody",
     "GBTCreateRevisionMessageBody",
+    "GBTCreateTaskMessageBody",
+    "GBTCreateTeamMessageBody",
     "GBTCreateVersionMessageBody",
     "GBTCurveTypeEnum",
     "GBTDataItemFormat",
@@ -4910,6 +4967,8 @@ __all__ = (
     "GBTDebugEntityStyle",
     "GBTDeleteCommentMessageBody",
     "GBTDeleteElementMessageBody",
+    "GBTDeleteTaskMessageBody",
+    "GBTDeleteTeamMessageBody",
     "GBTDeleteWorkspaceMessageBody",
     "GBTDisplayDataUsage",
     "GBTEdgeTopology",
@@ -4920,6 +4979,8 @@ __all__ = (
     "GBTEntityInferenceType",
     "GBTEntityType",
     "GBTErrorStringEnum",
+    "GBTExportDocumentMessageBody",
+    "GBTExportDocumentToCloudStorageMessageBody",
     "GBTExportResolution",
     "GBTExportUnit",
     "GBTFeatureDimensionType",
@@ -4927,13 +4988,17 @@ __all__ = (
     "GBTFieldWeldFlag",
     "GBTFilterFlattenedGeometryOptions",
     "GBTGeometryType",
+    "GBTGlobalPermissionGrantChangeMessageBody",
     "GBTGraphicsBufferTarget",
     "GBTGraphicsPrimitiveType",
     "GBTGTolConstraintType",
     "GBTGTolExtendedConstraintType",
     "GBTHoleType",
+    "GBTImportDocumentMessageBody",
     "GBTInsertableType",
     "GBTLoadType",
+    "GBTMakeDocumentPrivateMessageBody",
+    "GBTMakeDocumentPublicMessageBody",
     "GBTMateType",
     "GBTMergeBranchMessageBody",
     "GBTMeshState",
@@ -4945,6 +5010,7 @@ __all__ = (
     "GBTNodeStatusType",
     "GBTNoticeLevel",
     "GBTNoticeType",
+    "GBTOAuthAppAuthorizedMessageBody",
     "GBTParameterLibraryRelationType",
     "GBTParameterVisibilityLogicalOp",
     "GBTParasolidEncodingType",
@@ -4954,6 +5020,7 @@ __all__ = (
     "GBTPartStudioInstanceType",
     "GBTPartStudioItemType",
     "GBTPartVisibility",
+    "GBTPasswordResetUserMessageBody",
     "GBTPatternType",
     "GBTPDefinitionType",
     "GBTPOperator",
@@ -4961,6 +5028,7 @@ __all__ = (
     "GBTPType",
     "GBTQuantityType",
     "GBTRadiusDisplay",
+    "GBTRemoveMemberFromTeamMessageBody",
     "GBTRemoveUserFromCompanyMessageBody",
     "GBTRestoreDocumentFromHistoryMessageBody",
     "GBTRhinoVersions",
@@ -4975,6 +5043,7 @@ __all__ = (
     "GBTSurfaceTypeEnum",
     "GBTTableColumnWidthUnits",
     "GBTTableTextAlignment",
+    "GBTTaskNotificationMessageBody",
     "GBTTessellationSettingEnum",
     "GBTTolerancePrecision",
     "GBTToleranceSchemaClass",
@@ -4982,6 +5051,9 @@ __all__ = (
     "GBTTranslationRequestCompleteMessageBody",
     "GBTUIHint",
     "GBTUiSelectionType",
+    "GBTUpdate2FAPolicyMessageBody",
+    "GBTUpdateSSOPolicyMessageBody",
+    "GBTUpdateTaskMessageBody",
     "GBTUpdateWorkspaceUnitsMessageBody",
     "GBTUrdfMeshFormat",
     "GBTValueUse",

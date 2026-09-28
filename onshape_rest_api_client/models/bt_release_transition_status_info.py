@@ -19,6 +19,7 @@ class BTReleaseTransitionStatusInfo:
     """Status of a single release package workflow transition attempt.
 
     Attributes:
+        attempt_id (str | Unset): ID of the transition attempt. A 24-character hex string.
         error_message (str | Unset): Error message if the transition failed, null otherwise.
         last_stage (BTReleaseStage | Unset): Last pipeline stage reached before the transition completed or failed.
         last_updated_at (datetime.datetime | Unset): Timestamp of the last update to this transition status entry.
@@ -30,6 +31,7 @@ class BTReleaseTransitionStatusInfo:
         support_code (str | Unset): Support code for diagnosing the failure, null if no failure occurred.
     """
 
+    attempt_id: str | Unset = UNSET
     error_message: str | Unset = UNSET
     last_stage: BTReleaseStage | Unset = UNSET
     last_updated_at: datetime.datetime | Unset = UNSET
@@ -40,6 +42,8 @@ class BTReleaseTransitionStatusInfo:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        attempt_id = self.attempt_id
+
         error_message = self.error_message
 
         last_stage: str | Unset = UNSET
@@ -63,6 +67,8 @@ class BTReleaseTransitionStatusInfo:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if attempt_id is not UNSET:
+            field_dict["attemptId"] = attempt_id
         if error_message is not UNSET:
             field_dict["errorMessage"] = error_message
         if last_stage is not UNSET:
@@ -83,6 +89,8 @@ class BTReleaseTransitionStatusInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
+        attempt_id = d.pop("attemptId", UNSET)
+
         error_message = d.pop("errorMessage", UNSET)
 
         _last_stage = d.pop("lastStage", UNSET)
@@ -113,6 +121,7 @@ class BTReleaseTransitionStatusInfo:
         support_code = d.pop("supportCode", UNSET)
 
         bt_release_transition_status_info = cls(
+            attempt_id=attempt_id,
             error_message=error_message,
             last_stage=last_stage,
             last_updated_at=last_updated_at,

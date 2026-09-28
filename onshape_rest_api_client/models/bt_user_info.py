@@ -40,6 +40,7 @@ class BTUserInfo:
         email (str | Unset):
         first_name (str | Unset):
         last_name (str | Unset):
+        can_make_personal_copies (bool | Unset):
         company (BTCompanySummaryInfo | Unset):
         company_user_state (int | Unset):
         confirmation_requested (bool | Unset):
@@ -82,6 +83,7 @@ class BTUserInfo:
         phone_number (str | Unset):
         pro_discovery_trial_rejected (bool | Unset):
         product_type (list[str] | Unset):
+        purchase_hold (bool | Unset):
         redirect_url (str | Unset):
         role (int | Unset):
         roles (list[BTRole] | Unset):
@@ -106,6 +108,7 @@ class BTUserInfo:
     email: str | Unset = UNSET
     first_name: str | Unset = UNSET
     last_name: str | Unset = UNSET
+    can_make_personal_copies: bool | Unset = UNSET
     company: BTCompanySummaryInfo | Unset = UNSET
     company_user_state: int | Unset = UNSET
     confirmation_requested: bool | Unset = UNSET
@@ -148,6 +151,7 @@ class BTUserInfo:
     phone_number: str | Unset = UNSET
     pro_discovery_trial_rejected: bool | Unset = UNSET
     product_type: list[str] | Unset = UNSET
+    purchase_hold: bool | Unset = UNSET
     redirect_url: str | Unset = UNSET
     role: int | Unset = UNSET
     roles: list[BTRole] | Unset = UNSET
@@ -184,6 +188,8 @@ class BTUserInfo:
         first_name = self.first_name
 
         last_name = self.last_name
+
+        can_make_personal_copies = self.can_make_personal_copies
 
         company: dict[str, Any] | Unset = UNSET
         if not isinstance(self.company, Unset):
@@ -307,6 +313,8 @@ class BTUserInfo:
         if not isinstance(self.product_type, Unset):
             product_type = self.product_type
 
+        purchase_hold = self.purchase_hold
+
         redirect_url = self.redirect_url
 
         role = self.role
@@ -366,6 +374,8 @@ class BTUserInfo:
             field_dict["firstName"] = first_name
         if last_name is not UNSET:
             field_dict["lastName"] = last_name
+        if can_make_personal_copies is not UNSET:
+            field_dict["canMakePersonalCopies"] = can_make_personal_copies
         if company is not UNSET:
             field_dict["company"] = company
         if company_user_state is not UNSET:
@@ -450,6 +460,8 @@ class BTUserInfo:
             field_dict["proDiscoveryTrialRejected"] = pro_discovery_trial_rejected
         if product_type is not UNSET:
             field_dict["productType"] = product_type
+        if purchase_hold is not UNSET:
+            field_dict["purchaseHold"] = purchase_hold
         if redirect_url is not UNSET:
             field_dict["redirectUrl"] = redirect_url
         if role is not UNSET:
@@ -508,6 +520,8 @@ class BTUserInfo:
         first_name = d.pop("firstName", UNSET)
 
         last_name = d.pop("lastName", UNSET)
+
+        can_make_personal_copies = d.pop("canMakePersonalCopies", UNSET)
 
         _company = d.pop("company", UNSET)
         company: BTCompanySummaryInfo | Unset
@@ -672,6 +686,8 @@ class BTUserInfo:
 
         product_type = cast(list[str], d.pop("productType", UNSET))
 
+        purchase_hold = d.pop("purchaseHold", UNSET)
+
         redirect_url = d.pop("redirectUrl", UNSET)
 
         role = d.pop("role", UNSET)
@@ -719,6 +735,7 @@ class BTUserInfo:
             email=email,
             first_name=first_name,
             last_name=last_name,
+            can_make_personal_copies=can_make_personal_copies,
             company=company,
             company_user_state=company_user_state,
             confirmation_requested=confirmation_requested,
@@ -761,6 +778,7 @@ class BTUserInfo:
             phone_number=phone_number,
             pro_discovery_trial_rejected=pro_discovery_trial_rejected,
             product_type=product_type,
+            purchase_hold=purchase_hold,
             redirect_url=redirect_url,
             role=role,
             roles=roles,

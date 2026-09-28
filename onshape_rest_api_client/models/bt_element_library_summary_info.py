@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import datetime
 from collections.abc import Mapping
 from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..models.bt_owner_type import BTOwnerType
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="BTElementLibrarySummaryInfo")
@@ -23,12 +25,13 @@ class BTElementLibrarySummaryInfo:
         id (str | Unset): Id of the resource.
         library_definition_id (str | Unset): The ID of the definition of the element library.
         library_id (str | Unset): The Id of the library -- unique across Onshape.
+        library_owner_type (BTOwnerType | Unset): The type of library owner, Onshape, user, or company.
         library_version (str | Unset): The current version Id of the library.
+        modified_at (datetime.datetime | Unset): Time of the last modification to the library.
         name (str | Unset): Name of the resource.
         owner_id (str | Unset): The owner Id of an element library (either Onshape, company, or user).
         owner_name (str | Unset): The name of the owner of the library.
-        owner_type (int | Unset): The type of library owner, Onshape, user, or company
-        source_folder_id (str | Unset): The id of the root folder of the library
+        source_folder_id (str | Unset): The id of the root folder of the library.
         subscribed (bool | Unset): If true, the current user is subscribed to this library. Applies only to public
             libraries.
         version_name (str | Unset): The name of the current version of the library.
@@ -41,11 +44,12 @@ class BTElementLibrarySummaryInfo:
     id: str | Unset = UNSET
     library_definition_id: str | Unset = UNSET
     library_id: str | Unset = UNSET
+    library_owner_type: BTOwnerType | Unset = UNSET
     library_version: str | Unset = UNSET
+    modified_at: datetime.datetime | Unset = UNSET
     name: str | Unset = UNSET
     owner_id: str | Unset = UNSET
     owner_name: str | Unset = UNSET
-    owner_type: int | Unset = UNSET
     source_folder_id: str | Unset = UNSET
     subscribed: bool | Unset = UNSET
     version_name: str | Unset = UNSET
@@ -65,15 +69,21 @@ class BTElementLibrarySummaryInfo:
 
         library_id = self.library_id
 
+        library_owner_type: str | Unset = UNSET
+        if not isinstance(self.library_owner_type, Unset):
+            library_owner_type = self.library_owner_type.value
+
         library_version = self.library_version
+
+        modified_at: str | Unset = UNSET
+        if not isinstance(self.modified_at, Unset):
+            modified_at = self.modified_at.isoformat()
 
         name = self.name
 
         owner_id = self.owner_id
 
         owner_name = self.owner_name
-
-        owner_type = self.owner_type
 
         source_folder_id = self.source_folder_id
 
@@ -98,16 +108,18 @@ class BTElementLibrarySummaryInfo:
             field_dict["libraryDefinitionId"] = library_definition_id
         if library_id is not UNSET:
             field_dict["libraryId"] = library_id
+        if library_owner_type is not UNSET:
+            field_dict["libraryOwnerType"] = library_owner_type
         if library_version is not UNSET:
             field_dict["libraryVersion"] = library_version
+        if modified_at is not UNSET:
+            field_dict["modifiedAt"] = modified_at
         if name is not UNSET:
             field_dict["name"] = name
         if owner_id is not UNSET:
             field_dict["ownerId"] = owner_id
         if owner_name is not UNSET:
             field_dict["ownerName"] = owner_name
-        if owner_type is not UNSET:
-            field_dict["ownerType"] = owner_type
         if source_folder_id is not UNSET:
             field_dict["sourceFolderId"] = source_folder_id
         if subscribed is not UNSET:
@@ -134,15 +146,27 @@ class BTElementLibrarySummaryInfo:
 
         library_id = d.pop("libraryId", UNSET)
 
+        _library_owner_type = d.pop("libraryOwnerType", UNSET)
+        library_owner_type: BTOwnerType | Unset
+        if isinstance(_library_owner_type, Unset):
+            library_owner_type = UNSET
+        else:
+            library_owner_type = BTOwnerType(_library_owner_type)
+
         library_version = d.pop("libraryVersion", UNSET)
+
+        _modified_at = d.pop("modifiedAt", UNSET)
+        modified_at: datetime.datetime | Unset
+        if isinstance(_modified_at, Unset):
+            modified_at = UNSET
+        else:
+            modified_at = datetime.datetime.fromisoformat(_modified_at)
 
         name = d.pop("name", UNSET)
 
         owner_id = d.pop("ownerId", UNSET)
 
         owner_name = d.pop("ownerName", UNSET)
-
-        owner_type = d.pop("ownerType", UNSET)
 
         source_folder_id = d.pop("sourceFolderId", UNSET)
 
@@ -159,11 +183,12 @@ class BTElementLibrarySummaryInfo:
             id=id,
             library_definition_id=library_definition_id,
             library_id=library_id,
+            library_owner_type=library_owner_type,
             library_version=library_version,
+            modified_at=modified_at,
             name=name,
             owner_id=owner_id,
             owner_name=owner_name,
-            owner_type=owner_type,
             source_folder_id=source_folder_id,
             subscribed=subscribed,
             version_name=version_name,

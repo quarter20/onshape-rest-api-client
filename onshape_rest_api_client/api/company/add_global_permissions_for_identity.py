@@ -89,6 +89,7 @@ def sync_detailed(
      * `25`: Use revision tools
      * `26`: Export files
      * `27`: Allow access to Onshape Labs
+     * `28`: Make personal copies of enterprise documents (EDU Enterprise only)
 
     Args:
         cid (str):
@@ -155,6 +156,7 @@ def sync(
      * `25`: Use revision tools
      * `26`: Export files
      * `27`: Allow access to Onshape Labs
+     * `28`: Make personal copies of enterprise documents (EDU Enterprise only)
 
     Args:
         cid (str):
@@ -216,6 +218,7 @@ async def asyncio_detailed(
      * `25`: Use revision tools
      * `26`: Export files
      * `27`: Allow access to Onshape Labs
+     * `28`: Make personal copies of enterprise documents (EDU Enterprise only)
 
     Args:
         cid (str):
@@ -280,6 +283,7 @@ async def asyncio(
      * `25`: Use revision tools
      * `26`: Export files
      * `27`: Allow access to Onshape Labs
+     * `28`: Make personal copies of enterprise documents (EDU Enterprise only)
 
     Args:
         cid (str):

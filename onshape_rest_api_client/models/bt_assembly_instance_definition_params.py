@@ -22,6 +22,7 @@ class BTAssemblyInstanceDefinitionParams:
         feature_id (str | Unset):
         include_part_types (list[GBTInsertableType] | Unset):
         is_assembly (bool | Unset):
+        is_fixed (bool | Unset):
         is_hidden (bool | Unset):
         is_suppressed (bool | Unset):
         is_whole_part_studio (bool | Unset):
@@ -38,6 +39,7 @@ class BTAssemblyInstanceDefinitionParams:
     feature_id: str | Unset = UNSET
     include_part_types: list[GBTInsertableType] | Unset = UNSET
     is_assembly: bool | Unset = UNSET
+    is_fixed: bool | Unset = UNSET
     is_hidden: bool | Unset = UNSET
     is_suppressed: bool | Unset = UNSET
     is_whole_part_studio: bool | Unset = UNSET
@@ -65,6 +67,8 @@ class BTAssemblyInstanceDefinitionParams:
                 include_part_types.append(include_part_types_item)
 
         is_assembly = self.is_assembly
+
+        is_fixed = self.is_fixed
 
         is_hidden = self.is_hidden
 
@@ -99,6 +103,8 @@ class BTAssemblyInstanceDefinitionParams:
             field_dict["includePartTypes"] = include_part_types
         if is_assembly is not UNSET:
             field_dict["isAssembly"] = is_assembly
+        if is_fixed is not UNSET:
+            field_dict["isFixed"] = is_fixed
         if is_hidden is not UNSET:
             field_dict["isHidden"] = is_hidden
         if is_suppressed is not UNSET:
@@ -140,6 +146,8 @@ class BTAssemblyInstanceDefinitionParams:
 
         is_assembly = d.pop("isAssembly", UNSET)
 
+        is_fixed = d.pop("isFixed", UNSET)
+
         is_hidden = d.pop("isHidden", UNSET)
 
         is_suppressed = d.pop("isSuppressed", UNSET)
@@ -163,6 +171,7 @@ class BTAssemblyInstanceDefinitionParams:
             feature_id=feature_id,
             include_part_types=include_part_types,
             is_assembly=is_assembly,
+            is_fixed=is_fixed,
             is_hidden=is_hidden,
             is_suppressed=is_suppressed,
             is_whole_part_studio=is_whole_part_studio,

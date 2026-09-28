@@ -56,6 +56,7 @@ class BTRootAssemblyDisplayData96:
             Unset):
         geometry_mates (list[BTGeometryMateDisplayData1050] | Unset):
         incremental (bool | Unset):
+        ineligible_for_caching (bool | Unset):
         instance_count (int | Unset):
         is_collapsible (bool | Unset):
         is_for_in_context (bool | Unset):
@@ -95,6 +96,7 @@ class BTRootAssemblyDisplayData96:
     )
     geometry_mates: list[BTGeometryMateDisplayData1050] | Unset = UNSET
     incremental: bool | Unset = UNSET
+    ineligible_for_caching: bool | Unset = UNSET
     instance_count: int | Unset = UNSET
     is_collapsible: bool | Unset = UNSET
     is_for_in_context: bool | Unset = UNSET
@@ -185,6 +187,8 @@ class BTRootAssemblyDisplayData96:
                 geometry_mates.append(geometry_mates_item)
 
         incremental = self.incremental
+
+        ineligible_for_caching = self.ineligible_for_caching
 
         instance_count = self.instance_count
 
@@ -299,6 +303,8 @@ class BTRootAssemblyDisplayData96:
             field_dict["geometryMates"] = geometry_mates
         if incremental is not UNSET:
             field_dict["incremental"] = incremental
+        if ineligible_for_caching is not UNSET:
+            field_dict["ineligibleForCaching"] = ineligible_for_caching
         if instance_count is not UNSET:
             field_dict["instanceCount"] = instance_count
         if is_collapsible is not UNSET:
@@ -442,6 +448,8 @@ class BTRootAssemblyDisplayData96:
 
         incremental = d.pop("incremental", UNSET)
 
+        ineligible_for_caching = d.pop("ineligibleForCaching", UNSET)
+
         instance_count = d.pop("instanceCount", UNSET)
 
         is_collapsible = d.pop("isCollapsible", UNSET)
@@ -566,6 +574,7 @@ class BTRootAssemblyDisplayData96:
             full_element_id_to_referenced_sketch_ids=full_element_id_to_referenced_sketch_ids,
             geometry_mates=geometry_mates,
             incremental=incremental,
+            ineligible_for_caching=ineligible_for_caching,
             instance_count=instance_count,
             is_collapsible=is_collapsible,
             is_for_in_context=is_for_in_context,

@@ -19,12 +19,14 @@ T = TypeVar("T", bound="BTParameterVisibilityInRange2980")
 class BTParameterVisibilityInRange2980:
     """
     Attributes:
+        always_shown (bool | Unset):
         bt_type (str | Unset): Type of JSON object.
         self_or_child_always_visible (bool | Unset):
         option_range (BTEnumOptionRange3741 | Unset):
         parameter_id (str | Unset):
     """
 
+    always_shown: bool | Unset = UNSET
     bt_type: str | Unset = UNSET
     self_or_child_always_visible: bool | Unset = UNSET
     option_range: BTEnumOptionRange3741 | Unset = UNSET
@@ -32,6 +34,8 @@ class BTParameterVisibilityInRange2980:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        always_shown = self.always_shown
+
         bt_type = self.bt_type
 
         self_or_child_always_visible = self.self_or_child_always_visible
@@ -45,6 +49,8 @@ class BTParameterVisibilityInRange2980:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if always_shown is not UNSET:
+            field_dict["alwaysShown"] = always_shown
         if bt_type is not UNSET:
             field_dict["btType"] = bt_type
         if self_or_child_always_visible is not UNSET:
@@ -61,6 +67,8 @@ class BTParameterVisibilityInRange2980:
         from ..models.bt_enum_option_range_3741 import BTEnumOptionRange3741  # noqa: PLC0415
 
         d = dict(src_dict)
+        always_shown = d.pop("alwaysShown", UNSET)
+
         bt_type = d.pop("btType", UNSET)
 
         self_or_child_always_visible = d.pop("selfOrChildAlwaysVisible", UNSET)
@@ -75,6 +83,7 @@ class BTParameterVisibilityInRange2980:
         parameter_id = d.pop("parameterId", UNSET)
 
         bt_parameter_visibility_in_range_2980 = cls(
+            always_shown=always_shown,
             bt_type=bt_type,
             self_or_child_always_visible=self_or_child_always_visible,
             option_range=option_range,

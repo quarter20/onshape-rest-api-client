@@ -29,6 +29,7 @@ class GlobalPermissionInfo:
         enable_labs (bool | Unset):
         export_files (bool | Unset):
         import_files (bool | Unset):
+        make_personal_copies (bool | Unset):
         manage_guest_users (bool | Unset):
         manage_non_geometric_items (bool | Unset):
         manage_rbac (bool | Unset):
@@ -54,6 +55,7 @@ class GlobalPermissionInfo:
     enable_labs: bool | Unset = UNSET
     export_files: bool | Unset = UNSET
     import_files: bool | Unset = UNSET
+    make_personal_copies: bool | Unset = UNSET
     manage_guest_users: bool | Unset = UNSET
     manage_non_geometric_items: bool | Unset = UNSET
     manage_rbac: bool | Unset = UNSET
@@ -93,6 +95,8 @@ class GlobalPermissionInfo:
         export_files = self.export_files
 
         import_files = self.import_files
+
+        make_personal_copies = self.make_personal_copies
 
         manage_guest_users = self.manage_guest_users
 
@@ -143,6 +147,8 @@ class GlobalPermissionInfo:
             field_dict["exportFiles"] = export_files
         if import_files is not UNSET:
             field_dict["importFiles"] = import_files
+        if make_personal_copies is not UNSET:
+            field_dict["makePersonalCopies"] = make_personal_copies
         if manage_guest_users is not UNSET:
             field_dict["manageGuestUsers"] = manage_guest_users
         if manage_non_geometric_items is not UNSET:
@@ -195,6 +201,8 @@ class GlobalPermissionInfo:
 
         import_files = d.pop("importFiles", UNSET)
 
+        make_personal_copies = d.pop("makePersonalCopies", UNSET)
+
         manage_guest_users = d.pop("manageGuestUsers", UNSET)
 
         manage_non_geometric_items = d.pop("manageNonGeometricItems", UNSET)
@@ -228,6 +236,7 @@ class GlobalPermissionInfo:
             enable_labs=enable_labs,
             export_files=export_files,
             import_files=import_files,
+            make_personal_copies=make_personal_copies,
             manage_guest_users=manage_guest_users,
             manage_non_geometric_items=manage_non_geometric_items,
             manage_rbac=manage_rbac,
