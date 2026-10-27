@@ -27,9 +27,7 @@ class BTAppDrawingViewInfoOccurrenceOrQueryToGeometryProperties:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_app_element_view_geometry_properties_1100 import (
-            BTAppElementViewGeometryProperties1100,  # noqa: PLC0415
-        )
+        from ..models.bt_app_element_view_geometry_properties_1100 import BTAppElementViewGeometryProperties1100  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_app_drawing_view_info_occurrence_or_query_to_geometry_properties = cls()

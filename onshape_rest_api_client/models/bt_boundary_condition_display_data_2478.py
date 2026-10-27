@@ -7,6 +7,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 from ..models.gbt_assembly_feature_display_status import GBTAssemblyFeatureDisplayStatus
+from ..models.gbt_simulation_connection_type import GBTSimulationConnectionType
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -30,6 +31,7 @@ class BTBoundaryConditionDisplayData2478:
         direction_mate_connector_id (str | Unset):
         faces (list[BTOccurrenceEntity5720] | Unset):
         occurrences (list[BTOccurrence74] | Unset):
+        simulation_connection_type (GBTSimulationConnectionType | Unset):
     """
 
     bt_type: str | Unset = UNSET
@@ -41,6 +43,7 @@ class BTBoundaryConditionDisplayData2478:
     direction_mate_connector_id: str | Unset = UNSET
     faces: list[BTOccurrenceEntity5720] | Unset = UNSET
     occurrences: list[BTOccurrence74] | Unset = UNSET
+    simulation_connection_type: GBTSimulationConnectionType | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -76,6 +79,10 @@ class BTBoundaryConditionDisplayData2478:
                 occurrences_item = occurrences_item_data.to_dict()
                 occurrences.append(occurrences_item)
 
+        simulation_connection_type: str | Unset = UNSET
+        if not isinstance(self.simulation_connection_type, Unset):
+            simulation_connection_type = self.simulation_connection_type.value
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
@@ -97,6 +104,8 @@ class BTBoundaryConditionDisplayData2478:
             field_dict["faces"] = faces
         if occurrences is not UNSET:
             field_dict["occurrences"] = occurrences
+        if simulation_connection_type is not UNSET:
+            field_dict["simulationConnectionType"] = simulation_connection_type
 
         return field_dict
 
@@ -148,6 +157,13 @@ class BTBoundaryConditionDisplayData2478:
 
                 occurrences.append(occurrences_item)
 
+        _simulation_connection_type = d.pop("simulationConnectionType", UNSET)
+        simulation_connection_type: GBTSimulationConnectionType | Unset
+        if isinstance(_simulation_connection_type, Unset):
+            simulation_connection_type = UNSET
+        else:
+            simulation_connection_type = GBTSimulationConnectionType(_simulation_connection_type)
+
         bt_boundary_condition_display_data_2478 = cls(
             bt_type=bt_type,
             hidden=hidden,
@@ -158,6 +174,7 @@ class BTBoundaryConditionDisplayData2478:
             direction_mate_connector_id=direction_mate_connector_id,
             faces=faces,
             occurrences=occurrences,
+            simulation_connection_type=simulation_connection_type,
         )
 
         bt_boundary_condition_display_data_2478.additional_properties = d

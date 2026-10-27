@@ -111,9 +111,7 @@ class BTInsertablesListResponse:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_element_group_1458 import BTElementGroup1458  # noqa: PLC0415
         from ..models.bt_insertable_info import BTInsertableInfo  # noqa: PLC0415
-        from ..models.bt_insertables_list_response_configuration import (
-            BTInsertablesListResponseConfiguration,  # noqa: PLC0415
-        )
+        from ..models.bt_insertables_list_response_configuration import BTInsertablesListResponseConfiguration  # noqa: PLC0415
 
         d = dict(src_dict)
         can_save_version = d.pop("canSaveVersion", UNSET)

@@ -29,9 +29,7 @@ class ServerVariableExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.server_variable_extensions_additional_property import (
-            ServerVariableExtensionsAdditionalProperty,  # noqa: PLC0415
-        )
+        from ..models.server_variable_extensions_additional_property import ServerVariableExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         server_variable_extensions = cls()

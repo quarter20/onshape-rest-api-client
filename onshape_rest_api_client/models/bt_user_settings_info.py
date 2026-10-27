@@ -34,6 +34,7 @@ class BTUserSettingsInfo:
         custom_colors (list[str] | Unset):
         default_units (BTDefaultUnitsInfo | Unset):
         display_assembly_properties (bool | Unset):
+        display_part_list_properties (bool | Unset):
         drawing_background_id (int | Unset):
         enable_labs (bool | Unset):
         enabled_labs_features (list[int] | Unset):
@@ -46,7 +47,6 @@ class BTUserSettingsInfo:
         id (str | Unset):
         import_options (str | Unset):
         isolate_enable_selection_desire (bool | Unset):
-        isolate_hide_transparent (str | Unset):
         isolate_opacity_slider_value (float | Unset):
         locale (str | Unset):
         make_transparent_enable_selection_desire (bool | Unset):
@@ -82,6 +82,7 @@ class BTUserSettingsInfo:
     custom_colors: list[str] | Unset = UNSET
     default_units: BTDefaultUnitsInfo | Unset = UNSET
     display_assembly_properties: bool | Unset = UNSET
+    display_part_list_properties: bool | Unset = UNSET
     drawing_background_id: int | Unset = UNSET
     enable_labs: bool | Unset = UNSET
     enabled_labs_features: list[int] | Unset = UNSET
@@ -94,7 +95,6 @@ class BTUserSettingsInfo:
     id: str | Unset = UNSET
     import_options: str | Unset = UNSET
     isolate_enable_selection_desire: bool | Unset = UNSET
-    isolate_hide_transparent: str | Unset = UNSET
     isolate_opacity_slider_value: float | Unset = UNSET
     locale: str | Unset = UNSET
     make_transparent_enable_selection_desire: bool | Unset = UNSET
@@ -145,6 +145,8 @@ class BTUserSettingsInfo:
 
         display_assembly_properties = self.display_assembly_properties
 
+        display_part_list_properties = self.display_part_list_properties
+
         drawing_background_id = self.drawing_background_id
 
         enable_labs = self.enable_labs
@@ -170,8 +172,6 @@ class BTUserSettingsInfo:
         import_options = self.import_options
 
         isolate_enable_selection_desire = self.isolate_enable_selection_desire
-
-        isolate_hide_transparent = self.isolate_hide_transparent
 
         isolate_opacity_slider_value = self.isolate_opacity_slider_value
 
@@ -260,6 +260,8 @@ class BTUserSettingsInfo:
             field_dict["defaultUnits"] = default_units
         if display_assembly_properties is not UNSET:
             field_dict["displayAssemblyProperties"] = display_assembly_properties
+        if display_part_list_properties is not UNSET:
+            field_dict["displayPartListProperties"] = display_part_list_properties
         if drawing_background_id is not UNSET:
             field_dict["drawingBackgroundId"] = drawing_background_id
         if enable_labs is not UNSET:
@@ -284,8 +286,6 @@ class BTUserSettingsInfo:
             field_dict["importOptions"] = import_options
         if isolate_enable_selection_desire is not UNSET:
             field_dict["isolateEnableSelectionDesire"] = isolate_enable_selection_desire
-        if isolate_hide_transparent is not UNSET:
-            field_dict["isolateHideTransparent"] = isolate_hide_transparent
         if isolate_opacity_slider_value is not UNSET:
             field_dict["isolateOpacitySliderValue"] = isolate_opacity_slider_value
         if locale is not UNSET:
@@ -347,12 +347,8 @@ class BTUserSettingsInfo:
         from ..models.bt_select_item_view_state_info import BTSelectItemViewStateInfo  # noqa: PLC0415
         from ..models.bt_substitute_approver_info import BTSubstituteApproverInfo  # noqa: PLC0415
         from ..models.bt_units_maximum_display_precision_info import BTUnitsMaximumDisplayPrecisionInfo  # noqa: PLC0415
-        from ..models.bt_user_settings_info_units_display_precision import (
-            BTUserSettingsInfoUnitsDisplayPrecision,  # noqa: PLC0415
-        )
-        from ..models.bt_view_manipulation_mouse_key_mapping_info import (
-            BTViewManipulationMouseKeyMappingInfo,  # noqa: PLC0415
-        )
+        from ..models.bt_user_settings_info_units_display_precision import BTUserSettingsInfoUnitsDisplayPrecision  # noqa: PLC0415
+        from ..models.bt_view_manipulation_mouse_key_mapping_info import BTViewManipulationMouseKeyMappingInfo  # noqa: PLC0415
 
         d = dict(src_dict)
         axis_rotation_lock = d.pop("axisRotationLock", UNSET)
@@ -381,6 +377,8 @@ class BTUserSettingsInfo:
 
         display_assembly_properties = d.pop("displayAssemblyProperties", UNSET)
 
+        display_part_list_properties = d.pop("displayPartListProperties", UNSET)
+
         drawing_background_id = d.pop("drawingBackgroundId", UNSET)
 
         enable_labs = d.pop("enableLabs", UNSET)
@@ -404,8 +402,6 @@ class BTUserSettingsInfo:
         import_options = d.pop("importOptions", UNSET)
 
         isolate_enable_selection_desire = d.pop("isolateEnableSelectionDesire", UNSET)
-
-        isolate_hide_transparent = d.pop("isolateHideTransparent", UNSET)
 
         isolate_opacity_slider_value = d.pop("isolateOpacitySliderValue", UNSET)
 
@@ -506,6 +502,7 @@ class BTUserSettingsInfo:
             custom_colors=custom_colors,
             default_units=default_units,
             display_assembly_properties=display_assembly_properties,
+            display_part_list_properties=display_part_list_properties,
             drawing_background_id=drawing_background_id,
             enable_labs=enable_labs,
             enabled_labs_features=enabled_labs_features,
@@ -518,7 +515,6 @@ class BTUserSettingsInfo:
             id=id,
             import_options=import_options,
             isolate_enable_selection_desire=isolate_enable_selection_desire,
-            isolate_hide_transparent=isolate_hide_transparent,
             isolate_opacity_slider_value=isolate_opacity_slider_value,
             locale=locale,
             make_transparent_enable_selection_desire=make_transparent_enable_selection_desire,

@@ -275,9 +275,7 @@ class BTPartMetadataInfo:
         from ..models.bt_part_appearance_info import BTPartAppearanceInfo  # noqa: PLC0415
         from ..models.bt_part_material_info import BTPartMaterialInfo  # noqa: PLC0415
         from ..models.bt_part_metadata_info_custom_properties import BTPartMetadataInfoCustomProperties  # noqa: PLC0415
-        from ..models.bt_part_metadata_info_property_source_types import (
-            BTPartMetadataInfoPropertySourceTypes,  # noqa: PLC0415
-        )
+        from ..models.bt_part_metadata_info_property_source_types import BTPartMetadataInfoPropertySourceTypes  # noqa: PLC0415
         from ..models.bt_thumbnail_info import BTThumbnailInfo  # noqa: PLC0415
 
         d = dict(src_dict)

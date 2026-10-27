@@ -246,9 +246,7 @@ class BTPartData16:
         from ..models.bt_part_data_16_flattened_to_unflattened_entities_mapping import (
             BTPartData16FlattenedToUnflattenedEntitiesMapping,  # noqa: PLC0415
         )
-        from ..models.bt_part_data_16_flattened_to_unflattened_mapping import (
-            BTPartData16FlattenedToUnflattenedMapping,  # noqa: PLC0415
-        )
+        from ..models.bt_part_data_16_flattened_to_unflattened_mapping import BTPartData16FlattenedToUnflattenedMapping  # noqa: PLC0415
         from ..models.bt_vector_3d389 import BTVector3D389  # noqa: PLC0415
 
         d = dict(src_dict)

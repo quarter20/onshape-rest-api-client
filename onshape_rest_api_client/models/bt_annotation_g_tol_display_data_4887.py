@@ -208,9 +208,7 @@ class BTAnnotationGTolDisplayData4887:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_annotation_g_tol_row_display_data_4397 import (
-            BTAnnotationGTolRowDisplayData4397,  # noqa: PLC0415
-        )
+        from ..models.bt_annotation_g_tol_row_display_data_4397 import BTAnnotationGTolRowDisplayData4397  # noqa: PLC0415
         from ..models.bt_coordinate_system_387 import BTCoordinateSystem387  # noqa: PLC0415
         from ..models.bt_vector_2d1812 import BTVector2D1812  # noqa: PLC0415
 

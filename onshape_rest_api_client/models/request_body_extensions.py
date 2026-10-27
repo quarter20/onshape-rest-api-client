@@ -27,9 +27,7 @@ class RequestBodyExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.request_body_extensions_additional_property import (
-            RequestBodyExtensionsAdditionalProperty,  # noqa: PLC0415
-        )
+        from ..models.request_body_extensions_additional_property import RequestBodyExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         request_body_extensions = cls()

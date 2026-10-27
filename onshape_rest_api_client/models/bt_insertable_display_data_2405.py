@@ -117,9 +117,7 @@ class BTInsertableDisplayData2405:
         from ..models.bt_insertable_display_data_2405_appearance_id_to_appearance_override import (
             BTInsertableDisplayData2405AppearanceIdToAppearanceOverride,  # noqa: PLC0415
         )
-        from ..models.bt_insertable_display_data_2405_graphics_buffers import (
-            BTInsertableDisplayData2405GraphicsBuffers,  # noqa: PLC0415
-        )
+        from ..models.bt_insertable_display_data_2405_graphics_buffers import BTInsertableDisplayData2405GraphicsBuffers  # noqa: PLC0415
 
         d = dict(src_dict)
         _appearance_id_to_appearance_override = d.pop("appearanceIdToAppearanceOverride", UNSET)

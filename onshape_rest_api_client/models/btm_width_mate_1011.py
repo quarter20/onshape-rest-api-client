@@ -45,6 +45,7 @@ class BTMWidthMate1011:
         suppression_state (BTMSuppressionState1924 | Unset):
         variable_studio_reference (bool | Unset): If `true`, the feature references a Variable Studio.
         version (int | Unset):
+        mate_connectors (list[BTMMateConnector66] | Unset):
         mate_connectors_not_used_in_query (list[BTMMateConnector66] | Unset):
         tab_mate_connector_query_list (BTMParameterQueryWithOccurrenceList67 | Unset):
         width_mate_connector_query_list (BTMParameterQueryWithOccurrenceList67 | Unset):
@@ -68,6 +69,7 @@ class BTMWidthMate1011:
     suppression_state: BTMSuppressionState1924 | Unset = UNSET
     variable_studio_reference: bool | Unset = UNSET
     version: int | Unset = UNSET
+    mate_connectors: list[BTMMateConnector66] | Unset = UNSET
     mate_connectors_not_used_in_query: list[BTMMateConnector66] | Unset = UNSET
     tab_mate_connector_query_list: BTMParameterQueryWithOccurrenceList67 | Unset = UNSET
     width_mate_connector_query_list: BTMParameterQueryWithOccurrenceList67 | Unset = UNSET
@@ -127,6 +129,13 @@ class BTMWidthMate1011:
 
         version = self.version
 
+        mate_connectors: list[dict[str, Any]] | Unset = UNSET
+        if not isinstance(self.mate_connectors, Unset):
+            mate_connectors = []
+            for mate_connectors_item_data in self.mate_connectors:
+                mate_connectors_item = mate_connectors_item_data.to_dict()
+                mate_connectors.append(mate_connectors_item)
+
         mate_connectors_not_used_in_query: list[dict[str, Any]] | Unset = UNSET
         if not isinstance(self.mate_connectors_not_used_in_query, Unset):
             mate_connectors_not_used_in_query = []
@@ -181,6 +190,8 @@ class BTMWidthMate1011:
             field_dict["variableStudioReference"] = variable_studio_reference
         if version is not UNSET:
             field_dict["version"] = version
+        if mate_connectors is not UNSET:
+            field_dict["mateConnectors"] = mate_connectors
         if mate_connectors_not_used_in_query is not UNSET:
             field_dict["mateConnectorsNotUsedInQuery"] = mate_connectors_not_used_in_query
         if tab_mate_connector_query_list is not UNSET:
@@ -195,9 +206,7 @@ class BTMWidthMate1011:
         from ..models.btm_feature_134 import BTMFeature134  # noqa: PLC0415
         from ..models.btm_mate_connector_66 import BTMMateConnector66  # noqa: PLC0415
         from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
-        from ..models.btm_parameter_query_with_occurrence_list_67 import (
-            BTMParameterQueryWithOccurrenceList67,  # noqa: PLC0415
-        )
+        from ..models.btm_parameter_query_with_occurrence_list_67 import BTMParameterQueryWithOccurrenceList67  # noqa: PLC0415
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
 
         d = dict(src_dict)
@@ -263,6 +272,15 @@ class BTMWidthMate1011:
 
         version = d.pop("version", UNSET)
 
+        _mate_connectors = d.pop("mateConnectors", UNSET)
+        mate_connectors: list[BTMMateConnector66] | Unset = UNSET
+        if _mate_connectors is not UNSET:
+            mate_connectors = []
+            for mate_connectors_item_data in _mate_connectors:
+                mate_connectors_item = BTMMateConnector66.from_dict(mate_connectors_item_data)
+
+                mate_connectors.append(mate_connectors_item)
+
         _mate_connectors_not_used_in_query = d.pop("mateConnectorsNotUsedInQuery", UNSET)
         mate_connectors_not_used_in_query: list[BTMMateConnector66] | Unset = UNSET
         if _mate_connectors_not_used_in_query is not UNSET:
@@ -311,6 +329,7 @@ class BTMWidthMate1011:
             suppression_state=suppression_state,
             variable_studio_reference=variable_studio_reference,
             version=version,
+            mate_connectors=mate_connectors,
             mate_connectors_not_used_in_query=mate_connectors_not_used_in_query,
             tab_mate_connector_query_list=tab_mate_connector_query_list,
             width_mate_connector_query_list=width_mate_connector_query_list,

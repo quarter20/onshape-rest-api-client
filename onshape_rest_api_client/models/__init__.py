@@ -163,6 +163,8 @@ if TYPE_CHECKING:
     from .bt_assembly_insert_transformed_instances_response import BTAssemblyInsertTransformedInstancesResponse
     from .bt_assembly_instance_947 import BTAssemblyInstance947
     from .bt_assembly_instance_definition_params import BTAssemblyInstanceDefinitionParams
+    from .bt_assembly_instance_designator_params import BTAssemblyInstanceDesignatorParams
+    from .bt_assembly_instance_designator_params_designators import BTAssemblyInstanceDesignatorParamsDesignators
     from .bt_assembly_instance_info import BTAssemblyInstanceInfo
     from .bt_assembly_instance_occurrence_info import BTAssemblyInstanceOccurrenceInfo
     from .bt_assembly_instance_status import BTAssemblyInstanceStatus
@@ -264,6 +266,7 @@ if TYPE_CHECKING:
     from .bt_category_param import BTCategoryParam
     from .bt_category_property_config_info import BTCategoryPropertyConfigInfo
     from .bt_category_property_info import BTCategoryPropertyInfo
+    from .bt_center_of_mass_filter_5569 import BTCenterOfMassFilter5569
     from .bt_centerline_dimension_display_data_1798 import BTCenterlineDimensionDisplayData1798
     from .bt_chamfer_callout_display_data_4471 import BTChamferCalloutDisplayData4471
     from .bt_circle_description_1145 import BTCircleDescription1145
@@ -327,6 +330,13 @@ if TYPE_CHECKING:
     from .bt_create_task_params import BTCreateTaskParams
     from .bt_curve_description_1583 import BTCurveDescription1583
     from .bt_curve_display_data_4722 import BTCurveDisplayData4722
+    from .bt_curve_geometry_3d3354 import BTCurveGeometry3D3354
+    from .bt_curve_geometry_3d_circle_2518 import BTCurveGeometry3DCircle2518
+    from .bt_curve_geometry_3d_control_point_spline_5629 import BTCurveGeometry3DControlPointSpline5629
+    from .bt_curve_geometry_3d_ellipse_5930 import BTCurveGeometry3DEllipse5930
+    from .bt_curve_geometry_3d_interpolated_spline_1496 import BTCurveGeometry3DInterpolatedSpline1496
+    from .bt_curve_geometry_3d_line_5571 import BTCurveGeometry3DLine5571
+    from .bt_curve_geometry_3d_spline_5112 import BTCurveGeometry3DSpline5112
     from .bt_curve_geometry_114 import BTCurveGeometry114
     from .bt_curve_geometry_circle_115 import BTCurveGeometryCircle115
     from .bt_curve_geometry_conic_2284 import BTCurveGeometryConic2284
@@ -351,7 +361,7 @@ if TYPE_CHECKING:
     from .bt_derived_assembly_mirror_4204 import BTDerivedAssemblyMirror4204
     from .bt_device_login_secret_info import BTDeviceLoginSecretInfo
     from .bt_diff_info import BTDiffInfo
-    from .bt_diff_info_changes import BTDiffInfoChanges
+    from .bt_diff_info_collection_changes import BTDiffInfoCollectionChanges
     from .bt_diff_info_collection_type import BTDiffInfoCollectionType
     from .bt_diff_json_response_2725 import BTDiffJsonResponse2725
     from .bt_diff_json_response_2725_patch import BTDiffJsonResponse2725Patch
@@ -467,6 +477,8 @@ if TYPE_CHECKING:
     from .bt_feature_specs_response_664 import BTFeatureSpecsResponse664
     from .bt_feature_state_1688 import BTFeatureState1688
     from .bt_feature_studio_contents_2239 import BTFeatureStudioContents2239
+    from .bt_feature_studio_std_version_match_info import BTFeatureStudioStdVersionMatchInfo
+    from .bt_feature_studio_std_version_matches_info import BTFeatureStudioStdVersionMatchesInfo
     from .bt_feature_type_filter_962 import BTFeatureTypeFilter962
     from .bt_flat_sheet_metal_filter_3018 import BTFlatSheetMetalFilter3018
     from .bt_folder_info import BTFolderInfo
@@ -798,6 +810,9 @@ if TYPE_CHECKING:
     from .bt_part_studio_display_data_346_part_id_and_tessellation_setting_to_buffers_additional_property import (
         BTPartStudioDisplayData346PartIdAndTessellationSettingToBuffersAdditionalProperty,
     )
+    from .bt_part_studio_display_data_346_part_id_to_visibility_score import (
+        BTPartStudioDisplayData346PartIdToVisibilityScore,
+    )
     from .bt_part_studio_display_data_346_sketch_feature_id_and_tessellation_setting_to_buffers import (
         BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffers,
     )
@@ -948,6 +963,12 @@ if TYPE_CHECKING:
     )
     from .bt_standard_content_set_custom_parameters_error import BTStandardContentSetCustomParametersError
     from .bt_standard_content_set_custom_parameters_response import BTStandardContentSetCustomParametersResponse
+    from .bt_std_version_match_info import BTStdVersionMatchInfo
+    from .bt_std_version_replace_info import BTStdVersionReplaceInfo
+    from .bt_std_version_replace_info_element_id_to_replacement_count import (
+        BTStdVersionReplaceInfoElementIdToReplacementCount,
+    )
+    from .bt_std_version_replace_params import BTStdVersionReplaceParams
     from .bt_string_format_block_pattern_1755 import BTStringFormatBlockPattern1755
     from .bt_string_format_condition_683 import BTStringFormatCondition683
     from .bt_string_format_match_pattern_2446 import BTStringFormatMatchPattern2446
@@ -1264,6 +1285,13 @@ if TYPE_CHECKING:
     from .btm_rigid_feature_3076_suppressed_in_simulations import BTMRigidFeature3076SuppressedInSimulations
     from .btm_rollback_150 import BTMRollback150
     from .btm_simulation_feature_5034 import BTMSimulationFeature5034
+    from .btm_sketch_3d2231 import BTMSketch3D2231
+    from .btm_sketch_3d_constraint_4787 import BTMSketch3DConstraint4787
+    from .btm_sketch_3d_curve_5898 import BTMSketch3DCurve5898
+    from .btm_sketch_3d_curve_segment_5631 import BTMSketch3DCurveSegment5631
+    from .btm_sketch_3d_entity_5972 import BTMSketch3DEntity5972
+    from .btm_sketch_3d_geom_entity_4849 import BTMSketch3DGeomEntity4849
+    from .btm_sketch_3d_point_5367 import BTMSketch3DPoint5367
     from .btm_sketch_151 import BTMSketch151
     from .btm_sketch_composite_entity_893 import BTMSketchCompositeEntity893
     from .btm_sketch_constraint_2 import BTMSketchConstraint2
@@ -1548,6 +1576,7 @@ if TYPE_CHECKING:
     from .gbt_remove_user_from_company_message_body import GBTRemoveUserFromCompanyMessageBody
     from .gbt_restore_document_from_history_message_body import GBTRestoreDocumentFromHistoryMessageBody
     from .gbt_rhino_versions import GBTRhinoVersions
+    from .gbt_simulation_connection_type import GBTSimulationConnectionType
     from .gbt_simulation_contact_behavior import GBTSimulationContactBehavior
     from .gbt_sketch_curve_type import GBTSketchCurveType
     from .gbt_sketch_entity_type import GBTSketchEntityType
@@ -1813,6 +1842,7 @@ if TYPE_CHECKING:
     from .session_response_default import SessionResponseDefault
     from .set_application_element_thumbnail_response_default import SetApplicationElementThumbnailResponseDefault
     from .set_application_element_thumbnail_wv import SetApplicationElementThumbnailWv
+    from .set_instance_designators_response_default import SetInstanceDesignatorsResponseDefault
     from .set_variable_studio_references_response_default import SetVariableStudioReferencesResponseDefault
     from .set_variable_studio_scope_response_default import SetVariableStudioScopeResponseDefault
     from .set_variables_response_default import SetVariablesResponseDefault
@@ -2000,6 +2030,8 @@ _LAZY_MODULES: dict[str, str] = {
     "BTAssemblyInsertTransformedInstancesResponse": "bt_assembly_insert_transformed_instances_response",
     "BTAssemblyInstance947": "bt_assembly_instance_947",
     "BTAssemblyInstanceDefinitionParams": "bt_assembly_instance_definition_params",
+    "BTAssemblyInstanceDesignatorParams": "bt_assembly_instance_designator_params",
+    "BTAssemblyInstanceDesignatorParamsDesignators": "bt_assembly_instance_designator_params_designators",
     "BTAssemblyInstanceInfo": "bt_assembly_instance_info",
     "BTAssemblyInstanceOccurrenceInfo": "bt_assembly_instance_occurrence_info",
     "BTAssemblyInstanceStatus": "bt_assembly_instance_status",
@@ -2079,6 +2111,7 @@ _LAZY_MODULES: dict[str, str] = {
     "BTCategoryParam": "bt_category_param",
     "BTCategoryPropertyConfigInfo": "bt_category_property_config_info",
     "BTCategoryPropertyInfo": "bt_category_property_info",
+    "BTCenterOfMassFilter5569": "bt_center_of_mass_filter_5569",
     "BTCenterlineDimensionDisplayData1798": "bt_centerline_dimension_display_data_1798",
     "BTChamferCalloutDisplayData4471": "bt_chamfer_callout_display_data_4471",
     "BTCircleDescription1145": "bt_circle_description_1145",
@@ -2139,6 +2172,13 @@ _LAZY_MODULES: dict[str, str] = {
     "BTCurveDescription1583": "bt_curve_description_1583",
     "BTCurveDisplayData4722": "bt_curve_display_data_4722",
     "BTCurveGeometry114": "bt_curve_geometry_114",
+    "BTCurveGeometry3D3354": "bt_curve_geometry_3d3354",
+    "BTCurveGeometry3DCircle2518": "bt_curve_geometry_3d_circle_2518",
+    "BTCurveGeometry3DControlPointSpline5629": "bt_curve_geometry_3d_control_point_spline_5629",
+    "BTCurveGeometry3DEllipse5930": "bt_curve_geometry_3d_ellipse_5930",
+    "BTCurveGeometry3DInterpolatedSpline1496": "bt_curve_geometry_3d_interpolated_spline_1496",
+    "BTCurveGeometry3DLine5571": "bt_curve_geometry_3d_line_5571",
+    "BTCurveGeometry3DSpline5112": "bt_curve_geometry_3d_spline_5112",
     "BTCurveGeometryCircle115": "bt_curve_geometry_circle_115",
     "BTCurveGeometryConic2284": "bt_curve_geometry_conic_2284",
     "BTCurveGeometryControlPointSpline2197": "bt_curve_geometry_control_point_spline_2197",
@@ -2162,7 +2202,7 @@ _LAZY_MODULES: dict[str, str] = {
     "BTDerivedAssemblyMirror4204": "bt_derived_assembly_mirror_4204",
     "BTDeviceLoginSecretInfo": "bt_device_login_secret_info",
     "BTDiffInfo": "bt_diff_info",
-    "BTDiffInfoChanges": "bt_diff_info_changes",
+    "BTDiffInfoCollectionChanges": "bt_diff_info_collection_changes",
     "BTDiffInfoCollectionType": "bt_diff_info_collection_type",
     "BTDiffJsonResponse2725": "bt_diff_json_response_2725",
     "BTDiffJsonResponse2725Patch": "bt_diff_json_response_2725_patch",
@@ -2272,6 +2312,8 @@ _LAZY_MODULES: dict[str, str] = {
     "BTFeatureSpecsResponse664": "bt_feature_specs_response_664",
     "BTFeatureState1688": "bt_feature_state_1688",
     "BTFeatureStudioContents2239": "bt_feature_studio_contents_2239",
+    "BTFeatureStudioStdVersionMatchInfo": "bt_feature_studio_std_version_match_info",
+    "BTFeatureStudioStdVersionMatchesInfo": "bt_feature_studio_std_version_matches_info",
     "BTFeatureTypeFilter962": "bt_feature_type_filter_962",
     "BTFlatSheetMetalFilter3018": "bt_flat_sheet_metal_filter_3018",
     "BTFolderInfo": "bt_folder_info",
@@ -2561,6 +2603,7 @@ _LAZY_MODULES: dict[str, str] = {
     "BTPartStudioDisplayData346FeatureIdToOperationIndices": "bt_part_studio_display_data_346_feature_id_to_operation_indices",
     "BTPartStudioDisplayData346PartIdAndTessellationSettingToBuffers": "bt_part_studio_display_data_346_part_id_and_tessellation_setting_to_buffers",
     "BTPartStudioDisplayData346PartIdAndTessellationSettingToBuffersAdditionalProperty": "bt_part_studio_display_data_346_part_id_and_tessellation_setting_to_buffers_additional_property",
+    "BTPartStudioDisplayData346PartIdToVisibilityScore": "bt_part_studio_display_data_346_part_id_to_visibility_score",
     "BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffers": "bt_part_studio_display_data_346_sketch_feature_id_and_tessellation_setting_to_buffers",
     "BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffersAdditionalProperty": "bt_part_studio_display_data_346_sketch_feature_id_and_tessellation_setting_to_buffers_additional_property",
     "BTPartStudioDisplayData346SketchImages": "bt_part_studio_display_data_346_sketch_images",
@@ -2697,6 +2740,10 @@ _LAZY_MODULES: dict[str, str] = {
     "BTStandardContentSetCustomParametersBatchResponse": "bt_standard_content_set_custom_parameters_batch_response",
     "BTStandardContentSetCustomParametersError": "bt_standard_content_set_custom_parameters_error",
     "BTStandardContentSetCustomParametersResponse": "bt_standard_content_set_custom_parameters_response",
+    "BTStdVersionMatchInfo": "bt_std_version_match_info",
+    "BTStdVersionReplaceInfo": "bt_std_version_replace_info",
+    "BTStdVersionReplaceInfoElementIdToReplacementCount": "bt_std_version_replace_info_element_id_to_replacement_count",
+    "BTStdVersionReplaceParams": "bt_std_version_replace_params",
     "BTStringFormatBlockPattern1755": "bt_string_format_block_pattern_1755",
     "BTStringFormatCondition683": "bt_string_format_condition_683",
     "BTStringFormatMatchPattern2446": "bt_string_format_match_pattern_2446",
@@ -3000,6 +3047,13 @@ _LAZY_MODULES: dict[str, str] = {
     "BTMRollback150": "btm_rollback_150",
     "BTMSimulationFeature5034": "btm_simulation_feature_5034",
     "BTMSketch151": "btm_sketch_151",
+    "BTMSketch3D2231": "btm_sketch_3d2231",
+    "BTMSketch3DConstraint4787": "btm_sketch_3d_constraint_4787",
+    "BTMSketch3DCurve5898": "btm_sketch_3d_curve_5898",
+    "BTMSketch3DCurveSegment5631": "btm_sketch_3d_curve_segment_5631",
+    "BTMSketch3DEntity5972": "btm_sketch_3d_entity_5972",
+    "BTMSketch3DGeomEntity4849": "btm_sketch_3d_geom_entity_4849",
+    "BTMSketch3DPoint5367": "btm_sketch_3d_point_5367",
     "BTMSketchCompositeEntity893": "btm_sketch_composite_entity_893",
     "BTMSketchConstraint2": "btm_sketch_constraint_2",
     "BTMSketchCurve4": "btm_sketch_curve_4",
@@ -3283,6 +3337,7 @@ _LAZY_MODULES: dict[str, str] = {
     "GBTRemoveUserFromCompanyMessageBody": "gbt_remove_user_from_company_message_body",
     "GBTRestoreDocumentFromHistoryMessageBody": "gbt_restore_document_from_history_message_body",
     "GBTRhinoVersions": "gbt_rhino_versions",
+    "GBTSimulationConnectionType": "gbt_simulation_connection_type",
     "GBTSimulationContactBehavior": "gbt_simulation_contact_behavior",
     "GBTSketchCurveType": "gbt_sketch_curve_type",
     "GBTSketchEntityType": "gbt_sketch_entity_type",
@@ -3538,6 +3593,7 @@ _LAZY_MODULES: dict[str, str] = {
     "SessionResponseDefault": "session_response_default",
     "SetApplicationElementThumbnailResponseDefault": "set_application_element_thumbnail_response_default",
     "SetApplicationElementThumbnailWv": "set_application_element_thumbnail_wv",
+    "SetInstanceDesignatorsResponseDefault": "set_instance_designators_response_default",
     "SetVariableStudioReferencesResponseDefault": "set_variable_studio_references_response_default",
     "SetVariableStudioScopeResponseDefault": "set_variable_studio_scope_response_default",
     "SetVariablesResponseDefault": "set_variables_response_default",
@@ -3744,6 +3800,8 @@ __all__ = (
     "BTAssemblyInsertTransformedInstancesResponse",
     "BTAssemblyInstance947",
     "BTAssemblyInstanceDefinitionParams",
+    "BTAssemblyInstanceDesignatorParams",
+    "BTAssemblyInstanceDesignatorParamsDesignators",
     "BTAssemblyInstanceInfo",
     "BTAssemblyInstanceOccurrenceInfo",
     "BTAssemblyInstanceStatus",
@@ -3840,6 +3898,7 @@ __all__ = (
     "BTCategoryPropertyConfigInfo",
     "BTCategoryPropertyInfo",
     "BTCenterlineDimensionDisplayData1798",
+    "BTCenterOfMassFilter5569",
     "BTChamferCalloutDisplayData4471",
     "BTCircleDescription1145",
     "BTClassroomInfo",
@@ -3900,6 +3959,13 @@ __all__ = (
     "BTCurveDisplayData4722",
     "BTCurvedTextObjectFilter5114",
     "BTCurveGeometry114",
+    "BTCurveGeometry3D3354",
+    "BTCurveGeometry3DCircle2518",
+    "BTCurveGeometry3DControlPointSpline5629",
+    "BTCurveGeometry3DEllipse5930",
+    "BTCurveGeometry3DInterpolatedSpline1496",
+    "BTCurveGeometry3DLine5571",
+    "BTCurveGeometry3DSpline5112",
     "BTCurveGeometryCircle115",
     "BTCurveGeometryConic2284",
     "BTCurveGeometryControlPointSpline2197",
@@ -3922,7 +3988,7 @@ __all__ = (
     "BTDerivedAssemblyMirror4204",
     "BTDeviceLoginSecretInfo",
     "BTDiffInfo",
-    "BTDiffInfoChanges",
+    "BTDiffInfoCollectionChanges",
     "BTDiffInfoCollectionType",
     "BTDiffJsonResponse2725",
     "BTDiffJsonResponse2725Patch",
@@ -4034,6 +4100,8 @@ __all__ = (
     "BTFeatureSpecsResponse664",
     "BTFeatureState1688",
     "BTFeatureStudioContents2239",
+    "BTFeatureStudioStdVersionMatchesInfo",
+    "BTFeatureStudioStdVersionMatchInfo",
     "BTFeatureTypeFilter962",
     "BTFlatSheetMetalFilter3018",
     "BTFolderInfo",
@@ -4336,6 +4404,13 @@ __all__ = (
     "BTMRollback150",
     "BTMSimulationFeature5034",
     "BTMSketch151",
+    "BTMSketch3D2231",
+    "BTMSketch3DConstraint4787",
+    "BTMSketch3DCurve5898",
+    "BTMSketch3DCurveSegment5631",
+    "BTMSketch3DEntity5972",
+    "BTMSketch3DGeomEntity4849",
+    "BTMSketch3DPoint5367",
     "BTMSketchCompositeEntity893",
     "BTMSketchConstraint2",
     "BTMSketchCurve4",
@@ -4481,6 +4556,7 @@ __all__ = (
     "BTPartStudioDisplayData346FeatureIdToOperationIndices",
     "BTPartStudioDisplayData346PartIdAndTessellationSettingToBuffers",
     "BTPartStudioDisplayData346PartIdAndTessellationSettingToBuffersAdditionalProperty",
+    "BTPartStudioDisplayData346PartIdToVisibilityScore",
     "BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffers",
     "BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffersAdditionalProperty",
     "BTPartStudioDisplayData346SketchImages",
@@ -4691,6 +4767,10 @@ __all__ = (
     "BTStandardContentSetCustomParametersError",
     "BTStandardContentSetCustomParameterSpecifier",
     "BTStandardContentSetCustomParametersResponse",
+    "BTStdVersionMatchInfo",
+    "BTStdVersionReplaceInfo",
+    "BTStdVersionReplaceInfoElementIdToReplacementCount",
+    "BTStdVersionReplaceParams",
     "BTStringFormatBlockPattern1755",
     "BTStringFormatCondition683",
     "BTStringFormatMatchPattern2446",
@@ -5032,6 +5112,7 @@ __all__ = (
     "GBTRemoveUserFromCompanyMessageBody",
     "GBTRestoreDocumentFromHistoryMessageBody",
     "GBTRhinoVersions",
+    "GBTSimulationConnectionType",
     "GBTSimulationContactBehavior",
     "GBTSketchCurveType",
     "GBTSketchEntityType",
@@ -5279,6 +5360,7 @@ __all__ = (
     "SessionResponseDefault",
     "SetApplicationElementThumbnailResponseDefault",
     "SetApplicationElementThumbnailWv",
+    "SetInstanceDesignatorsResponseDefault",
     "SetVariablesResponseDefault",
     "SetVariableStudioReferencesResponseDefault",
     "SetVariableStudioScopeResponseDefault",

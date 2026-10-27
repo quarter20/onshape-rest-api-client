@@ -29,9 +29,7 @@ class AccessorSparseExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.accessor_sparse_extensions_additional_property import (
-            AccessorSparseExtensionsAdditionalProperty,  # noqa: PLC0415
-        )
+        from ..models.accessor_sparse_extensions_additional_property import AccessorSparseExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         accessor_sparse_extensions = cls()

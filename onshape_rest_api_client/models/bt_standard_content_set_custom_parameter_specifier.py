@@ -58,12 +58,8 @@ class BTStandardContentSetCustomParameterSpecifier:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_standard_content_parameter_id_and_value import (
-            BTStandardContentParameterIdAndValue,  # noqa: PLC0415
-        )
-        from ..models.bt_standard_content_property_id_and_value import (
-            BTStandardContentPropertyIdAndValue,  # noqa: PLC0415
-        )
+        from ..models.bt_standard_content_parameter_id_and_value import BTStandardContentParameterIdAndValue  # noqa: PLC0415
+        from ..models.bt_standard_content_property_id_and_value import BTStandardContentPropertyIdAndValue  # noqa: PLC0415
 
         d = dict(src_dict)
         _custom_parameters = d.pop("customParameters", UNSET)

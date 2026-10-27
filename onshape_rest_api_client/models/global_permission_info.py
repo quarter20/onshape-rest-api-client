@@ -17,7 +17,11 @@ class GlobalPermissionInfo:
     Attributes:
         access_reports (bool | Unset):
         admin_enterprise (bool | Unset):
+        allow_access_to_public_libraries (bool | Unset): Whether the user has permission to find, browse, and subscribe
+            to public element libraries.
         allow_app_store_access (bool | Unset):
+        allow_managing_public_libraries (bool | Unset): Whether the user has permission to create, subscribe to, and
+            view public element libraries.
         allow_public_documents_access (bool | Unset):
         approve_releases (bool | Unset):
         branch_lock_permissions (bool | Unset):
@@ -43,7 +47,9 @@ class GlobalPermissionInfo:
 
     access_reports: bool | Unset = UNSET
     admin_enterprise: bool | Unset = UNSET
+    allow_access_to_public_libraries: bool | Unset = UNSET
     allow_app_store_access: bool | Unset = UNSET
+    allow_managing_public_libraries: bool | Unset = UNSET
     allow_public_documents_access: bool | Unset = UNSET
     approve_releases: bool | Unset = UNSET
     branch_lock_permissions: bool | Unset = UNSET
@@ -72,7 +78,11 @@ class GlobalPermissionInfo:
 
         admin_enterprise = self.admin_enterprise
 
+        allow_access_to_public_libraries = self.allow_access_to_public_libraries
+
         allow_app_store_access = self.allow_app_store_access
+
+        allow_managing_public_libraries = self.allow_managing_public_libraries
 
         allow_public_documents_access = self.allow_public_documents_access
 
@@ -123,8 +133,12 @@ class GlobalPermissionInfo:
             field_dict["accessReports"] = access_reports
         if admin_enterprise is not UNSET:
             field_dict["adminEnterprise"] = admin_enterprise
+        if allow_access_to_public_libraries is not UNSET:
+            field_dict["allowAccessToPublicLibraries"] = allow_access_to_public_libraries
         if allow_app_store_access is not UNSET:
             field_dict["allowAppStoreAccess"] = allow_app_store_access
+        if allow_managing_public_libraries is not UNSET:
+            field_dict["allowManagingPublicLibraries"] = allow_managing_public_libraries
         if allow_public_documents_access is not UNSET:
             field_dict["allowPublicDocumentsAccess"] = allow_public_documents_access
         if approve_releases is not UNSET:
@@ -177,7 +191,11 @@ class GlobalPermissionInfo:
 
         admin_enterprise = d.pop("adminEnterprise", UNSET)
 
+        allow_access_to_public_libraries = d.pop("allowAccessToPublicLibraries", UNSET)
+
         allow_app_store_access = d.pop("allowAppStoreAccess", UNSET)
+
+        allow_managing_public_libraries = d.pop("allowManagingPublicLibraries", UNSET)
 
         allow_public_documents_access = d.pop("allowPublicDocumentsAccess", UNSET)
 
@@ -224,7 +242,9 @@ class GlobalPermissionInfo:
         global_permission_info = cls(
             access_reports=access_reports,
             admin_enterprise=admin_enterprise,
+            allow_access_to_public_libraries=allow_access_to_public_libraries,
             allow_app_store_access=allow_app_store_access,
+            allow_managing_public_libraries=allow_managing_public_libraries,
             allow_public_documents_access=allow_public_documents_access,
             approve_releases=approve_releases,
             branch_lock_permissions=branch_lock_permissions,

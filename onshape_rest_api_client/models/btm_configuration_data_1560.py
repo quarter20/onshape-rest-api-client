@@ -107,9 +107,7 @@ class BTMConfigurationData1560:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btm_configuration_data_1560_current_fs_values import (
-            BTMConfigurationData1560CurrentFSValues,  # noqa: PLC0415
-        )
+        from ..models.btm_configuration_data_1560_current_fs_values import BTMConfigurationData1560CurrentFSValues  # noqa: PLC0415
         from ..models.btm_configuration_data_1560_default_configuration_values import (
             BTMConfigurationData1560DefaultConfigurationValues,  # noqa: PLC0415
         )

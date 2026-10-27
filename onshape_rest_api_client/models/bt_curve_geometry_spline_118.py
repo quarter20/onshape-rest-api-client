@@ -21,6 +21,7 @@ class BTCurveGeometrySpline118:
         control_point_count (int | Unset):
         control_points (list[float] | Unset):
         degree (int | Unset):
+        dimension (int | Unset):
         is_periodic (bool | Unset):
         is_rational (bool | Unset):
         knots (list[float] | Unset):
@@ -31,6 +32,7 @@ class BTCurveGeometrySpline118:
     control_point_count: int | Unset = UNSET
     control_points: list[float] | Unset = UNSET
     degree: int | Unset = UNSET
+    dimension: int | Unset = UNSET
     is_periodic: bool | Unset = UNSET
     is_rational: bool | Unset = UNSET
     knots: list[float] | Unset = UNSET
@@ -50,6 +52,8 @@ class BTCurveGeometrySpline118:
             control_points = self.control_points
 
         degree = self.degree
+
+        dimension = self.dimension
 
         is_periodic = self.is_periodic
 
@@ -72,6 +76,8 @@ class BTCurveGeometrySpline118:
             field_dict["controlPoints"] = control_points
         if degree is not UNSET:
             field_dict["degree"] = degree
+        if dimension is not UNSET:
+            field_dict["dimension"] = dimension
         if is_periodic is not UNSET:
             field_dict["isPeriodic"] = is_periodic
         if is_rational is not UNSET:
@@ -99,6 +105,8 @@ class BTCurveGeometrySpline118:
 
         degree = d.pop("degree", UNSET)
 
+        dimension = d.pop("dimension", UNSET)
+
         is_periodic = d.pop("isPeriodic", UNSET)
 
         is_rational = d.pop("isRational", UNSET)
@@ -111,6 +119,7 @@ class BTCurveGeometrySpline118:
             control_point_count=control_point_count,
             control_points=control_points,
             degree=degree,
+            dimension=dimension,
             is_periodic=is_periodic,
             is_rational=is_rational,
             knots=knots,

@@ -58,9 +58,7 @@ class BTLibraryMaterialInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_library_material_info_property_values import (
-            BTLibraryMaterialInfoPropertyValues,  # noqa: PLC0415
-        )
+        from ..models.bt_library_material_info_property_values import BTLibraryMaterialInfoPropertyValues  # noqa: PLC0415
 
         d = dict(src_dict)
         category = d.pop("category", UNSET)

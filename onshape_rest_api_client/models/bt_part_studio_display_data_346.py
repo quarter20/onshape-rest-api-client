@@ -49,6 +49,9 @@ if TYPE_CHECKING:
     from ..models.bt_part_studio_display_data_346_part_id_and_tessellation_setting_to_buffers import (
         BTPartStudioDisplayData346PartIdAndTessellationSettingToBuffers,
     )
+    from ..models.bt_part_studio_display_data_346_part_id_to_visibility_score import (
+        BTPartStudioDisplayData346PartIdToVisibilityScore,
+    )
     from ..models.bt_part_studio_display_data_346_sketch_feature_id_and_tessellation_setting_to_buffers import (
         BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffers,
     )
@@ -99,6 +102,7 @@ class BTPartStudioDisplayData346:
         part_display_data (list[BTPartDisplayData17] | Unset):
         part_id_and_tessellation_setting_to_buffers (BTPartStudioDisplayData346PartIdAndTessellationSettingToBuffers |
             Unset):
+        part_id_to_visibility_score (BTPartStudioDisplayData346PartIdToVisibilityScore | Unset):
         sketch_feature_id_and_tessellation_setting_to_buffers
             (BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffers | Unset):
         sketch_images (BTPartStudioDisplayData346SketchImages | Unset):
@@ -147,6 +151,7 @@ class BTPartStudioDisplayData346:
     part_id_and_tessellation_setting_to_buffers: (
         BTPartStudioDisplayData346PartIdAndTessellationSettingToBuffers | Unset
     ) = UNSET
+    part_id_to_visibility_score: BTPartStudioDisplayData346PartIdToVisibilityScore | Unset = UNSET
     sketch_feature_id_and_tessellation_setting_to_buffers: (
         BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffers | Unset
     ) = UNSET
@@ -276,6 +281,10 @@ class BTPartStudioDisplayData346:
         if not isinstance(self.part_id_and_tessellation_setting_to_buffers, Unset):
             part_id_and_tessellation_setting_to_buffers = self.part_id_and_tessellation_setting_to_buffers.to_dict()
 
+        part_id_to_visibility_score: dict[str, Any] | Unset = UNSET
+        if not isinstance(self.part_id_to_visibility_score, Unset):
+            part_id_to_visibility_score = self.part_id_to_visibility_score.to_dict()
+
         sketch_feature_id_and_tessellation_setting_to_buffers: dict[str, Any] | Unset = UNSET
         if not isinstance(self.sketch_feature_id_and_tessellation_setting_to_buffers, Unset):
             sketch_feature_id_and_tessellation_setting_to_buffers = (
@@ -373,6 +382,8 @@ class BTPartStudioDisplayData346:
             field_dict["partDisplayData"] = part_display_data
         if part_id_and_tessellation_setting_to_buffers is not UNSET:
             field_dict["partIdAndTessellationSettingToBuffers"] = part_id_and_tessellation_setting_to_buffers
+        if part_id_to_visibility_score is not UNSET:
+            field_dict["partIdToVisibilityScore"] = part_id_to_visibility_score
         if sketch_feature_id_and_tessellation_setting_to_buffers is not UNSET:
             field_dict["sketchFeatureIdAndTessellationSettingToBuffers"] = (
                 sketch_feature_id_and_tessellation_setting_to_buffers
@@ -393,9 +404,7 @@ class BTPartStudioDisplayData346:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_annotation_element_display_data_894 import BTAnnotationElementDisplayData894  # noqa: PLC0415
-        from ..models.bt_assembly_references_display_data_1562 import (
-            BTAssemblyReferencesDisplayData1562,  # noqa: PLC0415
-        )
+        from ..models.bt_assembly_references_display_data_1562 import BTAssemblyReferencesDisplayData1562  # noqa: PLC0415
         from ..models.bt_base_part_color_cycle_2614 import BTBasePartColorCycle2614  # noqa: PLC0415
         from ..models.bt_dimension_display_data_323 import BTDimensionDisplayData323  # noqa: PLC0415
         from ..models.bt_element_display_data_326 import BTElementDisplayData326  # noqa: PLC0415
@@ -415,9 +424,7 @@ class BTPartStudioDisplayData346:
         from ..models.bt_part_studio_display_data_346_body_id_to_entity_appearance_settings import (
             BTPartStudioDisplayData346BodyIdToEntityAppearanceSettings,  # noqa: PLC0415
         )
-        from ..models.bt_part_studio_display_data_346_decal_id_to_decal import (
-            BTPartStudioDisplayData346DecalIdToDecal,  # noqa: PLC0415
-        )
+        from ..models.bt_part_studio_display_data_346_decal_id_to_decal import BTPartStudioDisplayData346DecalIdToDecal  # noqa: PLC0415
         from ..models.bt_part_studio_display_data_346_deterministic_id_to_associated_feature_ids import (
             BTPartStudioDisplayData346DeterministicIdToAssociatedFeatureIds,  # noqa: PLC0415
         )
@@ -436,12 +443,13 @@ class BTPartStudioDisplayData346:
         from ..models.bt_part_studio_display_data_346_part_id_and_tessellation_setting_to_buffers import (
             BTPartStudioDisplayData346PartIdAndTessellationSettingToBuffers,  # noqa: PLC0415
         )
+        from ..models.bt_part_studio_display_data_346_part_id_to_visibility_score import (
+            BTPartStudioDisplayData346PartIdToVisibilityScore,  # noqa: PLC0415
+        )
         from ..models.bt_part_studio_display_data_346_sketch_feature_id_and_tessellation_setting_to_buffers import (
             BTPartStudioDisplayData346SketchFeatureIdAndTessellationSettingToBuffers,  # noqa: PLC0415
         )
-        from ..models.bt_part_studio_display_data_346_sketch_images import (
-            BTPartStudioDisplayData346SketchImages,  # noqa: PLC0415
-        )
+        from ..models.bt_part_studio_display_data_346_sketch_images import BTPartStudioDisplayData346SketchImages  # noqa: PLC0415
 
         d = dict(src_dict)
         _all_insertable_display_data = d.pop("allInsertableDisplayData", UNSET)
@@ -659,6 +667,15 @@ class BTPartStudioDisplayData346:
                 )
             )
 
+        _part_id_to_visibility_score = d.pop("partIdToVisibilityScore", UNSET)
+        part_id_to_visibility_score: BTPartStudioDisplayData346PartIdToVisibilityScore | Unset
+        if isinstance(_part_id_to_visibility_score, Unset):
+            part_id_to_visibility_score = UNSET
+        else:
+            part_id_to_visibility_score = BTPartStudioDisplayData346PartIdToVisibilityScore.from_dict(
+                _part_id_to_visibility_score
+            )
+
         _sketch_feature_id_and_tessellation_setting_to_buffers = d.pop(
             "sketchFeatureIdAndTessellationSettingToBuffers", UNSET
         )
@@ -735,6 +752,7 @@ class BTPartStudioDisplayData346:
             part_color_cycle=part_color_cycle,
             part_display_data=part_display_data,
             part_id_and_tessellation_setting_to_buffers=part_id_and_tessellation_setting_to_buffers,
+            part_id_to_visibility_score=part_id_to_visibility_score,
             sketch_feature_id_and_tessellation_setting_to_buffers=sketch_feature_id_and_tessellation_setting_to_buffers,
             sketch_images=sketch_images,
             updated_parts=updated_parts,

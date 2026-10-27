@@ -27,9 +27,7 @@ class BufferViewExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.buffer_view_extensions_additional_property import (
-            BufferViewExtensionsAdditionalProperty,  # noqa: PLC0415
-        )
+        from ..models.buffer_view_extensions_additional_property import BufferViewExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         buffer_view_extensions = cls()

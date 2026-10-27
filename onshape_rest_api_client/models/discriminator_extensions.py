@@ -27,9 +27,7 @@ class DiscriminatorExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.discriminator_extensions_additional_property import (
-            DiscriminatorExtensionsAdditionalProperty,  # noqa: PLC0415
-        )
+        from ..models.discriminator_extensions_additional_property import DiscriminatorExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         discriminator_extensions = cls()

@@ -29,9 +29,7 @@ class SecuritySchemeExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.security_scheme_extensions_additional_property import (
-            SecuritySchemeExtensionsAdditionalProperty,  # noqa: PLC0415
-        )
+        from ..models.security_scheme_extensions_additional_property import SecuritySchemeExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         security_scheme_extensions = cls()

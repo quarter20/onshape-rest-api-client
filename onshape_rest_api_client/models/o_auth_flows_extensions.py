@@ -27,9 +27,7 @@ class OAuthFlowsExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.o_auth_flows_extensions_additional_property import (
-            OAuthFlowsExtensionsAdditionalProperty,  # noqa: PLC0415
-        )
+        from ..models.o_auth_flows_extensions_additional_property import OAuthFlowsExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         o_auth_flows_extensions = cls()

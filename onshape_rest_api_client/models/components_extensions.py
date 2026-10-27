@@ -27,9 +27,7 @@ class ComponentsExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.components_extensions_additional_property import (
-            ComponentsExtensionsAdditionalProperty,  # noqa: PLC0415
-        )
+        from ..models.components_extensions_additional_property import ComponentsExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         components_extensions = cls()

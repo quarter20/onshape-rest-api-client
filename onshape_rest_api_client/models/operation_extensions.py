@@ -27,9 +27,7 @@ class OperationExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.operation_extensions_additional_property import (
-            OperationExtensionsAdditionalProperty,  # noqa: PLC0415
-        )
+        from ..models.operation_extensions_additional_property import OperationExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         operation_extensions = cls()

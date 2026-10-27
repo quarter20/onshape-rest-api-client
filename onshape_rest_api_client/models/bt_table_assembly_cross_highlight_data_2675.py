@@ -49,9 +49,7 @@ class BTTableAssemblyCrossHighlightData2675:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_table_assembly_cross_highlight_data_item_2659 import (
-            BTTableAssemblyCrossHighlightDataItem2659,  # noqa: PLC0415
-        )
+        from ..models.bt_table_assembly_cross_highlight_data_item_2659 import BTTableAssemblyCrossHighlightDataItem2659  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

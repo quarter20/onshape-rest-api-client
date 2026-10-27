@@ -380,9 +380,7 @@ class BTInstance642:
         from ..models.bt_node_with_reference import BTNodeWithReference  # noqa: PLC0415
         from ..models.bt_revision_custom_data_2090 import BTRevisionCustomData2090  # noqa: PLC0415
         from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
-        from ..models.btm_parameter_reference_with_configuration_3028 import (
-            BTMParameterReferenceWithConfiguration3028,  # noqa: PLC0415
-        )
+        from ..models.btm_parameter_reference_with_configuration_3028 import BTMParameterReferenceWithConfiguration3028  # noqa: PLC0415
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
 
         d = dict(src_dict)

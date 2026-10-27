@@ -158,9 +158,7 @@ class BTInsertablePartDisplayData3103:
         from ..models.bt_insertable_display_data_2405_appearance_id_to_appearance_override import (
             BTInsertableDisplayData2405AppearanceIdToAppearanceOverride,  # noqa: PLC0415
         )
-        from ..models.bt_insertable_display_data_2405_graphics_buffers import (
-            BTInsertableDisplayData2405GraphicsBuffers,  # noqa: PLC0415
-        )
+        from ..models.bt_insertable_display_data_2405_graphics_buffers import BTInsertableDisplayData2405GraphicsBuffers  # noqa: PLC0415
         from ..models.bt_part_data_16 import BTPartData16  # noqa: PLC0415
         from ..models.bt_part_display_data_17 import BTPartDisplayData17  # noqa: PLC0415
 

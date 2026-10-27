@@ -27,9 +27,7 @@ class MaterialExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.material_extensions_additional_property import (
-            MaterialExtensionsAdditionalProperty,  # noqa: PLC0415
-        )
+        from ..models.material_extensions_additional_property import MaterialExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         material_extensions = cls()

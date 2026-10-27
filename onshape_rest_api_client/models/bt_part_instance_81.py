@@ -419,12 +419,8 @@ class BTPartInstance81:
         from ..models.bt_node_with_reference import BTNodeWithReference  # noqa: PLC0415
         from ..models.bt_revision_custom_data_2090 import BTRevisionCustomData2090  # noqa: PLC0415
         from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
-        from ..models.btm_parameter_reference_part_studio_3302 import (
-            BTMParameterReferencePartStudio3302,  # noqa: PLC0415
-        )
-        from ..models.btm_parameter_reference_with_configuration_3028 import (
-            BTMParameterReferenceWithConfiguration3028,  # noqa: PLC0415
-        )
+        from ..models.btm_parameter_reference_part_studio_3302 import BTMParameterReferencePartStudio3302  # noqa: PLC0415
+        from ..models.btm_parameter_reference_with_configuration_3028 import BTMParameterReferenceWithConfiguration3028  # noqa: PLC0415
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
         from ..models.btpso_identity_2741 import BTPSOIdentity2741  # noqa: PLC0415
 

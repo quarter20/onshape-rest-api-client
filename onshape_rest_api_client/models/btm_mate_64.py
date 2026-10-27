@@ -11,6 +11,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.btm_feature_134 import BTMFeature134
+    from ..models.btm_mate_connector_66 import BTMMateConnector66
     from ..models.btm_parameter_1 import BTMParameter1
     from ..models.btm_parameter_query_with_occurrence_list_67 import BTMParameterQueryWithOccurrenceList67
     from ..models.btm_suppression_state_1924 import BTMSuppressionState1924
@@ -46,6 +47,7 @@ class BTMMate64:
         variable_studio_reference (bool | Unset): If `true`, the feature references a Variable Studio.
         version (int | Unset):
         mate_connector_query_list (BTMParameterQueryWithOccurrenceList67 | Unset):
+        mate_connectors (list[BTMMateConnector66] | Unset):
         mate_type (GBTMateType | Unset):
     """
 
@@ -68,6 +70,7 @@ class BTMMate64:
     variable_studio_reference: bool | Unset = UNSET
     version: int | Unset = UNSET
     mate_connector_query_list: BTMParameterQueryWithOccurrenceList67 | Unset = UNSET
+    mate_connectors: list[BTMMateConnector66] | Unset = UNSET
     mate_type: GBTMateType | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -129,6 +132,13 @@ class BTMMate64:
         if not isinstance(self.mate_connector_query_list, Unset):
             mate_connector_query_list = self.mate_connector_query_list.to_dict()
 
+        mate_connectors: list[dict[str, Any]] | Unset = UNSET
+        if not isinstance(self.mate_connectors, Unset):
+            mate_connectors = []
+            for mate_connectors_item_data in self.mate_connectors:
+                mate_connectors_item = mate_connectors_item_data.to_dict()
+                mate_connectors.append(mate_connectors_item)
+
         mate_type: str | Unset = UNSET
         if not isinstance(self.mate_type, Unset):
             mate_type = self.mate_type.value
@@ -174,6 +184,8 @@ class BTMMate64:
             field_dict["version"] = version
         if mate_connector_query_list is not UNSET:
             field_dict["mateConnectorQueryList"] = mate_connector_query_list
+        if mate_connectors is not UNSET:
+            field_dict["mateConnectors"] = mate_connectors
         if mate_type is not UNSET:
             field_dict["mateType"] = mate_type
 
@@ -182,10 +194,9 @@ class BTMMate64:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.btm_feature_134 import BTMFeature134  # noqa: PLC0415
+        from ..models.btm_mate_connector_66 import BTMMateConnector66  # noqa: PLC0415
         from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
-        from ..models.btm_parameter_query_with_occurrence_list_67 import (
-            BTMParameterQueryWithOccurrenceList67,  # noqa: PLC0415
-        )
+        from ..models.btm_parameter_query_with_occurrence_list_67 import BTMParameterQueryWithOccurrenceList67  # noqa: PLC0415
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
 
         d = dict(src_dict)
@@ -258,6 +269,15 @@ class BTMMate64:
         else:
             mate_connector_query_list = BTMParameterQueryWithOccurrenceList67.from_dict(_mate_connector_query_list)
 
+        _mate_connectors = d.pop("mateConnectors", UNSET)
+        mate_connectors: list[BTMMateConnector66] | Unset = UNSET
+        if _mate_connectors is not UNSET:
+            mate_connectors = []
+            for mate_connectors_item_data in _mate_connectors:
+                mate_connectors_item = BTMMateConnector66.from_dict(mate_connectors_item_data)
+
+                mate_connectors.append(mate_connectors_item)
+
         _mate_type = d.pop("mateType", UNSET)
         mate_type: GBTMateType | Unset
         if isinstance(_mate_type, Unset):
@@ -285,6 +305,7 @@ class BTMMate64:
             variable_studio_reference=variable_studio_reference,
             version=version,
             mate_connector_query_list=mate_connector_query_list,
+            mate_connectors=mate_connectors,
             mate_type=mate_type,
         )
 

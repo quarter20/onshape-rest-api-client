@@ -49,9 +49,7 @@ class BTEnumOptionVisibilityConditionList2936:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_enum_option_visibility_condition_3455 import (
-            BTEnumOptionVisibilityCondition3455,  # noqa: PLC0415
-        )
+        from ..models.bt_enum_option_visibility_condition_3455 import BTEnumOptionVisibilityCondition3455  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

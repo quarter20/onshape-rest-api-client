@@ -106,9 +106,7 @@ class BTBillOfMaterialsRowInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_bill_of_materials_item_source_info import BTBillOfMaterialsItemSourceInfo  # noqa: PLC0415
-        from ..models.bt_bill_of_materials_row_info_header_id_to_value import (
-            BTBillOfMaterialsRowInfoHeaderIdToValue,  # noqa: PLC0415
-        )
+        from ..models.bt_bill_of_materials_row_info_header_id_to_value import BTBillOfMaterialsRowInfoHeaderIdToValue  # noqa: PLC0415
         from ..models.bt_bill_of_materials_row_info_selected_metadata_enum_values import (
             BTBillOfMaterialsRowInfoSelectedMetadataEnumValues,  # noqa: PLC0415
         )

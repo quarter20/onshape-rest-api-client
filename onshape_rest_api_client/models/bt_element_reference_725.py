@@ -106,9 +106,7 @@ class BTElementReference725:
         from ..models.bt_document_with_version_and_element_id import BTDocumentWithVersionAndElementId  # noqa: PLC0415
         from ..models.bt_document_with_version_id import BTDocumentWithVersionId  # noqa: PLC0415
         from ..models.bt_full_element_id_756 import BTFullElementId756  # noqa: PLC0415
-        from ..models.bt_microversion_id_and_configuration_2338 import (
-            BTMicroversionIdAndConfiguration2338,  # noqa: PLC0415
-        )
+        from ..models.bt_microversion_id_and_configuration_2338 import BTMicroversionIdAndConfiguration2338  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

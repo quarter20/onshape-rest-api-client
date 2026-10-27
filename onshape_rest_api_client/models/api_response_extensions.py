@@ -27,9 +27,7 @@ class ApiResponseExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.api_response_extensions_additional_property import (
-            ApiResponseExtensionsAdditionalProperty,  # noqa: PLC0415
-        )
+        from ..models.api_response_extensions_additional_property import ApiResponseExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         api_response_extensions = cls()

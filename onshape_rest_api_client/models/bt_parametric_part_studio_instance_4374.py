@@ -377,9 +377,7 @@ class BTParametricPartStudioInstance4374:
         from ..models.bt_revision_custom_data_2090 import BTRevisionCustomData2090  # noqa: PLC0415
         from ..models.btm_assembly_feature_887 import BTMAssemblyFeature887  # noqa: PLC0415
         from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
-        from ..models.btm_parameter_reference_part_studio_3302 import (
-            BTMParameterReferencePartStudio3302,  # noqa: PLC0415
-        )
+        from ..models.btm_parameter_reference_part_studio_3302 import BTMParameterReferencePartStudio3302  # noqa: PLC0415
         from ..models.btm_parametric_part_studio_feature_3883 import BTMParametricPartStudioFeature3883  # noqa: PLC0415
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
 

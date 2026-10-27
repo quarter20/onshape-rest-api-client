@@ -185,9 +185,7 @@ class BTExplosion2754:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_explosion_step_feature_3008 import BTExplosionStepFeature3008  # noqa: PLC0415
-        from ..models.bt_microversion_id_and_configuration_2338 import (
-            BTMicroversionIdAndConfiguration2338,  # noqa: PLC0415
-        )
+        from ..models.bt_microversion_id_and_configuration_2338 import BTMicroversionIdAndConfiguration2338  # noqa: PLC0415
         from ..models.btm_feature_134 import BTMFeature134  # noqa: PLC0415
         from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415

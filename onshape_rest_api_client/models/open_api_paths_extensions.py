@@ -27,9 +27,7 @@ class OpenAPIPathsExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.open_api_paths_extensions_additional_property import (
-            OpenAPIPathsExtensionsAdditionalProperty,  # noqa: PLC0415
-        )
+        from ..models.open_api_paths_extensions_additional_property import OpenAPIPathsExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         open_api_paths_extensions = cls()

@@ -121,9 +121,7 @@ class BTExportModelFace1363:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_bounding_box_1052 import BTBoundingBox1052  # noqa: PLC0415
         from ..models.bt_cosmetic_thread_metadata_3248 import BTCosmeticThreadMetadata3248  # noqa: PLC0415
-        from ..models.bt_export_model_face_1363_decal_id_to_decal import (
-            BTExportModelFace1363DecalIdToDecal,  # noqa: PLC0415
-        )
+        from ..models.bt_export_model_face_1363_decal_id_to_decal import BTExportModelFace1363DecalIdToDecal  # noqa: PLC0415
         from ..models.bt_export_model_loop_1182 import BTExportModelLoop1182  # noqa: PLC0415
         from ..models.bt_export_model_properties_3216 import BTExportModelProperties3216  # noqa: PLC0415
         from ..models.bt_surface_description_1564 import BTSurfaceDescription1564  # noqa: PLC0415

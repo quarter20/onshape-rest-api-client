@@ -139,9 +139,7 @@ class BTAssemblySimulationData978:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_assembly_simulation_2246 import BTAssemblySimulation2246  # noqa: PLC0415
-        from ..models.bt_assembly_simulation_data_978_loads_by_node_id import (
-            BTAssemblySimulationData978LoadsByNodeId,  # noqa: PLC0415
-        )
+        from ..models.bt_assembly_simulation_data_978_loads_by_node_id import BTAssemblySimulationData978LoadsByNodeId  # noqa: PLC0415
         from ..models.btm_boundary_condition_5556 import BTMBoundaryCondition5556  # noqa: PLC0415
         from ..models.btm_load_3538 import BTMLoad3538  # noqa: PLC0415
         from ..models.btm_rigid_feature_3076 import BTMRigidFeature3076  # noqa: PLC0415

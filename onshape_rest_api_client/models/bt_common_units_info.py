@@ -53,9 +53,7 @@ class BTCommonUnitsInfo:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_common_unit_info import BTCommonUnitInfo  # noqa: PLC0415
-        from ..models.bt_common_units_info_quantity_type_to_base_units import (
-            BTCommonUnitsInfoQuantityTypeToBaseUnits,  # noqa: PLC0415
-        )
+        from ..models.bt_common_units_info_quantity_type_to_base_units import BTCommonUnitsInfoQuantityTypeToBaseUnits  # noqa: PLC0415
 
         d = dict(src_dict)
         _quantity_type_to_base_units = d.pop("quantityTypeToBaseUnits", UNSET)

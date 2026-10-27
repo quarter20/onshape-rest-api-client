@@ -76,9 +76,7 @@ class BTMoveElementInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_move_element_info_element_original_to_new_map import (
-            BTMoveElementInfoElementOriginalToNewMap,  # noqa: PLC0415
-        )
+        from ..models.bt_move_element_info_element_original_to_new_map import BTMoveElementInfoElementOriginalToNewMap  # noqa: PLC0415
 
         d = dict(src_dict)
         _element_original_to_new_map = d.pop("elementOriginalToNewMap", UNSET)

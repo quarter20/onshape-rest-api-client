@@ -103,9 +103,7 @@ class BTNodeWithReference:
         from ..models.bt_microversion_id_366 import BTMicroversionId366  # noqa: PLC0415
         from ..models.bt_object_id import BTObjectId  # noqa: PLC0415
         from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
-        from ..models.btm_parameter_reference_with_configuration_3028 import (
-            BTMParameterReferenceWithConfiguration3028,  # noqa: PLC0415
-        )
+        from ..models.btm_parameter_reference_with_configuration_3028 import BTMParameterReferenceWithConfiguration3028  # noqa: PLC0415
 
         d = dict(src_dict)
         _configuration = d.pop("configuration", UNSET)

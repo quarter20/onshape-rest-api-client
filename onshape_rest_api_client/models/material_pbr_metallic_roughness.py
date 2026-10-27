@@ -86,9 +86,7 @@ class MaterialPbrMetallicRoughness:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.material_pbr_metallic_roughness_extensions import (
-            MaterialPbrMetallicRoughnessExtensions,  # noqa: PLC0415
-        )
+        from ..models.material_pbr_metallic_roughness_extensions import MaterialPbrMetallicRoughnessExtensions  # noqa: PLC0415
         from ..models.material_pbr_metallic_roughness_extras import MaterialPbrMetallicRoughnessExtras  # noqa: PLC0415
         from ..models.texture_info import TextureInfo  # noqa: PLC0415
 

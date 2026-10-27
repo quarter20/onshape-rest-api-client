@@ -183,9 +183,7 @@ class BTParameterSpecReferencePartStudio1256:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_computed_configuration_input_spec_2525 import (
-            BTComputedConfigurationInputSpec2525,  # noqa: PLC0415
-        )
+        from ..models.bt_computed_configuration_input_spec_2525 import BTComputedConfigurationInputSpec2525  # noqa: PLC0415
         from ..models.bt_parameter_visibility_condition_177 import BTParameterVisibilityCondition177  # noqa: PLC0415
         from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
 

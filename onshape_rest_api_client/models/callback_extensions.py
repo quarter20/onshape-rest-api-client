@@ -27,9 +27,7 @@ class CallbackExtensions:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.callback_extensions_additional_property import (
-            CallbackExtensionsAdditionalProperty,  # noqa: PLC0415
-        )
+        from ..models.callback_extensions_additional_property import CallbackExtensionsAdditionalProperty  # noqa: PLC0415
 
         d = dict(src_dict)
         callback_extensions = cls()

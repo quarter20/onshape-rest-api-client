@@ -277,9 +277,7 @@ class BTMVariableStudioReference2764:
         from ..models.bt_tree_edit_13 import BTTreeEdit13  # noqa: PLC0415
         from ..models.btm_feature_134 import BTMFeature134  # noqa: PLC0415
         from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
-        from ..models.btm_parameter_reference_with_configuration_3028 import (
-            BTMParameterReferenceWithConfiguration3028,  # noqa: PLC0415
-        )
+        from ..models.btm_parameter_reference_with_configuration_3028 import BTMParameterReferenceWithConfiguration3028  # noqa: PLC0415
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
 
         d = dict(src_dict)

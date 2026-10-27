@@ -117,9 +117,7 @@ class BTLazilyParsedFeatureScript:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_lazily_parsed_feature_script_references import (
-            BTLazilyParsedFeatureScriptReferences,  # noqa: PLC0415
-        )
+        from ..models.bt_lazily_parsed_feature_script_references import BTLazilyParsedFeatureScriptReferences  # noqa: PLC0415
         from ..models.bt_ui_feature_studio_checksum_2438 import BTUiFeatureStudioChecksum2438  # noqa: PLC0415
         from ..models.btm_model_141 import BTMModel141  # noqa: PLC0415
         from ..models.btp_module_234 import BTPModule234  # noqa: PLC0415

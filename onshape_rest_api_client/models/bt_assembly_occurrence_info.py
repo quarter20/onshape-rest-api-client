@@ -68,9 +68,7 @@ class BTAssemblyOccurrenceInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_assembly_occurrence_info_mate_statuses import (
-            BTAssemblyOccurrenceInfoMateStatuses,  # noqa: PLC0415
-        )
+        from ..models.bt_assembly_occurrence_info_mate_statuses import BTAssemblyOccurrenceInfoMateStatuses  # noqa: PLC0415
 
         d = dict(src_dict)
         fixed = d.pop("fixed", UNSET)

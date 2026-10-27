@@ -29,6 +29,8 @@ class BTAssemblyPartInfo:
         full_configuration (str | Unset):
         is_standard_content (bool | Unset):
         mate_connectors (list[BTAssemblyMateConnectorInfo] | Unset):
+        metadata_href (str | Unset): URI to fetch metadata for this part. Resolves to the correct metadata route
+            (regular or standard content) automatically, so callers do not need to branch on isStandardContent.
         part_id (str | Unset):
         part_number (str | Unset):
         revision (str | Unset):
@@ -43,6 +45,7 @@ class BTAssemblyPartInfo:
     full_configuration: str | Unset = UNSET
     is_standard_content: bool | Unset = UNSET
     mate_connectors: list[BTAssemblyMateConnectorInfo] | Unset = UNSET
+    metadata_href: str | Unset = UNSET
     part_id: str | Unset = UNSET
     part_number: str | Unset = UNSET
     revision: str | Unset = UNSET
@@ -74,6 +77,8 @@ class BTAssemblyPartInfo:
                 mate_connectors_item = mate_connectors_item_data.to_dict()
                 mate_connectors.append(mate_connectors_item)
 
+        metadata_href = self.metadata_href
+
         part_id = self.part_id
 
         part_number = self.part_number
@@ -101,6 +106,8 @@ class BTAssemblyPartInfo:
             field_dict["isStandardContent"] = is_standard_content
         if mate_connectors is not UNSET:
             field_dict["mateConnectors"] = mate_connectors
+        if metadata_href is not UNSET:
+            field_dict["metadataHref"] = metadata_href
         if part_id is not UNSET:
             field_dict["partId"] = part_id
         if part_number is not UNSET:
@@ -145,6 +152,8 @@ class BTAssemblyPartInfo:
 
                 mate_connectors.append(mate_connectors_item)
 
+        metadata_href = d.pop("metadataHref", UNSET)
+
         part_id = d.pop("partId", UNSET)
 
         part_number = d.pop("partNumber", UNSET)
@@ -161,6 +170,7 @@ class BTAssemblyPartInfo:
             full_configuration=full_configuration,
             is_standard_content=is_standard_content,
             mate_connectors=mate_connectors,
+            metadata_href=metadata_href,
             part_id=part_id,
             part_number=part_number,
             revision=revision,

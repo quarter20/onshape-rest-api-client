@@ -138,9 +138,7 @@ class BTDocumentParams:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_document_element_creation_descriptor import (
-            BTDocumentElementCreationDescriptor,  # noqa: PLC0415
-        )
+        from ..models.bt_document_element_creation_descriptor import BTDocumentElementCreationDescriptor  # noqa: PLC0415
 
         d = dict(src_dict)
         description = d.pop("description", UNSET)

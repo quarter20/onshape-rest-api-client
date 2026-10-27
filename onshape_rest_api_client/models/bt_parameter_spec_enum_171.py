@@ -203,9 +203,7 @@ class BTParameterSpecEnum171:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_enum_option_visibility_condition_list_2936 import (
-            BTEnumOptionVisibilityConditionList2936,  # noqa: PLC0415
-        )
+        from ..models.bt_enum_option_visibility_condition_list_2936 import BTEnumOptionVisibilityConditionList2936  # noqa: PLC0415
         from ..models.bt_parameter_spec_enum_171_enum_value_to_visibility_condition import (
             BTParameterSpecEnum171EnumValueToVisibilityCondition,  # noqa: PLC0415
         )

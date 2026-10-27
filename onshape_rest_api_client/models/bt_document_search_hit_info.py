@@ -115,9 +115,7 @@ class BTDocumentSearchHitInfo:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_document_search_hit_info_highlighted_fields import (
-            BTDocumentSearchHitInfoHighlightedFields,  # noqa: PLC0415
-        )
+        from ..models.bt_document_search_hit_info_highlighted_fields import BTDocumentSearchHitInfoHighlightedFields  # noqa: PLC0415
         from ..models.bt_document_search_hit_info_source_map import BTDocumentSearchHitInfoSourceMap  # noqa: PLC0415
         from ..models.bt_legacy_search_hit import BTLegacySearchHit  # noqa: PLC0415
 

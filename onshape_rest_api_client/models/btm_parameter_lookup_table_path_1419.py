@@ -85,9 +85,7 @@ class BTMParameterLookupTablePath1419:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.btm_parameter_lookup_table_path_1419_value import (
-            BTMParameterLookupTablePath1419Value,  # noqa: PLC0415
-        )
+        from ..models.btm_parameter_lookup_table_path_1419_value import BTMParameterLookupTablePath1419Value  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)

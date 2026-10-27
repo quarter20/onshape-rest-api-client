@@ -168,9 +168,7 @@ class BTMRigidFeature3076:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.btm_feature_134 import BTMFeature134  # noqa: PLC0415
         from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
-        from ..models.btm_rigid_feature_3076_suppressed_in_simulations import (
-            BTMRigidFeature3076SuppressedInSimulations,  # noqa: PLC0415
-        )
+        from ..models.btm_rigid_feature_3076_suppressed_in_simulations import BTMRigidFeature3076SuppressedInSimulations  # noqa: PLC0415
         from ..models.btm_suppression_state_1924 import BTMSuppressionState1924  # noqa: PLC0415
 
         d = dict(src_dict)

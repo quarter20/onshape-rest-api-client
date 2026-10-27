@@ -33,6 +33,8 @@ class BTRootAssemblyInfo:
         full_configuration (str | Unset):
         instances (list[BTAssemblyInstanceInfo] | Unset): List of instances including those created by patterns and
             replicates.
+        is_rigid (bool | Unset): Rigid status of assembly
+        metadata_href (str | Unset): URI to fetch metadata for this assembly.
         occurrences (list[BTAssemblyOccurrenceInfo] | Unset):
         parametric_instances (list[BTAssemblyParametricInstanceInfo] | Unset): List of parametric instances.
         part_number (str | Unset):
@@ -48,6 +50,8 @@ class BTRootAssemblyInfo:
     features: list[BTAssemblyFeatureInfo] | Unset = UNSET
     full_configuration: str | Unset = UNSET
     instances: list[BTAssemblyInstanceInfo] | Unset = UNSET
+    is_rigid: bool | Unset = UNSET
+    metadata_href: str | Unset = UNSET
     occurrences: list[BTAssemblyOccurrenceInfo] | Unset = UNSET
     parametric_instances: list[BTAssemblyParametricInstanceInfo] | Unset = UNSET
     part_number: str | Unset = UNSET
@@ -81,6 +85,10 @@ class BTRootAssemblyInfo:
             for instances_item_data in self.instances:
                 instances_item = instances_item_data.to_dict()
                 instances.append(instances_item)
+
+        is_rigid = self.is_rigid
+
+        metadata_href = self.metadata_href
 
         occurrences: list[dict[str, Any]] | Unset = UNSET
         if not isinstance(self.occurrences, Unset):
@@ -126,6 +134,10 @@ class BTRootAssemblyInfo:
             field_dict["fullConfiguration"] = full_configuration
         if instances is not UNSET:
             field_dict["instances"] = instances
+        if is_rigid is not UNSET:
+            field_dict["isRigid"] = is_rigid
+        if metadata_href is not UNSET:
+            field_dict["metadataHref"] = metadata_href
         if occurrences is not UNSET:
             field_dict["occurrences"] = occurrences
         if parametric_instances is not UNSET:
@@ -178,6 +190,10 @@ class BTRootAssemblyInfo:
 
                 instances.append(instances_item)
 
+        is_rigid = d.pop("isRigid", UNSET)
+
+        metadata_href = d.pop("metadataHref", UNSET)
+
         _occurrences = d.pop("occurrences", UNSET)
         occurrences: list[BTAssemblyOccurrenceInfo] | Unset = UNSET
         if _occurrences is not UNSET:
@@ -218,6 +234,8 @@ class BTRootAssemblyInfo:
             features=features,
             full_configuration=full_configuration,
             instances=instances,
+            is_rigid=is_rigid,
+            metadata_href=metadata_href,
             occurrences=occurrences,
             parametric_instances=parametric_instances,
             part_number=part_number,

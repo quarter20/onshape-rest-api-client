@@ -90,9 +90,7 @@ class BTPartProperties293:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_configured_part_properties_2645 import BTConfiguredPartProperties2645  # noqa: PLC0415
         from ..models.bt_one_part_properties_230 import BTOnePartProperties230  # noqa: PLC0415
-        from ..models.bt_part_properties_293_identity_id_to_query_index import (
-            BTPartProperties293IdentityIdToQueryIndex,  # noqa: PLC0415
-        )
+        from ..models.bt_part_properties_293_identity_id_to_query_index import BTPartProperties293IdentityIdToQueryIndex  # noqa: PLC0415
         from ..models.bt_tessellation_properties_927 import BTTessellationProperties927  # noqa: PLC0415
 
         d = dict(src_dict)

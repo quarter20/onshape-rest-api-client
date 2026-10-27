@@ -43,6 +43,7 @@ class BTFSTable953:
         cross_highlight_data (BTTableBaseCrossHighlightData2609 | Unset):
         hidden_column_ids_to_names (BTFSTable953HiddenColumnIdsToNames | Unset):
         individual_table_properties (BTIndividualTableProperties3760 | Unset):
+        title_suffix (str | Unset):
     """
 
     all_row_values: list[list[str]] | Unset = UNSET
@@ -63,6 +64,7 @@ class BTFSTable953:
     cross_highlight_data: BTTableBaseCrossHighlightData2609 | Unset = UNSET
     hidden_column_ids_to_names: BTFSTable953HiddenColumnIdsToNames | Unset = UNSET
     individual_table_properties: BTIndividualTableProperties3760 | Unset = UNSET
+    title_suffix: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -128,6 +130,8 @@ class BTFSTable953:
         if not isinstance(self.individual_table_properties, Unset):
             individual_table_properties = self.individual_table_properties.to_dict()
 
+        title_suffix = self.title_suffix
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
@@ -167,6 +171,8 @@ class BTFSTable953:
             field_dict["hiddenColumnIdsToNames"] = hidden_column_ids_to_names
         if individual_table_properties is not UNSET:
             field_dict["individualTableProperties"] = individual_table_properties
+        if title_suffix is not UNSET:
+            field_dict["titleSuffix"] = title_suffix
 
         return field_dict
 
@@ -177,9 +183,7 @@ class BTFSTable953:
         from ..models.bt_table_column_info_1222 import BTTableColumnInfo1222  # noqa: PLC0415
         from ..models.bt_table_row_1054 import BTTableRow1054  # noqa: PLC0415
         from ..models.bt_table_sort_order_4371 import BTTableSortOrder4371  # noqa: PLC0415
-        from ..models.btfs_table_953_hidden_column_ids_to_names import (
-            BTFSTable953HiddenColumnIdsToNames,  # noqa: PLC0415
-        )
+        from ..models.btfs_table_953_hidden_column_ids_to_names import BTFSTable953HiddenColumnIdsToNames  # noqa: PLC0415
 
         d = dict(src_dict)
         _all_row_values = d.pop("allRowValues", UNSET)
@@ -264,6 +268,8 @@ class BTFSTable953:
         else:
             individual_table_properties = BTIndividualTableProperties3760.from_dict(_individual_table_properties)
 
+        title_suffix = d.pop("titleSuffix", UNSET)
+
         btfs_table_953 = cls(
             all_row_values=all_row_values,
             bt_type=bt_type,
@@ -283,6 +289,7 @@ class BTFSTable953:
             cross_highlight_data=cross_highlight_data,
             hidden_column_ids_to_names=hidden_column_ids_to_names,
             individual_table_properties=individual_table_properties,
+            title_suffix=title_suffix,
         )
 
         btfs_table_953.additional_properties = d

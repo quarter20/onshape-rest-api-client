@@ -156,9 +156,7 @@ class BTParameterSpecLookupTablePath761:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.bt_parameter_lookup_table_list_entry_1916 import (
-            BTParameterLookupTableListEntry1916,  # noqa: PLC0415
-        )
+        from ..models.bt_parameter_lookup_table_list_entry_1916 import BTParameterLookupTableListEntry1916  # noqa: PLC0415
         from ..models.bt_parameter_visibility_condition_177 import BTParameterVisibilityCondition177  # noqa: PLC0415
         from ..models.btm_parameter_1 import BTMParameter1  # noqa: PLC0415
 

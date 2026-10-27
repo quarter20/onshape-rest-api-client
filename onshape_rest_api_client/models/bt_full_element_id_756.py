@@ -76,9 +76,7 @@ class BTFullElementId756:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.bt_microversion_id_366 import BTMicroversionId366  # noqa: PLC0415
-        from ..models.bt_microversion_id_and_configuration_2338 import (
-            BTMicroversionIdAndConfiguration2338,  # noqa: PLC0415
-        )
+        from ..models.bt_microversion_id_and_configuration_2338 import BTMicroversionIdAndConfiguration2338  # noqa: PLC0415
 
         d = dict(src_dict)
         bt_type = d.pop("btType", UNSET)
