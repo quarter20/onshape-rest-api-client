@@ -96,6 +96,7 @@ class BTTranslateFormatParams:
             permission to both.
         maximum_chord_length (float | Unset): Determines the maximum of a triangle edge length. Lower values result in a
             finer geometry and higher values result in coarser geometry. Example: 0.01.
+        merge_fastened_components (bool | Unset):
         notify_user (bool | Unset): Send notification to the user client.
         occurrences_to_export (str | Unset): IDs of the occurrences to retrieve. Use comma-separated IDs for multiple
             instances (example: occurrencesToExport=JHK,JHD).
@@ -207,6 +208,7 @@ class BTTranslateFormatParams:
     link_document_id: str | Unset = UNSET
     link_document_workspace_id: str | Unset = UNSET
     maximum_chord_length: float | Unset = UNSET
+    merge_fastened_components: bool | Unset = UNSET
     notify_user: bool | Unset = UNSET
     occurrences_to_export: str | Unset = UNSET
     one_part_per_doc: bool | Unset = UNSET
@@ -373,6 +375,8 @@ class BTTranslateFormatParams:
         link_document_workspace_id = self.link_document_workspace_id
 
         maximum_chord_length = self.maximum_chord_length
+
+        merge_fastened_components = self.merge_fastened_components
 
         notify_user = self.notify_user
 
@@ -607,6 +611,8 @@ class BTTranslateFormatParams:
             field_dict["linkDocumentWorkspaceId"] = link_document_workspace_id
         if maximum_chord_length is not UNSET:
             field_dict["maximumChordLength"] = maximum_chord_length
+        if merge_fastened_components is not UNSET:
+            field_dict["mergeFastenedComponents"] = merge_fastened_components
         if notify_user is not UNSET:
             field_dict["notifyUser"] = notify_user
         if occurrences_to_export is not UNSET:
@@ -825,6 +831,8 @@ class BTTranslateFormatParams:
 
         maximum_chord_length = d.pop("maximumChordLength", UNSET)
 
+        merge_fastened_components = d.pop("mergeFastenedComponents", UNSET)
+
         notify_user = d.pop("notifyUser", UNSET)
 
         occurrences_to_export = d.pop("occurrencesToExport", UNSET)
@@ -1018,6 +1026,7 @@ class BTTranslateFormatParams:
             link_document_id=link_document_id,
             link_document_workspace_id=link_document_workspace_id,
             maximum_chord_length=maximum_chord_length,
+            merge_fastened_components=merge_fastened_components,
             notify_user=notify_user,
             occurrences_to_export=occurrences_to_export,
             one_part_per_doc=one_part_per_doc,

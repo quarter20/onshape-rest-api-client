@@ -34,6 +34,7 @@ class BTCompanyUserInfo:
         make_personal_copies (bool | Unset):
         name (str | Unset): Name of the resource.
         scheduled_removal_date (datetime.datetime | Unset):
+        scheduled_removal_display_date (datetime.datetime | Unset):
         show_off_boarding_notification (bool | Unset):
         state (int | Unset):
         user (BTUserBasicSummaryInfo | Unset):
@@ -53,6 +54,7 @@ class BTCompanyUserInfo:
     make_personal_copies: bool | Unset = UNSET
     name: str | Unset = UNSET
     scheduled_removal_date: datetime.datetime | Unset = UNSET
+    scheduled_removal_display_date: datetime.datetime | Unset = UNSET
     show_off_boarding_notification: bool | Unset = UNSET
     state: int | Unset = UNSET
     user: BTUserBasicSummaryInfo | Unset = UNSET
@@ -92,6 +94,10 @@ class BTCompanyUserInfo:
         scheduled_removal_date: str | Unset = UNSET
         if not isinstance(self.scheduled_removal_date, Unset):
             scheduled_removal_date = self.scheduled_removal_date.isoformat()
+
+        scheduled_removal_display_date: str | Unset = UNSET
+        if not isinstance(self.scheduled_removal_display_date, Unset):
+            scheduled_removal_display_date = self.scheduled_removal_display_date.isoformat()
 
         show_off_boarding_notification = self.show_off_boarding_notification
 
@@ -134,6 +140,8 @@ class BTCompanyUserInfo:
             field_dict["name"] = name
         if scheduled_removal_date is not UNSET:
             field_dict["scheduledRemovalDate"] = scheduled_removal_date
+        if scheduled_removal_display_date is not UNSET:
+            field_dict["scheduledRemovalDisplayDate"] = scheduled_removal_display_date
         if show_off_boarding_notification is not UNSET:
             field_dict["showOffBoardingNotification"] = show_off_boarding_notification
         if state is not UNSET:
@@ -197,6 +205,13 @@ class BTCompanyUserInfo:
         else:
             scheduled_removal_date = datetime.datetime.fromisoformat(_scheduled_removal_date)
 
+        _scheduled_removal_display_date = d.pop("scheduledRemovalDisplayDate", UNSET)
+        scheduled_removal_display_date: datetime.datetime | Unset
+        if isinstance(_scheduled_removal_display_date, Unset):
+            scheduled_removal_display_date = UNSET
+        else:
+            scheduled_removal_display_date = datetime.datetime.fromisoformat(_scheduled_removal_display_date)
+
         show_off_boarding_notification = d.pop("showOffBoardingNotification", UNSET)
 
         state = d.pop("state", UNSET)
@@ -230,6 +245,7 @@ class BTCompanyUserInfo:
             make_personal_copies=make_personal_copies,
             name=name,
             scheduled_removal_date=scheduled_removal_date,
+            scheduled_removal_display_date=scheduled_removal_display_date,
             show_off_boarding_notification=show_off_boarding_notification,
             state=state,
             user=user,

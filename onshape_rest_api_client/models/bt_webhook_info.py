@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING, Any, TypeVar, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..models.scope import Scope
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -40,6 +41,9 @@ class BTWebhookInfo:
         name (str | Unset): Name of the resource.
         options (BTWebhookOptions | Unset):
         project_id (str | Unset):
+        scope (Scope | Unset): USER subscribes the authenticated user to assigned comment threads and direct mentions
+            across accessible documents. Only comment create, update, and delete events are supported. Omit to retain
+            document, company, or application scoping. Example: USER.
         url (str | Unset):
         view_ref (str | Unset): URI to visualize the resource in a webclient if applicable.
     """
@@ -61,6 +65,7 @@ class BTWebhookInfo:
     name: str | Unset = UNSET
     options: BTWebhookOptions | Unset = UNSET
     project_id: str | Unset = UNSET
+    scope: Scope | Unset = UNSET
     url: str | Unset = UNSET
     view_ref: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -110,6 +115,10 @@ class BTWebhookInfo:
 
         project_id = self.project_id
 
+        scope: str | Unset = UNSET
+        if not isinstance(self.scope, Unset):
+            scope = self.scope.value
+
         url = self.url
 
         view_ref = self.view_ref
@@ -151,6 +160,8 @@ class BTWebhookInfo:
             field_dict["options"] = options
         if project_id is not UNSET:
             field_dict["projectId"] = project_id
+        if scope is not UNSET:
+            field_dict["scope"] = scope
         if url is not UNSET:
             field_dict["url"] = url
         if view_ref is not UNSET:
@@ -218,6 +229,13 @@ class BTWebhookInfo:
 
         project_id = d.pop("projectId", UNSET)
 
+        _scope = d.pop("scope", UNSET)
+        scope: Scope | Unset
+        if isinstance(_scope, Unset):
+            scope = UNSET
+        else:
+            scope = Scope(_scope)
+
         url = d.pop("url", UNSET)
 
         view_ref = d.pop("viewRef", UNSET)
@@ -240,6 +258,7 @@ class BTWebhookInfo:
             name=name,
             options=options,
             project_id=project_id,
+            scope=scope,
             url=url,
             view_ref=view_ref,
         )

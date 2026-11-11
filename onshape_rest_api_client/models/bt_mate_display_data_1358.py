@@ -24,21 +24,21 @@ class BTMateDisplayData1358:
         bt_type (str | Unset): Type of JSON object.
         hidden (bool | Unset):
         is_derived_feature (bool | Unset):
+        mate_connector_ids (list[str] | Unset):
+        mate_type (GBTMateType | Unset):
         node_id (str | Unset):
         owner_occurrence (BTOccurrence74 | Unset):
         status (GBTAssemblyFeatureDisplayStatus | Unset):
-        mate_connector_ids (list[str] | Unset):
-        mate_type (GBTMateType | Unset):
     """
 
     bt_type: str | Unset = UNSET
     hidden: bool | Unset = UNSET
     is_derived_feature: bool | Unset = UNSET
+    mate_connector_ids: list[str] | Unset = UNSET
+    mate_type: GBTMateType | Unset = UNSET
     node_id: str | Unset = UNSET
     owner_occurrence: BTOccurrence74 | Unset = UNSET
     status: GBTAssemblyFeatureDisplayStatus | Unset = UNSET
-    mate_connector_ids: list[str] | Unset = UNSET
-    mate_type: GBTMateType | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -47,6 +47,14 @@ class BTMateDisplayData1358:
         hidden = self.hidden
 
         is_derived_feature = self.is_derived_feature
+
+        mate_connector_ids: list[str] | Unset = UNSET
+        if not isinstance(self.mate_connector_ids, Unset):
+            mate_connector_ids = self.mate_connector_ids
+
+        mate_type: str | Unset = UNSET
+        if not isinstance(self.mate_type, Unset):
+            mate_type = self.mate_type.value
 
         node_id = self.node_id
 
@@ -58,14 +66,6 @@ class BTMateDisplayData1358:
         if not isinstance(self.status, Unset):
             status = self.status.value
 
-        mate_connector_ids: list[str] | Unset = UNSET
-        if not isinstance(self.mate_connector_ids, Unset):
-            mate_connector_ids = self.mate_connector_ids
-
-        mate_type: str | Unset = UNSET
-        if not isinstance(self.mate_type, Unset):
-            mate_type = self.mate_type.value
-
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
@@ -75,16 +75,16 @@ class BTMateDisplayData1358:
             field_dict["hidden"] = hidden
         if is_derived_feature is not UNSET:
             field_dict["isDerivedFeature"] = is_derived_feature
+        if mate_connector_ids is not UNSET:
+            field_dict["mateConnectorIds"] = mate_connector_ids
+        if mate_type is not UNSET:
+            field_dict["mateType"] = mate_type
         if node_id is not UNSET:
             field_dict["nodeId"] = node_id
         if owner_occurrence is not UNSET:
             field_dict["ownerOccurrence"] = owner_occurrence
         if status is not UNSET:
             field_dict["status"] = status
-        if mate_connector_ids is not UNSET:
-            field_dict["mateConnectorIds"] = mate_connector_ids
-        if mate_type is not UNSET:
-            field_dict["mateType"] = mate_type
 
         return field_dict
 
@@ -98,6 +98,15 @@ class BTMateDisplayData1358:
         hidden = d.pop("hidden", UNSET)
 
         is_derived_feature = d.pop("isDerivedFeature", UNSET)
+
+        mate_connector_ids = cast(list[str], d.pop("mateConnectorIds", UNSET))
+
+        _mate_type = d.pop("mateType", UNSET)
+        mate_type: GBTMateType | Unset
+        if isinstance(_mate_type, Unset):
+            mate_type = UNSET
+        else:
+            mate_type = GBTMateType(_mate_type)
 
         node_id = d.pop("nodeId", UNSET)
 
@@ -115,24 +124,15 @@ class BTMateDisplayData1358:
         else:
             status = GBTAssemblyFeatureDisplayStatus(_status)
 
-        mate_connector_ids = cast(list[str], d.pop("mateConnectorIds", UNSET))
-
-        _mate_type = d.pop("mateType", UNSET)
-        mate_type: GBTMateType | Unset
-        if isinstance(_mate_type, Unset):
-            mate_type = UNSET
-        else:
-            mate_type = GBTMateType(_mate_type)
-
         bt_mate_display_data_1358 = cls(
             bt_type=bt_type,
             hidden=hidden,
             is_derived_feature=is_derived_feature,
+            mate_connector_ids=mate_connector_ids,
+            mate_type=mate_type,
             node_id=node_id,
             owner_occurrence=owner_occurrence,
             status=status,
-            mate_connector_ids=mate_connector_ids,
-            mate_type=mate_type,
         )
 
         bt_mate_display_data_1358.additional_properties = d

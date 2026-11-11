@@ -361,7 +361,7 @@ if TYPE_CHECKING:
     from .bt_derived_assembly_mirror_4204 import BTDerivedAssemblyMirror4204
     from .bt_device_login_secret_info import BTDeviceLoginSecretInfo
     from .bt_diff_info import BTDiffInfo
-    from .bt_diff_info_collection_changes import BTDiffInfoCollectionChanges
+    from .bt_diff_info_changes import BTDiffInfoChanges
     from .bt_diff_info_collection_type import BTDiffInfoCollectionType
     from .bt_diff_json_response_2725 import BTDiffJsonResponse2725
     from .bt_diff_json_response_2725_patch import BTDiffJsonResponse2725Patch
@@ -1563,6 +1563,7 @@ if TYPE_CHECKING:
     from .gbt_parasolid_encoding_type import GBTParasolidEncodingType
     from .gbt_part_color_cycle_version import GBTPartColorCycleVersion
     from .gbt_part_fault_visibility import GBTPartFaultVisibility
+    from .gbt_part_purpose import GBTPartPurpose
     from .gbt_part_studio_display_data_version import GBTPartStudioDisplayDataVersion
     from .gbt_part_studio_instance_type import GBTPartStudioInstanceType
     from .gbt_part_studio_item_type import GBTPartStudioItemType
@@ -1825,6 +1826,7 @@ if TYPE_CHECKING:
     from .schema_object_json_schema_impl import SchemaObjectJsonSchemaImpl
     from .schema_pattern_properties import SchemaPatternProperties
     from .schema_properties import SchemaProperties
+    from .scope import Scope
     from .search_response_default import SearchResponseDefault
     from .security_requirement import SecurityRequirement
     from .security_scheme import SecurityScheme
@@ -2202,7 +2204,7 @@ _LAZY_MODULES: dict[str, str] = {
     "BTDerivedAssemblyMirror4204": "bt_derived_assembly_mirror_4204",
     "BTDeviceLoginSecretInfo": "bt_device_login_secret_info",
     "BTDiffInfo": "bt_diff_info",
-    "BTDiffInfoCollectionChanges": "bt_diff_info_collection_changes",
+    "BTDiffInfoChanges": "bt_diff_info_changes",
     "BTDiffInfoCollectionType": "bt_diff_info_collection_type",
     "BTDiffJsonResponse2725": "bt_diff_json_response_2725",
     "BTDiffJsonResponse2725Patch": "bt_diff_json_response_2725_patch",
@@ -3324,6 +3326,7 @@ _LAZY_MODULES: dict[str, str] = {
     "GBTParasolidEncodingType": "gbt_parasolid_encoding_type",
     "GBTPartColorCycleVersion": "gbt_part_color_cycle_version",
     "GBTPartFaultVisibility": "gbt_part_fault_visibility",
+    "GBTPartPurpose": "gbt_part_purpose",
     "GBTPartStudioDisplayDataVersion": "gbt_part_studio_display_data_version",
     "GBTPartStudioInstanceType": "gbt_part_studio_instance_type",
     "GBTPartStudioItemType": "gbt_part_studio_item_type",
@@ -3576,6 +3579,7 @@ _LAZY_MODULES: dict[str, str] = {
     "SchemaObjectJsonSchemaImpl": "schema_object_json_schema_impl",
     "SchemaPatternProperties": "schema_pattern_properties",
     "SchemaProperties": "schema_properties",
+    "Scope": "scope",
     "SearchResponseDefault": "search_response_default",
     "SecurityRequirement": "security_requirement",
     "SecurityScheme": "security_scheme",
@@ -3988,7 +3992,7 @@ __all__ = (
     "BTDerivedAssemblyMirror4204",
     "BTDeviceLoginSecretInfo",
     "BTDiffInfo",
-    "BTDiffInfoCollectionChanges",
+    "BTDiffInfoChanges",
     "BTDiffInfoCollectionType",
     "BTDiffJsonResponse2725",
     "BTDiffJsonResponse2725Patch",
@@ -5096,6 +5100,7 @@ __all__ = (
     "GBTParasolidEncodingType",
     "GBTPartColorCycleVersion",
     "GBTPartFaultVisibility",
+    "GBTPartPurpose",
     "GBTPartStudioDisplayDataVersion",
     "GBTPartStudioInstanceType",
     "GBTPartStudioItemType",
@@ -5343,6 +5348,7 @@ __all__ = (
     "SchemaObjectJsonSchemaImpl",
     "SchemaPatternProperties",
     "SchemaProperties",
+    "Scope",
     "SearchResponseDefault",
     "SecurityRequirement",
     "SecurityScheme",

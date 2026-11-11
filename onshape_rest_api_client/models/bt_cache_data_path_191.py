@@ -19,6 +19,7 @@ class BTCacheDataPath191:
         can_accept_new_context (bool | Unset):
         document_id (str | Unset):
         element_id (str | Unset):
+        fallback_key (str | Unset):
         immutable_context_version (str | Unset):
         immutable_path_contents_should_exist (bool | Unset):
         is_immutable_context_path (bool | Unset):
@@ -32,6 +33,7 @@ class BTCacheDataPath191:
     can_accept_new_context: bool | Unset = UNSET
     document_id: str | Unset = UNSET
     element_id: str | Unset = UNSET
+    fallback_key: str | Unset = UNSET
     immutable_context_version: str | Unset = UNSET
     immutable_path_contents_should_exist: bool | Unset = UNSET
     is_immutable_context_path: bool | Unset = UNSET
@@ -49,6 +51,8 @@ class BTCacheDataPath191:
         document_id = self.document_id
 
         element_id = self.element_id
+
+        fallback_key = self.fallback_key
 
         immutable_context_version = self.immutable_context_version
 
@@ -75,6 +79,8 @@ class BTCacheDataPath191:
             field_dict["documentId"] = document_id
         if element_id is not UNSET:
             field_dict["elementId"] = element_id
+        if fallback_key is not UNSET:
+            field_dict["fallbackKey"] = fallback_key
         if immutable_context_version is not UNSET:
             field_dict["immutableContextVersion"] = immutable_context_version
         if immutable_path_contents_should_exist is not UNSET:
@@ -103,6 +109,8 @@ class BTCacheDataPath191:
 
         element_id = d.pop("elementId", UNSET)
 
+        fallback_key = d.pop("fallbackKey", UNSET)
+
         immutable_context_version = d.pop("immutableContextVersion", UNSET)
 
         immutable_path_contents_should_exist = d.pop("immutablePathContentsShouldExist", UNSET)
@@ -122,6 +130,7 @@ class BTCacheDataPath191:
             can_accept_new_context=can_accept_new_context,
             document_id=document_id,
             element_id=element_id,
+            fallback_key=fallback_key,
             immutable_context_version=immutable_context_version,
             immutable_path_contents_should_exist=immutable_path_contents_should_exist,
             is_immutable_context_path=is_immutable_context_path,

@@ -20,6 +20,7 @@ class BTEditingLogic2350:
         wants_clicked_button (bool | Unset):
         wants_hidden_bodies (bool | Unset):
         wants_is_creating (bool | Unset):
+        wants_library_info (bool | Unset):
         wants_specified_parameters (bool | Unset):
     """
 
@@ -28,6 +29,7 @@ class BTEditingLogic2350:
     wants_clicked_button: bool | Unset = UNSET
     wants_hidden_bodies: bool | Unset = UNSET
     wants_is_creating: bool | Unset = UNSET
+    wants_library_info: bool | Unset = UNSET
     wants_specified_parameters: bool | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -41,6 +43,8 @@ class BTEditingLogic2350:
         wants_hidden_bodies = self.wants_hidden_bodies
 
         wants_is_creating = self.wants_is_creating
+
+        wants_library_info = self.wants_library_info
 
         wants_specified_parameters = self.wants_specified_parameters
 
@@ -57,6 +61,8 @@ class BTEditingLogic2350:
             field_dict["wantsHiddenBodies"] = wants_hidden_bodies
         if wants_is_creating is not UNSET:
             field_dict["wantsIsCreating"] = wants_is_creating
+        if wants_library_info is not UNSET:
+            field_dict["wantsLibraryInfo"] = wants_library_info
         if wants_specified_parameters is not UNSET:
             field_dict["wantsSpecifiedParameters"] = wants_specified_parameters
 
@@ -75,6 +81,8 @@ class BTEditingLogic2350:
 
         wants_is_creating = d.pop("wantsIsCreating", UNSET)
 
+        wants_library_info = d.pop("wantsLibraryInfo", UNSET)
+
         wants_specified_parameters = d.pop("wantsSpecifiedParameters", UNSET)
 
         bt_editing_logic_2350 = cls(
@@ -83,6 +91,7 @@ class BTEditingLogic2350:
             wants_clicked_button=wants_clicked_button,
             wants_hidden_bodies=wants_hidden_bodies,
             wants_is_creating=wants_is_creating,
+            wants_library_info=wants_library_info,
             wants_specified_parameters=wants_specified_parameters,
         )
 

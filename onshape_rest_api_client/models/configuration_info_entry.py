@@ -24,6 +24,7 @@ class ConfigurationInfoEntry:
         parameter_name (str | Unset):
         parameter_type (int | Unset):
         parameter_value (str | Unset):
+        parameter_value_in_base_units (float | Unset):
     """
 
     explicit: bool | Unset = UNSET
@@ -35,6 +36,7 @@ class ConfigurationInfoEntry:
     parameter_name: str | Unset = UNSET
     parameter_type: int | Unset = UNSET
     parameter_value: str | Unset = UNSET
+    parameter_value_in_base_units: float | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -55,6 +57,8 @@ class ConfigurationInfoEntry:
         parameter_type = self.parameter_type
 
         parameter_value = self.parameter_value
+
+        parameter_value_in_base_units = self.parameter_value_in_base_units
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -77,6 +81,8 @@ class ConfigurationInfoEntry:
             field_dict["parameterType"] = parameter_type
         if parameter_value is not UNSET:
             field_dict["parameterValue"] = parameter_value
+        if parameter_value_in_base_units is not UNSET:
+            field_dict["parameterValueInBaseUnits"] = parameter_value_in_base_units
 
         return field_dict
 
@@ -101,6 +107,8 @@ class ConfigurationInfoEntry:
 
         parameter_value = d.pop("parameterValue", UNSET)
 
+        parameter_value_in_base_units = d.pop("parameterValueInBaseUnits", UNSET)
+
         configuration_info_entry = cls(
             explicit=explicit,
             is_cosmetic=is_cosmetic,
@@ -111,6 +119,7 @@ class ConfigurationInfoEntry:
             parameter_name=parameter_name,
             parameter_type=parameter_type,
             parameter_value=parameter_value,
+            parameter_value_in_base_units=parameter_value_in_base_units,
         )
 
         configuration_info_entry.additional_properties = d

@@ -38,6 +38,7 @@ class BTInsertablePartDisplayData3103:
         sketch_feature (bool | Unset):
         tessellation_setting_index (int | Unset):
         body_part_data_list (list[BTPartData16] | Unset):
+        has_cosmetic_thread (bool | Unset):
         part_data (BTPartData16 | Unset):
         part_display_data (BTPartDisplayData17 | Unset):
         part_id (str | Unset):
@@ -55,6 +56,7 @@ class BTInsertablePartDisplayData3103:
     sketch_feature: bool | Unset = UNSET
     tessellation_setting_index: int | Unset = UNSET
     body_part_data_list: list[BTPartData16] | Unset = UNSET
+    has_cosmetic_thread: bool | Unset = UNSET
     part_data: BTPartData16 | Unset = UNSET
     part_display_data: BTPartDisplayData17 | Unset = UNSET
     part_id: str | Unset = UNSET
@@ -102,6 +104,8 @@ class BTInsertablePartDisplayData3103:
                 body_part_data_list_item = body_part_data_list_item_data.to_dict()
                 body_part_data_list.append(body_part_data_list_item)
 
+        has_cosmetic_thread = self.has_cosmetic_thread
+
         part_data: dict[str, Any] | Unset = UNSET
         if not isinstance(self.part_data, Unset):
             part_data = self.part_data.to_dict()
@@ -139,6 +143,8 @@ class BTInsertablePartDisplayData3103:
             field_dict["tessellationSettingIndex"] = tessellation_setting_index
         if body_part_data_list is not UNSET:
             field_dict["bodyPartDataList"] = body_part_data_list
+        if has_cosmetic_thread is not UNSET:
+            field_dict["hasCosmeticThread"] = has_cosmetic_thread
         if part_data is not UNSET:
             field_dict["partData"] = part_data
         if part_display_data is not UNSET:
@@ -223,6 +229,8 @@ class BTInsertablePartDisplayData3103:
 
                 body_part_data_list.append(body_part_data_list_item)
 
+        has_cosmetic_thread = d.pop("hasCosmeticThread", UNSET)
+
         _part_data = d.pop("partData", UNSET)
         part_data: BTPartData16 | Unset
         if isinstance(_part_data, Unset):
@@ -253,6 +261,7 @@ class BTInsertablePartDisplayData3103:
             sketch_feature=sketch_feature,
             tessellation_setting_index=tessellation_setting_index,
             body_part_data_list=body_part_data_list,
+            has_cosmetic_thread=has_cosmetic_thread,
             part_data=part_data,
             part_display_data=part_display_data,
             part_id=part_id,

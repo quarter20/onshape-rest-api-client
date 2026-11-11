@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING, Any, TypeVar, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..models.scope import Scope
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -38,6 +39,9 @@ class BTWebhookParams:
         options (BTWebhookOptions | Unset):
         part_id (str | Unset):
         project_id (str | Unset):
+        scope (Scope | Unset): USER subscribes the authenticated user to assigned comment threads and direct mentions
+            across accessible documents. Only comment create, update, and delete events are supported. Omit to retain
+            document, company, or application scoping. Example: USER.
         url (str | Unset):
         user_id (str | Unset):
         version_id (str | Unset):
@@ -61,6 +65,7 @@ class BTWebhookParams:
     options: BTWebhookOptions | Unset = UNSET
     part_id: str | Unset = UNSET
     project_id: str | Unset = UNSET
+    scope: Scope | Unset = UNSET
     url: str | Unset = UNSET
     user_id: str | Unset = UNSET
     version_id: str | Unset = UNSET
@@ -105,6 +110,10 @@ class BTWebhookParams:
         part_id = self.part_id
 
         project_id = self.project_id
+
+        scope: str | Unset = UNSET
+        if not isinstance(self.scope, Unset):
+            scope = self.scope.value
 
         url = self.url
 
@@ -151,6 +160,8 @@ class BTWebhookParams:
             field_dict["partId"] = part_id
         if project_id is not UNSET:
             field_dict["projectId"] = project_id
+        if scope is not UNSET:
+            field_dict["scope"] = scope
         if url is not UNSET:
             field_dict["url"] = url
         if user_id is not UNSET:
@@ -206,6 +217,13 @@ class BTWebhookParams:
 
         project_id = d.pop("projectId", UNSET)
 
+        _scope = d.pop("scope", UNSET)
+        scope: Scope | Unset
+        if isinstance(_scope, Unset):
+            scope = UNSET
+        else:
+            scope = Scope(_scope)
+
         url = d.pop("url", UNSET)
 
         user_id = d.pop("userId", UNSET)
@@ -232,6 +250,7 @@ class BTWebhookParams:
             options=options,
             part_id=part_id,
             project_id=project_id,
+            scope=scope,
             url=url,
             user_id=user_id,
             version_id=version_id,

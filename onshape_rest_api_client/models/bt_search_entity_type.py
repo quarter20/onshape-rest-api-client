@@ -12,6 +12,7 @@ class BTSearchEntityType(StrEnum):
     COMPANY = "company"
     DOCUMENT = "document"
     ELEMENT = "element"
+    ELEMENT_WITH_JSON = "element_with_json"
     FOLDER = "folder"
     FRIEND = "friend"
     GENERIC_TASK = "generic_task"

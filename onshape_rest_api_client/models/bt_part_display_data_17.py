@@ -8,6 +8,7 @@ from attrs import field as _attrs_field
 
 from ..models.gbt_mesh_state import GBTMeshState
 from ..models.gbt_part_fault_visibility import GBTPartFaultVisibility
+from ..models.gbt_part_purpose import GBTPartPurpose
 from ..models.gbt_part_visibility import GBTPartVisibility
 from ..models.gbtsm_application_type import GBTSMApplicationType
 from ..types import UNSET, Unset
@@ -52,6 +53,7 @@ class BTPartDisplayData17:
         name_for_new_cell (str | Unset):
         ordinal (int | Unset):
         part_id (str | Unset):
+        part_purpose (GBTPartPurpose | Unset):
         property_id_to_source (BTPartDisplayData17PropertyIdToSource | Unset):
         referencing_configured_part_node_ids (list[BTObjectId] | Unset):
         sm_application_type (GBTSMApplicationType | Unset):
@@ -82,6 +84,7 @@ class BTPartDisplayData17:
     name_for_new_cell: str | Unset = UNSET
     ordinal: int | Unset = UNSET
     part_id: str | Unset = UNSET
+    part_purpose: GBTPartPurpose | Unset = UNSET
     property_id_to_source: BTPartDisplayData17PropertyIdToSource | Unset = UNSET
     referencing_configured_part_node_ids: list[BTObjectId] | Unset = UNSET
     sm_application_type: GBTSMApplicationType | Unset = UNSET
@@ -155,6 +158,10 @@ class BTPartDisplayData17:
 
         part_id = self.part_id
 
+        part_purpose: str | Unset = UNSET
+        if not isinstance(self.part_purpose, Unset):
+            part_purpose = self.part_purpose.value
+
         property_id_to_source: dict[str, Any] | Unset = UNSET
         if not isinstance(self.property_id_to_source, Unset):
             property_id_to_source = self.property_id_to_source.to_dict()
@@ -225,6 +232,8 @@ class BTPartDisplayData17:
             field_dict["ordinal"] = ordinal
         if part_id is not UNSET:
             field_dict["partId"] = part_id
+        if part_purpose is not UNSET:
+            field_dict["partPurpose"] = part_purpose
         if property_id_to_source is not UNSET:
             field_dict["propertyIdToSource"] = property_id_to_source
         if referencing_configured_part_node_ids is not UNSET:
@@ -339,6 +348,13 @@ class BTPartDisplayData17:
 
         part_id = d.pop("partId", UNSET)
 
+        _part_purpose = d.pop("partPurpose", UNSET)
+        part_purpose: GBTPartPurpose | Unset
+        if isinstance(_part_purpose, Unset):
+            part_purpose = UNSET
+        else:
+            part_purpose = GBTPartPurpose(_part_purpose)
+
         _property_id_to_source = d.pop("propertyIdToSource", UNSET)
         property_id_to_source: BTPartDisplayData17PropertyIdToSource | Unset
         if isinstance(_property_id_to_source, Unset):
@@ -396,6 +412,7 @@ class BTPartDisplayData17:
             name_for_new_cell=name_for_new_cell,
             ordinal=ordinal,
             part_id=part_id,
+            part_purpose=part_purpose,
             property_id_to_source=property_id_to_source,
             referencing_configured_part_node_ids=referencing_configured_part_node_ids,
             sm_application_type=sm_application_type,

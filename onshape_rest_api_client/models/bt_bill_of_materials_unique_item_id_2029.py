@@ -23,6 +23,8 @@ class BTBillOfMaterialsUniqueItemId2029:
     Attributes:
         api_configuration (str | Unset):
         bt_type (str | Unset): Type of JSON object.
+        element_library_id (str | Unset):
+        is_custom_standard_content (bool | Unset):
         is_standard_content (bool | Unset):
         item_definition_id (str | Unset):
         metadata_object_type (BTMetadataObjectType | Unset):
@@ -35,6 +37,8 @@ class BTBillOfMaterialsUniqueItemId2029:
 
     api_configuration: str | Unset = UNSET
     bt_type: str | Unset = UNSET
+    element_library_id: str | Unset = UNSET
+    is_custom_standard_content: bool | Unset = UNSET
     is_standard_content: bool | Unset = UNSET
     item_definition_id: str | Unset = UNSET
     metadata_object_type: BTMetadataObjectType | Unset = UNSET
@@ -49,6 +53,10 @@ class BTBillOfMaterialsUniqueItemId2029:
         api_configuration = self.api_configuration
 
         bt_type = self.bt_type
+
+        element_library_id = self.element_library_id
+
+        is_custom_standard_content = self.is_custom_standard_content
 
         is_standard_content = self.is_standard_content
 
@@ -79,6 +87,10 @@ class BTBillOfMaterialsUniqueItemId2029:
             field_dict["apiConfiguration"] = api_configuration
         if bt_type is not UNSET:
             field_dict["btType"] = bt_type
+        if element_library_id is not UNSET:
+            field_dict["elementLibraryId"] = element_library_id
+        if is_custom_standard_content is not UNSET:
+            field_dict["isCustomStandardContent"] = is_custom_standard_content
         if is_standard_content is not UNSET:
             field_dict["isStandardContent"] = is_standard_content
         if item_definition_id is not UNSET:
@@ -107,6 +119,10 @@ class BTBillOfMaterialsUniqueItemId2029:
         api_configuration = d.pop("apiConfiguration", UNSET)
 
         bt_type = d.pop("btType", UNSET)
+
+        element_library_id = d.pop("elementLibraryId", UNSET)
+
+        is_custom_standard_content = d.pop("isCustomStandardContent", UNSET)
 
         is_standard_content = d.pop("isStandardContent", UNSET)
 
@@ -142,6 +158,8 @@ class BTBillOfMaterialsUniqueItemId2029:
         bt_bill_of_materials_unique_item_id_2029 = cls(
             api_configuration=api_configuration,
             bt_type=bt_type,
+            element_library_id=element_library_id,
+            is_custom_standard_content=is_custom_standard_content,
             is_standard_content=is_standard_content,
             item_definition_id=item_definition_id,
             metadata_object_type=metadata_object_type,
